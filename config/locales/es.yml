@@ -1,0 +1,6 @@
+es:
+  hola: "Hola mundo"
+  sesion
+    ingreso: "Ingreso correcto"
+    salida: "Salida correcta"
+    invalida: "Sesion invalida, usuario y/o password invalido"

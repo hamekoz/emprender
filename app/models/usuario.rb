@@ -2,7 +2,7 @@ require 'digest'
 class Usuario < ActiveRecord::Base
   attr_accessor :password
 
-  validates :nombre, :presence => true,
+  validates :usuario, :presence => true,
                      :uniqueness => true,
                      :length => { :within => 4..20 }
   validates :password, :confirmation => true,
@@ -15,7 +15,7 @@ class Usuario < ActiveRecord::Base
 
   before_save :cifrar_nueva_password
 
-  def self.autentica(nombre, password)
+  def self.autenticar(nombre, password)
     usuario = find_by_nombre(nombre)
     return usuario if usuario && usuario.autenticado?(password)
   end
