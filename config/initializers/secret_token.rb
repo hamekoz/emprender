@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Emprender::Application.config.secret_token = '70a9c67b7533e0cf82fe31a5fe59e5ae8e094de0dc0586889bf7f18dc1c10ee9829462accf01827868e1afab8eaa31df81166dda8d71204b1bd7ab563bdff3c0'
+Emprender::Application.config.secret_token = '082d3600e671d678e5d8165c634b8da177e7cb15a3aec7e82bed3a83db8746085e883ed4ca20f18b7ad3a2dfb24b2f8f341a62a144209d89736dc9507d33cdb2'
