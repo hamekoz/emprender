@@ -1,15 +1,68 @@
-<h1><%= "Inicio de sesión" %></h1>
+<!-- Start: login-holder -->
+<div id="login-holder">
 
-<%= form_tag session_path do %>
-  <div class="field">
-    <%= label_tag :usuario, "Usuario" %><br />
-    <%= text_field_tag :usuario %>
-  </div>
-  <div class="field">
-    <%= label_tag :password, "Contraseña" %><br />
-    <%= password_field_tag :password %>
-  </div>
-  <div class="actions">
-    <%= submit_tag "Ingresar" %>
-  </div>
-<% end %>
+	<!-- start logo -->
+	<div id="logo-login">
+	<!--	<a href="index.html"><img src="images/shared/logo.png" width="156" height="40" alt="" /></a> -->
+	</div>
+	<!-- end logo -->
+	
+	<div class="clear"></div>
+	
+	<!--  start loginbox ................................................................................. -->
+	<div id="loginbox">
+	
+	<!--  start login-inner -->
+	<div id="login-inner">
+		<%= form_tag session_path do %>
+		<table border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<th>Usuario</th>
+			<td><%= text_field_tag :usuario, "", :class => 'login-inp' %></td>
+		</tr>
+		<tr>
+			<th>Contraseña</th>
+			<td><%= password_field_tag :password, "", :class => 'login-inp' %></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td valign="top"><input type="checkbox" class="checkbox-size" id="login-check" /><label for="login-check">Recordarme</label></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td><%= submit_tag "Ingresar" , :class => 'submit-login' %></td>
+		</tr>
+		</table>
+		<% end %>
+	</div>
+ 	<!--  end login-inner -->
+	<div class="clear"></div>
+	<a href="" class="forgot-pwd">Perdiste el Password?</a>
+ </div>
+ <!--  end loginbox -->
+ 
+	<!--  start forgotbox ................................................................................... -->
+	<div id="forgotbox">
+		<div id="forgotbox-text">Ingrese su email para resetear el password.</div>
+		<!--  start forgot-inner -->
+		<div id="forgot-inner">
+		<table border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<th>Email:</th>
+			<td><input type="text" value=""   class="login-inp" /></td>
+		</tr>
+		<tr>
+			<th> </th>
+			<td><input type="button" class="submit-login"  /></td>
+		</tr>
+		</table>
+		</div>
+		<!--  end forgot-inner -->
+		<div class="clear"></div>
+		<a href="" class="back-login">Volver al login</a>
+	</div>
+	<!--  end forgotbox -->
+
+</div>
+<!-- End: login-holder -->
+
