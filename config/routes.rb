@@ -1,4 +1,8 @@
 Emprender::Application.routes.draw do
+  resources :categorias
+
+  resources :instituciones
+
   root :to => "sessions#create"
   resources :personas
   resource :session

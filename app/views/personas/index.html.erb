@@ -1,5 +1,10 @@
 <h1>Listado de personas</h1>
 
+<table>
+  <tr>
+    <th>Nombre y Apellido</th>
+  </tr>
+
 <% @personas.each do |persona| %>
   <tr>
     <td><%= link_to persona.nombre_completo, persona %></td>
