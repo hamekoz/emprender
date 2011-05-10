@@ -1,0 +1,15 @@
+<h1>Listado de personas</h1>
+
+<% @personas.each do |persona| %>
+  <tr>
+    <td><%= link_to persona.nombre_completo, persona %></td>
+    <td><%= link_to 'Editar', edit_persona_path(persona) %></td>
+    <td><%= link_to 'Eliminar', persona, :confirm => '¿Esta seguro?', :method => :delete %></td>
+    <br />
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nueva Persona', new_persona_path %>

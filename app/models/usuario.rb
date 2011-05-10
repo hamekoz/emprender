@@ -15,8 +15,8 @@ class Usuario < ActiveRecord::Base
 
   before_save :cifrar_nueva_password
 
-  def self.autenticar(nombre, password)
-    usuario = find_by_nombre(nombre)
+  def self.autenticar(usuario, password)
+    usuario = find_by_usuario(usuario)
     return usuario if usuario && usuario.autenticado?(password)
   end
 
