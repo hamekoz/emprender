@@ -1,5 +1,19 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <b>Nombre:</b>
+  <%= @persona.nombre %>
+</p>
+
+<p>
+  <b>Apellido:</b>
+  <%= @persona.apellido %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @persona.email %>
+</p>
 
 <%= link_to 'Editar', edit_persona_path(@persona) %> |
 <%= link_to 'Volver', personas_path %>

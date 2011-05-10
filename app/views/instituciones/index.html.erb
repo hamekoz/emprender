@@ -1,0 +1,22 @@
+<h1>Listing instituciones</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Descripcion</th>
+  </tr>
+
+<% @instituciones.each do |institucion| %>
+  <tr>
+    <td><%= institucion.nombre %></td>
+    <td><%= institucion.descripcion %></td>
+    <td><%= link_to 'Mostrar', institucion %></td>
+    <td><%= link_to 'Editar', edit_institucion_path(institucion) %></td>
+    <td><%= link_to 'Eliminar', institucion, :confirm => '¿Esta seguro?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nueva Institucion', new_institucion_path %>
