@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Emprender</title>
+<!--
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :all %>
   <%= csrf_meta_tag %>
@@ -11,13 +12,20 @@ $(document).ready(function(){
 $(document).pngFix( );
 });
 </script>
+-->
 </head>
 <body> 
-
+  <div id="header">
+    <h1><%= link_to "Emprender", root_path %></h1>
+    <div id="menu">
+      <%= link_to "Personas", personas_path %> |
+      <%= link_to "Instituciones", instituciones_path %> |
+      <%= link_to "Categorias", categorias_path %>
+    </div>
+  </div>
   <div id="main">
     <%= content_tag(:p, alert, :class => 'alert') if alert.present? %>
     <%= yield %>
   </div>
-
 </body>
 </html>
