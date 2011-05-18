@@ -1,11 +1,12 @@
 Emprender::Application.routes.draw do
+  root :to => "personas#index"
+
   resources :categorias
-
   resources :instituciones
-
-  root :to => "sessions#create"
   resources :personas
+
   resource :session
+
   match '/login' => "sessions#create", :as => "login"
   match '/logout' => "sessions#destroy", :as => "logout"
 

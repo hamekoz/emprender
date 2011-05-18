@@ -18,12 +18,18 @@ $(document).pngFix( );
   <div id="header">
     <h1><%= link_to "Emprender", root_path %></h1>
     <div id="menu">
+    <% if autenticado? %>
       <%= link_to "Personas", personas_path %> |
       <%= link_to "Instituciones", instituciones_path %> |
-      <%= link_to "Categorias", categorias_path %>
+      <%= link_to "Categorias", categorias_path %> |
+      <%= link_to "Cerrar Sesion", logout_path %>
+    <% else %>
+      <%= link_to "Iniciar Sesion", login_path %>
+    <% end %>
     </div>
   </div>
   <div id="main">
+    <%= content_tag(:p, notice, :class => 'notice') if notice.present? %>
     <%= content_tag(:p, alert, :class => 'alert') if alert.present? %>
     <%= yield %>
   </div>

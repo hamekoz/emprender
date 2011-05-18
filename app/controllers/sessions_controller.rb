@@ -13,4 +13,9 @@ class SessionsController < ApplicationController
     reset_session
     redirect_to root_path, :notice => "Sesion finalizada"
   end
+  
+  def recuperar
+    reset_session
+    render :action => 'recupero'
+  end
 end
