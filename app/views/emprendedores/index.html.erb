@@ -1,0 +1,25 @@
+<h1>Listado emprendedores</h1>
+
+<table>
+  <tr>
+    <th>Nombres</th>
+    <th>Apellidos</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @emprendedores.each do |emprendedor| %>
+  <tr>
+    <td><%= emprendedor.persona.nombre %></td>
+    <td><%= emprendedor.persona.apellido %></td>
+    <td><%= link_to 'Mostrar', emprendedor %></td>
+    <td><%= link_to 'Editar', edit_emprendedor_path(emprendedor) %></td>
+    <td><%= link_to 'Eliminar', emprendedor, :confirm => '¿Esta seguro?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo Emprendedor', new_emprendedor_path %>

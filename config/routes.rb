@@ -4,6 +4,7 @@ Emprender::Application.routes.draw do
   resources :categorias
   resources :instituciones
   resources :personas
+  resources :emprendedores
 
   resource :session
 
