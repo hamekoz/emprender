@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>Emprender</title>
-  <%= stylesheet_link_tag 'scaffold' %>
+  <%= stylesheet_link_tag 'emprender' %>
 <!--
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :all %>
@@ -16,7 +16,7 @@ $(document).pngFix( );
 -->
 </head>
 <body> 
-  <div id="header">
+  <div id="cabecera">
     <h1><%= link_to "Emprender", root_path %></h1>
     <div id="menu">
     <% if autenticado? %>
@@ -38,9 +38,11 @@ $(document).pngFix( );
     <div id="principal-alerta">
       <%= content_tag(:p, alert, :class => 'alert') if alert.present? %>
     </div>
-    <%= yield %>
+    <div id="cuerpo">
+      <%= yield %>
+    </div>
   </div>
-  <div id="footer">
+  <div id="pie">
   </div>
 </body>
 </html>
