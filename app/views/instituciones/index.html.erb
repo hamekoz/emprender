@@ -13,7 +13,7 @@
   <tr>
     <td><%= institucion.nombre %></td>
     <td><%= institucion.descripcion %></td>
-    <td><%= link_to 'Mostrar', institucion %></td>
+    <td><%= link_to 'Mostrar', institucion, :class => 'mostrar boton mediano rojo'%></td>
     <td><%= link_to 'Editar', edit_institucion_path(institucion) %></td>
     <td><%= link_to 'Eliminar', institucion, :confirm => '¿Esta seguro?', :method => :delete %></td>
   </tr>

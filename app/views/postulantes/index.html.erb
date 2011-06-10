@@ -1,0 +1,21 @@
+<h1>Listing postulantes</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @postulantes.each do |postulante| %>
+  <tr>
+    <td><%= link_to 'Mostrar', postulante %></td>
+    <td><%= link_to 'Editar', edit_postulante_path(postulante) %></td>
+    <td><%= link_to 'Eliminar', postulante, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo Postulante', new_postulante_path %>

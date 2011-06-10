@@ -1,4 +1,6 @@
 Emprender::Application.routes.draw do
+  resources :postulantes
+
   root :to => "personas#index"
 
   resources :categorias
