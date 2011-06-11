@@ -1,11 +1,11 @@
-<h1>Listando instituciones</h1>
+<h1>Listado de instituciones</h1>
 
 <table>
   <tr>
     <th>Nombre</th>
     <th>Descripcion</th>
     <th colspan="3" rowspan="1">
-      <%= link_to 'Nueva Institucion', new_institucion_path %>
+      <%= boton_agregar new_institucion_path %>
     </th>
   </tr>
 
@@ -13,9 +13,9 @@
   <tr>
     <td><%= institucion.nombre %></td>
     <td><%= institucion.descripcion %></td>
-    <td><%= link_to 'Mostrar', institucion, :class => 'mostrar boton mediano rojo'%></td>
-    <td><%= link_to 'Editar', edit_institucion_path(institucion) %></td>
-    <td><%= link_to 'Eliminar', institucion, :confirm => '¿Esta seguro?', :method => :delete %></td>
+    <td class="accion"><%= boton_mostrar institucion %></td>
+    <td class="accion"><%= boton_editar edit_institucion_path(institucion) %></td>
+    <td class="accion"><%= boton_eliminar institucion %></td>
   </tr>
 <% end %>
 </table>

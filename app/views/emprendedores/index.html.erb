@@ -1,11 +1,11 @@
-<h1>Listado emprendedores</h1>
+<h1>Listado de emprendedores</h1>
 
 <table>
   <tr>
     <th>Nombres</th>
     <th>Apellidos</th>
-   <th colspan="3" rowspan="1">
-      <%= link_to 'Nuevo Emprendedor', new_emprendedor_path %>
+    <th colspan="3" rowspan="1">
+      <%= boton_agregar new_emprendedor_path %>
     </th>
   </tr>
 
@@ -13,13 +13,11 @@
   <tr>
     <td><%= emprendedor.persona.nombre %></td>
     <td><%= emprendedor.persona.apellido %></td>
-    <td><%= link_to 'Mostrar', emprendedor %></td>
-    <td><%= link_to 'Editar', edit_emprendedor_path(emprendedor) %></td>
-    <td><%= link_to 'Eliminar', emprendedor, :confirm => '¿Esta seguro?', :method => :delete %></td>
+    <td class="accion"><%= boton_editar emprendedor %></td>
+    <td class="accion"><%= boton_editar edit_emprendedor_path(emprendedor) %></td>
+    <td class="accion"><%= boton_eliminar emprendedor %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-

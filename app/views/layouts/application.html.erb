@@ -8,24 +8,19 @@
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :all %>
   <%= csrf_meta_tag %>
-  <script type="text/javascript">
-$(document).ready(function(){
-$(document).pngFix( );
-});
-</script>
 -->
 </head>
 <body>
   <div id="contenedor">
     <div id="cabecera">
-      <h1><%= link_to "Emprender", root_path %></h1>
+      <h1>Emprender</h1>
       <div id="menu">
       <% if autenticado? %>
-        <%= link_to "Personas", personas_path %> |
-        <%= link_to "Emprendedores", emprendedores_path %> |
-        <%= link_to "Instituciones", instituciones_path %> |
-        <%= link_to "Categorias", categorias_path %> |
-        <%= @usuario_actual.usuario %>
+        <%= link_to "Personas", personas_path %>
+        <%= link_to "Emprendedores", emprendedores_path %>
+        <%= link_to "Instituciones", instituciones_path %>
+        <%= link_to "Categorias", categorias_path %>
+        <div id="usuario"> <%= @usuario_actual.usuario %></div>
         <%= link_to "Cerrar Sesion", logout_path %>
       <% else %>
         <%= link_to "Iniciar Sesion", login_path %>

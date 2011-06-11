@@ -1,11 +1,11 @@
-<h1>Listando de personas</h1>
+<h1>Listado de personas</h1>
 
 <table>
   <tr>
     <th>Nombres</th>
     <th>Apellidos</th>
     <th colspan="3" rowspan="1">
-      <%= link_to 'Nueva Persona', new_persona_path, :class => 'agregar mediano boton verde' %>
+      <%= boton_agregar new_persona_path %>
     </th>
   </tr>
 
@@ -13,14 +13,11 @@
   <tr>
     <td><%= persona.nombre %></td>
     <td><%= persona.apellido %></td>
-    <td><%= link_to 'Mostrar', persona, :class => 'mostrar mediano boton naranja' %></td>
-    <td><%= link_to 'Editar', edit_persona_path(persona), :class => 'editar mediano boton amarillo' %></td>
-    <td><%= link_to 'Eliminar', persona, :confirm => '¿Esta seguro?', :method => :delete, :class => 'eliminar mediano boton rojo' %></td>
-    <br />
+    <td class="accion"><%= boton_mostrar persona %></td>
+    <td class="accion"><%= boton_editar edit_persona_path(persona) %></td>
+    <td class="accion"><%= boton_eliminar persona %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-

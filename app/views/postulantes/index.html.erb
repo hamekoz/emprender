@@ -1,21 +1,21 @@
-<h1>Listing postulantes</h1>
+<h1>Listado de postulantes</h1>
 
 <table>
   <tr>
     <th></th>
-    <th></th>
-    <th></th>
+    <th colspan="3" rowspan="1">
+      <%= link_to 'Agregar', new_postulante_path, :class => 'agregar boton verde' %>
+    </th>
   </tr>
 
 <% @postulantes.each do |postulante| %>
   <tr>
-    <td><%= link_to 'Mostrar', postulante %></td>
-    <td><%= link_to 'Editar', edit_postulante_path(postulante) %></td>
-    <td><%= link_to 'Eliminar', postulante, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td>Nombre</td>
+    <td class="accion"><%= boton_mostrar postulante %></td>
+    <td class="accion"><%= boton_editar edit_postulante_path(postulante) %></td>
+    <td class="accion"><%= boton_eliminar postulante %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'Nuevo Postulante', new_postulante_path %>
