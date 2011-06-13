@@ -16,12 +16,12 @@
       <h1>Emprender</h1>
       <div id="menu">
       <% if autenticado? %>
-        <%= link_to "Personas", personas_path %>
-        <%= link_to "Emprendedores", emprendedores_path %>
-        <%= link_to "Instituciones", instituciones_path %>
-        <%= link_to "Categorias", categorias_path %>
+        <%= link_to "Personas", personas_path, :class => 'menu' %>
+        <%= link_to "Emprendedores", emprendedores_path, :class => 'menu' %>
+        <%= link_to "Instituciones", instituciones_path, :class => 'menu' %>
+        <%= link_to "Categorias", categorias_path, :class => 'menu' %>
         <div id="usuario"> <%= @usuario_actual.usuario %></div>
-        <%= link_to "Cerrar Sesion", logout_path %>
+        <%= link_to "Cerrar Sesion", logout_path, :class => 'menu' %>
       <% else %>
         <%= link_to "Iniciar Sesion", login_path %>
       <% end %>
