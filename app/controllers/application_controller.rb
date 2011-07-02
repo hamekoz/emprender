@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     end
     
     helper_method :autenticado?
-    
+
     def acceso_denegado
       redirect_to login_path, :notice => "Acceso denegado" and return false
     end 

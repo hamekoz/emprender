@@ -1,39 +1,13 @@
-<!-- Start: login-holder -->
-<div id="login-holder">
-
-	<!-- start logo -->
-	<div id="logo-login">
-	<!--	<a href="index.html"><img src="images/shared/logo.png" width="156" height="40" alt="" /></a> -->
-	</div>
-	<!-- end logo -->
-	
-	<div class="clear"></div>
-	
-	<!--  start loginbox ................................................................................. -->
-	<div id="loginbox">
-	
-	<!--  start login-inner -->
-	<div id="login-inner">
-		<%= form_tag session_path do %>
-		<table border="0" cellpadding="0" cellspacing="0">
-		<tr>
-			<th>Usuario</th>
-			<td><%= text_field_tag :usuario, "", :class => 'login-inp' %></td>
-		</tr>
-		<tr>
-			<th>Contraseña</th>
-			<td><%= password_field_tag :password, "", :class => 'login-inp' %></td>
-		</tr>
-		<tr>
-			<th></th>
-			<td valign="top"><input type="checkbox" class="checkbox-size" id="login-check" /><label for="login-check">Recordarme</label></td>
-		</tr>
-		<tr>
-			<th></th>
-			<td><%= submit_tag "Ingresar" , :class => 'submit-login' %></td>
-		</tr>
-		</table>
-		<% end %>
-	</div>
-	<a href="" class="forgot-pwd">Perdiste el Password?</a>
+<div id="wrapper" class="page-width">
+  <div id="login-box">
+    <%= form_tag session_path do %>
+      <dl>
+        <dt><label for="usuario">Usuario</label></dt>
+        <dd><%= text_field_tag :usuario, "", :class => "email required" %></dd>
+        <dt><label>Contraseña</label></dt>
+        <dd><%= password_field_tag :password, :class => "required", :id => "password" %></dd>
+        <%= submit_tag "Ingresar", :class => "flatbutton green" %>
+      </dl>
+    <% end %>
+  </div>
 </div>

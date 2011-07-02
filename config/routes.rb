@@ -1,4 +1,8 @@
 Emprender::Application.routes.draw do
+  resources :estados
+
+  resources :rubros
+
   resources :postulantes
 
   root :to => "personas#index"
