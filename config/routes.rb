@@ -1,9 +1,11 @@
 Emprender::Application.routes.draw do
+  resources :eventos
+
+  resources :noticias
+
   resources :estados
 
   resources :rubros
-
-  resources :postulantes
 
   root :to => "personas#index"
 
