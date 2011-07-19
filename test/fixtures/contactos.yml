@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  persona_id: 1
+  domicilio_id: 1
+  mail: MyString
+
+two:
+  persona_id: 1
+  domicilio_id: 1
+  mail: MyString

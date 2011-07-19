@@ -1,0 +1,27 @@
+<h1>Listing planes_sociales</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Descripcion</th>
+    <th>Institucion</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @planes_sociales.each do |plan_social| %>
+  <tr>
+    <td><%= plan_social.nombre %></td>
+    <td><%= plan_social.descripcion %></td>
+    <td><%= plan_social.institucion_id %></td>
+    <td><%= link_to 'Show', plan_social %></td>
+    <td><%= link_to 'Edit', edit_plan_social_path(plan_social) %></td>
+    <td><%= link_to 'Destroy', plan_social, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Plan social', new_plan_social_path %>

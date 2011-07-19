@@ -1,3 +1,5 @@
 class Emprendedor  < ActiveRecord::Base
-  has_one :persona
+  belongs_to :usuario
+  has_and_belongs_to_many :telefonos
+
 end

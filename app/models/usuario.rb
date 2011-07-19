@@ -3,14 +3,18 @@ class Usuario < ActiveRecord::Base
   attr_accessor :password
 
   validates :usuario, :presence => true,
-                     :uniqueness => true,
-                     :length => { :within => 4..20 }
+                      :uniqueness => true,
+                      :length => { :within => 4..20 }
   validates :password, :confirmation => true,
                        :length => { :within => 4..20 },
                        :presence => true,
                        :if => :password_requerida?
+  validates :email, :uniqueness => true,
+                    :length => { :within => 5..50 },
+                    :format => { :with => /^[^@][\w.-]+@[\w.-]+[.][a-z]{2,4}$/i }
 
-  has_one :persona
+  
+  belongs_to :persona
   belongs_to :rol
 
   before_save :cifrar_nueva_password

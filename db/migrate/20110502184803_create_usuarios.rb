@@ -1,9 +1,11 @@
 class CreateUsuarios < ActiveRecord::Migration
   def self.up
     create_table :usuarios do |t|
+      t.references :persona
+      t.references :rol
       t.string :usuario
       t.string :password_cifrada
-      t.integer :rol_id
+      t.string :email
 
       t.timestamps
     end

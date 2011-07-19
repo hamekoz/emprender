@@ -2,7 +2,8 @@ class CreateInstituciones < ActiveRecord::Migration
   def self.up
     create_table :instituciones do |t|
       t.string :nombre
-      t.string :descripcion
+      t.text :descripcion
+      t.references :domicilio
 
       t.timestamps
     end

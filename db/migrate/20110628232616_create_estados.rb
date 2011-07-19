@@ -1,8 +1,8 @@
 class CreateEstados < ActiveRecord::Migration
   def self.up
     create_table :estados do |t|
-      t.string, :nombre
-      t.string :descripcion
+      t.string :nombre
+      t.text :descripcion
 
       t.timestamps
     end

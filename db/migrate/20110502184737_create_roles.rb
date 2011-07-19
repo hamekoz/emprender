@@ -2,7 +2,7 @@ class CreateRoles < ActiveRecord::Migration
   def self.up
     create_table :roles do |t|
       t.string :nombre
-      t.string :descripcion
+      t.text :descripcion
 
       t.timestamps
     end

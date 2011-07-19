@@ -4,8 +4,6 @@ class CreatePersonas < ActiveRecord::Migration
       t.string :nombre
       t.string :apellido
       t.boolean :sexo
-      t.string :email
-      t.integer :usuario_id
 
       t.timestamps
     end

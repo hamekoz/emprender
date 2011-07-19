@@ -2,7 +2,7 @@ class CreateCategorias < ActiveRecord::Migration
   def self.up
     create_table :categorias do |t|
       t.string :nombre
-      t.string :descripcion
+      t.text :descripcion
 
       t.timestamps
     end

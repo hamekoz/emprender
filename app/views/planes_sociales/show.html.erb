@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @plan_social.nombre %>
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%= @plan_social.descripcion %>
+</p>
+
+<p>
+  <b>Institucion:</b>
+  <%= @plan_social.institucion_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_plan_social_path(@plan_social) %> |
+<%= link_to 'Back', planes_sociales_path %>

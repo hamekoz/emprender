@@ -3,9 +3,4 @@ db/*.sqlite3
 log/*.log
 tmp/
 Gemfile.lock
-*.sln
-*.mdproj
-*.pidb
-*.userprefs
 *~
-/public/images/login/.DS_Store
