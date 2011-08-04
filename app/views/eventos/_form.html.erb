@@ -12,30 +12,30 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :titulo %><br />
-    <%= f.text_field :titulo %>
+    <%= label_tag "Nombre" %><br />
+    <%= f.text_field :nombre %>
   </div>
   <div class="field">
-    <%= f.label :fechaDeInicio %><br />
-    <%= f.text_field :fechaDeInicio %>
+    <%= label_tag "Fecha y Hora de Inicio" %><br />
+    <%= f.text_field :fechaHoraDeInicio %>
   </div>
   <div class="field">
-    <%= f.label :fechaDeFinalizacion %><br />
-    <%= f.text_field :fechaDeFinalizacion %>
+    <%= label_tag "Fecha y Hora de Finalizacion" %><br />
+    <%= f.text_field :fechaHoraDeFinalizacion %>
   </div>
   <div class="field">
-    <%= f.label :lugar %><br />
+    <%= label_tag "Lugar" %><br />
     <%= f.text_field :lugar %>
   </div>
   <div class="field">
-    <%= f.label :descripcion %><br />
+    <%= label_tag "Descripcion" %><br />
     <%= f.text_field :descripcion %>
   </div>
   <div class="field">
-    <%= f.label :publicado %><br />
+    <%= label_tag "Publicado" %><br />
     <%= f.check_box :publicado %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= submit_tag %>
   </div>
 <% end %>

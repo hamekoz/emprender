@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :titulo %><br />
+    <%= label_tag "Titulo" %><br />
     <%= f.text_field :titulo %>
   </div>
   <div class="field">
-    <%= f.label :fecha %><br />
+    <%= label_tag "Fecha" %><br />
     <%= f.text_field :fecha %>
   </div>
   <div class="field">
-    <%= f.label :texto %><br />
+    <%= label_tag "Texto" %><br />
     <%= f.text_field :texto %>
   </div>
   <div class="field">
-    <%= f.label :publicado %><br />
+    <%= label_tag "Publicado" %><br />
     <%= f.check_box :publicado %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= submit_tag %>
   </div>
 <% end %>

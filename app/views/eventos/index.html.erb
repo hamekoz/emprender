@@ -1,4 +1,4 @@
-<h1>Listing eventos</h1>
+<h1>Listado de eventos</h1>
 
 <table>
   <tr>
@@ -8,9 +8,9 @@
     <th>Lugar</th>
     <th>Descripcion</th>
     <th>Publicado</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th colspan="3" rowspan="1">
+      <%= boton_agregar new_evento_path %>
+    </th>
   </tr>
 
 <% @eventos.each do |evento| %>
@@ -21,13 +21,9 @@
     <td><%= evento.lugar %></td>
     <td><%= evento.descripcion %></td>
     <td><%= evento.publicado %></td>
-    <td><%= link_to 'Show', evento %></td>
-    <td><%= link_to 'Edit', edit_evento_path(evento) %></td>
-    <td><%= link_to 'Destroy', evento, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= boton_mostrar evento %></td>
+    <td><%= boton_editar edit_evento_path(evento) %></td>
+    <td><%= boton_eliminar evento %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Evento', new_evento_path %>

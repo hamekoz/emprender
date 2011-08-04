@@ -2,8 +2,7 @@
 
 <table>
   <tr>
-    <th>Nombre</th>
-    <th>Descripcion</th>
+    <th>Institucion</th>
     <th colspan="3" rowspan="1">
       <%= boton_agregar new_institucion_path %>
     </th>
@@ -12,12 +11,9 @@
 <% @instituciones.each do |institucion| %>
   <tr>
     <td><%= institucion.nombre %></td>
-    <td><%= institucion.descripcion %></td>
     <td class="accion"><%= boton_mostrar institucion %></td>
     <td class="accion"><%= boton_editar edit_institucion_path(institucion) %></td>
     <td class="accion"><%= boton_eliminar institucion %></td>
   </tr>
 <% end %>
 </table>
-
-<br />

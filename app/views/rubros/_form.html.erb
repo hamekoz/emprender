@@ -12,14 +12,14 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :nombre %><br />
+    <%= label_tag "Nombre" %><br />
     <%= f.text_field :nombre %>
   </div>
   <div class="field">
-    <%= f.label :descripcion %><br />
+    <%= label "Descripcion" %><br />
     <%= f.text_field :descripcion %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= submit_tag %>
   </div>
 <% end %>

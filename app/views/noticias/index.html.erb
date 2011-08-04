@@ -1,4 +1,4 @@
-<h1>Listing noticias</h1>
+<h1>Listado de noticias</h1>
 
 <table>
   <tr>
@@ -6,9 +6,9 @@
     <th>Fecha</th>
     <th>Texto</th>
     <th>Publicado</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th colspan="3" rowspan="1">
+      <%= boton_agregar new_noticia_path %>
+    </th>
   </tr>
 
 <% @noticias.each do |noticia| %>
@@ -17,13 +17,9 @@
     <td><%= noticia.fecha %></td>
     <td><%= noticia.texto %></td>
     <td><%= noticia.publicado %></td>
-    <td><%= link_to 'Show', noticia %></td>
-    <td><%= link_to 'Edit', edit_noticia_path(noticia) %></td>
-    <td><%= link_to 'Destroy', noticia, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= boton_mostrar noticia %></td>
+    <td><%= boton_editar edit_noticia_path(noticia) %></td>
+    <td><%= boton_eliminar noticia %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Noticia', new_noticia_path %>

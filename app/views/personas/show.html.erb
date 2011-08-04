@@ -11,8 +11,8 @@
 </p>
 
 <p>
-  <b>Email:</b>
-  <%= @persona.email %>
+  <b>Sexo:</b>
+  <%= @persona.sexo? ? "Masculino" : "Femenino"  %>
 </p>
 
 <%= boton_editar edit_persona_path(@persona) %> |

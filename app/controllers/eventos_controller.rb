@@ -1,4 +1,6 @@
 class EventosController < ApplicationController
+  before_filter :autenticar
+
   # GET /eventos
   # GET /eventos.xml
   def index

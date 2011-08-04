@@ -1,13 +1,13 @@
-<h1>Listing planes_sociales</h1>
+<h1>Listado de planes sociales</h1>
 
 <table>
   <tr>
     <th>Nombre</th>
     <th>Descripcion</th>
     <th>Institucion</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th colspan="3" rowspan="1">
+      <%= boton_agregar new_plan_social_path %>
+    </th>
   </tr>
 
 <% @planes_sociales.each do |plan_social| %>
@@ -15,13 +15,9 @@
     <td><%= plan_social.nombre %></td>
     <td><%= plan_social.descripcion %></td>
     <td><%= plan_social.institucion_id %></td>
-    <td><%= link_to 'Show', plan_social %></td>
-    <td><%= link_to 'Edit', edit_plan_social_path(plan_social) %></td>
-    <td><%= link_to 'Destroy', plan_social, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= boton_mostrar plan_social %></td>
+    <td><%= boton_editar edit_plan_social_path(plan_social) %></td>
+    <td><%= boton_eliminar plan_social %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Plan social', new_plan_social_path %>

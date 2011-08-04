@@ -2,8 +2,7 @@
 
 <table>
   <tr>
-    <th>Nombres</th>
-    <th>Apellidos</th>
+    <th>Nombre y Apellido</th>
     <th colspan="3" rowspan="1">
       <%= boton_agregar new_persona_path %>
     </th>
@@ -11,13 +10,10 @@
 
 <% @personas.each do |persona| %>
   <tr>
-    <td><%= persona.nombre %></td>
-    <td><%= persona.apellido %></td>
-    <td class="accion"><%= boton_mostrar persona %></td>
-    <td class="accion"><%= boton_editar edit_persona_path(persona) %></td>
-    <td class="accion"><%= boton_eliminar persona %></td>
+    <td><%= persona.nombre_completo %></td>
+    <td><%= boton_mostrar persona %></td>
+    <td><%= boton_editar edit_persona_path(persona) %></td>
+    <td><%= boton_eliminar persona %></td>
   </tr>
 <% end %>
 </table>
-
-<br />

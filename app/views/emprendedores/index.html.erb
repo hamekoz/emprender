@@ -13,11 +13,9 @@
   <tr>
     <td><%= emprendedor.persona.nombre %></td>
     <td><%= emprendedor.persona.apellido %></td>
-    <td class="accion"><%= boton_editar emprendedor %></td>
-    <td class="accion"><%= boton_editar edit_emprendedor_path(emprendedor) %></td>
-    <td class="accion"><%= boton_eliminar emprendedor %></td>
+    <td><%= boton_editar emprendedor %></td>
+    <td><%= boton_editar edit_emprendedor_path(emprendedor) %></td>
+    <td><%= boton_eliminar emprendedor %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
