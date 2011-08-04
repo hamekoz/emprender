@@ -1,4 +1,6 @@
 class RubrosController < ApplicationController
+  before_filter :autenticar
+  
   # GET /rubros
   # GET /rubros.xml
   def index

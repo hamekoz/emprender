@@ -1,4 +1,6 @@
 class PlanesSocialesController < ApplicationController
+  before_filter :autenticar
+  
   # GET /planes_sociales
   # GET /planes_sociales.xml
   def index
