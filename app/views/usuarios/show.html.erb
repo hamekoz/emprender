@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @usuario.nombre %>
+</p>
+
+<p>
+  <b>Correo electronico:</b>
+  <%= @usuario.email %>
+</p>
+
+<p>
+  <b>Rol:</b>
+  <%= @usuario.rol.nombre %>
+</p>
+
+<%= boton_editar edit_usuario_path(@usuario) %> |
+<%= boton_volver usuarios_path %>
