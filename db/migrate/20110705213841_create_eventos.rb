@@ -11,9 +11,9 @@ class CreateEventos < ActiveRecord::Migration
       t.boolean :publicado
       t.datetime :fecha_de_publicacion
       t.string :titulo
-      t.datatime :fechaDeInicio
+      t.datetime :fechaDeInicio
       t.datetime :fechaDeFinalizacion
-      t.texto :lugar
+      t.text :lugar
       t.string :descripcion
       t.boolean :publicado
 

@@ -1,4 +1,4 @@
-class CreateEmprendimientosContactos < ActiveRecord::Migration
+class CreateContactosEmprendimientos < ActiveRecord::Migration
   def self.up
     create_table :contactos_emprendimientos, :id => false do |t|
       t.references :emprendimiento

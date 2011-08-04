@@ -6,9 +6,9 @@ class CreateNoticias < ActiveRecord::Migration
       t.text :texto
       t.datetime :fecha_publicacion
       t.boolean :publicada
-      t.string, :titulo
-      t.datatime, :fecha
-      t.string, :texto
+      t.string :titulo
+      t.datetime :fecha
+      t.string :texto
       t.boolean :publicado
 
       t.timestamps

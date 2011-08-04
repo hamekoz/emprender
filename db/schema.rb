@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110713003927) do
+ActiveRecord::Schema.define(:version => 20110719223810) do
 
   create_table "barrios", :force => true do |t|
     t.string   "nombre"
@@ -20,9 +20,27 @@ ActiveRecord::Schema.define(:version => 20110713003927) do
 
   create_table "categorias", :force => true do |t|
     t.string   "nombre"
-    t.string   "descripcion"
+    t.text     "descripcion"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "contactos", :force => true do |t|
+    t.integer  "persona_id"
+    t.integer  "domicilio_id"
+    t.string   "mail"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "contactos_emprendimientos", :id => false, :force => true do |t|
+    t.integer "emprendimiento_id"
+    t.integer "contacto_id"
+  end
+
+  create_table "contactos_telefonos", :id => false, :force => true do |t|
+    t.integer "contacto_id"
+    t.integer "telefono_id"
   end
 
   create_table "domicilios", :force => true do |t|
@@ -38,13 +56,13 @@ ActiveRecord::Schema.define(:version => 20110713003927) do
 
   create_table "emprendedores", :force => true do |t|
     t.integer  "usuario_id"
-    t.integer  "tipo_documento"
+    t.integer  "tipoDocumento_id"
     t.string   "nro_documento"
     t.integer  "domicilio_id"
-    t.integer  "nivel_estudio_id"
+    t.integer  "nivelEstudio_id"
     t.boolean  "estudio_completo"
     t.integer  "hijos"
-    t.integer  "plan_social"
+    t.integer  "planSocial_id"
     t.datetime "fecha_desde_plan_social"
     t.datetime "fecha_hasta_plan_social"
     t.boolean  "actividad_labotal_adicional"
@@ -57,9 +75,19 @@ ActiveRecord::Schema.define(:version => 20110713003927) do
     t.datetime "updated_at"
   end
 
+  create_table "emprendedores_telefonos", :id => false, :force => true do |t|
+    t.integer "emprededor_id"
+    t.integer "telefono_id"
+  end
+
+  create_table "emprendimientos_telefonos", :id => false, :force => true do |t|
+    t.integer "emprendimiento_id"
+    t.integer "telefono_id"
+  end
+
   create_table "estados", :force => true do |t|
     t.string   "nombre"
-    t.string   "descripcion"
+    t.text     "descripcion"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -68,27 +96,40 @@ ActiveRecord::Schema.define(:version => 20110713003927) do
     t.string   "nombre"
     t.integer  "tipoEvento_id"
     t.integer  "domicilio_id"
-    t.string   "descripcion"
-    t.datetime "fechaHoraDeInicio"
-    t.datetime "fechaHoraDeFinalizacion"
+    t.text     "descripcion",                :limit => 255
+    t.datetime "fecha_hora_de_inicio"
+    t.datetime "fecha_hora_de_finalizacion"
     t.integer  "institucion_id"
     t.boolean  "publicado"
-    t.datetime "fechaDePublicacion"
+    t.datetime "fecha_de_publicacion"
+    t.string   "titulo"
+    t.datetime "fechaDeInicio"
+    t.datetime "fechaDeFinalizacion"
+    t.text     "lugar"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "eventos_instuciones", :id => false, :force => true do |t|
+    t.integer "evento_id"
+    t.integer "institucion_id"
+  end
+
   create_table "instituciones", :force => true do |t|
     t.string   "nombre"
-    t.string   "descripcion"
+    t.text     "descripcion"
     t.integer  "domicilio_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "instituciones_usuarios", :id => false, :force => true do |t|
+    t.integer "institucion_id"
+    t.integer "usuario_id"
+  end
+
   create_table "niveles_estudio", :force => true do |t|
     t.string   "nombre"
-    t.string   "descripcion"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -96,9 +137,11 @@ ActiveRecord::Schema.define(:version => 20110713003927) do
   create_table "noticias", :force => true do |t|
     t.string   "titulo"
     t.string   "autor"
-    t.string   "texto"
+    t.text     "texto",             :limit => 255
     t.datetime "fecha_publicacion"
     t.boolean  "publicada"
+    t.datetime "fecha"
+    t.boolean  "publicado"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -111,16 +154,24 @@ ActiveRecord::Schema.define(:version => 20110713003927) do
     t.datetime "updated_at"
   end
 
+  create_table "planes_sociales", :force => true do |t|
+    t.string   "nombre"
+    t.text     "descripcion"
+    t.integer  "institucion_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "roles", :force => true do |t|
     t.string   "nombre"
-    t.string   "descripcion"
+    t.text     "descripcion"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "rubros", :force => true do |t|
     t.string   "nombre"
-    t.string   "descripcion"
+    t.text     "descripcion"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -135,9 +186,29 @@ ActiveRecord::Schema.define(:version => 20110713003927) do
   add_index "sesiones", ["sesion_id"], :name => "index_sesiones_on_sesion_id"
   add_index "sesiones", ["updated_at"], :name => "index_sesiones_on_updated_at"
 
+  create_table "telefonos", :force => true do |t|
+    t.string   "numero"
+    t.integer  "tipo_telefono_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tipos_documentos", :force => true do |t|
+    t.string   "abreviatura"
+    t.text     "descripcion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "tipos_eventos", :force => true do |t|
     t.string   "nombre"
-    t.string   "descripcion"
+    t.text     "descripcion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tipos_telefonos", :force => true do |t|
+    t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
