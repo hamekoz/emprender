@@ -12,8 +12,9 @@
 
 <p>
   <b>Sexo:</b>
-  <%= @persona.sexo? ? "Masculino" : "Femenino"  %>
+  <%= @persona.sexo %>
 </p>
+
 
 <%= boton_editar edit_persona_path(@persona) %> |
 <%= boton_volver personas_path %>

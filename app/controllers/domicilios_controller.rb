@@ -1,6 +1,6 @@
 class DomiciliosController < ApplicationController
   before_filter :autenticar
-  
+
   # GET /domicilios
   # GET /domicilios.xml
   def index

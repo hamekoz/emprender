@@ -1,9 +1,9 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  nombre: 
+  nombre: MyString
   descripcion: MyString
 
 two:
-  nombre: 
+  nombre: MyString
   descripcion: MyString

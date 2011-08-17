@@ -1,20 +1,31 @@
 Emprender::Application.routes.draw do
-  resources :planes_sociales
-
-  resources :eventos
+  root :to => "personas#index"
 
   resources :noticias
 
-  resources :estados
+  resources :clasificaciones
 
   resources :rubros
 
-  root :to => "personas#index"
-
   resources :categorias
+
   resources :instituciones
+
+  resources :contactos
+
+  resources :telefonos
+
+  resources :domicilios
+
+  resources :usuarios
+
+  resources :estados
+
+  resources :barrios
+
   resources :personas
-  resources :emprendedores
+
+  resources :roles
 
   resource :session
 

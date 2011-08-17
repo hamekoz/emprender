@@ -1,7 +1,7 @@
 <%= form_for(@usuario) do |f| %>
   <% if @usuario.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@usuario.errors.count, "error") %> prohibited this usuario from being saved:</h2>
+      <h2><%= pluralize(@usuario.errors.count, "error") %> <%= t('errores.guardar.m')%> usuario:</h2>
 
       <ul>
       <% @usuario.errors.full_messages.each do |msg| %>
@@ -12,14 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= label_tag "Usuario" %><br />
+    <%= f.label :usuario %><br />
     <%= f.text_field :usuario %>
   </div>
   <div class="field">
-    <%= label "Correo electronico" %><br />
-    <%= f.text_field :email %>
-  </div>  
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :mail %><br />
+    <%= f.text_field :mail %>
+  </div>
+  <div class="field">
+    <%= f.label :rol %><br />
+    <%= f.text_field :rol %>
+  </div>
   <div class="actions">
-    <%= submit_tag %>
+    <%= f.submit %>
   </div>
 <% end %>

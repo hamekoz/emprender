@@ -1,13 +1,15 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  titulo: 
-  fecha: 
-  texto: 
-  publicado: false
+  titulo: MyString
+  texto: MyText
+  autor: MyString
+  fecha: 2011-08-15 20:31:36
+  publicada: false
 
 two:
-  titulo: 
-  fecha: 
-  texto: 
-  publicado: false
+  titulo: MyString
+  texto: MyText
+  autor: MyString
+  fecha: 2011-08-15 20:31:36
+  publicada: false

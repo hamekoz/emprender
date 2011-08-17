@@ -1,7 +1,7 @@
 <%= form_for(@noticia) do |f| %>
   <% if @noticia.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@noticia.errors.count, "error") %> prohibited this noticia from being saved:</h2>
+      <h2><%= pluralize(@noticia.errors.count, "error") %> <%= t('errores.guardar.f') %> noticia:</h2>
 
       <ul>
       <% @noticia.errors.full_messages.each do |msg| %>
@@ -12,22 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= label_tag "Titulo" %><br />
+    <%= f.label :titulo %><br />
     <%= f.text_field :titulo %>
   </div>
   <div class="field">
-    <%= label_tag "Fecha" %><br />
-    <%= f.text_field :fecha %>
+    <%= f.label :texto %><br />
+    <%= f.text_area :texto %>
   </div>
   <div class="field">
-    <%= label_tag "Texto" %><br />
-    <%= f.text_field :texto %>
+    <%= f.label :autor %><br />
+    <%= f.text_field :autor %>
   </div>
   <div class="field">
-    <%= label_tag "Publicado" %><br />
-    <%= f.check_box :publicado %>
+    <%= f.label :fecha %><br />
+    <%= f.datetime_select :fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :publicada %><br />
+    <%= f.check_box :publicada %>
   </div>
   <div class="actions">
-    <%= submit_tag %>
+    <%= f.submit %>
   </div>
 <% end %>

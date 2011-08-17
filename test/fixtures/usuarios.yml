@@ -1,11 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  nombre: MyString
+  usuario: MyString
   password: MyString
-  rol_id: 1
+  mail: MyString
+  rol: 
 
 two:
-  nombre: MyString
+  usuario: MyString
   password: MyString
-  rol_id: 1
+  mail: MyString
+  rol: 

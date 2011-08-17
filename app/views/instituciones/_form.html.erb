@@ -1,7 +1,7 @@
 <%= form_for(@institucion) do |f| %>
   <% if @institucion.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@institucion.errors.count, "error") %> prohibited this institucion from being saved:</h2>
+      <h2><%= pluralize(@institucion.errors.count, "error") %> <%= t('errores.guardar.f')%> institucion:</h2>
 
       <ul>
       <% @institucion.errors.full_messages.each do |msg| %>
@@ -12,14 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= label_tag "Nombre" %><br />
+    <%= f.label :nombre %><br />
     <%= f.text_field :nombre %>
   </div>
   <div class="field">
-    <%= label_tag "Descripcion" %><br />
+    <%= f.label :descripcion %><br />
     <%= f.text_field :descripcion %>
   </div>
+  <div class="field">
+    <%= f.label :telefono %><br />
+    <%= f.text_field :telefono %>
+  </div>
+  <div class="field">
+    <%= f.label :domicilio %><br />
+    <%= f.text_field :domicilio %>
+  </div>
   <div class="actions">
-    <%= submit_tag 'Guardar' %>
+    <%= f.submit %>
   </div>
 <% end %>

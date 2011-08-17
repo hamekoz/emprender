@@ -10,37 +10,44 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110719223810) do
+ActiveRecord::Schema.define(:version => 20110816000139) do
 
   create_table "barrios", :force => true do |t|
     t.string   "nombre"
+    t.string   "descripcion"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "categorias", :force => true do |t|
     t.string   "nombre"
-    t.text     "descripcion"
+    t.string   "descripcion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "clasificaciones", :force => true do |t|
+    t.string   "nombre"
+    t.string   "descripcion"
+    t.string   "codigo"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "contactos", :force => true do |t|
     t.integer  "persona_id"
+    t.integer  "telefono_id"
     t.integer  "domicilio_id"
     t.string   "mail"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "contactos_emprendimientos", :id => false, :force => true do |t|
-    t.integer "emprendimiento_id"
-    t.integer "contacto_id"
-  end
-
-  create_table "contactos_telefonos", :id => false, :force => true do |t|
-    t.integer "contacto_id"
-    t.integer "telefono_id"
+  create_table "documentos", :force => true do |t|
+    t.string   "nombre"
+    t.string   "abreviatura"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "domicilios", :force => true do |t|
@@ -48,100 +55,41 @@ ActiveRecord::Schema.define(:version => 20110719223810) do
     t.integer  "numero"
     t.integer  "piso"
     t.string   "departamento"
-    t.string   "entreCalles"
+    t.string   "observacion"
     t.integer  "barrio_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "emprendedores", :force => true do |t|
-    t.integer  "usuario_id"
-    t.integer  "tipoDocumento_id"
-    t.string   "nro_documento"
-    t.integer  "domicilio_id"
-    t.integer  "nivelEstudio_id"
-    t.boolean  "estudio_completo"
-    t.integer  "hijos"
-    t.integer  "planSocial_id"
-    t.datetime "fecha_desde_plan_social"
-    t.datetime "fecha_hasta_plan_social"
-    t.boolean  "actividad_labotal_adicional"
-    t.boolean  "actividad_labotal_adicional_independiente"
-    t.boolean  "actividad_labotal_adicional_relacionada_al_emprendimiento"
-    t.integer  "actividad_labotal_adicional_horas_semanales"
-    t.boolean  "actividad_labotal_adicional_unico_ingreso"
-    t.integer  "emprendimiento_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "emprendedores_telefonos", :id => false, :force => true do |t|
-    t.integer "emprededor_id"
-    t.integer "telefono_id"
-  end
-
-  create_table "emprendimientos_telefonos", :id => false, :force => true do |t|
-    t.integer "emprendimiento_id"
-    t.integer "telefono_id"
-  end
-
   create_table "estados", :force => true do |t|
     t.string   "nombre"
-    t.text     "descripcion"
+    t.string   "descripcion"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "eventos", :force => true do |t|
+  create_table "estudios", :force => true do |t|
     t.string   "nombre"
-    t.integer  "tipoEvento_id"
-    t.integer  "domicilio_id"
-    t.text     "descripcion",                :limit => 255
-    t.datetime "fecha_hora_de_inicio"
-    t.datetime "fecha_hora_de_finalizacion"
-    t.integer  "institucion_id"
-    t.boolean  "publicado"
-    t.datetime "fecha_de_publicacion"
-    t.string   "titulo"
-    t.datetime "fechaDeInicio"
-    t.datetime "fechaDeFinalizacion"
-    t.text     "lugar"
+    t.string   "descripcion"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "eventos_instuciones", :id => false, :force => true do |t|
-    t.integer "evento_id"
-    t.integer "institucion_id"
   end
 
   create_table "instituciones", :force => true do |t|
     t.string   "nombre"
-    t.text     "descripcion"
+    t.string   "descripcion"
+    t.integer  "telefono_id"
     t.integer  "domicilio_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "instituciones_usuarios", :id => false, :force => true do |t|
-    t.integer "institucion_id"
-    t.integer "usuario_id"
-  end
-
-  create_table "niveles_estudio", :force => true do |t|
-    t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "noticias", :force => true do |t|
     t.string   "titulo"
+    t.text     "texto"
     t.string   "autor"
-    t.text     "texto",             :limit => 255
-    t.datetime "fecha_publicacion"
-    t.boolean  "publicada"
     t.datetime "fecha"
-    t.boolean  "publicado"
+    t.boolean  "publicada"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -154,71 +102,44 @@ ActiveRecord::Schema.define(:version => 20110719223810) do
     t.datetime "updated_at"
   end
 
-  create_table "planes_sociales", :force => true do |t|
-    t.string   "nombre"
-    t.text     "descripcion"
-    t.integer  "institucion_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "roles", :force => true do |t|
     t.string   "nombre"
-    t.text     "descripcion"
+    t.string   "descripcion"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "rubros", :force => true do |t|
     t.string   "nombre"
-    t.text     "descripcion"
+    t.string   "descripcion"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "sesiones", :force => true do |t|
-    t.string   "sesion_id",  :null => false
+  create_table "sessions", :force => true do |t|
+    t.string   "session_id", :null => false
     t.text     "data"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "sesiones", ["sesion_id"], :name => "index_sesiones_on_sesion_id"
-  add_index "sesiones", ["updated_at"], :name => "index_sesiones_on_updated_at"
+  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "telefonos", :force => true do |t|
-    t.string   "numero"
-    t.integer  "tipo_telefono_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "tipos_documentos", :force => true do |t|
-    t.string   "abreviatura"
-    t.text     "descripcion"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "tipos_eventos", :force => true do |t|
-    t.string   "nombre"
-    t.text     "descripcion"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "tipos_telefonos", :force => true do |t|
-    t.string   "nombre"
+    t.string   "fijo"
+    t.string   "celular"
+    t.string   "mensajes"
+    t.string   "observaciones"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "usuarios", :force => true do |t|
-    t.integer  "persona_id"
-    t.integer  "rol_id"
     t.string   "usuario"
     t.string   "password_cifrada"
-    t.string   "email"
+    t.string   "mail"
+    t.integer  "rol_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

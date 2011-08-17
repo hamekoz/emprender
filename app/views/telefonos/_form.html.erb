@@ -1,0 +1,33 @@
+<%= form_for(@telefono) do |f| %>
+  <% if @telefono.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@telefono.errors.count, "error") %> <%= t('errores.guardar.m')%> telefono:</h2>
+
+      <ul>
+      <% @telefono.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fijo %><br />
+    <%= f.text_field :fijo %>
+  </div>
+  <div class="field">
+    <%= f.label :celular %><br />
+    <%= f.text_field :celular %>
+  </div>
+  <div class="field">
+    <%= f.label :mensajes %><br />
+    <%= f.text_field :mensajes %>
+  </div>
+  <div class="field">
+    <%= f.label :observaciones %><br />
+    <%= f.text_field :observaciones %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

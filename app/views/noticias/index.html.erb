@@ -1,11 +1,12 @@
-<h1>Listado de noticias</h1>
+<h1>Listando noticias</h1>
 
 <table>
   <tr>
     <th>Titulo</th>
-    <th>Fecha</th>
     <th>Texto</th>
-    <th>Publicado</th>
+    <th>Autor</th>
+    <th>Fecha</th>
+    <th>Publicada</th>
     <th colspan="3" rowspan="1">
       <%= boton_agregar new_noticia_path %>
     </th>
@@ -14,12 +15,15 @@
 <% @noticias.each do |noticia| %>
   <tr>
     <td><%= noticia.titulo %></td>
-    <td><%= noticia.fecha %></td>
     <td><%= noticia.texto %></td>
-    <td><%= noticia.publicado %></td>
+    <td><%= noticia.autor %></td>
+    <td><%= noticia.fecha %></td>
+    <td><%= noticia.publicada %></td>
     <td><%= boton_mostrar noticia %></td>
     <td><%= boton_editar edit_noticia_path(noticia) %></td>
     <td><%= boton_eliminar noticia %></td>
   </tr>
 <% end %>
 </table>
+
+<br />

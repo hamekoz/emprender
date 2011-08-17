@@ -3,7 +3,11 @@
 one:
   nombre: MyString
   descripcion: MyString
+  telefono: 
+  domicilio: 
 
 two:
   nombre: MyString
   descripcion: MyString
+  telefono: 
+  domicilio: 

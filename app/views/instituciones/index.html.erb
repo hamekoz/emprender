@@ -1,8 +1,11 @@
-<h1>Listado de instituciones</h1>
+<h1>Listando instituciones</h1>
 
 <table>
   <tr>
-    <th>Institucion</th>
+    <th>Nombre</th>
+    <th>Descripcion</th>
+    <th>Telefono</th>
+    <th>Domicilio</th>
     <th colspan="3" rowspan="1">
       <%= boton_agregar new_institucion_path %>
     </th>
@@ -11,9 +14,14 @@
 <% @instituciones.each do |institucion| %>
   <tr>
     <td><%= institucion.nombre %></td>
-    <td class="accion"><%= boton_mostrar institucion %></td>
-    <td class="accion"><%= boton_editar edit_institucion_path(institucion) %></td>
-    <td class="accion"><%= boton_eliminar institucion %></td>
+    <td><%= institucion.descripcion %></td>
+    <td><%= institucion.telefono %></td>
+    <td><%= institucion.domicilio %></td>
+    <td><%= boton_mostrar institucion %></td>
+    <td><%= boton_editar edit_institucion_path(institucion) %></td>
+    <td><%= boton_eliminar institucion %></td>
   </tr>
 <% end %>
 </table>
+
+<br />

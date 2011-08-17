@@ -1,0 +1,27 @@
+<h1>Listando telefonos</h1>
+
+<table>
+  <tr>
+    <th>Fijo</th>
+    <th>Celular</th>
+    <th>Mensajes</th>
+    <th>Observaciones</th>
+    <th colspan="3" rowspan="1">
+      <%= boton_agregar new_telefono_path %>
+    </th>
+  </tr>
+
+<% @telefonos.each do |telefono| %>
+  <tr>
+    <td><%= telefono.fijo %></td>
+    <td><%= telefono.celular %></td>
+    <td><%= telefono.mensajes %></td>
+    <td><%= telefono.observaciones %></td>
+    <td><%= boton_mostrar telefono %></td>
+    <td><%= boton_editar edit_telefono_path(telefono) %></td>
+    <td><%= boton_eliminar telefono %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

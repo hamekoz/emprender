@@ -1,9 +1,10 @@
-<h1>Listado de usuarios</h1>
+<h1>Listando usuarios</h1>
 
 <table>
   <tr>
     <th>Usuario</th>
-    <th>Correo electronico</th>
+    <th>Password</th>
+    <th>Mail</th>
     <th>Rol</th>
     <th colspan="3" rowspan="1">
       <%= boton_agregar new_usuario_path %>
@@ -12,12 +13,15 @@
 
 <% @usuarios.each do |usuario| %>
   <tr>
-    <td><%= usuario.nombre %></td>
-    <td><%= usuario.email %></td>
-    <td><%= usuario.rol.nombre %></td>
+    <td><%= usuario.usuario %></td>
+    <td><%= usuario.password %></td>
+    <td><%= usuario.mail %></td>
+    <td><%= usuario.rol %></td>
     <td><%= boton_mostrar usuario %></td>
     <td><%= boton_editar edit_usuario_path(usuario) %></td>
     <td><%= boton_eliminar usuario %></td>
   </tr>
 <% end %>
 </table>
+
+<br />

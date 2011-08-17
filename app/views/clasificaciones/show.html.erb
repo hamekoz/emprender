@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @clasificacion.nombre %>
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%= @clasificacion.descripcion %>
+</p>
+
+<p>
+  <b>Codigo:</b>
+  <%= @clasificacion.codigo %>
+</p>
+
+
+<%= boton_editar edit_clasificacion_path(@clasificacion) %> |
+<%= boton_volver clasificaciones_path %>

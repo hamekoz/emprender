@@ -1,9 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  numero: MyString
-  tipo_telefono_id: 1
+  fijo: MyString
+  celular: MyString
+  mensajes: MyString
+  observaciones: MyString
 
 two:
-  numero: MyString
-  tipo_telefono_id: 1
+  fijo: MyString
+  celular: MyString
+  mensajes: MyString
+  observaciones: MyString

@@ -3,11 +3,9 @@
 one:
   nombre: MyString
   apellido: MyString
-  email: MyString
-  usuario_id: 1
+  sexo: false
 
 two:
   nombre: MyString
   apellido: MyString
-  email: MyString
-  usuario_id: 2
+  sexo: false

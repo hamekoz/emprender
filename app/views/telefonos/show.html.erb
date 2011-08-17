@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Fijo:</b>
+  <%= @telefono.fijo %>
+</p>
+
+<p>
+  <b>Celular:</b>
+  <%= @telefono.celular %>
+</p>
+
+<p>
+  <b>Mensajes:</b>
+  <%= @telefono.mensajes %>
+</p>
+
+<p>
+  <b>Observaciones:</b>
+  <%= @telefono.observaciones %>
+</p>
+
+
+<%= boton_editar edit_telefono_path(@telefono) %> |
+<%= boton_volver telefonos_path %>

@@ -1,0 +1,27 @@
+<h1>Listando contactos</h1>
+
+<table>
+  <tr>
+    <th>Persona</th>
+    <th>Telefono</th>
+    <th>Domicilio</th>
+    <th>Mail</th>
+    <th colspan="3" rowspan="1">
+      <%= boton_agregar new_contacto_path %>
+    </th>
+  </tr>
+
+<% @contactos.each do |contacto| %>
+  <tr>
+    <td><%= contacto.persona %></td>
+    <td><%= contacto.telefono %></td>
+    <td><%= contacto.domicilio %></td>
+    <td><%= contacto.mail %></td>
+    <td><%= boton_mostrar contacto %></td>
+    <td><%= boton_editar edit_contacto_path(contacto) %></td>
+    <td><%= boton_eliminar contacto %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

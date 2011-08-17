@@ -1,5 +1,35 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <b>Calle:</b>
+  <%= @domicilio.calle %>
+</p>
 
-<%= link_to 'Edit', edit_domicilio_path(@domicilio) %> |
-<%= link_to 'Back', domicilios_path %>
+<p>
+  <b>Numero:</b>
+  <%= @domicilio.numero %>
+</p>
+
+<p>
+  <b>Piso:</b>
+  <%= @domicilio.piso %>
+</p>
+
+<p>
+  <b>Departamento:</b>
+  <%= @domicilio.departamento %>
+</p>
+
+<p>
+  <b>Observacion:</b>
+  <%= @domicilio.observacion %>
+</p>
+
+<p>
+  <b>Barrio:</b>
+  <%= @domicilio.barrio %>
+</p>
+
+
+<%= boton_editar edit_domicilio_path(@domicilio) %> |
+<%= boton_volver domicilios_path %>
