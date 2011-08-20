@@ -1,5 +1,5 @@
 class NoticiasController < ApplicationController
-  before_filter :autenticar
+  before_filter :autenticar, :except => :index
 
   # GET /noticias
   # GET /noticias.xml

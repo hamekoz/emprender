@@ -1,5 +1,5 @@
 Emprender::Application.routes.draw do
-  root :to => "personas#index"
+  root :to => "application#index"
 
   resources :noticias
 
