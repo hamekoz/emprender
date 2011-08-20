@@ -2,36 +2,27 @@
 <html>
 <head>
   <title>Emprender</title>
-  <%= stylesheet_link_tag :all %>
+  <%= stylesheet_link_tag 'emprender' %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-  <div id="contenedor">
-    <div id="cabecera">
-      <h1>Emprender</h1>
-      <div id="menu">
-      <% if autenticado? %>
-        <%= link_to "Personas", personas_path, :class => 'menu' %>
-        <%= link_to "Noticias", noticias_path, :class => 'menu' %>
-        <%= link_to "Instituciones", instituciones_path, :class => 'menu' %>
-        <%= link_to "Categorias", categorias_path, :class => 'menu' %>
-        <%= link_to "Estados", estados_path, :class => 'menu' %>
-        <%= link_to "Rubros", rubros_path, :class => 'menu' %>
-        <div id="usuario"> <%= @usuario_actual.usuario %></div>
-        <%= link_to "Cerrar Sesion", logout_path, :class => 'menu' %>
-      <% else %>
-        <%= link_to "Iniciar Sesion", login_path %>
-      <% end %>
-      </div>
-    </div>
-    <div id="principal">
-      <div id="cuerpo">
-        <%= yield %>
-      </div>
-    </div>
-    <div id="pie">
-    </div>
+  <header>
+  <% if autenticado? %>
+    <%= link_to "Personas", personas_path, :class => 'menu' %>
+    <%= link_to "Noticias", noticias_path, :class => 'menu' %>
+    <%= link_to "Instituciones", instituciones_path, :class => 'menu' %>
+    <%= link_to "Categorias", categorias_path, :class => 'menu' %>
+    <%= link_to "Estados", estados_path, :class => 'menu' %>
+    <%= link_to "Rubros", rubros_path, :class => 'menu' %>
+    <div id="usuario"> <%= @usuario_actual.usuario %></div>
+    <%= link_to "Cerrar Sesion", logout_path, :class => 'menu' %>
+  <% else %>
+    <%= link_to "Iniciar Sesion", login_path %>
+  <% end %>
+  </header>
+  <div id="principal">
+    <%= yield %>
   </div>
 </body>
 </html>

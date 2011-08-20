@@ -1,13 +1,7 @@
-<div id="wrapper" class="page-width">
-  <div id="login-box">
-    <%= form_tag session_path do %>
-      <dl>
-        <dt><label for="usuario">Usuario</label></dt>
-        <dd><%= text_field_tag :usuario, "", :class => "email required" %></dd>
-        <dt><label>Contraseña</label></dt>
-        <dd><%= password_field_tag :password, :class => "required", :id => "password" %></dd>
-        <%= submit_tag "Ingresar", :class => "flatbutton green" %>
-      </dl>
-    <% end %>
-  </div>
-</div>
+<%= form_tag session_path do %>
+    <label for="usuario">Usuario</label>
+    <%= text_field_tag :usuario %>
+    <label>Contraseña</label>
+    <%= password_field_tag :password %>
+    <%= submit_tag "Ingresar" %>
+<% end %>
