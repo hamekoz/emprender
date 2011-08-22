@@ -1,9 +1,18 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  nombre: MyString
-  descripcion: MyString
+uno:
+  nombre: Administrador
+  descripcion: Administrador del sitio
 
-two:
-  nombre: MyString
-  descripcion: MyString
+dos:
+  nombre: emprendedor
+  descripcion: 1234
+
+tres:
+  nombre: 
+  descripcion: Institucion invitada
+
+cuatro:
+  nombre:@!"#$"#%
+  descripcion: visitante
+  otro_campo:1234

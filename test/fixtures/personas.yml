@@ -1,11 +1,22 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  nombre: MyString
-  apellido: MyString
-  sexo: false
+uno:
+  nombre: Juan 
+  apellido: Perez
+  sexo: masculino
 
-two:
-  nombre: MyString
-  apellido: MyString
-  sexo: false
+dos:
+  nombre: Maria
+  apellido: 
+  sexo: femenino
+
+tres:
+  nombre: 1234
+  apellido: ¬\^`^
+  sexo:1234
+
+cuatro:
+  nombre: 
+  apellido: Gutierrez
+  sexo:@
+  ubicacion:1234

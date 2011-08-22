@@ -1,9 +1,21 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
+uno:
   nombre: MyString
   descripcion: MyString
 
-two:
+dos:
   nombre: MyString
   descripcion: MyString
+
+tres:
+  nombre: 
+  descripcion: descripcion
+
+cuatro
+  nombre: nombre
+  descripcion: 
+
+cinco
+  nombre:|*!$%
+  descripcion:"#$%>--

@@ -1,17 +1,27 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  calle: MyString
-  numero: 1
-  piso: 1
-  departamento: MyString
-  observacion: MyString
+uno:
+  calle: Colon
+  numero: abcd
+  piso: 123
+  departamento: c
+  observacion: Mitad de cuadra
   barrio: 
 
-two:
-  calle: MyString
-  numero: 1
-  piso: 1
-  departamento: MyString
-  observacion: MyString
-  barrio: 
+dos:
+  calle: 
+  numero: 12
+  piso: 3
+  departamento: g
+  observacion: 
+  barrio: Los pinares
+
+tres:
+  calle: luro
+  numero:
+  piso:palabras en vez de números
+  departamento:4
+  observacion:#$%&/()=?
+  barrio:12345546
+
+

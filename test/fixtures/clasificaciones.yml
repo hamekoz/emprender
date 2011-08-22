@@ -9,3 +9,28 @@ two:
   nombre: MyString
   descripcion: MyString
   codigo: MyString
+
+tres:
+  nombre: 
+  descripcion: descripcion
+  codigo: codigo
+
+cuatro
+  nombre: nombre
+  descripcion:
+  codigo:codigo 
+
+cinco
+  nombre:|*!$%
+  descripcion:"#$%>--
+  codigo:?=\
+
+seis:
+  nombre:nombre
+  descripcion:descripcion
+  codigo:
+
+siete:
+  nombre:nombremuylargoqueutilizagrancantidaddecaracteres
+  descripcion:descripcionmuylargaqueutilizagrancantidaddecaracteres
+  codigo:codigomuylargoqueutilizagrancantidaddecaracteresyposiblementesupereellimitepermitido

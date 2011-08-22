@@ -1,9 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
+uno:
   nombre: MyString
   abreviatura: MyString
 
-two:
-  nombre: MyString
-  abreviatura: MyString
+dos:
+  nombre: cadena muy larga como para que pueda ser incluida en un tipo de string normal puesto que contiene muchos caracteres
+  abreviatura: 
+
+tres:
+  nombre:
+  abreviatura:

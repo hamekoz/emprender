@@ -1,15 +1,36 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  titulo: MyString
-  texto: MyText
-  autor: MyString
-  fecha: 2011-08-15 20:31:36
+uno:
+  titulo: feria de emprendedores
+  texto: feria de emprendedores en centro civico
+  autor: comunidad de emprendedores marplatense
+  fecha: 2011-08-15
   publicada: false
 
-two:
-  titulo: MyString
-  texto: MyText
-  autor: MyString
-  fecha: 2011-08-15 20:31:36
-  publicada: false
+dos:
+  titulo: 1 congreso nacional de emprendedores
+  texto: congreso a nivel nacional
+  autor: gobierno nacional
+  fecha: 
+  publicada: true
+
+tres:
+  titulo: 123456
+  texto: 1234
+  autor: autor con un nombre suficientemente largo como para no entrar en un tipo de cadena común lo que deberia producir error o al menos eso es lo que esperamos pues la presente cadena supera ampliamente los 255 caracteres que componen el tipo cadena de texto
+  fecha: @@@@@@@@
+  publicada: 1234
+
+cuatro:
+  titulo:   
+  texto:01:33 p.m. 22/08/2011
+  autor: 
+  fecha: abcdefghijklimnñopqrstuvwxyz
+  publicada:
+
+cinco:
+  titulo: ---------
+  texto:
+  autor:
+  
+

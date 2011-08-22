@@ -1,13 +1,28 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  nombre: MyString
-  descripcion: MyString
-  telefono: 
-  domicilio: 
+uno:
+  nombre: Camara provincial del trabajo
+  descripcion: organizacion gubernamental
+  telefono: 34343434343
+  domicilio: Libertad 2020
 
-two:
-  nombre: MyString
-  descripcion: MyString
-  telefono: 
-  domicilio: 
+dos:
+  nombre: 1234
+  descripcion: institucion desconocida
+  telefono: 23454566	
+  domicilio: @@@@@
+
+tres:
+  nombre:
+  descripcion: institución de tipo privada
+  telefono: abcde
+  domicilio:
+
+cuatro
+  nombre:CENASA
+  descripcion: institucion nacional
+  telefono: 123456
+  domicilio: Pavon 1416
+  otro campo: campo extra erroneo
+
+

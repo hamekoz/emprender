@@ -1,13 +1,27 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
+uno:
   persona: 
   telefono: 
   domicilio: 
   mail: MyString
 
-two:
-  persona: 
-  telefono: 
+dos:
+  persona:jose 
+  telefono:4566565abcd 
+  domicilio: luro 2020
+  mail: asdf_ 34
+
+tres:
+  persona:juan 
+  telefono:abcdefg 
   domicilio: 
-  mail: MyString
+  mail: asdf@yahoo.com.ar
+
+
+cuatro:
+  persona:jose_perez 
+  telefono:4566565 
+  domicilio: luro 2020
+  mail:
+

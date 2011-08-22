@@ -1,9 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  nombre: MyString
-  descripcion: MyString
+uno:
+  nombre: activo
+  descripcion: estado activo
 
-two:
-  nombre: MyString
-  descripcion: MyString
+dos:
+  nombre: 
+  descripcion: estado inactivo
+
+tres:
+  nombre: sin autorizar
+  descripcion:

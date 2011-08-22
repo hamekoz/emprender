@@ -1,13 +1,27 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  usuario: MyString
-  password: MyString
-  mail: MyString
-  rol: 
+uno:
+  usuario: pepemdq
+  password: 1234
+  mail: pepe@hotmail.com
+  rol: emprendedor asociado
 
-two:
-  usuario: MyString
-  password: MyString
-  mail: MyString
-  rol: 
+dos:
+  usuario: josemdq
+  password: °!"#$$%/)_
+  mail: @
+  rol: titular emprendimiento
+
+tres:
+
+cuatro:
+  usuario: maria
+  password:
+  mail: maria@hot
+  rol:
+
+cinco:
+  usuario:maria@yahoo.com.ar
+  password:mariaabc
+  mail:ana maria
+  rol:12314

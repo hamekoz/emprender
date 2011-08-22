@@ -1,9 +1,18 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  nombre: MyString
-  descripcion: MyString
+uno:
+  nombre: jardineria
+  descripcion: jardineria y horticultura
 
-two:
-  nombre: MyString
-  descripcion: MyString
+dos:
+  nombre: reposteria
+  descripcion: reposteria y otros articulos de cocina dulce con inclusión de desayunos a domicilio, postres, factura, helados,tortas de varios tipos: cumpleaños, casamientos, fiestas de quince, aniversarios, bautismos, comuniones y otros tipos
+
+tres
+  nombre: 
+  descripcion: artes en madera y otros materiales
+  observaciones:
+
+cuatro 
+  nombre:
+  descripcion:

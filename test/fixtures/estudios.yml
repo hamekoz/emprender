@@ -1,9 +1,14 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  nombre: MyString
-  descripcion: MyString
+uno:
+  nombre: Primarios
+  descripcion: estudios primarios completos
 
-two:
-  nombre: MyString
-  descripcion: MyString
+dos:
+  nombre: secundarios
+  descripcion: 
+
+tres:
+  nombre: 
+  descripcion: estudios terciarios
+  otro campo: campo erroneo

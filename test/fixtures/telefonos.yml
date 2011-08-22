@@ -1,13 +1,32 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  fijo: MyString
-  celular: MyString
-  mensajes: MyString
-  observaciones: MyString
+uno:
+  fijo: 02234747777
+  celular: 0223156010101
+  mensajes: 02234747777
+  observaciones: de 10 a 14 hs.
 
-two:
-  fijo: MyString
-  celular: MyString
-  mensajes: MyString
-  observaciones: MyString
+dos:
+  fijo: 
+  celular: 
+  mensajes: 
+  observaciones: 
+
+tres:
+  fijo: 02234747777
+  fijo: 02234747777
+  celular: 0223156010101
+  mensajes: 02234747777
+  observaciones: de 10 a 14 hs.
+
+cuatro:
+  fijo: 02234747777@yahoo.com
+  celular:  
+  mensajes:
+  observaciones:!"##$%&/()=?=¡°
+
+cinco:
+  fijo: palabras en vez de numeros
+  celular: caracteres
+  mensajes: caracteres
+  observaciones: 
