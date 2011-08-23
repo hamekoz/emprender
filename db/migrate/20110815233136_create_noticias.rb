@@ -6,10 +6,6 @@ class CreateNoticias < ActiveRecord::Migration
       t.string :autor
       t.datetime :fecha
       t.boolean :publicada
-      t.string :titulo
-      t.datatime :fecha
-      t.string :texto
-      t.boolean :publicado
 
       t.timestamps
     end
