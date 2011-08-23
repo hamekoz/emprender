@@ -6,13 +6,10 @@ class CreateNoticias < ActiveRecord::Migration
       t.string :autor
       t.datetime :fecha
       t.boolean :publicada
-<<<<<<< Updated upstream
-=======
       t.string :titulo
       t.datatime :fecha
       t.string :texto
       t.boolean :publicado
->>>>>>> Stashed changes
 
       t.timestamps
     end
