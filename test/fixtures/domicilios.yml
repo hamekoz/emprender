@@ -6,7 +6,7 @@ Normal:
   piso: 3
   departamento: c
   observacion: Mitad de cuadra
-  barrio: Centro
+  barrio: barrios[:Normal]
 
 Normal2:
   calle: Luro 
