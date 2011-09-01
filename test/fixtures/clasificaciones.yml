@@ -1,36 +1,36 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  nombre: MyString
-  descripcion: MyString
-  codigo: MyString
+Normal:
+  nombre: Micro emprendimientos
+  descripcion: enprendimientos de tipo poqueños
+  codigo: Codigo1
 
-two:
-  nombre: MyString
-  descripcion: MyString
-  codigo: MyString
+Normal2:
+  nombre: Emprendimientos unipersonales
+  descripcion: Emprendimientos de una sola persona
+  codigo: Codigo2
 
-tres:
+SinNombre:
   nombre: 
-  descripcion: descripcion
-  codigo: codigo
+  descripcion: Clasificación sin nombre
+  codigo: codigo3
 
-cuatro
-  nombre: nombre
+SinDescripcion:
+  nombre: Clasificación sin desripción
   descripcion:
-  codigo:codigo 
+  codigo:codigo4 
 
-cinco
+CaracteresRaros:
   nombre:|*!$%
   descripcion:"#$%>--
   codigo:?=\
 
-seis:
+SinCodigo:
   nombre:nombre
   descripcion:descripcion
   codigo:
 
-siete:
-  nombre:nombremuylargoqueutilizagrancantidaddecaracteres
-  descripcion:descripcionmuylargaqueutilizagrancantidaddecaracteres
-  codigo:codigomuylargoqueutilizagrancantidaddecaracteresyposiblementesupereellimitepermitido
+CadenasMuyLargas:
+  nombre:nombre muy largo que utiliza gran cantidad de caracteres
+  descripcion:descripcion muy larga que utiliza gran cantidad de caracteres
+  codigo:codigo muy largo que utiliza gran cantidad de caracteres y posiblemente supere el limite permitido

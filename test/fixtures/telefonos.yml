@@ -1,32 +1,25 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-uno:
+normal:
   fijo: 02234747777
   celular: 0223156010101
   mensajes: 02234747777
   observaciones: de 10 a 14 hs.
 
-dos:
+CamposVacios:
   fijo: 
   celular: 
   mensajes: 
   observaciones: 
 
-tres:
-  fijo: 02234747777
-  fijo: 02234747777
-  celular: 0223156010101
-  mensajes: 02234747777
-  observaciones: de 10 a 14 hs.
+normal2:
+  fijo: 4740000
+  celular: 156201202
+  mensajes: 4740102
+  observaciones: 
 
-cuatro:
+FijoConSimbolos:
   fijo: 02234747777@yahoo.com
   celular:  
   mensajes:
-  observaciones:!"##$%&/()=?=¡°
-
-cinco:
-  fijo: palabras en vez de numeros
-  celular: caracteres
-  mensajes: caracteres
-  observaciones: 
+  observaciones:

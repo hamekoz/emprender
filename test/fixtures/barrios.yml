@@ -1,21 +1,20 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-uno:
-  nombre: MyString
-  descripcion: MyString
+Normal:
+  nombre: Belgrano
+  descripcion: Periferico
+Normal2:
+  nombre: La Perla
+  descripcion: Barrio céntrico
 
-dos:
-  nombre: MyString
-  descripcion: MyString
-
-tres:
+SinNombre:
   nombre: 
-  descripcion: descripcion
+  descripcion: barrio residencial
 
-cuatro
+SinDescripcion:
   nombre: nombre
   descripcion: 
 
-cinco
+CaracteresRaros:
   nombre:|*!$%
-  descripcion:"#$%>--
+  descripcion:"#$%>--

@@ -1,18 +1,21 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-uno:
+Normal:
   nombre: Administrador
   descripcion: Administrador del sitio
+  usuarios: usuarios[:uno]
 
-dos:
+Normal2:
   nombre: emprendedor
   descripcion: 1234
+  usuarios: usuarios[:uno]
 
-tres:
+SinNombre:
   nombre: 
   descripcion: Institucion invitada
+  usuarios: usuarios[:uno]
 
-cuatro:
+NombreConSimbolos
   nombre:@!"#$"#%
   descripcion: visitante
-  otro_campo:1234
+  usuarios: usuarios[:uno]

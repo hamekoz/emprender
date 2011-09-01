@@ -2,7 +2,11 @@ require 'test_helper'
 
 class NoticiaTest < ActiveSupport::TestCase
   # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  test "deberia crear noticia" do
+    noticia = Noticia.new
+    
+    noticia = noticias[:uno]
+  
+    assert noticia.save
   end
 end

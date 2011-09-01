@@ -1,22 +1,21 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-uno:
+Normal:
   nombre: Juan 
   apellido: Perez
   sexo: masculino
 
-dos:
+SinApellido:
   nombre: Maria
   apellido: 
   sexo: femenino
 
-tres:
+NombreConNumeros:
   nombre: 1234
-  apellido: ¬\^`^
-  sexo:1234
+  apellido: Santulli 
+  sexo:femenino
 
-cuatro:
-  nombre: 
-  apellido: Gutierrez
-  sexo:@
-  ubicacion:1234
+ApellidoConSimbolos:
+  nombre: Mario 
+  apellido: ¬\^`^
+  sexo:masculino

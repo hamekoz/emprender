@@ -1,13 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-uno:
-  nombre: MyString
-  abreviatura: MyString
+Normal:
+  nombre: Documento Nacional de Identidad
+  abreviatura: DNI
 
-dos:
+NombreMuyLargo:
   nombre: cadena muy larga como para que pueda ser incluida en un tipo de string normal puesto que contiene muchos caracteres
-  abreviatura: 
+  abreviatura: CBU
 
-tres:
+CamposVacios:
   nombre:
   abreviatura:

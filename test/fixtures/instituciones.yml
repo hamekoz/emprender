@@ -1,28 +1,27 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-uno:
+Normal:
   nombre: Camara provincial del trabajo
   descripcion: organizacion gubernamental
   telefono: 34343434343
   domicilio: Libertad 2020
 
-dos:
-  nombre: 1234
+TelefonoConLetras:
+  nombre: Asociación Vecinal de emprendedores
   descripcion: institucion desconocida
-  telefono: 23454566	
-  domicilio: @@@@@
+  telefono: palabras	
+  domicilio: Avenida Libertad 2010
 
-tres:
+SinNombre:
   nombre:
   descripcion: institución de tipo privada
-  telefono: abcde
-  domicilio:
+  telefono: 223 4752020
+  domicilio: Constitucion 1929
 
-cuatro
+SinDomicilio:
   nombre:CENASA
   descripcion: institucion nacional
   telefono: 123456
-  domicilio: Pavon 1416
-  otro campo: campo extra erroneo
+  domicilio:
 
 

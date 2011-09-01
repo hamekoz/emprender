@@ -1,14 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-uno:
+Normal:
   nombre: Primarios
   descripcion: estudios primarios completos
 
-dos:
+SinDescripcion:
   nombre: secundarios
   descripcion: 
 
-tres:
+SinNombre:
   nombre: 
   descripcion: estudios terciarios
-  otro campo: campo erroneo

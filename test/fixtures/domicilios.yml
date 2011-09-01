@@ -1,27 +1,27 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-uno:
+Normal:
   calle: Colon
-  numero: abcd
-  piso: 123
+  numero: 1234
+  piso: 3
   departamento: c
   observacion: Mitad de cuadra
-  barrio: 
+  barrio: Centro
 
-dos:
-  calle: 
-  numero: 12
-  piso: 3
+Normal2:
+  calle: Luro 
+  numero: 4321
+  piso: 4
   departamento: g
-  observacion: 
-  barrio: Los pinares
+  observacion: Torre 2
+  barrio: La Perla
 
-tres:
-  calle: luro
-  numero:
-  piso:palabras en vez de números
+PisoConLetras:
+  calle: Avenida Paso
+  numero:3456
+  piso:abcd
   departamento:4
-  observacion:#$%&/()=?
-  barrio:12345546
+  observacion:edificio antiguo
+  barrio:Grosellar
 
 

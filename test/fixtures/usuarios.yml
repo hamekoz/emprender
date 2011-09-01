@@ -1,27 +1,32 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-uno:
+Normal:
   usuario: pepemdq
   password: 1234
   mail: pepe@hotmail.com
   rol: emprendedor asociado
 
-dos:
+Normal2:
   usuario: josemdq
   password: °!"#$$%/)_
-  mail: @
+  mail:@
   rol: titular emprendimiento
 
-tres:
+SinUsuario:
+  usuario:
+  password:abcd1234
+  mail:lucasmdq@yahoo.com.ar
+  rol:titular emprendimiento
 
-cuatro:
+SinPassword
   usuario: maria
   password:
   mail: maria@hot
-  rol:
+  rol: emprendedor asociado
 
-cinco:
-  usuario:maria@yahoo.com.ar
-  password:mariaabc
-  mail:ana maria
-  rol:12314
+PasswordSimple:
+  usuario: panaderiaRaul
+  password:abc
+  mail: panaderiaraul@fibertel.com.ar
+  rol: titular emprendimiento
+  

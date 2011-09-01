@@ -1,27 +1,27 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-uno:
-  persona: 
-  telefono: 
-  domicilio: 
-  mail: MyString
+Normal:
+  persona:Juan Perez 
+  telefono: 0223 4606060
+  domicilio: Las Gruyas 2017
+  mail: juanperez@hotmail.com
 
-dos:
-  persona:jose 
-  telefono:4566565abcd 
-  domicilio: luro 2020
-  mail: asdf_ 34
+EmailSin@:
+  persona:Lucas Gonzalez 
+  telefono:0223 4566565 
+  domicilio: Luro 2020
+  mail: asdf_34
 
-tres:
-  persona:juan 
+TelefonoConLetras:
+  persona: Jose Guzman 
   telefono:abcdefg 
-  domicilio: 
+  domicilio: Rivadavia 1212 
   mail: asdf@yahoo.com.ar
 
 
-cuatro:
-  persona:jose_perez 
+SinEmail:
+  persona:Maria Acosta
   telefono:4566565 
-  domicilio: luro 2020
+  domicilio: Independencia 2010
   mail:
 

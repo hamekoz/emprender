@@ -6,12 +6,20 @@
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
-
 <body>
-  <div id>login</div>
+  <div id="sesion">
+  <% if autenticado? %>
+    <%= link_to "Cerrar Sesion", logout_path, :class => 'menu' %>
+  <% else %>
+    <%= link_to "Iniciar Sesion", login_path %>
+  <% end %>
+  </div>
+  <div id="menu">
+    <%= link_to "Inicio", root_path, :class => 'menu' %>
+    <%= link_to "Noticias", noticias_path, :class => 'menu' %>
+  </div>
+  <div id="contenedor">
   <header>
-  <%= link_to "Inicio", root_path, :class => 'menu' %>
-  <%= link_to "Noticias", noticias_path, :class => 'menu' %>
   <% if autenticado? %>
     <%= link_to "Personas", personas_path, :class => 'menu' %>
     <%= link_to "Instituciones", instituciones_path, :class => 'menu' %>
@@ -24,5 +32,6 @@
   <% end %>
   </header>
     <%= yield %>
+  </div>
 </body>
 </html>

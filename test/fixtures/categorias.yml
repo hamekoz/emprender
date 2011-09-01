@@ -1,21 +1,21 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-uno:
-  nombre: MyString
-  descripcion: MyString
+Normal:
+  nombre: Panaderias
+  descripcion: Rubro panificados
 
-dos:
-  nombre: MyString
-  descripcion: MyString
+Normal2:
+  nombre: Artesanías
+  descripcion: Rubro artesanías
 
-tres:
+SinNombre:
   nombre: 
-  descripcion: descripcion
+  descripcion: Rubro sin nombre
 
-cuatro
-  nombre: nombre
+SinDescripcion:
+  nombre: Nuevo Rubro
   descripcion: 
 
-cinco
+CaracteresRaros:
   nombre:|*!$%
   descripcon:"#$%>--

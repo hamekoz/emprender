@@ -1,36 +1,43 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-uno:
+Normal:
   titulo: feria de emprendedores
   texto: feria de emprendedores en centro civico
   autor: comunidad de emprendedores marplatense
   fecha: 2011-08-15
   publicada: false
 
-dos:
+SinFecha:
   titulo: 1 congreso nacional de emprendedores
   texto: congreso a nivel nacional
   autor: gobierno nacional
   fecha: 
   publicada: true
 
-tres:
+AutorMuyExtenso:
   titulo: 123456
   texto: 1234
   autor: autor con un nombre suficientemente largo como para no entrar en un tipo de cadena común lo que deberia producir error o al menos eso es lo que esperamos pues la presente cadena supera ampliamente los 255 caracteres que componen el tipo cadena de texto
-  fecha: @@@@@@@@
-  publicada: 1234
+  fecha: 01-05-2010
+  publicada: false
 
-cuatro:
+SinTitulo:
   titulo:   
   texto:01:33 p.m. 22/08/2011
-  autor: 
-  fecha: abcdefghijklimnñopqrstuvwxyz
-  publicada:
+  autor: Mesa del Plan Estrátegico
+  fecha: 12-02-2011
+  publicada:true
 
-cinco:
-  titulo: ---------
-  texto:
-  autor:
-  
+FechaIncorrecta:
+  titulo: Otorgación de créditos
+  texto: Primera instancia para el otorgamiento de créditos a emprendedores
+  autor: Dir. Plan estratégico
+  fecha:abcd
+  publicada:false
 
+PublicacionIncorrecta:
+  titulo: Feria provincial de emprendedores
+  texto: Feria de la provincia de buenos aires sobre emprendimientos micro
+  autor: Lic. Miguel Hernández de la Municipalidad
+  fecha: 17-06-2006
+  publica:1234
