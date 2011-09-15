@@ -1,7 +1,24 @@
-<%= form_tag session_path do %>
-    <label for="usuario">Usuario</label>
-    <%= text_field_tag :usuario %>
-    <label>Contraseña</label>
-    <%= password_field_tag :password %>
-    <%= submit_tag "Ingresar" %>
-<% end %>
+<div class="row">
+<div class="span8 columns offset4">
+  <%= form_tag session_path do %>
+    <fildset>
+      <div class="clearfix">
+        <label for="usuario">Usuario</label>
+        <div class="input">
+          <%= text_field_tag :usuario %>
+        </div>
+      </div>
+      <div class="clearfix">
+        <label for="password">Contraseña</label>
+        <div class="input">
+          <%= password_field_tag :password %>
+        </div>
+      </div>
+      <div class="actions">
+        <%= submit_tag "Ingresar", :class => "btn primary"%>
+        <button class="btn" type="reset">Cancel</button>
+      </div>
+    </fildset>
+  <% end %>
+</div>
+</div>

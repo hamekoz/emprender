@@ -1,5 +1,5 @@
 class CreateTelefonos < ActiveRecord::Migration
-  def self.up
+  def change
     create_table :telefonos do |t|
       t.string :fijo
       t.string :celular
@@ -8,9 +8,5 @@ class CreateTelefonos < ActiveRecord::Migration
 
       t.timestamps
     end
-  end
-
-  def self.down
-    drop_table :telefonos
   end
 end

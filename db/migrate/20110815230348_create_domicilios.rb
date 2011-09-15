@@ -1,5 +1,5 @@
 class CreateDomicilios < ActiveRecord::Migration
-  def self.up
+  def change
     create_table :domicilios do |t|
       t.string :calle
       t.integer :numero
@@ -10,9 +10,5 @@ class CreateDomicilios < ActiveRecord::Migration
 
       t.timestamps
     end
-  end
-
-  def self.down
-    drop_table :domicilios
   end
 end

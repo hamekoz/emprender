@@ -1,14 +1,10 @@
 class CreateEstados < ActiveRecord::Migration
-  def self.up
+  def change
     create_table :estados do |t|
       t.string :nombre
       t.string :descripcion
 
       t.timestamps
     end
-  end
-
-  def self.down
-    drop_table :estados
   end
 end

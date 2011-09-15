@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def create
     if usuario = Usuario.autenticar(params[:usuario], params[:password])
       session[:usuario_id] = usuario.id
-      redirect_to personas_path, :notice => "Bienvenido"
+      redirect_to root_path, :notice => "Bienvenido"
     else
       flash.now[:alert] = "Usuario o Contrase&ntilde;a invalido, intente de nuevo"
       render :action => 'nueva'

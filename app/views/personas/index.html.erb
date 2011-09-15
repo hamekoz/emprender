@@ -1,6 +1,6 @@
-<h1>Listando personas</h1>
-
 <table>
+<caption>Listando personas</caption>
+<thead>
   <tr>
     <th>Nombre</th>
     <th>Apellido</th>
@@ -9,17 +9,26 @@
       <%= boton_agregar new_persona_path %>
     </th>
   </tr>
-
+</thead>
+<tbody>
+<% sombrear = true %>
 <% @personas.each do |persona| %>
+<% if sombrear %>
+  <tr class="odd">
+  <% sombrear = false %>
+<% else %>
   <tr>
+  <% sombrear = true %>
+<% end %>
     <td><%= persona.nombre %></td>
     <td><%= persona.apellido %></td>
     <td><%= persona.sexo %></td>
-    <td><%= boton_mostrar persona %></td>
-    <td><%= boton_editar edit_persona_path(persona) %></td>
-    <td><%= boton_eliminar persona %></td>
+    <td><%= boton_mostrar persona %>
+    <%= boton_editar edit_persona_path(persona) %>
+    <%= boton_eliminar persona %></td>
   </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />

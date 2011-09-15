@@ -1,5 +1,5 @@
 class CreateNoticias < ActiveRecord::Migration
-  def self.up
+  def change
     create_table :noticias do |t|
       t.string :titulo
       t.text :texto
@@ -9,9 +9,5 @@ class CreateNoticias < ActiveRecord::Migration
 
       t.timestamps
     end
-  end
-
-  def self.down
-    drop_table :noticias
   end
 end

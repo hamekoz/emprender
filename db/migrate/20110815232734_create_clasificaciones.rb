@@ -1,5 +1,5 @@
 class CreateClasificaciones < ActiveRecord::Migration
-  def self.up
+  def change
     create_table :clasificaciones do |t|
       t.string :nombre
       t.string :descripcion
@@ -7,9 +7,5 @@ class CreateClasificaciones < ActiveRecord::Migration
 
       t.timestamps
     end
-  end
-
-  def self.down
-    drop_table :clasificaciones
   end
 end

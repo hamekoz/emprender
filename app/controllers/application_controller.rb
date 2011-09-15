@@ -13,6 +13,8 @@ class ApplicationController < ActionController::Base
       @usuario_actual ||= Usuario.find_by_id(session[:usuario_id]) 
     end
 
+    helper_method :usuario_actual
+
     def autenticar
       autenticado? ? true : acceso_denegado
     end
@@ -22,7 +24,7 @@ class ApplicationController < ActionController::Base
     end
     
     helper_method :autenticado?
-
+    
     def acceso_denegado
       redirect_to login_path, :notice => "Acceso denegado" and return false
     end 

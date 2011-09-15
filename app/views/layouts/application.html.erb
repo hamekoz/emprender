@@ -1,37 +1,36 @@
 <!DOCTYPE html>
-<html>
 <head>
   <title>Emprender</title>
-  <%= stylesheet_link_tag 'emprender' %>
-  <%= javascript_include_tag :defaults %>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="author" content="Claudio Rodrigo Pereyra Diaz">
+  <meta name="author" content="Adriel Hernan Caramichos">
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+
+  <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-1.2.0.min.css">
+  <%= stylesheet_link_tag    "application" %>
+
   <%= csrf_meta_tag %>
 </head>
 <body>
-  <div id="sesion">
-  <% if autenticado? %>
-    <%= link_to "Cerrar Sesion", logout_path, :class => 'menu' %>
-  <% else %>
-    <%= link_to "Iniciar Sesion", login_path %>
-  <% end %>
-  </div>
-  <div id="menu">
-    <%= link_to "Inicio", root_path, :class => 'menu' %>
-    <%= link_to "Noticias", noticias_path, :class => 'menu' %>
-  </div>
-  <div id="contenedor">
   <header>
-  <% if autenticado? %>
-    <%= link_to "Personas", personas_path, :class => 'menu' %>
-    <%= link_to "Instituciones", instituciones_path, :class => 'menu' %>
-    <%= link_to "Categorias", categorias_path, :class => 'menu' %>
-    <%= link_to "Estados", estados_path, :class => 'menu' %>
-    <%= link_to "Rubros", rubros_path, :class => 'menu' %>
-    <%= link_to "Cerrar Sesion", logout_path, :class => 'menu' %>
-  <% else %>
-    <%= link_to "Iniciar Sesion", login_path %>
-  <% end %>
+    <%= render 'general/menu' %>
   </header>
+  <div id="main" role="main" class="container">
     <%= yield %>
   </div>
+  <footer id="footer">
+    <div class="container">
+      Creditos
+    </div>
+  </footer>
+
+  <!-- JavaScript at the bottom for fast page loading -->
+  <%= javascript_include_tag "application" %>
+
 </body>
 </html>

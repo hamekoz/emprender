@@ -1,5 +1,5 @@
 class CreateUsuarios < ActiveRecord::Migration
-  def self.up
+  def change
     create_table :usuarios do |t|
       t.string :usuario
       t.string :password_cifrada
@@ -8,9 +8,5 @@ class CreateUsuarios < ActiveRecord::Migration
 
       t.timestamps
     end
-  end
-
-  def self.down
-    drop_table :usuarios
   end
 end

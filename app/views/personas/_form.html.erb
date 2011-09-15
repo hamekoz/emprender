@@ -1,6 +1,6 @@
 <%= form_for(@persona) do |f| %>
   <% if @persona.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="alert-message error">
       <h2><%= pluralize(@persona.errors.count, "error") %> <%= t('errores.guardar.f')%> persona:</h2>
 
       <ul>
@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+<div class="inline">
   <div class="field">
     <%= f.label :nombre %><br />
     <%= f.text_field :nombre %>
@@ -26,4 +26,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+</div>
 <% end %>

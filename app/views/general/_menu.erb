@@ -1,0 +1,52 @@
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="container">
+      <h3><%= link_to "Emprender", root_path %></h3>
+      <ul class="nav">
+        <li class=""><%= link_to "Noticias", noticias_path %></li>
+        <li class=""><%= link_to "Eventos", root_path %></li>
+        <% if autenticado? %>
+        <li class=""><%= link_to "Empadronar", root_path %></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#">Gestion</a>
+          <ul class="dropdown-menu">
+            <li class=""><%= link_to "Noticias", noticias_path %></li>
+            <li class=""><%= link_to "Eventos", root_path %></li>
+            <li class="divider"></li>
+            <li class=""><%= link_to "Barrios", barrios_path %></li>
+            <li class=""><%= link_to "Categorias", categorias_path %></li>
+            <li class=""><%= link_to "Clasificaciones", clasificaciones_path %></li>
+            <li class=""><%= link_to "Estados", estados_path %></li>
+            <li class=""><%= link_to "Rubros", rubros_path %></li>
+            <li class="divider"></li>
+            <li class=""><%= link_to "Instituciones", instituciones_path %></li>
+            <li class=""><%= link_to "Usuarios", usuarios_path %></li>
+            <li class="divider"></li>
+            <li class=""><%= link_to "Personas", personas_path %></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#">Reportes</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Reporte 1</a></li>
+            <li><a href="#">Reporte 2</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Reporte 3</a></li>
+            <li><a href="#">Reporte 4</a></li>
+          </ul>
+        </li>
+        <% else %>
+        <li><%= link_to "Empadronarse", root_path %></li>
+        <% end %>
+      </ul>
+      <ul class="nav secondary-nav">
+        <% if autenticado? %>
+        <li><%= link_to usuario_actual.usuario, edit_usuario_path(usuario_actual) %></li>
+        <li><%= link_to "Cerrar Sesion", logout_path %></li>
+        <% else %>
+        <li><%= link_to "Iniciar Sesion", login_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div><!-- /topbar-inner -->
+</div>

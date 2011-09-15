@@ -1,0 +1,44 @@
+/*Layout*/
+
+html {
+  height: 93%;
+  width: 100%;
+  background: #becedb;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  margin: 0;
+  padding: 20px;
+  border: 2px solid white;
+ -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+         border-radius: 12px;
+ -webkit-box-shadow: inset 5px 5px 25px rgba(0,0,0,.5);
+    -moz-box-shadow: inset 5px 5px 25px rgba(0,0,0,.5);
+         box-shadow: inset 5px 5px 25px rgba(0,0,0,.5);
+  color: #333;
+  background-color: #eee;
+}
+
+footer{
+  width: 100%;
+  background: #ffff99;
+}
+
+article{
+  background: #ffff99;
+ -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+         border-radius: 6px;
+ -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+     -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+       -o-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  min-height: 300px;
+}
+
+.accion{
+  width: 70px;
+  text-align: center;
+}
