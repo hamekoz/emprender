@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <b>Nombre:</b>
   <%= @barrio.nombre %>
@@ -10,6 +8,7 @@
   <%= @barrio.descripcion %>
 </p>
 
-
-<%= boton_editar edit_barrio_path(@barrio) %> |
-<%= boton_volver barrios_path %>
+<div class="actions">
+  <%= boton_editar edit_barrio_path(@barrio) %> |
+  <%= boton_volver barrios_path %>
+</div>

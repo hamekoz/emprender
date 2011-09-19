@@ -5,6 +5,7 @@ class CreateUsuarios < ActiveRecord::Migration
       t.string :password_cifrada
       t.string :mail
       t.references :rol
+      t.references :persona
 
       t.timestamps
     end

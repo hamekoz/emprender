@@ -9,3 +9,13 @@
 body {
   padding-top: 60px;
 }
+
+#logo {
+    background: url("/assets/start-here.png") no-repeat scroll left transparent;
+    margin-left: 0;
+    padding-left: 36px;
+}
+
+table td.acciones {
+  width: 200px;
+}

@@ -27,7 +27,7 @@ class UsuariosController < ApplicationController
   # GET /usuarios/new.xml
   def new
     @usuario = Usuario.new
-
+    @usuario.persona = Persona.new
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @usuario }

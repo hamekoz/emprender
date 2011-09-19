@@ -11,27 +11,38 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="clearfix">
     <%= f.label :titulo %><br />
-    <%= f.text_field :titulo %>
+    <div class="input">
+      <%= f.text_field :titulo %>
+    </div>
   </div>
-  <div class="field">
+  <div class="clearfix">
     <%= f.label :texto %><br />
-    <%= f.text_area :texto %>
+    <div class="input">
+      <%= f.text_area :texto %>
+    </div>
   </div>
-  <div class="field">
+  <div class="clearfix">
     <%= f.label :autor %><br />
-    <%= f.text_field :autor %>
+    <div class="input">
+      <%= f.text_field :autor %>
+    </div>
   </div>
-  <div class="field">
+  <div class="clearfix">
     <%= f.label :fecha %><br />
-    <%= f.datetime_select :fecha %>
+    <div class="input">
+      <%= f.datetime_select :fecha %>
+    </div>
   </div>
-  <div class="field">
+  <div class="clearfix">
     <%= f.label :publicada %><br />
-    <%= f.check_box :publicada %>
+    <div class="input">
+      <%= f.check_box :publicada %>
+    </div>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => 'btn primary' %>
+    <%= boton_cancelar :back %>
   </div>
 <% end %>

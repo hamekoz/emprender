@@ -140,6 +140,7 @@ ActiveRecord::Schema.define(:version => 20110816000139) do
     t.string   "password_cifrada"
     t.string   "mail"
     t.integer  "rol_id"
+    t.integer  "persona_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

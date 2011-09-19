@@ -13,17 +13,11 @@ Emprender::Application.routes.draw do
 
   resources :contactos
 
-  resources :telefonos
-
-  resources :domicilios
-
   resources :usuarios
 
   resources :estados
 
   resources :barrios
-
-  resources :personas
 
   resources :roles
 
@@ -31,7 +25,7 @@ Emprender::Application.routes.draw do
 
   match '/login' => "sessions#create", :as => "login"
   match '/logout' => "sessions#destroy", :as => "logout"
-
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

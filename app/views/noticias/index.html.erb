@@ -1,21 +1,27 @@
-<% if autenticado? %>
-  <%= boton_agregar new_noticia_path %>
-<% end %>
-
-<% @noticias.each do |noticia| %>
-  <article>
-  <header><h2><%= noticia.titulo %></h2></header>
-  <section><%= noticia.texto %></section>
-  <footer>
-  Autor: <%= noticia.autor %><br>
-  Publicado el: <%= noticia.fecha %>
-  <%= noticia.publicada %>
-
-  <% if autenticado? %>
-    <%= boton_mostrar noticia %>
-    <%= boton_editar edit_noticia_path(noticia) %>
-    <%= boton_eliminar noticia %>
+<table class="zebra-striped">
+  <caption>Noticias</caption>
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Autor</th>
+      <th>Fecha</th>
+      <th>Publicada</th>
+      <th><%= boton_agregar new_noticia_path %></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @noticias.each do |noticia| %>
+    <tr>
+      <td><%= noticia.titulo %></td>
+      <td><%= noticia.autor %></td>
+      <td><%= noticia.fecha %></td>
+      <td><%= noticia.publicada %></td>
+      <td class="acciones">
+        <%= boton_mostrar noticia %>
+        <%= boton_editar edit_noticia_path(noticia) %>
+        <%= boton_eliminar noticia %>
+      </td>
+    </tr>
   <% end %>
-  </footer>
-  </article>
-<% end %>
+  </tbody>
+</table>

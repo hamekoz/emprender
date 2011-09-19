@@ -1,41 +1,36 @@
-<%= form_for(@domicilio) do |f| %>
-  <% if @domicilio.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@domicilio.errors.count, "error") %> <%= t('errores.guardar.m')%> domicilio:</h2>
-
-      <ul>
-      <% @domicilio.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :calle %><br />
+<div class="clearfix">
+    <%= f.label :calle %>
+  <div class="input">
     <%= f.text_field :calle %>
   </div>
-  <div class="field">
-    <%= f.label :numero %><br />
+</div>
+<div class="clearfix">
+    <%= f.label :numero %>
+  <div class="input">
     <%= f.text_field :numero %>
   </div>
-  <div class="field">
-    <%= f.label :piso %><br />
+</div>
+<div class="clearfix">
+    <%= f.label :piso %>
+  <div class="input">
     <%= f.text_field :piso %>
   </div>
-  <div class="field">
-    <%= f.label :departamento %><br />
+</div>
+<div class="clearfix">
+    <%= f.label :departamento %>
+  <div class="input">
     <%= f.text_field :departamento %>
   </div>
-  <div class="field">
-    <%= f.label :observacion %><br />
+</div>
+<div class="clearfix">
+    <%= f.label :observacion %>
+  <div class="input">
     <%= f.text_field :observacion %>
   </div>
-  <div class="field">
-    <%= f.label :barrio %><br />
+</div>
+<div class="clearfix">
+    <%= f.label :barrio %>
+  <div class="input">
     <%= f.text_field :barrio %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

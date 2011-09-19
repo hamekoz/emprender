@@ -1,9 +1,9 @@
 <div class="topbar">
   <div class="topbar-inner">
     <div class="container">
-      <h3><%= link_to "Emprender", root_path %></h3>
+      <h3><%= link_to "Emprender", root_path, :id => "logo" %></h3>
       <ul class="nav">
-        <li class=""><%= link_to "Noticias", noticias_path %></li>
+        <li class=""><%= link_to "Noticias", noticia_path(Noticia.first) %></li>
         <li class=""><%= link_to "Eventos", root_path %></li>
         <% if autenticado? %>
         <li class=""><%= link_to "Empadronar", root_path %></li>
@@ -21,8 +21,6 @@
             <li class="divider"></li>
             <li class=""><%= link_to "Instituciones", instituciones_path %></li>
             <li class=""><%= link_to "Usuarios", usuarios_path %></li>
-            <li class="divider"></li>
-            <li class=""><%= link_to "Personas", personas_path %></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -41,7 +39,7 @@
       </ul>
       <ul class="nav secondary-nav">
         <% if autenticado? %>
-        <li><%= link_to usuario_actual.usuario, edit_usuario_path(usuario_actual) %></li>
+        <li><%= link_to usuario_actual.usuario, usuario_path(usuario_actual) %></li>
         <li><%= link_to "Cerrar Sesion", logout_path %></li>
         <% else %>
         <li><%= link_to "Iniciar Sesion", login_path %></li>

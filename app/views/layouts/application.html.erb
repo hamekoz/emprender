@@ -21,6 +21,8 @@
     <%= render 'general/menu' %>
   </header>
   <div id="main" role="main" class="container">
+    <%= content_tag(:p, notice, :class => 'alert-message success') if notice.present? %>
+    <%= content_tag(:p, alert , :class => 'alert-message warning') if alert.present? %>
     <%= yield %>
   </div>
   <footer id="footer">

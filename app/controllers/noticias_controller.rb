@@ -1,5 +1,5 @@
 class NoticiasController < ApplicationController
-  before_filter :autenticar, :except => :index
+  before_filter :autenticar, :except => :show
 
   # GET /noticias
   # GET /noticias.xml
@@ -16,7 +16,7 @@ class NoticiasController < ApplicationController
   # GET /noticias/1.xml
   def show
     @noticia = Noticia.find(params[:id])
-
+    @noticias = Noticia.all
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @noticia }

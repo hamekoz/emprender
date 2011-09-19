@@ -1,0 +1,2 @@
+module GestionNoticiasHelper
+end

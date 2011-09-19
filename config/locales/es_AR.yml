@@ -222,6 +222,7 @@ es_AR:
     eliminar: "Eliminar"
     volver: "Volver"
     mostrar: "Mostrar"
+    cancelar: "Cancelar"
 
   titulo:
     editando: "Editando"

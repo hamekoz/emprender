@@ -11,23 +11,35 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :usuario %><br />
-    <%= f.text_field :usuario %>
+  <div class="clearfix">
+    <%= f.label :usuario %>
+    <div class="input">
+      <%= f.text_field :usuario %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.text_field :password %>
+  <div class="clearfix">
+    <%= f.label :password %>
+    <div class="input">
+      <%= f.password_field :password %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :mail %><br />
-    <%= f.text_field :mail %>
+  <div class="clearfix">
+    <%= f.label :mail %>
+    <div class="input">
+      <%= f.email_field :mail %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :rol %><br />
-    <%= f.text_field :rol %>
+  <div class="clearfix">
+    <%= f.label :rol %>
+    <div class="input">
+      <%= collection_select(:usuario, :rol_id, Rol.all, :id, :nombre) %>
+    </div>
   </div>
+  <%= f.fields_for :persona do |persona| %>
+    <%= render "personas/form", :f => persona %>
+  <% end %>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => 'btn primary' %>
+    <%= boton_cancelar :back %>
   </div>
 <% end %>
