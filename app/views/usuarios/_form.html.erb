@@ -11,6 +11,7 @@
     </div>
   <% end %>
 
+<fieldset>
   <div class="clearfix">
     <%= f.label :usuario %>
     <div class="input">
@@ -35,9 +36,13 @@
       <%= collection_select(:usuario, :rol_id, Rol.all, :id, :nombre) %>
     </div>
   </div>
+</fieldset>
+<fieldset>
+  <legend>Datos personales</legend>
   <%= f.fields_for :persona do |persona| %>
     <%= render "personas/form", :f => persona %>
   <% end %>
+</fieldset>
   <div class="actions">
     <%= f.submit :class => 'btn primary' %>
     <%= boton_cancelar :back %>

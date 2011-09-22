@@ -27,7 +27,9 @@ class InstitucionesController < ApplicationController
   # GET /instituciones/new.xml
   def new
     @institucion = Institucion.new
-
+    @institucion.telefono = Telefono.new
+    @institucion.domicilio = Domicilio.new
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @institucion }

@@ -1,21 +1,24 @@
-<h1>Listando rubros</h1>
+<h2>Rubros</h2>
+<table class="zebra-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th><%= boton_agregar new_rubro_path %></th>
+    </tr>
+  </thead>
 
-<table>
-  <tr>
-    <th>Nombre</th>
-    <th>Descripcion</th>
-    <th><%= boton_agregar new_rubro_path %></th>
-  </tr>
-
-<% @rubros.each do |rubro| %>
-  <tr>
-    <td><%= rubro.nombre %></td>
-    <td><%= rubro.descripcion %></td>
-    <td class="acciones">
-      <%= boton_mostrar rubro %>
-      <%= boton_editar edit_rubro_path(rubro) %>
-      <%= boton_eliminar rubro %>
-    </td>
-  </tr>
-<% end %>
+  <tbody>
+  <% @rubros.each do |rubro| %>
+    <tr>
+      <td><%= rubro.nombre %></td>
+      <td><%= rubro.descripcion %></td>
+      <td class="acciones">
+        <%= boton_mostrar rubro %>
+        <%= boton_editar edit_rubro_path(rubro) %>
+        <%= boton_eliminar rubro %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
 </table>

@@ -1,23 +1,24 @@
-<h1>Listando estados</h1>
+<h2>Estados</h2>
+<table class="zebra-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th><%= boton_agregar new_estado_path %></th>
+    </tr>
+  </thead>
 
-<table>
-  <tr>
-    <th>Nombre</th>
-    <th>Descripcion</th>
-    <th colspan="3" rowspan="1">
-      <%= boton_agregar new_estado_path %>
-    </th>
-  </tr>
-
-<% @estados.each do |estado| %>
-  <tr>
-    <td><%= estado.nombre %></td>
-    <td><%= estado.descripcion %></td>
-    <td><%= boton_mostrar estado %></td>
-    <td><%= boton_editar edit_estado_path(estado) %></td>
-    <td><%= boton_eliminar estado %></td>
-  </tr>
-<% end %>
+  <tbody>
+  <% @estados.each do |estado| %>
+    <tr>
+      <td><%= estado.nombre %></td>
+      <td><%= estado.descripcion %></td>
+      <td class="acciones">
+        <%= boton_mostrar estado %>
+        <%= boton_editar edit_estado_path(estado) %>
+        <%= boton_eliminar estado %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
 </table>
-
-<br />

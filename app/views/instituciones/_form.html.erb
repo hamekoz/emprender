@@ -11,23 +11,34 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nombre %><br />
-    <%= f.text_field :nombre %>
+<fieldset>
+  <div class="clearfix">
+    <%= f.label :nombre %>
+    <div class="input">
+      <%= f.text_field :nombre %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :descripcion %><br />
-    <%= f.text_field :descripcion %>
+  <div class="clearfix">
+    <%= f.label :descripcion %>
+    <div class="input">
+      <%= f.text_field :descripcion %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :telefono %><br />
-    <%= f.text_field :telefono %>
-  </div>
-  <div class="field">
-    <%= f.label :domicilio %><br />
-    <%= f.text_field :domicilio %>
-  </div>
+</fieldset>
+<fieldset>
+  <legend>Telefonos</legend>
+  <%= f.fields_for :telefono do |telefono| %>
+    <%= render "telefonos/form", :f => telefono %>
+  <% end %>
+</fieldset>
+<fieldset>
+  <legend>Domicilio</legend>
+  <%= f.fields_for :domicilio do |domicilio| %>
+    <%= render "domicilios/form", :f => domicilio %>
+  <% end %>
+</fieldset>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit  :class => 'btn primary' %>
+    <%= boton_cancelar :back %>
   </div>
 <% end %>

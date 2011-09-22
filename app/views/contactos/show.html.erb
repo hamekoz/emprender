@@ -18,6 +18,7 @@
   <%= @contacto.mail %>
 </p>
 
-
-<%= boton_editar edit_contacto_path(@contacto) %> |
-<%= boton_volver contactos_path %>
+<div class="actions">
+  <%= boton_editar edit_contacto_path(@contacto) %>
+  <%= boton_volver contacto_path %>
+</div>

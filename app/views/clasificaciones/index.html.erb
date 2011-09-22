@@ -1,25 +1,26 @@
-<h1>Listando clasificaciones</h1>
+<h2>Clasificaciones</h2>
+<table class="zebra-striped">
+  <thead>
+    <tr>
+      <th>Codigo</th>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th><%= boton_agregar new_clasificacion_path %></th>
+    </tr>
+  </thead>
 
-<table>
-  <tr>
-    <th>Nombre</th>
-    <th>Descripcion</th>
-    <th>Codigo</th>
-    <th colspan="3" rowspan="1">
-      <%= boton_agregar new_clasificacion_path %>
-    </th>
-  </tr>
-
+  <tbody>
 <% @clasificaciones.each do |clasificacion| %>
   <tr>
+    <td><%= clasificacion.codigo %></td>
     <td><%= clasificacion.nombre %></td>
     <td><%= clasificacion.descripcion %></td>
-    <td><%= clasificacion.codigo %></td>
-    <td><%= boton_mostrar barrio %></td>
-    <td><%= boton_editar edit_clasificacion_path(clasificacion) %></td>
-    <td><%= boton_eliminar clasificacion %></td>
-  </tr>
-<% end %>
+      <td class="acciones">
+        <%= boton_mostrar clasificacion %>
+        <%= boton_editar edit_clasificacion_path(clasificacion) %>
+        <%= boton_eliminar clasificacion %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
 </table>
-
-<br />

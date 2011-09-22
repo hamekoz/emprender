@@ -1,27 +1,24 @@
-<h1>Listando instituciones</h1>
+<h2>Instituciones</h2>
+<table class="zebra-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th><%= boton_agregar new_institucion_path %></th>
+    </tr>
+  </thead>
 
-<table>
-  <tr>
-    <th>Nombre</th>
-    <th>Descripcion</th>
-    <th>Telefono</th>
-    <th>Domicilio</th>
-    <th colspan="3" rowspan="1">
-      <%= boton_agregar new_institucion_path %>
-    </th>
-  </tr>
-
-<% @instituciones.each do |institucion| %>
-  <tr>
-    <td><%= institucion.nombre %></td>
-    <td><%= institucion.descripcion %></td>
-    <td><%= institucion.telefono %></td>
-    <td><%= institucion.domicilio %></td>
-    <td><%= boton_mostrar institucion %></td>
-    <td><%= boton_editar edit_institucion_path(institucion) %></td>
-    <td><%= boton_eliminar institucion %></td>
-  </tr>
-<% end %>
+  <tbody>
+  <% @instituciones.each do |institucion| %>
+    <tr>
+      <td><%= institucion.nombre %></td>
+      <td><%= institucion.descripcion %></td>
+      <td class="acciones">
+        <%= boton_mostrar institucion %>
+        <%= boton_editar edit_institucion_path(institucion) %>
+        <%= boton_eliminar institucion %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
 </table>
-
-<br />

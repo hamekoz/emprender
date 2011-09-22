@@ -18,6 +18,7 @@
   <%= @institucion.domicilio %>
 </p>
 
-
-<%= boton_editar edit_institucion_path(@institucion) %> |
-<%= boton_volver instituciones_path %>
+<div class="actions">
+  <%= boton_editar edit_institucion_path(@institucion) %>
+  <%= boton_volver institucion_path %>
+</div>

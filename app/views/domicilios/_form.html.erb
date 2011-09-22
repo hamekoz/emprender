@@ -30,7 +30,7 @@
 </div>
 <div class="clearfix">
     <%= f.label :barrio %>
-  <div class="input">
-    <%= f.text_field :barrio %>
-  </div>
+    <div class="input">
+      <%= collection_select(:domicilio, :barrio_id, Barrio.all, :id, :nombre) %>
+    </div>
 </div>

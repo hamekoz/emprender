@@ -8,6 +8,7 @@
   <%= @estado.descripcion %>
 </p>
 
-
-<%= boton_editar edit_estado_path(@estado) %> |
-<%= boton_volver estados_path %>
+<div class="actions">
+  <%= boton_editar edit_estado_path(@estado) %>
+  <%= boton_volver estado_path %>
+</div>

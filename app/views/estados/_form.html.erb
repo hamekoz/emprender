@@ -11,15 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nombre %><br />
-    <%= f.text_field :nombre %>
+
+<fieldset>
+  <div class="clearfix">
+    <%= f.label :nombre %>
+    <div class="input">
+      <%= f.text_field :nombre %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :descripcion %><br />
-    <%= f.text_field :descripcion %>
+  <div class="clearfix">
+    <%= f.label :descripcion %>
+    <div class="input">
+      <%= f.text_field :descripcion %>
+    </div>
   </div>
+</fieldset>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => 'btn primary' %>
+    <%= boton_cancelar :back %>
   </div>
 <% end %>

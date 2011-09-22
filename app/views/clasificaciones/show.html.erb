@@ -1,4 +1,9 @@
 <p>
+  <b>Codigo:</b>
+  <%= @clasificacion.codigo %>
+</p>
+
+<p>
   <b>Nombre:</b>
   <%= @clasificacion.nombre %>
 </p>
@@ -8,11 +13,7 @@
   <%= @clasificacion.descripcion %>
 </p>
 
-<p>
-  <b>Codigo:</b>
-  <%= @clasificacion.codigo %>
-</p>
-
-
-<%= boton_editar edit_clasificacion_path(@clasificacion) %> |
-<%= boton_volver clasificaciones_path %>
+<div class="actions">
+  <%= boton_editar edit_clasificacion_path(@clasificacion) %>
+  <%= boton_volver clasificacion_path %>
+</div>
