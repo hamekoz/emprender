@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
       redirect_to root_path, :notice => "Bienvenido " + usuario.persona.nombre_completo
     else
       if params[:usuario].present?
-        flash.now[:alert] = "Usuario o Contraseña invalido"
+        flash.now[:alert] = "Usuario o password invalido"
       end
       render :action => 'nueva'
     end
