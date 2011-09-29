@@ -1,12 +1,28 @@
-<p>
-  <b>Nombre:</b>
-  <%= @categoria.nombre %>
-</p>
+<article>
+  <p>
+    <b>Nombre:</b>
+    <%= @categoria.nombre %>
+  </p>
 
-<p>
-  <b>Descripcion:</b>
-  <%= @categoria.descripcion %>
-</p>
+  <p>
+    <b>Descripcion:</b>
+    <%= @categoria.descripcion %>
+  </p>
+
+  <p>
+    <b>Creada el:</b>
+    <%= @categoria.created_at %>
+  </p>
+  
+  <% if @categoria.created_at != @categoria.updated_at %>
+  <p>
+    <b>Ultima modificacion:</b>
+    <%= @categoria.updated_at %>
+  </p>
+  <% end %>
+
+
+</article>
 
 <div class="actions">
   <%= boton_editar edit_categoria_path(@categoria) %>

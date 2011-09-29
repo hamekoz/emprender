@@ -11,3 +11,7 @@ validates :email, :uniqueness => true,
 :length => { :within => 5..50 },
 :format => { :with => /^[^@][\w.-]+@[\w.-]+[.][a-z]{2,4}$/i }
 validates :email, :uniqueness => true, :length => { :within => 5..50 }
+
+
+PEDAZO DE GAY ESCRIBI SIGUIENDO LAS CONVENCIONES :P JAJA
+  indentacion de 2 espacios

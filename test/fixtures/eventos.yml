@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  tipoEvento: 
+  nombre: MyString
+  descripcion: MyText
+  domicilio: 
+  fechaHoraInicio: 2011-09-27 20:51:18
+  fechaHoraFinalizacion: 2011-09-27 20:51:18
+  institucion: 
+  publicado: false
+  fechaPublicacion: 2011-09-27 20:51:18
+
+two:
+  tipoEvento: 
+  nombre: MyString
+  descripcion: MyText
+  domicilio: 
+  fechaHoraInicio: 2011-09-27 20:51:18
+  fechaHoraFinalizacion: 2011-09-27 20:51:18
+  institucion: 
+  publicado: false
+  fechaPublicacion: 2011-09-27 20:51:18

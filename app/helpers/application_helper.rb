@@ -21,7 +21,7 @@ module ApplicationHelper
   end
   
   def boton_cancelar(accion)
-    return link_to t('botones.cancelar'), accion, :class => 'btn small', :confirm => t('confirmar')
+    return link_to t('botones.cancelar'), accion, :class => 'btn small'
   end
 
 end

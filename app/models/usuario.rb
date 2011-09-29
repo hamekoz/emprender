@@ -10,9 +10,9 @@ class Usuario < ActiveRecord::Base
                        :presence => true,
                        :if => :password_requerida?
   validates :mail, :presence => true,
-                    :uniqueness => true,
-                    :length => { :within => 5..50 },
-                    :format => { :with => /^[^@][\w.-]+@[\w.-]+[.][a-z]{2,4}$/i }
+                   :uniqueness => true,
+                   :length => { :within => 5..50 },
+                   :format => { :with => /^[^@][\w.-]+@[\w.-]+[.][a-z]{2,4}$/i }
 
   belongs_to :persona
   belongs_to :rol

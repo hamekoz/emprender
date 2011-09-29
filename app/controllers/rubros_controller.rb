@@ -2,35 +2,35 @@ class RubrosController < ApplicationController
   before_filter :autenticar
 
   # GET /rubros
-  # GET /rubros.xml
+  # GET /rubros.json
   def index
     @rubros = Rubro.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @rubros }
+      format.json  { render :json => @rubros }
     end
   end
 
   # GET /rubros/1
-  # GET /rubros/1.xml
+  # GET /rubros/1.json
   def show
     @rubro = Rubro.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @rubro }
+      format.json  { render :json => @rubro }
     end
   end
 
   # GET /rubros/new
-  # GET /rubros/new.xml
+  # GET /rubros/new.json
   def new
     @rubro = Rubro.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @rubro }
+      format.json  { render :json => @rubro }
     end
   end
 
@@ -40,46 +40,46 @@ class RubrosController < ApplicationController
   end
 
   # POST /rubros
-  # POST /rubros.xml
+  # POST /rubros.json
   def create
     @rubro = Rubro.new(params[:rubro])
 
     respond_to do |format|
       if @rubro.save
-        format.html { redirect_to(@rubro, :notice => 'Rubro was successfully created.') }
-        format.xml  { render :xml => @rubro, :status => :created, :location => @rubro }
+        format.html { redirect_to(@rubro, :notice => 'Rubro creado con exito') }
+        format.json  { render :json => @rubro, :status => :created, :location => @rubro }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @rubro.errors, :status => :unprocessable_entity }
+        format.json  { render :json => @rubro.errors, :status => :unprocessable_entity }
       end
     end
   end
 
   # PUT /rubros/1
-  # PUT /rubros/1.xml
+  # PUT /rubros/1.json
   def update
     @rubro = Rubro.find(params[:id])
 
     respond_to do |format|
       if @rubro.update_attributes(params[:rubro])
-        format.html { redirect_to(@rubro, :notice => 'Rubro was successfully updated.') }
-        format.xml  { head :ok }
+        format.html { redirect_to(@rubro, :notice => 'Rubro actualizado con exito') }
+        format.json  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @rubro.errors, :status => :unprocessable_entity }
+        format.json  { render :json => @rubro.errors, :status => :unprocessable_entity }
       end
     end
   end
 
   # DELETE /rubros/1
-  # DELETE /rubros/1.xml
+  # DELETE /rubros/1.json
   def destroy
     @rubro = Rubro.find(params[:id])
     @rubro.destroy
 
     respond_to do |format|
       format.html { redirect_to(rubros_url) }
-      format.xml  { head :ok }
+      format.json  { head :ok }
     end
   end
 end

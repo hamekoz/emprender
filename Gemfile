@@ -24,7 +24,9 @@ gem 'jquery-rails'
 
 # Deploy with Capistrano
 # gem 'capistrano'
+# gem 'heroku'
 
 # To use debugger
 # gem 'ruby-debug'
 
+gem 'simple_form'

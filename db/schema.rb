@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110816000139) do
+ActiveRecord::Schema.define(:version => 20110927235118) do
 
   create_table "barrios", :force => true do |t|
     t.string   "nombre"
@@ -75,6 +75,24 @@ ActiveRecord::Schema.define(:version => 20110816000139) do
     t.datetime "updated_at"
   end
 
+  create_table "eventos", :force => true do |t|
+    t.integer  "tipoEvento_id"
+    t.string   "nombre"
+    t.text     "descripcion"
+    t.integer  "domicilio_id"
+    t.datetime "fechaHoraInicio"
+    t.datetime "fechaHoraFinalizacion"
+    t.integer  "institucion_id"
+    t.boolean  "publicado"
+    t.datetime "fechaPublicacion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "eventos", ["domicilio_id"], :name => "index_eventos_on_domicilio_id"
+  add_index "eventos", ["institucion_id"], :name => "index_eventos_on_institucion_id"
+  add_index "eventos", ["tipoEvento_id"], :name => "index_eventos_on_tipoEvento_id"
+
   create_table "instituciones", :force => true do |t|
     t.string   "nombre"
     t.string   "descripcion"
@@ -131,6 +149,13 @@ ActiveRecord::Schema.define(:version => 20110816000139) do
     t.string   "celular"
     t.string   "mensajes"
     t.string   "observaciones"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tipos_eventos", :force => true do |t|
+    t.string   "nombre"
+    t.string   "descripcion"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

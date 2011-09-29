@@ -2,35 +2,35 @@ class CategoriasController < ApplicationController
   before_filter :autenticar
 
   # GET /categorias
-  # GET /categorias.xml
+  # GET /categorias.json
   def index
     @categorias = Categoria.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @categorias }
+      format.json  { render :json => @categorias }
     end
   end
 
   # GET /categorias/1
-  # GET /categorias/1.xml
+  # GET /categorias/1.json
   def show
     @categoria = Categoria.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @categoria }
+      format.json  { render :json => @categoria }
     end
   end
 
   # GET /categorias/new
-  # GET /categorias/new.xml
+  # GET /categorias/new.json
   def new
     @categoria = Categoria.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @categoria }
+      format.json  { render :json => @categoria }
     end
   end
 
@@ -40,46 +40,47 @@ class CategoriasController < ApplicationController
   end
 
   # POST /categorias
-  # POST /categorias.xml
+  # POST /categorias.json
   def create
     @categoria = Categoria.new(params[:categoria])
 
     respond_to do |format|
       if @categoria.save
-        format.html { redirect_to(@categoria, :notice => 'Categoria was successfully created.') }
-        format.xml  { render :xml => @categoria, :status => :created, :location => @categoria }
+        format.html { redirect_to(categorias_url, :notice => 'Categoria creada con exito') }
+        format.json  { render :json => @categoria, :status => :created, :location => @categoria }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @categoria.errors, :status => :unprocessable_entity }
+        format.json  { render :json => @categoria.errors, :status => :unprocessable_entity }
       end
     end
   end
 
   # PUT /categorias/1
-  # PUT /categorias/1.xml
+  # PUT /categorias/1.json
   def update
     @categoria = Categoria.find(params[:id])
 
     respond_to do |format|
       if @categoria.update_attributes(params[:categoria])
-        format.html { redirect_to(@categoria, :notice => 'Categoria was successfully updated.') }
-        format.xml  { head :ok }
+        format.html { redirect_to(categorias_url, :notice => 'Categoria actulizada con exito') }
+        format.json  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @categoria.errors, :status => :unprocessable_entity }
+        format.json  { render :json => @categoria.errors, :status => :unprocessable_entity }
       end
     end
   end
 
   # DELETE /categorias/1
-  # DELETE /categorias/1.xml
+  # DELETE /categorias/1.json
   def destroy
     @categoria = Categoria.find(params[:id])
     @categoria.destroy
 
     respond_to do |format|
-      format.html { redirect_to(categorias_url) }
-      format.xml  { head :ok }
+      format.html { redirect_to(categorias_url, :notice => 'Categoria elimianda con exito') }
+      format.json  { head :ok }
+      format.js
     end
   end
 end

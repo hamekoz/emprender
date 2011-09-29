@@ -1,0 +1,50 @@
+<p>
+  <b>Tipoevento:</b>
+  <%= @evento.tipoEvento %>
+</p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @evento.nombre %>
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%= @evento.descripcion %>
+</p>
+
+<p>
+  <b>Domicilio:</b>
+  <%= @evento.domicilio %>
+</p>
+
+<p>
+  <b>Fechahorainicio:</b>
+  <%= @evento.fechaHoraInicio %>
+</p>
+
+<p>
+  <b>Fechahorafinalizacion:</b>
+  <%= @evento.fechaHoraFinalizacion %>
+</p>
+
+<p>
+  <b>Institucion:</b>
+  <%= @evento.institucion %>
+</p>
+
+<p>
+  <b>Publicado:</b>
+  <%= @evento.publicado %>
+</p>
+
+<p>
+  <b>Fechapublicacion:</b>
+  <%= @evento.fechaPublicacion %>
+</p>
+
+
+<div class="actions">
+  <%= boton_editar edit_evento_path(@evento) %>
+  <%= boton_volver eventos_path %>
+</div>

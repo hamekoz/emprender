@@ -6,15 +6,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require_tree ./boostrap
+//= require_self
 //= require_tree .
 
-// Dropdown example for topbar nav
-// ===============================
-$("body").bind("click", function (e) {
-$('.dropdown-toggle, .menu').parent("li").removeClass("open");
-});
-$(".dropdown-toggle, .menu").click(function (e) {
-var $li = $(this).parent("li").toggleClass('open');
-return false;
-});
 

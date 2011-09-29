@@ -2,35 +2,35 @@ class EstadosController < ApplicationController
   before_filter :autenticar
 
   # GET /estados
-  # GET /estados.xml
+  # GET /estados.json
   def index
     @estados = Estado.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @estados }
+      format.json  { render :json => @estados }
     end
   end
 
   # GET /estados/1
-  # GET /estados/1.xml
+  # GET /estados/1.json
   def show
     @estado = Estado.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @estado }
+      format.json  { render :json => @estado }
     end
   end
 
   # GET /estados/new
-  # GET /estados/new.xml
+  # GET /estados/new.json
   def new
     @estado = Estado.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @estado }
+      format.json  { render :json => @estado }
     end
   end
 
@@ -40,46 +40,46 @@ class EstadosController < ApplicationController
   end
 
   # POST /estados
-  # POST /estados.xml
+  # POST /estados.json
   def create
     @estado = Estado.new(params[:estado])
 
     respond_to do |format|
       if @estado.save
-        format.html { redirect_to(@estado, :notice => 'Estado was successfully created.') }
-        format.xml  { render :xml => @estado, :status => :created, :location => @estado }
+        format.html { redirect_to(@estado, :notice => 'Estado creado con exito') }
+        format.json  { render :json => @estado, :status => :created, :location => @estado }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @estado.errors, :status => :unprocessable_entity }
+        format.json  { render :json => @estado.errors, :status => :unprocessable_entity }
       end
     end
   end
 
   # PUT /estados/1
-  # PUT /estados/1.xml
+  # PUT /estados/1.json
   def update
     @estado = Estado.find(params[:id])
 
     respond_to do |format|
       if @estado.update_attributes(params[:estado])
-        format.html { redirect_to(@estado, :notice => 'Estado was successfully updated.') }
-        format.xml  { head :ok }
+        format.html { redirect_to(@estado, :notice => 'Estado actualizado con exito') }
+        format.json  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @estado.errors, :status => :unprocessable_entity }
+        format.json  { render :json => @estado.errors, :status => :unprocessable_entity }
       end
     end
   end
 
   # DELETE /estados/1
-  # DELETE /estados/1.xml
+  # DELETE /estados/1.json
   def destroy
     @estado = Estado.find(params[:id])
     @estado.destroy
 
     respond_to do |format|
       format.html { redirect_to(estados_url) }
-      format.xml  { head :ok }
+      format.json  { head :ok }
     end
   end
 end

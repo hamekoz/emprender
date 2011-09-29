@@ -2,35 +2,35 @@ class ClasificacionesController < ApplicationController
   before_filter :autenticar
 
   # GET /clasificaciones
-  # GET /clasificaciones.xml
+  # GET /clasificaciones.json
   def index
     @clasificaciones = Clasificacion.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @clasificaciones }
+      format.json  { render :json => @clasificaciones }
     end
   end
 
   # GET /clasificaciones/1
-  # GET /clasificaciones/1.xml
+  # GET /clasificaciones/1.json
   def show
     @clasificacion = Clasificacion.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @clasificacion }
+      format.json  { render :json => @clasificacion }
     end
   end
 
   # GET /clasificaciones/new
-  # GET /clasificaciones/new.xml
+  # GET /clasificaciones/new.json
   def new
     @clasificacion = Clasificacion.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @clasificacion }
+      format.json  { render :json => @clasificacion }
     end
   end
 
@@ -40,46 +40,47 @@ class ClasificacionesController < ApplicationController
   end
 
   # POST /clasificaciones
-  # POST /clasificaciones.xml
+  # POST /clasificaciones.json
   def create
     @clasificacion = Clasificacion.new(params[:clasificacion])
 
     respond_to do |format|
       if @clasificacion.save
-        format.html { redirect_to(@clasificacion, :notice => 'Clasificacion was successfully created.') }
-        format.xml  { render :xml => @clasificacion, :status => :created, :location => @clasificacion }
+        format.html { redirect_to(@clasificacion, :notice => 'Clasificacion creada con exito') }
+        format.json  { render :json => @clasificacion, :status => :created, :location => @clasificacion }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @clasificacion.errors, :status => :unprocessable_entity }
+        format.json  { render :json => @clasificacion.errors, :status => :unprocessable_entity }
       end
     end
   end
 
   # PUT /clasificaciones/1
-  # PUT /clasificaciones/1.xml
+  # PUT /clasificaciones/1.json
   def update
     @clasificacion = Clasificacion.find(params[:id])
 
     respond_to do |format|
       if @clasificacion.update_attributes(params[:clasificacion])
-        format.html { redirect_to(@clasificacion, :notice => 'Clasificacion was successfully updated.') }
-        format.xml  { head :ok }
+        format.html { redirect_to(@clasificacion, :notice => 'Clasificacion actualizada con exito') }
+        format.json  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @clasificacion.errors, :status => :unprocessable_entity }
+        format.json  { render :json => @clasificacion.errors, :status => :unprocessable_entity }
       end
     end
   end
 
   # DELETE /clasificaciones/1
-  # DELETE /clasificaciones/1.xml
+  # DELETE /clasificaciones/1.json
   def destroy
     @clasificacion = Clasificacion.find(params[:id])
     @clasificacion.destroy
 
     respond_to do |format|
       format.html { redirect_to(clasificaciones_url) }
-      format.xml  { head :ok }
+      format.json  { head :ok }
+      format.js
     end
   end
 end

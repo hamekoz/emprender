@@ -1,16 +1,17 @@
 <h2>Categorias</h2>
-<table class="zebra-striped">
+<table id="3columnas" class="zebra-striped">
   <thead>
     <tr>
-      <th>Nombre</th>
-      <th>Descripcion</th>
+      <th class="blue">Nombre</th>
+      <th class="blue">Descripcion</th>
       <th><%= boton_agregar new_categoria_path %></th>
     </tr>
   </thead>
 
   <tbody>
   <% @categorias.each do |categoria| %>
-    <tr>
+
+    <%= content_tag_for(:tr, categoria) do %>
       <td><%= categoria.nombre %></td>
       <td><%= categoria.descripcion %></td>
           <td class="acciones">
@@ -18,7 +19,8 @@
         <%= boton_editar edit_categoria_path(categoria) %>
         <%= boton_eliminar categoria %>
       </td>
-    </tr>
+    <% end %>
   <% end %>
+
   </tbody>
 </table>

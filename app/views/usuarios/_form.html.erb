@@ -1,50 +1,24 @@
-<%= form_for(@usuario) do |f| %>
-  <% if @usuario.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@usuario.errors.count, "error") %> <%= t('errores.guardar.m')%> usuario:</h2>
+<%= simple_form_for @usuario do |f| %>
 
-      <ul>
-      <% @usuario.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= f.error_notification %>
 
-<fieldset>
-  <div class="clearfix">
-    <%= f.label :usuario %>
-    <div class="input">
-      <%= f.text_field :usuario %>
-    </div>
-  </div>
-  <div class="clearfix">
-    <%= f.label :password %>
-    <div class="input">
-      <%= f.password_field :password %>
-    </div>
-  </div>
-  <div class="clearfix">
-    <%= f.label :mail %>
-    <div class="input">
-      <%= f.email_field :mail %>
-    </div>
-  </div>
-  <div class="clearfix">
-    <%= f.label :rol %>
-    <div class="input">
-      <%= collection_select(:usuario, :rol_id, Rol.all, :id, :nombre) %>
-    </div>
-  </div>
-</fieldset>
-<fieldset>
-  <legend>Datos personales</legend>
-  <%= f.fields_for :persona do |persona| %>
-    <%= render "personas/form", :f => persona %>
-  <% end %>
-</fieldset>
+  <fieldset>
+    <%= f.input :usuario %>
+    <%= f.input :password %>
+    <%= f.input :mail, :placeholder => 'usuario@dominio.com.ar' %>
+    <%= f.association :rol, :label_method =>  :nombre, :prompt => 'Elija un rol' %>
+  </fieldset>
+
+  <fieldset>
+    <legend>Datos personales</legend>
+    <%= f.simple_fields_for :persona do |persona| %>
+      <%= render "personas/form", :f => persona %>
+    <% end %>
+  </fieldset>
+
   <div class="actions">
-    <%= f.submit :class => 'btn primary' %>
-    <%= boton_cancelar :back %>
+    <%= f.button :submit, :class => 'btn primary' %>
+    <%= boton_cancelar usuarios_path %>
   </div>
+
 <% end %>
