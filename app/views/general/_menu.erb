@@ -3,7 +3,7 @@
     <div class="container">
       <h3><%= link_to "Emprender", root_path, :id => "logo" %></h3>
       <ul class="nav">
-        <li class=""><%= link_to "Noticias", noticia_path(Noticia.first) %></li>
+        <li class=""><%= link_to "Noticias", noticias_path %></li>
         <li class=""><%= link_to "Eventos", eventos_path %></li>
         <% if autenticado? %>
         <li class=""><%= link_to "Empadronar", root_path %></li>
