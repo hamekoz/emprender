@@ -6,7 +6,6 @@ gem 'rails', '3.1.0'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'pg'
 
 gem 'json'
 
@@ -25,10 +24,14 @@ gem 'jquery-rails'
 
 # Deploy with Capistrano
 # gem 'capistrano'
-# gem 'heroku'
+
 
 # To use debugger
 # gem 'ruby-debug'
 
 gem 'simple_form'
+
+# gem 'heroku'
+gem 'pg'
 gem 'execjs'
+gem 'therubyrhino'
