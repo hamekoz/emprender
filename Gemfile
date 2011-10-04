@@ -18,6 +18,9 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'simple_form'
+gem 'rails-i18n'
+#gem 'css-bootstrap-rails'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -29,10 +32,12 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug'
 
-gem 'simple_form'
 
-# gem 'heroku'
-gem 'pg'
-gem 'execjs'
-gem 'therubyrhino'
-gem 'therubyracer'
+
+
+# Para desplegar usando heroku
+# group :heroku
+#  gem 'heroku'
+#  gem 'pg'
+#  gem 'taps'
+# end
