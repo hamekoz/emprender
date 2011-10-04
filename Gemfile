@@ -38,6 +38,6 @@ gem 'rails-i18n'
 # Para desplegar usando heroku
 # group :heroku
 #  gem 'heroku'
-#  gem 'pg'
-#  gem 'taps'
+  gem 'pg'
+  gem 'taps'
 # end
