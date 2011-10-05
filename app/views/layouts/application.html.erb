@@ -35,14 +35,14 @@
         <%= content_tag(:p, alert)%>
       </div>
       <% end %>
-      
+
       <%= yield %>
 
     </div>
-    <footer id="footer">
-      <p>&copy; Creditos</p>
-    </footer>
   </div>
+  <footer id="footer" class="topbar-inner">
+    <p>&copy; Creditos</p>
+  </footer>
   <!-- JavaScript at the bottom for fast page loading -->
   <%= javascript_include_tag "application" %>
 
@@ -55,3 +55,4 @@
 
 </body>
 </html>
+

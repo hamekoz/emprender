@@ -4,7 +4,7 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_tree ./boostrap
  *= require_self
- *= require_tree . 
+ *= require_tree .
 */
 
 html, body {
@@ -13,6 +13,7 @@ html, body {
 
 body {
   padding-top: 40px;
+  padding-bottom: 50px;
 }
 
 #logo {
@@ -37,10 +38,22 @@ h2 {
   padding: 20px;
 }
 
-.container > footer p {
+#footer {
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  border: none;
+  height: 20px;
+}
+
+#footer p {
   text-align: center;
+  color: #BFBFBF;
+  font-size: 12px;
 }
 
 label {
   margin-right: 20px;
 }
+

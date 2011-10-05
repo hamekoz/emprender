@@ -39,5 +39,6 @@ gem 'rails-i18n'
 # group :heroku
 #  gem 'heroku'
   gem 'pg'
-  gem 'taps'
+#  gem 'taps'
 # end
+
