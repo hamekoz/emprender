@@ -1,29 +1,18 @@
 <p>
+  <b>Barrio:</b>
+  <%= domicilio.barrio.nombre %>
+</p>
+
+<p>
   <b>Calle:</b>
-  <%= @domicilio.calle %>
-</p>
-
-<p>
-  <b>Numero:</b>
-  <%= @domicilio.numero %>
-</p>
-
-<p>
-  <b>Piso:</b>
-  <%= @domicilio.piso %>
-</p>
-
-<p>
-  <b>Departamento:</b>
-  <%= @domicilio.departamento %>
+  <%= domicilio.calle %>
+  <%= domicilio.numero %>
+  <%= domicilio.piso %><%= "° piso" if domicilio.piso.present? %>
+  <%= "dto " if domicilio.departamento.present? %>
+  <%= domicilio.departamento %>
 </p>
 
 <p>
   <b>Observacion:</b>
-  <%= @domicilio.observacion %>
-</p>
-
-<p>
-  <b>Barrio:</b>
-  <%= @domicilio.barrio %>
+  <%= domicilio.observacion %>
 </p>

@@ -1,49 +1,30 @@
-<%= form_for(@institucion) do |f| %>
-  <% if @institucion.errors.any? %>
-    <div class="alert-message block-message error">
-      <h3><%= pluralize(@institucion.errors.count, "error") %> <%= t('errores.guardar.f')%> institucion:</h3>
+<%= simple_form_for(@institucion) do |f| %>
 
-      <ul>
-      <% @institucion.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-<div class="row">
-  <div class="span8 columns">
-    <fieldset>
-      <div class="clearfix">
-        <%= f.label :nombre %>
-        <div class="input">
-          <%= f.text_field :nombre %>
-        </div>
-      </div>
-      <div class="clearfix">
-        <%= f.label :descripcion %>
-        <div class="input">
-          <%= f.text_field :descripcion %>
-        </div>
-      </div>
-    </fieldset>
-    <fieldset>
-      <legend>Telefonos</legend>
-      <%= f.fields_for :telefono do |telefono| %>
-        <%= render "telefonos/form", :f => telefono %>
-      <% end %>
-    </fieldset>
-  </div>
-  <div class="span8 columns">
-    <fieldset>
-      <legend>Domicilio</legend>
-      <%= f.fields_for :domicilio do |domicilio| %>
-        <%= render "domicilios/form", :f => domicilio %>
-      <% end %>
-    </fieldset>
-  </div>
-</div>
+  <%= f.error_notification %>
+
+  <fieldset>
+    <legend>Institucion</legend>
+    <%= f.input :nombre %>
+    <%= f.input :descripcion %>
+  </fieldset>
+
+  <fieldset>
+    <legend>Telefonos</legend>
+    <%= f.simple_fields_for :telefono do |telefono| %>
+      <%= render "telefonos/form", :f => telefono %>
+    <% end %>
+  </fieldset>
+
+  <fieldset>
+    <legend>Domicilio</legend>
+    <%= f.simple_fields_for :domicilio do |domicilio| %>
+      <%= render "domicilios/form", :f => domicilio %>
+    <% end %>
+  </fieldset>
+
   <div class="actions">
     <%= f.submit  :class => 'btn primary' %>
     <%= boton_cancelar instituciones_path %>
   </div>
+
 <% end %>

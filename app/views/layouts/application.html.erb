@@ -23,14 +23,14 @@
   <div id="main" role="main" class="container">
     <div class="content">
       <% if notice.present? %>
-      <div class="alert-message success fade in" data-alert="alert">
+      <div id="notice" class="alert-message success fade in" data-alert="alert">
         <a class="close" href="#">×</a>
         <%= content_tag(:p, notice) %>
       </div>
       <% end %>
 
       <% if alert.present? %>
-      <div class="alert-message warning fade in" data-alert="alert">
+      <div id="alert" class="alert-message warning fade in" data-alert="alert">
         <a class="close" href="#">×</a>
         <%= content_tag(:p, alert)%>
       </div>
@@ -40,8 +40,8 @@
 
     </div>
   </div>
-  <footer id="footer" class="topbar-inner">
-    <p>&copy; Creditos</p>
+  <footer id="footer" class="footer topbar-inner">
+    <p>&copy; Creado y diseñado por: Claudio Rodrigo Pereyra Diaz y Adriel Hernan Caramichos</p>
   </footer>
   <!-- JavaScript at the bottom for fast page loading -->
   <%= javascript_include_tag "application" %>

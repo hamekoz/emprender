@@ -1,3 +1,6 @@
+<div class="row">
+  <div class="span12 columns offset2">
+<h3>Institucion</h3>
 <p>
   <b>Nombre:</b>
   <%= @institucion.nombre %>
@@ -9,14 +12,17 @@
 </p>
 
 <p>
-  <b>Telefono:</b>
-  <%= @institucion.telefono %>
+  <h3>Telefonos</h3>
+  <%= render "telefonos/show", :telefono => @institucion.telefono %>
 </p>
 
 <p>
-  <b>Domicilio:</b>
-  <%= @institucion.domicilio %>
+  <h3>Domicilio</h3>
+  <%= render "domicilios/show", :domicilio => @institucion.domicilio %>
 </p>
+
+  </div>
+</div>
 
 <div class="actions">
   <%= boton_editar edit_institucion_path(@institucion) %>

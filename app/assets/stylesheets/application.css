@@ -13,7 +13,7 @@ html, body {
 
 body {
   padding-top: 40px;
-  padding-bottom: 50px;
+  padding-bottom: 60px;
 }
 
 #logo {
@@ -43,13 +43,16 @@ h2 {
   position: fixed;
   width: 100%;
   border: none;
-  height: 20px;
+  padding-top: 10px;
 }
 
 #footer p {
   text-align: center;
   color: #BFBFBF;
   font-size: 12px;
+  line-height: 15px;
+  margin-bottom: 5px;
+  margin-top: 0;
 }
 
 label {

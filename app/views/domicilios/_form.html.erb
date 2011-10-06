@@ -1,36 +1,7 @@
-<div class="clearfix">
-    <%= f.label :barrio %>
-    <div class="input">
-      <%= collection_select(:domicilio, :barrio_id, Barrio.all, :id, :nombre) %>
-    </div>
-</div>
-<div class="clearfix">
-    <%= f.label :calle %>
-  <div class="input">
-    <%= f.text_field :calle %>
-  </div>
-</div>
-<div class="clearfix">
-    <%= f.label :numero %>
-  <div class="input">
-    <%= f.text_field :numero %>
-  </div>
-</div>
-<div class="clearfix">
-    <%= f.label :piso %>
-  <div class="input">
-    <%= f.text_field :piso %>
-  </div>
-</div>
-<div class="clearfix">
-    <%= f.label :departamento %>
-  <div class="input">
-    <%= f.text_field :departamento %>
-  </div>
-</div>
-<div class="clearfix">
-    <%= f.label :observacion %>
-  <div class="input">
-    <%= f.text_field :observacion %>
-  </div>
-</div>
+<%= f.association :barrio, :label_method =>  :nombre, :prompt => 'Elija un barrio' %>
+<%= f.input :calle %>
+<%= f.input :numero %>
+<%= f.input :piso %>
+<%= f.input :departamento %>
+<%= f.input :observacion %>
+
