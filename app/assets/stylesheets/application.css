@@ -44,6 +44,12 @@ h2 {
   width: 100%;
   border: none;
   padding-top: 10px;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(black));
+  background: -webkit-linear-gradient(top, transparent, black);
+  background: -moz-linear-gradient(top, transparent, black);
+  background: -o-linear-gradient(top, transparent, black);
+  background: linear-gradient(top, transparent, black);
+box-shadow: none;
 }
 
 #footer p {
