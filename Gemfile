@@ -5,26 +5,32 @@ gem 'rails', '3.1.0'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
 gem 'json'
+gem 'simple_form'
+gem 'rails-i18n'
 
-# Gems used only for assets and not required
-# in production environments by default.
+# Gemas usadas solo en desarrollo
+group :development do
+  gem 'sqlite3'
+  gem 'heroku'
+  gem 'jquery-rails'
+#  gem 'css-bootstrap-rails'
+end
+
+# Gemas necesarias para produccion
+group :production do
+  gem "pg"
+end
+
+# Gems used only for assets and not required in production environments by default
 group :assets do
   gem 'sass-rails',   '~> 3.1.4'
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'bcrypt-ruby', '~> 3.0.0'
-gem 'jquery-rails'
-gem 'simple_form'
-gem 'rails-i18n'
-#gem 'css-bootstrap-rails'
-
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -32,17 +38,10 @@ gem 'rails-i18n'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-
 # To use debugger
 # gem 'ruby-debug'
 
-
-
-
 # Para desplegar usando heroku
 # group :heroku
-#  gem 'heroku'
-#  gem 'pg'
 #  gem 'taps'
 # end
-
