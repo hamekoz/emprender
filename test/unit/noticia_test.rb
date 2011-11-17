@@ -1,12 +1,16 @@
 require 'test_helper'
 
 class NoticiaTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "deberia crear noticia" do
-    noticia = Noticia.new
-    
-    noticia = noticias[:uno]
-  
-    assert noticia.save
+  #testea que no se pueda grabar una noticia cuyo titulo esta en blanco
+  test "presencia_titulo" do
+    noticia1 = noticias(:SinTitulo)
+    assert noticia1.titulo.blank?
+    assert !noticia1.save
+  end
+  #testea que no se pueda grabar una noticia cuyo texto esta en blanco
+  test "presencia_texto" do
+    noticia1 = barrios(:SinTexto)
+    assert noticia1.texto.blank?
+    assert !noticia1.save
   end
 end

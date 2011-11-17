@@ -23,5 +23,11 @@ SinDomicilio:
   descripcion: institucion nacional
   telefono: telefonos[:normal]
   domicilio: domicilios[:Normal]
+  
+SinDescripcion
+  nombre:Trabajar
+  descripcion:
+  telefono:telefonos[:normal]
+  domicilio:domicilios[:normal]
 
 

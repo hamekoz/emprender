@@ -21,6 +21,13 @@ AutorMuyExtenso:
   fecha: 01-05-2010
   publicada: false
 
+SinTexto:
+  titulo:Noticia sin texto
+  texto:
+  autor: anonimo
+  fecha: 16-11-2011
+  publicada: true
+
 SinTitulo:
   titulo:   
   texto: 01:33 p.m. 22/08/2011
