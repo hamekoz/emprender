@@ -1,48 +1,63 @@
-<p>
-  <b>Tipoevento:</b>
-  <%= @evento.tipoEvento %>
-</p>
+<h2 class= "breadcrumb">Evento</h2>
+<article>
+<div class="row">
+  <div class="span-one-third">
+    <h3>Informacion General</h3>
+    <p>
+      <strong>Tipo</strong><br>
+      <%= @evento.tipoEvento %>
+    </p>
 
-<p>
-  <b>Nombre:</b>
-  <%= @evento.nombre %>
-</p>
+    <p>
+      <strong>Organizador</strong><br>
+      <%= @evento.institucion.nombre %>
+    </p>
 
-<p>
-  <b>Descripcion:</b>
-  <%= @evento.descripcion %>
-</p>
+    <p>
+      <strong>Nombre</strong><br>
+      <%= @evento.nombre %>
+    </p>
 
-<p>
-  <b>Domicilio:</b>
-  <%= @evento.domicilio %>
-</p>
+    <p>
+      <strong>Descripcion</strong><br>
+      <%= @evento.descripcion %>
+    </p>
+  </div>
 
-<p>
-  <b>Fechahorainicio:</b>
-  <%= @evento.fechaHoraInicio %>
-</p>
+  <div class="span-one-third">
+    <h3>Lugar, Fecha y Hora</h3>
+    <%= render "domicilios/show", :domicilio => @evento.domicilio %>
 
-<p>
-  <b>Fechahorafinalizacion:</b>
-  <%= @evento.fechaHoraFinalizacion %>
-</p>
+    <p>
+      <strong>Fecha y hora de inicio:</strong><br>
+      <%= @evento.fechaHoraInicio %>
+    </p>
 
-<p>
-  <b>Institucion:</b>
-  <%= @evento.institucion %>
-</p>
+    <p>
+      <strong>Fecha y hora de finalizacion</strong><br>
+      <%= @evento.fechaHoraFinalizacion %>
+    </p>
+  </div>
 
-<p>
-  <b>Publicado:</b>
-  <%= @evento.publicado %>
-</p>
+  <div class="span-one-third">
+    <h3>Datos de Publicacion</h3>
+    <p>
+      <strong>Publicado</strong><br>
+      <%= @evento.publicado %>
+    </p>
 
-<p>
-  <b>Fechapublicacion:</b>
-  <%= @evento.fechaPublicacion %>
-</p>
+    <p>
+      <strong>Fecha publicacion</strong><br>
+      <%= @evento.fechaPublicacion %>
+    </p>
 
+    <p>
+      <strong>Fecha de creacion</strong><br>
+      <%= @evento.created_at %>
+    </p>
+  </div>
+</div>
+</article>
 
 <div class="actions">
   <%= boton_editar edit_evento_path(@evento) %>

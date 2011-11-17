@@ -1,23 +1,49 @@
-<div class="pagination">
-  <ul>
-    <li class="prev"><a href="#">&larr; Anterior</a></li>
-    <% @noticias.each do |noticia| %>
-      <% if @noticia.id == noticia.id %>
-      <li class="active"><%= link_to noticia.id, noticia %></li>
-      <% else %>
-      <li><%= link_to noticia.id, noticia %></li>
-      <% end %>
-    <% end %>
-    <li class="next"><a href="#">Siguiente &rarr;</a></li>
-  </ul>
-</div>
+<h2 class= "breadcrumb">Noticia</h2>
 <article>
-  <header>
-  <h3><%= @noticia.titulo %></h3>
-  <section>
-    <%= @noticia.texto %>
-  </section>
-  <footer>
-  <p>Autor: <%= @noticia.autor %></p>
-  <p>Publicada el: <%= @noticia.fecha %></p>
+<div class="row">
+  <div class="span-one-third">
+    <h3>Informacion General</h3>
+    <p>
+      <strong>Titulo</strong><br>
+      <%= @noticia.titulo %>
+    </p>
+
+    <p>
+      <strong>Autor</strong><br>
+      <%= @noticia.autor %>
+    </p>
+
+  </div>
+
+  <div class="span-one-third">
+    <h3>Cuerpo</h3>
+    <p>
+      <strong>Texto</strong><br>
+      <%= @noticia.texto %>
+    </p>
+  </div>
+
+  <div class="span-one-third">
+    <h3>Datos de Publicacion</h3>
+    <p>
+      <strong>Publicado</strong><br>
+      <%= @noticia.publicada %>
+    </p>
+
+    <p>
+      <strong>Fecha publicacion</strong><br>
+      <%= @noticia.fecha %>
+    </p>
+
+    <p>
+      <strong>Fecha de creacion</strong><br>
+      <%= @noticia.created_at %>
+    </p>
+  </div>
+</div>
 </article>
+
+<div class="actions">
+  <%= boton_editar edit_noticia_path(@noticia) %>
+  <%= boton_volver noticias_path %>
+</div>

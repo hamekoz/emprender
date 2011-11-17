@@ -14,14 +14,14 @@ Normal2:
   piso: 4
   departamento: g
   observacion: Torre 2
-  barrio: La Perla
+  barrio: barrios[:Normal]
 
 PisoConLetras:
   calle: Avenida Paso
-  numero:3456
-  piso:abcd
-  departamento:4
-  observacion:edificio antiguo
-  barrio:Grosellar
+  numero: 3456
+  piso: abcd
+  departamento: 4
+  observacion: edificio antiguo
+  barrio: barrios[:Normal]
 
 

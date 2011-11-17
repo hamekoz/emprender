@@ -13,7 +13,7 @@ module ApplicationHelper
   end
 
   def boton_eliminar(accion)
-    return link_to t('botones.eliminar'),accion, :method => :delete, :class => 'btn small danger', :confirm => t('confirmar'), :remote => true
+    return link_to t('botones.eliminar'),accion, :method => :delete, :class => 'btn small danger', :confirm => t('confirmar')
   end
 
   def boton_volver(accion)

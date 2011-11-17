@@ -1,47 +1,26 @@
-require 'digest'
 class Usuario < ActiveRecord::Base
-  attr_accessor :password
+#Ver https://github.com/rails/rails/blob/master/activemodel/lib/active_model/secure_password.rb
+  has_secure_password
 
   validates :usuario,  :presence => true,
                        :uniqueness => true,
                        :length => { :within => 4..20 }
-  validates :password, :confirmation => true,
-                       :length => { :within => 4..20 },
-                       :presence => true,
-                       :if => :password_requerida?
+
+  validates :password, :length => { :within => 4..20 },
+                       :presence => { :on => :create }
+
   validates :mail,     :presence => true,
                        :uniqueness => true,
                        :length => { :within => 5..50 },
                        :format => { :with => /^[^@][\w.-]+@[\w.-]+[.][a-z]{2,4}$/i }
-
+  validates :rol,      :presence => true
+  
   belongs_to :persona
   belongs_to :rol
-  before_save :cifrar_nueva_password
 
   accepts_nested_attributes_for :persona
 
-  def self.autenticar(usuario, password)
-     usuario = find_by_usuario(usuario)
-     return usuario 
-     if usuario && usuario.autenticado?(password)
-  end
-
-  def autenticado?(password)
-    self.password_cifrada == cifrar(password)
-  end
-
-  protected
-    def cifrar_nueva_password
-      return if password.blank?
-      self.password_cifrada = cifrar(password)
-    end
-
-    def password_requerida?
-      password_cifrada.blank? || password.present?
-    end
-
-    def cifrar(string)
-      Digest::SHA1.hexdigest(string)
-    end
+  def autenticado?
+    authenticate(password)
   end
 end

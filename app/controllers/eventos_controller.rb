@@ -1,5 +1,16 @@
 class EventosController < ApplicationController
-  before_filter :autenticar, :except => :show
+  before_filter :autenticar, :except => :cartelera
+
+  # GET /eventos
+  # GET /eventos.json
+  def cartelera
+    @eventos = Evento.publicados.all
+
+    respond_to do |format|
+      format.html # cartelera.html.erb
+      format.json { render :json => @eventos }
+    end
+  end
 
   # GET /eventos
   # GET /eventos.json

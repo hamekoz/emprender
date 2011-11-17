@@ -1,12 +1,21 @@
-<p>
-  <b>Nombre:</b>
-  <%= @barrio.nombre %>
-</p>
+<h2 class= "breadcrumb">Barrio</h2>
+<article>
+  <h3>Informacion General</h3>
+  <p>
+    <strong>Nombre</strong><br>
+    <%= @barrio.nombre %>
+  </p>
 
-<p>
-  <b>Descripcion:</b>
-  <%= @barrio.descripcion %>
-</p>
+  <p>
+    <strong>Descripcion</strong><br>
+    <%= @barrio.descripcion %>
+  </p>
+
+  <p>
+    <strong>Fecha de creacion</strong><br>
+    <%= @barrio.created_at %>
+  </p>
+</article>
 
 <div class="actions">
   <%= boton_editar edit_barrio_path(@barrio) %>

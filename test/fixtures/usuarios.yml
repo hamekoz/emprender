@@ -2,31 +2,31 @@
 
 Normal:
   usuario: pepemdq
-  password: 1234
+  password_cifrada: 1234
   mail: pepe@hotmail.com
-  rol: emprendedor asociado
+  rol: roles[:Normal]
 
 Normal2:
   usuario: josemdq
-  password: °!"#$$%/)_
-  mail:@
-  rol: titular emprendimiento
+  password_cifrada: °!"#$$%/)_
+  mail: @
+  rol: roles[:Normal]
 
 SinUsuario:
   usuario:
-  password:abcd1234
-  mail:lucasmdq@yahoo.com.ar
-  rol:titular emprendimiento
+  password_cifrada: abcd1234
+  mail: lucasmdq@yahoo.com.ar
+  rol: roles[:Normal]
 
-SinPassword
+SinPassword:
   usuario: maria
-  password:
+  password_cifrada:
   mail: maria@hot
-  rol: emprendedor asociado
+  rol: roles[:Normal]
 
 PasswordSimple:
   usuario: panaderiaRaul
-  password:abc
+  password_cifrada: abc
   mail: panaderiaraul@fibertel.com.ar
-  rol: titular emprendimiento
+  rol: roles[:Normal]
   

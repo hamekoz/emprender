@@ -13,9 +13,9 @@ SinApellido:
 NombreConNumeros:
   nombre: 1234
   apellido: Santulli 
-  sexo:femenino
+  sexo: femenino
 
 ApellidoConSimbolos:
   nombre: Mario 
   apellido: ¬\^`^
-  sexo:masculino
+  sexo: masculino

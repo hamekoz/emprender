@@ -6,6 +6,7 @@
     <legend>Datos de la cuenta</legend>
     <%= f.input :usuario %>
     <%= f.input :password %>
+    <%= f.input :password_confirmation %>
     <%= f.input :mail, :placeholder => 'usuario@dominio.com.ar' %>
     <%= f.association :rol, :label_method =>  :nombre, :prompt => 'Elija un rol' %>
   </fieldset>

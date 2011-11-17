@@ -1,11 +1,9 @@
 <h2 class= "breadcrumb">Eventos</h2>
-<table id="5columnas" class="zebra-striped">
+<table id="3columnas" class="zebra-striped">
   <thead>
     <tr>
-      <th class="blue">Tipoevento</th>
       <th class="blue">Nombre</th>
       <th class="blue">Fecha</th>
-      <th class="blue">Institucion</th>
       <th><%= boton_agregar new_evento_path %></th>
     </tr>
   </thead>
@@ -13,10 +11,8 @@
   <tbody>
   <% @eventos.each do |evento| %>
     <tr>
-      <td><%= evento.tipoEvento.nombre %></td>
       <td><%= evento.nombre %></td>
       <td><%= evento.fechaHoraInicio %></td>
-      <td><%= evento.institucion.nombre %></td>
       <td class="acciones">
         <%= boton_mostrar evento %>
         <%= boton_editar edit_evento_path(evento) %>

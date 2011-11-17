@@ -3,25 +3,25 @@
 Normal:
   nombre: Camara provincial del trabajo
   descripcion: organizacion gubernamental
-  telefono: 34343434343
-  domicilio: Libertad 2020
+  telefono: telefonos[:normal]
+  domicilio: domicilios[:Normal]
 
 TelefonoConLetras:
   nombre: Asociación Vecinal de emprendedores
   descripcion: institucion desconocida
-  telefono: palabras	
-  domicilio: Avenida Libertad 2010
+  telefono: telefonos[:normal]
+  domicilio: domicilios[:Normal]
 
 SinNombre:
   nombre:
   descripcion: institución de tipo privada
-  telefono: 223 4752020
-  domicilio: Constitucion 1929
+  telefono: telefonos[:normal]
+  domicilio: domicilios[:Normal]
 
 SinDomicilio:
-  nombre:CENASA
+  nombre: CENASA
   descripcion: institucion nacional
-  telefono: 123456
-  domicilio:
+  telefono: telefonos[:normal]
+  domicilio: domicilios[:Normal]
 
 

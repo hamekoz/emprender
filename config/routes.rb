@@ -25,6 +25,9 @@ Emprender::Application.routes.draw do
 
   resource :session
 
+  match '/cartelera_noticias' => "noticias#cartelera", :as => "cartelera_noticias"
+  match '/cartelera_eventos' => "eventos#cartelera", :as => "cartelera_eventos"
+
   match '/login' => "sessions#create", :as => "login"
   match '/logout' => "sessions#destroy", :as => "logout"
   
@@ -80,4 +83,8 @@ Emprender::Application.routes.draw do
   # root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
+
+  # This is a legacy wild controller route that's not recommended for RESTful applications.
+  # Note: This route will make all actions in every controller accessible via GET requests.
+  # match ':controller(/:action(/:id(.:format)))'
 end

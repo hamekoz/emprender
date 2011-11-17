@@ -1,5 +1,16 @@
 class NoticiasController < ApplicationController
-  before_filter :autenticar, :except => :show
+  before_filter :autenticar, :except => :cartelera
+
+  # GET /noticias
+  # GET /noticias.json
+  def cartelera
+    @noticias = Noticia.publicadas.all
+
+    respond_to do |format|
+      format.html # cartelera.html.erb
+      format.json  { render :json => @noticias }
+    end
+  end
 
   # GET /noticias
   # GET /noticias.json

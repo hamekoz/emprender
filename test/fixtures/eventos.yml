@@ -4,7 +4,7 @@ one:
   tipoEvento: 
   nombre: MyString
   descripcion: MyText
-  domicilio: 
+  domicilio: domicilios[:Normal]
   fechaHoraInicio: 2011-09-27 20:51:18
   fechaHoraFinalizacion: 2011-09-27 20:51:18
   institucion: 
@@ -15,7 +15,7 @@ two:
   tipoEvento: 
   nombre: MyString
   descripcion: MyText
-  domicilio: 
+  domicilio: domicilios[:Normal]
   fechaHoraInicio: 2011-09-27 20:51:18
   fechaHoraFinalizacion: 2011-09-27 20:51:18
   institucion: 

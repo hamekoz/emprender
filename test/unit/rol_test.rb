@@ -16,11 +16,11 @@ class RolTest < ActiveSupport::TestCase
 
     rol.nombre = "Invitado"
 
-    assert rol.save
+    assert !rol.save
   end
 
   test "deberia actualizar rol" do
-    rol = roles[:admin]
+    rol = roles(:Normal)
 
     rol.descripcion = "Rol de prueba"
 

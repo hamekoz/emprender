@@ -1,0 +1,18 @@
+<h2 class= "breadcrumb">Cartelera de Eventos</h2>
+<% @eventos.each do |evento| %>
+  <article>
+    <p><strong><%= @evento.nombre %></strong></p>
+    <p><strong>Tipo: </strong><%= @evento.tipoEvento %></p>
+    <p><strong>Organizador: </strong><%= @evento.institucion.nombre %></p>
+    <p><strong>Descripcion: </strong><%= @evento.descripcion %></p>
+    <p>
+      <strong>Lugar: </strong>
+      <%= render "domicilios/show", :domicilio => @evento.domicilio %>
+    </p>
+    <p><strong>Fecha y hora de inicio: </strong><%= @evento.fechaHoraInicio %></p>
+    <p><strong>Fecha y hora de finalizacion: </strong><%= @evento.fechaHoraFinalizacion %></p>
+
+    <p><strong>Fecha publicacion: </strong><%= @evento.fechaPublicacion %></p>
+
+  </article>
+<% end %>

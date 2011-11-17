@@ -6,7 +6,7 @@ Normal:
 
 DescripcionMuyLarga:
   nombre: reposteria
-  descripcion: reposteria y otros articulos de cocina dulce con inclusión de desayunos a domicilio, postres, factura, helados,tortas de varios tipos: cumpleaños, casamientos, fiestas de quince, aniversarios, bautismos, comuniones y otros tipos
+  descripcion: reposteria y otros articulos de cocina dulce con inclusión de desayunos a domicilio, postres, factura, helados,tortas de varios tipos cumpleaños, casamientos, fiestas de quince, aniversarios, bautismos, comuniones y otros tipos
 
 SinNombre:
   nombre: 
@@ -14,4 +14,4 @@ SinNombre:
 
 SinDescripcion:
   nombre: horticultura
-  descripcion:
+  descripcion: 

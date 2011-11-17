@@ -8,7 +8,7 @@ class BarriosController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json  { render :json => @barrios }
+      format.json { render :json => @barrios }
     end
   end
 
@@ -19,7 +19,7 @@ class BarriosController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json  { render :json => @barrio }
+      format.json { render :json => @barrio }
     end
   end
 
@@ -30,7 +30,7 @@ class BarriosController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json  { render :json => @barrio }
+      format.json { render :json => @barrio }
     end
   end
 
@@ -47,10 +47,10 @@ class BarriosController < ApplicationController
     respond_to do |format|
       if @barrio.save
         format.html { redirect_to(@barrio, :notice => 'Barrio creado con exito') }
-        format.json  { render :json => @barrio, :status => :created, :location => @barrio }
+        format.json { render :json => @barrio, :status => :created, :location => @barrio }
       else
         format.html { render :action => "new" }
-        format.json  { render :json => @barrio.errors, :status => :unprocessable_entity }
+        format.json { render :json => @barrio.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -63,10 +63,10 @@ class BarriosController < ApplicationController
     respond_to do |format|
       if @barrio.update_attributes(params[:barrio])
         format.html { redirect_to(@barrio, :notice => 'Barrio actualizado con exito') }
-        format.json  { head :ok }
+        format.json { head :ok }
       else
         format.html { render :action => "edit" }
-        format.json  { render :json => @barrio.errors, :status => :unprocessable_entity }
+        format.json { render :json => @barrio.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -79,7 +79,7 @@ class BarriosController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(barrios_url) }
-      format.json  { head :ok }
+      format.json { head :ok }
     end
   end
 end

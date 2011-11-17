@@ -1,22 +1,28 @@
-<p>
-  <b>Persona:</b>
-  <%= @contacto.persona %>
-</p>
-
-<p>
-  <b>Telefono:</b>
-  <%= @contacto.telefono %>
-</p>
-
-<p>
-  <b>Domicilio:</b>
-  <%= @contacto.domicilio %>
-</p>
-
-<p>
-  <b>Mail:</b>
-  <%= @contacto.mail %>
-</p>
+<h2 class= "breadcrumb">Contacto</h2>
+<article>
+<div class="row">
+  <div class="span-one-third">
+    <h3>Datos Personales</h3>
+    <%= render 'personas/show', :persona => @contacto.persona %>
+    <p>
+      <strong>Mail</strong><br>
+      <%= @contacto.mail %>
+    </p>
+    <p>
+      <strong>Fecha de creacion</strong><br>
+      <%= @contacto.created_at %>
+    </p>
+  </div>
+  <div class="span-one-third">
+    <h3>Telefonos</h3>
+    <%= render "telefonos/show", :telefono => @contacto.telefono %>
+  </div>
+  <div class="span-one-third">
+    <h3>Domicilio</h3>
+      <%= render "domicilios/show", :domicilio => @contacto.domicilio %>
+  </div>
+</div>
+</article>
 
 <div class="actions">
   <%= boton_editar edit_contacto_path(@contacto) %>

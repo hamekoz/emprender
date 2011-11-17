@@ -162,7 +162,7 @@ ActiveRecord::Schema.define(:version => 20110927235118) do
 
   create_table "usuarios", :force => true do |t|
     t.string   "usuario"
-    t.string   "password_cifrada"
+    t.string   "password_digest"
     t.string   "mail"
     t.integer  "rol_id"
     t.integer  "persona_id"

@@ -23,21 +23,21 @@ AutorMuyExtenso:
 
 SinTitulo:
   titulo:   
-  texto:01:33 p.m. 22/08/2011
+  texto: 01:33 p.m. 22/08/2011
   autor: Mesa del Plan Estrátegico
   fecha: 12-02-2011
-  publicada:true
+  publicada: true
 
 FechaIncorrecta:
   titulo: Otorgación de créditos
   texto: Primera instancia para el otorgamiento de créditos a emprendedores
   autor: Dir. Plan estratégico
-  fecha:abcd
-  publicada:false
+  fecha: abcd
+  publicada: false
 
 PublicacionIncorrecta:
   titulo: Feria provincial de emprendedores
   texto: Feria de la provincia de buenos aires sobre emprendimientos micro
   autor: Lic. Miguel Hernández de la Municipalidad
   fecha: 17-06-2006
-  publica:1234
+  publicada: 1234

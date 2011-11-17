@@ -9,5 +9,3 @@
 //= require_tree ./boostrap
 //= require_self
 //= require_tree .
-
-

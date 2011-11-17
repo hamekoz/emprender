@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def create
-    if usuario = Usuario.autenticar(params[:usuario], params[:password])
+    if usuario = Usuario.find_by_usuario(params[:usuario]).try(:authenticate, params[:password])
       session[:usuario_id] = usuario.id
       redirect_to root_path, :notice => "Bienvenido " + usuario.persona.nombre_completo
     else

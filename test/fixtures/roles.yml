@@ -3,19 +3,15 @@
 Normal:
   nombre: Administrador
   descripcion: Administrador del sitio
-  usuarios: usuarios[:uno]
 
 Normal2:
   nombre: emprendedor
   descripcion: 1234
-  usuarios: usuarios[:uno]
 
 SinNombre:
   nombre: 
   descripcion: Institucion invitada
-  usuarios: usuarios[:uno]
 
-NombreConSimbolos
-  nombre:@!"#$"#%
+NombreConSimbolos:
+  nombre: @!"#$"#%
   descripcion: visitante
-  usuarios: usuarios[:uno]
