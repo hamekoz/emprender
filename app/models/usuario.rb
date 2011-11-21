@@ -23,4 +23,16 @@ class Usuario < ActiveRecord::Base
   def autenticado?
     authenticate(password)
   end
+  
+  def administrador?
+    rol.nombre == "Administrador"
+  end
+  
+  def representante?
+    rol.nombre == "Representante"
+  end
+  
+  def emprendedor?
+    rol.nombre == "Emprendedor"
+  end
 end

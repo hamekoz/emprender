@@ -1,9 +1,9 @@
-<li class=""><%= link_to "Empadronar", root_path %></li>
-<li class="dropdown">
+<%= render 'general/menu_representante' %>
+<li class="dropdown" data-dropdown="dropdown">
   <a class="dropdown-toggle" href="#">Gestion</a>
   <ul class="dropdown-menu">
     <li class=""><%= link_to "Noticias", noticias_path %></li>
-    <li class=""><%= link_to "Eventos", root_path %></li>
+    <li class=""><%= link_to "Eventos", eventos_path %></li>
     <li class="divider"></li>
     <li class=""><%= link_to "Barrios", barrios_path %></li>
     <li class=""><%= link_to "Categorias", categorias_path %></li>
@@ -13,15 +13,5 @@
     <li class="divider"></li>
     <li class=""><%= link_to "Instituciones", instituciones_path %></li>
     <li class=""><%= link_to "Usuarios", usuarios_path %></li>
-  </ul>
-</li>
-<li class="dropdown">
-  <a class="dropdown-toggle" href="#">Reportes</a>
-  <ul class="dropdown-menu">
-    <li><a href="#">Reporte 1</a></li>
-    <li><a href="#">Reporte 2</a></li>
-    <li class="divider"></li>
-    <li><a href="#">Reporte 3</a></li>
-    <li><a href="#">Reporte 4</a></li>
   </ul>
 </li>

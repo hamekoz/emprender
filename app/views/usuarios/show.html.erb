@@ -28,5 +28,9 @@
 
 <div class="actions">
   <%= boton_editar edit_usuario_path(@usuario) %>
-  <%= boton_volver usuarios_path %>
+  <% if usuario_actual.administrador? %>
+    <%= boton_volver usuarios_path %>
+  <% else %>
+    <%= boton_volver :back %>
+  <% end %>
 </div>

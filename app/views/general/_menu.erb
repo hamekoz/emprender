@@ -6,35 +6,15 @@
         <li class=""><%= link_to "Noticias", cartelera_noticias_path %></li>
         <li class=""><%= link_to "Eventos", cartelera_eventos_path %></li>
         <% if autenticado? %>
-        <li class=""><%= link_to "Empadronar", root_path %></li>
-        <li class="dropdown" data-dropdown="dropdown">
-          <a class="dropdown-toggle" href="#">Gestion</a>
-          <ul class="dropdown-menu">
-            <li class=""><%= link_to "Noticias", noticias_path %></li>
-            <li class=""><%= link_to "Eventos", eventos_path %></li>
-            <li class="divider"></li>
-            <li class=""><%= link_to "Barrios", barrios_path %></li>
-            <li class=""><%= link_to "Categorias", categorias_path %></li>
-            <li class=""><%= link_to "Clasificaciones", clasificaciones_path %></li>
-            <li class=""><%= link_to "Estados", estados_path %></li>
-            <li class=""><%= link_to "Rubros", rubros_path %></li>
-            <li class="divider"></li>
-            <li class=""><%= link_to "Instituciones", instituciones_path %></li>
-            <li class=""><%= link_to "Usuarios", usuarios_path %></li>
-          </ul>
-        </li>
-        <li class="dropdown" data-dropdown="dropdown">
-          <a class="dropdown-toggle" href="#">Reportes</a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Reporte 1</a></li>
-            <li><a href="#">Reporte 2</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Reporte 3</a></li>
-            <li><a href="#">Reporte 4</a></li>
-          </ul>
-        </li>
+          <% if usuario_actual.administrador? %>
+            <%= render 'general/menu_administrador' %>
+          <% elsif usuario_actual.representante? %>
+            <%= render 'general/menu_representante' %>
+          <% elsif usuario_actual.emprendedor? %>
+            <%= render 'general/menu_emprendedor' %>
+          <% end %>
         <% else %>
-        <li><%= link_to "Empadronarse", root_path %></li>
+          <li><%= link_to "Empadronarse", root_path %></li>
         <% end %>
       </ul>
       <ul class="nav secondary-nav">
@@ -46,5 +26,5 @@
         <% end %>
       </ul>
     </div>
-  </div><!-- /topbar-inner -->
+  </div>
 </div>
