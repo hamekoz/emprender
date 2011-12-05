@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
+gem 'rails', '3.1.3'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -8,6 +8,11 @@ gem 'rails', '3.1.0'
 gem 'json'
 gem 'simple_form'
 gem 'rails-i18n'
+gem "devise"
+
+gem 'fastercsv' # Only required on Ruby 1.8 and below
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+
 
 # Gemas usadas solo en desarrollo
 group :development do

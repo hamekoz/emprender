@@ -1,5 +1,5 @@
 class RubrosController < ApplicationController
-  before_filter :autenticar
+#  before_filter :autenticar
 
   # GET /rubros
   # GET /rubros.json

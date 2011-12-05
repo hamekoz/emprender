@@ -1,5 +1,5 @@
 class ContactosController < ApplicationController
-  before_filter :autenticar
+#  before_filter :autenticar
 
   # GET /contactos
   # GET /contactos.json

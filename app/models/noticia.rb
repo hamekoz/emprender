@@ -3,5 +3,4 @@ class Noticia < ActiveRecord::Base
   validates :texto,  :presence=>true
 
   scope :publicadas, where(:publicada => true)
-
 end

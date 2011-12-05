@@ -1,5 +1,5 @@
 class EstadosController < ApplicationController
-  before_filter :autenticar
+#  before_filter :autenticar
 
   # GET /estados
   # GET /estados.json

@@ -1,5 +1,5 @@
 class EventosController < ApplicationController
-  before_filter :autenticar, :except => :cartelera
+#  before_filter :autenticar, :except => :cartelera
 
   # GET /eventos
   # GET /eventos.json

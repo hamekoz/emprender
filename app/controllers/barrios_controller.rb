@@ -1,6 +1,6 @@
 class BarriosController < ApplicationController
-  before_filter :autenticar
-  before_filter :usuario_actual.administrador?
+#  before_filter :autenticar
+#  before_filter :usuario_actual.administrador?
 
   # GET /barrios
   # GET /barrios.json

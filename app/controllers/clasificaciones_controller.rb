@@ -1,5 +1,5 @@
 class ClasificacionesController < ApplicationController
-  before_filter :autenticar
+#  before_filter :autenticar
 
   # GET /clasificaciones
   # GET /clasificaciones.json

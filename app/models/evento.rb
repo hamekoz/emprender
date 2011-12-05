@@ -1,6 +1,6 @@
 class Evento < ActiveRecord::Base
   validates :nombre, :presence=>true 
-  validates :fechaHoraInicio, :presence=>true
+  validates :fecha_y_Hora_de_inicio, :presence=>true
 
   belongs_to :tipo_evento
   belongs_to :domicilio

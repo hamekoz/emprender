@@ -9,11 +9,11 @@
     </p>
     <p>
       <strong>Mail</strong><br>
-      <%= @usuario.mail %>
+      <%= @usuario.email %>
     </p>
     <p>
       <strong>Rol</strong><br>
-      <%= @usuario.rol.nombre %>
+      <%= @usuario.type %>
     </p>
     <p>
       <strong>Fecha de creacion</strong><br>
@@ -28,7 +28,7 @@
 
 <div class="actions">
   <%= boton_editar edit_usuario_path(@usuario) %>
-  <% if usuario_actual.administrador? %>
+  <% if current_usuario.is_a? Administrador %>
     <%= boton_volver usuarios_path %>
   <% else %>
     <%= boton_volver :back %>

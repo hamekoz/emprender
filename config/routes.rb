@@ -1,4 +1,16 @@
 Emprender::Application.routes.draw do
+  mount RailsAdmin::Engine => '/pem', :as => 'rails_admin'
+
+  devise_for :usuarios
+
+  devise_for :emprendedores
+
+  devise_for :representantes
+
+  devise_for :administradores
+
+  
+
   root :to => "application#index"
 
   resources :eventos
@@ -23,13 +35,13 @@ Emprender::Application.routes.draw do
 
   resources :roles
 
-  resource :session
+#  resource :session
 
   match '/cartelera_noticias' => "noticias#cartelera", :as => "cartelera_noticias"
   match '/cartelera_eventos' => "eventos#cartelera", :as => "cartelera_eventos"
 
-  match '/login' => "sessions#create", :as => "login"
-  match '/logout' => "sessions#destroy", :as => "logout"
+#  match '/login' => "sessions#create", :as => "login"
+#  match '/logout' => "sessions#destroy", :as => "logout"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

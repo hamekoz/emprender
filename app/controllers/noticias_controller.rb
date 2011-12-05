@@ -1,5 +1,5 @@
 class NoticiasController < ApplicationController
-  before_filter :autenticar, :except => :cartelera
+#  before_filter :autenticar, :except => :cartelera
 
   # GET /noticias
   # GET /noticias.json

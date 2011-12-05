@@ -1,4 +1,4 @@
-es-AR:
+es:
   botones:
     agregar: "Agregar"
     editar: "Editar"
@@ -39,4 +39,10 @@ es-AR:
     # hints:
     #   username: 'User name to sign in.'
     #   password: 'No special characters, please.'
+
+#Rails admin
+  admin:
+    new:
+      char_length_up_to: "Cantidad de caracteres:"
+      char_length_of: "Cantidad de caracteres:"
 

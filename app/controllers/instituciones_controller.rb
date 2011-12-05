@@ -1,5 +1,5 @@
 class InstitucionesController < ApplicationController
-  before_filter :autenticar
+#  before_filter :autenticar
 
   # GET /instituciones
   # GET /instituciones.json

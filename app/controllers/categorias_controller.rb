@@ -1,5 +1,5 @@
 class CategoriasController < ApplicationController
-  before_filter :autenticar
+#  before_filter :autenticar
 
   # GET /categorias
   # GET /categorias.json

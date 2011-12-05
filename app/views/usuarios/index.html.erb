@@ -15,8 +15,8 @@
     <tr>
       <td><%= usuario.usuario %></td>
       <td><%= usuario.persona.nombre_completo %></td>
-      <td><%= usuario.mail %></td>
-      <td><%= usuario.rol.nombre %></td>
+      <td><%= usuario.email %></td>
+      <td><%= usuario.type %></td>
       <td class="acciones">
         <%= boton_mostrar usuario %>
         <%= boton_editar edit_usuario_path(usuario) %>
