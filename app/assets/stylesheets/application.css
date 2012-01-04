@@ -26,7 +26,7 @@ table td.acciones {
   width: 200px;
 }
 
-h2 {
+h1, h2 {
   text-align: center;
 }
 
@@ -63,5 +63,9 @@ box-shadow: none;
 
 label {
   margin-right: 20px;
+}
+
+p {
+  text-align: justify;
 }
 

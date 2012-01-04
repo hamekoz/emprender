@@ -1,7 +1,7 @@
 class CreateEventos < ActiveRecord::Migration
   def change
     create_table :eventos do |t|
-      t.references :tipo_evento
+      t.string :tipo
       t.string :nombre
       t.text :descripcion
       t.references :domicilio
@@ -13,7 +13,6 @@ class CreateEventos < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :eventos, :tipo_evento_id
     add_index :eventos, :domicilio_id
     add_index :eventos, :institucion_id
   end

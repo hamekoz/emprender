@@ -1,4 +1,6 @@
-<h2>¿Olvido su password?</h2>
+<div class="row">
+<div class="span10 offset3">
+<h2 class="breadcrumb">¿Olvido su password?</h2>
 
 <%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
   <%= f.error_notification %>
@@ -8,8 +10,10 @@
   </div>
 
   <div class="actions">
-    <%= f.button :submit, "Enviarme instrucciones para recuperar mi password" %>
+    <%= f.button :submit, "Enviarme instrucciones para recuperar mi password", :class => 'btn primary' %>
   </div>
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>
+</div>
+</div>

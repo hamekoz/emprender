@@ -1,5 +1,6 @@
 <h2 class= "breadcrumb">Cartelera de Noticias</h2>
-
+<div class="row">
+<div class="alert-message block-message info columns span12">
 <ul class="tabs" data-tabs="tabs">
 <% @noticias.each do |noticia| %>
   <% if noticia == @noticias.first %>
@@ -25,4 +26,11 @@
     </article>
   <% end %>
 <% end %>
+
+
+</div>
+</div>
+<div class="columns span3 alert-message block-message">
+fechas
+</div>
 </div>

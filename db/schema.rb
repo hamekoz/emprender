@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(:version => 20111124213704) do
   end
 
   create_table "eventos", :force => true do |t|
-    t.integer  "tipo_evento_id"
+    t.string   "tipo"
     t.string   "nombre"
     t.text     "descripcion"
     t.integer  "domicilio_id"
@@ -91,7 +91,6 @@ ActiveRecord::Schema.define(:version => 20111124213704) do
 
   add_index "eventos", ["domicilio_id"], :name => "index_eventos_on_domicilio_id"
   add_index "eventos", ["institucion_id"], :name => "index_eventos_on_institucion_id"
-  add_index "eventos", ["tipo_evento_id"], :name => "index_eventos_on_tipo_evento_id"
 
   create_table "instituciones", :force => true do |t|
     t.string   "nombre"
@@ -115,7 +114,7 @@ ActiveRecord::Schema.define(:version => 20111124213704) do
   create_table "personas", :force => true do |t|
     t.string   "nombre"
     t.string   "apellido"
-    t.boolean  "sexo"
+    t.string   "sexo"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -132,13 +131,6 @@ ActiveRecord::Schema.define(:version => 20111124213704) do
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
-
-  create_table "roles", :force => true do |t|
-    t.string   "nombre"
-    t.string   "descripcion"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "rubros", :force => true do |t|
     t.string   "nombre"
@@ -166,17 +158,10 @@ ActiveRecord::Schema.define(:version => 20111124213704) do
     t.datetime "updated_at"
   end
 
-  create_table "tipos_eventos", :force => true do |t|
-    t.string   "nombre"
-    t.string   "descripcion"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "usuarios", :force => true do |t|
     t.string   "usuario"
+    t.string   "rol"
     t.integer  "persona_id"
-    t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email",                                 :default => "", :null => false

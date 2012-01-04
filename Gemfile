@@ -7,8 +7,10 @@ gem 'rails', '3.1.3'
 
 gem 'json'
 gem 'simple_form'
+gem 'enum'
 gem 'rails-i18n'
-gem "devise"
+gem 'devise'
+gem 'cancan'
 
 gem 'fastercsv' # Only required on Ruby 1.8 and below
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'

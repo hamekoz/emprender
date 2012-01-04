@@ -1,4 +1,10 @@
 es:
+  unauthorized:
+    default: "No esta autorizado para acceder a esa pagina."
+
+  attributes:
+    created_at: "Creado el"
+    updated_at: "Actualizado el"
   botones:
     agregar: "Agregar"
     editar: "Editar"

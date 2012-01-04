@@ -2,6 +2,10 @@ class Persona < ActiveRecord::Base
   validates :nombre, :presence => true
   validates :apellido, :presence => true
 
+  def sexo_enum
+    ['Femenino', 'Masculino']
+  end
+
 # Muestra nombre descriptivo en RailsAdmin
   def etiqueta
     nombre_completo

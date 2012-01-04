@@ -3,7 +3,7 @@ class CreatePersonas < ActiveRecord::Migration
     create_table :personas do |t|
       t.string :nombre
       t.string :apellido
-      t.boolean :sexo
+      t.string :sexo
 
       t.timestamps
     end
