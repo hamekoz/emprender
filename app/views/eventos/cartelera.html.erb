@@ -2,12 +2,12 @@
 <% @eventos.each do |evento| %>
   <article>
     <p><strong><%= @evento.nombre %></strong></p>
-    <p><strong>Tipo: </strong><%= @evento.tipoEvento %></p>
-    <p><strong>Organizador: </strong><%= @evento.institucion.nombre %></p>
+    <p><strong>Tipo: </strong><%= @evento.tipo %></p>
+    <p><strong>Organizador: </strong><%= @evento.organizador.nombre %></p>
     <p><strong>Descripcion: </strong><%= @evento.descripcion %></p>
     <p>
       <strong>Lugar: </strong>
-      <%= render "domicilios/show", :domicilio => @evento.domicilio %>
+      <%= render "domicilios/show", :domicilio => @evento.lugar %>
     </p>
     <p><strong>Fecha y hora de inicio: </strong><%= @evento.fechaHoraInicio %></p>
     <p><strong>Fecha y hora de finalizacion: </strong><%= @evento.fechaHoraFinalizacion %></p>

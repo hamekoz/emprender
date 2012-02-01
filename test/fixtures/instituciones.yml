@@ -7,16 +7,16 @@ Normal:
   domicilio: domicilios[:Normal]
 
 TelefonoConLetras:
-  nombre: Asociación Vecinal de emprendedores
-  descripcion: institucion desconocida
-  telefono: telefonos[:normal]
-  domicilio: domicilios[:Normal]
+ nombre: Asociación Vecinal de emprendedores
+ descripcion: institucion desconocida
+ telefono: telefonos[:normal]
+ domicilio: domicilios[:Normal]
 
 SinNombre:
-  nombre:
-  descripcion: institución de tipo privada
-  telefono: telefonos[:normal]
-  domicilio: domicilios[:Normal]
+ nombre: 
+ descripcion: 'institución de tipo privada'
+ telefono: telefonos[:normal]
+ domicilio: domicilios[:Normal]
 
 SinDomicilio:
   nombre: CENASA
@@ -24,10 +24,9 @@ SinDomicilio:
   telefono: telefonos[:normal]
   domicilio: domicilios[:Normal]
   
-SinDescripcion
-  nombre:Trabajar
-  descripcion:
-  telefono:telefonos[:normal]
-  domicilio:domicilios[:normal]
-
+SinDescripcion:
+  nombre: Trabajar
+  descripcion: 
+  telefono: telefonos[:normal]
+  domicilio: domicilios[:normal]
 

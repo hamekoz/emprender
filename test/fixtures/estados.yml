@@ -1,13 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-Normal:
-  nombre: activo
-  descripcion: estado activo
+normal:
+ nombre: activo
+ descripcion: estado activo
 
-SinNombre:
-  nombre: 
-  descripcion: estado inactivo
+sin_nombre:
+ nombre: 
+ descripcion: estado inactivo
 
-SinDescripcion:
-  nombre: sin autorizar
-  descripcion: 
+sin_descripcion:
+ nombre: sin autorizar
+ descripcion:

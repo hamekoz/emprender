@@ -1,4 +1,4 @@
-# RailsAdmin config file. Generated on January 03, 2012 20:52
+# RailsAdmin config file. Generated on January 31, 2012 20:47
 # See github.com/sferik/rails_admin for more informations
 
 RailsAdmin.config do |config|
@@ -10,7 +10,13 @@ RailsAdmin.config do |config|
   config.current_user_method { current_usuario } # auto-generated
 
   config.authorize_with :cancan
-
+  
+  # If you want to track changes on your models:
+  # config.audit_with :history, Usuario
+  
+  # Or with a PaperTrail: (you need to install it first)
+  # config.audit_with :paper_trail, Usuario
+  
   # Set the admin name here (optional second array element will appear in a beautiful RailsAdmin red ©)
   config.main_app_name = ['Emprender', 'Plan Estrategico']
   # or for a dynamic name:
@@ -27,10 +33,10 @@ RailsAdmin.config do |config|
 
   #  ==> Included models
   # Add all excluded models here:
-  # config.excluded_models = [Barrio, Categoria, Clasificacion, Contacto, Domicilio, Estado, Estudio, Evento, Institucion, Noticia, Persona, Rubro, Telefono, Usuario]
+  # config.excluded_models = [Barrio, Categoria, Clasificacion, Contacto, Emprendedor, Estado, Estudio, Evento, Institucion, Noticia, Persona, Rubro, Usuario]
 
   # Add models here if you want to go 'whitelist mode':
-  # config.included_models = [Barrio, Categoria, Clasificacion, Contacto, Domicilio, Estado, Estudio, Evento, Institucion, Noticia, Persona, Rubro, Telefono, Usuario]
+  # config.included_models = [Barrio, Categoria, Clasificacion, Contacto, Emprendedor, Estado, Estudio, Evento, Institucion, Noticia, Persona, Rubro, Usuario]
 
   # Application wide tried label methods for models' instances
   # config.label_methods << :description # Default is [:name, :title]
@@ -110,9 +116,9 @@ RailsAdmin.config do |config|
   #   # Found associations:
   #   # Found columns:
   #     configure :id, :integer 
+  #     configure :codigo, :string 
   #     configure :nombre, :string 
   #     configure :descripcion, :string 
-  #     configure :codigo, :string 
   #     configure :created_at, :datetime 
   #     configure :updated_at, :datetime   #   # Sections:
   #   list do; end
@@ -124,12 +130,14 @@ RailsAdmin.config do |config|
   # end
   # config.model Contacto do
   #   # Found associations:
-  #   # Found columns:
+  #     configure :persona, :belongs_to_association   #   # Found columns:
   #     configure :id, :integer 
-  #     configure :persona_id, :integer 
-  #     configure :telefono_id, :integer 
-  #     configure :domicilio_id, :integer 
+  #     configure :persona_id, :integer         # Hidden 
   #     configure :mail, :string 
+  #     configure :telefono, :string 
+  #     configure :celular, :string 
+  #     configure :domicilio, :string 
+  #     configure :barrio_id, :integer 
   #     configure :created_at, :datetime 
   #     configure :updated_at, :datetime   #   # Sections:
   #   list do; end
@@ -139,16 +147,29 @@ RailsAdmin.config do |config|
   #   create do; end
   #   update do; end
   # end
-  # config.model Domicilio do
+  # config.model Emprendedor do
   #   # Found associations:
-  #     configure :barrio, :belongs_to_association   #   # Found columns:
+  #     configure :usuario, :belongs_to_association 
+  #     configure :barrio, :belongs_to_association 
+  #     configure :estudio, :belongs_to_association   #   # Found columns:
   #     configure :id, :integer 
-  #     configure :calle, :string 
-  #     configure :numero, :integer 
-  #     configure :piso, :integer 
-  #     configure :departamento, :string 
-  #     configure :observacion, :string 
+  #     configure :usuario_id, :integer         # Hidden 
+  #     configure :domicilio, :string 
   #     configure :barrio_id, :integer         # Hidden 
+  #     configure :telefono_fijo, :string 
+  #     configure :telefono_celular, :string 
+  #     configure :telefono_para_mensajes, :string 
+  #     configure :observaciones_de_telefonos, :string 
+  #     configure :estudio_id, :integer         # Hidden 
+  #     configure :cantidad_de_hijos, :enum 
+  #     configure :plan_social, :string 
+  #     configure :vigencia_desde, :date 
+  #     configure :vigencia_hasta, :date 
+  #     configure :actividad_laboral_extra, :string 
+  #     configure :relacion_de_dependecia, :enum 
+  #     configure :relacion_con_el_sector_del_emprendimiento, :enum 
+  #     configure :cantidad_de_horas_laborales, :enum 
+  #     configure :es_unico_ingreso, :enum 
   #     configure :created_at, :datetime 
   #     configure :updated_at, :datetime   #   # Sections:
   #   list do; end
@@ -190,16 +211,17 @@ RailsAdmin.config do |config|
   # end
   # config.model Evento do
   #   # Found associations:
-  #     configure :institucion, :belongs_to_association 
-  #     configure :domicilio, :belongs_to_association   #   # Found columns:
+  #     configure :barrio, :belongs_to_association 
+  #     configure :organizador, :belongs_to_association   #   # Found columns:
   #     configure :id, :integer 
   #     configure :tipo, :enum 
   #     configure :nombre, :string 
   #     configure :descripcion, :text 
-  #     configure :domicilio_id, :integer         # Hidden 
+  #     configure :lugar, :string 
+  #     configure :barrio_id, :integer         # Hidden 
   #     configure :fecha_y_hora_de_inicio, :datetime 
   #     configure :fecha_y_hora_de_finalizacion, :datetime 
-  #     configure :institucion_id, :integer         # Hidden 
+  #     configure :organizador_id, :integer         # Hidden 
   #     configure :publicado, :boolean 
   #     configure :fecha_de_publicacion, :datetime 
   #     configure :created_at, :datetime 
@@ -213,13 +235,13 @@ RailsAdmin.config do |config|
   # end
   # config.model Institucion do
   #   # Found associations:
-  #     configure :telefono, :belongs_to_association 
-  #     configure :domicilio, :belongs_to_association   #   # Found columns:
+  #     configure :barrio, :belongs_to_association   #   # Found columns:
   #     configure :id, :integer 
   #     configure :nombre, :string 
   #     configure :descripcion, :string 
-  #     configure :telefono_id, :integer         # Hidden 
-  #     configure :domicilio_id, :integer         # Hidden 
+  #     configure :telefono, :string 
+  #     configure :domicilio, :string 
+  #     configure :barrio_id, :integer         # Hidden 
   #     configure :created_at, :datetime 
   #     configure :updated_at, :datetime   #   # Sections:
   #   list do; end
@@ -231,11 +253,11 @@ RailsAdmin.config do |config|
   # end
   # config.model Noticia do
   #   # Found associations:
-  #   # Found columns:
+  #     configure :autor, :belongs_to_association   #   # Found columns:
   #     configure :id, :integer 
   #     configure :titulo, :string 
   #     configure :texto, :text 
-  #     configure :autor, :string 
+  #     configure :autor_id, :integer         # Hidden 
   #     configure :fecha, :datetime 
   #     configure :publicada, :boolean 
   #     configure :created_at, :datetime 
@@ -278,46 +300,17 @@ RailsAdmin.config do |config|
   #   create do; end
   #   update do; end
   # end
-  # config.model Telefono do
-  #   # Found associations:
-  #   # Found columns:
-  #     configure :id, :integer 
-  #     configure :fijo, :string 
-  #     configure :celular, :string 
-  #     configure :mensajes, :string 
-  #     configure :observaciones, :string 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime   #   # Sections:
-  #   list do; end
-  #   export do; end
-  #   show do; end
-  #   edit do; end
-  #   create do; end
-  #   update do; end
-  # end
   # config.model Usuario do
   #   # Found associations:
   #     configure :persona, :belongs_to_association   #   # Found columns:
   #     configure :id, :integer 
-  #     configure :usuario, :string 
-  #     configure :rol, :enum 
-  #     configure :persona_id, :integer         # Hidden 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime 
   #     configure :email, :string 
   #     configure :password, :password         # Hidden 
   #     configure :password_confirmation, :password         # Hidden 
-  #     configure :reset_password_token, :string         # Hidden 
-  #     configure :reset_password_sent_at, :datetime 
-  #     configure :remember_created_at, :datetime 
-  #     configure :sign_in_count, :integer 
-  #     configure :current_sign_in_at, :datetime 
-  #     configure :last_sign_in_at, :datetime 
-  #     configure :current_sign_in_ip, :string 
-  #     configure :last_sign_in_ip, :string 
-  #     configure :failed_attempts, :integer 
-  #     configure :unlock_token, :string 
-  #     configure :locked_at, :datetime   #   # Sections:
+  #     configure :persona_id, :integer         # Hidden 
+  #     configure :rol, :enum 
+  #     configure :created_at, :datetime 
+  #     configure :updated_at, :datetime   #   # Sections:
   #   list do; end
   #   export do; end
   #   show do; end

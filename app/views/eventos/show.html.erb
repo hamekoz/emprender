@@ -5,12 +5,12 @@
     <h3>Informacion General</h3>
     <p>
       <strong>Tipo</strong><br>
-      <%= @evento.tipoEvento %>
+      <%= @evento.tipo %>
     </p>
 
     <p>
       <strong>Organizador</strong><br>
-      <%= @evento.institucion.nombre %>
+      <%= @evento.organizador.nombre %>
     </p>
 
     <p>
@@ -26,7 +26,7 @@
 
   <div class="span-one-third">
     <h3>Lugar, Fecha y Hora</h3>
-    <%= render "domicilios/show", :domicilio => @evento.domicilio %>
+    <%= render "domicilios/show", :domicilio => @evento.lugar %>
 
     <p>
       <strong>Fecha y hora de inicio:</strong><br>
@@ -60,6 +60,5 @@
 </article>
 
 <div class="actions">
-  <%= boton_editar edit_evento_path(@evento) %>
   <%= boton_volver eventos_path %>
 </div>

@@ -3,7 +3,7 @@ class CreateNoticias < ActiveRecord::Migration
     create_table :noticias do |t|
       t.string :titulo
       t.text :texto
-      t.string :autor
+      t.references :autor
       t.datetime :fecha
       t.boolean :publicada
 

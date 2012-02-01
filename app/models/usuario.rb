@@ -1,26 +1,21 @@
 class Usuario < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :lockable,
-         :recoverable, :rememberable, :trackable, :validatable
+#  devise :database_authenticatable, :registerable,
+#         :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :usuario, :rol, :persona, :email, :password, :password_confirmation, :remember_me
-
-  validates :usuario,  :presence => true,
-                       :uniqueness => true,
-                       :length => { :within => 4..20 }
+  attr_accessible :persona_id, :persona, :rol, :email, :password, :password_confirmation #, :remember_me
 
   validates :rol, :presence => true
   validates :persona, :presence => true
   
   belongs_to :persona
 
-#  accepts_nested_attributes_for :persona
-
 # Muestra nombre descriptivo en RailsAdmin
   def etiqueta
-    usuario
+    email
   end
 
   def rol_enum

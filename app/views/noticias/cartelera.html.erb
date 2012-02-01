@@ -9,7 +9,6 @@
     <li class="">
   <% end %>
   <%= link_to noticia.id, :anchor => noticia %></li>
-  
 <% end %>
 </ul>
 
@@ -17,17 +16,15 @@
 <% @noticias.each do |noticia| %>
     <%= div_for(noticia, :class => "active tab-pane") do %>
     <article>
-      <p><strong>Titulo:</strong><%= noticia.titulo %></p>
-      <p><strong>Autor:</strong><%= noticia.autor %></p>
-      <p><strong>Fecha publicacion:</strong><%= noticia.fecha %></p>
+      <p><strong>Titulo: </strong><%= noticia.titulo %></p>
+      <p><strong>Autor: </strong><%= noticia.autor.nombre_completo %></p>
+      <p><strong>Fecha publicacion: </strong><%= noticia.fecha %></p>
       <p>
         <%= noticia.texto %>
       </p>
     </article>
   <% end %>
 <% end %>
-
-
 </div>
 </div>
 <div class="columns span3 alert-message block-message">

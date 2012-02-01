@@ -2,35 +2,5 @@
 
 Normal:
   nombre: Micro emprendimientos
-  descripcion: enprendimientos de tipo poqueños
-  codigo: Codigo1
-
-Normal2:
-  nombre: Emprendimientos unipersonales
-  descripcion: Emprendimientos de una sola persona
-  codigo: Codigo2
-
-SinNombre:
-  nombre: 
-  descripcion: Clasificación sin nombre
-  codigo: codigo3
-
-SinDescripcion:
-  nombre: Clasificación sin desripción
-  descripcion:
-  codigo: codigo4 
-
-CaracteresRaros:
-  nombre: |*!$%
-  descripcion: "#$%>--
-  codigo: ?=\
-
-SinCodigo:
-  nombre: nombre
-  descripcion: descripcion
-  codigo: 
-
-CadenasMuyLargas:
-  nombre:nombre muy largo que utiliza gran cantidad de caracteres
-  descripcion:descripcion muy larga que utiliza gran cantidad de caracteres
-  codigo:codigo muy largo que utiliza gran cantidad de caracteres y posiblemente supere el limite permitido
+  descripcion: enprendimientos de tipo pequeños
+  codigo: odigo1

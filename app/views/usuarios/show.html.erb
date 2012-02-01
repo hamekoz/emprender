@@ -4,16 +4,12 @@
   <div class="span-one-third">
     <h3>Datos de Cuenta</h3>
     <p>
-      <strong>Usuario</strong><br>
-      <%= @usuario.usuario %>
-    </p>
-    <p>
       <strong>Mail</strong><br>
       <%= @usuario.email %>
     </p>
     <p>
       <strong>Rol</strong><br>
-      <%= @usuario.type %>
+      <%= @usuario.rol %>
     </p>
     <p>
       <strong>Fecha de creacion</strong><br>
@@ -28,7 +24,7 @@
 
 <div class="actions">
   <%= boton_editar edit_usuario_path(@usuario) %>
-  <% if current_usuario.is_a? Administrador %>
+  <% if current_usuario.administrador? %>
     <%= boton_volver usuarios_path %>
   <% else %>
     <%= boton_volver :back %>

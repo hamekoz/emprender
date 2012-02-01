@@ -10,7 +10,7 @@
 
     <p>
       <strong>Autor</strong><br>
-      <%= @noticia.autor %>
+      <%= @noticia.autor.nombre_completo %>
     </p>
 
   </div>
@@ -44,6 +44,5 @@
 </article>
 
 <div class="actions">
-  <%= boton_editar edit_noticia_path(@noticia) %>
   <%= boton_volver noticias_path %>
 </div>

@@ -20,7 +20,7 @@
       </ul>
       <ul class="nav secondary-nav">
         <% if usuario_signed_in? %>
-        <li><%= link_to current_usuario.usuario, usuario_path(current_usuario) %></li>
+        <li><%= link_to current_usuario.persona.nombre, usuario_path(current_usuario) %></li>
         <li><%= link_to "Cerrar Sesion", destroy_usuario_session_path, :method => :delete %></li>
         <% else %>
         <li><%= link_to "Iniciar Sesion", new_usuario_session_path %></li>

@@ -6,7 +6,7 @@
       <th class="blue">Autor</th>
       <th class="blue">Fecha</th>
       <th class="blue">Publicada</th>
-      <th><%= boton_agregar new_noticia_path %></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -14,14 +14,10 @@
   <% @noticias.each do |noticia| %>
     <tr>
       <td><%= noticia.titulo %></td>
-      <td><%= noticia.autor %></td>
+      <td><%= noticia.autor.nombre_completo %></td>
       <td><%= noticia.fecha %></td>
       <td><%= noticia.publicada %></td>
-      <td class="acciones">
-        <%= boton_mostrar noticia %>
-        <%= boton_editar edit_noticia_path(noticia) %>
-        <%= boton_eliminar noticia %>
-      </td>
+      <td class="acciones"><%= boton_mostrar noticia %></td>
     </tr>
   <% end %>
   </tbody>

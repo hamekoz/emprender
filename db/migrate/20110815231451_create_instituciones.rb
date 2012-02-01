@@ -3,8 +3,10 @@ class CreateInstituciones < ActiveRecord::Migration
     create_table :instituciones do |t|
       t.string :nombre
       t.string :descripcion
-      t.references :telefono
-      t.references :domicilio
+      t.string :telefono
+      t.string :domicilio
+      t.references :barrio
+      
 
       t.timestamps
     end

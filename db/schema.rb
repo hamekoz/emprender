@@ -10,177 +10,141 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111124213704) do
+ActiveRecord::Schema.define(:version => 20120131235159) do
 
   create_table "barrios", :force => true do |t|
     t.string   "nombre"
     t.string   "descripcion"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "categorias", :force => true do |t|
     t.string   "nombre"
     t.string   "descripcion"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "clasificaciones", :force => true do |t|
+    t.string   "codigo"
     t.string   "nombre"
     t.string   "descripcion"
-    t.string   "codigo"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "contactos", :force => true do |t|
     t.integer  "persona_id"
-    t.integer  "telefono_id"
-    t.integer  "domicilio_id"
     t.string   "mail"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "documentos", :force => true do |t|
-    t.string   "nombre"
-    t.string   "abreviatura"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "domicilios", :force => true do |t|
-    t.string   "calle"
-    t.integer  "numero"
-    t.integer  "piso"
-    t.string   "departamento"
-    t.string   "observacion"
+    t.string   "telefono"
+    t.string   "celular"
+    t.string   "domicilio"
     t.integer  "barrio_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
+
+  create_table "emprendedores", :force => true do |t|
+    t.integer  "usuario_id"
+    t.string   "domicilio"
+    t.integer  "barrio_id"
+    t.string   "telefono_fijo"
+    t.string   "telefono_celular"
+    t.string   "telefono_para_mensajes"
+    t.string   "observaciones_de_telefonos"
+    t.integer  "estudio_id"
+    t.string   "cantidad_de_hijos"
+    t.string   "plan_social"
+    t.date     "vigencia_desde"
+    t.date     "vigencia_hasta"
+    t.string   "actividad_laboral_extra"
+    t.string   "relacion_de_dependecia"
+    t.string   "relacion_con_el_sector_del_emprendimiento"
+    t.string   "cantidad_de_horas_laborales"
+    t.string   "es_unico_ingreso"
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+  end
+
+  add_index "emprendedores", ["usuario_id"], :name => "index_emprendedores_on_usuario_id"
 
   create_table "estados", :force => true do |t|
     t.string   "nombre"
     t.string   "descripcion"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "estudios", :force => true do |t|
     t.string   "nombre"
     t.string   "descripcion"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "eventos", :force => true do |t|
     t.string   "tipo"
     t.string   "nombre"
     t.text     "descripcion"
-    t.integer  "domicilio_id"
+    t.string   "lugar"
+    t.integer  "barrio_id"
     t.datetime "fecha_y_hora_de_inicio"
     t.datetime "fecha_y_hora_de_finalizacion"
-    t.integer  "institucion_id"
+    t.integer  "organizador_id"
     t.boolean  "publicado"
     t.datetime "fecha_de_publicacion"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
-  add_index "eventos", ["domicilio_id"], :name => "index_eventos_on_domicilio_id"
-  add_index "eventos", ["institucion_id"], :name => "index_eventos_on_institucion_id"
+  add_index "eventos", ["barrio_id"], :name => "index_eventos_on_barrio_id"
+  add_index "eventos", ["organizador_id"], :name => "index_eventos_on_organizador_id"
 
   create_table "instituciones", :force => true do |t|
     t.string   "nombre"
     t.string   "descripcion"
-    t.integer  "telefono_id"
-    t.integer  "domicilio_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "telefono"
+    t.string   "domicilio"
+    t.integer  "barrio_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "noticias", :force => true do |t|
     t.string   "titulo"
     t.text     "texto"
-    t.string   "autor"
+    t.integer  "autor_id"
     t.datetime "fecha"
     t.boolean  "publicada"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "personas", :force => true do |t|
     t.string   "nombre"
     t.string   "apellido"
     t.string   "sexo"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
-
-  create_table "rails_admin_histories", :force => true do |t|
-    t.text     "message"
-    t.string   "username"
-    t.integer  "item"
-    t.string   "table"
-    t.integer  "month",      :limit => 2
-    t.integer  "year",       :limit => 5
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
   create_table "rubros", :force => true do |t|
     t.string   "nombre"
     t.string   "descripcion"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "sessions", :force => true do |t|
-    t.string   "session_id", :null => false
-    t.text     "data"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
-  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
-
-  create_table "telefonos", :force => true do |t|
-    t.string   "fijo"
-    t.string   "celular"
-    t.string   "mensajes"
-    t.string   "observaciones"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "usuarios", :force => true do |t|
-    t.string   "usuario"
-    t.string   "rol"
     t.integer  "persona_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "email",                                 :default => "", :null => false
-    t.string   "encrypted_password",     :limit => 128, :default => "", :null => false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                         :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.integer  "failed_attempts",                       :default => 0
-    t.string   "unlock_token"
-    t.datetime "locked_at"
+    t.string   "rol"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+    t.string   "email",              :default => "", :null => false
+    t.string   "encrypted_password", :default => "", :null => false
   end
 
   add_index "usuarios", ["email"], :name => "index_usuarios_on_email", :unique => true
-  add_index "usuarios", ["reset_password_token"], :name => "index_usuarios_on_reset_password_token", :unique => true
-  add_index "usuarios", ["unlock_token"], :name => "index_usuarios_on_unlock_token", :unique => true
 
 end

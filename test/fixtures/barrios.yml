@@ -1,20 +1,21 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 Normal:
-  nombre: Belgrano
-  descripcion: Periferico
+ nombre: Belgrano
+ descripcion: Periferico
+
 Normal2:
-  nombre: La Perla
-  descripcion: Barrio céntrico
+ nombre: La Perla
+ descripcion: Barrio céntrico
 
 SinNombre:
-  nombre: 
-  descripcion: barrio residencial
+ nombre: cualquiera
+ descripcion: barrio residencial
 
 SinDescripcion:
-  nombre: nombre
-  descripcion: 
+ nombre: nom
+ descripcion: desc
 
 CaracteresRaros:
-  nombre: |*!$%
-  descripcion: "#$%>--
+ nombre: cualquiera2
+ descripcion: cuqlerui d
