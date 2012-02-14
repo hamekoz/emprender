@@ -1,24 +1,18 @@
-<h2 class= "breadcrumb">Eventos</h2>
-<table id="3columnas" class="zebra-striped">
-  <thead>
-    <tr>
-      <th class="blue">Nombre</th>
-      <th class="blue">Fecha</th>
-      <th><%= boton_agregar new_evento_path %></th>
-    </tr>
-  </thead>
+<h2 class= "breadcrumb">Cartelera de Eventos</h2>
+<% @eventos.each do |evento| %>
+  <article>
+    <p><strong><%= @evento.nombre %></strong></p>
+    <p><strong>Tipo: </strong><%= @evento.tipo %></p>
+    <p><strong>Organizador: </strong><%= @evento.organizador.nombre %></p>
+    <p><strong>Descripcion: </strong><%= @evento.descripcion %></p>
+    <p>
+      <strong>Lugar: </strong>
+      <%= render "domicilios/show", :domicilio => @evento.lugar %>
+    </p>
+    <p><strong>Fecha y hora de inicio: </strong><%= @evento.fechaHoraInicio %></p>
+    <p><strong>Fecha y hora de finalizacion: </strong><%= @evento.fechaHoraFinalizacion %></p>
 
-  <tbody>
-  <% @eventos.each do |evento| %>
-    <tr>
-      <td><%= evento.nombre %></td>
-      <td><%= evento.fechaHoraInicio %></td>
-      <td class="acciones">
-        <%= boton_mostrar evento %>
-        <%= boton_editar edit_evento_path(evento) %>
-        <%= boton_eliminar evento %>
-      </td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+    <p><strong>Fecha publicacion: </strong><%= @evento.fechaPublicacion %></p>
+
+  </article>
+<% end %>

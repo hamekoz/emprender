@@ -1,5 +1,5 @@
 <div class="row">
-<div class="span10 offset3">
+<div class="span8 offset2">
 <h2 class="breadcrumb">Ingreso al sistema</h2>
 
 <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
@@ -9,8 +9,9 @@
     <%= f.input :remember_me, :as => :boolean, :label => "Recordarme" if devise_mapping.rememberable? %>
   </div>
 
-  <div class="actions">
-    <%= f.button :submit, "Ingresar", :class => 'btn primary' %>
+  <div class="form-actions">
+    <i class="icon-book"></i>
+    <%= f.button :submit, "Ingresar", :class => 'btn btn-primary'   %>
   </div>
 <% end %>
 

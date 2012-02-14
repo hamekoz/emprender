@@ -1,7 +1,5 @@
 Emprender::Application.routes.draw do
 
-  
-
   mount RailsAdmin::Engine => '/pem', :as => 'rails_admin'
 
   devise_for :usuarios
@@ -12,26 +10,8 @@ Emprender::Application.routes.draw do
 
   resources :noticias
 
-#  resources :clasificaciones
-
-#  resources :rubros
-
-#  resources :categorias
-
-#  resources :instituciones
-
-#  resources :persona
-
-#  resources :contactos
-
   resources :usuarios
 
-#  resources :estados
-
-#  resources :barrios
-
-  match '/cartelera_noticias' => "noticias#cartelera", :as => "cartelera_noticias"
-  match '/cartelera_eventos' => "eventos#cartelera", :as => "cartelera_eventos"
   match '/acerca' => "application#acerca", :as => "acerca"
 
   # The priority is based upon order of creation:
