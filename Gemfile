@@ -13,6 +13,7 @@ gem 'enum'
 gem 'rails-i18n'
 gem 'devise'
 gem 'cancan'
+#gem 'twitter-bootstrap-rails'
 
 gem 'fastercsv' # Only required on Ruby 1.8 and below
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'

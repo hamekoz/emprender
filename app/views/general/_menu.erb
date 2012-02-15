@@ -1,11 +1,12 @@
-<div class="topbar" data-dropdown="dropdown">
-  <div class="topbar-inner">
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
     <div class="container">
-      <h3><%= link_to "Emprender", root_path, :id => "logo" %></h3>
+      <%= link_to "Emprender", root_path, :id => "logo", :class => "brand" %>
       <ul class="nav">
         <li class=""><%= link_to "Acerca de...", acerca_path %></li>
-        <li class=""><%= link_to "Noticias", cartelera_noticias_path %></li>
-        <li class=""><%= link_to "Eventos", cartelera_eventos_path %></li>
+        <li class="divider-vertical"></li>
+        <li class=""><%= link_to "Noticias", noticias_path %></li>
+        <li class=""><%= link_to "Eventos", eventos_path %></li>
         <% if usuario_signed_in? %>
           <% if current_usuario.administrador? %>
             <%= render 'general/menu_pem' %>
@@ -18,7 +19,7 @@
           <li><%= link_to "Empadronarse", root_path %></li>
         <% end %>
       </ul>
-      <ul class="nav secondary-nav">
+      <ul class="nav pull-right">
         <% if usuario_signed_in? %>
         <li><%= link_to current_usuario.persona.nombre, usuario_path(current_usuario) %></li>
         <li><%= link_to "Cerrar Sesion", destroy_usuario_session_path, :method => :delete %></li>
