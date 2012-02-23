@@ -14,16 +14,16 @@ gem 'rails-i18n'
 gem 'devise'
 gem 'cancan'
 #gem 'twitter-bootstrap-rails'
-gem "ckeditor", "3.7.0.rc2"
-gem "paperclip"
-gem "kaminari"
+gem 'ckeditor', "3.7.0.rc2"
+gem 'paperclip'
+gem 'kaminari'
 
 gem 'fastercsv' # Only required on Ruby 1.8 and below
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
 
 # Gemas usadas solo en desarrollo
-group :development do
+group :development, :test do
   gem 'sqlite3'
   gem 'heroku'
 #  gem 'css-bootstrap-rails'
@@ -31,7 +31,8 @@ end
 
 # Gemas necesarias para produccion
 group :production do
-  gem "pg"
+  gem 'pg'
+  gem 'thin'
 end
 
 # Gems used only for assets and not required
