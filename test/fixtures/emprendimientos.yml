@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nombre: MyText
+  marca_registrada: false
+  marca: 
+  clasificacion: 
+  estado: 
+  fecha_de_inicio: 2012-02-15
+  descripcion: MyText
+  cantidad_de_integrantes: 1
+  mail: MyText
+  web: MyText
+  domicilio: MyText
+
+two:
+  nombre: MyText
+  marca_registrada: false
+  marca: 
+  clasificacion: 
+  estado: 
+  fecha_de_inicio: 2012-02-15
+  descripcion: MyText
+  cantidad_de_integrantes: 1
+  mail: MyText
+  web: MyText
+  domicilio: MyText

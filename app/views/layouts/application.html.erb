@@ -12,9 +12,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
-  <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
-  <link rel="apple-touch-icon" href="/assets/images/start-here.png"/>
-
+  <%= favicon_link_tag 'favicon.ico' %>
+  <%= favicon_link_tag 'start-here.png', :rel => 'apple-touch-icon', :type => 'image/png' %>
   <%= stylesheet_link_tag    "application" %>
 
   <%= csrf_meta_tag %>
@@ -26,16 +25,16 @@
   <div id="main" role="main" class="container">
     <div class="content">
       <% if notice.present? %>
-      <div id="notice" class="alert-message success fade in" data-alert="alert">
+      <div id="notice" class="alert alert-success fade in" data-alert="alert">
         <a class="close" href="#">×</a>
-        <%= content_tag(:p, notice) %>
+        <%= notice %>
       </div>
       <% end %>
 
       <% if alert.present? %>
-      <div id="alert" class="alert-message warning fade in" data-alert="alert">
+      <div id="alert" class="alert alert-error fade in" data-alert="alert">
         <a class="close" href="#">×</a>
-        <%= content_tag(:p, alert)%>
+        <%= alert %>
       </div>
       <% end %>
 

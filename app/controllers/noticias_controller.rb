@@ -3,7 +3,7 @@ class NoticiasController < ApplicationController
   # GET /noticias
   # GET /noticias.json
   def index
-    @noticias = Noticia.publicadas.all
+    @noticias = Noticia.publicadas.page(params[:pagina]).per(1)
 
     respond_to do |format|
       format.html # index.html.erb

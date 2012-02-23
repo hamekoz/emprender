@@ -1,5 +1,7 @@
 Emprender::Application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
+
   mount RailsAdmin::Engine => '/pem', :as => 'rails_admin'
 
   devise_for :usuarios

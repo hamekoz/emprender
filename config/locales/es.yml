@@ -46,3 +46,16 @@ es:
     #   username: 'User name to sign in.'
     #   password: 'No special characters, please.'
 
+  ckeditor:
+    page_title: "Administrador de archivos"
+    confirm_delete: "¿Eliminar archivo?"
+    buttons:
+      cancel: "Cancelar"
+      upload: "Cargar"
+      delete: "Eliminar"
+
+#Kaminari
+  views:
+    pagination:
+      first: "Primera"
+      last: "Ultima"

@@ -1,33 +1,38 @@
-<h2 class= "breadcrumb">Cartelera de Noticias</h2>
-<div class="row">
-<div class="alert-message block-message info columns span12">
-<ul class="tabs" data-tabs="tabs">
-<% @noticias.each do |noticia| %>
-  <% if noticia == @noticias.first %>
-    <li class="active">
-  <% else %>
-    <li class="">
-  <% end %>
-  <%= link_to noticia.id, :anchor => noticia %></li>
-<% end %>
-</ul>
+<h2 class= "well">Cartelera de Noticias</h2>
+<div class="row cartelera">
+  <div class="well columns span2">
+    <ul class="nav nav-list">
+      <li class="nav-header">Enero 2012</li>
+      <li class="active"><a href="#">Ultima Noticia</a></li>
+      <li><a href="#">Noticia 5</a></li>
+      <li><a href="#">Noticia 4</a></li>
+      <li class="nav-header">Diciembre 2011</li>
+      <li><a href="#">Noticia 3</a></li>
+      <li><a href="#">Noticia 2</a></li>
+      <li><a href="#">Noticia 1</a></li>
+    </ul>
+  </div>
+  <div class="columns span9 well">
 
-<div id="my-tab-content" class="tab-content">
-<% @noticias.each do |noticia| %>
-    <%= div_for(noticia, :class => "active tab-pane") do %>
-    <article>
-      <p><strong>Titulo: </strong><%= noticia.titulo %></p>
-      <p><strong>Autor: </strong><%= noticia.autor.nombre_completo %></p>
-      <p><strong>Fecha publicacion: </strong><%= noticia.fecha %></p>
-      <p>
-        <%= noticia.texto %>
-      </p>
-    </article>
+  <% @noticias.each do |noticia| %>
+      <article class="">
+        <header>
+        <h1>
+          <%= noticia.titulo %>
+          <small> por <strong><%= noticia.autor.nombre_completo %></strong></small>
+        </h1>
+        </header>
+        <%= noticia.texto.html_safe %>
+        <footer>
+          <p>
+            <strong>Fecha publicacion: </strong>
+            <%= noticia.fecha %>
+          </p>
+        </footer>
+      </article>
   <% end %>
-<% end %>
-</div>
-</div>
-<div class="columns span3 alert-message block-message">
-fechas
-</div>
+  </div>
+  <div class="columns span9 offset2">
+  <%= paginate @noticias %>
+  </div>
 </div>

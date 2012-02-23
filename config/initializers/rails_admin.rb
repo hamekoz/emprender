@@ -82,6 +82,16 @@ RailsAdmin.config do |config|
 
   # All fields marked as 'hidden' won't be shown anywhere in the rails_admin unless you mark them as visible. (visible(true))
 
+  config.model Noticia do
+    include_all_fields
+    field :texto do
+      ckeditor true
+      pretty_value do
+        value.html_safe
+      end
+    end
+  end
+
   # config.model Barrio do
   #   # Found associations:
   #   # Found columns:

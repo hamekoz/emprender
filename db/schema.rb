@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120131235159) do
+ActiveRecord::Schema.define(:version => 20120215231237) do
 
   create_table "barrios", :force => true do |t|
     t.string   "nombre"
@@ -25,6 +25,20 @@ ActiveRecord::Schema.define(:version => 20120131235159) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "ckeditor_assets", :force => true do |t|
+    t.string   "data_file_name",                  :null => false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    :limit => 30
+    t.string   "type",              :limit => 30
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
+
+  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
+  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
 
   create_table "clasificaciones", :force => true do |t|
     t.string   "codigo"
@@ -68,6 +82,26 @@ ActiveRecord::Schema.define(:version => 20120131235159) do
   end
 
   add_index "emprendedores", ["usuario_id"], :name => "index_emprendedores_on_usuario_id"
+
+  create_table "emprendimientos", :force => true do |t|
+    t.text     "nombre"
+    t.boolean  "marca_registrada"
+    t.text     "marca"
+    t.integer  "clasificacion_id"
+    t.integer  "estado_id"
+    t.integer  "contacto_id"
+    t.date     "fecha_de_inicio"
+    t.text     "descripcion"
+    t.integer  "cantidad_de_integrantes"
+    t.text     "mail"
+    t.text     "web"
+    t.text     "domicilio"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  add_index "emprendimientos", ["clasificacion_id"], :name => "index_emprendimientos_on_clasificacion_id"
+  add_index "emprendimientos", ["estado_id"], :name => "index_emprendimientos_on_estado_id"
 
   create_table "estados", :force => true do |t|
     t.string   "nombre"
