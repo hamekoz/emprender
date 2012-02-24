@@ -32,7 +32,7 @@ end
 # Gemas necesarias para produccion
 group :production do
   gem 'pg'
-  gem 'thin'
+#  gem 'thin'
 end
 
 # Gems used only for assets and not required
