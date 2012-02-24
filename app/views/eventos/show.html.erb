@@ -26,16 +26,19 @@
 
   <div class="span-one-third">
     <h3>Lugar, Fecha y Hora</h3>
-    <%= render "domicilios/show", :domicilio => @evento.lugar %>
+    <p>
+      <strong>Descripcion</strong><br>
+      <%= @evento.lugar %>
+    </p>
 
     <p>
       <strong>Fecha y hora de inicio:</strong><br>
-      <%= @evento.fechaHoraInicio %>
+      <%= @evento.fecha_y_hora_de_inicio %>
     </p>
 
     <p>
       <strong>Fecha y hora de finalizacion</strong><br>
-      <%= @evento.fechaHoraFinalizacion %>
+      <%= @evento.fecha_y_hora_de_finalizacion %>
     </p>
   </div>
 
@@ -48,7 +51,7 @@
 
     <p>
       <strong>Fecha publicacion</strong><br>
-      <%= @evento.fechaPublicacion %>
+      <%= @evento.fecha_de_publicacion %>
     </p>
 
     <p>

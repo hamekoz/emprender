@@ -17,24 +17,21 @@
   <% @eventos.each do |evento| %>
     <article class="">
       <header>
-        <p><strong><%= @evento.nombre %></strong></p>
+        <p><strong><%= evento.nombre %></strong></p>
       </header>
-      <p><strong>Tipo: </strong><%= @evento.tipo %></p>
-      <p><strong>Organizador: </strong><%= @evento.organizador.nombre %></p>
-      <p><strong>Descripcion: </strong><%= @evento.descripcion %></p>
-      <p>
-        <strong>Lugar: </strong>
-        <%= render "domicilios/show", :domicilio => @evento.lugar %>
-      </p>
-      <p><strong>Fecha y hora de inicio: </strong><%= @evento.fechaHoraInicio %></p>
-      <p><strong>Fecha y hora de finalizacion: </strong><%= @evento.fechaHoraFinalizacion %></p>
+      <p><strong>Tipo: </strong><%= evento.tipo %></p>
+      <p><strong>Organizador: </strong><%= evento.organizador.nombre %></p>
+      <p><strong>Descripcion: </strong><%= evento.descripcion %></p>
+      <p><strong>Lugar: </strong><%= evento.lugar %></p>
+      <p><strong>Fecha y hora de inicio: </strong><%= evento.fecha_y_hora_de_inicio %></p>
+      <p><strong>Fecha y hora de finalizacion: </strong><%= evento.fecha_y_hora_de_finalizacion %></p>
       <footer>
-        <p><strong>Fecha publicacion: </strong><%= @evento.fechaPublicacion %></p>
+        <p><strong>Fecha publicacion: </strong><%= evento.fecha_de_publicacion %></p>
       </footer>
     </article>
   <% end %>
   </div>
-  <div class="columns span9 offset2">
+  <div class="columns span9">
   <%= paginate @eventos %>
   </div>
 </div>

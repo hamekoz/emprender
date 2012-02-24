@@ -84,18 +84,18 @@ ActiveRecord::Schema.define(:version => 20120215231237) do
   add_index "emprendedores", ["usuario_id"], :name => "index_emprendedores_on_usuario_id"
 
   create_table "emprendimientos", :force => true do |t|
-    t.text     "nombre"
+    t.string   "nombre"
     t.boolean  "marca_registrada"
-    t.text     "marca"
+    t.string   "marca"
     t.integer  "clasificacion_id"
     t.integer  "estado_id"
     t.integer  "contacto_id"
     t.date     "fecha_de_inicio"
     t.text     "descripcion"
     t.integer  "cantidad_de_integrantes"
-    t.text     "mail"
-    t.text     "web"
-    t.text     "domicilio"
+    t.string   "mail"
+    t.string   "web"
+    t.string   "domicilio"
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
   end
