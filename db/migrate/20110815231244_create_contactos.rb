@@ -4,6 +4,8 @@ class CreateContactos < ActiveRecord::Migration
       t.references :persona
       t.string :mail
       t.string :telefono
+	  t.string :telefono_mensajes
+	  t.string :comentarios
       t.string :celular
       t.string :domicilio
       t.references :barrio

@@ -19,10 +19,14 @@
           <% elsif current_usuario.representante? %>
             <%= render 'general/menu_pem' %>
           <% elsif current_usuario.emprendedor? %>
-            <li><%= link_to "Mi Emprendimiento", root_path %></li>
+            <li>
+              <%= link_to "Mi Emprendimiento", root_path %>
+            </li>
           <% end %>
         <% else %>
-          <li><%= link_to "Empadronarse", root_path %></li>
+          <li class="<%= 'active' if current_page?(:controller => 'padron') %>">
+            <%= link_to "Empadronarse", empadronarme_path %>
+          </li>
         <% end %>
       </ul>
       <ul class="nav pull-right">
