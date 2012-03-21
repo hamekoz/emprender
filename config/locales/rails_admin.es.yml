@@ -93,6 +93,7 @@ es:
         menu: "Historial"
         breadcrumb: "Historial"
     form:
+      new_model: "Nuevo"
       cancel: "Cancelar"
       basic_info: "Información básica"
       required: "Requerido"

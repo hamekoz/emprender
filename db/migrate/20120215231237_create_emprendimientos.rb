@@ -3,7 +3,7 @@ class CreateEmprendimientos < ActiveRecord::Migration
     create_table :emprendimientos do |t|
       t.references :emprendedor
       t.string :nombre
-      t.boolean :marca_registrada
+      t.boolean :es_marca_registrada
       t.string :marca
       t.references :rubro
       t.references :clasificacion
@@ -12,7 +12,6 @@ class CreateEmprendimientos < ActiveRecord::Migration
       t.integer :cantidad_de_integrantes
       t.text :roles
       t.references :estado
-      t.references :contacto
       t.date :fecha_de_inicio_de_actividad
       t.string :web
       t.string :mail
@@ -20,45 +19,45 @@ class CreateEmprendimientos < ActiveRecord::Migration
       t.references :barrio
       t.string :telefono
       t.string :celular
-      t.string :telefono_mensajes
+      t.string :telefono_de_mensajes
       t.string :comentarios
-      t.boolean :monotributo
-      t.boolean :monotributo_social
-      t.date :monotributo_inscripcion
-      t.string :monotributo_situacion
-      t.boolean :ingresos_brutos
-      t.date :inscripcion_a_ingresos_brutos
-      t.boolean :ayuda_social_recibida
+      t.boolean :tiene_monotributo
+      t.boolean :tiene_monotributo_social
+      t.date :fecha_de_inscripcion_al_monotributo
+      t.string :situacion_del_monotributo
+      t.boolean :inscripto_en_ingresos_brutos
+      t.date :fecha_de_inscripcion_ingresos_brutos
+      t.boolean :recibe_ayuda_social
       t.string :programas_sociales_recibidos
-      t.string :programas_sociales_ayuda_recibida_tipo
-      t.boolean :sociedad_civil_vinculado
-      t.text :sociedad_civil_tipo_participacion
-      t.boolean :sociedad_civil_ayuda_recibida
-      t.boolean :sociedad_civil_justificacion_noayuda
-      t.text :capacitaciones_descripcion
-      t.text :maquinarias_herramientas_descripcion
+      t.string :tipo_de_ayuda_recibida_de_programas_sociales
+      t.boolean :vinculado_a_sociedad_civil
+      t.text :tipo_de_participacion_en_sociedad_civil
+      t.boolean :recibio_ayuda_de_la_sociedad_civil
+      t.boolean :justificacion_no_haber_recibido_ayuda_de_sociedad_civil
+      t.text :descripcion_de_capacitaciones_recibidas
+      t.text :descripcion_de_maquinarias_y_herramientas_utilizadas
       t.integer :produccion_mensual
       t.integer :produccion_anual
       t.integer :produccion_maxima
-      t.boolean :espacio_propio
-      t.string :espacio_tipo
-      t.string :espacio_solucion
-      t.boolean :espacio_suficiente
-      t.boolean :espacio_acondicionamiento
-      t.boolean :espacio_invasivo
-      t.text :espacio_acondicinamiento_necesarios
-      t.text :clientes_actuales_caracteristicas_zona
-      t.string :venta_tipo
+      t.boolean :posee_espacio_propio
+      t.string :tipo_de_espacio
+      t.string :posible_solucion_a_falta_de_espacio_propio
+      t.boolean :siendo_en_vivienda_particular_el_espacio_es_suficiente
+      t.boolean :es_necesario_acondicionamiento
+      t.boolean :ocupa_lugares_destinados_a_otros_usos_como_dormitorios
+      t.text :espacio_y_acondicinamiento_requeridos_para_crecer
+      t.text :clientes_actuales_caracteristicas_y_zona
+      t.string :tipo_de_venta
       t.integer :clientes_actuales_cantidad
-      t.text :clientes_futuros_caracteristicas_zona
-      t.boolean :competencia_mismo_barrio
-      t.text :competencia_mismo_barrio_descripcion
+      t.text :clientes_futuros_caracteristicas_y_zona
+      t.boolean :competencia_en_mismo_barrio
+      t.text :competencia_en_mismo_barrio_descripcion
       t.text :herramientas_necesarias_descripcion
       t.text :maquinarias_necesarias_descripcion
       t.text :movilidad_necesaria_descripcion
-      t.text :insumos_necesarios_descripcon
+      t.text :insumos_necesarios_descripcion
       t.text :instalaciones_necesarias_descripcion
-      t.text :capacitacion_necesaria_descripcion
+      t.text :capacitaciones_necesaria_descripcion
       t.text :otros
       t.text :observaciones
 

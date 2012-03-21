@@ -1,117 +1,120 @@
 <div class="tabbable tabs-left">
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#Emprendedor">Emprendedor</a></li>
-    <li><a data-toggle="tab" href="#Usuario">Usuario</a></li>
+    <li class="active"><a data-toggle="tab" href="#Personal">Datos Personales</a></li>
+    <li><a data-toggle="tab" href="#Emprendedor">Situación Personal</a></li>
     <li><a data-toggle="tab" href="#Emprendimiento">Emprendimiento</a></li>
-    <li><a data-toggle="tab" href="#Contacto">Contacto</a></li>
+    <li><a data-toggle="tab" href="#Contacto">Datos de Contacto</a></li>
+    <li><a data-toggle="tab" href="#SituacionImpositiva">Situacion Impositiva</a></li>
     <li><a data-toggle="tab" href="#Mercado">Mercado</a></li>
-    <li><a data-toggle="tab" href="#AyudaSocial">Ayuda Social</a></li>
     <li><a data-toggle="tab" href="#Recursos">Recursos</a></li>
     <li><a data-toggle="tab" href="#Necesidades">Necesidades</a></li>
     <li><a data-toggle="tab" href="#Observaciones">Observaciones</a></li>
   </ul>
 
-<%= simple_form_for(@emprendimiento) do |f| %>
-  <%= f.error_notification %>
-
+<%= simple_form_for(@emprendimiento) do |emprendimiento| %>
+  <%= emprendimiento.error_notification %>
   <div class="tab-content">
-    <div id="Emprendedor" class="tab-pane active">
+    <%= emprendimiento.simple_fields_for :emprendedor do |emprendedor| %>
+    <div id="Personal" class="tab-pane active">
       <fieldset>
-        <%= f.input :emprendedor %>
+        <%= emprendimiento.simple_fields_for :usuario do |usuario| %>
+          <%= emprendimiento.simple_fields_for :persona do |persona| %>
+            <%= persona.input :nombre %>
+            <%= persona.input :apellido %>
+            <%= persona.input :sexo,
+                              :collection => ["Femenino", "Masculino"],
+                              :as => :radio_buttons %>
+          <% end %>
+          <%= usuario.input :email,
+                            :placeholder => 'nombre@dominio.com.ar' %>
+          <%= usuario.input :password %>
+        <% end %>
+        <%= emprendedor.input :dni %>
+        <%= emprendedor.input :cuit_cuil %>
+        <%= emprendedor.input :domicilio %>
+        <%= emprendedor.input :barrio, :collection => Barrio.all %>
+        <%= emprendedor.input :telefono_particular %>
+        <%= emprendedor.input :telefono_celular %>
+        <%= emprendedor.input :telefono_para_mensajes %>
+        <%= emprendedor.input :observaciones_de_telefonos %>
       </fieldset>
     </div>
-    <div id="Usuario" class="tab-pane">
+    <div id="Emprendedor" class="tab-pane">
       <fieldset>
-      
+        <%= emprendedor.input :nivel_de_estudios_alcanzado %>
+        <%= emprendedor.input :estudios_completos, :as => :radio_buttons %>
+        <%= emprendedor.input :titulo %>
+        <%= emprendedor.input :recibe_algun_plan_social, :as => :radio_buttons %>
+        <%= emprendedor.input :plan_social %>
+        <%= emprendedor.input :fecha_de_recepcion %>
+        <%= emprendedor.input :actividad_laboral_principal %>
+        <%= emprendedor.input :relacion_laboral %>
+        <%= emprendedor.input :cantidad_de_horas_semanales %>
+        <%= emprendedor.input :es_unico_ingreso, :as => :radio_buttons %>
       </fieldset>
     </div>
+
+    <% end %>
     <div id="Emprendimiento" class="tab-pane">
       <fieldset>
-        <%= f.input :nombre %>
-        <%= f.input :marca_registrada %>
-        <%= f.input :marca %>
-        <%= f.input :rubro %>
-        <%= f.input :clasificacion %>
-        <%= f.input :tipo %>
-        <%= f.input :descripcion %>
-        <%= f.input :cantidad_de_integrantes, :collection => 1..20 , :prompt => "Cantidad de integrantes"%>
-        <%= f.input :roles %>
-        <%= f.input :estado %>
-        <%= f.input :fecha_de_inicio_de_actividad %>
+        <%= emprendimiento.input :nombre %>
+        <%= emprendimiento.input :es_marca_registrada, :as => :radio_buttons %>
+        <%= emprendimiento.input :marca %>
+        <%= emprendimiento.input :rubro, :collection => Rubro.all %>
+        <%= emprendimiento.input :clasificacion, :collection => Clasificacion.all %>
+        <%= emprendimiento.input :tipo %>
+        <%= emprendimiento.input :descripcion, :input_html => { :class => "span6" } %>
+        <%= emprendimiento.input :cantidad_de_integrantes,
+                                 :collection => 1..20,
+                                 :prompt => "Cantidad de integrantes" %>
+        <%= emprendimiento.input :roles %>
+        <%= emprendimiento.input :estado, :collection => Estado.all %>
+        <%= emprendimiento.input :fecha_de_inicio_de_actividad %>
 
       </fieldset>
     </div>
     <div id="Contacto" class="tab-pane">
       <fieldset>
-        <%= f.input :web,
+        <%= emprendimiento.input :web,
           :placeholder => 'www.emprendimiento.com.ar'
         %>
-        <%= f.input :mail,
+        <%= emprendimiento.input :mail,
           :placeholder => 'info@emprendimiento.com.ar'
         %>
-        <%= f.input :contacto %>
-        <%= f.input :domicilio %>
-        <%= f.input :barrio %>
-        <%= f.input :telefono %>
-        <%= f.input :celular %>
-        <%= f.input :telefono_mensajes %>
-        <%= f.input :comentarios,
+        <%= emprendimiento.input :domicilio %>
+        <%= emprendimiento.input :barrio, :collection => Barrio.all %>
+        <%= emprendimiento.input :telefono %>
+        <%= emprendimiento.input :celular %>
+        <%= emprendimiento.input :telefono_de_mensajes %>
+        <%= emprendimiento.input :comentarios,
           :placeholder => 'Llamar entre las 8 y 17 hs, telefono de mensajes solo por urgencias'
         %>
       </fieldset>
     </div>
     <div id="Mercado" class="tab-pane">
       <fieldset>
-        <%= f.input :monotributo %>
-        <%= f.input :monotributo_social %>
-        <%= f.input :monotributo_inscripcion %>
-        <%= f.input :monotributo_situacion, :collection => @emprendimiento.monotributo_situacion_enum , :prompt => "Situacion"%>
-        <%= f.input :ingresos_brutos %>
-        <%= f.input :inscripcion_a_ingresos_brutos %>
-        <%= f.input :produccion_mensual %>
-        <%= f.input :produccion_anual %>
-        <%= f.input :produccion_maxima %>
+        <%= emprendimiento.input :tiene_monotributo %>
       </fieldset>
     </div>
-    <div id="AyudaSocial" class="tab-pane">
+    <div id="SituacionImpositiva" class="tab-pane">
       <fieldset>
-        <%= f.input :ayuda_social_recibida %>
-        <%= f.input :programas_sociales_recibidos %>
-        <%= f.input :programas_sociales_ayuda_recibida_tipo %>
-        <%= f.input :sociedad_civil_vinculado %>
-        <%= f.input :sociedad_civil_tipo_participacion %>
-        <%= f.input :sociedad_civil_ayuda_recibida %>
-        <%= f.input :sociedad_civil_justificacion_noayuda %>
-        <%= f.input :capacitaciones_descripcion %>
-        <%= f.input :maquinarias_herramientas_descripcion %>
+
       </fieldset>
     </div>
     <div id="Recursos" class="tab-pane">
       <fieldset>
-        <%= f.input :espacio_propio %>
-        <%= f.input :espacio_tipo %>
-        <%= f.input :espacio_solucion %>
-        <%= f.input :espacio_suficiente %>
-        <%= f.input :espacio_acondicionamiento %>
-        <%= f.input :espacio_invasivo %>
-        <%= f.input :espacio_acondicinamiento_necesarios %>
+
       </fieldset>
     </div>
     <div id="Necesidades" class="tab-pane">
       <fieldset>
-        <%= f.input :herramientas_necesarias_descripcion, :label => 'Herramientas' %>
-        <%= f.input :maquinarias_necesarias_descripcion, :label => 'Maquinaria' %>
-        <%= f.input :movilidad_necesaria_descripcion, :label => 'Movilidad' %>
-        <%= f.input :insumos_necesarios_descripcon, :label => 'Insumos' %>
-        <%= f.input :instalaciones_necesarias_descripcion, :label => 'Instalaciones' %>
-        <%= f.input :capacitacion_necesaria_descripcion, :label => 'Capacitacion' %>
-        <%= f.input :otros, :label => 'Otras necesidades' %>
+
       </fieldset>
     </div>
     <div id="Observaciones" class="tab-pane">
       <fieldset>
       </fieldset>
-      <%= f.button :submit %>
+      <%= emprendimiento.button :submit %>
     </div>
   </div>
 <% end %>

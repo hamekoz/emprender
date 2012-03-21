@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Emprender</title>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Emprender</title>
+    <%= csrf_meta_tags %>
 
-  <meta charset="utf-8">
-  <meta name="description" content="Padron de emprendedores">
-  <meta name="author" content="Claudio Rodrigo Pereyra Diaz">
-  <meta name="author" content="Adriel Hernan Caramichos">
+    <meta name="description" content="Padron de emprendedores">
+    <meta name="author" content="Claudio Rodrigo Pereyra Diaz">
+    <meta name="author" content="Adriel Hernan Caramichos">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag "application", :media => "all" %>
 
-  <%= favicon_link_tag 'favicon.ico' %>
-  <%= favicon_link_tag 'start-here.png', :rel => 'apple-touch-icon', :type => 'image/png' %>
-  <%= stylesheet_link_tag    "application" %>
-
-  <%= csrf_meta_tag %>
-</head>
-<body>
+    <link href="favicon.ico" rel="shortcut icon">
+    <link href="apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+  </head>
+  <body>
   <header>
     <%= render 'general/menu' %>
   </header>
@@ -43,6 +43,7 @@
   <footer id="footer" class="footer topbar-inner">
     <p>&copy; Claudio Rodrigo Pereyra Diaz y Adriel Hernan Caramichos</p>
   </footer>
+
   <!-- JavaScript at the bottom for fast page loading -->
   <%= javascript_include_tag "application" %>
 
@@ -53,5 +54,5 @@
     <script defer>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
   <![endif]-->
 
-</body>
+  </body>
 </html>
