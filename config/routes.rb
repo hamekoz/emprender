@@ -18,6 +18,7 @@ Emprender::Application.routes.draw do
 
   match '/acerca' => "application#acerca", :as => "acerca"
   match '/empadronarme' => "emprendimientos#new", :as => "empadronarme"
+  match '/empadronar' => "emprendimientos#new", :as => "empadronar"
 
 
   # The priority is based upon order of creation:

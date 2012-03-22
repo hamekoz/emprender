@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(:version => 20120215231237) do
     t.string   "telefono_para_mensajes"
     t.text     "observaciones_de_telefonos"
     t.string   "nivel_de_estudios_alcanzado"
-    t.boolean  "estudios_completo"
+    t.boolean  "estudios_completos"
     t.string   "titulo"
     t.boolean  "recibe_algun_plan_social"
     t.string   "plan_social"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(:version => 20120215231237) do
     t.string   "relacion_laboral"
     t.integer  "cantidad_de_horas_semanales"
     t.boolean  "es_unico_ingreso"
+    t.text     "explicacion_de_ingresos"
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
   end

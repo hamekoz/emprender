@@ -27,10 +27,6 @@ body {
   padding-left: 36px;
 }
 
-table td.acciones {
-  width: 200px;
-}
-
 h2 {
   text-align: center;
 }
@@ -54,7 +50,7 @@ h2 {
   background: -moz-linear-gradient(top, transparent, black);
   background: -o-linear-gradient(top, transparent, black);
   background: linear-gradient(top, transparent, black);
-box-shadow: none;
+  box-shadow: none;
 }
 
 #footer p {

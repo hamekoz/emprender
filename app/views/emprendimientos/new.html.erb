@@ -28,9 +28,13 @@
           <%= usuario.input :email,
                             :placeholder => 'nombre@dominio.com.ar' %>
           <%= usuario.input :password %>
+          <%= usuario.input :password_confirmation,
+                            :label => 'Confirmar password' %>
         <% end %>
-        <%= emprendedor.input :dni %>
-        <%= emprendedor.input :cuit_cuil %>
+        <%= emprendedor.input :dni,
+                              :placeholder => '????????' %>
+        <%= emprendedor.input :cuit_cuil,
+                              :placeholder => '??-????????-?' %>
         <%= emprendedor.input :domicilio %>
         <%= emprendedor.input :barrio, :collection => Barrio.all %>
         <%= emprendedor.input :telefono_particular %>
@@ -41,16 +45,30 @@
     </div>
     <div id="Emprendedor" class="tab-pane">
       <fieldset>
-        <%= emprendedor.input :nivel_de_estudios_alcanzado %>
-        <%= emprendedor.input :estudios_completos, :as => :radio_buttons %>
-        <%= emprendedor.input :titulo %>
+        <%= emprendedor.input :nivel_de_estudios_alcanzado,
+                              :collection => ['Primario', 'Secundario', 'Terciario', 'Universitario'],
+                              :as => :radio_buttons %>
+        <%= emprendedor.input :estudios_completos,
+                              :as => :radio_buttons %>
+        <%= emprendedor.input :titulo,
+                              :input_html => { :class => 'input-xxlarge'} %>
         <%= emprendedor.input :recibe_algun_plan_social, :as => :radio_buttons %>
-        <%= emprendedor.input :plan_social %>
-        <%= emprendedor.input :fecha_de_recepcion %>
-        <%= emprendedor.input :actividad_laboral_principal %>
-        <%= emprendedor.input :relacion_laboral %>
-        <%= emprendedor.input :cantidad_de_horas_semanales %>
+        <%= emprendedor.input :plan_social,
+                              :input_html => { :class => "disabled input-xxlarge" } %>
+        <%= emprendedor.input :fecha_de_recepcion,
+                              :input_html => { :class => "datepicker" } %>
+        <%= emprendedor.input :actividad_laboral_principal,
+                              :input_html => { :class => "input-xxlarge" } %>
+        <%= emprendedor.input :relacion_laboral,
+                              :collection => ["Dependiente", "Independiente"],
+                              :as => :radio_buttons %>
+        <%= emprendedor.input :cantidad_de_horas_semanales,
+                              :input_html => { :class => "input-mini" } %>
+        
         <%= emprendedor.input :es_unico_ingreso, :as => :radio_buttons %>
+        <%= emprendedor.input :explicacion_de_ingresos,
+                              :as => :text,
+                              :input_html => { :class => 'input-xxlarge', :rows => 5 } %>
       </fieldset>
     </div>
 
@@ -63,13 +81,17 @@
         <%= emprendimiento.input :rubro, :collection => Rubro.all %>
         <%= emprendimiento.input :clasificacion, :collection => Clasificacion.all %>
         <%= emprendimiento.input :tipo %>
-        <%= emprendimiento.input :descripcion, :input_html => { :class => "span6" } %>
+        <%= emprendimiento.input :descripcion,
+                                 :input_html => { :class => 'input-xxlarge', :rows => 5 } %>
         <%= emprendimiento.input :cantidad_de_integrantes,
                                  :collection => 1..20,
                                  :prompt => "Cantidad de integrantes" %>
-        <%= emprendimiento.input :roles %>
+        <%= emprendimiento.input :roles,
+                                 :input_html => { :class => 'input-xxlarge', :rows => 5 } %>
         <%= emprendimiento.input :estado, :collection => Estado.all %>
-        <%= emprendimiento.input :fecha_de_inicio_de_actividad %>
+        <%= emprendimiento.input :fecha_de_inicio_de_actividad,
+                                 :as => :string,
+                                 :input_html => { :class => "datepicker" } %>
 
       </fieldset>
     </div>
@@ -87,8 +109,8 @@
         <%= emprendimiento.input :celular %>
         <%= emprendimiento.input :telefono_de_mensajes %>
         <%= emprendimiento.input :comentarios,
-          :placeholder => 'Llamar entre las 8 y 17 hs, telefono de mensajes solo por urgencias'
-        %>
+                                 :placeholder => 'Llamar entre las 8 y 17 hs, telefono de mensajes solo por urgencias',
+                                 :input_html => { :class => 'input-xxlarge', :rows => 5 } %>
       </fieldset>
     </div>
     <div id="Mercado" class="tab-pane">
@@ -113,6 +135,8 @@
     </div>
     <div id="Observaciones" class="tab-pane">
       <fieldset>
+        <%= emprendimiento.input :observaciones,
+                                 :input_html => { :class => 'input-xxlarge', :rows => 10 } %>
       </fieldset>
       <%= emprendimiento.button :submit %>
     </div>

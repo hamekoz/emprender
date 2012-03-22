@@ -20,6 +20,7 @@ class CreateEmprendedores < ActiveRecord::Migration
       t.string :relacion_laboral
       t.integer :cantidad_de_horas_semanales
       t.boolean :es_unico_ingreso
+      t.text :explicacion_de_ingresos
 
       t.timestamps
     end
