@@ -7,11 +7,13 @@ class Usuario < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :persona_id, :persona, :rol, :email, :password, :password_confirmation #, :remember_me
-
+  attr_accessible :persona_attributes
   validates :rol, :presence => true
   validates :persona, :presence => true
   
   belongs_to :persona
+
+  accepts_nested_attributes_for :persona
 
 # Muestra nombre descriptivo en RailsAdmin
   def etiqueta

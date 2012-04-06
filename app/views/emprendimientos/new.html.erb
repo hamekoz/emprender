@@ -5,140 +5,297 @@
     <li><a data-toggle="tab" href="#Emprendimiento">Emprendimiento</a></li>
     <li><a data-toggle="tab" href="#Contacto">Datos de Contacto</a></li>
     <li><a data-toggle="tab" href="#SituacionImpositiva">Situacion Impositiva</a></li>
+    <li><a data-toggle="tab" href="#SituacionSocial">Situacion Social</a></li>
     <li><a data-toggle="tab" href="#Mercado">Mercado</a></li>
     <li><a data-toggle="tab" href="#Recursos">Recursos</a></li>
     <li><a data-toggle="tab" href="#Necesidades">Necesidades</a></li>
     <li><a data-toggle="tab" href="#Observaciones">Observaciones</a></li>
   </ul>
 
-<%= simple_form_for(@emprendimiento) do |emprendimiento| %>
+<%= simple_form_for(@emprendimiento, :html => { :class => 'form-horizontal' }) do |emprendimiento| %>
   <%= emprendimiento.error_notification %>
   <div class="tab-content">
     <%= emprendimiento.simple_fields_for :emprendedor do |emprendedor| %>
     <div id="Personal" class="tab-pane active">
-      <fieldset>
-        <%= emprendimiento.simple_fields_for :usuario do |usuario| %>
-          <%= emprendimiento.simple_fields_for :persona do |persona| %>
-            <%= persona.input :nombre %>
-            <%= persona.input :apellido %>
-            <%= persona.input :sexo,
-                              :collection => ["Femenino", "Masculino"],
-                              :as => :radio_buttons %>
-          <% end %>
-          <%= usuario.input :email,
-                            :placeholder => 'nombre@dominio.com.ar' %>
-          <%= usuario.input :password %>
-          <%= usuario.input :password_confirmation,
-                            :label => 'Confirmar password' %>
+      <%= emprendedor.simple_fields_for :usuario do |usuario| %>
+      <legend>Usuario</legend>
+        <%= usuario.input :email,
+                          :placeholder => 'nombre@dominio.com.ar' %>
+        <%= usuario.input :password %>
+        <%= usuario.input :password_confirmation,
+                          :label => 'Confirmar password' %>
+      <legend>Datos Personales</legend>
+        <%= usuario.simple_fields_for :persona do |persona| %>
+          <%= persona.input :nombre %>
+          <%= persona.input :apellido %>
+          <%= persona.input :sexo,
+                            :collection => @emprendimiento.emprendedor.usuario.persona.sexo_enum,
+                            :as => :radio_buttons,
+                            :item_wrapper_class => 'inline' %>
         <% end %>
-        <%= emprendedor.input :dni,
-                              :placeholder => '????????' %>
-        <%= emprendedor.input :cuit_cuil,
-                              :placeholder => '??-????????-?' %>
-        <%= emprendedor.input :domicilio %>
-        <%= emprendedor.input :barrio, :collection => Barrio.all %>
-        <%= emprendedor.input :telefono_particular %>
-        <%= emprendedor.input :telefono_celular %>
-        <%= emprendedor.input :telefono_para_mensajes %>
-        <%= emprendedor.input :observaciones_de_telefonos %>
-      </fieldset>
+      <% end %>
+      <%= emprendedor.input :dni,
+                            :placeholder => '????????',
+                            :input_html => { :class => 'span1'} %>
+      <%= emprendedor.input :cuit_cuil,
+                            :placeholder => '??-????????-?',
+                            :input_html => { :class => 'span2'} %>
+      <legend>Domicilio</legend>
+      <%= emprendedor.input :domicilio,
+                            :input_html => { :class => 'span4'} %>
+      <%= emprendedor.association :barrio,
+                                  :collection => Barrio.all %>
+      <legend>Telefonos</legend>
+      <%= emprendedor.input :telefono_particular,
+                            :label => 'Particular',
+                            :input_html => { :class => 'span2'} %>
+      <%= emprendedor.input :telefono_celular,
+                            :label => 'Celular',
+                            :input_html => { :class => 'span2'} %>
+      <%= emprendedor.input :telefono_para_mensajes,
+                            :label => 'Para mensajes',
+                            :input_html => { :class => 'span2'} %>
+      <%= emprendedor.input :observaciones_de_telefonos,
+                            :label => 'Observaciones',
+                            :as => :text,
+                            :input_html => { :class => 'span6', :rows => 5 } %>
     </div>
     <div id="Emprendedor" class="tab-pane">
-      <fieldset>
-        <%= emprendedor.input :nivel_de_estudios_alcanzado,
-                              :collection => ['Primario', 'Secundario', 'Terciario', 'Universitario'],
-                              :as => :radio_buttons %>
-        <%= emprendedor.input :estudios_completos,
-                              :as => :radio_buttons %>
-        <%= emprendedor.input :titulo,
-                              :input_html => { :class => 'input-xxlarge'} %>
-        <%= emprendedor.input :recibe_algun_plan_social, :as => :radio_buttons %>
-        <%= emprendedor.input :plan_social,
-                              :input_html => { :class => "disabled input-xxlarge" } %>
-        <%= emprendedor.input :fecha_de_recepcion,
-                              :input_html => { :class => "datepicker" } %>
-        <%= emprendedor.input :actividad_laboral_principal,
-                              :input_html => { :class => "input-xxlarge" } %>
-        <%= emprendedor.input :relacion_laboral,
-                              :collection => ["Dependiente", "Independiente"],
-                              :as => :radio_buttons %>
-        <%= emprendedor.input :cantidad_de_horas_semanales,
-                              :input_html => { :class => "input-mini" } %>
-        
-        <%= emprendedor.input :es_unico_ingreso, :as => :radio_buttons %>
-        <%= emprendedor.input :explicacion_de_ingresos,
-                              :as => :text,
-                              :input_html => { :class => 'input-xxlarge', :rows => 5 } %>
-      </fieldset>
+      <legend>Estudios</legend>
+      <%= emprendedor.input :nivel_de_estudios,
+                            :label => 'Nivel',
+                            :collection => ['Primario', 'Secundario', 'Terciario', 'Universitario'],
+                            :as => :radio_buttons,
+                            :item_wrapper_class => 'inline' %>
+      <%= emprendedor.input :estudios_completos,
+                            :label => '¿Completo?',
+                            :as => :radio_buttons,
+                            :item_wrapper_class => 'inline' %>
+      <%= emprendedor.input :titulo,
+                            :input_html => { :class => 'span6'} %>
+      <legend>Planes Sociales</legend>
+      <%= emprendedor.input :recibe_o_recibio_algun_plan_social,
+                            :label => '¿Recibe o recibio alguno?',
+                            :as => :radio_buttons,
+                            :item_wrapper_class => 'inline' %>
+      <%= emprendedor.input :plan_social,
+                            :label => '¿Cual?',
+                            :required => false,
+                            :disabled => true,
+                            :input_html => { :class => "span6" } %>
+      <%= emprendedor.input :fecha_de_recepcion,
+                            :as => :string,
+                            :input_html => { :class => "datepicker" } %>
+      <legend>Actividad Laboral</legend>
+      <%= emprendedor.input :actividad_laboral_principal,
+                            :label => 'Actividad Principal',
+                            :input_html => { :class => "span6" } %>
+      <%= emprendedor.input :relacion_laboral,
+                            :label => 'Relacion',
+                            :collection => ["Dependiente", "Independiente"],
+                            :as => :radio_buttons,
+                            :item_wrapper_class => 'inline' %>
+      <%= emprendedor.input :cantidad_de_horas_semanales,
+                            :input_html => { :class => "input-mini" } %>
+      <%= emprendedor.input :es_unico_ingreso,
+                            :label => '¿Es unico ingreso?',
+                            :as => :radio_buttons,
+                            :item_wrapper_class => 'inline' %>
+      <%= emprendedor.input :explicacion_de_ingresos,
+                            :label => 'Explique',
+                            :as => :text,
+                            :input_html => { :class => 'span6', :rows => 5 } %>
     </div>
-
     <% end %>
     <div id="Emprendimiento" class="tab-pane">
-      <fieldset>
-        <%= emprendimiento.input :nombre %>
-        <%= emprendimiento.input :es_marca_registrada, :as => :radio_buttons %>
-        <%= emprendimiento.input :marca %>
-        <%= emprendimiento.input :rubro, :collection => Rubro.all %>
-        <%= emprendimiento.input :clasificacion, :collection => Clasificacion.all %>
-        <%= emprendimiento.input :tipo %>
-        <%= emprendimiento.input :descripcion,
-                                 :input_html => { :class => 'input-xxlarge', :rows => 5 } %>
-        <%= emprendimiento.input :cantidad_de_integrantes,
-                                 :collection => 1..20,
-                                 :prompt => "Cantidad de integrantes" %>
-        <%= emprendimiento.input :roles,
-                                 :input_html => { :class => 'input-xxlarge', :rows => 5 } %>
-        <%= emprendimiento.input :estado, :collection => Estado.all %>
-        <%= emprendimiento.input :fecha_de_inicio_de_actividad,
-                                 :as => :string,
-                                 :input_html => { :class => "datepicker" } %>
-
-      </fieldset>
+      <legend>Emprendimiento</legend>
+      <%= emprendimiento.input :nombre %>
+      <%= emprendimiento.input :marca %>
+      <%= emprendimiento.input :es_marca_registrada,
+                               :label => '¿Esta registrada?',
+                               :as => :radio_buttons,
+                               :item_wrapper_class => 'inline' %>
+      <%= emprendimiento.association :rubro,
+                                     :collection => Rubro.all %>
+      <%= emprendimiento.association :clasificacion,
+                               :collection => Clasificacion.all %>
+      <%= emprendimiento.input :tipo,
+                               :collection => @emprendimiento.tipo_enum,
+                               :as => :radio_buttons,
+                               :item_wrapper_class => 'inline' %>
+      <%= emprendimiento.input :descripcion,
+                               :input_html => { :class => 'span6', :rows => 5 } %>
+      <%= emprendimiento.input :cantidad_de_integrantes,
+                               :label => 'Integrantes',
+                               :collection => 1..20,
+                               :prompt => "Cantidad" %>
+      <%= emprendimiento.input :roles,
+                               :input_html => { :class => 'span6', :rows => 5 } %>
+      <%= emprendimiento.association :estado,
+                                     :collection => Estado.all %>
+      <%= emprendimiento.input :fecha_de_inicio_de_actividad,
+                               :label => 'Inicio de actividad',
+                               :placeholder => 'Fecha',
+                               :as => :string,
+                               :input_html => { :class => "datepicker" } %>
     </div>
     <div id="Contacto" class="tab-pane">
-      <fieldset>
-        <%= emprendimiento.input :web,
-          :placeholder => 'www.emprendimiento.com.ar'
-        %>
-        <%= emprendimiento.input :mail,
-          :placeholder => 'info@emprendimiento.com.ar'
-        %>
-        <%= emprendimiento.input :domicilio %>
-        <%= emprendimiento.input :barrio, :collection => Barrio.all %>
-        <%= emprendimiento.input :telefono %>
-        <%= emprendimiento.input :celular %>
-        <%= emprendimiento.input :telefono_de_mensajes %>
-        <%= emprendimiento.input :comentarios,
-                                 :placeholder => 'Llamar entre las 8 y 17 hs, telefono de mensajes solo por urgencias',
-                                 :input_html => { :class => 'input-xxlarge', :rows => 5 } %>
-      </fieldset>
+      <legend>Internet</legend>
+      <%= emprendimiento.input :web,
+                               :placeholder => 'www.emprendimiento.com.ar' %>
+      <%= emprendimiento.input :mail,
+                               :placeholder => 'info@emprendimiento.com.ar' %>
+      <legend>Domicilio</legend>
+      <%= emprendimiento.input :domicilio %>
+      <%= emprendimiento.association :barrio,
+                                     :collection => Barrio.all %>
+      <legend>Telefonos</legend>
+      <%= emprendimiento.input :telefono %>
+      <%= emprendimiento.input :celular %>
+      <%= emprendimiento.input :telefono_de_mensajes %>
+      <%= emprendimiento.input :comentarios,
+                               :placeholder => 'Llamar entre las 8 y 17 hs, telefono de mensajes solo por urgencias',
+                               :input_html => { :class => 'span6', :rows => 5 } %>
     </div>
     <div id="Mercado" class="tab-pane">
-      <fieldset>
-        <%= emprendimiento.input :tiene_monotributo %>
-      </fieldset>
+      <legend>Produccion</legend>
+      <%= emprendimiento.input :produccion_mensual,
+                               :label => 'Mensual' %>
+      <%= emprendimiento.input :produccion_anual,
+                               :label => 'Anual' %>
+      <%= emprendimiento.input :produccion_maxima,
+                               :label => 'Maxima' %>
+      <legend>Clientes</legend>
+      <%= emprendimiento.input :cantidad_de_clientes_actuales,
+                               :label => 'Cantidad actual' %>
+      <%= emprendimiento.input :caracteristicas_y_zonas_de_clientes_actuales,
+                               :input_html => { :class => 'span6', :rows => 5 } %>
+      <%= emprendimiento.input :tipo_de_venta,
+                               :collection => @emprendimiento.tipo_de_venta_enum %>
+      <%= emprendimiento.input :productos_que_vende,
+                               :input_html => { :class => 'span6', :rows => 5 } %>
+      <%= emprendimiento.input :caracteristicas_y_zonas_de_futuros_clientes,
+                               :input_html => { :class => 'span6', :rows => 5 } %>
+      <legend>Competencia</legend>
+      <%= emprendimiento.input :competencia_en_mismo_barrio,
+                               :as => :radio_buttons,
+                               :item_wrapper_class => 'inline' %>
+      <%= emprendimiento.input :descripcion_de_competencia_en_mismo_barrio,
+                               :input_html => { :class => 'span6', :rows => 5 } %>
     </div>
     <div id="SituacionImpositiva" class="tab-pane">
-      <fieldset>
-
-      </fieldset>
+      <legend>Monotributo</legend>
+      <%= emprendimiento.input :es_monotributista,
+                               :as => :radio_buttons,
+                               :item_wrapper_class => 'inline' %>
+      <%= emprendimiento.input :es_monotributista_social,
+                               :as => :radio_buttons,
+                               :item_wrapper_class => 'inline' %>
+      <%= emprendimiento.input :fecha_de_inscripcion_al_monotributo,
+                               :as => :string,
+                               :input_html => { :class => "datepicker" } %>
+      <%= emprendimiento.input :situacion_frente_al_monotributo,
+                               :collection => @emprendimiento.situacion_frente_al_monotributo_enum,
+                               :as => :radio_buttons,
+                               :item_wrapper_class => 'inline' %>
+      <legend>Ingresos Brutos</legend>
+      <%= emprendimiento.input :inscripto_en_ingresos_brutos,
+                               :as => :radio_buttons,
+                               :item_wrapper_class => 'inline' %>
+      <%= emprendimiento.input :fecha_de_inscripcion_ingresos_brutos,
+                               :as => :string,
+                               :input_html => { :class => "datepicker" } %>
+    </div>
+    <div id="SituacionSocial" class="tab-pane">
+      <legend>Programas de Ayuda Social</legend>
+      <%= emprendimiento.input :recibe_ayuda_de_programas_sociales,
+                               :as => :radio_buttons,
+                               :item_wrapper_class => 'inline' %>
+      <%= emprendimiento.input :programas_sociales_recibidos,
+                               :as => :text,
+                               :input_html => { :class => 'span6', :rows => 5 } %>
+      <%= emprendimiento.input :tipo_de_ayuda_recibida_de_programas_sociales,
+                               :as => :text,
+                               :input_html => { :class => 'span6', :rows => 5 } %>
+      <legend>Sociedades Civiles</legend>
+      <%= emprendimiento.input :vinculado_a_sociedad_civil,
+                               :as => :radio_buttons,
+                               :item_wrapper_class => 'inline' %>
+      <%= emprendimiento.input :tipo_de_participacion_en_sociedad_civil,
+                               :input_html => { :class => 'span6', :rows => 5 } %>
+      <%= emprendimiento.input :recibio_ayuda_de_la_sociedad_civil,
+                               :as => :radio_buttons,
+                               :item_wrapper_class => 'inline' %>
+      <%= emprendimiento.input :justificacion_no_haber_recibido_ayuda_de_sociedad_civil,
+                               :as => :text,
+                               :input_html => { :class => 'span6', :rows => 5 } %>
     </div>
     <div id="Recursos" class="tab-pane">
-      <fieldset>
-
-      </fieldset>
+      <legend>Conocimientos y Recursos</legend>
+      <%= emprendimiento.input :capacitaciones_recibidas,
+                               :label => 'Capacitaciones Recibidas',
+                               :input_html => { :class => 'span6', :rows => 5 } %>
+      <%= emprendimiento.input :maquinarias_y_herramientas_utilizadas,
+                               :label => 'Maquinarias y Herramientras utilizadas',
+                               :input_html => { :class => 'span6', :rows => 5 } %>
+      <legend>Espacio de trabajo</legend>
+      <%= emprendimiento.input :dispone_de_espacio_fisico_para_produccion,
+                               :as => :radio_buttons,
+                               :item_wrapper_class => 'inline' %>
+      <%= emprendimiento.input :tipo_de_espacio,
+                               :collection => @emprendimiento.tipo_de_espacio_enum,
+                               :as => :radio_buttons,
+                               :item_wrapper_class => 'inline' %>
+      <%= emprendimiento.input :posible_solucion_a_falta_de_espacio,
+                               :as => :text,
+                               :input_html => { :class => 'span6', :rows => 5 } %>
+      <%= emprendimiento.input :es_en_vivienda_particular,
+                               :as => :radio_buttons,
+                               :item_wrapper_class => 'inline' %>
+      <%= emprendimiento.input :siendo_en_vivienda_particular_el_espacio_es_suficiente,
+                               :as => :radio_buttons,
+                               :item_wrapper_class => 'inline' %>
+      <%= emprendimiento.input :es_necesario_acondicionamiento,
+                               :as => :radio_buttons,
+                               :item_wrapper_class => 'inline' %>
+      <%= emprendimiento.input :ocupa_lugares_destinados_a_otros_usos,
+                               :as => :radio_buttons,
+                               :item_wrapper_class => 'inline' %>
+      <%= emprendimiento.input :espacio_y_acondicinamiento_requeridos_para_crecer,
+                               :input_html => { :class => 'span6', :rows => 5 } %>
     </div>
     <div id="Necesidades" class="tab-pane">
-      <fieldset>
-
-      </fieldset>
+      <legend>Necesidades</legend>
+      <%= emprendimiento.input :herramientas_necesarias,
+                               :label => 'Herramientras',
+                               :input_html => { :class => 'span6', :rows => 5 } %>
+      <%= emprendimiento.input :maquinarias_necesarias,
+                               :label => 'Maquinaria',
+                               :input_html => { :class => 'span6', :rows => 5 } %>
+      <%= emprendimiento.input :movilidad_necesaria,
+                               :label => 'Movilidad',
+                               :input_html => { :class => 'span6', :rows => 5 } %>
+      <%= emprendimiento.input :insumos_necesarios,
+                               :label => 'Insumos',
+                               :input_html => { :class => 'span6', :rows => 5 } %>
+      <%= emprendimiento.input :instalaciones_necesarias,
+                               :label => 'Instalaciones',
+                               :input_html => { :class => 'span6', :rows => 5 } %>
+      <%= emprendimiento.input :capacitaciones_necesaria,
+                               :label => 'Capacitaciones',
+                               :input_html => { :class => 'span6', :rows => 5 } %>
+      <%= emprendimiento.input :otras_necesidades,
+                               :label => 'Otras',
+                               :input_html => { :class => 'span6', :rows => 5 } %>
     </div>
     <div id="Observaciones" class="tab-pane">
-      <fieldset>
-        <%= emprendimiento.input :observaciones,
-                                 :input_html => { :class => 'input-xxlarge', :rows => 10 } %>
-      </fieldset>
-      <%= emprendimiento.button :submit %>
+      <legend>Observaciones</legend>
+      <%= emprendimiento.input :observaciones,
+                               :input_html => { :class => 'span6', :rows => 10 } %>
+      <p>Gracias por completar el formulario de solicitud de empadronamiento, una vez enviado debera esperar a la revision para ser incorporado al padron. Se comunicaran con usted en caso de ser necesaria mas informacion.</p>
+      <div class="form-actions">
+        <%= emprendimiento.button :submit, :class => 'btn-primary', :value => 'Enviar solicitud de empadronamiento' %>
+      </div>
     </div>
   </div>
 <% end %>
