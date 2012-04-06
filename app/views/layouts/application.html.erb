@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <title>Emprender</title>
-    <%= csrf_meta_tags %>
+<head>
+  <meta charset="utf-8">
+  <title>Emprender</title>
+  <meta name="description" content="Padron de emprendedores">
+  <meta name="author" content="Claudio Rodrigo Pereyra Diaz">
+  <meta name="author" content="Adriel Hernan Caramichos">
 
-    <meta name="description" content="Padron de emprendedores">
-    <meta name="author" content="Claudio Rodrigo Pereyra Diaz">
-    <meta name="author" content="Adriel Hernan Caramichos">
+  <%= stylesheet_link_tag "application", :media => "all" %>
 
-    <%= stylesheet_link_tag "application", :media => "all" %>
-
-    <link href="favicon.ico" rel="shortcut icon">
-    <link href="apple-touch-icon.png" rel="apple-touch-icon">
-    <link href="apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
-    <link href="apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
-  </head>
-  <body>
+  <link href="favicon.ico" rel="shortcut icon">
+  <link href="apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+  <link href="apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= csrf_meta_tags %>
+</head>
+<body>
   <header>
     <%= render 'general/menu' %>
   </header>
@@ -54,5 +54,5 @@
     <script defer>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
   <![endif]-->
 
-  </body>
+</body>
 </html>
