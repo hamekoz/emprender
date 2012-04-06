@@ -1,5 +1,9 @@
 class Emprendedor < ActiveRecord::Base
-  validates_presence_of :usuario, :domicilio, :telefono, :nivel_de_estudios_alcanzado
+  validates_presence_of :usuario, :domicilio, :nivel_de_estudios
+  validates_numericality_of :dni, :message => "Solo caracteres numericos"
+  validates_numericality_of :cuit_cuil, :message => "Solo caracteres numericos"
+  validates_numericality_of :cantidad_de_horas_semanales, :only_integer => true, :message=> "Solo caracteres numericos"
+
 
   belongs_to :usuario
   belongs_to :barrio
@@ -10,7 +14,7 @@ class Emprendedor < ActiveRecord::Base
     ['Dependiente', 'Independiente']
   end
 
-  def nivel_de_estudios_alcanzado_enum
+  def nivel_de_estudios_enum
     ['Primario', 'Secundario', 'Terciario', 'Universitario']
   end
 
