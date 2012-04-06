@@ -8,7 +8,10 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_tree .
+ *= require_tree 
+.*= require jquery-ui-1.8.16.custom
+ *= require bootstrap
+ *= require bootstrap-responsive
  *= require_self
 */
 
@@ -62,10 +65,17 @@ h2 {
   margin-top: 0;
 }
 
+/*
 .form-horizontal .control-group > label {
   margin-right: 20px;
   width: 200px;
-
+}
+*/
 p {
   text-align: justify;
+}
+
+.tab-content {
+  display: table;
+  width: 85%;
 }
