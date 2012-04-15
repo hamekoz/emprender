@@ -1,0 +1,13 @@
+<li class="<%= 'active' if current_page?(:controller => 'padron') %>">
+  <%= link_to(empadronar_path) do %>
+    <i class="icon-check icon-white"></i>
+    <span>Empadronar</span>
+  <% end %>
+</li>
+<li class="divider-vertical"></li>
+<li>
+  <%= link_to("/pem") do %>
+    <i class="icon-list-alt icon-white"></i>
+    <span>Gestionar</span>
+  <% end %>
+</li>

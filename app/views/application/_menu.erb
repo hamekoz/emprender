@@ -1,0 +1,80 @@
+<header>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <%= link_to "Emprender", root_path, :id => "logo", :class => "brand" %>
+      <div class="container nav-collapse">
+        <ul class="nav">
+          <li class="<%= 'active' if current_page?(:action => 'acerca') %>">
+            <%= link_to(acerca_path) do %>
+              <i class="icon-info-sign icon-white"></i>
+              <span>Acerca de...</span>
+            <% end %>
+          </li>
+          <li class="<%= 'active' if current_page?(:controller => 'noticias') %>">
+            <%= link_to(noticias_path) do %>
+              <i class="icon-book icon-white"></i>
+              <span>Noticias</span>
+            <% end %>
+          </li>
+          <li class="<%= 'active' if current_page?(:controller => 'eventos') %>">
+            <%= link_to(eventos_path) do %>
+              <i class="icon-time icon-white"></i>
+              <span>Eventos</span>
+            <% end %>
+          </li>
+        <% if usuario_signed_in? %>
+          <% if current_usuario.administrador? %>
+            <%= render 'menu_pem' %>
+          <% elsif current_usuario.representante? %>
+            <%= render 'menu_pem' %>
+          <% elsif current_usuario.emprendedor? %>
+            <li class="<%= 'active' if current_page?(:action => 'emprendimientos') %>">
+              <%= link_to(root_path) do %>
+                <i class="icon-home icon-white"></i>
+                <span>Mi Emprendimiento</span>
+              <% end %>
+            </li>
+          <% end %>
+        <% else %>
+          <li class="<%= 'active' if current_page?(:controller => 'padron') %>">
+            <%= link_to(empadronarme_path) do %>
+              <i class="icon-check icon-white"></i>
+              <span>Empadronarme</span>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+      <ul class="nav pull-right">
+        <% if usuario_signed_in? %>
+        <li>
+          <%= link_to(usuario_path(current_usuario)) do %>
+            <i class="icon-user icon-white"></i>
+            <span><%= current_usuario.persona.nombre %></span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to(destroy_usuario_session_path, :method => :delete) do %>
+<!--            <i class="icon-off icon-white"></i>-->
+            <span class="label label-important">Salir</span>
+          <% end %>
+        </li>
+        <% else %>
+        <li>
+          <%= link_to(new_usuario_session_path) do %>
+            <!--<i class="icon-ok icon-white"></i>-->
+            <span class="label label-success">Ingresar</span>
+          <% end %>
+        </li>
+        <% end %>
+      </ul>
+          </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+</header>

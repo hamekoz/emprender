@@ -1,58 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="utf-8">
-  <title>Emprender</title>
-  <meta name="description" content="Padron de emprendedores">
-  <meta name="author" content="Claudio Rodrigo Pereyra Diaz">
-  <meta name="author" content="Adriel Hernan Caramichos">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Emprender" %></title>
+    <%= csrf_meta_tags %>
+  
+    <meta name="description" content="Padron de emprendedores">
+    <meta name="author" content="Claudio Rodrigo Pereyra Diaz">
+    <meta name="author" content="Adriel Hernan Caramichos">
 
-  <%= stylesheet_link_tag "application", :media => "all" %>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
 
-  <link href="favicon.ico" rel="shortcut icon">
-  <link href="apple-touch-icon.png" rel="apple-touch-icon">
-  <link href="apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
-  <link href="apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <header>
-    <%= render 'general/menu' %>
-  </header>
-  <div id="main" role="main" class="container">
-    <div class="content">
-      <% if notice.present? %>
-      <div id="notice" class="alert alert-success fade in" data-alert="alert">
-        <a class="close" href="#">×</a>
-        <%= notice %>
-      </div>
-      <% end %>
+    <%= stylesheet_link_tag "application", :media => "all" %>
 
-      <% if alert.present? %>
-      <div id="alert" class="alert alert-error fade in" data-alert="alert">
-        <a class="close" href="#">×</a>
-        <%= alert %>
-      </div>
-      <% end %>
+    <link href="images/favicon.ico" rel="shortcut icon">
+    <link href="images/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+  </head>
+  <body>
+    <%= render 'menu' %>
 
-      <%= yield %>
+    <div id="main" role="main" class="container">
+      <div class="content">
+        <% if notice.present? %>
+        <div id="notice" class="alert alert-success fade in" data-alert="alert">
+          <a class="close" href="#">×</a>
+          <%= notice %>
+        </div>
+        <% end %>
 
-    </div>
-  </div>
-  <footer id="footer" class="footer topbar-inner">
-    <p>&copy; Claudio Rodrigo Pereyra Diaz y Adriel Hernan Caramichos</p>
-  </footer>
+        <% if alert.present? %>
+        <div id="alert" class="alert alert-error fade in" data-alert="alert">
+          <a class="close" href="#">×</a>
+          <%= alert %>
+        </div>
+        <% end %>
 
-  <!-- JavaScript at the bottom for fast page loading -->
-  <%= javascript_include_tag "application" %>
+        <%= yield %>
+      </div><!--/content-->
+    </div> <!-- /container -->
 
-  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
-  chromium.org/developers/how-tos/chrome-frame-getting-started -->
-  <!--[if lt IE 7 ]>
-    <script defer src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-    <script defer>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-  <![endif]-->
+    <%= render 'footer' %>
 
-</body>
+    <!-- Javascripts
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <%= javascript_include_tag "application" %>
+
+  </body>
 </html>
