@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.2'
+gem 'rails', '3.2.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -11,12 +11,13 @@ gem 'enum'
 gem 'rails-i18n'
 gem 'cancan'
 gem 'devise'
-#gem 'twitter-bootstrap-rails'
-gem 'ckeditor', "3.7.0.rc2"
-gem 'paperclip'
+gem 'ckeditor', '3.7.0.rc2'
+gem 'paperclip', '~> 2.7'
 gem 'kaminari'
 
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git',
+                               :branch => 'static'
 
 # Gemas usadas solo en desarrollo
 group :development, :test do
@@ -38,7 +39,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer'
+  # gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
