@@ -1,37 +1,19 @@
 <h2 class= "well">Cartelera de Eventos</h2>
-<div class="row cartelera">
-  <div class="well columns span2">
-    <ul class="nav nav-list">
-      <li class="nav-header">Enero 2012</li>
-      <li class="active"><a href="#">Ultimo Evento</a></li>
-      <li><a href="#">Evento 5</a></li>
-      <li><a href="#">Evento 4</a></li>
-      <li class="nav-header">Diciembre 2011</li>
-      <li><a href="#">Evento 3</a></li>
-      <li><a href="#">Evento 2</a></li>
-      <li><a href="#">Evento 1</a></li>
-    </ul>
-  </div>
-  <div class="columns span9 well">
-
-  <% @eventos.each do |evento| %>
-    <article class="">
-      <header>
-        <p><strong><%= evento.nombre %></strong></p>
-      </header>
-      <p><strong>Tipo: </strong><%= evento.tipo %></p>
-      <p><strong>Organizador: </strong><%= evento.organizador.nombre %></p>
-      <p><strong>Descripcion: </strong><%= evento.descripcion %></p>
-      <p><strong>Lugar: </strong><%= evento.lugar %></p>
-      <p><strong>Fecha y hora de inicio: </strong><%= evento.fecha_y_hora_de_inicio %></p>
-      <p><strong>Fecha y hora de finalizacion: </strong><%= evento.fecha_y_hora_de_finalizacion %></p>
-      <footer>
-        <p><strong>Fecha publicacion: </strong><%= evento.fecha_de_publicacion %></p>
-      </footer>
-    </article>
-  <% end %>
-  </div>
-  <div class="columns span9">
-  <%= paginate @eventos %>
-  </div>
-</div>
+<% @eventos.each do |evento| %>
+  <article class="">
+    <header>
+      <p><strong><%= evento.nombre %></strong></p>
+    </header>
+    <p><strong>Tipo: </strong><%= evento.tipo %></p>
+    <p><strong>Organizador: </strong><%= evento.organizador.nombre %></p>
+    <p><strong>Descripcion: </strong><%= evento.descripcion %></p>
+    <p><strong>Lugar: </strong><%= evento.lugar %></p>
+    <p><strong>Fecha y hora de inicio: </strong><%= evento.fecha_y_hora_de_inicio %></p>
+    <p><strong>Fecha y hora de finalizacion: </strong><%= evento.fecha_y_hora_de_finalizacion %></p>
+    <footer>
+      <p><strong>Fecha publicacion: </strong><%= evento.fecha_de_publicacion %></p>
+    </footer>
+  </article>
+<% end %>
+<hr>
+<%= paginate @eventos %>
