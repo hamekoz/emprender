@@ -59,18 +59,18 @@ ActiveRecord::Schema.define(:version => 20120215231237) do
     t.string   "telefono_para_mensajes"
     t.text     "observaciones_de_telefonos"
     t.string   "nivel_de_estudios"
-    t.boolean  "estudios_completos"
+    t.boolean  "estudios_completos",                 :default => false
     t.string   "titulo"
-    t.boolean  "recibe_o_recibio_algun_plan_social"
+    t.boolean  "recibe_o_recibio_algun_plan_social", :default => false
     t.string   "plan_social"
     t.date     "fecha_de_recepcion"
     t.string   "actividad_laboral_principal"
     t.string   "relacion_laboral"
     t.integer  "cantidad_de_horas_semanales"
-    t.boolean  "es_unico_ingreso"
+    t.boolean  "es_unico_ingreso",                   :default => true
     t.text     "explicacion_de_ingresos"
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
+    t.datetime "created_at",                                            :null => false
+    t.datetime "updated_at",                                            :null => false
   end
 
   add_index "emprendedores", ["usuario_id"], :name => "index_emprendedores_on_usuario_id"
@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(:version => 20120215231237) do
   create_table "emprendimientos", :force => true do |t|
     t.integer  "emprendedor_id"
     t.string   "nombre"
-    t.boolean  "es_marca_registrada"
+    t.boolean  "es_marca_registrada",                                     :default => false
     t.string   "marca"
     t.integer  "rubro_id"
     t.integer  "clasificacion_id"
@@ -96,38 +96,38 @@ ActiveRecord::Schema.define(:version => 20120215231237) do
     t.string   "celular"
     t.string   "telefono_de_mensajes"
     t.string   "comentarios"
-    t.boolean  "es_monotributista"
-    t.boolean  "es_monotributista_social"
+    t.boolean  "es_monotributista",                                       :default => false
+    t.boolean  "es_monotributista_social",                                :default => false
     t.date     "fecha_de_inscripcion_al_monotributo"
     t.string   "situacion_frente_al_monotributo"
-    t.boolean  "inscripto_en_ingresos_brutos"
+    t.boolean  "inscripto_en_ingresos_brutos",                            :default => false
     t.date     "fecha_de_inscripcion_ingresos_brutos"
-    t.boolean  "recibe_ayuda_de_programas_sociales"
+    t.boolean  "recibe_ayuda_de_programas_sociales",                      :default => false
     t.string   "programas_sociales_recibidos"
     t.string   "tipo_de_ayuda_recibida_de_programas_sociales"
-    t.boolean  "vinculado_a_sociedad_civil"
+    t.boolean  "vinculado_a_sociedad_civil",                              :default => false
     t.text     "tipo_de_participacion_en_sociedad_civil"
-    t.boolean  "recibio_ayuda_de_la_sociedad_civil"
+    t.boolean  "recibio_ayuda_de_la_sociedad_civil",                      :default => false
     t.text     "justificacion_no_haber_recibido_ayuda_de_sociedad_civil"
     t.text     "capacitaciones_recibidas"
     t.text     "maquinarias_y_herramientas_utilizadas"
     t.integer  "produccion_mensual"
     t.integer  "produccion_anual"
     t.integer  "produccion_maxima"
-    t.boolean  "dispone_de_espacio_fisico_para_produccion"
+    t.boolean  "dispone_de_espacio_fisico_para_produccion",               :default => false
     t.string   "tipo_de_espacio"
     t.text     "posible_solucion_a_falta_de_espacio"
-    t.boolean  "es_en_vivienda_particular"
-    t.boolean  "siendo_en_vivienda_particular_el_espacio_es_suficiente"
-    t.boolean  "es_necesario_acondicionamiento"
-    t.boolean  "ocupa_lugares_destinados_a_otros_usos"
+    t.boolean  "es_en_vivienda_particular",                               :default => false
+    t.boolean  "siendo_en_vivienda_particular_el_espacio_es_suficiente",  :default => false
+    t.boolean  "es_necesario_acondicionamiento",                          :default => false
+    t.boolean  "ocupa_lugares_destinados_a_otros_usos",                   :default => false
     t.text     "espacio_y_acondicinamiento_requeridos_para_crecer"
     t.text     "caracteristicas_y_zonas_de_clientes_actuales"
     t.string   "tipo_de_venta"
     t.text     "productos_que_vende"
     t.integer  "cantidad_de_clientes_actuales"
     t.text     "caracteristicas_y_zonas_de_futuros_clientes"
-    t.boolean  "competencia_en_mismo_barrio"
+    t.boolean  "competencia_en_mismo_barrio",                             :default => false
     t.text     "descripcion_de_competencia_en_mismo_barrio"
     t.text     "herramientas_necesarias"
     t.text     "maquinarias_necesarias"
@@ -137,8 +137,8 @@ ActiveRecord::Schema.define(:version => 20120215231237) do
     t.text     "capacitaciones_necesaria"
     t.text     "otras_necesidades"
     t.text     "observaciones"
-    t.datetime "created_at",                                              :null => false
-    t.datetime "updated_at",                                              :null => false
+    t.datetime "created_at",                                                                 :null => false
+    t.datetime "updated_at",                                                                 :null => false
   end
 
   add_index "emprendimientos", ["barrio_id"], :name => "index_emprendimientos_on_barrio_id"

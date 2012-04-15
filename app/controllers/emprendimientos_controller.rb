@@ -43,7 +43,7 @@ class EmprendimientosController < ApplicationController
 
     respond_to do |format|
       if @emprendimiento.save
-        format.html { redirect_to @emprendimiento, :notice => 'Su solicitud de empadronamiento se registro con exito.' }
+        format.html { redirect_to root_path, :notice => 'Su solicitud de empadronamiento se registro con exito.' }
         format.json { render :json => @emprendimiento, :status => :created, :location => @emprendimiento }
       else
         format.html { render :action => "new" }

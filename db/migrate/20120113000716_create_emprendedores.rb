@@ -11,15 +11,15 @@ class CreateEmprendedores < ActiveRecord::Migration
       t.string :telefono_para_mensajes
       t.text :observaciones_de_telefonos
       t.string :nivel_de_estudios
-      t.boolean :estudios_completos
+      t.boolean :estudios_completos, :default => :false
       t.string :titulo
-      t.boolean :recibe_o_recibio_algun_plan_social
+      t.boolean :recibe_o_recibio_algun_plan_social, :default => :false
       t.string :plan_social
       t.date :fecha_de_recepcion #del plan social
       t.string :actividad_laboral_principal
       t.string :relacion_laboral
       t.integer :cantidad_de_horas_semanales
-      t.boolean :es_unico_ingreso
+      t.boolean :es_unico_ingreso, :default => :true
       t.text :explicacion_de_ingresos
 
       t.timestamps
