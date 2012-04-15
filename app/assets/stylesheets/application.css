@@ -8,20 +8,39 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_tree 
 .*= require jquery-ui-1.8.16.custom
  *= require bootstrap
  *= require bootstrap-responsive
  *= require_self
+ *= require_tree .
 */
+
+/* Landscape phones and down*/
+@media (max-width: 480px) {
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 980px) and (max-width: 1200px) {
+  body {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+  body {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+}
 
 html, body {
   background-color: #BECEDB;
-}
-
-body {
-  padding-top: 40px;
-  padding-bottom: 60px;
 }
 
 #logo {
@@ -43,8 +62,8 @@ h2 {
 }
 
 #footer {
-  bottom: 0;
   position: fixed;
+  bottom: 0;
   width: 100%;
   border: none;
   padding-top: 10px;
@@ -65,12 +84,6 @@ h2 {
   margin-top: 0;
 }
 
-/*
-.form-horizontal .control-group > label {
-  margin-right: 20px;
-  width: 200px;
-}
-*/
 p {
   text-align: justify;
 }
@@ -78,4 +91,8 @@ p {
 .tab-content {
   display: table;
   width: 85%;
+}
+
+img {
+  max-width: 100%;
 }

@@ -1,20 +1,8 @@
-<div class="tabbable tabs-left">
-  <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#Personal">Datos Personales</a></li>
-    <li><a data-toggle="tab" href="#Emprendedor">Situación Personal</a></li>
-    <li><a data-toggle="tab" href="#Emprendimiento">Emprendimiento</a></li>
-    <li><a data-toggle="tab" href="#Contacto">Datos de Contacto</a></li>
-    <li><a data-toggle="tab" href="#SituacionImpositiva">Situacion Impositiva</a></li>
-    <li><a data-toggle="tab" href="#SituacionSocial">Situacion Social</a></li>
-    <li><a data-toggle="tab" href="#Mercado">Mercado</a></li>
-    <li><a data-toggle="tab" href="#Recursos">Recursos</a></li>
-    <li><a data-toggle="tab" href="#Necesidades">Necesidades</a></li>
-    <li><a data-toggle="tab" href="#Observaciones">Observaciones</a></li>
-  </ul>
-
+<h2 class= "well">Formulario de empadronamiento</h2>
 <%= simple_form_for(@emprendimiento, :html => { :class => 'form-horizontal' }) do |emprendimiento| %>
   <%= emprendimiento.error_notification %>
-  <div class="tab-content">
+<div class="row">
+<div class="columns span10 offset1">
     <%= emprendimiento.simple_fields_for :emprendedor do |emprendedor| %>
     <div id="Personal" class="tab-pane active">
       <%= emprendedor.simple_fields_for :usuario do |usuario| %>
@@ -72,6 +60,7 @@
                             :as => :radio_buttons,
                             :item_wrapper_class => 'inline' %>
       <%= emprendedor.input :titulo,
+                            :placeholder => 'Ultimo titulo obtenido',
                             :input_html => { :class => 'span6'} %>
       <legend>Planes Sociales</legend>
       <%= emprendedor.input :recibe_o_recibio_algun_plan_social,
@@ -79,12 +68,24 @@
                             :as => :radio_buttons,
                             :item_wrapper_class => 'inline' %>
       <%= emprendedor.input :plan_social,
+                            :id => 'plan-social',
                             :label => '¿Cual?',
                             :required => false,
-                            :disabled => true,
+                            :wrapper_html => 
+                              if @emprendimiento.emprendedor.recibe_o_recibio_algun_plan_social?
+                                { :class => 'plan_social' } 
+                              else
+                                { :class => 'plan_social hidden' }
+                              end,
                             :input_html => { :class => "span6" } %>
       <%= emprendedor.input :fecha_de_recepcion,
                             :as => :string,
+                            :wrapper_html => 
+                              if @emprendimiento.emprendedor.recibe_o_recibio_algun_plan_social?
+                                { :class => 'plan_social' } 
+                              else
+                                { :class => 'plan_social hidden' }
+                              end,
                             :input_html => { :class => "datepicker" } %>
       <legend>Actividad Laboral</legend>
       <%= emprendedor.input :actividad_laboral_principal,
@@ -96,7 +97,7 @@
                             :as => :radio_buttons,
                             :item_wrapper_class => 'inline' %>
       <%= emprendedor.input :cantidad_de_horas_semanales,
-                            :input_html => { :class => "input-mini" } %>
+                            :input_html => { :class => "input-mini" }%>
       <%= emprendedor.input :es_unico_ingreso,
                             :label => '¿Es unico ingreso?',
                             :as => :radio_buttons,
@@ -104,7 +105,14 @@
       <%= emprendedor.input :explicacion_de_ingresos,
                             :label => 'Explique',
                             :as => :text,
-                            :input_html => { :class => 'span6', :rows => 5 } %>
+                            :input_html => { :class => 'span6', :rows => 5 },
+                            :wrapper_html => 
+                              if @emprendimiento.emprendedor.es_unico_ingreso?
+                                { :class => 'explicacion_de_ingresos hidden' } 
+                              else
+                                { :class => 'explicacion_de_ingresos' }
+                              end
+                             %>
     </div>
     <% end %>
     <div id="Emprendimiento" class="tab-pane">
@@ -160,14 +168,18 @@
     <div id="Mercado" class="tab-pane">
       <legend>Produccion</legend>
       <%= emprendimiento.input :produccion_mensual,
-                               :label => 'Mensual' %>
+                               :label => 'Mensual' ,
+                               :placeholder => 'En unidades, solo numerico'%>
       <%= emprendimiento.input :produccion_anual,
-                               :label => 'Anual' %>
+                               :label => 'Anual' ,
+                               :placeholder => 'En unidades, solo numerico'%>
       <%= emprendimiento.input :produccion_maxima,
-                               :label => 'Maxima' %>
+                               :label => 'Maxima', 
+                               :placeholder => 'En unidades, solo numerico'%>
       <legend>Clientes</legend>
       <%= emprendimiento.input :cantidad_de_clientes_actuales,
-                               :label => 'Cantidad actual' %>
+                               :label => 'Cantidad actual',
+                               :placeholder => 'En unidades, solo numerico'%>
       <%= emprendimiento.input :caracteristicas_y_zonas_de_clientes_actuales,
                                :input_html => { :class => 'span6', :rows => 5 } %>
       <%= emprendimiento.input :tipo_de_venta,
@@ -176,12 +188,21 @@
                                :input_html => { :class => 'span6', :rows => 5 } %>
       <%= emprendimiento.input :caracteristicas_y_zonas_de_futuros_clientes,
                                :input_html => { :class => 'span6', :rows => 5 } %>
-      <legend>Competencia</legend>
+      <legend>Competencia en su mismo barrio</legend>
       <%= emprendimiento.input :competencia_en_mismo_barrio,
                                :as => :radio_buttons,
+                               :label => '¿Existe?',
                                :item_wrapper_class => 'inline' %>
       <%= emprendimiento.input :descripcion_de_competencia_en_mismo_barrio,
-                               :input_html => { :class => 'span6', :rows => 5 } %>
+                               :label => 'Descripcion',
+                               :input_html => { :class => 'span6', :rows => 5 },
+                               :wrapper_html => 
+                                  if @emprendimiento.competencia_en_mismo_barrio?
+                                    { :class => 'descripcion_de_competencia_en_mismo_barrio' } 
+                                  else
+                                    { :class => 'descripcion_de_competencia_en_mismo_barrio hidden' }
+                                  end
+                               %>
     </div>
     <div id="SituacionImpositiva" class="tab-pane">
       <legend>Monotributo</legend>
@@ -193,18 +214,41 @@
                                :item_wrapper_class => 'inline' %>
       <%= emprendimiento.input :fecha_de_inscripcion_al_monotributo,
                                :as => :string,
-                               :input_html => { :class => "datepicker" } %>
+                               :input_html => { :class => "datepicker" },
+                               :wrapper_html => 
+                                 if @emprendimiento.es_monotributista? ||
+                                    @emprendimiento.es_monotributista_social?
+                                   { :class => 'explicacion_de_ingresos' } 
+                                 else
+                                   { :class => 'explicacion_de_ingresos hidden' }
+                                 end %>
       <%= emprendimiento.input :situacion_frente_al_monotributo,
                                :collection => @emprendimiento.situacion_frente_al_monotributo_enum,
                                :as => :radio_buttons,
-                               :item_wrapper_class => 'inline' %>
+                               :item_wrapper_class => 'inline',
+                               :wrapper_html => 
+                                 if @emprendimiento.es_monotributista? ||
+                                    @emprendimiento.es_monotributista_social?
+                                   { :class => 'explicacion_de_ingresos' } 
+                                 else
+                                   { :class => 'explicacion_de_ingresos hidden' }
+                                 end %>
       <legend>Ingresos Brutos</legend>
       <%= emprendimiento.input :inscripto_en_ingresos_brutos,
+                               :label => '¿Inscripto?',
                                :as => :radio_buttons,
                                :item_wrapper_class => 'inline' %>
       <%= emprendimiento.input :fecha_de_inscripcion_ingresos_brutos,
+                               :label => 'Fecha de inscripcion',
                                :as => :string,
-                               :input_html => { :class => "datepicker" } %>
+                               :input_html => { :class => "datepicker" },
+                               :wrapper_html => 
+                                 if @emprendimiento.inscripto_en_ingresos_brutos?
+                                   { :class => 'fecha_de_inscripcion_ingresos_brutos' } 
+                                 else
+                                   { :class => 'fecha_de_inscripcion_ingresos_brutos hidden' }
+                                 end
+                                %>
     </div>
     <div id="SituacionSocial" class="tab-pane">
       <legend>Programas de Ayuda Social</legend>
@@ -213,22 +257,53 @@
                                :item_wrapper_class => 'inline' %>
       <%= emprendimiento.input :programas_sociales_recibidos,
                                :as => :text,
-                               :input_html => { :class => 'span6', :rows => 5 } %>
+                               :input_html => { :class => 'span6', :rows => 5 },
+                               :wrapper_html => 
+                                 if @emprendimiento.recibe_ayuda_de_programas_sociales?
+                                   { :class => 'programas_sociales' } 
+                                 else
+                                   { :class => 'programas_sociales hidden' }
+                                 end %>
       <%= emprendimiento.input :tipo_de_ayuda_recibida_de_programas_sociales,
                                :as => :text,
-                               :input_html => { :class => 'span6', :rows => 5 } %>
+                               :input_html => { :class => 'span6', :rows => 5 },
+                               :wrapper_html => 
+                                 if @emprendimiento.recibe_ayuda_de_programas_sociales?
+                                   { :class => 'programas_sociales' } 
+                                 else
+                                   { :class => 'programas_sociales hidden' }
+                                 end %>
       <legend>Sociedades Civiles</legend>
       <%= emprendimiento.input :vinculado_a_sociedad_civil,
                                :as => :radio_buttons,
                                :item_wrapper_class => 'inline' %>
       <%= emprendimiento.input :tipo_de_participacion_en_sociedad_civil,
-                               :input_html => { :class => 'span6', :rows => 5 } %>
+                               :input_html => { :class => 'span6', :rows => 5 },
+                               :wrapper_html => 
+                                 if @emprendimiento.vinculado_a_sociedad_civil?
+                                   { :class => 'vinculado_a_sociedad_civil' } 
+                                 else
+                                   { :class => 'vinculado_a_sociedad_civil hidden' }
+                                 end %>
       <%= emprendimiento.input :recibio_ayuda_de_la_sociedad_civil,
                                :as => :radio_buttons,
-                               :item_wrapper_class => 'inline' %>
+                               :item_wrapper_class => 'inline',
+                               :wrapper_html => 
+                                 if @emprendimiento.vinculado_a_sociedad_civil?
+                                   { :class => 'vinculado_a_sociedad_civil' } 
+                                 else
+                                   { :class => 'vinculado_a_sociedad_civil hidden' }
+                                 end %>
       <%= emprendimiento.input :justificacion_no_haber_recibido_ayuda_de_sociedad_civil,
                                :as => :text,
-                               :input_html => { :class => 'span6', :rows => 5 } %>
+                               :input_html => { :class => 'span6', :rows => 5 },
+                               :wrapper_html => 
+                                 if @emprendimiento.vinculado_a_sociedad_civil? &&
+                                    !@emprendimiento.recibio_ayuda_de_la_sociedad_civil?
+                                   { :class => 'vinculado_a_sociedad_civil recibio_ayuda_de_la_sociedad_civil' } 
+                                 else
+                                   { :class => 'vinculado_a_sociedad_civil recibio_ayuda_de_la_sociedad_civil hidden' }
+                                 end %>
     </div>
     <div id="Recursos" class="tab-pane">
       <legend>Conocimientos y Recursos</legend>
@@ -245,24 +320,66 @@
       <%= emprendimiento.input :tipo_de_espacio,
                                :collection => @emprendimiento.tipo_de_espacio_enum,
                                :as => :radio_buttons,
-                               :item_wrapper_class => 'inline' %>
+                               :item_wrapper_class => 'inline',
+                               :wrapper_html => 
+                                 if @emprendimiento.dispone_de_espacio_fisico_para_produccion?
+                                   { :class => 'dispone_de_espacio' } 
+                                 else
+                                   { :class => 'dispone_de_espacio hidden' }
+                                 end %>
       <%= emprendimiento.input :posible_solucion_a_falta_de_espacio,
                                :as => :text,
-                               :input_html => { :class => 'span6', :rows => 5 } %>
+                               :input_html => { :class => 'span6', :rows => 5 },
+                               :wrapper_html => 
+                                 if @emprendimiento.dispone_de_espacio_fisico_para_produccion?
+                                   { :class => 'no_dispone_de_espacio hidden' } 
+                                 else
+                                   { :class => 'no_dispone_de_espacio' }
+                                 end %>
       <%= emprendimiento.input :es_en_vivienda_particular,
                                :as => :radio_buttons,
-                               :item_wrapper_class => 'inline' %>
+                               :item_wrapper_class => 'inline',
+                               :wrapper_html => 
+                                 if @emprendimiento.dispone_de_espacio_fisico_para_produccion?
+                                   { :class => 'dispone_de_espacio' } 
+                                 else
+                                   { :class => 'dispone_de_espacio hidden' }
+                                 end %>
       <%= emprendimiento.input :siendo_en_vivienda_particular_el_espacio_es_suficiente,
                                :as => :radio_buttons,
-                               :item_wrapper_class => 'inline' %>
+                               :item_wrapper_class => 'inline',
+                               :wrapper_html => 
+                                 if @emprendimiento.dispone_de_espacio_fisico_para_produccion?
+                                   { :class => 'es_en_vivienda_particular' } 
+                                 else
+                                   { :class => 'es_en_vivienda_particular hidden' }
+                                 end %>
       <%= emprendimiento.input :es_necesario_acondicionamiento,
                                :as => :radio_buttons,
-                               :item_wrapper_class => 'inline' %>
+                               :item_wrapper_class => 'inline',
+                               :wrapper_html => 
+                                 if @emprendimiento.dispone_de_espacio_fisico_para_produccion?
+                                   { :class => 'es_en_vivienda_particular' } 
+                                 else
+                                   { :class => 'es_en_vivienda_particular hidden' }
+                                 end %>
       <%= emprendimiento.input :ocupa_lugares_destinados_a_otros_usos,
                                :as => :radio_buttons,
-                               :item_wrapper_class => 'inline' %>
+                               :item_wrapper_class => 'inline',
+                               :wrapper_html => 
+                                 if @emprendimiento.dispone_de_espacio_fisico_para_produccion?
+                                   { :class => 'es_en_vivienda_particular' } 
+                                 else
+                                   { :class => 'es_en_vivienda_particular hidden' }
+                                 end %>
       <%= emprendimiento.input :espacio_y_acondicinamiento_requeridos_para_crecer,
-                               :input_html => { :class => 'span6', :rows => 5 } %>
+                               :input_html => { :class => 'span6', :rows => 5 },
+                               :wrapper_html => 
+                                 if @emprendimiento.dispone_de_espacio_fisico_para_produccion?
+                                   { :class => 'dispone_de_espacio' } 
+                                 else
+                                   { :class => 'dispone_de_espacio hidden' }
+                                 end %>
     </div>
     <div id="Necesidades" class="tab-pane">
       <legend>Necesidades</legend>
@@ -285,18 +402,20 @@
                                :label => 'Capacitaciones',
                                :input_html => { :class => 'span6', :rows => 5 } %>
       <%= emprendimiento.input :otras_necesidades,
+                               :required => false,
                                :label => 'Otras',
                                :input_html => { :class => 'span6', :rows => 5 } %>
     </div>
     <div id="Observaciones" class="tab-pane">
       <legend>Observaciones</legend>
       <%= emprendimiento.input :observaciones,
-                               :input_html => { :class => 'span6', :rows => 10 } %>
+                               :input_html => { :class => 'span6', :rows => 5 } %>
       <p>Gracias por completar el formulario de solicitud de empadronamiento, una vez enviado debera esperar a la revision para ser incorporado al padron. Se comunicaran con usted en caso de ser necesaria mas informacion.</p>
-      <div class="form-actions">
-        <%= emprendimiento.button :submit, :class => 'btn-primary', :value => 'Enviar solicitud de empadronamiento' %>
-      </div>
     </div>
+</div>
+</div>
+  <div class="form-actions">
+    <%= emprendimiento.button :submit, :class => 'btn-primary', :value => 'Enviar solicitud de empadronamiento' %>
   </div>
 <% end %>
 </div>
