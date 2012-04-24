@@ -1,2 +1,12 @@
-<h1>Productos#index</h1>
-<p>Find me in app/views/productos/index.html.erb</p>
+<h2 class= "well">Cartelera de Productos</h2>
+<% @productos.each do |producto| %>
+  <article class="">
+    <header>
+      <p><strong><%= producto.nombre %></strong></p>
+    </header>
+    <p><strong>Nombre: </strong><%= producto.nombre %></p>
+    <p><strong>Descripcion: </strong><%= producto.descripcion %></p>
+  </article>
+<% end %>
+<hr>
+<%= paginate @productos %>

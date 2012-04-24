@@ -1,2 +1,24 @@
 <h1>Productos#show</h1>
 <p>Find me in app/views/productos/show.html.erb</p>
+
+<h2 class= "breadcrumb">Producto</h2>
+<article>
+<div class="row">
+  <div class="span-one-third">
+    <h3>Listado de Productos</h3>
+    <p>
+      <strong>Nombre</strong><br>
+      <%= @producto.nombre %>
+    </p>
+
+    <p>
+      <strong>Descripcion</strong><br>
+      <%= @eproducto.descripcon %>
+    </p>
+  </div>  
+</div>
+</article>
+
+<div class="actions">
+  <%= boton_volver productos_path %>
+</div>
