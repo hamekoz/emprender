@@ -1,16 +1,16 @@
 <div class="row">
-<div class="span10 offset3">
+<div class="span8 offset2">
 <h2 class="breadcrumb">¿Olvido su password?</h2>
-
-<%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+<p>Si no recuerda su contraseña podemos enviarle a su correo las instrucciones para poder recuperarla</p>
+<%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post,:class => 'form-horizontal' }) do |f| %>
   <%= f.error_notification %>
 
   <div class="inputs">
     <%= f.input :email, :required => true %>
   </div>
 
-  <div class="actions">
-    <%= f.button :submit, "Enviarme instrucciones para recuperar mi password", :class => 'btn primary' %>
+  <div class="form-actions">
+    <%= f.button :submit, "Enviarme las instrucciones", :class => 'btn btn-primary' %>
   </div>
 <% end %>
 

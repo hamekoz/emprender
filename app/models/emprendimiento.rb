@@ -93,4 +93,16 @@ class Emprendimiento < ActiveRecord::Base
   def tipo_de_venta_enum
     ['Ferias', 'Locales Propios', 'Mayorista','Supermercados','En su casa','Distribuidores','Vendedores','Al estado','Otros']
   end
+  
+  def progreso
+    (attributes.count - attributes.values.select(&:nil?).count) * 100 / attributes.count
+  end
+  
+  def atributos
+    attributes.count
+  end
+
+  def nulos
+    attributes.values.select(&:nil?).count
+  end
 end

@@ -1,16 +1,20 @@
 <div class="row">
-<div class="span10 offset3">
-<h2 class="breadcrumb">Reenvio de instrucciones de confirmacion</h2>
-
-<%= simple_form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
+<div class="span8 offset2">
+<h2 class="breadcrumb">Confirmar usuario</h2>
+<p>El sistema debe confirmar que usted es una persona real.
+Si usted no recibio las instrucciones para confirmar su usuario ingrese
+su correo electronico y precione el boton Enviame las instrucciones para que se las enviemos nuevamente</p>
+<%= simple_form_for(resource, :as => resource_name,
+                              :url => confirmation_path(resource_name),
+                              :html => { :method => :post, :class => 'form-horizontal' }) do |f| %>
   <%= f.error_notification %>
 
   <div class="inputs">
     <%= f.input :email, :required => true %>
   </div>
 
-  <div class="actions">
-    <%= f.button :submit, "Volver a enviar instrucciones de confirmacion", :class => 'btn primary' %>
+  <div class="form-actions">
+    <%= f.button :submit, "Enviame las instrucciones", :class => 'btn btn-primary' %>
   </div>
 <% end %>
 

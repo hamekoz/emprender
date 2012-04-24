@@ -1,5 +1,9 @@
 Emprender::Application.routes.draw do
 
+  get "productos/index"
+
+  get "productos/show"
+
   mount Ckeditor::Engine => '/ckeditor'
 
   mount RailsAdmin::Engine => '/pem', :as => 'rails_admin'
@@ -15,6 +19,8 @@ Emprender::Application.routes.draw do
   resources :usuarios
 
   resources :emprendimientos
+  
+  resources :productos
 
   match '/acerca' => "application#acerca", :as => "acerca"
   match '/empadronarme' => "emprendimientos#new", :as => "empadronarme"

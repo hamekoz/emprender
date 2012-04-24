@@ -5,14 +5,14 @@ gem 'rails', '3.2.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'json'
+gem 'json'
 gem 'simple_form'
 gem 'enum'
 gem 'rails-i18n'
 gem 'cancan'
 gem 'devise'
-gem 'ckeditor', '3.7.0.rc2'
-gem 'paperclip', '~> 2.7'
+gem 'ckeditor' , '3.7.0.rc2'
+gem 'paperclip'
 gem 'kaminari'
 
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
@@ -21,7 +21,7 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 
 # Gemas usadas solo en desarrollo
 group :development, :test do
-  gem 'fastercsv'
+  gem 'bigdecimal'
   gem 'sqlite3'
   gem 'heroku'
 end

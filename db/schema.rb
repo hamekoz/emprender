@@ -11,11 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120416235557) do
+ActiveRecord::Schema.define(:version => 20120422010006) do
 
   create_table "actividades", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "nombre"
+    t.string   "descripcion"
+    t.string   "imagen1"
+    t.string   "imagen2"
+    t.string   "imagen3"
+    t.string   "imagen4"
+    t.string   "imagen5"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "barrios", :force => true do |t|
@@ -84,7 +91,7 @@ ActiveRecord::Schema.define(:version => 20120416235557) do
   create_table "emprendimientos", :force => true do |t|
     t.integer  "emprendedor_id"
     t.string   "nombre"
-    t.boolean  "es_marca_registrada",                                     :default => false
+    t.boolean  "es_marca_registrada"
     t.string   "marca"
     t.integer  "rubro_id"
     t.integer  "clasificacion_id"
@@ -94,46 +101,46 @@ ActiveRecord::Schema.define(:version => 20120416235557) do
     t.text     "roles"
     t.integer  "estado_id"
     t.date     "fecha_de_inicio_de_actividad"
-    t.string   "web"
-    t.string   "mail"
+    t.string   "web",                                                     :default => ""
+    t.string   "mail",                                                    :default => ""
     t.string   "domicilio"
     t.integer  "barrio_id"
     t.string   "telefono"
     t.string   "celular"
     t.string   "telefono_de_mensajes"
-    t.string   "comentarios"
-    t.boolean  "es_monotributista",                                       :default => false
-    t.boolean  "es_monotributista_social",                                :default => false
+    t.string   "comentarios",                                             :default => ""
+    t.boolean  "es_monotributista"
+    t.boolean  "es_monotributista_social"
     t.date     "fecha_de_inscripcion_al_monotributo"
     t.string   "situacion_frente_al_monotributo"
-    t.boolean  "inscripto_en_ingresos_brutos",                            :default => false
+    t.boolean  "inscripto_en_ingresos_brutos"
     t.date     "fecha_de_inscripcion_ingresos_brutos"
-    t.boolean  "recibe_ayuda_de_programas_sociales",                      :default => false
+    t.boolean  "recibe_ayuda_de_programas_sociales"
     t.string   "programas_sociales_recibidos"
     t.string   "tipo_de_ayuda_recibida_de_programas_sociales"
-    t.boolean  "vinculado_a_sociedad_civil",                              :default => false
+    t.boolean  "vinculado_a_sociedad_civil"
     t.text     "tipo_de_participacion_en_sociedad_civil"
-    t.boolean  "recibio_ayuda_de_la_sociedad_civil",                      :default => false
+    t.boolean  "recibio_ayuda_de_la_sociedad_civil"
     t.text     "justificacion_no_haber_recibido_ayuda_de_sociedad_civil"
     t.text     "capacitaciones_recibidas"
     t.text     "maquinarias_y_herramientas_utilizadas"
     t.integer  "produccion_mensual"
     t.integer  "produccion_anual"
     t.integer  "produccion_maxima"
-    t.boolean  "dispone_de_espacio_fisico_para_produccion",               :default => false
+    t.boolean  "dispone_de_espacio_fisico_para_produccion"
     t.string   "tipo_de_espacio"
     t.text     "posible_solucion_a_falta_de_espacio"
-    t.boolean  "es_en_vivienda_particular",                               :default => false
-    t.boolean  "siendo_en_vivienda_particular_el_espacio_es_suficiente",  :default => false
-    t.boolean  "es_necesario_acondicionamiento",                          :default => false
-    t.boolean  "ocupa_lugares_destinados_a_otros_usos",                   :default => false
+    t.boolean  "es_en_vivienda_particular"
+    t.boolean  "siendo_en_vivienda_particular_el_espacio_es_suficiente"
+    t.boolean  "es_necesario_acondicionamiento"
+    t.boolean  "ocupa_lugares_destinados_a_otros_usos"
     t.text     "espacio_y_acondicinamiento_requeridos_para_crecer"
     t.text     "caracteristicas_y_zonas_de_clientes_actuales"
     t.string   "tipo_de_venta"
     t.text     "productos_que_vende"
     t.integer  "cantidad_de_clientes_actuales"
     t.text     "caracteristicas_y_zonas_de_futuros_clientes"
-    t.boolean  "competencia_en_mismo_barrio",                             :default => false
+    t.boolean  "competencia_en_mismo_barrio"
     t.text     "descripcion_de_competencia_en_mismo_barrio"
     t.text     "herramientas_necesarias"
     t.text     "maquinarias_necesarias"
@@ -143,8 +150,8 @@ ActiveRecord::Schema.define(:version => 20120416235557) do
     t.text     "capacitaciones_necesaria"
     t.text     "otras_necesidades"
     t.text     "observaciones"
-    t.datetime "created_at",                                                                 :null => false
-    t.datetime "updated_at",                                                                 :null => false
+    t.datetime "created_at",                                                              :null => false
+    t.datetime "updated_at",                                                              :null => false
   end
 
   add_index "emprendimientos", ["barrio_id"], :name => "index_emprendimientos_on_barrio_id"
@@ -207,8 +214,15 @@ ActiveRecord::Schema.define(:version => 20120416235557) do
   end
 
   create_table "productos", :force => true do |t|
+    t.integer  "rubro_id"
     t.string   "nombre"
     t.string   "descripcion"
+    t.string   "imagen1"
+    t.string   "imagen2"
+    t.string   "imagen3"
+    t.string   "imagen4"
+    t.string   "imagen5"
+    t.boolean  "activo"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -221,19 +235,40 @@ ActiveRecord::Schema.define(:version => 20120416235557) do
   end
 
   create_table "servicios", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "nombre"
+    t.string   "descripcion"
+    t.string   "imagen1"
+    t.string   "imagen2"
+    t.string   "imagen3"
+    t.string   "imagen4"
+    t.string   "imagen5"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "usuarios", :force => true do |t|
     t.integer  "persona_id"
     t.string   "rol"
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
-    t.string   "email",              :default => "", :null => false
-    t.string   "encrypted_password", :default => "", :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
   end
 
+  add_index "usuarios", ["confirmation_token"], :name => "index_usuarios_on_confirmation_token", :unique => true
   add_index "usuarios", ["email"], :name => "index_usuarios_on_email", :unique => true
+  add_index "usuarios", ["reset_password_token"], :name => "index_usuarios_on_reset_password_token", :unique => true
 
 end

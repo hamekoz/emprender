@@ -4,10 +4,11 @@ class Ability
   def initialize(usuario)
     if usuario && usuario.administrador?
       can :access, :rails_admin
+      can :dashboard                  # allow access to dashboard
       can :manage, :all
-    end
-    if usuario && usuario.representante?
+    elsif usuario && usuario.representante?
       can :access, :rails_admin
+      can :dashboard                  # allow access to dashboard
       can :read, [Evento, Noticia]
       can :create, [Evento, Noticia]
     end

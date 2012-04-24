@@ -28,52 +28,33 @@
               <span>Eventos</span>
             <% end %>
           </li>
-        <% if usuario_signed_in? %>
-          <% if current_usuario.administrador? %>
-            <%= render 'menu_pem' %>
-          <% elsif current_usuario.representante? %>
-            <%= render 'menu_pem' %>
-          <% elsif current_usuario.emprendedor? %>
-            <li class="<%= 'active' if current_page?(:action => 'emprendimientos') %>">
-              <%= link_to(root_path) do %>
-                <i class="icon-home icon-white"></i>
-                <span>Mi Emprendimiento</span>
-              <% end %>
-            </li>
-          <% end %>
-        <% else %>
-          <li class="<%= 'active' if current_page?(:controller => 'padron') %>">
-            <%= link_to(empadronarme_path) do %>
-              <i class="icon-check icon-white"></i>
-              <span>Empadronarme</span>
+          <li class="<%= 'active' if current_page?(:controller => 'productos') %>">
+            <%= link_to(productos_path) do %>
+              <i class="icon-gift icon-white"></i>
+              <span>Productos</span>
             <% end %>
           </li>
-        <% end %>
+          <li class="<%= 'active' if current_page?(:controller => 'servicios') %>">
+            <%= link_to(root_path) do %>
+              <i class="icon-screenshot icon-white"></i>
+              <span>Servicios</span>
+            <% end %>
+          </li>
       </ul>
       <ul class="nav pull-right">
+      <li class="divider-vertical"></li>
         <% if usuario_signed_in? %>
-        <li>
-          <%= link_to(usuario_path(current_usuario)) do %>
-            <i class="icon-user icon-white"></i>
-            <span><%= current_usuario.persona.nombre %></span>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to(destroy_usuario_session_path, :method => :delete) do %>
-<!--            <i class="icon-off icon-white"></i>-->
-            <span class="label label-important">Salir</span>
-          <% end %>
-        </li>
+          <%= render 'menu_usuario' %>
         <% else %>
         <li>
           <%= link_to(new_usuario_session_path) do %>
             <!--<i class="icon-ok icon-white"></i>-->
-            <span class="label label-success">Ingresar</span>
+            <span class="badge badge-success">Ingresar</span>
           <% end %>
         </li>
         <% end %>
       </ul>
-          </div><!--/.nav-collapse -->
+      </div><!--/.nav-collapse -->
     </div>
   </div>
 </div>

@@ -1,6 +1,14 @@
 <h2 class= "well">Formulario de empadronamiento</h2>
 <%= simple_form_for(@emprendimiento, :html => { :class => 'form-horizontal' }) do |emprendimiento| %>
   <%= emprendimiento.error_notification %>
+<div class="progress">
+  <div class="bar" style="width: <%= @emprendimiento.progreso %>% ;">
+    <%= @emprendimiento.progreso %>% Completo
+  </div>
+</div>
+Porcentaje <%= @emprendimiento.progreso %>
+Cantidad de atributos nulos <%= @emprendimiento.nulos %>
+Cantidad de atributos <%= @emprendimiento.atributos %>
 <div class="row">
 <div class="columns span10 offset1">
     <%= emprendimiento.simple_fields_for :emprendedor do |emprendedor| %>
