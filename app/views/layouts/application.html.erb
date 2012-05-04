@@ -29,14 +29,14 @@
       <div class="content">
         <% if notice.present? %>
         <div id="notice" class="alert alert-success fade in" data-alert="alert">
-          <a class="close" href="#">×</a>
+          <i class="icon-remove close" data-dismiss="alert"></i>
           <%= notice %>
         </div>
         <% end %>
 
         <% if alert.present? %>
         <div id="alert" class="alert alert-error fade in" data-alert="alert">
-          <a class="close" href="#">×</a>
+          <i class="icon-remove close" data-dismiss="alert"></i>
           <%= alert %>
         </div>
         <% end %>

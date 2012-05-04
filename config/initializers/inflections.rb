@@ -27,4 +27,5 @@ ActiveSupport::Inflector.inflections do |inflect|
 
    inflect.irregular 'password', 'passwords'
    inflect.irregular 'session', 'sessions'
+   inflect.irregular 'mensaje', 'mensajes'
 end

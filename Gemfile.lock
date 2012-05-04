@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: git://github.com/sferik/rails_admin.git
-  revision: a6b65ec5fa1b6f035ccf1c63f55a2d90b2ebeb78
+  revision: 2132c9c68675ad56232a35cc75429cfe2cf61144
   specs:
     rails_admin (0.0.1)
       bbenezech-nested_form (~> 0.0.6)
@@ -67,7 +67,6 @@ GEM
     ckeditor (3.7.0.rc2)
       mime-types (~> 1.17.2)
       orm_adapter (~> 0.0.6)
-    cocaine (0.2.1)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -82,10 +81,10 @@ GEM
       warden (~> 1.1.1)
     enum (1.0.0)
     erubis (2.7.0)
-    execjs (1.3.0)
+    execjs (1.3.1)
       multi_json (~> 1.0)
     haml (3.1.4)
-    heroku (2.24.1)
+    heroku (2.25.0)
       launchy (>= 0.3.2)
       netrc (~> 0.7.1)
       rest-client (~> 1.6.1)
@@ -100,7 +99,7 @@ GEM
     jquery-ui-rails (0.2.2)
       jquery-rails
       railties (>= 3.1.0)
-    json (1.6.6)
+    json (1.7.0)
     kaminari (0.13.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -112,15 +111,13 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.17.2)
-    multi_json (1.3.2)
+    minitest (2.12.1)
+    minitest-rails (0.0.6)
+      minitest (~> 2.11)
+      rails (~> 3.1)
+    multi_json (1.3.4)
     netrc (0.7.1)
     orm_adapter (0.0.7)
-    paperclip (3.0.2)
-      activemodel (>= 3.0.0)
-      activerecord (>= 3.0.0)
-      activesupport (>= 3.0.0)
-      cocaine (>= 0.0.2)
-      mime-types
     pg (0.13.2)
     pg (0.13.2-x86-mingw32)
     polyglot (0.3.3)
@@ -157,16 +154,17 @@ GEM
     remotipart (1.0.2)
     rest-client (1.6.7)
       mime-types (>= 1.16)
-    rubyzip (0.9.7)
+    rubyzip (0.9.8)
     sass (3.1.16)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    show_for (0.2.4)
     simple_form (2.0.1)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
-    sprockets (2.1.2)
+    sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
@@ -199,12 +197,14 @@ DEPENDENCIES
   jquery-rails
   json
   kaminari
-  paperclip
+  minitest
+  minitest-rails
   pg
   rails (= 3.2.3)
   rails-i18n
   rails_admin!
   sass-rails (~> 3.2.3)
+  show_for
   simple_form
   sqlite3
   twitter-bootstrap-rails!

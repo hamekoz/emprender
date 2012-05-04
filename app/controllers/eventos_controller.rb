@@ -3,7 +3,7 @@ class EventosController < ApplicationController
   # GET /eventos
   # GET /eventos.json
   def index
-    @eventos = Evento.publicados.page(params[:pagina]).per(1)
+    @eventos = Evento.publicados.page(params[:pagina]).per(6)
 
     respond_to do |format|
       format.html # index.html.erb

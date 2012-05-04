@@ -6,13 +6,15 @@ gem 'rails', '3.2.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'json'
+gem 'show_for'
 gem 'simple_form'
 gem 'enum'
 gem 'rails-i18n'
 gem 'cancan'
 gem 'devise'
 gem 'ckeditor' , '3.7.0.rc2'
-gem 'paperclip'
+#gem 'paperclip',           :platforms => :ruby19
+#gem "paperclip", "~> 2.7", :platforms => :ruby18
 gem 'kaminari'
 
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
@@ -21,7 +23,12 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 
 # Gemas usadas solo en desarrollo
 group :development, :test do
-  gem 'bigdecimal'
+  platforms :ruby_19 do
+    gem 'minitest'
+    gem 'minitest-rails'
+    gem 'bigdecimal'
+  end
+#  gem 'fastercsv',      :platforms => :ruby18
   gem 'sqlite3'
   gem 'heroku'
 end

@@ -1,12 +1,19 @@
-<h2 class= "well">Cartelera de Productos</h2>
-<% @productos.each do |producto| %>
-  <article class="">
-    <header>
-      <p><strong><%= producto.nombre %></strong></p>
-    </header>
-    <p><strong>Nombre: </strong><%= producto.nombre %></p>
-    <p><strong>Descripcion: </strong><%= producto.descripcion %></p>
-  </article>
-<% end %>
+<h1 class= "page-header">Catalogo de Productos</h1>
+<ul class="thumbnails">
+  <% @productos.each do |producto| %>
+  <li class="span3">
+    <div class="thumbnail">
+    <img alt="" src="http://placehold.it/260x180">
+    <div class="caption">
+      <h5><%= producto.nombre %></h5>
+      <p><%= producto.descripcion %></p>
+      <p>
+        <%= link_to "Ver mas...", producto_path(producto), :class => "btn btn-primary" %>
+        <a class="btn" href="#">Comentar</a>
+      </p>
+    </div>
+  </li>
+  <% end %>
+</ul>
 <hr>
 <%= paginate @productos %>

@@ -1,0 +1,26 @@
+<h1 class="page-header">Mis Mensajes</h1>
+
+<div data-toggle="buttons-radio" class="btn-group">
+  <button class="btn btn-primary active">Recibidos</button>
+  <button class="btn btn-primary">Enviados</button>
+</div>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @mensajes.each do |mensaje| %>
+  <tr>
+    <td><%= link_to 'Show', mensaje %></td>
+    <td><%= link_to 'Edit', edit_mensaje_path(mensaje) %></td>
+    <td><%= link_to 'Destroy', mensaje, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Mensaje', new_mensaje_path %>

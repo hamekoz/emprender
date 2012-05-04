@@ -5,34 +5,55 @@
     <b class="caret"></b>
   </a>
   <ul class="dropdown-menu">
+    <li class="nav-header"><%= current_usuario.rol %></li>
     <li>
       <%= link_to(usuario_path(current_usuario)) do %>
         <i class="icon-user"></i>
         <span>Mi Usuario</span>
       <% end %>
     </li>
-    <li class="divider"></li>
-    <li class="nav-header"><%= current_usuario.rol %></li>
 <% if current_usuario.emprendedor? %>
+    <li>
+      <% if current_usuario.perfil.nil? %>
+        <% current_usuario.perfil = Perfil.new %>
+      <% end %>
+      <%= link_to(perfil_path(current_usuario.perfil)) do %>
+        <i class="icon-home"></i>
+        <span>Mi Perfil</span>
+        <% if !current_usuario.perfil.completo? %>
+          <span class="label label-important">Incompleto</span>
+        <% end %>
+      <% end %>
+    </li>
     <li>
       <%= link_to(root_path) do %>
         <i class="icon-home"></i>
         <span>Mi Emprendimiento</span>
+        <span class="label label-important">Incompleto</span>
+      <% end %>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <%= link_to(root_path) do %>
+        <i class="icon-home"></i>
+        <span>Mis Productos</span>
       <% end %>
     </li>
     <li>
-      <%= link_to(empadronarme_path) do %>
-        <i class="icon-check icon-white"></i>
-        <span>Empadronarme</span>
+      <%= link_to(root_path) do %>
+        <i class="icon-home"></i>
+        <span>Mis Servicios</span>
+      <% end %>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <%= link_to(root_path) do %>
+        <i class="icon-home"></i>
+        <span>Comentarios</span>
+        <span class="badge badge-info">25</span>
       <% end %>
     </li>
 <% else %>
-    <li>
-      <%= link_to(empadronar_path) do %>
-        <i class="icon-check"></i>
-        <span>Empadronar</span>
-      <% end %>
-    </li>
     <li>
       <%= link_to(rails_admin_path) do %>
         <i class="icon-list-alt"></i>
@@ -40,6 +61,15 @@
       <% end %>
     </li>
 <% end %>
+    <li>
+      <%= link_to(mensajes_path) do %>
+        <i class="icon-home"></i>
+        <span>Mensajes</span>
+        <span class="badge badge-success">
+          <%= current_usuario.mensajes_recibidos.count %>
+        </span>
+      <% end %>
+    </li>
     <li class="divider"></li>
     <li>
       <%= link_to(destroy_usuario_session_path, :method => :delete) do %>

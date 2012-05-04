@@ -1,4 +1,6 @@
 class Persona < ActiveRecord::Base
+  attr_accessible :nombre, :apellido
+
   validates :nombre, :presence => true
   validates :apellido, :presence => true
 

@@ -1,19 +1,22 @@
+<h1 class="page-header">Reenvio de instrucciones de desbloqueo</h1>
 <div class="row">
-<div class="span10 offset3">
-<h2 class="breadcrumb">Reenvio de instrucciones de desbloqueo</h2>
+  <div class="span10 offset3">
 
-<%= simple_form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post }) do |f| %>
-  <%= f.error_notification %>
+  <%= simple_form_for(resource,
+                      :as => resource_name,
+                      :url => unlock_path(resource_name),
+                      :html => { :method => :post }) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="inputs">
-    <%= f.input :email, :required => true %>
+    <div class="inputs well">
+      <%= f.input :email, :required => true %>
+    </div>
+
+    <div class="actions">
+      <%= f.button :submit, "Volver a enviar instrucciones de desbloqueo", :class => 'btn primary' %>
+    </div>
+  <% end %>
+
+  <%= render :partial => "devise/shared/links" %>
   </div>
-
-  <div class="actions">
-    <%= f.button :submit, "Volver a enviar instrucciones de desbloqueo", :class => 'btn primary' %>
-  </div>
-<% end %>
-
-<%= render :partial => "devise/shared/links" %>
-</div>
 </div>

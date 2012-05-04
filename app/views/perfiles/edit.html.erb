@@ -1,0 +1,104 @@
+<h1 class= "page-header">Editando Perfil</h1>
+
+<%= simple_form_for(@perfil, :html => { :class => 'form-horizontal' }) do |perfil| %>
+  <%= perfil.error_notification %>
+
+  <div class="form-inputs well">
+      <%= perfil.input :dni,
+                            :placeholder => '????????',
+                            :input_html => { :class => 'span1'} %>
+      <%= perfil.input :cuit_cuil,
+                            :placeholder => '??-????????-?',
+                            :input_html => { :class => 'span2'} %>
+      <legend>Domicilio</legend>
+      <%= perfil.input :domicilio,
+                            :input_html => { :class => 'span4'} %>
+      <%= perfil.association :barrio,
+                                  :collection => Barrio.all %>
+      <legend>Telefonos</legend>
+      <%= perfil.input :telefono_particular,
+                            :label => 'Particular',
+                            :input_html => { :class => 'span2'} %>
+      <%= perfil.input :telefono_celular,
+                            :label => 'Celular',
+                            :input_html => { :class => 'span2'} %>
+      <%= perfil.input :telefono_para_mensajes,
+                            :label => 'Para mensajes',
+                            :input_html => { :class => 'span2'} %>
+      <%= perfil.input :observaciones_de_telefonos,
+                            :label => 'Observaciones',
+                            :as => :text,
+                            :input_html => { :class => 'span6', :rows => 5 } %>
+      <legend>Estudios</legend>
+      <%= perfil.input :nivel_de_estudios,
+                            :label => 'Nivel',
+                            :collection => ['Primario', 'Secundario', 'Terciario', 'Universitario'],
+                            :as => :radio_buttons,
+                            :item_wrapper_class => 'inline' %>
+      <%= perfil.input :estudios_completos,
+                            :label => '¿Completo?',
+                            :as => :radio_buttons,
+                            :item_wrapper_class => 'inline' %>
+      <%= perfil.input :titulo,
+                            :placeholder => 'Ultimo titulo obtenido',
+                            :input_html => { :class => 'span6'} %>
+      <legend>Planes Sociales</legend>
+      <%= perfil.input :recibe_o_recibio_algun_plan_social,
+                            :label => '¿Recibe o recibio alguno?',
+                            :as => :radio_buttons,
+                            :item_wrapper_class => 'inline' %>
+      <%= perfil.input :plan_social,
+                            :id => 'plan-social',
+                            :label => '¿Cual?',
+                            :required => false,
+                            :wrapper_html => 
+                              if @perfil.recibe_o_recibio_algun_plan_social.nil?
+                                { :class => 'plan_social hidden' } 
+                              else
+                                { :class => 'plan_social' }
+                              end,
+                            :input_html => { :class => "span6" } %>
+      <%= perfil.input :fecha_de_recepcion,
+                            :as => :string,
+                            :wrapper_html => 
+                              if @perfil.recibe_o_recibio_algun_plan_social.nil?
+                                { :class => 'plan_social hidden' } 
+                              else
+                                { :class => 'plan_social' }
+                              end,
+                            :input_html => { :class => "datepicker" } %>
+      <legend>Actividad Laboral</legend>
+      <%= perfil.input :actividad_laboral_principal,
+                            :label => 'Actividad Principal',
+                            :input_html => { :class => "span6" } %>
+      <%= perfil.input :relacion_laboral,
+                            :label => 'Relacion',
+                            :collection => ["Dependiente", "Independiente"],
+                            :as => :radio_buttons,
+                            :item_wrapper_class => 'inline' %>
+      <%= perfil.input :cantidad_de_horas_semanales,
+                            :input_html => { :class => "input-mini" }%>
+      <%= perfil.input :es_unico_ingreso,
+                            :label => '¿Es unico ingreso?',
+                            :as => :radio_buttons,
+                            :item_wrapper_class => 'inline' %>
+      <%= perfil.input :explicacion_de_ingresos,
+                            :label => 'Explique',
+                            :as => :text,
+                            :input_html => { :class => 'span6', :rows => 5 },
+                            :wrapper_html => 
+                              if @perfil.es_unico_ingreso.blank?
+                                { :class => 'explicacion_de_ingresos hidden' } 
+                              else
+                                { :class => 'explicacion_de_ingresos' }
+                              end
+                             %>
+  </div>
+
+  <div class="form-actions">
+    <%= perfil.button :submit, :class => 'btn btn-primary' %>
+    <%= link_to 'Volver sin editar', @perfil, :class => 'btn' %>
+  </div>
+<% end %>
+
+

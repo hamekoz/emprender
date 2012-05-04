@@ -1,4 +1,4 @@
-<h2 class= "well">Formulario de empadronamiento</h2>
+<h1 class= "page-header">Formulario de empadronamiento</h1>
 <%= simple_form_for(@emprendimiento, :html => { :class => 'form-horizontal' }) do |emprendimiento| %>
   <%= emprendimiento.error_notification %>
 <div class="progress">
@@ -13,23 +13,6 @@ Cantidad de atributos <%= @emprendimiento.atributos %>
 <div class="columns span10 offset1">
     <%= emprendimiento.simple_fields_for :emprendedor do |emprendedor| %>
     <div id="Personal" class="tab-pane active">
-      <%= emprendedor.simple_fields_for :usuario do |usuario| %>
-      <legend>Usuario</legend>
-        <%= usuario.input :email,
-                          :placeholder => 'nombre@dominio.com.ar' %>
-        <%= usuario.input :password %>
-        <%= usuario.input :password_confirmation,
-                          :label => 'Confirmar password' %>
-      <legend>Datos Personales</legend>
-        <%= usuario.simple_fields_for :persona do |persona| %>
-          <%= persona.input :nombre %>
-          <%= persona.input :apellido %>
-          <%= persona.input :sexo,
-                            :collection => @emprendimiento.emprendedor.usuario.persona.sexo_enum,
-                            :as => :radio_buttons,
-                            :item_wrapper_class => 'inline' %>
-        <% end %>
-      <% end %>
       <%= emprendedor.input :dni,
                             :placeholder => '????????',
                             :input_html => { :class => 'span1'} %>

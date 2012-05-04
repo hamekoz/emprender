@@ -1,0 +1,22 @@
+<h1 class= "page-header">Catalogo de Servicios</h1>
+<ul class="thumbnails">
+  <% @servicios.each do |servicio| %>
+  <li class="span3">
+    <div class="thumbnail">
+    <img alt="" src="http://placehold.it/260x180">
+    <div class="caption">
+      <h5><%= servicio.nombre %></h5>
+      <p><%= servicio.descripcion %></p>
+      <p>
+        <%= link_to "Ver mas...", servicio_path(servicio), :class => "btn btn-primary" %>
+        <a class="btn" href="#">Comentar</a>
+      </p>
+    </div>
+  </li>
+  <% end %>
+</ul>
+<hr>
+<%= paginate @servicios %>
+
+
+

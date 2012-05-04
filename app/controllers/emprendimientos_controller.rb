@@ -26,9 +26,6 @@ class EmprendimientosController < ApplicationController
   def new
     @emprendimiento = Emprendimiento.new
     @emprendimiento.emprendedor = Emprendedor.new
-    @emprendimiento.emprendedor.usuario = Usuario.new
-    @emprendimiento.emprendedor.usuario.persona = Persona.new
-    @emprendimiento.emprendedor.usuario.rol = 'Emprendedor'
 
     respond_to do |format|
       format.html # new.html.erb

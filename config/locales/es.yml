@@ -57,5 +57,7 @@ es:
 #Kaminari
   views:
     pagination:
+      next: "Siguientesss"
+      previous: "Anterioreeee"
       first: "Primera"
       last: "Ultima"

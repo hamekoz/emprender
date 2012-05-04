@@ -4,7 +4,8 @@ class Evento < ActiveRecord::Base
   validates :fecha_y_hora_de_inicio, :presence => true
 
   belongs_to :barrio
-  belongs_to :organizador, :class_name => 'Institucion'
+  belongs_to :autor, :class_name => :usuario
+  belongs_to :organizador, :class_name => :institucion
   
   scope :publicados, where(:publicado => true)
 

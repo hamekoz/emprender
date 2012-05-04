@@ -1,0 +1,21 @@
+<h1 class= "page-header">Servicio</h1>
+<article>
+<div class="row">
+  <div class="span-one-third">
+    <h3>Listado de Servicios</h3>
+    <p>
+      <strong>Nombre</strong><br>
+      <%= @servicio.nombre %>
+    </p>
+
+    <p>
+      <strong>Descripcion</strong><br>
+      <%= @servicio.descripcion %>
+    </p>
+  </div>  
+</div>
+</article>
+
+<div class="actions">
+  <%= boton_volver servicios_path %>
+</div>

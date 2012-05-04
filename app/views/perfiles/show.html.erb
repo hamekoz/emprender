@@ -1,0 +1,43 @@
+<%= show_for @perfil do |perfil| %>
+<div class="row">
+<div class="span2">
+<h1 class= "page-header">Mi Perfil</h1>
+<img class="thumbnail" alt="" src="http://placehold.it/120&text=foto">
+<hr>
+<div class="progress">
+  <div class="bar" style="width: <%= @perfil.progreso %>% ;">
+    <%= @perfil.progreso %>%
+  </div>
+</div>
+
+<%= link_to(edit_perfil_path(@perfil), :class => "btn btn-primary" ) do %>
+  <i class="icon-edit icon-white"></i>
+  <span>Editar</span>
+<% end %>
+<hr>
+
+</div>
+<div class="span5">
+  <%= perfil.attribute :empadronado %>
+  <%= perfil.attribute :dni %>
+  <%= perfil.attribute :cuit_cuil %>
+  <%= perfil.attribute :domicilio %>
+  <%= perfil.association :barrio, :using => :nombre %>
+  <%= perfil.attribute :telefono_particular %>
+  <%= perfil.attribute :telefono_celular %>
+  <%= perfil.attribute :telefono_para_mensajes %>
+  <%= perfil.attribute :observaciones_de_telefonos %>
+</div>
+<div class="span5">
+  <%= perfil.attribute :nivel_de_estudios %>
+  <%= perfil.attribute :estudios_completos %>
+  <%= perfil.attribute :titulo %>
+  <%= perfil.attribute :recibe_o_recibio_algun_plan_social %>
+  <%= perfil.attribute :plan_social %>
+  <%= perfil.attribute :fecha_de_recepcion %>
+  <%= perfil.attribute :actividad_laboral_principal %>
+  <%= perfil.attribute :cantidad_de_horas_semanales %>
+  <%= perfil.attribute :es_unico_ingreso %>
+  <%= perfil.attribute :explicacion_de_ingresos %>
+</div>
+<% end %>

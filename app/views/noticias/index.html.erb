@@ -1,20 +1,22 @@
-<h2 class= "well">Cartelera de Noticias</h2>
+<h1 class= "page-header">Cartelera de Noticias</h1>
+<ul class="thumbnails">
 <% @noticias.each do |noticia| %>
-    <article class="">
-      <header>
-      <h1>
-        <%= noticia.titulo %>
-        <small> por <strong><%= noticia.autor.nombre_completo %></strong></small>
-      </h1>
-      </header>
-      <%= noticia.texto.html_safe %>
-      <footer>
+  <li class="span6">
+    <div class="thumbnail">
+      <div class="caption">
+        <h2><%= noticia.titulo %></h2>
+        <h5>Por: <%= noticia.autor.persona.nombre_completo %></h5>
+        <h6><%= noticia.fecha %></h6>
+        <%= noticia.texto.html_safe %>
+        <hr>
         <p>
-          <strong>Fecha publicacion: </strong>
-          <%= noticia.fecha %>
+          <%= link_to "Leer mas...", noticia_path(noticia), :class => "btn btn-primary" %>
+          <a class="btn" href="#">Comentar</a>
         </p>
-      </footer>
-    </article>
+      </div>
+    </div>
+  </li>
 <% end %>
+</ul>
 <hr>
 <%= paginate @noticias %>

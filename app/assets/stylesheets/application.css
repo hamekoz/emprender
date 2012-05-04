@@ -49,11 +49,11 @@ html, body {
   padding-left: 36px;
 }
 
-h2 {
+h1.page-header {
   text-align: center;
 }
 
-.content {
+div.content {
   background-color: #FFFFFF;
   border-radius: 0 0 6px 6px;
   margin: 0 -20px;

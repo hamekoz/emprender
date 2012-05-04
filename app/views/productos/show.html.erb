@@ -1,24 +1,48 @@
-<h1>Productos#show</h1>
-<p>Find me in app/views/productos/show.html.erb</p>
-
-<h2 class= "breadcrumb">Producto</h2>
-<article>
+<h1 class= "page-header"><%= @producto.nombre %></h1>
 <div class="row">
-  <div class="span-one-third">
-    <h3>Listado de Productos</h3>
-    <p>
-      <strong>Nombre</strong><br>
-      <%= @producto.nombre %>
-    </p>
-
+<div class="span6">
+<ul class="thumbnails">
+        <li class="span4">
+          <a href="#" class="thumbnail">
+            <img src="http://placehold.it/360x268" alt="">
+          </a>
+        </li>
+        <li class="span2">
+          <a href="#" class="thumbnail">
+            <img src="http://placehold.it/160x120" alt="">
+          </a>
+        </li>
+        <li class="span2">
+          <a href="#" class="thumbnail">
+            <img src="http://placehold.it/160x120" alt="">
+          </a>
+        </li>
+        <li class="span2">
+          <a href="#" class="thumbnail">
+            <img src="http://placehold.it/160x120" alt="">
+          </a>
+        </li>
+        <li class="span2">
+          <a href="#" class="thumbnail">
+            <img src="http://placehold.it/160x120" alt="">
+          </a>
+        </li>
+        <li class="span2">
+          <a href="#" class="thumbnail">
+            <img src="http://placehold.it/160x120" alt="">
+          </a>
+        </li>
+</ul>
+</div>
+<div class="span6">
+<article>
     <p>
       <strong>Descripcion</strong><br>
-      <%= @eproducto.descripcon %>
+      <%= @producto.descripcion %>
     </p>
-  </div>  
-</div>
 </article>
 
 <div class="actions">
-  <%= boton_volver productos_path %>
+  <%= boton_volver :back %>
+</div>
 </div>

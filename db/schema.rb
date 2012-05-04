@@ -11,19 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120422010006) do
-
-  create_table "actividades", :force => true do |t|
-    t.string   "nombre"
-    t.string   "descripcion"
-    t.string   "imagen1"
-    t.string   "imagen2"
-    t.string   "imagen3"
-    t.string   "imagen4"
-    t.string   "imagen5"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
+ActiveRecord::Schema.define(:version => 20120428211621) do
 
   create_table "barrios", :force => true do |t|
     t.string   "nombre"
@@ -61,32 +49,18 @@ ActiveRecord::Schema.define(:version => 20120422010006) do
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "emprendedores", :force => true do |t|
+  create_table "comentarios", :force => true do |t|
+    t.text     "texto"
     t.integer  "usuario_id"
-    t.string   "dni"
-    t.string   "cuit_cuil"
-    t.string   "domicilio"
-    t.integer  "barrio_id"
-    t.string   "telefono_particular"
-    t.string   "telefono_celular"
-    t.string   "telefono_para_mensajes"
-    t.text     "observaciones_de_telefonos"
-    t.string   "nivel_de_estudios"
-    t.boolean  "estudios_completos",                 :default => false
-    t.string   "titulo"
-    t.boolean  "recibe_o_recibio_algun_plan_social", :default => false
-    t.string   "plan_social"
-    t.date     "fecha_de_recepcion"
-    t.string   "actividad_laboral_principal"
-    t.string   "relacion_laboral"
-    t.integer  "cantidad_de_horas_semanales"
-    t.boolean  "es_unico_ingreso",                   :default => true
-    t.text     "explicacion_de_ingresos"
-    t.datetime "created_at",                                            :null => false
-    t.datetime "updated_at",                                            :null => false
+    t.boolean  "leido"
+    t.boolean  "publico"
+    t.integer  "comentable_id"
+    t.string   "comentable_type"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
-  add_index "emprendedores", ["usuario_id"], :name => "index_emprendedores_on_usuario_id"
+  add_index "comentarios", ["usuario_id"], :name => "index_comentarios_on_usuario_id"
 
   create_table "emprendimientos", :force => true do |t|
     t.integer  "emprendedor_id"
@@ -101,14 +75,14 @@ ActiveRecord::Schema.define(:version => 20120422010006) do
     t.text     "roles"
     t.integer  "estado_id"
     t.date     "fecha_de_inicio_de_actividad"
-    t.string   "web",                                                     :default => ""
-    t.string   "mail",                                                    :default => ""
+    t.string   "web"
+    t.string   "mail"
     t.string   "domicilio"
     t.integer  "barrio_id"
     t.string   "telefono"
     t.string   "celular"
     t.string   "telefono_de_mensajes"
-    t.string   "comentarios",                                             :default => ""
+    t.string   "comentarios"
     t.boolean  "es_monotributista"
     t.boolean  "es_monotributista_social"
     t.date     "fecha_de_inscripcion_al_monotributo"
@@ -150,8 +124,8 @@ ActiveRecord::Schema.define(:version => 20120422010006) do
     t.text     "capacitaciones_necesaria"
     t.text     "otras_necesidades"
     t.text     "observaciones"
-    t.datetime "created_at",                                                              :null => false
-    t.datetime "updated_at",                                                              :null => false
+    t.datetime "created_at",                                              :null => false
+    t.datetime "updated_at",                                              :null => false
   end
 
   add_index "emprendimientos", ["barrio_id"], :name => "index_emprendimientos_on_barrio_id"
@@ -175,6 +149,7 @@ ActiveRecord::Schema.define(:version => 20120422010006) do
     t.integer  "barrio_id"
     t.datetime "fecha_y_hora_de_inicio"
     t.datetime "fecha_y_hora_de_finalizacion"
+    t.integer  "autor_id"
     t.integer  "organizador_id"
     t.boolean  "publicado"
     t.datetime "fecha_de_publicacion"
@@ -182,6 +157,7 @@ ActiveRecord::Schema.define(:version => 20120422010006) do
     t.datetime "updated_at",                   :null => false
   end
 
+  add_index "eventos", ["autor_id"], :name => "index_eventos_on_autor_id"
   add_index "eventos", ["barrio_id"], :name => "index_eventos_on_barrio_id"
   add_index "eventos", ["organizador_id"], :name => "index_eventos_on_organizador_id"
 
@@ -195,6 +171,21 @@ ActiveRecord::Schema.define(:version => 20120422010006) do
     t.datetime "updated_at",  :null => false
   end
 
+  add_index "instituciones", ["barrio_id"], :name => "index_instituciones_on_barrio_id"
+
+  create_table "mensajes", :force => true do |t|
+    t.string   "titulo"
+    t.text     "texto"
+    t.boolean  "leido"
+    t.integer  "remitente_id"
+    t.integer  "destinatario_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "mensajes", ["destinatario_id"], :name => "index_mensajes_on_destinatario_id"
+  add_index "mensajes", ["remitente_id"], :name => "index_mensajes_on_remitente_id"
+
   create_table "noticias", :force => true do |t|
     t.string   "titulo"
     t.text     "texto"
@@ -205,6 +196,37 @@ ActiveRecord::Schema.define(:version => 20120422010006) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "noticias", ["autor_id"], :name => "index_noticias_on_autor_id"
+
+  create_table "perfiles", :force => true do |t|
+    t.integer  "emprendedor_id"
+    t.string   "dni"
+    t.string   "cuit_cuil"
+    t.string   "domicilio"
+    t.integer  "barrio_id"
+    t.string   "telefono_particular"
+    t.string   "telefono_celular"
+    t.string   "telefono_para_mensajes"
+    t.text     "observaciones_de_telefonos"
+    t.string   "nivel_de_estudios"
+    t.boolean  "estudios_completos"
+    t.string   "titulo"
+    t.boolean  "recibe_o_recibio_algun_plan_social"
+    t.string   "plan_social"
+    t.date     "fecha_de_recepcion"
+    t.string   "actividad_laboral_principal"
+    t.string   "relacion_laboral"
+    t.integer  "cantidad_de_horas_semanales"
+    t.boolean  "es_unico_ingreso"
+    t.text     "explicacion_de_ingresos"
+    t.boolean  "empadronado"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+  end
+
+  add_index "perfiles", ["barrio_id"], :name => "index_perfiles_on_barrio_id"
+  add_index "perfiles", ["emprendedor_id"], :name => "index_perfiles_on_emprendedor_id"
+
   create_table "personas", :force => true do |t|
     t.string   "nombre"
     t.string   "apellido"
@@ -214,18 +236,23 @@ ActiveRecord::Schema.define(:version => 20120422010006) do
   end
 
   create_table "productos", :force => true do |t|
+    t.integer  "emprendedor_id"
     t.integer  "rubro_id"
     t.string   "nombre"
     t.string   "descripcion"
+    t.float    "precio"
     t.string   "imagen1"
     t.string   "imagen2"
     t.string   "imagen3"
     t.string   "imagen4"
     t.string   "imagen5"
     t.boolean  "activo"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
+
+  add_index "productos", ["emprendedor_id"], :name => "index_productos_on_emprendedor_id"
+  add_index "productos", ["rubro_id"], :name => "index_productos_on_rubro_id"
 
   create_table "rubros", :force => true do |t|
     t.string   "nombre"
@@ -235,6 +262,8 @@ ActiveRecord::Schema.define(:version => 20120422010006) do
   end
 
   create_table "servicios", :force => true do |t|
+    t.integer  "emprendedor_id"
+    t.integer  "rubro_id"
     t.string   "nombre"
     t.string   "descripcion"
     t.string   "imagen1"
@@ -242,12 +271,17 @@ ActiveRecord::Schema.define(:version => 20120422010006) do
     t.string   "imagen3"
     t.string   "imagen4"
     t.string   "imagen5"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.boolean  "activo"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
+
+  add_index "servicios", ["emprendedor_id"], :name => "index_servicios_on_emprendedor_id"
+  add_index "servicios", ["rubro_id"], :name => "index_servicios_on_rubro_id"
 
   create_table "usuarios", :force => true do |t|
     t.integer  "persona_id"
+    t.integer  "institucion_id"
     t.string   "rol"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
@@ -255,7 +289,6 @@ ActiveRecord::Schema.define(:version => 20120422010006) do
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
     t.integer  "sign_in_count",          :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
@@ -265,10 +298,13 @@ ActiveRecord::Schema.define(:version => 20120422010006) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.datetime "locked_at"
   end
 
   add_index "usuarios", ["confirmation_token"], :name => "index_usuarios_on_confirmation_token", :unique => true
   add_index "usuarios", ["email"], :name => "index_usuarios_on_email", :unique => true
+  add_index "usuarios", ["institucion_id"], :name => "index_usuarios_on_institucion_id"
+  add_index "usuarios", ["persona_id"], :name => "index_usuarios_on_persona_id"
   add_index "usuarios", ["reset_password_token"], :name => "index_usuarios_on_reset_password_token", :unique => true
 
 end

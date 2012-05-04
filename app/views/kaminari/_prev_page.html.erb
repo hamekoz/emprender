@@ -8,10 +8,16 @@
 -%>
 <% if current_page.first? %>
   <li class="previous disabled">
-    <a><%= raw(t 'views.pagination.previous') %></a>
+    <a>
+      <i class="icon-step-backward"></i>
+      <%= raw(t 'views.pagination.previous') %>
+    </a>
   </li>
 <% else %>
   <li class="previous">
-    <%= link_to raw(t 'views.pagination.previous'), url, :rel => 'prev', :remote => remote %>
+    <%= link_to url, :rel => 'prev', :remote => remote do%>
+      <i class="icon-step-backward"></i>
+      <%= raw(t 'views.pagination.previous') %>
+    <% end %>
   </li>
 <% end %>
