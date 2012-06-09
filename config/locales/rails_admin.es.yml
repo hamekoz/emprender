@@ -1,12 +1,11 @@
 es:
-  home:
-    name: Inicio
-  views:
+  admin:
+    home:
+      name: Inicio
     pagination:
       previous: "Anterior"
       next: "Siguiente"
       truncate: "…"
-  admin:
     misc:
       search: "Buscar"
       filter: "Filtrar"
@@ -92,6 +91,11 @@ es:
         title: "Historial para %{model_label} '%{object_label}'"
         menu: "Historial"
         breadcrumb: "Historial"
+      publish:
+        title: "Publicar %{model_label_plural}"
+        menu: "Publicar varios"
+        breadcrumb: "Publicar varios"
+        bulk_link: "Publicar %{model_label_plural}"
     form:
       new_model: "Nuevo"
       cancel: "Cancelar"
@@ -131,3 +135,6 @@ es:
   date:
     formats:
       long: '%d %B %Y'
+  time:
+    formats:
+      default: '%h:%m:%s'

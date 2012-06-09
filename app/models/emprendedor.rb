@@ -4,6 +4,4 @@ class Emprendedor < Usuario
 
   has_many :productos
   has_many :servicios
-
-  has_many :comentarios, :as => :comentable
 end

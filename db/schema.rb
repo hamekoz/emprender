@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120428211621) do
+ActiveRecord::Schema.define(:version => 20120515003533) do
 
   create_table "barrios", :force => true do |t|
     t.string   "nombre"
@@ -51,16 +51,12 @@ ActiveRecord::Schema.define(:version => 20120428211621) do
 
   create_table "comentarios", :force => true do |t|
     t.text     "texto"
-    t.integer  "usuario_id"
-    t.boolean  "leido"
-    t.boolean  "publico"
     t.integer  "comentable_id"
     t.string   "comentable_type"
+    t.boolean  "moderado"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
-
-  add_index "comentarios", ["usuario_id"], :name => "index_comentarios_on_usuario_id"
 
   create_table "emprendimientos", :force => true do |t|
     t.integer  "emprendedor_id"
@@ -82,7 +78,7 @@ ActiveRecord::Schema.define(:version => 20120428211621) do
     t.string   "telefono"
     t.string   "celular"
     t.string   "telefono_de_mensajes"
-    t.string   "comentarios"
+    t.string   "comentario"
     t.boolean  "es_monotributista"
     t.boolean  "es_monotributista_social"
     t.date     "fecha_de_inscripcion_al_monotributo"
@@ -98,9 +94,6 @@ ActiveRecord::Schema.define(:version => 20120428211621) do
     t.text     "justificacion_no_haber_recibido_ayuda_de_sociedad_civil"
     t.text     "capacitaciones_recibidas"
     t.text     "maquinarias_y_herramientas_utilizadas"
-    t.integer  "produccion_mensual"
-    t.integer  "produccion_anual"
-    t.integer  "produccion_maxima"
     t.boolean  "dispone_de_espacio_fisico_para_produccion"
     t.string   "tipo_de_espacio"
     t.text     "posible_solucion_a_falta_de_espacio"
@@ -110,8 +103,6 @@ ActiveRecord::Schema.define(:version => 20120428211621) do
     t.boolean  "ocupa_lugares_destinados_a_otros_usos"
     t.text     "espacio_y_acondicinamiento_requeridos_para_crecer"
     t.text     "caracteristicas_y_zonas_de_clientes_actuales"
-    t.string   "tipo_de_venta"
-    t.text     "productos_que_vende"
     t.integer  "cantidad_de_clientes_actuales"
     t.text     "caracteristicas_y_zonas_de_futuros_clientes"
     t.boolean  "competencia_en_mismo_barrio"
@@ -151,8 +142,11 @@ ActiveRecord::Schema.define(:version => 20120428211621) do
     t.datetime "fecha_y_hora_de_finalizacion"
     t.integer  "autor_id"
     t.integer  "organizador_id"
+    t.string   "folleto_file_name"
+    t.string   "folleto_content_type"
+    t.integer  "folleto_file_size"
+    t.datetime "folleto_updated_at"
     t.boolean  "publicado"
-    t.datetime "fecha_de_publicacion"
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
   end
@@ -163,7 +157,7 @@ ActiveRecord::Schema.define(:version => 20120428211621) do
 
   create_table "instituciones", :force => true do |t|
     t.string   "nombre"
-    t.string   "descripcion"
+    t.text     "descripcion"
     t.string   "telefono"
     t.string   "domicilio"
     t.integer  "barrio_id"
@@ -188,9 +182,9 @@ ActiveRecord::Schema.define(:version => 20120428211621) do
 
   create_table "noticias", :force => true do |t|
     t.string   "titulo"
+    t.text     "resumen"
     t.text     "texto"
     t.integer  "autor_id"
-    t.datetime "fecha"
     t.boolean  "publicada"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -227,32 +221,45 @@ ActiveRecord::Schema.define(:version => 20120428211621) do
   add_index "perfiles", ["barrio_id"], :name => "index_perfiles_on_barrio_id"
   add_index "perfiles", ["emprendedor_id"], :name => "index_perfiles_on_emprendedor_id"
 
-  create_table "personas", :force => true do |t|
-    t.string   "nombre"
-    t.string   "apellido"
-    t.string   "sexo"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "productos", :force => true do |t|
     t.integer  "emprendedor_id"
     t.integer  "rubro_id"
     t.string   "nombre"
-    t.string   "descripcion"
+    t.text     "descripcion"
+    t.string   "tipo_de_venta"
     t.float    "precio"
+    t.integer  "produccion_mensual"
+    t.integer  "produccion_anual"
+    t.integer  "produccion_maxima"
+    t.string   "imagen_file_name"
+    t.string   "imagen_content_type"
+    t.integer  "imagen_file_size"
+    t.datetime "imagen_updated_at"
     t.string   "imagen1"
     t.string   "imagen2"
     t.string   "imagen3"
     t.string   "imagen4"
     t.string   "imagen5"
     t.boolean  "activo"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
   end
 
   add_index "productos", ["emprendedor_id"], :name => "index_productos_on_emprendedor_id"
   add_index "productos", ["rubro_id"], :name => "index_productos_on_rubro_id"
+
+  create_table "rails_admin_histories", :force => true do |t|
+    t.text     "message"
+    t.string   "username"
+    t.integer  "item"
+    t.string   "table"
+    t.integer  "month",      :limit => 2
+    t.integer  "year",       :limit => 5
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
   create_table "rubros", :force => true do |t|
     t.string   "nombre"
@@ -280,9 +287,11 @@ ActiveRecord::Schema.define(:version => 20120428211621) do
   add_index "servicios", ["rubro_id"], :name => "index_servicios_on_rubro_id"
 
   create_table "usuarios", :force => true do |t|
-    t.integer  "persona_id"
-    t.integer  "institucion_id"
+    t.string   "nombre"
+    t.string   "apellido"
+    t.string   "sexo"
     t.string   "rol"
+    t.integer  "institucion_id"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "email",                  :default => "", :null => false
@@ -304,7 +313,6 @@ ActiveRecord::Schema.define(:version => 20120428211621) do
   add_index "usuarios", ["confirmation_token"], :name => "index_usuarios_on_confirmation_token", :unique => true
   add_index "usuarios", ["email"], :name => "index_usuarios_on_email", :unique => true
   add_index "usuarios", ["institucion_id"], :name => "index_usuarios_on_institucion_id"
-  add_index "usuarios", ["persona_id"], :name => "index_usuarios_on_persona_id"
   add_index "usuarios", ["reset_password_token"], :name => "index_usuarios_on_reset_password_token", :unique => true
 
 end

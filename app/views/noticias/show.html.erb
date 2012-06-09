@@ -1,48 +1,35 @@
-<h1 class= "page-header">Noticia</h1>
+<h1 class= "page-header"><%= @noticia.titulo %></h1>
 <article>
-<div class="row">
-  <div class="span-one-third">
-    <h3>Informacion General</h3>
-    <p>
-      <strong>Titulo</strong><br>
-      <%= @noticia.titulo %>
-    </p>
-
-    <p>
-      <strong>Autor</strong><br>
-      <%= @noticia.autor.persona.nombre_completo %>
-    </p>
-
+  <h4><%= @noticia.resumen %><h4>
+  <hr>
+  <div>
+    <%= @noticia.texto.html_safe %>
   </div>
-
-  <div class="span-one-third">
-    <h3>Cuerpo</h3>
-    <p>
-      <strong>Texto</strong><br>
-      <%= @noticia.texto %>
-    </p>
-  </div>
-
-  <div class="span-one-third">
-    <h3>Datos de Publicacion</h3>
-    <p>
-      <strong>Publicado</strong><br>
-      <%= @noticia.publicada %>
-    </p>
-
-    <p>
-      <strong>Fecha publicacion</strong><br>
-      <%= @noticia.fecha %>
-    </p>
-
-    <p>
-      <strong>Fecha de creacion</strong><br>
-      <%= @noticia.created_at %>
-    </p>
-  </div>
-</div>
+  <hr>
+  <h6>Publicada el <%= @noticia.updated_at %> por <%= @noticia.autor.nombre_completo %></h6>
 </article>
 
-<div class="actions">
-  <%= boton_volver noticias_path %>
+<div class="form-actions">
+  <% if can? :read, @noticia %>
+    <%= link_to(admin_noticia_path(@noticia), :class => 'btn btn-info') do %>
+      <i class="icon-info-sign"></i>
+      <span>Mostrar</span>
+    <% end %>
+  <% end %>
+  <% if can? :manage, @noticia %>
+    <%= link_to(edit_admin_noticia_path(@noticia), :class => 'btn btn-warning') do %>
+      <i class="icon-pencil"></i>
+      <span>Editar</span>
+    <% end %>
+  <% end %>
+  <%= link_to "#comentarios", :class => 'btn', "data-toggle" => "modal" do %>
+    <i class="icon-comment"></i>
+    <span><%= @noticia.comentarios.count %> Cometarios</span>
+  <% end %>
+  <%= link_to :back, :class => 'btn' do %>
+    <i class="icon-arrow-left"></i>
+    <span>Volver</span>
+  <% end %>
 </div>
+
+<%= render 'comentarios/comentarios', :comentable => @noticia %>

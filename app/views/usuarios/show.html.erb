@@ -1,32 +1,29 @@
-<h2 class= "breadcrumb">Usuario</h2>
-<article>
+<h1 class= "page-header">Mi Usuario</h1>
+<%= show_for @usuario do |usuario| %>
 <div class="row">
-  <div class="span-one-third">
-    <h3>Datos de Cuenta</h3>
-    <p>
-      <strong>Mail</strong><br>
-      <%= @usuario.email %>
-    </p>
-    <p>
-      <strong>Rol</strong><br>
-      <%= @usuario.rol %>
-    </p>
-    <p>
-      <strong>Fecha de creacion</strong><br>
-      <%= @usuario.created_at %>
-    </p>
-  </div>
-  <div class="span-one-third">
-    <h3>Datos Personales</h3>
-    <%= render 'personas/show', :persona => @usuario.persona %>
-  </div>
-</div>
+<div class="span2">
+<img class="thumbnail" alt="" src="http://placehold.it/120&text=foto">
+<hr>
 
-<div class="actions">
-  <%= boton_editar edit_usuario_path(@usuario) %>
-  <% if current_usuario.administrador? %>
-    <%= boton_volver usuarios_path %>
-  <% else %>
-    <%= boton_volver :back %>
-  <% end %>
+<%= link_to(edit_registration_path(@usuario), :class => "btn btn-primary" ) do %>
+  <i class="icon-edit icon-white"></i>
+  <span>Editar</span>
+<% end %>
+<hr>
 </div>
+<div class="span5">
+  <%= usuario.attribute :nombre %>
+  <%= usuario.attribute :apellido %>
+  <%= usuario.attribute :sexo %>
+  <%= usuario.attribute :email %>
+  <%= usuario.attribute :rol %>
+  <%= usuario.association :institucion, :using => :nombre %>
+</div>
+<div class="span5">
+  <%= usuario.attribute :created_at, :label => "Fecha de creacion de la cuenta" %>
+  <%= usuario.attribute :confirmed_at, :label => "Fecha de confirmacion de la cuenta" %>
+  <%= usuario.attribute :last_sign_in_at, :label => "Fecha y hora del ingreso anterior" %>
+  <%= usuario.attribute :current_sign_in_at, :label => "Fecha y hora del ingreso actual" %>
+  <%= usuario.attribute :sign_in_count, :label => "Cantidad de ingresos al sistema" %>
+</div>
+<% end %>

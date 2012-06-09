@@ -13,23 +13,32 @@ class Usuario < ActiveRecord::Base
          :recoverable, :trackable, :validatable, :confirmable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :persona_id, :persona, :rol, :email, :password, :password_confirmation
-  attr_accessible :persona_attributes
+  attr_accessible :rol, :email, :password, :password_confirmation
+  attr_accessible :nombre, :apellido, :sexo
+  attr_accessible :institucion, :institucion_id
+
+  validates :nombre, :presence => true
+  validates :apellido, :presence => true
   validates :rol, :presence => true
-#  validates :persona, :presence => true
   
-  belongs_to :persona
   belongs_to :institucion
 
   has_many :mensajes_recibidos, :class_name => "Mensaje", :foreign_key => :destinatario_id
   has_many :mensajes_enviados,  :class_name => "Mensaje", :foreign_key => :remitente_id
 
-  accepts_nested_attributes_for :persona
-
 # Muestra nombre descriptivo en RailsAdmin
   def etiqueta
-    email
+    nombre_completo
   end
+
+  def nombre_completo
+    "#{nombre} #{apellido}"
+  end
+
+  def sexo_enum
+    ['Femenino', 'Masculino']
+  end
+
 
   def rol_enum
     ['Emprendedor', 'Representante', 'Administrador' ]

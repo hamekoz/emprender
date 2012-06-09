@@ -21,6 +21,27 @@ class EmprendimientosController < ApplicationController
     end
   end
 
+  # GET /emprendimientos/1/edit
+  def edit
+    @emprendimiento = Emprendimiento.find(params[:id])
+  end
+
+  # PUT /emprendimientos/1
+  # PUT /emprendimientos/1.json
+  def update
+    @emprendimiento = Emprendimiento.find(params[:id])
+
+    respond_to do |format|
+      if @emprendimiento.update_attributes(params[:emprendimiento])
+        format.html { redirect_to @emprendimiento, notice: t('notice.update', :model => 'Emprendimiento') }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @emprendimiento.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   # GET /emprendimientos/new
   # GET /emprendimientos/new.json
   def new

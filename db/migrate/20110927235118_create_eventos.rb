@@ -10,8 +10,8 @@ class CreateEventos < ActiveRecord::Migration
       t.datetime    :fecha_y_hora_de_finalizacion
       t.references  :autor
       t.references  :organizador
+      t.has_attached_file :folleto
       t.boolean     :publicado
-      t.datetime    :fecha_de_publicacion
 
       t.timestamps
     end

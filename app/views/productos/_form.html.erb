@@ -1,0 +1,27 @@
+<%= simple_form_for(@producto, :html => { :class => 'form-horizontal' }) do |producto| %>
+  <%= producto.error_notification %>
+
+  <div class="form-inputs well">
+    <%= producto.input :nombre,
+                :placeholder => 'sus nombres',
+                :autofocus => true %>
+    <%= producto.association :rubro %>
+    <%= producto.input :descripcion,
+					   :input_html => { :class => 'span6', :rows => 5 } %>
+    <%= producto.input :tipo_de_venta %>
+    <%= producto.input :precio %>
+    <%= producto.input :produccion_mensual %>
+    <%= producto.input :produccion_anual %>
+    <%= producto.input :produccion_maxima %>
+    <%= producto.input :imagen1 %>
+    <%= producto.input :imagen2 %>
+    <%= producto.input :imagen3 %>
+    <%= producto.input :imagen4 %>
+    <%= producto.input :imagen5 %>
+    <%= producto.input :activo %>
+  </div>
+
+  <div class="form-actions">
+    <%= producto.button :submit %>
+  </div>
+<% end %>

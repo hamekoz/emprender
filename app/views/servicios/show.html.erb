@@ -1,21 +1,52 @@
-<h1 class= "page-header">Servicio</h1>
-<article>
+<%= show_for @servicio do |servicio| %>
 <div class="row">
-  <div class="span-one-third">
-    <h3>Listado de Servicios</h3>
-    <p>
-      <strong>Nombre</strong><br>
-      <%= @servicio.nombre %>
-    </p>
-
-    <p>
-      <strong>Descripcion</strong><br>
-      <%= @servicio.descripcion %>
-    </p>
-  </div>  
+<div class="span6">
+<ul class="thumbnails">
+        <li class="span4">
+          <a href="#" class="thumbnail">
+            <img src="http://placehold.it/360x268" alt="">
+          </a>
+        </li>
+        <li class="span2">
+          <a href="#" class="thumbnail">
+            <img src="http://placehold.it/160x120" alt="">
+          </a>
+        </li>
+        <li class="span2">
+          <a href="#" class="thumbnail">
+            <img src="http://placehold.it/160x120" alt="">
+          </a>
+        </li>
+        <li class="span2">
+          <a href="#" class="thumbnail">
+            <img src="http://placehold.it/160x120" alt="">
+          </a>
+        </li>
+        <li class="span2">
+          <a href="#" class="thumbnail">
+            <img src="http://placehold.it/160x120" alt="">
+          </a>
+        </li>
+        <li class="span2">
+          <a href="#" class="thumbnail">
+            <img src="http://placehold.it/160x120" alt="">
+          </a>
+        </li>
+</ul>
 </div>
-</article>
-
-<div class="actions">
-  <%= boton_volver servicios_path %>
+<div class="span6">
+  <article>
+    <p>
+     <h4><%= @servicio.rubro.nombre %></font></h4>
+       <h1><%= @servicio.nombre %></h1>
+    </p>
+    <%= servicio.attribute :descripcion %>
+  </article>
+<div class="form-actions">
+  <%= link_to "Volver", :back, :class => 'btn btn-primary' %>
 </div>
+  </div>
+
+  
+<% end %>
+

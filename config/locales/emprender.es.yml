@@ -1,0 +1,29 @@
+﻿es:
+  unauthorized:
+    default: "No esta autorizado para acceder a esa pagina."
+
+  attributes:
+    created_at: "Creado el"
+    updated_at: "Actualizado el"
+    type: "Tipo"
+  botones:
+    agregar: "Agregar"
+    editar: "Editar"
+    eliminar: "Eliminar"
+    volver: "Volver"
+    mostrar: "Mostrar"
+    cancelar: "Cancelar"
+
+  titulo:
+    editando: "Editando"
+
+  confirmar: "¿Esta seguro?"
+
+  errores:
+    guardar: 
+      m: "prohibe guardar este"
+      f: "prohibe guardar esta"
+
+  notice:
+    create: "%{model} ha sido creado"
+    update: "%{model} ha sido actualizado"

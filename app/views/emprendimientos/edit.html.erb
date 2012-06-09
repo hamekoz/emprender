@@ -1,0 +1,277 @@
+<h1 class= "page-header">Editando Emprendimiento</h1>
+
+<%= simple_form_for(@emprendimiento, :html => { :class => 'form-horizontal' }) do |emprendimiento| %>
+  <%= emprendimiento.error_notification %>
+
+  <div class="form-inputs well">
+    <legend>Emprendimiento</legend>
+    <%= emprendimiento.input :nombre %>
+    <%= emprendimiento.input :marca %>
+    <%= emprendimiento.input :es_marca_registrada,
+                             :label => '¿Esta registrada?',
+                             :as => :radio_buttons,
+                             :item_wrapper_class => 'inline' %>
+    <%= emprendimiento.association :rubro,
+                                   :collection => Rubro.all %>
+    <%= emprendimiento.input :tipo,
+                             :collection => @emprendimiento.tipo_enum,
+                             :as => :radio_buttons,
+                             :item_wrapper_class => 'inline' %>
+    <%= emprendimiento.input :descripcion,
+                             :input_html => { :class => 'span6', :rows => 5 } %>
+    <%= emprendimiento.input :cantidad_de_integrantes,
+                             :label => 'Integrantes',
+                             :collection => 1..20,
+                             :prompt => "Cantidad" %>
+    <%= emprendimiento.input :roles,
+                             :input_html => { :class => 'span6', :rows => 5 } %>
+    <%= emprendimiento.association :estado,
+                                   :collection => Estado.all %>
+    <%= emprendimiento.input :fecha_de_inicio_de_actividad,
+                             :label => 'Inicio de actividad',
+                             :placeholder => 'Fecha',
+                             :as => :string,
+                             :input_html => { :class => "datepicker" } %>
+    <legend>Internet</legend>
+    <%= emprendimiento.input :web,
+                             :placeholder => 'www.emprendimiento.com.ar' %>
+    <%= emprendimiento.input :mail,
+                             :placeholder => 'info@emprendimiento.com.ar' %>
+    <legend>Domicilio</legend>
+    <%= emprendimiento.input :domicilio %>
+    <%= emprendimiento.association :barrio,
+                                   :collection => Barrio.all %>
+    <legend>Telefonos</legend>
+    <%= emprendimiento.input :telefono %>
+    <%= emprendimiento.input :celular %>
+    <%= emprendimiento.input :telefono_de_mensajes %>
+    <%= emprendimiento.input :comentario,
+                             :placeholder => 'Llamar entre las 8 y 17 hs, telefono de mensajes solo por urgencias',
+                             :input_html => { :class => 'span6', :rows => 5 } %>
+    <legend>Clientes</legend>
+    <%= emprendimiento.input :cantidad_de_clientes_actuales,
+                             :label => 'Cantidad actual',
+                             :placeholder => 'En unidades, solo numerico'%>
+    <%= emprendimiento.input :caracteristicas_y_zonas_de_clientes_actuales,
+                             :input_html => { :class => 'span6', :rows => 5 } %>
+    <%= emprendimiento.input :caracteristicas_y_zonas_de_futuros_clientes,
+                             :input_html => { :class => 'span6', :rows => 5 } %>
+    <legend>Competencia en su mismo barrio</legend>
+    <%= emprendimiento.input :competencia_en_mismo_barrio,
+                             :as => :radio_buttons,
+                             :label => '¿Existe?',
+                             :item_wrapper_class => 'inline' %>
+    <%= emprendimiento.input :descripcion_de_competencia_en_mismo_barrio,
+                             :label => 'Descripcion',
+                             :input_html => { :class => 'span6', :rows => 5 },
+                             :wrapper_html => 
+                                if @emprendimiento.competencia_en_mismo_barrio?
+                                  { :class => 'descripcion_de_competencia_en_mismo_barrio' } 
+                                else
+                                  { :class => 'descripcion_de_competencia_en_mismo_barrio hidden' }
+                                end
+                             %>
+    <legend>Monotributo</legend>
+    <%= emprendimiento.input :es_monotributista,
+                             :as => :radio_buttons,
+                             :item_wrapper_class => 'inline' %>
+    <%= emprendimiento.input :es_monotributista_social,
+                             :as => :radio_buttons,
+                             :item_wrapper_class => 'inline' %>
+    <%= emprendimiento.input :fecha_de_inscripcion_al_monotributo,
+                             :as => :string,
+                             :input_html => { :class => "datepicker" },
+                             :wrapper_html => 
+                               if @emprendimiento.es_monotributista? ||
+                                  @emprendimiento.es_monotributista_social?
+                                 { :class => 'explicacion_de_ingresos' } 
+                               else
+                                 { :class => 'explicacion_de_ingresos hidden' }
+                               end %>
+    <%= emprendimiento.input :situacion_frente_al_monotributo,
+                             :collection => @emprendimiento.situacion_frente_al_monotributo_enum,
+                             :as => :radio_buttons,
+                             :item_wrapper_class => 'inline',
+                             :wrapper_html => 
+                               if @emprendimiento.es_monotributista? ||
+                                  @emprendimiento.es_monotributista_social?
+                                 { :class => 'explicacion_de_ingresos' } 
+                               else
+                                 { :class => 'explicacion_de_ingresos hidden' }
+                               end %>
+    <legend>Ingresos Brutos</legend>
+    <%= emprendimiento.input :inscripto_en_ingresos_brutos,
+                             :label => '¿Inscripto?',
+                             :as => :radio_buttons,
+                             :item_wrapper_class => 'inline' %>
+    <%= emprendimiento.input :fecha_de_inscripcion_ingresos_brutos,
+                             :label => 'Fecha de inscripcion',
+                             :as => :string,
+                             :input_html => { :class => "datepicker" },
+                             :wrapper_html => 
+                               if @emprendimiento.inscripto_en_ingresos_brutos?
+                                 { :class => 'fecha_de_inscripcion_ingresos_brutos' } 
+                               else
+                                 { :class => 'fecha_de_inscripcion_ingresos_brutos hidden' }
+                               end
+                              %>
+    <legend>Programas de Ayuda Social</legend>
+    <%= emprendimiento.input :recibe_ayuda_de_programas_sociales,
+                             :as => :radio_buttons,
+                             :item_wrapper_class => 'inline' %>
+    <%= emprendimiento.input :programas_sociales_recibidos,
+                             :as => :text,
+                             :input_html => { :class => 'span6', :rows => 5 },
+                             :wrapper_html => 
+                               if @emprendimiento.recibe_ayuda_de_programas_sociales?
+                                 { :class => 'programas_sociales' } 
+                               else
+                                 { :class => 'programas_sociales hidden' }
+                               end %>
+    <%= emprendimiento.input :tipo_de_ayuda_recibida_de_programas_sociales,
+                             :as => :text,
+                             :input_html => { :class => 'span6', :rows => 5 },
+                             :wrapper_html => 
+                               if @emprendimiento.recibe_ayuda_de_programas_sociales?
+                                 { :class => 'programas_sociales' } 
+                               else
+                                 { :class => 'programas_sociales hidden' }
+                               end %>
+    <legend>Sociedades Civiles</legend>
+    <%= emprendimiento.input :vinculado_a_sociedad_civil,
+                             :as => :radio_buttons,
+                             :item_wrapper_class => 'inline' %>
+    <%= emprendimiento.input :tipo_de_participacion_en_sociedad_civil,
+                             :input_html => { :class => 'span6', :rows => 5 },
+                             :wrapper_html => 
+                               if @emprendimiento.vinculado_a_sociedad_civil?
+                                 { :class => 'vinculado_a_sociedad_civil' } 
+                               else
+                                 { :class => 'vinculado_a_sociedad_civil hidden' }
+                               end %>
+    <%= emprendimiento.input :recibio_ayuda_de_la_sociedad_civil,
+                             :as => :radio_buttons,
+                             :item_wrapper_class => 'inline',
+                             :wrapper_html => 
+                               if @emprendimiento.vinculado_a_sociedad_civil?
+                                 { :class => 'vinculado_a_sociedad_civil' } 
+                               else
+                                 { :class => 'vinculado_a_sociedad_civil hidden' }
+                               end %>
+    <%= emprendimiento.input :justificacion_no_haber_recibido_ayuda_de_sociedad_civil,
+                             :as => :text,
+                             :input_html => { :class => 'span6', :rows => 5 },
+                             :wrapper_html => 
+                               if @emprendimiento.vinculado_a_sociedad_civil? &&
+                                  !@emprendimiento.recibio_ayuda_de_la_sociedad_civil?
+                                 { :class => 'vinculado_a_sociedad_civil recibio_ayuda_de_la_sociedad_civil' } 
+                               else
+                                 { :class => 'vinculado_a_sociedad_civil recibio_ayuda_de_la_sociedad_civil hidden' }
+                               end %>
+    <legend>Conocimientos y Recursos</legend>
+    <%= emprendimiento.input :capacitaciones_recibidas,
+                             :label => 'Capacitaciones Recibidas',
+                             :input_html => { :class => 'span6', :rows => 5 } %>
+    <%= emprendimiento.input :maquinarias_y_herramientas_utilizadas,
+                             :label => 'Maquinarias y Herramientras utilizadas',
+                             :input_html => { :class => 'span6', :rows => 5 } %>
+    <legend>Espacio de trabajo</legend>
+    <%= emprendimiento.input :dispone_de_espacio_fisico_para_produccion,
+                             :as => :radio_buttons,
+                             :item_wrapper_class => 'inline' %>
+    <%= emprendimiento.input :tipo_de_espacio,
+                             :collection => @emprendimiento.tipo_de_espacio_enum,
+                             :as => :radio_buttons,
+                             :item_wrapper_class => 'inline',
+                             :wrapper_html => 
+                               if @emprendimiento.dispone_de_espacio_fisico_para_produccion?
+                                 { :class => 'dispone_de_espacio' } 
+                               else
+                                 { :class => 'dispone_de_espacio hidden' }
+                               end %>
+    <%= emprendimiento.input :posible_solucion_a_falta_de_espacio,
+                             :as => :text,
+                             :input_html => { :class => 'span6', :rows => 5 },
+                             :wrapper_html => 
+                               if @emprendimiento.dispone_de_espacio_fisico_para_produccion?
+                                 { :class => 'no_dispone_de_espacio hidden' } 
+                               else
+                                 { :class => 'no_dispone_de_espacio' }
+                               end %>
+    <%= emprendimiento.input :es_en_vivienda_particular,
+                             :as => :radio_buttons,
+                             :item_wrapper_class => 'inline',
+                             :wrapper_html => 
+                               if @emprendimiento.dispone_de_espacio_fisico_para_produccion?
+                                 { :class => 'dispone_de_espacio' } 
+                               else
+                                 { :class => 'dispone_de_espacio hidden' }
+                               end %>
+    <%= emprendimiento.input :siendo_en_vivienda_particular_el_espacio_es_suficiente,
+                             :as => :radio_buttons,
+                             :item_wrapper_class => 'inline',
+                             :wrapper_html => 
+                               if @emprendimiento.dispone_de_espacio_fisico_para_produccion?
+                                 { :class => 'es_en_vivienda_particular' } 
+                               else
+                                 { :class => 'es_en_vivienda_particular hidden' }
+                               end %>
+    <%= emprendimiento.input :es_necesario_acondicionamiento,
+                             :as => :radio_buttons,
+                             :item_wrapper_class => 'inline',
+                             :wrapper_html => 
+                               if @emprendimiento.dispone_de_espacio_fisico_para_produccion?
+                                 { :class => 'es_en_vivienda_particular' } 
+                               else
+                                 { :class => 'es_en_vivienda_particular hidden' }
+                               end %>
+    <%= emprendimiento.input :ocupa_lugares_destinados_a_otros_usos,
+                             :as => :radio_buttons,
+                             :item_wrapper_class => 'inline',
+                             :wrapper_html => 
+                               if @emprendimiento.dispone_de_espacio_fisico_para_produccion?
+                                 { :class => 'es_en_vivienda_particular' } 
+                               else
+                                 { :class => 'es_en_vivienda_particular hidden' }
+                               end %>
+    <%= emprendimiento.input :espacio_y_acondicinamiento_requeridos_para_crecer,
+                             :input_html => { :class => 'span6', :rows => 5 },
+                             :wrapper_html => 
+                               if @emprendimiento.dispone_de_espacio_fisico_para_produccion?
+                                 { :class => 'dispone_de_espacio' } 
+                               else
+                                 { :class => 'dispone_de_espacio hidden' }
+                               end %>
+    <legend>Necesidades</legend>
+    <%= emprendimiento.input :herramientas_necesarias,
+                             :label => 'Herramientras',
+                             :input_html => { :class => 'span6', :rows => 5 } %>
+    <%= emprendimiento.input :maquinarias_necesarias,
+                             :label => 'Maquinaria',
+                             :input_html => { :class => 'span6', :rows => 5 } %>
+    <%= emprendimiento.input :movilidad_necesaria,
+                             :label => 'Movilidad',
+                             :input_html => { :class => 'span6', :rows => 5 } %>
+    <%= emprendimiento.input :insumos_necesarios,
+                             :label => 'Insumos',
+                             :input_html => { :class => 'span6', :rows => 5 } %>
+    <%= emprendimiento.input :instalaciones_necesarias,
+                             :label => 'Instalaciones',
+                             :input_html => { :class => 'span6', :rows => 5 } %>
+    <%= emprendimiento.input :capacitaciones_necesaria,
+                             :label => 'Capacitaciones',
+                             :input_html => { :class => 'span6', :rows => 5 } %>
+    <%= emprendimiento.input :otras_necesidades,
+                             :required => false,
+                             :label => 'Otras',
+                             :input_html => { :class => 'span6', :rows => 5 } %>
+    <legend>Observaciones</legend>
+    <%= emprendimiento.input :observaciones,
+                             :input_html => { :class => 'span6', :rows => 5 } %>
+  </div>
+
+  <div class="form-actions">
+    <%= emprendimiento.button :submit, :class => 'btn btn-primary' %>
+    <%= link_to 'Volver sin editar', @emprendimiento, :class => 'btn' %>
+  </div>
+<% end %>

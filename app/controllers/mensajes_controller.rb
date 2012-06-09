@@ -44,7 +44,7 @@ class MensajesController < ApplicationController
 
     respond_to do |format|
       if @mensaje.save
-        format.html { redirect_to @mensaj, notice: 'Mensaje was successfully created.' }
+        format.html { redirect_to @mensaj, notice: t('notice.create', :model => 'Mensaje') }
         format.json { render json: @mensaje, status: :created, location: @mensaje }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class MensajesController < ApplicationController
 
     respond_to do |format|
       if @mensaje.update_attributes(params[:mensaje])
-        format.html { redirect_to @mensaj, notice: 'Mensaje was successfully updated.' }
+        format.html { redirect_to @mensaj, notice: t('notice.update', :model => 'Mensaje') }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

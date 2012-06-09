@@ -44,7 +44,7 @@ class EmprendedoresController < ApplicationController
 
     respond_to do |format|
       if @emprendedor.save
-        format.html { redirect_to @emprendedor, notice: 'Emprendedor was successfully created.' }
+        format.html { redirect_to @emprendedor, notice: t('notice.create', :model => 'Emprendedor') }
         format.json { render json: @emprendedor, status: :created, location: @emprendedor }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class EmprendedoresController < ApplicationController
 
     respond_to do |format|
       if @emprendedor.update_attributes(params[:emprendedor])
-        format.html { redirect_to @emprendedor, notice: 'Emprendedor was successfully updated.' }
+        format.html { redirect_to @emprendedor, notice: t('notice.update', :model => 'Emprendedor') }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

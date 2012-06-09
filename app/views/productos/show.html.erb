@@ -1,4 +1,4 @@
-<h1 class= "page-header"><%= @producto.nombre %></h1>
+<%= show_for @producto do |producto| %>
 <div class="row">
 <div class="span6">
 <ul class="thumbnails">
@@ -35,14 +35,23 @@
 </ul>
 </div>
 <div class="span6">
-<article>
+  <article>
     <p>
-      <strong>Descripcion</strong><br>
-      <%= @producto.descripcion %>
+     <h4><%= @producto.rubro.nombre %></font></h4>
+       <h1><%= @producto.nombre %></h1>
     </p>
-</article>
+    <%= producto.attribute :descripcion %>
+    <%= producto.attribute :precio %>
+  </article>
+<div class="form-actions">
+  <%= link_to "Volver", :back, :class => 'btn btn-primary' %>
+<% if can? :update, @producto %>
+  <%= link_to "Editar", edit_producto_path(@producto), :class => 'btn btn-primary' %>
+<% end %>
 
-<div class="actions">
-  <%= boton_volver :back %>
 </div>
-</div>
+  </div>
+
+  
+<% end %>
+

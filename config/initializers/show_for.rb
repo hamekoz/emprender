@@ -10,7 +10,7 @@ ShowFor.setup do |config|
   config.label_tag = :dt
 
   # The tag used to wrap each content (value). Default is nil.
-  config.content_tag = :dd
+  config.content_tag = :pre
 
   # The DOM class set for blank content tags. Default is "blank".
   # config.blank_content_class = 'no_content'

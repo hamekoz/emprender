@@ -20,7 +20,7 @@ class CreateEmprendimientos < ActiveRecord::Migration
       t.string      :telefono
       t.string      :celular
       t.string      :telefono_de_mensajes
-      t.string      :comentarios
+      t.string      :comentario
       t.boolean     :es_monotributista
       t.boolean     :es_monotributista_social
       t.date        :fecha_de_inscripcion_al_monotributo
@@ -36,9 +36,6 @@ class CreateEmprendimientos < ActiveRecord::Migration
       t.text        :justificacion_no_haber_recibido_ayuda_de_sociedad_civil
       t.text        :capacitaciones_recibidas
       t.text        :maquinarias_y_herramientas_utilizadas
-      t.integer     :produccion_mensual
-      t.integer     :produccion_anual
-      t.integer     :produccion_maxima
       t.boolean     :dispone_de_espacio_fisico_para_produccion
       t.string      :tipo_de_espacio
       t.text        :posible_solucion_a_falta_de_espacio
@@ -48,8 +45,6 @@ class CreateEmprendimientos < ActiveRecord::Migration
       t.boolean     :ocupa_lugares_destinados_a_otros_usos
       t.text        :espacio_y_acondicinamiento_requeridos_para_crecer
       t.text        :caracteristicas_y_zonas_de_clientes_actuales
-      t.string      :tipo_de_venta
-      t.text        :productos_que_vende
       t.integer     :cantidad_de_clientes_actuales
       t.text        :caracteristicas_y_zonas_de_futuros_clientes
       t.boolean     :competencia_en_mismo_barrio

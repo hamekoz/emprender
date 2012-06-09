@@ -1,23 +1,35 @@
-<h2>Editando <%= resource_name.to_s.humanize %></h2>
+<h1 class="page-header">Editando <%= resource_name.to_s.humanize %></h1>
 
-<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+<%= simple_form_for(resource,
+                    :as => resource_name,
+                    :url => registration_path(resource_name),
+                    :html => { :method => :put,
+                               :class => 'form-horizontal' }) do |f| %>
   <%= f.error_notification %>
 
   <div class="inputs well">
-    <%= resource.persona.nombre %>
-    <%= f.input :email, :required => true, :autofocus => true %>
+      <%= f.input :nombre,
+                  :placeholder => 'sus nombres',
+                  :required => true,
+                  :autofocus => true %>
+      <%= f.input :apellido,
+                  :placeholder => 'sus apellidos',
+                  :required => true %>
+      <%= f.input :sexo,
+                  :required => true,
+                  :collection => resource.sexo_enum,
+                  :as => :radio_buttons %>
+    <%= f.input :email, :required => true %>
     <%= f.input :password, :hint => "dejar en blanco si no quiere cambiar su password", :required => false %>
     <%= f.input :password_confirmation, :required => false %>
     <%= f.input :current_password, :hint => "necesitamos su password actual para confirmar el cambios", :required => true %>
   </div>
 
-  <div class="actions">
-    <%= f.button :submit, "Actualizar", :class => 'btn primary' %>
+  <div class="form-actions">
+    <%= f.button :submit, "Actualizar", :class => 'btn btn-primary' %>
+    <%= link_to "Eliminar", registration_path(resource_name),
+                :confirm => "¿Esta seguro que quiere eliminar su cuenta?",
+                :method => :delete, :class => 'btn btn-danger' %>
+    <%= link_to "Volver", usuario_path(current_usuario), :class => 'btn' %>
   </div>
 <% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancelar mi cuenta", registration_path(resource_name), :confirm => "¿Esta seguro?", :method => :delete %>.</p>
-
-<%= link_to "Volver", :back %>

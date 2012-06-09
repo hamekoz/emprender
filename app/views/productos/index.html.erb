@@ -15,5 +15,10 @@
   </li>
   <% end %>
 </ul>
-<hr>
+
 <%= paginate @productos %>
+
+<% if can? :create, @producto %>
+  <%= link_to "Nuevo", new_producto_path, :class => 'btn btn-primary' %>
+<% end %>
+

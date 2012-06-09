@@ -1,67 +1,57 @@
-<h1 class= "page-header">Evento</h1>
+<h1 class= "page-header"><%= @evento.nombre %></h1>
+<h6>Publicado el <%= @evento.updated_at %> por <%= @evento.autor.nombre_completo %></h6>
+<hr>
+<%= show_for @evento do |evento| %>
 <article>
 <div class="row">
-  <div class="span-one-third">
-    <h3>Informacion General</h3>
-    <p>
-      <strong>Tipo</strong><br>
-      <%= @evento.tipo %>
-    </p>
-
-    <p>
-      <strong>Organizador</strong><br>
-      <%= @evento.organizador.nombre %>
-    </p>
-
-    <p>
-      <strong>Nombre</strong><br>
-      <%= @evento.nombre %>
-    </p>
-
-    <p>
-      <strong>Descripcion</strong><br>
-      <%= @evento.descripcion %>
-    </p>
+  <div class="span4">
+    <%= evento.attribute :tipo %>
+    <%= evento.association :organizador, :using => :nombre %>
+    <%= evento.attribute :lugar %>
+    <%= evento.association :barrio, :using => :nombre %>
+    <%= evento.attribute :fecha_y_hora_de_inicio %>
+    <%= evento.attribute :fecha_y_hora_de_finalizacion %>
+    <%= evento.attribute :descripcion %>
   </div>
-
-  <div class="span-one-third">
-    <h3>Lugar, Fecha y Hora</h3>
-    <p>
-      <strong>Descripcion</strong><br>
-      <%= @evento.lugar %>
-    </p>
-
-    <p>
-      <strong>Fecha y hora de inicio:</strong><br>
-      <%= @evento.fecha_y_hora_de_inicio %>
-    </p>
-
-    <p>
-      <strong>Fecha y hora de finalizacion</strong><br>
-      <%= @evento.fecha_y_hora_de_finalizacion %>
-    </p>
+  <div class="span4">
+    <div class="thumbnail ">
+      <% if @evento.folleto.url.blank? %>
+        <img src="http://placehold.it/300x500&text=folleto" alt="">
+      <% else %>
+        <%= link_to image_tag(@evento.folleto.url), @evento.folleto.url %>
+      <% end %>
+    </div>
   </div>
-
-  <div class="span-one-third">
-    <h3>Datos de Publicacion</h3>
-    <p>
-      <strong>Publicado</strong><br>
-      <%= @evento.publicado %>
-    </p>
-
-    <p>
-      <strong>Fecha publicacion</strong><br>
-      <%= @evento.fecha_de_publicacion %>
-    </p>
-
-    <p>
-      <strong>Fecha de creacion</strong><br>
-      <%= @evento.created_at %>
-    </p>
+  <div class="span4">
+    <div class="thumbnail ">
+      <%= link_to image_tag(@evento.mapa), @evento.mapa %>
+    </a>
   </div>
 </div>
 </article>
+<% end %>
 
-<div class="actions">
-  <%= boton_volver eventos_path %>
+<div class="form-actions">
+  <% if can? :read, @evento %>
+    <%= link_to(admin_evento_path(@evento), :class => 'btn btn-info') do %>
+      <i class="icon-info-sign"></i>
+      <span>Mostrar</span>
+    <% end %>
+  <% end %>
+  <% if can? :manage, @evento %>
+    <%= link_to(edit_admin_evento_path(@evento), :class => 'btn btn-warning') do %>
+      <i class="icon-pencil"></i>
+      <span>Editar</span>
+    <% end %>
+  <% end %>
+  <%= link_to "#comentarios", :class => 'btn', "data-toggle" => "modal" do %>
+    <i class="icon-comment"></i>
+    <span><%= @evento.comentarios.count %> Cometarios</span>
+  <% end %>
+  <%= link_to :back, :class => 'btn' do %>
+    <i class="icon-arrow-left"></i>
+    <span>Volver</span>
+  <% end %>
 </div>
+
+<%= render 'comentarios/comentarios', :comentable => @evento %>

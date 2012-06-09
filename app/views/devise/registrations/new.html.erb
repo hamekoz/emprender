@@ -8,10 +8,20 @@
                       :html => { :class => 'form-horizontal' }) do |f| %>
     <%= f.error_notification %>
     <div class="inputs well">
-      <%= f.input :email,
-                  :placeholder => 'su correo electronico',
+      <%= f.input :nombre,
+                  :placeholder => 'sus nombres',
                   :required => true,
                   :autofocus => true %>
+      <%= f.input :apellido,
+                  :placeholder => 'sus apellidos',
+                  :required => true %>
+      <%= f.input :sexo,
+                  :required => true,
+                  :collection => resource.sexo_enum,
+                  :as => :radio_buttons %>
+      <%= f.input :email,
+                  :placeholder => 'su correo electronico',
+                  :required => true %>
       <%= f.input :password, 
                   :placeholder => 'su contraseña',
                   :required => true %>

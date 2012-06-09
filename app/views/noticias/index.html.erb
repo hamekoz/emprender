@@ -5,18 +5,46 @@
     <div class="thumbnail">
       <div class="caption">
         <h2><%= noticia.titulo %></h2>
-        <h5>Por: <%= noticia.autor.persona.nombre_completo %></h5>
-        <h6><%= noticia.fecha %></h6>
-        <%= noticia.texto.html_safe %>
+        <h6>Publicada el <%= noticia.updated_at %> por <%= noticia.autor.nombre_completo %></h6>
+        <hr>
+        <%= noticia.resumen %>
         <hr>
         <p>
-          <%= link_to "Leer mas...", noticia_path(noticia), :class => "btn btn-primary" %>
-          <a class="btn" href="#">Comentar</a>
+          <%= link_to(noticia_path(noticia), :class => "btn btn-primary") do %>
+            <i class="icon-eye-open icon-white"></i>
+            <span>Leer mas...</span>
+          <% end %>
+          <% if can? :read, noticia %>
+            <%= link_to(admin_noticia_path(noticia), :class => 'btn btn-info') do %>
+              <i class="icon-info-sign"></i>
+              <span>Mostrar</span>
+            <% end %>
+          <% end %>
+          <% if can? :manage, noticia %>
+            <%= link_to(edit_admin_noticia_path(noticia), :class => 'btn btn-warning') do %>
+              <i class="icon-pencil"></i>
+              <span>Editar</span>
+            <% end %>
+          <% end %>
         </p>
       </div>
     </div>
   </li>
 <% end %>
 </ul>
-<hr>
+
 <%= paginate @noticias %>
+
+<% if can? :manage, Noticia %>
+  <div class="form-actions">
+      <%= link_to(admin_noticias_path, :class => 'btn btn-inverse') do %>
+        <i class="icon-list-alt icon-white"></i>
+        <span>Administrar</span>
+      <% end %>
+      <%= link_to(new_admin_noticia_path, :class => 'btn btn-success') do %>
+        <i class="icon-plus"></i>
+        <span>Nueva</span>
+      <% end %>
+  </div>
+<% end %>
+

@@ -1,19 +1,48 @@
 <h1 class= "page-header">Cartelera de Eventos</h1>
+<ul class="thumbnails">
 <% @eventos.each do |evento| %>
-  <article class="">
-    <header>
-      <p><strong><%= evento.nombre %></strong></p>
-    </header>
-    <p><strong>Tipo: </strong><%= evento.tipo %></p>
-    <p><strong>Organizador: </strong><%= evento.organizador.nombre %></p>
-    <p><strong>Descripcion: </strong><%= evento.descripcion %></p>
-    <p><strong>Lugar: </strong><%= evento.lugar %></p>
-    <p><strong>Fecha y hora de inicio: </strong><%= evento.fecha_y_hora_de_inicio %></p>
-    <p><strong>Fecha y hora de finalizacion: </strong><%= evento.fecha_y_hora_de_finalizacion %></p>
-    <footer>
-      <p><strong>Fecha publicacion: </strong><%= evento.fecha_de_publicacion %></p>
-    </footer>
-  </article>
+  <li class="span6">
+    <div class="thumbnail">
+      <div class="caption">
+        <h2><%= evento.nombre %></h2>
+        <h6>Publicado el <%= evento.updated_at %> por <%= evento.autor.nombre_completo %></h6>
+        <hr>
+        <p><%= evento.resumen %></p>
+        <hr>
+        <p>
+          <%= link_to(evento_path(evento), :class => "btn btn-primary") do %>
+            <i class="icon-eye-open icon-white"></i>
+            <span>Leer mas...</span>
+          <% end %>
+          <% if can? :read, evento %>
+            <%= link_to(admin_evento_path(evento), :class => 'btn btn-info') do %>
+              <i class="icon-info-sign"></i>
+              <span>Mostrar</span>
+            <% end %>
+          <% end %>
+          <% if can? :manage, evento %>
+            <%= link_to(edit_admin_evento_path(evento), :class => 'btn btn-warning') do %>
+              <i class="icon-pencil"></i>
+              <span>Editar</span>
+            <% end %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </li>
 <% end %>
-<hr>
+</ul>
+
 <%= paginate @eventos %>
+<% if can? :manage, Evento %>
+  <div class="form-actions">
+      <%= link_to(admin_eventos_path, :class => 'btn btn-inverse') do %>
+        <i class="icon-list-alt icon-white"></i>
+        <span>Administrar</span>
+      <% end %>
+      <%= link_to(new_admin_evento_path, :class => 'btn btn-success') do %>
+        <i class="icon-plus"></i>
+        <span>Nuevo</span>
+      <% end %>
+  </div>
+<% end %>

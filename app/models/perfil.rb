@@ -2,6 +2,7 @@ class Perfil < ActiveRecord::Base
   belongs_to :emprendedor
 
   attr_accessible :emprendedor,
+                  :emprendedor_id,
                   :dni,
                   :cuit_cuil,
                   :domicilio,

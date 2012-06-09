@@ -1,0 +1,7 @@
+﻿es:
+  views:
+    pagination:
+      next: "Siguiente"
+      previous: "Anterior"
+      first: "Primera"
+      last: "Ultima"

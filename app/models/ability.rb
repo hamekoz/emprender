@@ -4,23 +4,22 @@ class Ability
   def initialize(usuario)
     if usuario && usuario.administrador?
       can :access, :rails_admin
-      can :dashboard                  # allow access to dashboard
+      can :dashboard
       can :manage, :all
     elsif usuario && usuario.representante?
       can :access, :rails_admin
-      can :dashboard                  # allow access to dashboard
-      can :read, [Evento, Noticia]
-      can :create, [Evento, Noticia]
+      can :dashboard
+      can :read, [Evento, Noticia, Barrio, Categoria, Clasificacion, Estado, Rubro, Institucion]
+      can :manage, [Evento, Noticia], :autor_id => usuario.id
+      can :edit, [Institucion], :id => usuario.institucion_id
+      can :read, [Usuario], :id => usuario.id
+      cannot :manage, [Usuario], :institucion_id => :nil
+      can :read, [Usuario], :institucion_id => usuario.institucion_id
+
+    elsif usuario && usuario.emprendedor?
+      can :manage, [Producto, Servicio], :emprendedor_id => usuario.id
     end
-    # Define abilities for the passed in user here. For example:
-    #
-    #   user ||= User.new # guest user (not logged in)
-    #   if user.admin?
-    #     can :manage, :all
-    #   else
-    #     can :read, :all
-    #   end
-    #
+
     # The first argument to `can` is the action you are giving the user permission to do.
     # If you pass :manage it will apply to every action. Other common actions here are
     # :read, :create, :update and :destroy.
@@ -36,3 +35,23 @@ class Ability
     # See the wiki for details: https://github.com/ryanb/cancan/wiki/Defining-Abilities
   end
 end
+
+## Always performed
+#can :access, :rails_admin # needed to access RailsAdmin
+
+## Performed checks for `root` level actions:
+#can :dashboard            # dashboard access
+
+## Performed checks for `collection` scoped actions:
+#can :index, Model         # included in :read
+#can :new, Model           # included in :create
+#can :export, Model
+#can :history, Model       # for HistoryIndex
+#can :destroy, Model       # for BulkDelete
+
+## Performed checks for `member` scoped actions:
+#can :show, Model, object            # included in :read
+#can :edit, Model, object            # included in :update
+#can :destroy, Model, object         # for Delete
+#can :history, Model, object         # for HistoryShow
+#can :show_in_app, Model, object

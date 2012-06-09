@@ -12,23 +12,24 @@ gem 'enum'
 gem 'rails-i18n'
 gem 'cancan'
 gem 'devise'
-gem 'ckeditor' , '3.7.0.rc2'
-#gem 'paperclip',           :platforms => :ruby19
-#gem "paperclip", "~> 2.7", :platforms => :ruby18
 gem 'kaminari'
+gem 'paperclip'
+gem 'ckeditor'
 
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git',
                                :branch => 'static'
+#gem 'rich', :git => 'https://github.com/bastiaanterhorst/rich.git'
 
 # Gemas usadas solo en desarrollo
 group :development, :test do
   platforms :ruby_19 do
+    gem 'therubyracer'
     gem 'minitest'
     gem 'minitest-rails'
     gem 'bigdecimal'
   end
-#  gem 'fastercsv',      :platforms => :ruby18
+  gem 'fastercsv',      :platforms => :ruby_18
   gem 'sqlite3'
   gem 'heroku'
 end
@@ -67,3 +68,4 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug'
+

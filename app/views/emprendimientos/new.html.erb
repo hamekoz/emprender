@@ -6,9 +6,6 @@
     <%= @emprendimiento.progreso %>% Completo
   </div>
 </div>
-Porcentaje <%= @emprendimiento.progreso %>
-Cantidad de atributos nulos <%= @emprendimiento.nulos %>
-Cantidad de atributos <%= @emprendimiento.atributos %>
 <div class="row">
 <div class="columns span10 offset1">
     <%= emprendimiento.simple_fields_for :emprendedor do |emprendedor| %>
@@ -152,7 +149,7 @@ Cantidad de atributos <%= @emprendimiento.atributos %>
       <%= emprendimiento.input :telefono %>
       <%= emprendimiento.input :celular %>
       <%= emprendimiento.input :telefono_de_mensajes %>
-      <%= emprendimiento.input :comentarios,
+      <%= emprendimiento.input :comentario,
                                :placeholder => 'Llamar entre las 8 y 17 hs, telefono de mensajes solo por urgencias',
                                :input_html => { :class => 'span6', :rows => 5 } %>
     </div>

@@ -1,0 +1,5 @@
+<%= div_for comentario, :class => (comentario.moderado ? "alert alert-success" : "alert") do %>
+  <%= comentario.created_at %>: <%= comentario.texto %>
+<% end %>
+
+

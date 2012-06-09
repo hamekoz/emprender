@@ -10,22 +10,6 @@ $(function() {
   });
 });
 
-$('#emprendimiento_emprendedor_attributes_recibe_o_recibio_algun_plan_social_false').click( function() {
-  $('.plan_social').addClass('hidden').hide().fadeOut();
-});
-
-$('#emprendimiento_emprendedor_attributes_recibe_o_recibio_algun_plan_social_true').click( function() {
-  $('.plan_social').removeClass('hidden').show().fadeIn();
-});
-
-$('#emprendimiento_emprendedor_attributes_es_unico_ingreso_true').click( function() {
-  $('.explicacion_de_ingresos').addClass('hidden').hide().fadeOut();
-});
-
-$('#emprendimiento_emprendedor_attributes_es_unico_ingreso_false').click( function() {
-  $('.explicacion_de_ingresos').removeClass('hidden').show().fadeIn();
-});
-
 $('#emprendimiento_competencia_en_mismo_barrio_false').click( function() {
   $('.descripcion_de_competencia_en_mismo_barrio').addClass('hidden').hide().fadeOut();
 });

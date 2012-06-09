@@ -2,9 +2,9 @@ class CreateNoticias < ActiveRecord::Migration
   def change
     create_table :noticias do |t|
       t.string      :titulo
+      t.text        :resumen
       t.text        :texto
       t.references  :autor
-      t.datetime    :fecha
       t.boolean     :publicada
 
       t.timestamps

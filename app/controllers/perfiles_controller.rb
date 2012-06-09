@@ -33,7 +33,7 @@
 
     respond_to do |format|
       if @perfil.update_attributes(params[:perfil])
-        format.html { redirect_to @perfil, notice: 'Perfil actualizado.' }
+        format.html { redirect_to @perfil, notice: t('notice.update', :model => 'Perfil') }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

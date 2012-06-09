@@ -2,32 +2,31 @@ Emprender::Application.routes.draw do
 
   mount Ckeditor::Engine => '/ckeditor'
 
-  mount RailsAdmin::Engine => '/pem', :as => 'rails_admin'
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   devise_for :usuarios
 
   root :to => "application#index"
 
   resources :mensajes
-
-  resources :eventos
-
   resources :noticias
-
+  resources :comentarios
+  resources :eventos
   resources :usuarios
-
   resources :emprendimientos
-
   resources :emprendedores
-
   resources :perfiles
-
   resources :productos
-
   resources :servicios
+
+namespace :admin do
+  resources :noticias, :path => 'noticia'
+  resources :eventos, :path => 'evento'
+  resources :productos, :path => 'producto'
+  resources :servicios, :path => 'servicio'
+end
+
   match '/acerca' => "application#acerca", :as => "acerca"
-  match '/empadronarme' => "emprendimientos#new", :as => "empadronarme"
-  match '/empadronar' => "emprendimientos#new", :as => "empadronar"
 
 
   # The priority is based upon order of creation:

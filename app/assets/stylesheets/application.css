@@ -96,3 +96,8 @@ p {
 img {
   max-width: 100%;
 }
+
+.fijo {
+  position: fixed;
+}
+
