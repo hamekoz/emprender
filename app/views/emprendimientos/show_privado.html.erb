@@ -1,0 +1,99 @@
+<%= show_for @emprendimiento do |emprendimiento| %>
+<h1 class= "page-header">Mi Emprendimiento</h1>
+<div class="row">
+<div class="span4">
+  <%= emprendimiento.attribute :nombre %>
+  <%= emprendimiento.attribute :logotipo do %>
+  <%= link_to image_tag(@emprendimiento.logotipo.url), @emprendimiento.logotipo.url, :class => "thumbnail" %>  
+  <% end %>
+  <%= emprendimiento.association :estado, :using => :nombre %>
+  <%= emprendimiento.attribute :es_marca_registrada %>
+  <%= emprendimiento.attribute :marca %>
+  <%= emprendimiento.association :rubro, :using => :nombre %>
+  <%= emprendimiento.attribute :tipo %>
+  <%= emprendimiento.attribute :descripcion %>
+  <%= emprendimiento.attribute :cantidad_de_integrantes %>
+  <%= emprendimiento.attribute :roles %>
+</div>
+<div class="span4">
+  <%= emprendimiento.attribute :fecha_de_inicio_de_actividad %>
+  <%= emprendimiento.attribute :web %>
+  <%= emprendimiento.attribute :mail %>
+  <%= emprendimiento.attribute :domicilio %>
+  <%= emprendimiento.association :barrio, :using => :nombre %>
+  <%= emprendimiento.attribute :telefono %>
+  <%= emprendimiento.attribute :celular %>
+  <%= emprendimiento.attribute :telefono_de_mensajes %>
+  <%= emprendimiento.attribute :comentario %>
+  <%= emprendimiento.attribute :condicion_frente_al_iva %>
+  <% if @emprendimiento.inscripto_al_iva? %>
+    <%= emprendimiento.attribute :fecha_de_inscripcion_al_iva %>
+    <%= emprendimiento.attribute :situacion_frente_al_iva %>
+  <% end %>
+  <%= emprendimiento.attribute :inscripto_en_ingresos_brutos %>
+  <%= emprendimiento.attribute :fecha_de_inscripcion_ingresos_brutos if @emprendimiento.inscripto_en_ingresos_brutos? %>
+  <%= emprendimiento.attribute :recibe_ayuda_de_programas_sociales %>
+  <% if @emprendimiento.recibe_ayuda_de_programas_sociales? %>
+    <%= emprendimiento.attribute :programas_sociales_recibidos %>
+    <%= emprendimiento.attribute :tipo_de_ayuda_recibida_de_programas_sociales %>
+  <% end %>
+</div>
+<div class="span4">
+  <%= emprendimiento.attribute :vinculado_a_sociedad_civil %>
+  <% if @emprendimiento.vinculado_a_sociedad_civil? %>
+    <%= emprendimiento.attribute :tipo_de_participacion_en_sociedad_civil %>
+    <%= emprendimiento.attribute :recibio_ayuda_de_la_sociedad_civil %>
+    <%= emprendimiento.attribute :justificacion_no_haber_recibido_ayuda_de_sociedad_civil if !@emprendimiento.recibio_ayuda_de_la_sociedad_civil? %>
+  <% end %>
+  <%= emprendimiento.attribute :capacitaciones_recibidas %>
+  <%= emprendimiento.attribute :maquinarias_y_herramientas_utilizadas %>
+  <%= emprendimiento.attribute :dispone_de_espacio_fisico %>
+  <% if @emprendimiento.dispone_de_espacio_fisico? %>
+    <%= emprendimiento.attribute :tipo_de_espacio %>
+    <%= emprendimiento.attribute :es_en_vivienda_particular %>
+    <% if @emprendimiento.es_en_vivienda_particular? %>
+      <%= emprendimiento.attribute :siendo_en_vivienda_particular_el_espacio_es_suficiente %>
+      <%= emprendimiento.attribute :es_necesario_acondicionamiento %>
+      <%= emprendimiento.attribute :ocupa_lugares_destinados_a_otros_usos %>
+    <% end %>
+    <%= emprendimiento.attribute :espacio_y_acondicinamiento_requeridos_para_crecer %>
+  <% else %>
+    <%= emprendimiento.attribute :posible_solucion_a_falta_de_espacio if !@emprendimiento.dispone_de_espacio_fisico.nil? %>
+  <% end %>
+  <%= emprendimiento.attribute :caracteristicas_y_zonas_de_clientes_actuales %>
+  <%= emprendimiento.attribute :cantidad_de_clientes_actuales %>
+  <%= emprendimiento.attribute :caracteristicas_y_zonas_de_futuros_clientes %>
+  <%= emprendimiento.attribute :competencia_en_mismo_barrio %>
+  <%= emprendimiento.attribute :descripcion_de_competencia_en_mismo_barrio if @emprendimiento.competencia_en_mismo_barrio? %>
+</div>
+</div>
+<div class="row">
+<div class="span6">
+  <%= emprendimiento.attribute :herramientas_necesarias %>
+  <%= emprendimiento.attribute :maquinarias_necesarias %>
+  <%= emprendimiento.attribute :movilidad_necesaria %>
+  <%= emprendimiento.attribute :insumos_necesarios %>
+</div>
+<div class="span6">
+  <%= emprendimiento.attribute :instalaciones_necesarias %>
+  <%= emprendimiento.attribute :capacitaciones_necesaria %>
+  <%= emprendimiento.attribute :otras_necesidades %>
+  <%= emprendimiento.attribute :observaciones %>
+</div>
+</div>
+<div class="progress">
+  <div class="bar" style="width: <%= @emprendimiento.progreso %>% ;">
+    <%= @emprendimiento.progreso %>%
+  </div>
+</div>
+<div class="form-actions">
+  <%= link_to(edit_emprendimiento_path(@emprendimiento), :class => "btn btn-primary" ) do %>
+    <i class="icon-edit icon-white"></i>
+    <span>Editar</span>
+  <% end %>
+  <%= link_to :back, :class => 'btn' do %>
+    <i class="icon-arrow-left"></i>
+    <span>Volver</span>
+  <% end %>
+</div>
+<% end %>

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem 'rails' , '3.2.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -19,7 +19,6 @@ gem 'ckeditor'
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git',
                                :branch => 'static'
-#gem 'rich', :git => 'https://github.com/bastiaanterhorst/rich.git'
 
 # Gemas usadas solo en desarrollo
 group :development, :test do

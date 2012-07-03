@@ -2,7 +2,7 @@ class EmprendimientosController < ApplicationController
   # GET /emprendimientos
   # GET /emprendimientos.json
   def index
-    @emprendimientos = Emprendimiento.all
+    @emprendimientos = Emprendimiento.empadronados.page(params[:pagina]).per(12)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -16,7 +16,11 @@ class EmprendimientosController < ApplicationController
     @emprendimiento = Emprendimiento.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      if !current_usuario.nil? && current_usuario.emprendedor? && @emprendimiento = current_usuario.emprendimiento
+        format.html {render 'show_privado'}
+      else
+        format.html # show.html.erb
+      end
       format.json { render :json => @emprendimiento }
     end
   end

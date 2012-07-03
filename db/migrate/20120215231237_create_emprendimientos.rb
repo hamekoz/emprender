@@ -2,6 +2,7 @@ class CreateEmprendimientos < ActiveRecord::Migration
   def change
     create_table :emprendimientos do |t|
       t.references  :emprendedor
+      t.has_attached_file :logotipo
       t.string      :nombre
       t.boolean     :es_marca_registrada
       t.string      :marca
@@ -21,10 +22,9 @@ class CreateEmprendimientos < ActiveRecord::Migration
       t.string      :celular
       t.string      :telefono_de_mensajes
       t.string      :comentario
-      t.boolean     :es_monotributista
-      t.boolean     :es_monotributista_social
-      t.date        :fecha_de_inscripcion_al_monotributo
-      t.string      :situacion_frente_al_monotributo
+      t.string      :condicion_frente_al_iva
+      t.date        :fecha_de_inscripcion_al_iva
+      t.string      :situacion_frente_al_iva
       t.boolean     :inscripto_en_ingresos_brutos
       t.date        :fecha_de_inscripcion_ingresos_brutos
       t.boolean     :recibe_ayuda_de_programas_sociales
@@ -36,7 +36,7 @@ class CreateEmprendimientos < ActiveRecord::Migration
       t.text        :justificacion_no_haber_recibido_ayuda_de_sociedad_civil
       t.text        :capacitaciones_recibidas
       t.text        :maquinarias_y_herramientas_utilizadas
-      t.boolean     :dispone_de_espacio_fisico_para_produccion
+      t.boolean     :dispone_de_espacio_fisico
       t.string      :tipo_de_espacio
       t.text        :posible_solucion_a_falta_de_espacio
       t.boolean     :es_en_vivienda_particular
@@ -57,7 +57,8 @@ class CreateEmprendimientos < ActiveRecord::Migration
       t.text        :capacitaciones_necesaria
       t.text        :otras_necesidades
       t.text        :observaciones
-
+      t.boolean     :empadronado
+      
       t.timestamps
     end
     add_index :emprendimientos, :emprendedor_id

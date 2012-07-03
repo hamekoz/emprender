@@ -28,7 +28,4 @@ ActiveSupport::Inflector.inflections do |inflect|
    inflect.irregular 'password', 'passwords'
    inflect.irregular 'session', 'sessions'
    inflect.irregular 'mensaje', 'mensajes'
-   inflect.irregular 'rich_rich', 'rich_rich'
-   inflect.irregular 'rich_rich_file', 'rich_rich_files'
-   
 end

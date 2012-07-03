@@ -52,7 +52,7 @@
                             :label => '¿Cual?',
                             :required => false,
                             :wrapper_html => 
-                              if @perfil.recibe_o_recibio_algun_plan_social.nil?
+                              if @perfil.recibe_o_recibio_algun_plan_social.blank?
                                 { :class => 'plan_social hidden' } 
                               else
                                 { :class => 'plan_social' }
@@ -61,7 +61,7 @@
       <%= perfil.input :fecha_de_recepcion,
                             :as => :string,
                             :wrapper_html => 
-                              if @perfil.recibe_o_recibio_algun_plan_social.nil?
+                              if @perfil.recibe_o_recibio_algun_plan_social.blank?
                                 { :class => 'plan_social hidden' } 
                               else
                                 { :class => 'plan_social' }
@@ -87,7 +87,7 @@
                             :as => :text,
                             :input_html => { :class => 'span6', :rows => 5 },
                             :wrapper_html => 
-                              if @perfil.es_unico_ingreso.blank?
+                              if @perfil.es_unico_ingreso? || @perfil.es_unico_ingreso.nil?
                                 { :class => 'explicacion_de_ingresos hidden' } 
                               else
                                 { :class => 'explicacion_de_ingresos' }

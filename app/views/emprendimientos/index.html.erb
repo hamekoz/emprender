@@ -1,15 +1,48 @@
-<h1>Listado de emprendimientos</h1>
+<h1 class= "page-header">Listado de Emprendimiento</h1>
+<ul class="thumbnails">
+  <% @emprendimientos.each do |emprendimiento| %>
+  <li class="span4">
+    <div class="thumbnail">
+    <img alt="" src="http://placehold.it/300x180">
+    <div class="caption">
+      <h5><%= emprendimiento.nombre %></h5>
+      <p><%= emprendimiento.descripcion %></p>
+        <hr>
+        <p>
+          <%= link_to(emprendimiento_path(emprendimiento), :class => "btn btn-primary") do %>
+            <i class="icon-eye-open icon-white"></i>
+            <span>Leer mas...</span>
+          <% end %>
+          <% if can? :read, emprendimiento %>
+            <%= link_to(admin_emprendimiento_path(emprendimiento), :class => 'btn btn-info') do %>
+              <i class="icon-info-sign"></i>
+              <span>Mostrar</span>
+            <% end %>
+          <% end %>
+          <% if can? :manage, emprendimiento %>
+            <%= link_to(edit_admin_emprendimiento_path(emprendimiento), :class => 'btn btn-warning') do %>
+              <i class="icon-pencil"></i>
+              <span>Editar</span>
+            <% end %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </li>
+  <% end %>
+</ul>
 
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<%= paginate @emprendimientos %>
 
-<% @emprendimientos.each do |emprendimiento| %>
-  <tr>
-    <td><%= link_to 'Show', emprendimiento %></td>
-  </tr>
+<% if can? :manage, Emprendimiento %>
+  <div class="form-actions">
+      <%= link_to(admin_emprendimientos_path, :class => 'btn btn-inverse') do %>
+        <i class="icon-list-alt icon-white"></i>
+        <span>Administrar</span>
+      <% end %>
+      <%= link_to(new_admin_emprendimiento_path, :class => 'btn btn-success') do %>
+        <i class="icon-plus"></i>
+        <span>Nuevo</span>
+      <% end %>
+  </div>
 <% end %>
-</table>

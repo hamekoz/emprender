@@ -6,6 +6,15 @@
   <div class="form-inputs well">
     <legend>Emprendimiento</legend>
     <%= emprendimiento.input :nombre %>
+
+
+    <%= emprendimiento.input :logotipo do %>
+    <%= image_tag @emprendimiento.logotipo.url(:medium) %>
+    <% end %>
+    <%= emprendimiento.input :logotipo, :label => false %>
+    <%= emprendimiento.input :delete_logotipo, :as => :boolean, :label => 'Eliminar logotipo' %>
+
+
     <%= emprendimiento.input :marca %>
     <%= emprendimiento.input :es_marca_registrada,
                              :label => '¿Esta registrada?',
@@ -71,33 +80,29 @@
                                   { :class => 'descripcion_de_competencia_en_mismo_barrio hidden' }
                                 end
                              %>
-    <legend>Monotributo</legend>
-    <%= emprendimiento.input :es_monotributista,
+    <legend>IVA</legend>
+    <%= emprendimiento.input :condicion_frente_al_iva,
+                             :collection => @emprendimiento.condicion_frente_al_iva_enum,
                              :as => :radio_buttons,
                              :item_wrapper_class => 'inline' %>
-    <%= emprendimiento.input :es_monotributista_social,
-                             :as => :radio_buttons,
-                             :item_wrapper_class => 'inline' %>
-    <%= emprendimiento.input :fecha_de_inscripcion_al_monotributo,
+    <%= emprendimiento.input :fecha_de_inscripcion_al_iva,
                              :as => :string,
                              :input_html => { :class => "datepicker" },
                              :wrapper_html => 
-                               if @emprendimiento.es_monotributista? ||
-                                  @emprendimiento.es_monotributista_social?
-                                 { :class => 'explicacion_de_ingresos' } 
+                               if @emprendimiento.inscripto_al_iva?
+                                 { :class => 'condicion_frente_al_iva' } 
                                else
-                                 { :class => 'explicacion_de_ingresos hidden' }
+                                 { :class => 'condicion_frente_al_iva hidden' }
                                end %>
-    <%= emprendimiento.input :situacion_frente_al_monotributo,
-                             :collection => @emprendimiento.situacion_frente_al_monotributo_enum,
+    <%= emprendimiento.input :situacion_frente_al_iva,
+                             :collection => @emprendimiento.situacion_frente_al_iva_enum,
                              :as => :radio_buttons,
                              :item_wrapper_class => 'inline',
                              :wrapper_html => 
-                               if @emprendimiento.es_monotributista? ||
-                                  @emprendimiento.es_monotributista_social?
-                                 { :class => 'explicacion_de_ingresos' } 
+                               if @emprendimiento.inscripto_al_iva?
+                                 { :class => 'condicion_frente_al_iva' } 
                                else
-                                 { :class => 'explicacion_de_ingresos hidden' }
+                                 { :class => 'condicion_frente_al_iva hidden' }
                                end %>
     <legend>Ingresos Brutos</legend>
     <%= emprendimiento.input :inscripto_en_ingresos_brutos,
@@ -168,15 +173,8 @@
                                else
                                  { :class => 'vinculado_a_sociedad_civil recibio_ayuda_de_la_sociedad_civil hidden' }
                                end %>
-    <legend>Conocimientos y Recursos</legend>
-    <%= emprendimiento.input :capacitaciones_recibidas,
-                             :label => 'Capacitaciones Recibidas',
-                             :input_html => { :class => 'span6', :rows => 5 } %>
-    <%= emprendimiento.input :maquinarias_y_herramientas_utilizadas,
-                             :label => 'Maquinarias y Herramientras utilizadas',
-                             :input_html => { :class => 'span6', :rows => 5 } %>
     <legend>Espacio de trabajo</legend>
-    <%= emprendimiento.input :dispone_de_espacio_fisico_para_produccion,
+    <%= emprendimiento.input :dispone_de_espacio_fisico,
                              :as => :radio_buttons,
                              :item_wrapper_class => 'inline' %>
     <%= emprendimiento.input :tipo_de_espacio,
@@ -184,7 +182,7 @@
                              :as => :radio_buttons,
                              :item_wrapper_class => 'inline',
                              :wrapper_html => 
-                               if @emprendimiento.dispone_de_espacio_fisico_para_produccion?
+                               if @emprendimiento.dispone_de_espacio_fisico?
                                  { :class => 'dispone_de_espacio' } 
                                else
                                  { :class => 'dispone_de_espacio hidden' }
@@ -193,8 +191,9 @@
                              :as => :text,
                              :input_html => { :class => 'span6', :rows => 5 },
                              :wrapper_html => 
-                               if @emprendimiento.dispone_de_espacio_fisico_para_produccion?
-                                 { :class => 'no_dispone_de_espacio hidden' } 
+                               if @emprendimiento.dispone_de_espacio_fisico? ||
+                                  @emprendimiento.dispone_de_espacio_fisico.blank?
+                                 { :class => 'no_dispone_de_espacio hidden' }
                                else
                                  { :class => 'no_dispone_de_espacio' }
                                end %>
@@ -202,7 +201,7 @@
                              :as => :radio_buttons,
                              :item_wrapper_class => 'inline',
                              :wrapper_html => 
-                               if @emprendimiento.dispone_de_espacio_fisico_para_produccion?
+                               if @emprendimiento.dispone_de_espacio_fisico?
                                  { :class => 'dispone_de_espacio' } 
                                else
                                  { :class => 'dispone_de_espacio hidden' }
@@ -211,7 +210,7 @@
                              :as => :radio_buttons,
                              :item_wrapper_class => 'inline',
                              :wrapper_html => 
-                               if @emprendimiento.dispone_de_espacio_fisico_para_produccion?
+                               if @emprendimiento.dispone_de_espacio_fisico?
                                  { :class => 'es_en_vivienda_particular' } 
                                else
                                  { :class => 'es_en_vivienda_particular hidden' }
@@ -220,7 +219,7 @@
                              :as => :radio_buttons,
                              :item_wrapper_class => 'inline',
                              :wrapper_html => 
-                               if @emprendimiento.dispone_de_espacio_fisico_para_produccion?
+                               if @emprendimiento.dispone_de_espacio_fisico?
                                  { :class => 'es_en_vivienda_particular' } 
                                else
                                  { :class => 'es_en_vivienda_particular hidden' }
@@ -229,7 +228,7 @@
                              :as => :radio_buttons,
                              :item_wrapper_class => 'inline',
                              :wrapper_html => 
-                               if @emprendimiento.dispone_de_espacio_fisico_para_produccion?
+                               if @emprendimiento.dispone_de_espacio_fisico?
                                  { :class => 'es_en_vivienda_particular' } 
                                else
                                  { :class => 'es_en_vivienda_particular hidden' }
@@ -237,11 +236,18 @@
     <%= emprendimiento.input :espacio_y_acondicinamiento_requeridos_para_crecer,
                              :input_html => { :class => 'span6', :rows => 5 },
                              :wrapper_html => 
-                               if @emprendimiento.dispone_de_espacio_fisico_para_produccion?
+                               if @emprendimiento.dispone_de_espacio_fisico?
                                  { :class => 'dispone_de_espacio' } 
                                else
                                  { :class => 'dispone_de_espacio hidden' }
                                end %>
+    <legend>Conocimientos y Recursos</legend>
+    <%= emprendimiento.input :capacitaciones_recibidas,
+                             :label => 'Capacitaciones Recibidas',
+                             :input_html => { :class => 'span6', :rows => 5 } %>
+    <%= emprendimiento.input :maquinarias_y_herramientas_utilizadas,
+                             :label => 'Maquinarias y Herramientras utilizadas',
+                             :input_html => { :class => 'span6', :rows => 5 } %>
     <legend>Necesidades</legend>
     <%= emprendimiento.input :herramientas_necesarias,
                              :label => 'Herramientras',

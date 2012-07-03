@@ -40,6 +40,12 @@
               <span>Servicios</span>
             <% end %>
           </li>
+          <li class="<%= 'active' if current_page?(:controller => 'emprendimientos') %>">
+            <%= link_to(emprendimientos_path) do %>
+              <i class="icon-road icon-white"></i>
+              <span>Emprendimientos</span>
+            <% end %>
+          </li>
       </ul>
       <ul class="nav pull-right">
       <li class="divider-vertical"></li>

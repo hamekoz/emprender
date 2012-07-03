@@ -24,9 +24,10 @@ namespace :admin do
   resources :eventos, :path => 'evento'
   resources :productos, :path => 'producto'
   resources :servicios, :path => 'servicio'
+  resources :emprendimientos, :path => 'emprendimiento'
 end
 
-  match '/acerca' => "application#acerca", :as => "acerca"
+  match '/acerca' => "application#acerca" # , :as => "acerca"
 
 
   # The priority is based upon order of creation:
