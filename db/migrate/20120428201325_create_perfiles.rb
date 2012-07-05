@@ -21,7 +21,6 @@ class CreatePerfiles < ActiveRecord::Migration
       t.integer     :cantidad_de_horas_semanales
       t.boolean     :es_unico_ingreso
       t.text        :explicacion_de_ingresos
-      t.boolean     :empadronado
 
       t.timestamps
     end

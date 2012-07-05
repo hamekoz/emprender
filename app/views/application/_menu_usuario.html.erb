@@ -32,7 +32,9 @@
       <%= link_to(emprendimiento_path(current_usuario.emprendimiento)) do %>
         <i class="icon-home"></i>
         <span>Mi Emprendimiento</span>
-        <span class="label label-important">Incompleto</span>
+        <% if !current_usuario.emprendimiento.completo? %>
+          <span class="label label-important">Incompleto</span>
+        <% end %>
       <% end %>
     </li>
     <li class="divider"></li>
