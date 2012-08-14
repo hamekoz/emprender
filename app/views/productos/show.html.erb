@@ -3,34 +3,22 @@
 <div class="span6">
 <ul class="thumbnails">
         <li class="span4">
-          <a href="#" class="thumbnail">
-            <img src="http://placehold.it/360x268" alt="">
-          </a>
+          <%= link_to image_tag(@producto.imagen1.url(:normal)), @producto.imagen1.url, :class => "thumbnail" %>
         </li>
         <li class="span2">
-          <a href="#" class="thumbnail">
-            <img src="http://placehold.it/160x120" alt="">
-          </a>
+          <%= link_to image_tag(@producto.imagen2.url(:mini)), @producto.imagen2.url, :class => "thumbnail" %>
         </li>
         <li class="span2">
-          <a href="#" class="thumbnail">
-            <img src="http://placehold.it/160x120" alt="">
-          </a>
+          <%= link_to image_tag(@producto.imagen3.url(:mini)), @producto.imagen3.url, :class => "thumbnail" %>
         </li>
         <li class="span2">
-          <a href="#" class="thumbnail">
-            <img src="http://placehold.it/160x120" alt="">
-          </a>
+          <%= link_to image_tag(@producto.imagen4.url(:mini)), @producto.imagen4.url, :class => "thumbnail" %>
         </li>
         <li class="span2">
-          <a href="#" class="thumbnail">
-            <img src="http://placehold.it/160x120" alt="">
-          </a>
+          <%= link_to image_tag(@producto.imagen5.url(:mini)), @producto.imagen5.url, :class => "thumbnail" %>
         </li>
         <li class="span2">
-          <a href="#" class="thumbnail">
-            <img src="http://placehold.it/160x120" alt="">
-          </a>
+          <%= link_to image_tag(@producto.imagen6.url(:mini)), @producto.imagen6.url, :class => "thumbnail" %>
         </li>
 </ul>
 </div>
@@ -44,11 +32,16 @@
     <%= producto.attribute :precio %>
   </article>
 <div class="form-actions">
-  <%= link_to "Volver", :back, :class => 'btn btn-primary' %>
-<% if can? :update, @producto %>
-  <%= link_to "Editar", edit_producto_path(@producto), :class => 'btn btn-primary' %>
-<% end %>
-
+  <% if can? :edit, @producto %>
+    <%= link_to(edit_producto_path(@producto), :class => 'btn btn-warning') do %>
+      <i class="icon-pencil"></i>
+      <span>Editar</span>
+    <% end %>
+  <% end %>
+  <%= link_to :back, :class => 'btn' do %>
+    <i class="icon-arrow-left"></i>
+    <span>Volver</span>
+  <% end %>
 </div>
   </div>
 

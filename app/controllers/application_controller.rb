@@ -20,4 +20,10 @@ class ApplicationController < ActionController::Base
       format.html # index.html.erb
     end
   end
+  
+  def emprendedor?
+    if !current_usuario.emprendedor?
+      redirect_to root_path
+    end
+  end
 end

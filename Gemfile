@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails' , '3.2.3'
+gem 'rails' , '3.2.8'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -15,6 +15,7 @@ gem 'devise'
 gem 'kaminari'
 gem 'paperclip'
 gem 'ckeditor'
+gem 'date_validator'
 
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git',

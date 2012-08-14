@@ -1,15 +1,34 @@
 <h1 class= "page-header">Catalogo de Productos</h1>
 <ul class="thumbnails">
   <% @productos.each do |producto| %>
-  <li class="span3">
+  <li class="span4">
     <div class="thumbnail">
-    <img alt="" src="http://placehold.it/260x180">
+      <%= image_tag producto.imagen1.url(:mini), :class => "thumbnail" %>
     <div class="caption">
       <h5><%= producto.nombre %></h5>
       <p><%= producto.descripcion %></p>
       <p>
-        <%= link_to "Ver mas...", producto_path(producto), :class => "btn btn-primary" %>
-        <a class="btn" href="#">Comentar</a>
+        <%= link_to producto_path(producto), :class => "btn btn-primary" do %>
+            <i class="icon-eye-open"></i>
+            <span>Ver mas...</span>
+          <% end %>
+        <% if can? :read, producto %>
+          <%= link_to(admin_producto_path(producto), :class => 'btn btn-info') do %>
+            <i class="icon-info-sign"></i>
+            <span>Mostrar</span>
+          <% end %>
+        <% end %>
+        <% if can? :manage, producto %>
+          <%= link_to(edit_admin_producto_path(producto), :class => 'btn btn-warning') do %>
+            <i class="icon-pencil"></i>
+            <span>Editar</span>
+          <% end %>
+        <% elsif can? :edit, producto %>
+          <%= link_to(edit_producto_path(producto), :class => 'btn btn-warning') do %>
+            <i class="icon-pencil"></i>
+            <span>Editar</span>
+          <% end %>
+        <% end %>
       </p>
     </div>
   </li>
@@ -18,7 +37,22 @@
 
 <%= paginate @productos %>
 
-<% if can? :create, @producto %>
-  <%= link_to "Nuevo", new_producto_path, :class => 'btn btn-primary' %>
+<% if can? :manage, Producto %>
+  <div class="form-actions">
+    <%= link_to(admin_productos_path, :class => 'btn btn-inverse') do %>
+      <i class="icon-list-alt icon-white"></i>
+      <span>Administrar</span>
+    <% end %>
+    <%= link_to(new_admin_producto_path, :class => 'btn btn-success') do %>
+      <i class="icon-plus"></i>
+      <span>Nuevo</span>
+    <% end %>
+  </div>
+<% elsif can? :create, Producto %>
+  <div class="form-actions">
+    <%= link_to(new_producto_path, :class => 'btn btn-success') do %>
+      <i class="icon-plus"></i>
+      <span>Nuevo</span>
+    <% end %>
+  </div>
 <% end %>
-

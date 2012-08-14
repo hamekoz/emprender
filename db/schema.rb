@@ -225,7 +225,7 @@ ActiveRecord::Schema.define(:version => 20120515003533) do
   add_index "perfiles", ["emprendedor_id"], :name => "index_perfiles_on_emprendedor_id"
 
   create_table "productos", :force => true do |t|
-    t.integer  "emprendedor_id"
+    t.integer  "emprendimiento_id"
     t.integer  "rubro_id"
     t.string   "nombre"
     t.text     "descripcion"
@@ -234,21 +234,36 @@ ActiveRecord::Schema.define(:version => 20120515003533) do
     t.integer  "produccion_mensual"
     t.integer  "produccion_anual"
     t.integer  "produccion_maxima"
-    t.string   "imagen_file_name"
-    t.string   "imagen_content_type"
-    t.integer  "imagen_file_size"
-    t.datetime "imagen_updated_at"
-    t.string   "imagen1"
-    t.string   "imagen2"
-    t.string   "imagen3"
-    t.string   "imagen4"
-    t.string   "imagen5"
+    t.string   "imagen1_file_name"
+    t.string   "imagen1_content_type"
+    t.integer  "imagen1_file_size"
+    t.datetime "imagen1_updated_at"
+    t.string   "imagen2_file_name"
+    t.string   "imagen2_content_type"
+    t.integer  "imagen2_file_size"
+    t.datetime "imagen2_updated_at"
+    t.string   "imagen3_file_name"
+    t.string   "imagen3_content_type"
+    t.integer  "imagen3_file_size"
+    t.datetime "imagen3_updated_at"
+    t.string   "imagen4_file_name"
+    t.string   "imagen4_content_type"
+    t.integer  "imagen4_file_size"
+    t.datetime "imagen4_updated_at"
+    t.string   "imagen5_file_name"
+    t.string   "imagen5_content_type"
+    t.integer  "imagen5_file_size"
+    t.datetime "imagen5_updated_at"
+    t.string   "imagen6_file_name"
+    t.string   "imagen6_content_type"
+    t.integer  "imagen6_file_size"
+    t.datetime "imagen6_updated_at"
     t.boolean  "activo"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
   end
 
-  add_index "productos", ["emprendedor_id"], :name => "index_productos_on_emprendedor_id"
+  add_index "productos", ["emprendimiento_id"], :name => "index_productos_on_emprendimiento_id"
   add_index "productos", ["rubro_id"], :name => "index_productos_on_rubro_id"
 
   create_table "rails_admin_histories", :force => true do |t|
@@ -272,21 +287,40 @@ ActiveRecord::Schema.define(:version => 20120515003533) do
   end
 
   create_table "servicios", :force => true do |t|
-    t.integer  "emprendedor_id"
+    t.integer  "emprendimiento_id"
     t.integer  "rubro_id"
     t.string   "nombre"
     t.string   "descripcion"
-    t.string   "imagen1"
-    t.string   "imagen2"
-    t.string   "imagen3"
-    t.string   "imagen4"
-    t.string   "imagen5"
+    t.string   "imagen1_file_name"
+    t.string   "imagen1_content_type"
+    t.integer  "imagen1_file_size"
+    t.datetime "imagen1_updated_at"
+    t.string   "imagen2_file_name"
+    t.string   "imagen2_content_type"
+    t.integer  "imagen2_file_size"
+    t.datetime "imagen2_updated_at"
+    t.string   "imagen3_file_name"
+    t.string   "imagen3_content_type"
+    t.integer  "imagen3_file_size"
+    t.datetime "imagen3_updated_at"
+    t.string   "imagen4_file_name"
+    t.string   "imagen4_content_type"
+    t.integer  "imagen4_file_size"
+    t.datetime "imagen4_updated_at"
+    t.string   "imagen5_file_name"
+    t.string   "imagen5_content_type"
+    t.integer  "imagen5_file_size"
+    t.datetime "imagen5_updated_at"
+    t.string   "imagen6_file_name"
+    t.string   "imagen6_content_type"
+    t.integer  "imagen6_file_size"
+    t.datetime "imagen6_updated_at"
     t.boolean  "activo"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
   end
 
-  add_index "servicios", ["emprendedor_id"], :name => "index_servicios_on_emprendedor_id"
+  add_index "servicios", ["emprendimiento_id"], :name => "index_servicios_on_emprendimiento_id"
   add_index "servicios", ["rubro_id"], :name => "index_servicios_on_rubro_id"
 
   create_table "usuarios", :force => true do |t|

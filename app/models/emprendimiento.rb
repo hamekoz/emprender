@@ -7,6 +7,9 @@ class Emprendimiento < ActiveRecord::Base
   belongs_to :estado
   belongs_to :rubro
   belongs_to :barrio
+  
+  has_many :productos
+  has_many :servicios
 
   has_many :comentarios, :as => :comentable
   scope :empadronados, where(:empadronado => true)
@@ -21,11 +24,47 @@ class Emprendimiento < ActiveRecord::Base
             :on => :update,
             :presence => true
 
+  validates :web,
+            :on => :update,
+            :allow_blank => true,
+            :uniqueness => true,
+            :format => { :with => /(^$)|(^[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix }
+#            :format => { :with => \b(([\w-]+://?|www[.])[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/)))  }
+
   validates :mail,
             :on => :update,
             :allow_blank => true,
             :uniqueness => true,
             :format => { :with => /^[^@][\w.-]+@[\w.-]+[.][a-z]{2,4}$/i }
+
+  validates :cantidad_de_integrantes,
+            :on => :update,
+            :allow_blank => true,
+            :numericality => { :only_integer => true,
+                               :greater_than => 0,
+                               :less_than => 20 }
+
+  validates :cantidad_de_clientes_actuales,
+            :on => :update,
+            :allow_blank => true,
+            :numericality => { :only_integer => true,
+                               :greater_than => 0 }
+
+  validates :fecha_de_inicio_de_actividad,
+            :fecha_de_inscripcion_al_iva,
+            :fecha_de_inscripcion_ingresos_brutos,
+            :on => :update,
+            :allow_blank => true,
+            :date => { :before => Time.now }
+
+  validates :telefono,
+            :celular,
+            :telefono_de_mensajes,
+            :on => :update,
+            :allow_blank => true,
+            :uniqueness => true,
+            :numericality => true,
+            :length => { :in => 7..9 }
 
 #Enumerados
   def tipo_enum
@@ -44,10 +83,6 @@ class Emprendimiento < ActiveRecord::Base
     ['Propio','Cedido','Alquilado','Otro']
   end
 
-  def tipo_de_venta_enum
-    ['Ferias', 'Locales Propios', 'Mayorista','Supermercados','En su casa','Distribuidores','Vendedores','Al estado','Otros']
-  end
-
 #Funciones publicas
   def progreso
     (atributos - atributos_incompletos) * 100 / atributos
@@ -63,7 +98,7 @@ class Emprendimiento < ActiveRecord::Base
 
 
 #Funciones Privadas
-#  private
+  private
     def atributos
       cantidad = 43
       cantidad -= 2 if !inscripto_al_iva?

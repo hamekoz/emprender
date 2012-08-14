@@ -1,29 +1,21 @@
-  class PerfilesController < ApplicationController
-  # GET /perfiles
-  # GET /perfiles.json
-  def index
-    @perfiles = Perfil.all
+class PerfilesController < ApplicationController
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @perfiles }
-    end
-  end
+  before_filter :authenticate_usuario!, :emprendedor?
 
   # GET /perfiles/1
   # GET /perfiles/1.json
   def show
-    @perfil = Perfil.find(params[:id])
+      @perfil = current_usuario.perfil
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @perfil }
-    end
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @perfil }
+      end
   end
 
   # GET /perfiles/1/edit
   def edit
-    @perfil = Perfil.find(params[:id])
+    @perfil = current_usuario.perfil
   end
 
   # PUT /perfiles/1
@@ -39,18 +31,6 @@
         format.html { render action: "edit" }
         format.json { render json: @perfil.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /perfiles/1
-  # DELETE /perfiles/1.json
-  def destroy
-    @perfil = Perfil.find(params[:id])
-    @perfil.destroy
-
-    respond_to do |format|
-      format.html { redirect_to perfiles_url }
-      format.json { head :no_content }
     end
   end
 end

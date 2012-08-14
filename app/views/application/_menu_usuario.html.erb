@@ -7,17 +7,14 @@
   <ul class="dropdown-menu">
     <li class="nav-header"><%= current_usuario.rol %></li>
     <li>
-      <%= link_to(usuario_path(current_usuario)) do %>
+      <%= link_to(usuario_path) do %>
         <i class="icon-user"></i>
         <span>Mi Usuario</span>
       <% end %>
     </li>
 <% if current_usuario.emprendedor? %>
     <li>
-      <% if current_usuario.perfil.nil? %>
-        <% current_usuario.perfil = Perfil.new %>
-      <% end %>
-      <%= link_to(perfil_path(current_usuario.perfil)) do %>
+      <%= link_to(perfil_path) do %>
         <i class="icon-home"></i>
         <span>Mi Perfil</span>
         <% if !current_usuario.perfil.completo? %>
@@ -26,10 +23,7 @@
       <% end %>
     </li>
     <li>
-      <% if current_usuario.emprendimiento.nil? %>
-        <% current_usuario.emprendimiento = Emprendimiento.new %>
-      <% end %>
-      <%= link_to(emprendimiento_path(current_usuario.emprendimiento)) do %>
+      <%= link_to(emprendimiento_usuario_path) do %>
         <i class="icon-home"></i>
         <span>Mi Emprendimiento</span>
         <% if !current_usuario.emprendimiento.completo? %>
@@ -39,13 +33,13 @@
     </li>
     <li class="divider"></li>
     <li>
-      <%= link_to(root_path) do %>
+      <%= link_to(productos_path(:emprendimiento => current_usuario.emprendimiento )) do %>
         <i class="icon-home"></i>
         <span>Mis Productos</span>
       <% end %>
     </li>
     <li>
-      <%= link_to(root_path) do %>
+      <%= link_to(servicios_path) do %>
         <i class="icon-home"></i>
         <span>Mis Servicios</span>
       <% end %>

@@ -97,6 +97,9 @@
 
   <div class="form-actions">
     <%= perfil.button :submit, :class => 'btn btn-primary' %>
-    <%= link_to 'Volver sin editar', @perfil, :class => 'btn' %>
+    <%= link_to perfil_path, :class => 'btn' do %>
+      <i class="icon-arrow-left"></i>
+      <span>Volver sin editar</span>
+    <% end %>
   </div>
 <% end %>

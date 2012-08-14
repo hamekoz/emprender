@@ -2,7 +2,11 @@ class ProductosController < ApplicationController
   # GET /productos
   # GET /productos.json
   def index
-    @productos = Producto.activos.page(params[:pagina]).per(12)
+    if params[:emprendimiento].nil?
+      @productos = Producto.activos.page(params[:pagina]).per(12)
+    else
+      @productos = Emprendimiento.find(params[:emprendimiento]).productos.page(params[:pagina]).per(12)
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,10 +19,12 @@ class ProductosController < ApplicationController
   def show
     @producto = Producto.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
+  respond_to do |format|
+    if !current_usuario.nil?
+      format.html{render'show'}
+      end
       format.json { render json: @producto }
-    end
+   end
   end
 
   # GET /productos/new

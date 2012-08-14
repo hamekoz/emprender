@@ -1,4 +1,5 @@
 class EmprendedoresController < ApplicationController
+
   # GET /emprendedores
   # GET /emprendedores.json
   def index

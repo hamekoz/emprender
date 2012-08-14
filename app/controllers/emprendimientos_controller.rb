@@ -1,4 +1,7 @@
 class EmprendimientosController < ApplicationController
+
+  before_filter :authenticate_usuario!, :emprendedor?, :only => [:emprendimiento, :edit]
+
   # GET /emprendimientos
   # GET /emprendimientos.json
   def index
@@ -10,30 +13,34 @@ class EmprendimientosController < ApplicationController
     end
   end
 
+  def emprendimiento
+    @emprendimiento = current_usuario.emprendimiento
+    respond_to do |format|
+      format.html {render 'show_privado'}
+      format.json { render :json => @emprendimiento }
+    end
+  end
+
   # GET /emprendimientos/1
   # GET /emprendimientos/1.json
   def show
     @emprendimiento = Emprendimiento.find(params[:id])
 
     respond_to do |format|
-      if !current_usuario.nil? && current_usuario.emprendedor? && @emprendimiento = current_usuario.emprendimiento
-        format.html {render 'show_privado'}
-      else
-        format.html # show.html.erb
-      end
+      format.html # show.html.erb
       format.json { render :json => @emprendimiento }
     end
   end
 
   # GET /emprendimientos/1/edit
   def edit
-    @emprendimiento = Emprendimiento.find(params[:id])
+    @emprendimiento = current_usuario.emprendimiento
   end
 
   # PUT /emprendimientos/1
   # PUT /emprendimientos/1.json
   def update
-    @emprendimiento = Emprendimiento.find(params[:id])
+    @emprendimiento = current_usuario.emprendimiento
 
     respond_to do |format|
       if @emprendimiento.update_attributes(params[:emprendimiento])

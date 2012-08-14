@@ -6,6 +6,7 @@ class Ability
       can :access, :rails_admin
       can :dashboard
       can :manage, :all
+
     elsif usuario && usuario.representante?
       can :access, :rails_admin
       can :dashboard
@@ -17,7 +18,9 @@ class Ability
       can :read, [Usuario], :institucion_id => usuario.institucion_id
 
     elsif usuario && usuario.emprendedor?
-      can :manage, [Producto, Servicio], :emprendedor_id => usuario.id
+      can [:read, :edit], Perfil, :id => usuario.perfil.id
+      can :create, [Producto, Servicio]
+      can [:edit, :destroy], [Producto, Servicio], :emprendimiento_id => usuario.emprendimiento.id
     end
 
     # The first argument to `can` is the action you are giving the user permission to do.
