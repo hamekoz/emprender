@@ -17,8 +17,6 @@ class Evento < ActiveRecord::Base
   attr_accessor :delete_folleto
   before_validation { self.folleto.clear if self.delete_folleto == '1' }
 
-  scope :publicados, where(:publicado => true).order(:updated_at).reverse_order
-
   def resumen
    "#{tipo}. Organiza: #{organizador.nombre} el #{fecha_y_hora_de_inicio} hasta #{fecha_y_hora_de_finalizacion} a realizarse en #{lugar} barrio #{barrio.nombre}"
   end
@@ -31,8 +29,16 @@ class Evento < ActiveRecord::Base
     ['Capacitacion', 'Feria', 'Reunion']
   end
   
+  scope :publicados, where(:publicado => true).order(:updated_at).reverse_order
+
   def publicar
     self.publicado = true
     self.save
   end
+
+  def despublicar
+    self.publicado = false
+    self.save
+  end
+
 end

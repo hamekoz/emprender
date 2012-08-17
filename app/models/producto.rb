@@ -1,11 +1,11 @@
 class Producto < ActiveRecord::Base
   attr_accessible :descripcion,
-                  :imagen1, :delete_imagen1,
-                  :imagen2, :delete_imagen2,
-                  :imagen3, :delete_imagen3,
-                  :imagen4, :delete_imagen4,
-                  :imagen5, :delete_imagen5,
-                  :imagen6, :delete_imagen6,
+                  :imagen_1, :delete_imagen_1,
+                  :imagen_2, :delete_imagen_2,
+                  :imagen_3, :delete_imagen_3,
+                  :imagen_4, :delete_imagen_4,
+                  :imagen_5, :delete_imagen_5,
+                  :imagen_6, :delete_imagen_6,
                   :nombre, :activo,
                   :rubro_id, :rubro,
                   :tipo_de_venta, :precio,
@@ -13,41 +13,62 @@ class Producto < ActiveRecord::Base
                   :emprendimiento_id, :emprendimiento
 
   scope :activos, where(:activo => true)
-  scope :moderados, where(:moderado => true)
+  scope :aceptados, where(:aceptado => true)
+  scope :visibles, activos.merge(aceptados)
+
+  def activar
+    self.activo = true
+    self.save
+  end
+
+  def desactivar
+    self.activo = false
+    self.save
+  end
+
+  def aceptar
+    self.aceptado = true
+    self.save
+  end
+
+  def rechazar
+    self.aceptado = false
+    self.save
+  end
 
   belongs_to :emprendimiento
   belongs_to :rubro
 
   has_many :comentarios, :as => :comentable
 
-  has_attached_file :imagen1,
+  has_attached_file :imagen_1,
                     :default_url => "http://placehold.it/160x120&text=imagen",
                     :styles => { :mini => "160x120#", :normal => "360x268#" }
-  has_attached_file :imagen2,
+  has_attached_file :imagen_2,
                     :default_url => "http://placehold.it/160x120&text=imagen",
                     :styles => { :mini => "160x120#" }
-  has_attached_file :imagen3,
+  has_attached_file :imagen_3,
                     :default_url => "http://placehold.it/160x120&text=imagen",
                     :styles => { :mini => "160x120#" }
-  has_attached_file :imagen4,
+  has_attached_file :imagen_4,
                     :default_url => "http://placehold.it/160x120&text=imagen",
                     :styles => { :mini => "160x120#" }
-  has_attached_file :imagen5,
+  has_attached_file :imagen_5,
                     :default_url => "http://placehold.it/160x120&text=imagen",
                     :styles => { :mini => "160x120#" }
-  has_attached_file :imagen6,
+  has_attached_file :imagen_6,
                     :default_url => "http://placehold.it/160x120&text=imagen",
                     :styles => { :mini => "160x120#" }
 
-  attr_accessor :delete_imagen1, :delete_imagen2, :delete_imagen3,
-                :delete_imagen4, :delete_imagen5, :delete_imagen6
+  attr_accessor :delete_imagen_1, :delete_imagen_2, :delete_imagen_3,
+                :delete_imagen_4, :delete_imagen_5, :delete_imagen_6
 
-  before_validation { self.imagen1.clear if self.delete_imagen1 == '1' }
-  before_validation { self.imagen2.clear if self.delete_imagen2 == '1' }
-  before_validation { self.imagen3.clear if self.delete_imagen3 == '1' }
-  before_validation { self.imagen4.clear if self.delete_imagen4 == '1' }
-  before_validation { self.imagen5.clear if self.delete_imagen5 == '1' }
-  before_validation { self.imagen6.clear if self.delete_imagen6 == '1' }
+  before_validation { self.imagen_1.clear if self.delete_imagen_1 == '1' }
+  before_validation { self.imagen_2.clear if self.delete_imagen_2 == '1' }
+  before_validation { self.imagen_3.clear if self.delete_imagen_3 == '1' }
+  before_validation { self.imagen_4.clear if self.delete_imagen_4 == '1' }
+  before_validation { self.imagen_5.clear if self.delete_imagen_5 == '1' }
+  before_validation { self.imagen_6.clear if self.delete_imagen_6 == '1' }
 
   def tipo_de_venta_enum
     ['Ferias', 'Locales Propios', 'Mayorista','Supermercados','En su casa','Distribuidores','Vendedores','Al estado', 'Internet', 'Otros']

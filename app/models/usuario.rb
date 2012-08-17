@@ -7,6 +7,25 @@ class Usuario < ActiveRecord::Base
     lock_access! unless emprendedor?
   end
 
+  def activar
+    if current_usuario.administrador?
+      self.unlock_access!
+      self.save
+    end
+  end
+
+  def desactivar
+    if current_usuario.administrador?
+      self.lock_access!
+      self.save
+    end
+    #Previene que el administrador actual se autobloquee asegurando por lo menos un administrador activo
+    if current_usuario.lock_access?
+      current_usuario.unlock_access!
+      current_usuario.save
+    end
+  end
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :lockable, :rememberable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :lockable,

@@ -5,14 +5,14 @@ class CreateServicios < ActiveRecord::Migration
       t.references  :rubro
       t.string      :nombre
       t.string      :descripcion
-      t.has_attached_file :imagen1
-      t.has_attached_file :imagen2
-      t.has_attached_file :imagen3
-      t.has_attached_file :imagen4
-      t.has_attached_file :imagen5
-      t.has_attached_file :imagen6
       t.boolean     :activo
-	  t.boolean     :moderado
+      t.boolean     :aceptado
+      t.has_attached_file :imagen_1
+      t.has_attached_file :imagen_2
+      t.has_attached_file :imagen_3
+      t.has_attached_file :imagen_4
+      t.has_attached_file :imagen_5
+      t.has_attached_file :imagen_6
 
       t.timestamps
     end

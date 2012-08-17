@@ -3,7 +3,7 @@ class CreateComentarios < ActiveRecord::Migration
     create_table :comentarios do |t|
       t.text        :texto
       t.references  :comentable, :polymorphic => true
-      t.boolean     :moderado
+      t.boolean     :aceptado
 
       t.timestamps
     end

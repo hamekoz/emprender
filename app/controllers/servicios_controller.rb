@@ -1,6 +1,6 @@
 class ServiciosController < ApplicationController
   def index
-    @servicios = Servicio.activos.page(params[:pagina]).per(12)
+    @servicios = Servicio.visibles.page(params[:pagina]).per(12)
 
     respond_to do |format|
       format.html

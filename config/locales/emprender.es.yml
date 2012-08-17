@@ -27,3 +27,36 @@
   notice:
     create: "%{model} ha sido creado"
     update: "%{model} ha sido actualizado"
+
+  admin:
+    actions:
+      activar:
+        title: "Activar %{model_label_plural}"
+        menu: "Activar varios"
+        breadcrumb: "Activar varios"
+        bulk_link: "Activar %{model_label_plural}"
+      desactivar:
+        title: "Desactivar %{model_label_plural}"
+        menu: "Desactivar varios"
+        breadcrumb: "Desactivar varios"
+        bulk_link: "Desactivar %{model_label_plural}"
+      aceptar:
+        title: "Aceptar %{model_label_plural}"
+        menu: "Aceptar varios"
+        breadcrumb: "Aceptar varios"
+        bulk_link: "Aceptar %{model_label_plural}"
+      rechazar:
+        title: "Rechazar %{model_label_plural}"
+        menu: "Rechazar varios"
+        breadcrumb: "Rechazar varios"
+        bulk_link: "Rechazar %{model_label_plural}"
+      publicar:
+        title: "Publicar %{model_label_plural}"
+        menu: "Publicar varios"
+        breadcrumb: "Publicar varios"
+        bulk_link: "Publicar %{model_label_plural}"
+      despublicar:
+        title: "Despublicar %{model_label_plural}"
+        menu: "Despublicar varios"
+        breadcrumb: "Despublicar varios"
+        bulk_link: "Despublicar %{model_label_plural}"

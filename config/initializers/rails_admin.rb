@@ -1,21 +1,10 @@
 # RailsAdmin config file. Generated on May 14, 2012 21:35
 # See github.com/sferik/rails_admin for more informations
 
-require Rails.root.join('lib', 'rails_admin_publish.rb')
+require Rails.root.join('lib', 'rails_admin_acciones_emprender.rb')
 
 RailsAdmin.config do |config|
 
-# Register the class in lib/rails_admin_publish.rb
-module RailsAdmin
-  module Config
-    module Actions
-      class Publish < RailsAdmin::Config::Actions::Base
-        RailsAdmin::Config::Actions.register(self)
-      end
-    end
-  end
-end
- 
 config.actions do
   # root actions
   dashboard                     # mandatory
@@ -31,13 +20,56 @@ config.actions do
   delete
   history_show
   show_in_app
- 
-  # Set the custom action here
-  publish do
-    # Make it visible only for article model. You can remove this if you don't need.
+
+  # Acciones personalizadas
+  publicar do
     visible do
       bindings[:abstract_model].model.to_s == "Evento" ||
       bindings[:abstract_model].model.to_s == "Noticia"
+    end
+  end
+  despublicar do
+    visible do
+      bindings[:abstract_model].model.to_s == "Evento" ||
+      bindings[:abstract_model].model.to_s == "Noticia"
+    end
+  end
+  activar do
+    visible do
+      bindings[:abstract_model].model.to_s == "Usuario" ||
+      bindings[:abstract_model].model.to_s == "Administrador" ||
+      bindings[:abstract_model].model.to_s == "Representante" ||
+      bindings[:abstract_model].model.to_s == "Emprendedor" ||
+      bindings[:abstract_model].model.to_s == "Producto" ||
+      bindings[:abstract_model].model.to_s == "Servicio"
+    end
+  end
+  desactivar do
+    visible do
+      bindings[:abstract_model].model.to_s == "Usuario" ||
+      bindings[:abstract_model].model.to_s == "Administrador" ||
+      bindings[:abstract_model].model.to_s == "Representante" ||
+      bindings[:abstract_model].model.to_s == "Emprendedor" ||
+      bindings[:abstract_model].model.to_s == "Producto" ||
+      bindings[:abstract_model].model.to_s == "Servicio"
+    end
+  end
+  aceptar do
+    visible do
+      bindings[:abstract_model].model.to_s == "Producto" ||
+      bindings[:abstract_model].model.to_s == "Servicio" ||
+      bindings[:abstract_model].model.to_s == "Emprendimiento" ||
+      bindings[:abstract_model].model.to_s == "Perfil" ||
+      bindings[:abstract_model].model.to_s == "Comentario"
+    end
+  end
+  rechazar do
+    visible do
+      bindings[:abstract_model].model.to_s == "Producto" ||
+      bindings[:abstract_model].model.to_s == "Servicio" ||
+      bindings[:abstract_model].model.to_s == "Emprendimiento" ||
+      bindings[:abstract_model].model.to_s == "Perfil" ||
+      bindings[:abstract_model].model.to_s == "Comentario"
     end
   end
 end

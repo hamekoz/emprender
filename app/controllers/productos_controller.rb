@@ -3,7 +3,7 @@ class ProductosController < ApplicationController
   # GET /productos.json
   def index
     if params[:emprendimiento].nil?
-      @productos = Producto.activos.page(params[:pagina]).per(12)
+      @productos = Producto.visibles.page(params[:pagina]).per(12)
     else
       @productos = Emprendimiento.find(params[:emprendimiento]).productos.page(params[:pagina]).per(12)
     end

@@ -12,7 +12,18 @@ class Emprendimiento < ActiveRecord::Base
   has_many :servicios
 
   has_many :comentarios, :as => :comentable
+
   scope :empadronados, where(:empadronado => true)
+
+  def aceptar
+    self.empadronado = true
+    self.save
+  end
+
+  def rechazar
+    self.empadronado = false
+    self.save
+  end
 
   has_attached_file :logotipo, :default_url => "http://placehold.it/120&text=logo",
                                :styles => { :medium => "300x300>" }

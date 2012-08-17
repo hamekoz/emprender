@@ -91,11 +91,6 @@ es:
         title: "Historial para %{model_label} '%{object_label}'"
         menu: "Historial"
         breadcrumb: "Historial"
-      publish:
-        title: "Publicar %{model_label_plural}"
-        menu: "Publicar varios"
-        breadcrumb: "Publicar varios"
-        bulk_link: "Publicar %{model_label_plural}"
     form:
       new_model: "Nuevo"
       cancel: "Cancelar"
