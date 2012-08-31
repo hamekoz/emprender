@@ -3,22 +3,22 @@
 <div class="span6">
 <ul class="thumbnails">
         <li class="span4">
-          <%= link_to image_tag(@producto.imagen1.url(:normal)), @producto.imagen1.url, :class => "thumbnail" %>
+          <%= link_to image_tag(@producto.imagen_1.url(:normal)), @producto.imagen_1.url, :class => "thumbnail" %>
         </li>
         <li class="span2">
-          <%= link_to image_tag(@producto.imagen2.url(:mini)), @producto.imagen2.url, :class => "thumbnail" %>
+          <%= link_to image_tag(@producto.imagen_2.url(:mini)), @producto.imagen_2.url, :class => "thumbnail" %>
         </li>
         <li class="span2">
-          <%= link_to image_tag(@producto.imagen3.url(:mini)), @producto.imagen3.url, :class => "thumbnail" %>
+          <%= link_to image_tag(@producto.imagen_3.url(:mini)), @producto.imagen_3.url, :class => "thumbnail" %>
         </li>
         <li class="span2">
-          <%= link_to image_tag(@producto.imagen4.url(:mini)), @producto.imagen4.url, :class => "thumbnail" %>
+          <%= link_to image_tag(@producto.imagen_4.url(:mini)), @producto.imagen_4.url, :class => "thumbnail" %>
         </li>
         <li class="span2">
-          <%= link_to image_tag(@producto.imagen5.url(:mini)), @producto.imagen5.url, :class => "thumbnail" %>
+          <%= link_to image_tag(@producto.imagen_5.url(:mini)), @producto.imagen_5.url, :class => "thumbnail" %>
         </li>
         <li class="span2">
-          <%= link_to image_tag(@producto.imagen6.url(:mini)), @producto.imagen6.url, :class => "thumbnail" %>
+          <%= link_to image_tag(@producto.imagen_6.url(:mini)), @producto.imagen_6.url, :class => "thumbnail" %>
         </li>
 </ul>
 </div>
@@ -33,7 +33,7 @@
   </article>
 <div class="form-actions">
   <% if can? :edit, @producto %>
-    <%= link_to(edit_producto_path(@producto), :class => 'btn btn-warning') do %>
+    <%= link_to(edit_mi_emprendimiento_producto_path(@producto), :class => 'btn btn-warning') do %>
       <i class="icon-pencil"></i>
       <span>Editar</span>
     <% end %>

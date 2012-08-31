@@ -1,62 +1,34 @@
 <%= show_for @emprendimiento do |emprendimiento| %>
 <h1 class= "page-header"><%= @emprendimiento.nombre %></h1>
 <div class="row">
-<div class="span4">
+<div class="span6">
+  <%= emprendimiento.attribute :logotipo do %>
   <%= link_to image_tag(@emprendimiento.logotipo.url), @emprendimiento.logotipo.url, :class => "thumbnail" %>  
+  <% end %>
   <%= emprendimiento.association :estado, :using => :nombre %>
-  <%= emprendimiento.attribute :es_marca_registrada %>
-  <%= emprendimiento.attribute :marca %>
+  <%= emprendimiento.attribute :marca if @emprendimiento.es_marca_registrada %>
   <%= emprendimiento.association :rubro, :using => :nombre %>
-</div>
-<div class="span4">
   <%= emprendimiento.attribute :tipo %>
+  <%= emprendimiento.attribute :cantidad_de_integrantes %>
+  <%= emprendimiento.attribute :cantidad_de_clientes_actuales %>
+</div>
+<div class="span6">
   <%= emprendimiento.attribute :descripcion %>
   <%= emprendimiento.attribute :fecha_de_inicio_de_actividad %>
   <%= emprendimiento.attribute :web %>
   <%= emprendimiento.attribute :mail %>
   <%= emprendimiento.attribute :domicilio %>
   <%= emprendimiento.association :barrio, :using => :nombre %>
-</div>
-<div class="span4">
   <%= emprendimiento.attribute :telefono %>
   <%= emprendimiento.attribute :celular %>
-  <%= emprendimiento.attribute :telefono_de_mensajes %>
-  <%= emprendimiento.attribute :comentario %>
-  <%= emprendimiento.attribute :cantidad_de_clientes_actuales %>
-  <%= emprendimiento.attribute :observaciones %>
 </div>
 </div>
-<% end %>
 
+</div>
 <div class="form-actions">
-  <% if can? :read, @emprendimiento %>
-    <%= link_to(admin_emprendimiento_path(@emprendimiento), :class => 'btn btn-info') do %>
-      <i class="icon-info-sign"></i>
-      <span>Mostrar</span>
-    <% end %>
-  <% end %>
-  <% if can? :manage, @emprendimiento %>
-    <%= link_to(edit_admin_emprendimiento_path(@emprendimiento), :class => 'btn btn-warning') do %>
-      <i class="icon-pencil"></i>
-      <span>Editar</span>
-    <% end %>
-  <% end %>
-  <%= link_to "#comentarios", :class => 'btn', "data-toggle" => "modal" do %>
-    <i class="icon-comment"></i>
-    <span><%= @emprendimiento.comentarios.count %> Cometarios</span>
-  <% end %>
-  <%= link_to "#", :class => 'btn' do %>
-    <i class="icon-comment"></i>
-    <span>Productos</span>
-  <% end %>
-  <%= link_to "#", :class => 'btn' do %>
-    <i class="icon-comment"></i>
-    <span>Servicios</span>
-  <% end %>
   <%= link_to :back, :class => 'btn' do %>
     <i class="icon-arrow-left"></i>
     <span>Volver</span>
   <% end %>
 </div>
-
-<%= render 'comentarios/comentarios', :comentable => @emprendimiento %>
+<% end %>

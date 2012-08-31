@@ -1,5 +1,4 @@
 class PerfilesController < ApplicationController
-
   before_filter :authenticate_usuario!, :emprendedor?
 
   # GET /perfiles/1
@@ -21,11 +20,11 @@ class PerfilesController < ApplicationController
   # PUT /perfiles/1
   # PUT /perfiles/1.json
   def update
-    @perfil = Perfil.find(params[:id])
+    @perfil = current_usuario.perfil
 
     respond_to do |format|
       if @perfil.update_attributes(params[:perfil])
-        format.html { redirect_to @perfil, notice: t('notice.update', :model => 'Perfil') }
+        format.html { redirect_to perfil_path, notice: t('notice.update', :model => 'Perfil') }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

@@ -3,14 +3,14 @@
   <% @productos.each do |producto| %>
   <li class="span4">
     <div class="thumbnail">
-      <%= image_tag producto.imagen1.url(:mini), :class => "thumbnail" %>
+      <%= image_tag producto.imagen_1.url(:normal) %>
     <div class="caption">
       <h5><%= producto.nombre %></h5>
       <p><%= producto.descripcion %></p>
       <p>
         <%= link_to producto_path(producto), :class => "btn btn-primary" do %>
             <i class="icon-eye-open"></i>
-            <span>Ver mas...</span>
+            <span>Ver...</span>
           <% end %>
         <% if can? :read, producto %>
           <%= link_to(admin_producto_path(producto), :class => 'btn btn-info') do %>
@@ -24,7 +24,7 @@
             <span>Editar</span>
           <% end %>
         <% elsif can? :edit, producto %>
-          <%= link_to(edit_producto_path(producto), :class => 'btn btn-warning') do %>
+          <%= link_to(edit_mi_emprendimiento_producto_path(producto), :class => 'btn btn-warning') do %>
             <i class="icon-pencil"></i>
             <span>Editar</span>
           <% end %>
@@ -50,7 +50,7 @@
   </div>
 <% elsif can? :create, Producto %>
   <div class="form-actions">
-    <%= link_to(new_producto_path, :class => 'btn btn-success') do %>
+    <%= link_to(new_mi_emprendimiento_producto_path, :class => 'btn btn-success') do %>
       <i class="icon-plus"></i>
       <span>Nuevo</span>
     <% end %>

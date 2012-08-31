@@ -9,18 +9,25 @@ class Evento < ActiveRecord::Base
 
   has_many :comentarios, :as => :comentable
 
-  attr_accessible :folleto,:delete_folleto, :descripcion, :lugar, :nombre, :barrio, :organizador, :barrio_id, :organizador_id, :tipo_id, :tipo, :fecha_y_hora_de_inicio, :fecha_y_hora_de_finalizacion,
-                :autor_id, :autor
-  
+  attr_accessible :folleto,:delete_folleto, :descripcion, :lugar, :nombre, :barrio,
+                  :organizador, :barrio_id, :organizador_id, :tipo_id, :tipo,
+                  :fecha_y_hora_de_inicio, :fecha_y_hora_de_finalizacion,
+                  :autor_id, :autor
 
-  has_attached_file :folleto
+  has_attached_file :folleto,
+                    :default_url => "http://placehold.it/400x600&text=imagen",
+                    :styles => { :mini => "175x250#", :normal => "400x600#" }
   attr_accessor :delete_folleto
   before_validation { self.folleto.clear if self.delete_folleto == '1' }
 
   def resumen
    "#{tipo}. Organiza: #{organizador.nombre} el #{fecha_y_hora_de_inicio} hasta #{fecha_y_hora_de_finalizacion} a realizarse en #{lugar} barrio #{barrio.nombre}"
   end
-  
+
+  def minimapa
+    "http://maps.google.com/maps/api/staticmap?center=#{lugar},Mar%20del%20Plata,Buenos%20Aires&size=100x100&maptype=roadmap&sensor=false&markers=#{lugar},%20Mar%20del%20Plata,%20Buenos%20Aires"
+  end
+
   def mapa
     "http://maps.google.com/maps/api/staticmap?center=#{lugar},Mar%20del%20Plata,Buenos%20Aires&size=512x512&maptype=roadmap&sensor=false&markers=#{lugar},%20Mar%20del%20Plata,%20Buenos%20Aires"
   end
@@ -40,5 +47,4 @@ class Evento < ActiveRecord::Base
     self.publicado = false
     self.save
   end
-
 end

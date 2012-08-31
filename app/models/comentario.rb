@@ -5,11 +5,11 @@ class Comentario < ActiveRecord::Base
   belongs_to :comentable, :polymorphic => true
 
   def aceptar
-    self.moderado = true
+    self.aceptado = true
     self.save
   end
   def rechazar
-    self.moderado = false
+    self.aceptado = false
     self.save
   end
 end

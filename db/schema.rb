@@ -234,8 +234,6 @@ ActiveRecord::Schema.define(:version => 20120515003533) do
     t.integer  "produccion_mensual"
     t.integer  "produccion_anual"
     t.integer  "produccion_maxima"
-    t.boolean  "activo"
-    t.boolean  "aceptado"
     t.string   "imagen_1_file_name"
     t.string   "imagen_1_content_type"
     t.integer  "imagen_1_file_size"
@@ -260,6 +258,8 @@ ActiveRecord::Schema.define(:version => 20120515003533) do
     t.string   "imagen_6_content_type"
     t.integer  "imagen_6_file_size"
     t.datetime "imagen_6_updated_at"
+    t.boolean  "activo"
+    t.boolean  "aceptado"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
   end
@@ -292,8 +292,8 @@ ActiveRecord::Schema.define(:version => 20120515003533) do
     t.integer  "rubro_id"
     t.string   "nombre"
     t.string   "descripcion"
-    t.boolean  "activo"
-    t.boolean  "aceptado"
+    t.string   "tipo_de_venta"
+    t.float    "precio"
     t.string   "imagen_1_file_name"
     t.string   "imagen_1_content_type"
     t.integer  "imagen_1_file_size"
@@ -318,6 +318,8 @@ ActiveRecord::Schema.define(:version => 20120515003533) do
     t.string   "imagen_6_content_type"
     t.integer  "imagen_6_file_size"
     t.datetime "imagen_6_updated_at"
+    t.boolean  "activo"
+    t.boolean  "aceptado"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
   end

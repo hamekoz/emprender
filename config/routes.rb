@@ -1,42 +1,44 @@
 Emprender::Application.routes.draw do
 
-  root :to => "application#index"
-  match 'acerca' => "application#acerca", :as => "acerca"
+  root        :to => "application#index"
 
-  mount Ckeditor::Engine => '/ckeditor'
+  match  'acerca' => "application#acerca", :as => "acerca"
+
+
+  devise_for :usuario do
+    get "/usuario/sign_out" => "devise/sessions#destroy", :as => :destroy_usuario_session
+  end
+
+  resource :usuario,          :only => :show do
+    resources :mensajes
+  end
+
+  resource :perfil,           :except => [:create, :new, :destroy]
+
+  resource :mi_emprendimiento, :controller => 'emprendimiento', :except => [:create, :new, :destroy] do
+    resources :productos, :controller => "productos_emprendimiento"
+    resources :servicios, :controller => "servicios_emprendimiento"
+  end
+
+  resources :noticias,        :only => [:index, :show]
+  resources :eventos,         :only => [:index, :show]
+
+  resources :productos,       :only => [:index, :show]
+  resources :servicios,       :only => [:index, :show]
+
+  resources :emprendimientos, :only => [:index, :show]
+
+  resources :comentarios
+
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
-  devise_for :usuario
-
-  match "usuario"         => "usuarios#show"
-  match "perfil"          => "perfiles#show"
-  match "perfil/editar"   => "perfiles#edit", :as => "edit_perfil"
-  match "emprendimiento"  => "emprendimientos#emprendimiento", :as => "emprendimiento_usuario"
-  match "emprendimiento/editar"   => "emprendimientos#edit", :as => "edit_emprendimiento"
-
-  resources :mensajes
-  resources :noticias
-  resources :comentarios
-  resources :eventos
-  resources :emprendimientos do
-    resources :productos
-    resources :servicios
-    resources :comentarios
+  namespace :admin do
+    resources :noticias,        :path => 'noticia'
+    resources :eventos,         :path => 'evento'
+    resources :productos,       :path => 'producto'
+    resources :servicios,       :path => 'servicio'
+    resources :emprendimientos, :path => 'emprendimiento'
   end
-  resources :emprendedores
-  resources :productos
-  resources :servicios
-
-namespace :admin do
-  resources :noticias, :path => 'noticia'
-  resources :eventos, :path => 'evento'
-  resources :productos, :path => 'producto'
-  resources :servicios, :path => 'servicio'
-  resources :emprendimientos, :path => 'emprendimiento'
-end
-
-
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

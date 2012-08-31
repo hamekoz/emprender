@@ -6,7 +6,7 @@ class Producto < ActiveRecord::Base
                   :imagen_4, :delete_imagen_4,
                   :imagen_5, :delete_imagen_5,
                   :imagen_6, :delete_imagen_6,
-                  :nombre, :activo,
+                  :nombre, :activo, :aceptado,
                   :rubro_id, :rubro,
                   :tipo_de_venta, :precio,
                   :produccion_mensual, :produccion_anual, :produccion_maxima,
@@ -15,6 +15,10 @@ class Producto < ActiveRecord::Base
   scope :activos, where(:activo => true)
   scope :aceptados, where(:aceptado => true)
   scope :visibles, activos.merge(aceptados)
+
+  def visible
+    activo && aceptado
+  end
 
   def activar
     self.activo = true
@@ -42,7 +46,7 @@ class Producto < ActiveRecord::Base
   has_many :comentarios, :as => :comentable
 
   has_attached_file :imagen_1,
-                    :default_url => "http://placehold.it/160x120&text=imagen",
+                    :default_url => "http://placehold.it/360x268&text=imagen",
                     :styles => { :mini => "160x120#", :normal => "360x268#" }
   has_attached_file :imagen_2,
                     :default_url => "http://placehold.it/160x120&text=imagen",

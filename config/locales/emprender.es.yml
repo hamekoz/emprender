@@ -1,4 +1,8 @@
 ﻿es:
+  date:
+    formats:
+      default: "%d/%m/%Y"
+
   unauthorized:
     default: "No esta autorizado para acceder a esa pagina."
 

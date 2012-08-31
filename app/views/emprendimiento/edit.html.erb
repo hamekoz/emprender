@@ -1,6 +1,6 @@
 <h1 class= "page-header">Editando Emprendimiento</h1>
 
-<%= simple_form_for(@emprendimiento, :html => { :class => 'form-horizontal' }) do |emprendimiento| %>
+<%= simple_form_for(@emprendimiento, :url => mi_emprendimiento_path, :html => { :class => 'form-horizontal' }) do |emprendimiento| %>
   <%= emprendimiento.error_notification %>
 
   <div class="form-inputs well">
@@ -278,6 +278,6 @@
 
   <div class="form-actions">
     <%= emprendimiento.button :submit, :class => 'btn btn-primary' %>
-    <%= link_to 'Volver sin editar', emprendimiento_usuario_path, :class => 'btn' %>
+    <%= link_to 'Volver sin editar', mi_emprendimiento_path, :class => 'btn' %>
   </div>
 <% end %>

@@ -1,15 +1,34 @@
 <h1 class= "page-header">Catalogo de Servicios</h1>
 <ul class="thumbnails">
   <% @servicios.each do |servicio| %>
-  <li class="span3">
+  <li class="span4">
     <div class="thumbnail">
-    <img alt="" src="http://placehold.it/260x180">
+      <%= image_tag servicio.imagen_1.url(:normal) %>
     <div class="caption">
       <h5><%= servicio.nombre %></h5>
       <p><%= servicio.descripcion %></p>
       <p>
-        <%= link_to "Ver mas...", servicio_path(servicio), :class => "btn btn-primary" %>
-        <a class="btn" href="#">Comentar</a>
+        <%= link_to servicio_path(servicio), :class => "btn btn-primary" do %>
+            <i class="icon-eye-open"></i>
+            <span>Ver...</span>
+          <% end %>
+        <% if can? :read, servicio %>
+          <%= link_to(admin_servicio_path(servicio), :class => 'btn btn-info') do %>
+            <i class="icon-info-sign"></i>
+            <span>Mostrar</span>
+          <% end %>
+        <% end %>
+        <% if can? :manage, servicio %>
+          <%= link_to(edit_admin_servicio_path(servicio), :class => 'btn btn-warning') do %>
+            <i class="icon-pencil"></i>
+            <span>Editar</span>
+          <% end %>
+        <% elsif can? :edit, servicio %>
+          <%= link_to(edit_mi_emprendimiento_servicio_path(servicio), :class => 'btn btn-warning') do %>
+            <i class="icon-pencil"></i>
+            <span>Editar</span>
+          <% end %>
+        <% end %>
       </p>
     </div>
   </li>
@@ -18,5 +37,22 @@
 
 <%= paginate @servicios %>
 
-
-
+<% if can? :manage, Servicio %>
+  <div class="form-actions">
+    <%= link_to(admin_servicios_path, :class => 'btn btn-inverse') do %>
+      <i class="icon-list-alt icon-white"></i>
+      <span>Administrar</span>
+    <% end %>
+    <%= link_to(new_admin_servicio_path, :class => 'btn btn-success') do %>
+      <i class="icon-plus"></i>
+      <span>Nuevo</span>
+    <% end %>
+  </div>
+<% elsif can? :create, Servicio %>
+  <div class="form-actions">
+    <%= link_to(new_mi_emprendimiento_servicio_path, :class => 'btn btn-success') do %>
+      <i class="icon-plus"></i>
+      <span>Nuevo</span>
+    <% end %>
+  </div>
+<% end %>

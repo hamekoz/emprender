@@ -1,6 +1,6 @@
 <li class="dropdown">
   <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-    <i class="icon-user icon-white"></i>
+    <i class="icon-user"></i>
     <%= current_usuario.nombre %>
     <b class="caret"></b>
   </a>
@@ -23,7 +23,7 @@
       <% end %>
     </li>
     <li>
-      <%= link_to(emprendimiento_usuario_path) do %>
+      <%= link_to(mi_emprendimiento_path) do %>
         <i class="icon-home"></i>
         <span>Mi Emprendimiento</span>
         <% if !current_usuario.emprendimiento.completo? %>
@@ -33,13 +33,13 @@
     </li>
     <li class="divider"></li>
     <li>
-      <%= link_to(productos_path(:emprendimiento => current_usuario.emprendimiento )) do %>
+      <%= link_to(mi_emprendimiento_productos_path) do %>
         <i class="icon-home"></i>
         <span>Mis Productos</span>
       <% end %>
     </li>
     <li>
-      <%= link_to(servicios_path) do %>
+      <%= link_to(mi_emprendimiento_servicios_path) do %>
         <i class="icon-home"></i>
         <span>Mis Servicios</span>
       <% end %>
@@ -61,7 +61,7 @@
     </li>
 <% end %>
     <li>
-      <%= link_to(mensajes_path) do %>
+      <%= link_to(usuario_mensajes_path) do %>
         <i class="icon-home"></i>
         <span>Mensajes</span>
         <span class="badge badge-success">
@@ -71,7 +71,7 @@
     </li>
     <li class="divider"></li>
     <li>
-      <%= link_to(destroy_usuario_session_path, :method => :delete) do %>
+      <%= link_to(destroy_usuario_session_path, :method => 'delete') do %>
         <i class="icon-off"></i>
         <span class="">Salir</span>
       <% end %>

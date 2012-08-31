@@ -1,0 +1,65 @@
+<%= simple_form_for([:mi_emprendimiento, @servicio],
+                    :html => { :class => 'form-horizontal' }) do |servicio| %>
+  <%= servicio.error_notification %>
+
+  <div class="form-inputs well">
+    <%= servicio.input :nombre,
+                       :placeholder => 'Ej: Servicios de Jardinería',
+                       :autofocus => true %>
+    <%= servicio.association :rubro %>
+    <%= servicio.input :descripcion,
+                       :input_html => { :class => 'span6', :rows => 5 } %>
+    <%= servicio.input :tipo_de_venta,
+                       :collection => ["Dependiente", "Independiente"],
+                       :as => :radio_buttons,
+                       :item_wrapper_class => 'inline' %>
+    <%= servicio.input :precio %>
+    <%= servicio.input :produccion_mensual %>
+    <%= servicio.input :produccion_anual %>
+    <%= servicio.input :produccion_maxima %>
+    <%= servicio.input :activo %>
+    <%= servicio.input :imagen_1 do %>
+      <%= image_tag @servicio.imagen_1.url(:normal), :class => "thumbnail" %>
+    <% end %>
+    <%= servicio.input :imagen_1, :label => false %>
+    <%= servicio.input :delete_imagen_1, :as => :boolean, :label => 'Eliminar imagen' %>
+
+    <%= servicio.input :imagen_2 do %>
+      <%= image_tag @servicio.imagen_2.url(:mini), :class => "thumbnail" %>
+    <% end %>
+    <%= servicio.input :imagen_2, :label => false %>
+    <%= servicio.input :delete_imagen_2, :as => :boolean, :label => 'Eliminar imagen' %>
+
+    <%= servicio.input :imagen_3 do %>
+      <%= image_tag @servicio.imagen_3.url(:mini), :class => "thumbnail" %>
+    <% end %>
+    <%= servicio.input :imagen_3, :label => false %>
+    <%= servicio.input :delete_imagen_3, :as => :boolean, :label => 'Eliminar imagen' %>
+
+    <%= servicio.input :imagen_4 do %>
+      <%= image_tag @servicio.imagen_4.url(:mini), :class => "thumbnail" %>
+    <% end %>
+    <%= servicio.input :imagen_4, :label => false %>
+    <%= servicio.input :delete_imagen_4, :as => :boolean, :label => 'Eliminar imagen' %>
+
+    <%= servicio.input :imagen_5 do %>
+      <%= image_tag @servicio.imagen_5.url(:mini), :class => "thumbnail" %>
+    <% end %>
+    <%= servicio.input :imagen_5, :label => false %>
+    <%= servicio.input :delete_imagen_5, :as => :boolean, :label => 'Eliminar imagen' %>
+
+    <%= servicio.input :imagen_6 do %>
+      <%= image_tag @servicio.imagen_6.url(:mini), :class => "thumbnail" %>
+    <% end %>
+    <%= servicio.input :imagen_6, :label => false %>
+    <%= servicio.input :delete_imagen_6, :as => :boolean, :label => 'Eliminar imagen' %>
+  </div>
+
+  <div class="form-actions">
+    <%= servicio.button :submit, :class => 'btn btn-primary' %>
+    <%= link_to :back, :class => 'btn' do %>
+      <i class="icon-arrow-left"></i>
+      <span>Volver sin editar</span>
+    <% end %>
+  </div>
+<% end %>

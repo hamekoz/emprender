@@ -1,0 +1,36 @@
+<h1 class= "page-header">Catalogo de Productos</h1>
+<ul class="thumbnails">
+  <% @productos.each do |producto| %>
+  <li class="span4">
+    <div class="thumbnail">
+      <%= image_tag producto.imagen_1.url(:normal) %>
+    <div class="caption">
+      <h5><%= producto.nombre %></h5>
+      <p><%= producto.descripcion %></p>
+      <p>
+        <%= link_to mi_emprendimiento_producto_path(producto), :class => "btn btn-primary" do %>
+            <i class="icon-eye-open"></i>
+            <span>Ver...</span>
+          <% end %>
+        <% if can? :edit, producto %>
+          <%= link_to(edit_mi_emprendimiento_producto_path(producto), :class => 'btn btn-warning') do %>
+            <i class="icon-pencil"></i>
+            <span>Editar</span>
+          <% end %>
+        <% end %>
+      </p>
+    </div>
+  </li>
+  <% end %>
+</ul>
+
+<%= paginate @productos %>
+
+<% if can? :create, Producto %>
+  <div class="form-actions">
+    <%= link_to(new_mi_emprendimiento_producto_path, :class => 'btn btn-success') do %>
+      <i class="icon-plus"></i>
+      <span>Nuevo</span>
+    <% end %>
+  </div>
+<% end %>

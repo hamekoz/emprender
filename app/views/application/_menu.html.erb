@@ -12,37 +12,40 @@
         <ul class="nav">
           <li class="<%= 'active' if current_page?(acerca_path) %>">
             <%= link_to(acerca_path) do %>
-              <i class="icon-info-sign icon-white"></i>
+              <i class="icon-info-sign"></i>
               <span>Acerca de...</span>
             <% end %>
           </li>
-          <li class="<%= 'active' if current_page?(noticias_path) %>">
+          <li class="<%= 'active' if params[:controller] == 'noticias' %>">
             <%= link_to(noticias_path) do %>
-              <i class="icon-book icon-white"></i>
+              <i class="icon-book"></i>
               <span>Noticias</span>
             <% end %>
           </li>
-          <li class="<%= 'active' if current_page?(eventos_path) %>">
+          <li class="<%= 'active' if params[:controller] == 'eventos' %>">
             <%= link_to(eventos_path) do %>
-              <i class="icon-time icon-white"></i>
+              <i class="icon-time"></i>
               <span>Eventos</span>
             <% end %>
           </li>
-          <li class="<%= 'active' if current_page?(productos_path) %>">
+          <li class="<%= 'active' if params[:controller] == 'productos' ||
+                                     params[:controller] == 'productos_emprendimiento' %>">
             <%= link_to(productos_path) do %>
-              <i class="icon-gift icon-white"></i>
+              <i class="icon-gift"></i>
               <span>Productos</span>
             <% end %>
           </li>
-          <li class="<%= 'active' if current_page?(servicios_path) %>">
+          <li class="<%= 'active' if params[:controller] == 'servicios' ||
+                                     params[:controller] == 'servicios_emprendimiento' %>">
             <%= link_to(servicios_path) do %>
-              <i class="icon-screenshot icon-white"></i>
+              <i class="icon-screenshot"></i>
               <span>Servicios</span>
             <% end %>
           </li>
-          <li class="<%= 'active' if current_page?(emprendimientos_path) %>">
+          <li class="<%= 'active' if params[:controller] == 'emprendimiento' ||
+                                     params[:controller] == 'emprendimientos' %>">
             <%= link_to(emprendimientos_path) do %>
-              <i class="icon-road icon-white"></i>
+              <i class="icon-road"></i>
               <span>Emprendimientos</span>
             <% end %>
           </li>

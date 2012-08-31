@@ -1,0 +1,48 @@
+<%= show_for @producto do |producto| %>
+<div class="row">
+  <div class="span6">
+    <ul class="thumbnails">
+      <li class="span4">
+        <%= link_to image_tag(@producto.imagen_1.url(:normal)), @producto.imagen_1.url, :class => "thumbnail" %>
+      </li>
+      <li class="span2">
+        <%= link_to image_tag(@producto.imagen_2.url(:mini)), @producto.imagen_2.url, :class => "thumbnail" %>
+      </li>
+      <li class="span2">
+        <%= link_to image_tag(@producto.imagen_3.url(:mini)), @producto.imagen_3.url, :class => "thumbnail" %>
+      </li>
+      <li class="span2">
+        <%= link_to image_tag(@producto.imagen_4.url(:mini)), @producto.imagen_4.url, :class => "thumbnail" %>
+      </li>
+      <li class="span2">
+        <%= link_to image_tag(@producto.imagen_5.url(:mini)), @producto.imagen_5.url, :class => "thumbnail" %>
+      </li>
+      <li class="span2">
+        <%= link_to image_tag(@producto.imagen_6.url(:mini)), @producto.imagen_6.url, :class => "thumbnail" %>
+      </li>
+    </ul>
+  </div>
+  <div class="span6">
+    <article>
+      <p>
+       <h4><%= @producto.rubro.nombre %></font></h4>
+         <h1><%= @producto.nombre %></h1>
+      </p>
+      <%= producto.attribute :descripcion %>
+      <%= producto.attribute :precio %>
+    </article>
+  <div class="form-actions">
+    <% if can? :edit, @producto %>
+      <%= link_to(edit_mi_emprendimiento_producto_path(@producto), :class => 'btn btn-warning') do %>
+        <i class="icon-pencil"></i>
+        <span>Editar</span>
+      <% end %>
+    <% end %>
+    <%= link_to :back, :class => 'btn' do %>
+      <i class="icon-arrow-left"></i>
+      <span>Volver</span>
+    <% end %>
+  </div>
+  </div>
+</div>
+<% end %>

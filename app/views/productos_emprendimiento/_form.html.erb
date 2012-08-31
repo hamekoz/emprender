@@ -1,0 +1,65 @@
+<%= simple_form_for([:mi_emprendimiento, @producto],
+                    :html => { :class => 'form-horizontal' }) do |producto| %>
+  <%= producto.error_notification %>
+
+  <div class="form-inputs well">
+    <%= producto.input :nombre,
+                       :placeholder => 'Ej: Galletitas caseras',
+                       :autofocus => true %>
+    <%= producto.association :rubro %>
+    <%= producto.input :descripcion,
+                       :input_html => { :class => 'span6', :rows => 5 } %>
+    <%= producto.input :tipo_de_venta,
+                       :collection => ["Dependiente", "Independiente"],
+                       :as => :radio_buttons,
+                       :item_wrapper_class => 'inline' %>
+    <%= producto.input :precio %>
+    <%= producto.input :produccion_mensual %>
+    <%= producto.input :produccion_anual %>
+    <%= producto.input :produccion_maxima %>
+    <%= producto.input :activo %>
+    <%= producto.input :imagen_1 do %>
+      <%= image_tag @producto.imagen_1.url(:normal), :class => "thumbnail" %>
+    <% end %>
+    <%= producto.input :imagen_1, :label => false %>
+    <%= producto.input :delete_imagen_1, :as => :boolean, :label => 'Eliminar imagen' %>
+
+    <%= producto.input :imagen_2 do %>
+      <%= image_tag @producto.imagen_2.url(:mini), :class => "thumbnail" %>
+    <% end %>
+    <%= producto.input :imagen_2, :label => false %>
+    <%= producto.input :delete_imagen_2, :as => :boolean, :label => 'Eliminar imagen' %>
+
+    <%= producto.input :imagen_3 do %>
+      <%= image_tag @producto.imagen_3.url(:mini), :class => "thumbnail" %>
+    <% end %>
+    <%= producto.input :imagen_3, :label => false %>
+    <%= producto.input :delete_imagen_3, :as => :boolean, :label => 'Eliminar imagen' %>
+
+    <%= producto.input :imagen_4 do %>
+      <%= image_tag @producto.imagen_4.url(:mini), :class => "thumbnail" %>
+    <% end %>
+    <%= producto.input :imagen_4, :label => false %>
+    <%= producto.input :delete_imagen_4, :as => :boolean, :label => 'Eliminar imagen' %>
+
+    <%= producto.input :imagen_5 do %>
+      <%= image_tag @producto.imagen_5.url(:mini), :class => "thumbnail" %>
+    <% end %>
+    <%= producto.input :imagen_5, :label => false %>
+    <%= producto.input :delete_imagen_5, :as => :boolean, :label => 'Eliminar imagen' %>
+
+    <%= producto.input :imagen_6 do %>
+      <%= image_tag @producto.imagen_6.url(:mini), :class => "thumbnail" %>
+    <% end %>
+    <%= producto.input :imagen_6, :label => false %>
+    <%= producto.input :delete_imagen_6, :as => :boolean, :label => 'Eliminar imagen' %>
+  </div>
+
+  <div class="form-actions">
+    <%= producto.button :submit, :class => 'btn btn-primary' %>
+    <%= link_to :back, :class => 'btn' do %>
+      <i class="icon-arrow-left"></i>
+      <span>Volver sin editar</span>
+    <% end %>
+  </div>
+<% end %>

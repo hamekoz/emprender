@@ -1,6 +1,6 @@
 <h1 class= "page-header">Editando Perfil</h1>
 
-<%= simple_form_for(@perfil, :html => { :class => 'form-horizontal' }) do |perfil| %>
+<%= simple_form_for(@perfil, :url => perfil_path, :html => { :class => 'form-horizontal' }) do |perfil| %>
   <%= perfil.error_notification %>
 
   <div class="form-inputs well">

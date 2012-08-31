@@ -1,5 +1,5 @@
 class UsuariosController < ApplicationController
-before_filter :authenticate_usuario!
+  before_filter :authenticate_usuario!
 
   # GET /usuarios/1
   # GET /usuarios/1.json
