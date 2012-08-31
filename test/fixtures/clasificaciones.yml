@@ -1,6 +1,6 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-Normal:
-  nombre: Micro emprendimientos
-  descripcion: enprendimientos de tipo pequeños
-  codigo: odigo1
+1112:
+  codigo: "1112"
+  nombre: "Clasificacion"
+  descripcion: "Cultivo de cereales forrajeros"

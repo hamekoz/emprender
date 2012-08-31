@@ -1,13 +1,27 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-normal:
- nombre: activo
- descripcion: estado activo
+activo:
+  id: 1
+  nombre: Activo
+  descripcion: "Emprendimiento en actividad"
 
-sin_nombre:
- nombre: 
- descripcion: estado inactivo
+inactivo:
+  id: 2
+  nombre: Inactivo
+  descripcion: "Emprendimiento fuera de actividad"
 
-sin_descripcion:
- nombre: sin autorizar
- descripcion:
+gestion:
+  id: 3
+  nombre: Gestion
+  descripcion: "Emprendimiento en gestion aun no activo"
+
+extinguido:
+  id: 4
+  nombre: Extinguido
+  descripcion: "Emprendimiento que desaparecio y dejo de existir"
+
+prueba:
+  id: 5
+  nombre: A Prueba
+  descripcion: "Emprendimiento que se encuentra en periodo de pruebas"
+
