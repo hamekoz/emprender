@@ -17,6 +17,9 @@ gem 'date_validator'
 
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
+gem 'jquery-rails'
+gem 'yaml_db'
+
 # Gemas usadas solo en desarrollo
 group :development, :test do
   platforms :ruby_19 do
@@ -26,7 +29,6 @@ group :development, :test do
   end
   gem 'sqlite3'
   gem 'heroku'
-  gem 'yaml_db'
 end
 
 # Gemas necesarias para produccion
@@ -48,8 +50,6 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-
-gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
