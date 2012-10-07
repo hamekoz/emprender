@@ -15,3 +15,14 @@
 //= require bootstrap
 //= require jquery-ui
 //= require_tree .
+
+$('a').tooltip();
+
+$('#logo').popover({
+  trigger: 'hover',
+  title: 'Autores',
+  html: true,
+  content: '<ul><li>Claudio Rodrigo Pereyra Diaz</li><li>Adriel Hernán Caramichos</li><li>Universidad Fasta</li></ul>',
+  placement: 'bottom',
+  delay: { show: 750, hide: 100 }
+});
