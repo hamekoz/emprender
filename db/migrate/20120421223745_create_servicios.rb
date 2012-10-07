@@ -4,7 +4,7 @@ class CreateServicios < ActiveRecord::Migration
       t.references        :emprendimiento
       t.references        :rubro
       t.string            :nombre
-      t.string            :descripcion
+      t.text              :descripcion
       t.string            :tipo_de_venta
       t.float             :precio
       t.has_attached_file :imagen_1

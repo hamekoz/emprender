@@ -291,7 +291,7 @@ ActiveRecord::Schema.define(:version => 20120515003533) do
     t.integer  "emprendimiento_id"
     t.integer  "rubro_id"
     t.string   "nombre"
-    t.string   "descripcion"
+    t.text     "descripcion"
     t.string   "tipo_de_venta"
     t.float    "precio"
     t.string   "imagen_1_file_name"

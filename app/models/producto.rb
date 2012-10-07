@@ -16,6 +16,18 @@ class Producto < ActiveRecord::Base
   scope :aceptados, where(:aceptado => true)
   scope :visibles, activos.merge(aceptados)
 
+#Validaciones
+  validates :nombre,
+            :presence => true
+  validates :rubro,
+            :presence => true
+  validates :descripcion,
+            :presence => true
+  validates :tipo_de_venta,
+            :presence => true
+  validates :precio,
+            :presence => true
+
   def visible
     activo && aceptado
   end

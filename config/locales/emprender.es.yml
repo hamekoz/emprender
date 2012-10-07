@@ -31,6 +31,7 @@
   notice:
     create: "%{model} ha sido creado"
     update: "%{model} ha sido actualizado"
+    destroy: "%{model} ha sido eliminado"
 
   admin:
     actions:
