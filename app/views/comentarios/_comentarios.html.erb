@@ -1,16 +1,20 @@
-<div id="comentarios" class="modal hide fade">
-  <div class="modal-header">
-    <h3>Comentarios</h3>
+<div id="comentarios" class="collapse">
+  <h3 class="page-header">Comentarios</h3>
+  <div id="lista_de_comentarios">
+    <%= render comentable.comentarios.aceptados %>
   </div>
-  <div class="modal-body">
-    <div id="nuevo_comentario"></div>
-    <%= render comentable.comentarios %>
+
+<%= form_for(comentable.comentarios.new, :remote => true, :html => { :class => 'form-inline well' }) do |f| %>
+
+    <%= f.text_field :texto, :class => 'span6' %>
+    <%= f.text_field :comentable_id, :type => 'hidden' %>
+    <%= f.text_field :comentable_type, :type => 'hidden' %>
+
+    <%= f.submit "Comentar", :id => 'comentar', :format => :js, :remote => true, :class => "btn btn-primary" %>
+
+<% end %>
+    <p class="text-info">
+    <span class="label label-info">Nota:</span>
+    Los comentarios deberan ser aprobados por un moderador antes de ser visibles de forma publica y permamente.
+    </p>
   </div>
-  <div class="modal-footer">
-    <%= link_to 'Nuevo comentario', new_comentario_path(:format => :js), :remote => true, :class => "btn btn-primary" %>
-    <a href="#" class="btn" data-dismiss="modal">
-      <i class="icon-remove"></i>
-      <span>Cerrar</span>
-    </a>
-  </div>
-</div>

@@ -38,11 +38,27 @@
         <span>Editar</span>
       <% end %>
     <% end %>
+
+    <% if can? :destroy, @producto %>
+      <%= link_to(mi_emprendimiento_producto_path(@producto),
+                  :class => 'btn btn-danger',
+                  rel: 'tooltip', title: 'Eliminar',
+                  method: :delete, data: { confirm: '¿Esta seguro?' }) do %>
+        <i class="icon-trash"></i>
+      <% end %>
+    <% end %>
+
+    <button type="button" class="btn" data-toggle="collapse" data-target="#comentarios">
+      <i class="icon-comment"></i>
+      <span id="contador_comentarios"><%= @producto.comentarios.aceptados.count %> Comentarios</span>
+    </button>
+
     <%= link_to :back, :class => 'btn' do %>
       <i class="icon-arrow-left"></i>
       <span>Volver</span>
     <% end %>
   </div>
-  </div>
 </div>
 <% end %>
+
+<%= render 'comentarios/comentarios', :comentable => @producto %>

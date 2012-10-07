@@ -91,9 +91,17 @@
     <i class="icon-edit icon-white"></i>
     <span>Editar</span>
   <% end %>
+
+    <button type="button" class="btn" data-toggle="collapse" data-target="#comentarios">
+      <i class="icon-comment"></i>
+      <span id="contador_comentarios"><%= @emprendimiento.comentarios.aceptados.count %> Comentarios</span>
+    </button>
+
   <%= link_to :back, :class => 'btn' do %>
     <i class="icon-arrow-left"></i>
     <span>Volver</span>
   <% end %>
 </div>
 <% end %>
+
+<%= render 'comentarios/comentarios', :comentable => @emprendimiento %>

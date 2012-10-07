@@ -1,48 +1,55 @@
 <%= show_for @servicio do |servicio| %>
 <div class="row">
-<div class="span6">
-<ul class="thumbnails">
-        <li class="span4">
-          <%= link_to image_tag(@servicio.imagen_1.url(:normal)), @servicio.imagen_1.url, :class => "thumbnail" %>
-        </li>
-        <li class="span2">
-          <%= link_to image_tag(@servicio.imagen_2.url(:mini)), @servicio.imagen_2.url, :class => "thumbnail" %>
-        </li>
-        <li class="span2">
-          <%= link_to image_tag(@servicio.imagen_3.url(:mini)), @servicio.imagen_3.url, :class => "thumbnail" %>
-        </li>
-        <li class="span2">
-          <%= link_to image_tag(@servicio.imagen_4.url(:mini)), @servicio.imagen_4.url, :class => "thumbnail" %>
-        </li>
-        <li class="span2">
-          <%= link_to image_tag(@servicio.imagen_5.url(:mini)), @servicio.imagen_5.url, :class => "thumbnail" %>
-        </li>
-        <li class="span2">
-          <%= link_to image_tag(@servicio.imagen_6.url(:mini)), @servicio.imagen_6.url, :class => "thumbnail" %>
-        </li>
-</ul>
-</div>
-<div class="span6">
-  <article>
-    <p>
-     <h4><%= @servicio.rubro.nombre %></font></h4>
-       <h1><%= @servicio.nombre %></h1>
-    </p>
-    <%= servicio.attribute :descripcion %>
-    <%= servicio.attribute :precio %>
-  </article>
-<div class="form-actions">
-  <% if can? :edit, @servicio %>
-    <%= link_to(edit_mi_emprendimiento_servicio_path(@servicio), :class => 'btn btn-warning') do %>
-      <i class="icon-pencil"></i>
-      <span>Editar</span>
+  <div class="span6">
+    <ul class="thumbnails">
+      <li class="span4">
+        <%= link_to image_tag(@servicio.imagen_1.url(:normal)), @servicio.imagen_1.url, :class => "thumbnail" %>
+      </li>
+      <li class="span2">
+        <%= link_to image_tag(@servicio.imagen_2.url(:mini)), @servicio.imagen_2.url, :class => "thumbnail" %>
+      </li>
+      <li class="span2">
+        <%= link_to image_tag(@servicio.imagen_3.url(:mini)), @servicio.imagen_3.url, :class => "thumbnail" %>
+      </li>
+      <li class="span2">
+        <%= link_to image_tag(@servicio.imagen_4.url(:mini)), @servicio.imagen_4.url, :class => "thumbnail" %>
+      </li>
+      <li class="span2">
+        <%= link_to image_tag(@servicio.imagen_5.url(:mini)), @servicio.imagen_5.url, :class => "thumbnail" %>
+      </li>
+      <li class="span2">
+        <%= link_to image_tag(@servicio.imagen_6.url(:mini)), @servicio.imagen_6.url, :class => "thumbnail" %>
+      </li>
+    </ul>
+  </div>
+  <div class="span6">
+    <article>
+      <p>
+       <h4><%= @servicio.rubro.nombre %></font></h4>
+         <h1><%= @servicio.nombre %></h1>
+      </p>
+      <%= servicio.attribute :descripcion %>
+      <%= servicio.attribute :precio %>
+    </article>
+  <div class="form-actions">
+    <% if can? :edit, @servicio %>
+      <%= link_to(edit_mi_emprendimiento_servicio_path(@servicio), :class => 'btn btn-warning') do %>
+        <i class="icon-pencil"></i>
+        <span>Editar</span>
+      <% end %>
     <% end %>
-  <% end %>
+
+    <button type="button" class="btn" data-toggle="collapse" data-target="#comentarios">
+      <i class="icon-comment"></i>
+      <span id="contador_comentarios"><%= @servicio.comentarios.aceptados.count %> Comentarios</span>
+    </button>
+
   <%= link_to :back, :class => 'btn' do %>
     <i class="icon-arrow-left"></i>
     <span>Volver</span>
   <% end %>
-</div>
+    </div>
   </div>
 <% end %>
 
+<%= render 'comentarios/comentarios', :comentable => @servicio %>

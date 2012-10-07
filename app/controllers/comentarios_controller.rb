@@ -4,15 +4,17 @@ class ComentariosController < ApplicationController
   # POST /comentarios.json
   def create
     @comentario = Comentario.new(params[:comentario])
+    @comentario.aceptado = false
 
-    respond_to do |format|
-      if @comentario.save
-        format.html { redirect_to @comentario, notice: t('notice.create', :model => 'Comentario') }
-        format.json { render json: @comentario, status: :created, location: @comentario }
+    if @comentario.save
+      respond_to do |format|
+        format.html { redirect_to :back, :notice => "Comentario agregado" }
         format.js
-      else
-        format.html { render action: "new" }
-        format.json { render json: @comentario.errors, status: :unprocessable_entity }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to :back, :alert => "Error al agregar el comentario" }
+#        format.js { render 'fail_create.js.erb' }
       end
     end
   end

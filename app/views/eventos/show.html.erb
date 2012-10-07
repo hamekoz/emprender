@@ -44,10 +44,12 @@
       <span>Editar</span>
     <% end %>
   <% end %>
-  <%= link_to "#comentarios", :class => 'btn', "data-toggle" => "modal" do %>
+
+  <button type="button" class="btn" data-toggle="collapse" data-target="#comentarios">
     <i class="icon-comment"></i>
-    <span><%= @evento.comentarios.count %> Cometarios</span>
-  <% end %>
+    <span id="contador_comentarios"><%= @evento.comentarios.aceptados.count %> Comentarios</span>
+  </button>
+
   <%= link_to :back, :class => 'btn' do %>
     <i class="icon-arrow-left"></i>
     <span>Volver</span>

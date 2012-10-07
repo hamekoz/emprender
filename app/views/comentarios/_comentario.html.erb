@@ -1,5 +1,3 @@
 <%= div_for comentario, :class => (comentario.aceptado ? "alert alert-success" : "alert") do %>
   <%= comentario.created_at %>: <%= comentario.texto %>
 <% end %>
-
-
