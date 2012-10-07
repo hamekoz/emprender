@@ -10,9 +10,7 @@
     <%= producto.input :descripcion,
                        :input_html => { :class => 'span6', :rows => 5 } %>
     <%= producto.input :tipo_de_venta,
-                       :collection => ["Dependiente", "Independiente"],
-                       :as => :radio_buttons,
-                       :item_wrapper_class => 'inline' %>
+                       :collection => @producto.tipo_de_venta_enum %>
     <%= producto.input :precio %>
     <%= producto.input :produccion_mensual %>
     <%= producto.input :produccion_anual %>
@@ -59,7 +57,7 @@
     <%= producto.button :submit, :class => 'btn btn-primary' %>
     <%= link_to :back, :class => 'btn' do %>
       <i class="icon-arrow-left"></i>
-      <span>Volver sin editar</span>
+      <span>Volver</span>
     <% end %>
   </div>
 <% end %>

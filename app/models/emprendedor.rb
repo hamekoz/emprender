@@ -4,6 +4,7 @@ class Emprendedor < Usuario
   def inicializar
     self.perfil = Perfil.new
     self.emprendimiento = Emprendimiento.new
+    self.save
   end
 
   has_one :perfil

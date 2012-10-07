@@ -10,13 +10,8 @@
     <%= servicio.input :descripcion,
                        :input_html => { :class => 'span6', :rows => 5 } %>
     <%= servicio.input :tipo_de_venta,
-                       :collection => ["Dependiente", "Independiente"],
-                       :as => :radio_buttons,
-                       :item_wrapper_class => 'inline' %>
+                       :collection => @servicio.tipo_de_venta_enum %>
     <%= servicio.input :precio %>
-    <%= servicio.input :produccion_mensual %>
-    <%= servicio.input :produccion_anual %>
-    <%= servicio.input :produccion_maxima %>
     <%= servicio.input :activo %>
     <%= servicio.input :imagen_1 do %>
       <%= image_tag @servicio.imagen_1.url(:normal), :class => "thumbnail" %>
@@ -59,7 +54,7 @@
     <%= servicio.button :submit, :class => 'btn btn-primary' %>
     <%= link_to :back, :class => 'btn' do %>
       <i class="icon-arrow-left"></i>
-      <span>Volver sin editar</span>
+      <span>Volver</span>
     <% end %>
   </div>
 <% end %>
