@@ -14,6 +14,7 @@ gem 'kaminari'
 gem 'paperclip'
 gem 'ckeditor'
 gem 'date_validator'
+gem "ransack"
 
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 

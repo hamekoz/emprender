@@ -3,7 +3,8 @@ class NoticiasController < ApplicationController
   # GET /noticias
   # GET /noticias.json
   def index
-    @noticias = Noticia.publicadas.page(params[:pagina]).per(6)
+    @q = Noticia.publicadas.search(params[:q])
+    @noticias = @q.result(:distinct => true).publicadas.page(params[:pagina]).per(6)
 
     respond_to do |format|
       format.html

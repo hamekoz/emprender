@@ -1,4 +1,7 @@
-<h1 class= "page-header">Catalogo de Productos</h1>
+<h1 class= "page-header">Mis Productos</h1>
+<div id="busqueda">
+<%= render 'busqueda' %>
+</div>
 <ul class="thumbnails">
   <% @productos.each do |producto| %>
   <li class="span4">
@@ -18,6 +21,14 @@
             <span>Editar</span>
           <% end %>
         <% end %>
+        <% if can? :destroy, producto %>
+          <%= link_to(mi_emprendimiento_producto_path(producto),
+                      :class => 'btn btn-danger',
+                      rel: 'tooltip', title: 'Eliminar',
+                      method: :delete, data: { confirm: 'Esta seguro?'} ) do %>
+            <i class="icon-trash"></i>
+        <% end %>
+      <% end %>
       </p>
     </div>
   </li>

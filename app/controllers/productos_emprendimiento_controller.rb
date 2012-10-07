@@ -4,7 +4,8 @@ class ProductosEmprendimientoController < ApplicationController
   # GET /productos
   # GET /productos.json
   def index
-    @productos = productos.page(params[:pagina]).per(6)
+    @q = productos.search(params[:q])
+    @productos = @q.result(:distinct => true).page(params[:pagina]).per(6)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -83,7 +84,8 @@ class ProductosEmprendimientoController < ApplicationController
     @producto.destroy
 
     respond_to do |format|
-      format.html { redirect_to productos_url }
+      format.html { redirect_to mi_emprendimiento_productos_url,
+                      notice: t('notice.destroy', :model => 'Producto') }
       format.json { head :no_content }
     end
   end

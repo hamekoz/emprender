@@ -1,0 +1,25 @@
+<%= search_form_for(@q, :html => { :class => 'form-search' }) do |f| %>
+  <strong>Ordenar por:</strong>
+  <%= sort_link @q, :nombre, {}, :class => 'label' %>
+  <%= sort_link @q, :marca, {}, :class => 'label' %>
+  <%= sort_link @q, :descripcion, {}, :class => 'label' %>
+
+  <strong>Filtro:</strong>
+  <%= f.select :rubro_id_eq, 
+                Rubro.all.map{ |r| [r.nombre, r.id] }, 
+                { :include_blank => "Todos los rubros" },
+                { :onchange => "submit()" } %>
+
+  <div class="input-append pull-right">
+    <%= f.text_field :nombre_or_marca_or_descripcion_cont,
+                     :class=> 'search-query',
+                     :placeholder => 'Nombre, Marca o Descripcion' %>
+    <%= link_to(emprendimientos_path, :type => 'button',
+                                      :class => 'btn btn-comun',
+                                      rel: 'tooltip', title: 'Ver todos',) do %>
+      <i class="icon-remove-sign"></i>
+    <% end %>
+    <%= f.button "Buscar", :class=> 'btn' %>
+  </div>
+<% end %>
+<hr>

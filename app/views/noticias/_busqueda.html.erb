@@ -1,0 +1,19 @@
+<%= search_form_for(@q, :html => { :class => 'form-search' }) do |f| %>
+  <strong>Ordenar por:</strong>
+  <%= sort_link @q, :titulo, {}, :class => 'label' %>
+  <%= sort_link @q, :resumen, {}, :class => 'label' %>
+  <%= sort_link @q, :updated_at, "Fecha de Publicación", {}, :class => 'label' %>
+
+  <div class="input-append pull-right">
+    <%= f.text_field :titulo_or_resumen_or_texto_cont,
+                     :class=> 'search-query',
+                     :placeholder => 'Titulo, Resumen o Texto' %>
+    <%= link_to(noticias_path, :type => 'button',
+                               :class => 'btn btn-comun',
+                               rel: 'tooltip', title: 'Ver todos',) do %>
+      <i class="icon-remove-sign"></i>
+    <% end %>
+    <%= f.button "Buscar", :class=> 'btn' %>
+  </div>
+<% end %>
+<hr>

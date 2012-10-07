@@ -3,7 +3,8 @@ class EmprendimientosController < ApplicationController
   # GET /emprendimientos
   # GET /emprendimientos.json
   def index
-    @emprendimientos = Emprendimiento.empadronados.page(params[:pagina]).per(6)
+    @q = Emprendimiento.empadronados.search(params[:q])
+    @emprendimientos = @q.result(:distinct => true).empadronados.page(params[:pagina]).per(6)
 
     respond_to do |format|
       format.html # index.html.erb

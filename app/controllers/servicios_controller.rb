@@ -3,7 +3,8 @@ class ServiciosController < ApplicationController
   # GET /servicios
   # GET /servicios.json
   def index
-    @servicios = Servicio.page(params[:pagina]).per(6)
+    @q = Servicio.visibles.search(params[:q])
+    @servicios = @q.result(:distinct => true).visibles.page(params[:pagina]).per(6)
 
     respond_to do |format|
       format.html # index.html.erb

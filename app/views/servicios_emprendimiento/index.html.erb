@@ -1,4 +1,5 @@
 <h1 class= "page-header">Mis Servicios</h1>
+<%= render 'busqueda' %>
 <ul class="thumbnails">
   <% @servicios.each do |servicio| %>
   <li class="span4">
@@ -18,6 +19,14 @@
             <span>Editar</span>
           <% end %>
         <% end %>
+        <% if can? :destroy, servicio %>
+          <%= link_to(mi_emprendimiento_servicio_path(servicio),
+                      :class => 'btn btn-danger',
+                      rel: 'tooltip', title: 'Eliminar',
+                      method: :delete, data: { confirm: '¿Esta seguro?' }) do %>
+            <i class="icon-trash"></i>
+        <% end %>
+      <% end %>
       </p>
     </div>
   </li>

@@ -3,7 +3,8 @@ class ProductosController < ApplicationController
   # GET /productos
   # GET /productos.json
   def index
-    @productos = Producto.visibles.page(params[:pagina]).per(6)
+    @q = Producto.visibles.search(params[:q])
+    @productos = @q.result(:distinct => true).visibles.page(params[:pagina]).per(6)
 
     respond_to do |format|
       format.html # index.html.erb

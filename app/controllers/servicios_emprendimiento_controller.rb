@@ -4,7 +4,8 @@ class ServiciosEmprendimientoController < ApplicationController
   # GET /servicios
   # GET /servicios.json
   def index
-    @servicios = servicios.page(params[:pagina]).per(6)
+    @q = servicios.search(params[:q])
+    @servicios = @q.result(:distinct => true).page(params[:pagina]).per(6)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -46,9 +47,9 @@ class ServiciosEmprendimientoController < ApplicationController
 
     respond_to do |format|
       if @servicio.save
-        format.html { redirect_to @servicio,
+        format.html { redirect_to mi_emprendimiento_producto_path(@servicio),
                         notice: t('notice.create', :model => 'Servicio') }
-        format.json { render json: @servicio,
+        format.json { render json: mi_emprendimiento_producto_path(@servicio),
                         status: :created, location: @servicio }
       else
         format.html { render action: "new" }
@@ -83,7 +84,8 @@ class ServiciosEmprendimientoController < ApplicationController
     @servicio.destroy
 
     respond_to do |format|
-      format.html { redirect_to servicios_url }
+      format.html { redirect_to mi_emprendimiento_servicios_url,
+                      notice: t('notice.destroy', :model => 'Servicio') }
       format.json { head :no_content }
     end
   end
