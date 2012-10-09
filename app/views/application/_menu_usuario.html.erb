@@ -24,7 +24,7 @@
     </li>
     <li>
       <%= link_to(mi_emprendimiento_path) do %>
-        <i class="icon-home"></i>
+        <i class="icon-road"></i>
         <span>Mi Emprendimiento</span>
         <% if !current_usuario.emprendimiento.completo? %>
           <span class="label label-important">Incompleto</span>
@@ -34,24 +34,17 @@
     <li class="divider"></li>
     <li>
       <%= link_to(mi_emprendimiento_productos_path) do %>
-        <i class="icon-home"></i>
+        <i class="icon-gift"></i>
         <span>Mis Productos</span>
       <% end %>
     </li>
     <li>
       <%= link_to(mi_emprendimiento_servicios_path) do %>
-        <i class="icon-home"></i>
+        <i class="icon-screenshot"></i>
         <span>Mis Servicios</span>
       <% end %>
     </li>
     <li class="divider"></li>
-    <li>
-      <%= link_to(root_path) do %>
-        <i class="icon-home"></i>
-        <span>Comentarios</span>
-        <span class="badge badge-info">25</span>
-      <% end %>
-    </li>
 <% else %>
     <li>
       <%= link_to(rails_admin_path) do %>
@@ -59,10 +52,16 @@
         <span>Administrar</span>
       <% end %>
     </li>
+    <li>
+      <%= link_to(root_path) do %>
+        <i class="icon-file"></i>
+        <span>Reportes</span>
+      <% end %>
+    </li>
 <% end %>
     <li>
       <%= link_to(usuario_mensajes_path) do %>
-        <i class="icon-home"></i>
+        <i class="icon-envelope"></i>
         <span>Mensajes</span>
         <span class="badge badge-success">
           <%= current_usuario.mensajes_recibidos.count %>

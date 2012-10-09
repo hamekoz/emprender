@@ -1,5 +1,4 @@
-<%= search_form_for(@q, :url => mi_emprendimiento_productos_path,
-                        :html => { :class => 'form-search' }) do |f| %>
+<%= search_form_for(@q, :html => { :class => 'form-search' }) do |f| %>
   <strong>Ordenar por:</strong>
   <%= sort_link @q, :tipo, {}, :class => 'label' %>
   <%= sort_link @q, :nombre, {}, :class => 'label' %>

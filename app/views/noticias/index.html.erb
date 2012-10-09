@@ -1,5 +1,8 @@
 <h1 class= "page-header">Cartelera de Noticias</h1>
 <%= render 'busqueda' %>
+<% if @noticias.count == 0 %>
+  <h3 class="centrado">No hay noticias que coincidan con su busqueda</h3>
+<% end %>
 <ul class="thumbnails">
 <% @noticias.each do |noticia| %>
   <li class="span6">

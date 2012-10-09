@@ -110,3 +110,7 @@ img {
 .form-search .input-append .btn-comun {
   border-radius: 0 0 0 0;
 }
+
+.centrado {
+  text-align: center;
+}

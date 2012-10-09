@@ -1,6 +1,9 @@
 <h1 class= "page-header">Mis Productos</h1>
 <div id="busqueda">
 <%= render 'busqueda' %>
+<% if @productos.count == 0 %>
+  <h3 class="centrado">No hay productos que coincidan con su busqueda</h3>
+<% end %>
 </div>
 <ul class="thumbnails">
   <% @productos.each do |producto| %>
