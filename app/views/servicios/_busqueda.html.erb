@@ -1,6 +1,6 @@
 <%= search_form_for(@q, :html => { :class => 'form-search' }) do |f| %>
   <strong>Ordenar por:</strong>
-  <%= sort_link @q, :titulo, {}, :class => 'label' %>
+  <%= sort_link @q, :nombre, {}, :class => 'label' %>
   <%= sort_link @q, :descripcion, {}, :class => 'label' %>
   <%= sort_link @q, :precio, {}, :class => 'label' %>
 
