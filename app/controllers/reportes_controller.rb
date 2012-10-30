@@ -1,4 +1,5 @@
 class ReportesController < ApplicationController
+  before_filter :authenticate_usuario!, :administrador_o_representante?
 
   # GET /reportes
   def index

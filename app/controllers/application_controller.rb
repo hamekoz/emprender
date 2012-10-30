@@ -22,8 +22,10 @@ class ApplicationController < ActionController::Base
   end
   
   def emprendedor?
-    if !current_usuario.emprendedor?
-      redirect_to root_path
-    end
+    redirect_to root_path unless current_usuario.emprendedor?
+  end
+  
+  def administrador_o_representante?
+      redirect_to root_path unless (current_usuario.administrador? || current_usuario.representante?)
   end
 end

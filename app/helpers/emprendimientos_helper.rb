@@ -1,2 +1,0 @@
-module EmprendimientosHelper
-end
