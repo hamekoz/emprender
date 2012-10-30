@@ -1,17 +1,16 @@
 Emprender::Application.routes.draw do
 
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   root        :to => "application#index"
 
   match  'acerca' => "application#acerca", :as => "acerca"
-
 
   devise_for :usuario do
     get "/usuario/sign_out" => "devise/sessions#destroy", :as => :destroy_usuario_session
   end
 
-  resource :usuario,          :only => :show do
-    resources :mensajes
-  end
+  resource :usuario,          :only => :show
 
   resource :perfil,           :except => [:create, :new, :destroy]
 
@@ -30,7 +29,11 @@ Emprender::Application.routes.draw do
 
   resources :comentarios
 
-  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+  resources :mensajes
+  get  "mensajes_enviados" => "mensajes#enviados", :as => "enviados_mensajes"
+
+
+  resources :reportes
 
   namespace :admin do
     resources :noticias,        :path => 'noticia'

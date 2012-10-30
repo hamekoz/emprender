@@ -1,5 +1,21 @@
-<p id="notice"><%= notice %></p>
+<h1 class="page-header">Mis Mensajes</h1>
 
-
-<%= link_to 'Edit', edit_usuario_mensaje_path(@mensaje) %> |
-<%= link_to 'Back', usuario_mensajes_path %>
+<div class="tabbable tabs-left">
+  <ul class="nav nav-tabs">
+    <li>
+      <%= link_to 'Recibidos', mensajes_path %>
+    </li>
+    <li>
+      <%= link_to 'Enviados', enviados_mensajes_path %>
+    </li>
+    <li>
+      <%= link_to 'Redactar', new_mensaje_path %>
+    </li>
+    <li class="active">
+      <%= link_to 'Mensaje', @mensaje %>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <%= render 'mensaje' %>
+  </div>
+</div>

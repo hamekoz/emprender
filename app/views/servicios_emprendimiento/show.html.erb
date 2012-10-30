@@ -30,35 +30,42 @@
       </p>
       <%= servicio.attribute :descripcion %>
       <%= servicio.attribute :precio %>
+      <%= servicio.attribute :created_at, :format => :long, :label => "Fecha de creacion" %>
+      <%= servicio.attribute :updated_at, :format => :long, :label => "Ultima actualizacion" %>
     </article>
-  <div class="form-actions">
-    <% if can? :edit, @servicio %>
-      <%= link_to(edit_mi_emprendimiento_servicio_path(@servicio), :class => 'btn btn-warning') do %>
-        <i class="icon-pencil"></i>
-        <span>Editar</span>
-      <% end %>
-    <% end %>
+  </div>
+<% end %>
 
-    <% if can? :destroy, @servicio %>
-      <%= link_to(mi_emprendimiento_servicio_path(@servicio),
-                  :class => 'btn btn-danger',
-                  rel: 'tooltip', title: 'Eliminar',
-                  method: :delete, data: { confirm: '¿Esta seguro?' }) do %>
-        <i class="icon-trash"></i>
-      <% end %>
-    <% end %>
+<span class="label label-info">
+  <%= "Producto pendiente de aprobacion por un moderador para estar publicado" unless @servicio.aceptado %>
+</span>
 
-    <button type="button" class="btn" data-toggle="collapse" data-target="#comentarios">
-      <i class="icon-comment"></i>
-      <span id="contador_comentarios"><%= @servicio.comentarios.aceptados.count %> Comentarios</span>
-    </button>
+<div class="form-actions">
+  <% if can? :edit, @servicio %>
+    <%= link_to(edit_mi_emprendimiento_servicio_path(@servicio), :class => 'btn btn-warning') do %>
+      <i class="icon-pencil"></i>
+      <span>Editar</span>
+    <% end %>
+  <% end %>
+
+  <% if can? :destroy, @servicio %>
+    <%= link_to(mi_emprendimiento_servicio_path(@servicio),
+                :class => 'btn btn-danger',
+                rel: 'tooltip', title: 'Eliminar',
+                method: :delete, data: { confirm: '¿Esta seguro?' }) do %>
+      <i class="icon-trash"></i>
+    <% end %>
+  <% end %>
+
+  <button type="button" class="btn" data-toggle="collapse" data-target="#comentarios">
+    <i class="icon-comment"></i>
+    <span id="contador_comentarios"><%= @servicio.comentarios.aceptados.count %> Comentarios</span>
+  </button>
 
   <%= link_to :back, :class => 'btn' do %>
     <i class="icon-arrow-left"></i>
     <span>Volver</span>
   <% end %>
-    </div>
-  </div>
-<% end %>
+</div>
 
 <%= render 'comentarios/comentarios', :comentable => @servicio %>

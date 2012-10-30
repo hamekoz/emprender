@@ -11,8 +11,9 @@
 .*= require jquery-ui-1.8.16.custom
  *= require bootstrap
  *= require bootstrap-responsive
+ *= require chosen
+ *= require impresion
  *= require_self
- *= require_tree .
 */
 
 /* Landscape phones and down*/
@@ -61,7 +62,11 @@ h1.page-header {
   text-align: center;
 }
 
-div.content {
+#sidebar {
+  padding-top: 20px;
+}
+
+div.content, div.container-fluid {
   background-color: #FFFFFF;
   border-radius: 0 0 6px 6px;
   box-shadow: 0 20px 15px -15px rgba(0, 0, 0, 0.3);
@@ -114,3 +119,8 @@ img {
 .centrado {
   text-align: center;
 }
+
+.chzn-container[id*='q_'] {
+  top: 7px;
+}
+

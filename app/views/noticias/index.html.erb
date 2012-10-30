@@ -9,7 +9,7 @@
     <div class="thumbnail">
       <div class="caption">
         <h2><%= noticia.titulo %></h2>
-        <h6>Publicada el <%= noticia.updated_at %> por <%= noticia.autor.nombre_completo %></h6>
+        <h6>Publicada el <%= l(noticia.updated_at, :format => :long) %> por <%= noticia.autor.nombre_completo %></h6>
         <hr>
         <%= noticia.resumen %>
         <hr>

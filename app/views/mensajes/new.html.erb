@@ -1,5 +1,36 @@
-<h1>New mensaje</h1>
+<h1 class="page-header">Mis Mensajes</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', usuario_mensajes_path %>
+<div class="tabbable tabs-left">
+  <ul class="nav nav-tabs">
+    <li>
+      <%= link_to 'Recibidos', mensajes_path %>
+    </li>
+    <li>
+      <%= link_to 'Enviados', enviados_mensajes_path %>
+    </li>
+    <li class="active">
+      <%= link_to 'Redactar', new_mensaje_path %>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <%= simple_form_for(@mensaje ,
+                        :html => { :class => 'form-horizontal' }) do |mensaje|%>
+      <div class="form-inputs well">
+        <%= mensaje.association :destinatario,
+                                :as => :grouped_select,
+                                :collection => Rol.all,
+                                :group_method => :usuarios,
+                                :label_method => :nombre_completo,
+                                :input_html => { :class => chosen_simple + ' span6',
+                                                 :data => { :placeholder => 'Elija un destinatario' } } %>
+        <%= mensaje.input :asunto,
+                          :input_html => { :class => 'span6'} %>
+        <%= mensaje.input :texto,
+                          :input_html => { :class => 'span6', :rows => 10 } %>
+      </div>
+      <div class="form-actions">
+        <%= mensaje.submit 'Enviar',:class => "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

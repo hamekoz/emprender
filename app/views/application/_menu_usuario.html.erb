@@ -1,17 +1,30 @@
+<% if current_usuario.respond_to?(:email) %>
+<li>
+<%= image_tag "#{(request.ssl? ? 'https://secure' : 'http://www')}.gravatar.com/avatar/#{Digest::MD5.hexdigest current_usuario.email}?s=30", :class => 'img-polaroid' %>
+</li>
+<% end %>
 <li class="dropdown">
   <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-    <i class="icon-user"></i>
-    <%= current_usuario.nombre %>
     <b class="caret"></b>
   </a>
   <ul class="dropdown-menu">
-    <li class="nav-header"><%= current_usuario.rol %></li>
+    <li class="nav-header"><%= current_usuario.nombre %></li>
     <li>
       <%= link_to(usuario_path) do %>
         <i class="icon-user"></i>
         <span>Mi Usuario</span>
       <% end %>
     </li>
+    <li>
+      <%= link_to(mensajes_path) do %>
+        <i class="icon-envelope"></i>
+        <span>Mensajes</span>
+        <span class="badge badge-warning">
+          <%= current_usuario.mensajes_recibidos.recibidos.sin_leer.count %>
+        </span>
+      <% end %>
+    </li>
+    <li class="nav-header"><%= current_usuario.rol %></li>
 <% if current_usuario.emprendedor? %>
     <li>
       <%= link_to(perfil_path) do %>
@@ -31,7 +44,6 @@
         <% end %>
       <% end %>
     </li>
-    <li class="divider"></li>
     <li>
       <%= link_to(mi_emprendimiento_productos_path) do %>
         <i class="icon-gift"></i>
@@ -44,7 +56,6 @@
         <span>Mis Servicios</span>
       <% end %>
     </li>
-    <li class="divider"></li>
 <% else %>
     <li>
       <%= link_to(rails_admin_path) do %>
@@ -53,21 +64,12 @@
       <% end %>
     </li>
     <li>
-      <%= link_to(root_path) do %>
+      <%= link_to(reportes_path) do %>
         <i class="icon-file"></i>
         <span>Reportes</span>
       <% end %>
     </li>
 <% end %>
-    <li>
-      <%= link_to(usuario_mensajes_path) do %>
-        <i class="icon-envelope"></i>
-        <span>Mensajes</span>
-        <span class="badge badge-success">
-          <%= current_usuario.mensajes_recibidos.count %>
-        </span>
-      <% end %>
-    </li>
     <li class="divider"></li>
     <li>
       <%= link_to(destroy_usuario_session_path, :method => 'delete') do %>
@@ -77,9 +79,3 @@
     </li>
   </ul>
 </li>
-
-<% if current_usuario.respond_to?(:email) %>
-<li>
-<%= image_tag "#{(request.ssl? ? 'https://secure' : 'http://www')}.gravatar.com/avatar/#{Digest::MD5.hexdigest current_usuario.email}?s=30", :style => 'padding-top:5px' %>
-</li>
-<% end %>

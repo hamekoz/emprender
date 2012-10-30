@@ -6,11 +6,15 @@
     <%= servicio.input :nombre,
                        :placeholder => 'Ej: Servicios de Jardinería',
                        :autofocus => true %>
-    <%= servicio.association :rubro %>
+    <%= servicio.association :rubro,
+                             :input_html => { :class => chosen_simple,
+                                              :data => { :placeholder => 'Elija un rubro' } } %>
     <%= servicio.input :descripcion,
                        :input_html => { :class => 'span6', :rows => 5 } %>
     <%= servicio.input :tipo_de_venta,
-                       :collection => @servicio.tipo_de_venta_enum %>
+                       :collection => @servicio.tipo_de_venta_enum,
+                       :input_html => { :class => chosen_simple,
+                                        :data => { :placeholder => 'Elija un tipo' } } %>
     <%= servicio.input :precio %>
     <%= servicio.input :activo %>
     <%= servicio.input :imagen_1 do %>

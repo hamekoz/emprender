@@ -31,25 +31,26 @@
       <%= servicio.attribute :descripcion %>
       <%= servicio.attribute :precio %>
     </article>
-  <div class="form-actions">
-    <% if can? :edit, @servicio %>
-      <%= link_to(edit_mi_emprendimiento_servicio_path(@servicio), :class => 'btn btn-warning') do %>
-        <i class="icon-pencil"></i>
-        <span>Editar</span>
-      <% end %>
-    <% end %>
+  </div>
+<% end %>
 
-    <button type="button" class="btn" data-toggle="collapse" data-target="#comentarios">
-      <i class="icon-comment"></i>
-      <span id="contador_comentarios"><%= @servicio.comentarios.aceptados.count %> Comentarios</span>
-    </button>
+<div class="form-actions">
+  <% if can? :edit, @servicio %>
+    <%= link_to(edit_mi_emprendimiento_servicio_path(@servicio), :class => 'btn btn-warning') do %>
+      <i class="icon-pencil"></i>
+      <span>Editar</span>
+    <% end %>
+  <% end %>
+
+  <button type="button" class="btn" data-toggle="collapse" data-target="#comentarios">
+    <i class="icon-comment"></i>
+    <span id="contador_comentarios"><%= @servicio.comentarios.aceptados.count %> Comentarios</span>
+  </button>
 
   <%= link_to :back, :class => 'btn' do %>
     <i class="icon-arrow-left"></i>
     <span>Volver</span>
   <% end %>
-    </div>
-  </div>
-<% end %>
+</div>
 
 <%= render 'comentarios/comentarios', :comentable => @servicio %>

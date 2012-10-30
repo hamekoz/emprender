@@ -1,13 +1,26 @@
 class MensajesController < ApplicationController
+  before_filter :authenticate_usuario!
 
   # GET /mensajes
   # GET /mensajes.json
   def index
-    @mensajes = Mensaje.all
+    @q = current_usuario.mensajes_recibidos.recibidos.search(params[:q])
+    @recibidos = @q.result(:distinct => true).page(params[:pagina]).per(10)
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @mensajes }
+      # format.json { render json: @mensajes }
+    end
+  end
+
+  # GET /mensajes
+  # GET /mensajes.json
+  def enviados
+    @q = current_usuario.mensajes_enviados.enviados.search(params[:q])
+    @enviados = @q.result(:distinct => true).page(params[:pagina]).per(10)
+
+    respond_to do |format|
+      format.html # index.html.erb
     end
   end
 
@@ -15,6 +28,8 @@ class MensajesController < ApplicationController
   # GET /mensajes/1.json
   def show
     @mensaje = Mensaje.find(params[:id])
+    @mensaje.leido = true if @mensaje.destinatario == current_usuario
+    @mensaje.save
 
     respond_to do |format|
       format.html # show.html.erb
@@ -27,45 +42,39 @@ class MensajesController < ApplicationController
   def new
     @mensaje = Mensaje.new
 
+    if !params[:id].blank?
+      @original = Mensaje.find(params[:id])
+      @mensaje.texto = "\n---" 
+      if @original.remitente == current_usuario
+        @mensaje.asunto = "Fwd: #{@original.asunto}"
+        @mensaje.texto += "\nDe: #{@original.remitente.nombre_completo}"
+        @mensaje.texto += "\nPara: #{@original.destinatario.nombre_completo}"
+        @mensaje.texto += "\nFecha: #{l(@original.created_at, :format => :long)}\n"
+      elsif @original.destinatario == current_usuario
+        @mensaje.asunto = "Re: #{@original.asunto}"
+        @mensaje.destinatario = @original.remitente
+      end
+        @mensaje.texto += "\n#{@original.texto}"
+    end
+
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @mensaje }
+      format.json { render json: @producto }
     end
-  end
-
-  # GET /mensajes/1/edit
-  def edit
-    @mensaje = Mensaje.find(params[:id])
   end
 
   # POST /mensajes
   # POST /mensajes.json
   def create
-    @mensaje = Mensaje.new(params[:mensaje])
+    @mensaje = current_usuario.mensajes_enviados.new(params[:mensaje])
+    @mensaje.eliminado_destinatario = false
+    @mensaje.eliminado_remitente = false
 
     respond_to do |format|
       if @mensaje.save
-        format.html { redirect_to @mensaje, notice: t('notice.create', :model => 'Mensaje') }
-        format.json { render json: @mensaje, status: :created, location: @mensaje }
+        format.html { redirect_to enviados_mensajes_path, notice: 'Mensaje enviado a ' + @mensaje.destinatario.nombre_completo }
       else
         format.html { render action: "new" }
-        format.json { render json: @mensaje.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PUT /mensajes/1
-  # PUT /mensajes/1.json
-  def update
-    @mensaje = Mensaje.find(params[:id])
-
-    respond_to do |format|
-      if @mensaje.update_attributes(params[:mensaje])
-        format.html { redirect_to @mensaje, notice: t('notice.update', :model => 'Mensaje') }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @mensaje.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -74,11 +83,16 @@ class MensajesController < ApplicationController
   # DELETE /mensajes/1.json
   def destroy
     @mensaje = Mensaje.find(params[:id])
-    @mensaj.destroy
+
+    @mensaje.eliminado_remitente = true if @mensaje.remitente == current_usuario
+    @mensaje.eliminado_destinatario = true if @mensaje.destinatario == current_usuario
+    @mensaje.save
+    @mensaje.destroy if @mensaje.eliminado_remitente? && @mensaje.eliminado_destinatario?
 
     respond_to do |format|
-      format.html { redirect_to mensajes_url }
+      format.html { redirect_to @mensaje.remitente == current_usuario ? enviados_mensajes_path : mensajes_url }
       format.json { head :no_content }
     end
   end
+
 end

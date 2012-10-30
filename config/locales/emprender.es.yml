@@ -1,7 +1,8 @@
 ﻿es:
-  date:
+  time:
     formats:
-      default: "%d/%m/%Y"
+      mini: ! '%H:%M'
+      simple: ! '%d/%m/%Y %H:%M'
 
   unauthorized:
     default: "No esta autorizado para acceder a esa pagina."

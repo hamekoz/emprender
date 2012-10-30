@@ -30,35 +30,42 @@
       </p>
       <%= producto.attribute :descripcion %>
       <%= producto.attribute :precio %>
+      <%= producto.attribute :created_at, :format => :long, :label => "Fecha de creacion" %>
+      <%= producto.attribute :updated_at, :format => :long, :label => "Ultima actualizacion" %>
     </article>
-  <div class="form-actions">
-    <% if can? :edit, @producto %>
-      <%= link_to(edit_mi_emprendimiento_producto_path(@producto), :class => 'btn btn-warning') do %>
-        <i class="icon-pencil"></i>
-        <span>Editar</span>
-      <% end %>
-    <% end %>
-
-    <% if can? :destroy, @producto %>
-      <%= link_to(mi_emprendimiento_producto_path(@producto),
-                  :class => 'btn btn-danger',
-                  rel: 'tooltip', title: 'Eliminar',
-                  method: :delete, data: { confirm: '¿Esta seguro?' }) do %>
-        <i class="icon-trash"></i>
-      <% end %>
-    <% end %>
-
-    <button type="button" class="btn" data-toggle="collapse" data-target="#comentarios">
-      <i class="icon-comment"></i>
-      <span id="contador_comentarios"><%= @producto.comentarios.aceptados.count %> Comentarios</span>
-    </button>
-
-    <%= link_to :back, :class => 'btn' do %>
-      <i class="icon-arrow-left"></i>
-      <span>Volver</span>
-    <% end %>
   </div>
-</div>
 <% end %>
+
+<span class="label label-info">
+  <%= "Producto pendiente de aprobacion por un moderador para estar publicado" unless @producto.aceptado %>
+</span>
+
+<div class="form-actions">
+  <% if can? :edit, @producto %>
+    <%= link_to(edit_mi_emprendimiento_producto_path(@producto), :class => 'btn btn-warning') do %>
+      <i class="icon-pencil"></i>
+      <span>Editar</span>
+    <% end %>
+  <% end %>
+
+  <% if can? :destroy, @producto %>
+    <%= link_to(mi_emprendimiento_producto_path(@producto),
+                :class => 'btn btn-danger',
+                rel: 'tooltip', title: 'Eliminar',
+                method: :delete, data: { confirm: '¿Esta seguro?' }) do %>
+      <i class="icon-trash"></i>
+    <% end %>
+  <% end %>
+
+  <button type="button" class="btn" data-toggle="collapse" data-target="#comentarios">
+    <i class="icon-comment"></i>
+    <span id="contador_comentarios"><%= @producto.comentarios.aceptados.count %> Comentarios</span>
+  </button>
+
+  <%= link_to :back, :class => 'btn' do %>
+    <i class="icon-arrow-left"></i>
+    <span>Volver</span>
+  <% end %>
+</div>
 
 <%= render 'comentarios/comentarios', :comentable => @producto %>

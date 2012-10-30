@@ -1,0 +1,7 @@
+<% content_for :titulo do %>
+  <%= @reporte.humanize %>
+<% end %>
+
+<h1 class= "page-header"><%= @reporte.humanize %></h1>
+
+<%= render :partial => "reportes/#{@reporte}.html.erb" %>

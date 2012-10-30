@@ -14,7 +14,9 @@
       <%= perfil.input :domicilio,
                             :input_html => { :class => 'span4'} %>
       <%= perfil.association :barrio,
-                                  :collection => Barrio.all %>
+                             :collection => Barrio.all,
+                             :input_html => { :class => chosen_simple,
+                                              :data => { :placeholder => 'Elija un barrio' } } %>
       <legend>Telefonos</legend>
       <%= perfil.input :telefono_particular,
                             :label => 'Particular',

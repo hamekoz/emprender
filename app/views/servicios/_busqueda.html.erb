@@ -8,7 +8,8 @@
   <%= f.select :rubro_id_eq, 
                 Rubro.all.map{ |r| [r.nombre, r.id] }, 
                 { :include_blank => "Todos los rubros" },
-                { :onchange => "submit()" } %>
+                { :onchange => "submit()", :class => chosen_simple,
+                                           :data => { :placeholder => 'Elija un rubro' } } %>
 
   <div class="input-append pull-right">
     <%= f.text_field :nombre_or_descripcion_cont,

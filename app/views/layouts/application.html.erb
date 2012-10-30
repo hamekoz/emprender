@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Emprender" %></title>
+    <title><%= content_for?(:titulo) ? "Emprender - #{yield(:titulo)}" : "Emprender" %></title>
     <%= csrf_meta_tags %>
   
     <meta name="description" content="Padron de emprendedores">

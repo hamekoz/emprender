@@ -172,13 +172,15 @@ ActiveRecord::Schema.define(:version => 20120515003533) do
   add_index "instituciones", ["barrio_id"], :name => "index_instituciones_on_barrio_id"
 
   create_table "mensajes", :force => true do |t|
-    t.string   "titulo"
+    t.string   "asunto"
     t.text     "texto"
-    t.boolean  "leido"
+    t.boolean  "leido",                  :default => false
     t.integer  "remitente_id"
     t.integer  "destinatario_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.boolean  "eliminado_remitente",    :default => false
+    t.boolean  "eliminado_destinatario", :default => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
   end
 
   add_index "mensajes", ["destinatario_id"], :name => "index_mensajes_on_destinatario_id"

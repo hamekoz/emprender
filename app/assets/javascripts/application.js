@@ -14,9 +14,16 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require jquery-ui
+//= require chosen-jquery
+//= require raphael-min
+//= require g.raphael-min
+//= require g.pie-min
 //= require_tree .
 
 $('a').tooltip();
+$('span').tooltip();
+
+$(".chzn-select").chosen();
 
 $('#logo').popover({
   trigger: 'hover',

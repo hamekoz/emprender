@@ -1,0 +1,12 @@
+<div id="contenedor-grafico"></div>
+
+<table class="hidden">
+  <tbody>
+<% @rubros.each do |rubro| %>
+    <tr class="grafico"">
+      <th scope="row"><%= rubro.nombre %></th>
+        <td><%= rubro.servicios.count %></td>
+      </tr>
+<% end %>
+    </tbody>
+</table>

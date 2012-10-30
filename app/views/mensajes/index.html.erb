@@ -1,26 +1,58 @@
 <h1 class="page-header">Mis Mensajes</h1>
+<div class="tabbable tabs-left">
+  <ul class="nav nav-tabs">
+    <li class="active">
+      <%= link_to 'Recibidos', mensajes_path %>
+    </li>
+    <li>
+      <%= link_to 'Enviados', enviados_mensajes_path %>
+    </li>
+    <li>
+      <%= link_to 'Redactar', new_mensaje_path %>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <%= render 'busqueda' %>
+    <table class="table table-hover"">
+      <thead>
+        <tr>
+          <th>Estado</th>
+          <th>De</th>
+          <th>Asunto</th>
+          <th>Fecha</th>
+          <th><span class="pull-right">Acciones</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @recibidos.each do |mensaje| %>
+        <tr>
+          <td>
+          <% if mensaje.leido? %>
+            <span class="label label-success">Leido</span>
+          <% else %>
+            <span class="label label-warning">No leido</span>
+          <% end %>
+          </td>
+          <td><%= mensaje.remitente.nombre_completo %></td>
+          <td><%= mensaje.asunto %></td>
+          <td><%= mensaje.fecha %></td>
+          <td>
+            <div class="pull-right">
+              <%= link_to "Leer", mensaje, :class => 'label label-success' %>
+              <%= link_to "Responder", new_mensaje_path(:id => mensaje.id) , :class => 'label label-info' %>
+              <%= link_to(mensaje_path(mensaje),
+                          :class => 'label label-important',
+                          rel: 'tooltip', title: 'Eliminar',
+                          method: :delete, data: { confirm: '¿Esta seguro?' }) do %>
+                <i class="icon-trash  icon-white"></i>
+              <% end %>
+            </div>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-<div data-toggle="buttons-radio" class="btn-group">
-  <button class="btn btn-primary active">Recibidos</button>
-  <button class="btn btn-primary">Enviados</button>
+    <%= paginate @recibidos %>
+  </div>
 </div>
-
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @mensajes.each do |mensaje| %>
-  <tr>
-    <td><%= link_to 'Show', usuario_mensaje %></td>
-    <td><%= link_to 'Edit', edit_usuario_mensaje_path(mensaje) %></td>
-    <td><%= link_to 'Destroy', usuario_mensaje, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Mensaje', new_usuario_mensaje_path %>

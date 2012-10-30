@@ -1,0 +1,24 @@
+<% content_for :titulo do %>
+  <%= @reporte.humanize %>
+<% end %>
+
+<h1 class= "page-header"><%= @reporte.humanize %></h1>
+
+<%= render @reporte %>
+
+<div class="form-actions">
+  <%= link_to "javascript:print()", :class => 'btn btn-primary' do %>
+    <i class="icon-print icon-white"></i>
+    <span>Imprimir</span>
+  <% end %>
+
+  <%= link_to reporte_path(@reporte, :format => 'pdf'), :class => 'btn btn-danger' do %>
+    <i class="icon-print icon-white"></i>
+    <span>Generar PDF</span>
+  <% end %>
+
+  <%= link_to reportes_path, :class => 'btn' do %>
+    <i class="icon-arrow-left"></i>
+    <span>Volver</span>
+  <% end %>
+</div>

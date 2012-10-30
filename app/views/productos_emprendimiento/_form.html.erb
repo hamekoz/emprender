@@ -6,11 +6,15 @@
     <%= producto.input :nombre,
                        :placeholder => 'Ej: Galletitas caseras',
                        :autofocus => true %>
-    <%= producto.association :rubro %>
+    <%= producto.association :rubro,
+                             :input_html => { :class => chosen_simple,
+                                              :data => { :placeholder => 'Elija un rubro' } } %>
     <%= producto.input :descripcion,
                        :input_html => { :class => 'span6', :rows => 5 } %>
     <%= producto.input :tipo_de_venta,
-                       :collection => @producto.tipo_de_venta_enum %>
+                       :collection => @producto.tipo_de_venta_enum,
+                       :input_html => { :class => chosen_simple,
+                                              :data => { :placeholder => 'Elija un tipo' } } %>
     <%= producto.input :precio %>
     <%= producto.input :produccion_mensual %>
     <%= producto.input :produccion_anual %>

@@ -1,0 +1,29 @@
+<article>
+  <h6>De: <%= @mensaje.remitente.nombre_completo %></h6>
+  <h6>Para: <%= @mensaje.destinatario.nombre_completo %></h6>
+
+  <blockquote>
+    <h4><%= @mensaje.asunto %><h4>
+    <pre><%= @mensaje.texto %></pre>
+    <small><%= l(@mensaje.created_at, :format => :long) %></small>
+  </blockquote>
+  
+</article>
+
+<div class="form-actions">
+  <%= link_to new_mensaje_path(:id => @mensaje.id), :class => 'btn btn-primary' do %>
+    <i class="icon-retweet"></i>
+    <span><%= (@mensaje.remitente == current_usuario ? "Reenviar" : "Responder") %></span>
+  <% end %>
+
+  <%= link_to mensaje_path(@mensaje), :class => 'btn btn-danger',
+              method: :delete, data: { confirm: '¿Esta seguro?' } do %>
+    <i class="icon-trash"></i>
+    <span>Eliminar</span>
+  <% end %>
+
+  <%= link_to :back, :class => 'btn' do %>
+    <i class="icon-arrow-left"></i>
+    <span>Volver</span>
+  <% end %>
+</div>

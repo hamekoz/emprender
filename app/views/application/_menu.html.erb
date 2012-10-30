@@ -14,7 +14,7 @@
           <li class="<%= 'active' if current_page?(acerca_path) %>">
             <%= link_to(acerca_path) do %>
               <i class="icon-info-sign"></i>
-              <span>Acerca de...</span>
+              <span>Acerca</span>
             <% end %>
           </li>
           <li class="<%= 'active' if params[:controller] == 'noticias' %>">
@@ -52,7 +52,6 @@
           </li>
       </ul>
       <ul class="nav pull-right">
-      <li class="divider-vertical"></li>
         <% if usuario_signed_in? %>
           <%= render 'menu_usuario' %>
         <% else %>

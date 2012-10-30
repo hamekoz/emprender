@@ -6,7 +6,7 @@
     <%= @noticia.texto.html_safe %>
   </div>
   <hr>
-  <h6>Publicada el <%= @noticia.updated_at %> por <%= @noticia.autor.nombre_completo %></h6>
+  <h6>Publicada el <%= l(@noticia.updated_at, :format => :long) %> por <%= @noticia.autor.nombre_completo %></h6>
 </article>
 
 <div class="form-actions">

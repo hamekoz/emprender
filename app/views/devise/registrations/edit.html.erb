@@ -19,10 +19,19 @@
                   :required => true,
                   :collection => resource.sexo_enum,
                   :as => :radio_buttons %>
-    <%= f.input :email, :required => true %>
-    <%= f.input :password, :hint => "dejar en blanco si no quiere cambiar su password", :required => false %>
-    <%= f.input :password_confirmation, :required => false %>
-    <%= f.input :current_password, :hint => "necesitamos su password actual para confirmar el cambios", :required => true %>
+      <%= f.input :email,
+                  :required => true %>
+      <%= f.input :password,
+                  :hint => "dejar en blanco si no quiere cambiar su password",
+                  :label => "Nueva password",
+                  :required => false %>
+      <%= f.input :password_confirmation,
+                  :label => "Confirmar password",
+                  :required => false %>
+      <%= f.input :current_password,
+                  :hint => "necesitamos su password actual para confirmar el cambios",
+                  :label => "Password actual",
+                  :required => true %>
   </div>
 
   <div class="form-actions">

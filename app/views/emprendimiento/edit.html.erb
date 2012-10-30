@@ -21,7 +21,9 @@
                              :as => :radio_buttons,
                              :item_wrapper_class => 'inline' %>
     <%= emprendimiento.association :rubro,
-                                   :collection => Rubro.all %>
+                                   :collection => Rubro.all,
+                                   :input_html => { :class => chosen_simple,
+                                                    :data => { :placeholder => 'Elija un rubro' } } %>
     <%= emprendimiento.input :tipo,
                              :collection => @emprendimiento.tipo_enum,
                              :as => :radio_buttons,
@@ -35,7 +37,9 @@
     <%= emprendimiento.input :roles,
                              :input_html => { :class => 'span6', :rows => 5 } %>
     <%= emprendimiento.association :estado,
-                                   :collection => Estado.all %>
+                                   :collection => Estado.all,
+                                   :input_html => { :class => chosen_simple,
+                                                    :data => { :placeholder => 'Elija un estado' } } %>
     <%= emprendimiento.input :fecha_de_inicio_de_actividad,
                              :label => 'Inicio de actividad',
                              :placeholder => 'Fecha',
@@ -49,7 +53,9 @@
     <legend>Domicilio</legend>
     <%= emprendimiento.input :domicilio %>
     <%= emprendimiento.association :barrio,
-                                   :collection => Barrio.all %>
+                                   :collection => Barrio.all,
+                                   :input_html => { :class => chosen_simple,
+                                                    :data => { :placeholder => 'Elija un barrio' } } %>
     <legend>Telefonos</legend>
     <%= emprendimiento.input :telefono %>
     <%= emprendimiento.input :celular %>

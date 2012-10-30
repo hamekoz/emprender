@@ -65,4 +65,7 @@ class Usuario < ActiveRecord::Base
   def emprendedor?
     rol == 'Emprendedor'
   end
+
+  default_scope order(:nombre, :apellido)
+
 end

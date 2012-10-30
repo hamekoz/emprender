@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Emprender" %></title>
+  
+    <meta name="description" content="Padron de emprendedores">
+    <meta name="author" content="Claudio Rodrigo Pereyra Diaz">
+    <meta name="author" content="Adriel Hernan Caramichos">
+
+  <%= wicked_pdf_stylesheet_link_tag "pdf" %>
+
+</head>
+<body>
+    <div id="main" role="main" class="container">
+      <div class="content">
+
+<!-- %= debug params %-->
+        <%= yield %>
+
+      </div><!--/content-->
+    </div> <!-- /container -->
+
+    <!-- Javascripts
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <%= wicked_pdf_javascript_include_tag "application" %>
+
+</body>
+</html>

@@ -4,22 +4,25 @@ gem 'rails', '3.2.8'
 gem 'rails-i18n'
 
 gem 'json'
-gem 'show_for'
-gem 'simple_form'
-gem 'enum'
-gem 'cancan'
-gem 'devise'
-gem 'devise-i18n'
-gem 'kaminari'
-gem 'paperclip'
-gem 'ckeditor'
-gem 'date_validator'
-gem "ransack"
+gem 'show_for'          #Vistas simplificadas
+gem 'simple_form'       #Formularios
+gem 'enum'              #Enumerador
+gem 'cancan'            #Gestor de permisos
+gem 'devise'            #Gestion de usuarios y sesiones
+gem 'devise-i18n'       #Traduccion de devise
+gem 'kaminari'          #Paginador
+gem 'paperclip'         #Gestor de adjuntos
+gem 'ckeditor'          #Editor de texto enrriquecido
+gem 'date_validator'    #Validador de fechas
+gem 'ransack'           #Busqueda
+gem 'chosen-rails'      #Selector por combo mejorado
+gem 'wicked_pdf'
+
 
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
 gem 'jquery-rails'
-gem 'yaml_db'
+gem 'yaml_db'           #Gestor de datos
 
 # Gemas usadas solo en desarrollo
 group :development, :test do
@@ -29,12 +32,13 @@ group :development, :test do
     gem 'bigdecimal'
   end
   gem 'sqlite3'
-  gem 'heroku'
+  gem 'webrick'
 end
 
 # Gemas necesarias para produccion
 group :production do
   gem 'pg'
+  gem 'wkhtmltopdf-heroku'
 #  gem 'therubyracer-heroku', :platform => :ruby
 #  gem 'thin'
 end
