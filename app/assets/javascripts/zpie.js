@@ -3,7 +3,7 @@ $(function () {
         labels = [];
     $("tr.grafico").each(function () {
         values.push(parseInt($("td", this).text(), 10));
-        labels.push("%%.%% " + $("th", this).text());
+        labels.push("%%.%% " + $("th", this).text() + " - Total: ##");
     });
 
     var x = screen.width,

@@ -1,7 +1,8 @@
 Emprender::Application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
-
+  mount Ckeditor::Engine => "/ckeditor", :as => 'editor'
+  
   root        :to => "application#index"
 
   match  'acerca' => "application#acerca", :as => "acerca"

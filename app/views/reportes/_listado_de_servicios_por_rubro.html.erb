@@ -1,0 +1,11 @@
+<% @rubros.each do |rubro| %>
+  <h3><%= rubro.nombre %></h3>
+    <ul>
+    <% rubro.servicios.each do |servicio| %>
+      <li>
+        <strong><%= servicio.nombre%></strong>
+        <span><%= servicio.descripcion%></span>
+      </li>
+    <% end %>
+    </ul>
+<% end %>

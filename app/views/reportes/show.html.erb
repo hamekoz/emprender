@@ -2,7 +2,29 @@
   <%= @reporte.humanize %>
 <% end %>
 
-<h1 class= "page-header"><%= @reporte.humanize %></h1>
+<h1 class= "page-header"><%= @reporte.humanize %>
+<div class="pull-right affix-right">
+  <%= link_to "javascript:print()", :class => 'btn btn-primary',
+                                    rel: 'tooltip',
+                                    title: 'Imprimir',
+                                    :data => { placement: 'left'} do %>
+    <i class="icon-print icon-white"></i>
+  <% end %>
+<br>
+  <%= link_to reporte_path(@reporte, :format => 'pdf'), :class => 'btn btn-danger',
+                                     rel: 'tooltip',
+                                     title: 'Descargar PDF',
+                                    :data => { placement: 'left'} do %>
+    <i class="icon-file icon-white"></i>
+  <% end %>
+<br>
+  <%= link_to reportes_path, :class => 'btn', rel: 'tooltip',
+                                              title: 'Volver',
+                                    :data => { placement: 'left'} do %>
+    <i class="icon-arrow-left"></i>
+  <% end %>
+</div>
+</h1>
 
 <%= render @reporte %>
 

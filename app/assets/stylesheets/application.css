@@ -13,6 +13,7 @@
  *= require bootstrap-responsive
  *= require chosen
  *= require impresion
+ *= require bootstrap-wysihtml5
  *= require_self
 */
 
@@ -122,5 +123,11 @@ img {
 
 .chzn-container[id*='q_'] {
   top: 7px;
+}
+
+.affix-right {
+    position: fixed;
+    top: 50px;
+    right: 0px;
 }
 

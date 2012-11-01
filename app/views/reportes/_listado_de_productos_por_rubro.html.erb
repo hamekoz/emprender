@@ -1,0 +1,13 @@
+<% @rubros.each do |rubro| %>
+  <h3><%= rubro.nombre %></h3>
+    <ul>
+    <% rubro.productos.each do |producto| %>
+      <li>
+        <strong><%= producto.nombre%></strong>
+        <span><%= producto.descripcion%></span>
+      </li>
+    <% end %>
+    </ul>
+    <h6>Cantidad de productos: <%= rubro.productos.count %></h6>
+    <hr>
+<% end %>
