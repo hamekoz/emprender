@@ -30,18 +30,19 @@
     overflow-y:visible
   }
 
-  .hidden {
+  .hidden, .btn, .pagination, .no-imprimir, .nav {
     visibility:hidden;
     display:none
   }
 
-  article, aside, details, figcaption, figure, footer, header, hgroup, nav, section , .form-actions {
+  aside, details, figcaption, figure, footer, header, hgroup, nav, section , .form-actions {
       display: none;
   }
 
   div.content, div.container-fluid {
     background-color: #FFFFFF;
-    border-radius: 0;
     box-shadow: none;
   }
+} 
+  
 }

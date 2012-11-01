@@ -67,9 +67,9 @@ class Perfil < ActiveRecord::Base
             :presence => true,
             :unless => :es_unico_ingreso? || :es_unico_ingreso.nil?
 
-  validates :telefono,
-            :celular,
-            :telefono_de_mensajes,
+  validates :telefono_particular,
+            :telefono_celular,
+            :telefono_para_mensajes,
             :on => :update,
             :allow_blank => true,
             :uniqueness => true,

@@ -9,8 +9,8 @@
     <%= evento.association :organizador, :using => :nombre %>
     <%= evento.attribute :lugar %>
     <%= evento.association :barrio, :using => :nombre %>
-    <%= evento.attribute :fecha_y_hora_de_inicio %>
-    <%= evento.attribute :fecha_y_hora_de_finalizacion %>
+    <%= evento.attribute :fecha_y_hora_de_inicio, :format => :long %>
+    <%= evento.attribute :fecha_y_hora_de_finalizacion, :format => :long %>
     <%= evento.attribute :descripcion %>
   </div>
   <div class="span4">

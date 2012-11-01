@@ -7,5 +7,5 @@ class Institucion < ActiveRecord::Base
   has_many :administradores
   has_many :representantes
   has_many :emprendedores
-#  has_many :eventos, :class_name => 'Organizador'
+
 end

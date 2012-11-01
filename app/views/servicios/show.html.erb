@@ -25,7 +25,7 @@
   <div class="span6">
     <article>
       <p>
-       <h4><%= @servicio.rubro.nombre %></font></h4>
+       <h4><%= @servicio.rubro.blank? ? "Sin rubro" : @servicio.rubro.nombre %></font></h4>
          <h1><%= @servicio.nombre %></h1>
       </p>
       <%= servicio.attribute :descripcion %>

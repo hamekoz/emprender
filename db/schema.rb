@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20120515003533) do
     t.string   "marca"
     t.integer  "rubro_id"
     t.integer  "clasificacion_id"
+    t.integer  "categoria_id"
     t.string   "tipo"
     t.text     "descripcion"
     t.integer  "cantidad_de_integrantes"
@@ -124,6 +125,7 @@ ActiveRecord::Schema.define(:version => 20120515003533) do
   end
 
   add_index "emprendimientos", ["barrio_id"], :name => "index_emprendimientos_on_barrio_id"
+  add_index "emprendimientos", ["categoria_id"], :name => "index_emprendimientos_on_categoria_id"
   add_index "emprendimientos", ["clasificacion_id"], :name => "index_emprendimientos_on_clasificacion_id"
   add_index "emprendimientos", ["emprendedor_id"], :name => "index_emprendimientos_on_emprendedor_id"
   add_index "emprendimientos", ["estado_id"], :name => "index_emprendimientos_on_estado_id"

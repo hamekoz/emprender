@@ -2,11 +2,12 @@ class Ability
   include CanCan::Ability
 
   def initialize(usuario)
+
     if usuario && usuario.administrador?
       can :access, :rails_admin
       can :dashboard
       can :manage, :all
-
+      cannot :history, :all
     elsif usuario && usuario.representante?
       can :access, :rails_admin
       can :dashboard
@@ -24,6 +25,8 @@ class Ability
 
       can :show_in_app, [Evento, Noticia]
       can [:read, :history, :export], [Evento, Noticia, Barrio, Categoria, Clasificacion, Estado, Rubro, Institucion, Emprendimiento, Perfil, Producto, Servicio, Emprendedor]
+
+    cannot :history, :all
 
     elsif usuario && usuario.emprendedor?
       can [:read, :edit], Perfil, :id => usuario.perfil.id

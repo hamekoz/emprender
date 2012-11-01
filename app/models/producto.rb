@@ -17,7 +17,7 @@ class Producto < ActiveRecord::Base
   scope :visibles, activos.merge(aceptados)
 
 #Validaciones
-  validates_presence_of :emprendimiento, :nombre, :rubro, :desactivados, :tipo_de_venta, :precio
+  validates_presence_of :emprendimiento, :nombre, :rubro, :tipo_de_venta, :precio
 
   validates_numericality_of :precio, :greater_than => 0
 

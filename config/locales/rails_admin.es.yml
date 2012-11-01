@@ -164,7 +164,7 @@ es:
         present: "Esta Presente"
         blank: "Esta en Blanco"
         date_default: "Fecha ..."
-        between: "Between ... y ..."
+        between: "Entre ... y ..."
         today: "Hoy"
         yesterday: "Ayer"
         this_week: "Esta semana"

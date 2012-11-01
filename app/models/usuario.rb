@@ -7,12 +7,12 @@ class Usuario < ActiveRecord::Base
     lock_access! unless emprendedor?
   end
 
-  def activar
+  def bloquear
     self.unlock_access!
     self.save
   end
 
-  def desactivar
+  def desbloquear
     self.lock_access!
     self.save
   end
@@ -67,5 +67,4 @@ class Usuario < ActiveRecord::Base
   end
 
   default_scope order(:nombre, :apellido)
-
 end

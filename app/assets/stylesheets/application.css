@@ -12,9 +12,9 @@
  *= require bootstrap
  *= require bootstrap-responsive
  *= require chosen
- *= require impresion
  *= require bootstrap-wysihtml5
  *= require_self
+ *= require impresion
 */
 
 /* Landscape phones and down*/

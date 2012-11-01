@@ -42,7 +42,6 @@ class Emprendimiento < ActiveRecord::Base
             :allow_blank => true,
             :uniqueness => true,
             :format => { :with => /(^$)|(^[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix }
-#            :format => { :with => \b(([\w-]+://?|www[.])[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/)))  }
 
   validates :mail,
             :on => :update,
@@ -55,7 +54,7 @@ class Emprendimiento < ActiveRecord::Base
             :allow_blank => true,
             :numericality => { :only_integer => true,
                                :greater_than => 0,
-                               :less_than => 20 }
+                               :less_than => 21 }
 
   validates :cantidad_de_clientes_actuales,
             :on => :update,
@@ -108,7 +107,6 @@ class Emprendimiento < ActiveRecord::Base
   def inscripto_al_iva?
     !condicion_frente_al_iva.nil? && !condicion_frente_al_iva.blank? && condicion_frente_al_iva != 'No inscripto'
   end
-
 
 #Funciones Privadas
   private

@@ -20,7 +20,7 @@
           <th>De</th>
           <th>Asunto</th>
           <th>Fecha</th>
-          <th><span class="pull-right">Acciones</span></th>
+          <th class="no-imprimir"><span class="pull-right">Acciones</span></th>
         </tr>
       </thead>
       <tbody>
@@ -40,7 +40,7 @@
               <%= mensaje.fecha %>
             </span>
           </td>
-          <td>
+          <td class="no-imprimir">
             <div class="pull-right">
               <%= link_to "Leer", mensaje, :class => 'label label-success' %>
               <%= link_to "Responder", new_mensaje_path(:id => mensaje.id) , :class => 'label label-info' %>

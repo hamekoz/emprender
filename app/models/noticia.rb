@@ -16,5 +16,4 @@ class Noticia < ActiveRecord::Base
     self.publicada = false
     self.save
   end
-
 end

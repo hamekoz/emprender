@@ -19,7 +19,7 @@ gem 'chosen-rails'      #Selector por combo mejorado
 gem 'wicked_pdf'
 gem 'bootstrap-wysihtml5-rails'
 
-gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+gem 'rails_admin', :git => 'git://github.com/elsupergomez/rails_admin.git'
 
 gem 'jquery-rails'
 gem 'yaml_db'           #Gestor de datos
