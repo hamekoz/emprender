@@ -44,17 +44,20 @@ class MensajesController < ApplicationController
 
     if !params[:id].blank?
       @original = Mensaje.find(params[:id])
-      @mensaje.texto = "\n---" 
+      @mensaje.texto = "<br>---"
       if @original.remitente == current_usuario
         @mensaje.asunto = "Fwd: #{@original.asunto}"
+        @mensaje.texto += "<blockquote>"
         @mensaje.texto += "\nDe: #{@original.remitente.nombre_completo}"
         @mensaje.texto += "\nPara: #{@original.destinatario.nombre_completo}"
         @mensaje.texto += "\nFecha: #{l(@original.created_at, :format => :long)}\n"
       elsif @original.destinatario == current_usuario
+        @mensaje.texto += "<blockquote>"
         @mensaje.asunto = "Re: #{@original.asunto}"
         @mensaje.destinatario = @original.remitente
       end
         @mensaje.texto += "\n#{@original.texto}"
+        @mensaje.texto += "</blockquote>"
     end
 
     respond_to do |format|

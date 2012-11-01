@@ -35,7 +35,11 @@
           </td>
           <td><%= mensaje.remitente.nombre_completo %></td>
           <td><%= mensaje.asunto %></td>
-          <td><%= mensaje.fecha %></td>
+          <td>
+            <span rel="tooltip", title="<%= l(mensaje.created_at, :format => :long) %>">
+              <%= mensaje.fecha %>
+            </span>
+          </td>
           <td>
             <div class="pull-right">
               <%= link_to "Leer", mensaje, :class => 'label label-success' %>

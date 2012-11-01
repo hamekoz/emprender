@@ -18,10 +18,14 @@
 //= require raphael-min
 //= require g.raphael-min
 //= require g.pie-min
+//= require bootstrap-wysihtml5
+//= require bootstrap-wysihtml5/locales/es-ES
 //= require_tree .
 
 $('a').tooltip();
 $('span').tooltip();
+
+$('.textarea').wysihtml5({locale: "es-AR"});
 
 $(".chzn-select").chosen();
 

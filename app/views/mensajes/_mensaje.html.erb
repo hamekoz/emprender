@@ -2,11 +2,11 @@
   <h6>De: <%= @mensaje.remitente.nombre_completo %></h6>
   <h6>Para: <%= @mensaje.destinatario.nombre_completo %></h6>
 
-  <blockquote>
+  <div>
     <h4><%= @mensaje.asunto %><h4>
-    <pre><%= @mensaje.texto %></pre>
+    <pre><%= @mensaje.texto.html_safe %></pre>
     <small><%= l(@mensaje.created_at, :format => :long) %></small>
-  </blockquote>
+  </div>
   
 </article>
 

@@ -18,6 +18,7 @@ gem 'ransack'           #Busqueda
 gem 'chosen-rails'      #Selector por combo mejorado
 gem 'wicked_pdf'
 
+gem 'bootstrap-wysihtml5-rails'
 
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
