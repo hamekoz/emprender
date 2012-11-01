@@ -1,18 +1,18 @@
 class Evento < ActiveRecord::Base
-  validates :lugar, :presence => true
-  validates :nombre, :presence => true
-  validates :fecha_y_hora_de_inicio, :presence => true
-
-  belongs_to :barrio
-  belongs_to :autor, :class_name => 'Usuario'
-  belongs_to :organizador, :class_name => 'Institucion'
-
-  has_many :comentarios, :as => :comentable
-
-  attr_accessible :folleto,:delete_folleto, :descripcion, :lugar, :nombre, :barrio,
+  attr_accessible :nombre, :descripcion, :lugar, :barrio,
                   :organizador, :barrio_id, :organizador_id, :tipo_id, :tipo,
                   :fecha_y_hora_de_inicio, :fecha_y_hora_de_finalizacion,
-                  :autor_id, :autor
+                  :autor_id, :autor, :folleto,:delete_folleto, :publicado
+
+  validates_presence_of :nombre, :tipo, :lugar, :barrio, :fecha_y_hora_de_inicio,
+                        :fecha_y_hora_de_finalizacion, :autor, :organizador
+
+  belongs_to :barrio
+  belongs_to :autor,       :class_name => 'Usuario'
+  belongs_to :organizador, :class_name => 'Institucion'
+
+  has_many :comentarios,   :as => :comentable
+
 
   has_attached_file :folleto,
                     :default_url => "http://placehold.it/400x600&text=imagen",

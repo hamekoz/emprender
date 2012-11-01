@@ -4,7 +4,7 @@ class Comentario < ActiveRecord::Base
                   :aceptado, :comentable_type
   belongs_to :comentable, :polymorphic => true
 
-  validates :texto, :presence => true
+  validates_presence_of :texto, :comentable
   validates_associated :comentable
 
   scope :aceptados, where(:aceptado => true).order(:created_at)
@@ -17,5 +17,9 @@ class Comentario < ActiveRecord::Base
   def rechazar
     self.aceptado = false
     self.save
+  end
+  
+  def etiqueta
+    texto
   end
 end

@@ -16,16 +16,9 @@ class Servicio < ActiveRecord::Base
   scope :visibles, activos.merge(aceptados)
 
 #Validaciones
-  validates :nombre,
-            :presence => true
-  validates :rubro,
-            :presence => true
-  validates :descripcion,
-            :presence => true
-  validates :tipo_de_venta,
-            :presence => true
-  validates :precio,
-            :presence => true
+  validates_presence_of :emprendimiento, :nombre, :rubro, :desactivados, :tipo_de_venta, :precio
+
+  validates_numericality_of :precio, :greater_than => 0
 
   def visible
     activo && aceptado

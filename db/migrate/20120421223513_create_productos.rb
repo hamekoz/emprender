@@ -6,7 +6,7 @@ class CreateProductos < ActiveRecord::Migration
       t.string            :nombre
       t.text              :descripcion
       t.string            :tipo_de_venta
-      t.float             :precio
+      t.float             :precio, :scale => 2
       t.integer           :produccion_mensual
       t.integer           :produccion_anual
       t.integer           :produccion_maxima

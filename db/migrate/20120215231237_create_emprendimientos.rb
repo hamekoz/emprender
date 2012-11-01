@@ -8,6 +8,7 @@ class CreateEmprendimientos < ActiveRecord::Migration
       t.string      :marca
       t.references  :rubro
       t.references  :clasificacion
+      t.references  :categoria
       t.string      :tipo
       t.text        :descripcion
       t.integer     :cantidad_de_integrantes
@@ -28,8 +29,8 @@ class CreateEmprendimientos < ActiveRecord::Migration
       t.boolean     :inscripto_en_ingresos_brutos
       t.date        :fecha_de_inscripcion_ingresos_brutos
       t.boolean     :recibe_ayuda_de_programas_sociales
-      t.string      :programas_sociales_recibidos
-      t.string      :tipo_de_ayuda_recibida_de_programas_sociales
+      t.text        :programas_sociales_recibidos
+      t.text        :tipo_de_ayuda_recibida_de_programas_sociales
       t.boolean     :vinculado_a_sociedad_civil
       t.text        :tipo_de_participacion_en_sociedad_civil
       t.boolean     :recibio_ayuda_de_la_sociedad_civil
@@ -63,6 +64,7 @@ class CreateEmprendimientos < ActiveRecord::Migration
     end
     add_index :emprendimientos, :emprendedor_id
     add_index :emprendimientos, :clasificacion_id
+    add_index :emprendimientos, :categoria_id
     add_index :emprendimientos, :estado_id
     add_index :emprendimientos, :rubro_id
     add_index :emprendimientos, :barrio_id

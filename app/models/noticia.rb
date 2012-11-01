@@ -1,7 +1,5 @@
 class Noticia < ActiveRecord::Base
-  validates :resumen, :presence => true
-  validates :titulo, :presence => true
-  validates :texto,  :presence => true
+  validates_presence_of :titulo, :resumen, :texto, :autor
 
   belongs_to :autor, :class_name => 'Usuario'
 

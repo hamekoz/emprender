@@ -6,7 +6,7 @@ class CreateServicios < ActiveRecord::Migration
       t.string            :nombre
       t.text              :descripcion
       t.string            :tipo_de_venta
-      t.float             :precio
+      t.float             :precio, :scale => 2
       t.has_attached_file :imagen_1
       t.has_attached_file :imagen_2
       t.has_attached_file :imagen_3

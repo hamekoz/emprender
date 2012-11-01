@@ -10,12 +10,20 @@ class Ability
     elsif usuario && usuario.representante?
       can :access, :rails_admin
       can :dashboard
-      can :read, [Evento, Noticia, Barrio, Categoria, Clasificacion, Estado, Rubro, Institucion]
       can :manage, [Evento, Noticia], :autor_id => usuario.id
-      can :edit, [Institucion], :id => usuario.institucion_id
-      can :read, [Usuario], :id => usuario.id
+
+      can :edit, Emprendedor, :institucion_id => usuario.institucion_id
+      can :edit, Emprendedor, :institucion_id => nil
+
+      can :read, Usuario, :id => usuario.id
+      can [:read, :history, :export], Usuario, :institucion_id => usuario.institucion_id
+      
       cannot :manage, [Usuario], :institucion_id => :nil
-      can :read, [Usuario], :institucion_id => usuario.institucion_id
+
+      can :edit, Institucion, :id => usuario.institucion_id
+
+      can :show_in_app, [Evento, Noticia]
+      can [:read, :history, :export], [Evento, Noticia, Barrio, Categoria, Clasificacion, Estado, Rubro, Institucion, Emprendimiento, Perfil, Producto, Servicio, Emprendedor]
 
     elsif usuario && usuario.emprendedor?
       can [:read, :edit], Perfil, :id => usuario.perfil.id

@@ -31,6 +31,8 @@ class Emprendimiento < ActiveRecord::Base
   before_validation { self.logotipo.clear if self.delete_logotipo == '1' }
 
 #Validaciones
+  validates_presence_of :emprendedor
+
   validates :nombre,
             :on => :update,
             :presence => true

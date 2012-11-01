@@ -28,6 +28,8 @@ class Perfil < ActiveRecord::Base
                   :explicacion_de_ingresos
 
 #Validaciones
+  validates_presence_of :emprendedor
+
   validates :dni,
             :on => :update,
             :allow_blank => true,
@@ -39,6 +41,7 @@ class Perfil < ActiveRecord::Base
             :on => :update,
             :allow_blank => true,
             :uniqueness => true,
+            :length => { :maximum => 13 },
             :format => { :with => /^\d{2}\-\d{8}\-\d{1}$/,
                          :message => "el formato debe ser ??-????????-?" }
 
@@ -64,6 +67,15 @@ class Perfil < ActiveRecord::Base
             :presence => true,
             :unless => :es_unico_ingreso? || :es_unico_ingreso.nil?
 
+  validates :telefono,
+            :celular,
+            :telefono_de_mensajes,
+            :on => :update,
+            :allow_blank => true,
+            :uniqueness => true,
+            :numericality => true,
+            :length => { :in => 7..9 }
+
   
 #  validates :titulo, :presence => true, :unless => :nivel_de_estudio =='Primario'
 
@@ -83,6 +95,10 @@ class Perfil < ActiveRecord::Base
 
   def completo?
     progreso == 100
+  end
+
+  def etiqueta
+    cuit_cuil
   end
 
 #Funciones Privadas
