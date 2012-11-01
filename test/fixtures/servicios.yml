@@ -1,19 +1,181 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  nombre: MyString
-  descripcion: MyString
-  imagen1: MyString
-  imagen2: MyString
-  imagen3: MyString
-  imagen4: MyString
-  imagen5: MyString
-
-two:
-  nombre: MyString
-  descripcion: MyString
-  imagen1: MyString
-  imagen2: MyString
-  imagen3: MyString
-  imagen4: MyString
-  imagen5: MyString
+---
+servicios_001:
+  id: 1
+  emprendimiento_id: 1
+  rubro_id: 1
+  nombre: Asesoramiento inmobiliario 1
+  descripcion: Tasacion de propiedades, medicion de terrenos, etc
+  tipo_de_venta: 
+  precio: 
+  imagen_1_file_name: 
+  imagen_1_content_type: 
+  imagen_1_file_size: 
+  imagen_1_updated_at: 
+  imagen_2_file_name: 
+  imagen_2_content_type: 
+  imagen_2_file_size: 
+  imagen_2_updated_at: 
+  imagen_3_file_name: 
+  imagen_3_content_type: 
+  imagen_3_file_size: 
+  imagen_3_updated_at: 
+  imagen_4_file_name: 
+  imagen_4_content_type: 
+  imagen_4_file_size: 
+  imagen_4_updated_at: 
+  imagen_5_file_name: 
+  imagen_5_content_type: 
+  imagen_5_file_size: 
+  imagen_5_updated_at: 
+  imagen_6_file_name: 
+  imagen_6_content_type: 
+  imagen_6_file_size: 
+  imagen_6_updated_at: 
+  activo: t
+  aceptado: t
+  created_at: '2012-08-27 22:38:29.942679'
+  updated_at: '2012-08-27 22:42:47.510136'
+servicios_002:
+  id: 2
+  emprendimiento_id: 1
+  rubro_id: 2
+  nombre: Jardineria, Parquizado 1
+  descripcion: Trabajos de jardineria en general a domicilio
+  tipo_de_venta: Ferias
+  precio: 55.0
+  imagen_1_file_name: 
+  imagen_1_content_type: 
+  imagen_1_file_size: 
+  imagen_1_updated_at: 
+  imagen_2_file_name: 
+  imagen_2_content_type: 
+  imagen_2_file_size: 
+  imagen_2_updated_at: 
+  imagen_3_file_name: 
+  imagen_3_content_type: 
+  imagen_3_file_size: 
+  imagen_3_updated_at: 
+  imagen_4_file_name: 
+  imagen_4_content_type: 
+  imagen_4_file_size: 
+  imagen_4_updated_at: 
+  imagen_5_file_name: 
+  imagen_5_content_type: 
+  imagen_5_file_size: 
+  imagen_5_updated_at: 
+  imagen_6_file_name: 
+  imagen_6_content_type: 
+  imagen_6_file_size: 
+  imagen_6_updated_at: 
+  activo: t
+  aceptado: t
+  created_at: '2012-08-27 22:38:30.565113'
+  updated_at: '2012-09-24 19:15:11.746186'
+servicios_003:
+  id: 4
+  emprendimiento_id: 1
+  rubro_id: 3
+  nombre: Jardineria, Parquizado 2
+  descripcion: Trabajos de jardineria en general a domicilio
+  tipo_de_venta: Locales Propios
+  precio: 111.0
+  imagen_1_file_name: 
+  imagen_1_content_type: 
+  imagen_1_file_size: 
+  imagen_1_updated_at: 
+  imagen_2_file_name: 
+  imagen_2_content_type: 
+  imagen_2_file_size: 
+  imagen_2_updated_at: 
+  imagen_3_file_name: 
+  imagen_3_content_type: 
+  imagen_3_file_size: 
+  imagen_3_updated_at: 
+  imagen_4_file_name: 
+  imagen_4_content_type: 
+  imagen_4_file_size: 
+  imagen_4_updated_at: 
+  imagen_5_file_name: 
+  imagen_5_content_type: 
+  imagen_5_file_size: 
+  imagen_5_updated_at: 
+  imagen_6_file_name: 
+  imagen_6_content_type: 
+  imagen_6_file_size: 
+  imagen_6_updated_at: 
+  activo: t
+  aceptado: t
+  created_at: '2012-08-27 22:38:33.139151'
+  updated_at: '2012-10-10 21:24:02.235511'
+servicios_004:
+  id: 5
+  emprendimiento_id: 1
+  rubro_id: 1
+  nombre: Asesoramiento inmobiliario 3
+  descripcion: Tasacion de propiedades, medicion de terrenos, etc
+  tipo_de_venta: Ferias
+  precio: 5.0
+  imagen_1_file_name: 
+  imagen_1_content_type: 
+  imagen_1_file_size: 
+  imagen_1_updated_at: 
+  imagen_2_file_name: 
+  imagen_2_content_type: 
+  imagen_2_file_size: 
+  imagen_2_updated_at: 
+  imagen_3_file_name: 
+  imagen_3_content_type: 
+  imagen_3_file_size: 
+  imagen_3_updated_at: 
+  imagen_4_file_name: 
+  imagen_4_content_type: 
+  imagen_4_file_size: 
+  imagen_4_updated_at: 
+  imagen_5_file_name: 
+  imagen_5_content_type: 
+  imagen_5_file_size: 
+  imagen_5_updated_at: 
+  imagen_6_file_name: 
+  imagen_6_content_type: 
+  imagen_6_file_size: 
+  imagen_6_updated_at: 
+  activo: t
+  aceptado: t
+  created_at: '2012-08-27 22:38:35.242934'
+  updated_at: '2012-09-24 19:08:30.275824'
+servicios_005:
+  id: 6
+  emprendimiento_id: 1
+  rubro_id: 8
+  nombre: Telemarketing
+  descripcion: El telemarketing
+  tipo_de_venta: Supermercados
+  precio: 0.0
+  imagen_1_file_name: 
+  imagen_1_content_type: 
+  imagen_1_file_size: 
+  imagen_1_updated_at: 
+  imagen_2_file_name: 
+  imagen_2_content_type: 
+  imagen_2_file_size: 
+  imagen_2_updated_at: 
+  imagen_3_file_name: 
+  imagen_3_content_type: 
+  imagen_3_file_size: 
+  imagen_3_updated_at: 
+  imagen_4_file_name: 
+  imagen_4_content_type: 
+  imagen_4_file_size: 
+  imagen_4_updated_at: 
+  imagen_5_file_name: 
+  imagen_5_content_type: 
+  imagen_5_file_size: 
+  imagen_5_updated_at: 
+  imagen_6_file_name: 
+  imagen_6_content_type: 
+  imagen_6_file_size: 
+  imagen_6_updated_at: 
+  activo: f
+  aceptado: f
+  created_at: '2012-09-28 21:33:24.209490'
+  updated_at: '2012-09-28 21:34:44.402731'

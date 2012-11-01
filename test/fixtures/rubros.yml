@@ -1,17 +1,67 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-Normal:
-  nombre: jardineria
-  descripcion: jardineria y horticultura
-
-DescripcionMuyLarga:
-  nombre: reposteria
-  descripcion: reposteria y otros articulos de cocina dulce con inclusión de desayunos a domicilio, postres, factura, helados,tortas de varios tipos cumpleaños, casamientos, fiestas de quince, aniversarios, bautismos, comuniones y otros tipos
-
-SinNombre:
-  nombre: 
-  descripcion: artes en madera y otros materiales
-
-SinDescripcion:
-  nombre: horticultura
-  descripcion: 
+---
+rubros_001:
+  id: 1
+  nombre: Artesanias
+  descripcion: ''
+  created_at: '2012-08-27 22:38:24.813201'
+  updated_at: '2012-08-27 22:38:24.813201'
+rubros_002:
+  id: 2
+  nombre: Bazar / Hogar / Decoracion
+  descripcion: ''
+  created_at: '2012-08-27 22:38:25.026494'
+  updated_at: '2012-08-27 22:38:25.026494'
+rubros_003:
+  id: 3
+  nombre: Entretenimiento / Juguetes
+  descripcion: ''
+  created_at: '2012-08-27 22:38:25.221031'
+  updated_at: '2012-08-27 22:38:25.221031'
+rubros_004:
+  id: 4
+  nombre: Gastronomia o alimentos y bebidas
+  descripcion: ''
+  created_at: '2012-08-27 22:38:25.358410'
+  updated_at: '2012-08-27 22:38:25.358410'
+rubros_005:
+  id: 5
+  nombre: Grafica / Imprenta
+  descripcion: ''
+  created_at: '2012-08-27 22:38:25.565966'
+  updated_at: '2012-08-27 22:38:25.565966'
+rubros_006:
+  id: 6
+  nombre: Informatica / Electronica
+  descripcion: ''
+  created_at: '2012-08-27 22:38:25.782839'
+  updated_at: '2012-08-27 22:38:25.782839'
+rubros_007:
+  id: 7
+  nombre: ! 'Textil: bebes y ninos'
+  descripcion: ''
+  created_at: '2012-08-27 22:38:25.961485'
+  updated_at: '2012-08-27 22:38:25.961485'
+rubros_008:
+  id: 8
+  nombre: ! 'Textil: adultos'
+  descripcion: ''
+  created_at: '2012-08-27 22:38:26.294781'
+  updated_at: '2012-08-27 22:38:26.294781'
+rubros_009:
+  id: 9
+  nombre: ! 'Textil: varios'
+  descripcion: ''
+  created_at: '2012-08-27 22:38:26.543927'
+  updated_at: '2012-08-27 22:38:26.543927'
+rubros_010:
+  id: 10
+  nombre: Salud y belleza
+  descripcion: ''
+  created_at: '2012-08-27 22:38:26.767866'
+  updated_at: '2012-08-27 22:38:26.767866'
+rubros_011:
+  id: 11
+  nombre: Servicios
+  descripcion: ''
+  created_at: '2012-08-27 22:38:27.080158'
+  updated_at: '2012-08-27 22:38:27.080158'

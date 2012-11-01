@@ -1,23 +1,37 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
-
-one:
-  tipoEvento: 
-  nombre: MyString
-  descripcion: MyText
-  domicilio: domicilios[:Normal]
-  fechaHoraInicio: 2011-09-27 20:51:18
-  fechaHoraFinalizacion: 2011-09-27 20:51:18
-  institucion: 
-  publicado: false
-  fechaPublicacion: 2011-09-27 20:51:18
-
-two:
-  tipoEvento: 
-  nombre: MyString
-  descripcion: MyText
-  domicilio: domicilios[:Normal]
-  fechaHoraInicio: 2011-09-27 20:51:18
-  fechaHoraFinalizacion: 2011-09-27 20:51:18
-  institucion: 
-  publicado: false
-  fechaPublicacion: 2011-09-27 20:51:18
+---
+eventos_001:
+  id: 1
+  tipo: Reunion
+  nombre: Auditoria
+  descripcion: Auditoria quincenal en Fasta
+  lugar: Avellaneda 3341
+  barrio_id: 8
+  fecha_y_hora_de_inicio: '2012-08-29 17:30:00.000000'
+  fecha_y_hora_de_finalizacion: '2012-08-29 18:30:00.000000'
+  autor_id: 1
+  organizador_id: 1
+  folleto_file_name: favicon.png
+  folleto_content_type: image/png
+  folleto_file_size: 21240
+  folleto_updated_at: '2012-08-29 16:29:42.891901'
+  publicado: t
+  created_at: '2012-08-29 16:29:42.904351'
+  updated_at: '2012-08-29 23:19:01.964126'
+eventos_002:
+  id: 2
+  tipo: Feria
+  nombre: asdasdas
+  descripcion: sdfsd
+  lugar: Armenia 1053
+  barrio_id: 7
+  fecha_y_hora_de_inicio: '2012-08-09 20:55:00.000000'
+  fecha_y_hora_de_finalizacion: '2012-08-31 20:55:00.000000'
+  autor_id: 3
+  organizador_id: 1
+  folleto_file_name: 
+  folleto_content_type: 
+  folleto_file_size: 
+  folleto_updated_at: 
+  publicado: t
+  created_at: '2012-08-29 23:57:32.348787'
+  updated_at: '2012-08-29 23:57:41.145838'

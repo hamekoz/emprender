@@ -1,19 +1,199 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  nombre: MyString
-  descripcion: MyString
-  imagen1: MyString
-  imagen2: MyString
-  imagen3: MyString
-  imagen4: MyString
-  imagen5: MyString
-
-two:
-  nombre: MyString
-  descripcion: MyString
-  imagen1: MyString
-  imagen2: MyString
-  imagen3: MyString
-  imagen4: MyString
-  imagen5: MyString
+---
+productos_001:
+  id: 1
+  emprendimiento_id: 1
+  rubro_id: 1
+  nombre: Cupcakes artesanales 1
+  descripcion: Postre panificado
+  tipo_de_venta: Supermercados
+  precio: 1.0
+  produccion_mensual: 
+  produccion_anual: 
+  produccion_maxima: 
+  imagen_1_file_name: DSC01481.JPG
+  imagen_1_content_type: image/jpeg
+  imagen_1_file_size: 517476
+  imagen_1_updated_at: '2012-08-29 20:50:36.992937'
+  imagen_2_file_name: 
+  imagen_2_content_type: 
+  imagen_2_file_size: 
+  imagen_2_updated_at: 
+  imagen_3_file_name: 
+  imagen_3_content_type: 
+  imagen_3_file_size: 
+  imagen_3_updated_at: 
+  imagen_4_file_name: 
+  imagen_4_content_type: 
+  imagen_4_file_size: 
+  imagen_4_updated_at: 
+  imagen_5_file_name: 
+  imagen_5_content_type: 
+  imagen_5_file_size: 
+  imagen_5_updated_at: 
+  imagen_6_file_name: 
+  imagen_6_content_type: 
+  imagen_6_file_size: 
+  imagen_6_updated_at: 
+  activo: t
+  aceptado: t
+  created_at: '2012-08-27 22:38:28.928343'
+  updated_at: '2012-10-04 22:14:19.606438'
+productos_002:
+  id: 6
+  emprendimiento_id: 1
+  rubro_id: 3
+  nombre: Escalera clasica 3
+  descripcion: Herramienta carpinteria
+  tipo_de_venta: Ferias
+  precio: 1.0
+  produccion_mensual: 
+  produccion_anual: 
+  produccion_maxima: 
+  imagen_1_file_name: favicon.png
+  imagen_1_content_type: image/png
+  imagen_1_file_size: 21240
+  imagen_1_updated_at: '2012-10-10 21:25:44.365078'
+  imagen_2_file_name: 
+  imagen_2_content_type: 
+  imagen_2_file_size: 
+  imagen_2_updated_at: 
+  imagen_3_file_name: 
+  imagen_3_content_type: 
+  imagen_3_file_size: 
+  imagen_3_updated_at: 
+  imagen_4_file_name: 
+  imagen_4_content_type: 
+  imagen_4_file_size: 
+  imagen_4_updated_at: 
+  imagen_5_file_name: 
+  imagen_5_content_type: 
+  imagen_5_file_size: 
+  imagen_5_updated_at: 
+  imagen_6_file_name: 
+  imagen_6_content_type: 
+  imagen_6_file_size: 
+  imagen_6_updated_at: 
+  activo: t
+  aceptado: t
+  created_at: '2012-08-27 22:38:34.640642'
+  updated_at: '2012-10-13 22:12:16.866267'
+productos_003:
+  id: 7
+  emprendimiento_id: 1
+  rubro_id: 1
+  nombre: Televisor JP
+  descripcion: La tele de jp
+  tipo_de_venta: Locales Propios
+  precio: 1200.0
+  produccion_mensual: 
+  produccion_anual: 
+  produccion_maxima: 
+  imagen_1_file_name: 
+  imagen_1_content_type: 
+  imagen_1_file_size: 
+  imagen_1_updated_at: 
+  imagen_2_file_name: 
+  imagen_2_content_type: 
+  imagen_2_file_size: 
+  imagen_2_updated_at: 
+  imagen_3_file_name: 
+  imagen_3_content_type: 
+  imagen_3_file_size: 
+  imagen_3_updated_at: 
+  imagen_4_file_name: 
+  imagen_4_content_type: 
+  imagen_4_file_size: 
+  imagen_4_updated_at: 
+  imagen_5_file_name: 
+  imagen_5_content_type: 
+  imagen_5_file_size: 
+  imagen_5_updated_at: 
+  imagen_6_file_name: 
+  imagen_6_content_type: 
+  imagen_6_file_size: 
+  imagen_6_updated_at: 
+  activo: t
+  aceptado: t
+  created_at: '2012-09-28 21:31:07.512116'
+  updated_at: '2012-10-04 22:14:18.383281'
+productos_004:
+  id: 8
+  emprendimiento_id: 1
+  rubro_id: 6
+  nombre: ! 'Prueba de aceptacion '
+  descripcion: Probando si muestra mesaje que no esta aceptado
+  tipo_de_venta: Internet
+  precio: 25.0
+  produccion_mensual: 
+  produccion_anual: 
+  produccion_maxima: 
+  imagen_1_file_name: 
+  imagen_1_content_type: 
+  imagen_1_file_size: 
+  imagen_1_updated_at: 
+  imagen_2_file_name: 
+  imagen_2_content_type: 
+  imagen_2_file_size: 
+  imagen_2_updated_at: 
+  imagen_3_file_name: 
+  imagen_3_content_type: 
+  imagen_3_file_size: 
+  imagen_3_updated_at: 
+  imagen_4_file_name: 
+  imagen_4_content_type: 
+  imagen_4_file_size: 
+  imagen_4_updated_at: 
+  imagen_5_file_name: 
+  imagen_5_content_type: 
+  imagen_5_file_size: 
+  imagen_5_updated_at: 
+  imagen_6_file_name: 
+  imagen_6_content_type: 
+  imagen_6_file_size: 
+  imagen_6_updated_at: 
+  activo: f
+  aceptado: 
+  created_at: '2012-10-29 18:39:44.611868'
+  updated_at: '2012-10-29 18:39:44.611868'
+  
+<% for i in 9..1000 %>
+productos_<%= i %>:
+  id: <%= i %>
+  emprendimiento_id: 1
+  rubro_id: <%= Random.rand(11) %>
+  nombre: ! Producto <%= i %>
+  descripcion: Producto de prueba con una descripcion bien bien larga para ver que pasa cuando lo exporto a pdf en el informe de productos por rubro en listado <%= i %>
+  tipo_de_venta: Internet
+  precio: <%= Random.rand(100.00) %>
+  produccion_mensual: <%= Random.rand(100) %>
+  produccion_anual: <%= Random.rand(1000) %>
+  produccion_maxima: <%= Random.rand(10000) %>
+  imagen_1_file_name: 
+  imagen_1_content_type: 
+  imagen_1_file_size: 
+  imagen_1_updated_at: 
+  imagen_2_file_name: 
+  imagen_2_content_type: 
+  imagen_2_file_size: 
+  imagen_2_updated_at: 
+  imagen_3_file_name: 
+  imagen_3_content_type: 
+  imagen_3_file_size: 
+  imagen_3_updated_at: 
+  imagen_4_file_name: 
+  imagen_4_content_type: 
+  imagen_4_file_size: 
+  imagen_4_updated_at: 
+  imagen_5_file_name: 
+  imagen_5_content_type: 
+  imagen_5_file_size: 
+  imagen_5_updated_at: 
+  imagen_6_file_name: 
+  imagen_6_content_type: 
+  imagen_6_file_size: 
+  imagen_6_updated_at: 
+  activo: t
+  aceptado: t
+  created_at: '2012-10-29 18:39:44.611868'
+  updated_at: '2012-10-29 18:39:44.611868'
+<% end %>

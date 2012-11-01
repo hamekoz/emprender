@@ -1,0 +1,49 @@
+---
+perfiles_001:
+  id: 1
+  emprendedor_id: 4
+  dni: ''
+  cuit_cuil: ''
+  domicilio: ''
+  barrio_id: 
+  telefono_particular: ''
+  telefono_celular: ''
+  telefono_para_mensajes: ''
+  observaciones_de_telefonos: ''
+  nivel_de_estudios: 
+  estudios_completos: f
+  titulo: ''
+  recibe_o_recibio_algun_plan_social: t
+  plan_social: asd
+  fecha_de_recepcion: '2012-07-27'
+  actividad_laboral_principal: asdasd
+  relacion_laboral: Dependiente
+  cantidad_de_horas_semanales: 6
+  es_unico_ingreso: t
+  explicacion_de_ingresos: 
+  created_at: '2012-08-27 22:38:22.318668'
+  updated_at: '2012-08-29 20:48:27.812063'
+perfiles_002:
+  id: 2
+  emprendedor_id: 5
+  dni: 
+  cuit_cuil: 
+  domicilio: 
+  barrio_id: 
+  telefono_particular: 
+  telefono_celular: 
+  telefono_para_mensajes: 
+  observaciones_de_telefonos: 
+  nivel_de_estudios: 
+  estudios_completos: f
+  titulo: 
+  recibe_o_recibio_algun_plan_social: f
+  plan_social: 
+  fecha_de_recepcion: 
+  actividad_laboral_principal: 
+  relacion_laboral: 
+  cantidad_de_horas_semanales: 
+  es_unico_ingreso: f
+  explicacion_de_ingresos: 
+  created_at: '2012-09-05 22:44:53.752164'
+  updated_at: '2012-09-05 22:44:53.752164'

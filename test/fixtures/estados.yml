@@ -1,27 +1,25 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-activo:
+---
+estados_001:
   id: 1
   nombre: Activo
-  descripcion: "Emprendimiento en actividad"
-
-inactivo:
+  descripcion: Emprendimiento en actividad
+  created_at: '2012-08-27 22:38:27.275897'
+  updated_at: '2012-08-27 22:38:27.275897'
+estados_002:
   id: 2
   nombre: Inactivo
-  descripcion: "Emprendimiento fuera de actividad"
-
-gestion:
+  descripcion: Emprendimiento fuera de actividad
+  created_at: '2012-08-27 22:38:27.393547'
+  updated_at: '2012-08-27 22:38:27.393547'
+estados_003:
   id: 3
   nombre: Gestion
-  descripcion: "Emprendimiento en gestion aun no activo"
-
-extinguido:
+  descripcion: Emprendimiento en gestion aun no activo
+  created_at: '2012-08-27 22:38:27.682673'
+  updated_at: '2012-08-27 22:38:27.682673'
+estados_004:
   id: 4
   nombre: Extinguido
-  descripcion: "Emprendimiento que desaparecio y dejo de existir"
-
-prueba:
-  id: 5
-  nombre: A Prueba
-  descripcion: "Emprendimiento que se encuentra en periodo de pruebas"
-
+  descripcion: Emprendimiento que desaparecio y dejo de existir
+  created_at: '2012-08-27 22:38:27.885868'
+  updated_at: '2012-08-27 22:38:27.885868'

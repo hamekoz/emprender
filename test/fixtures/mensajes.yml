@@ -1,0 +1,330 @@
+---
+mensajes_001:
+  id: 1
+  asunto: Hola
+  texto: texto de prueba numero uno
+  leido: t
+  remitente_id: 4
+  destinatario_id: 5
+  eliminado_remitente: f
+  eliminado_destinatario: f
+  created_at: '2012-09-05 22:46:40.072612'
+  updated_at: '2012-09-17 23:01:01.806064'
+mensajes_002:
+  id: 2
+  asunto: Chau
+  texto: mensaje de prueba nùmero dos
+  leido: t
+  remitente_id: 5
+  destinatario_id: 4
+  eliminado_remitente: f
+  eliminado_destinatario: t
+  created_at: '2012-01-29 18:20:20.991480'
+  updated_at: '2012-10-29 18:20:24.481681'
+mensajes_003:
+  id: 3
+  asunto: fgd
+  texto: gdf
+  leido: f
+  remitente_id: 4
+  destinatario_id: 2
+  eliminado_remitente: f
+  eliminado_destinatario: f
+  created_at: '2012-10-06 22:15:33.025753'
+  updated_at: '2012-10-08 16:21:38.974563'
+mensajes_004:
+  id: 4
+  asunto: mensaje al 06 del 10
+  texto: mensaje de prueba del 06 del 10
+  leido: f
+  remitente_id: 4
+  destinatario_id: 3
+  eliminado_remitente: f
+  eliminado_destinatario: f
+  created_at: '2012-10-06 23:12:43.474052'
+  updated_at: '2012-10-08 16:21:23.140535'
+mensajes_005:
+  id: 5
+  asunto: 08/10/2012
+  texto: prueba del 08 del 10
+  leido: f
+  remitente_id: 4
+  destinatario_id: 2
+  eliminado_remitente: f
+  eliminado_destinatario: f
+  created_at: '2012-10-08 16:15:40.032370'
+  updated_at: '2012-10-08 16:15:40.032370'
+mensajes_006:
+  id: 6
+  asunto: dia lunes
+  texto: texto del dia lunes
+  leido: t
+  remitente_id: 4
+  destinatario_id: 1
+  eliminado_remitente: f
+  eliminado_destinatario: t
+  created_at: '2012-10-08 16:16:07.425613'
+  updated_at: '2012-10-26 01:04:02.692058'
+mensajes_007:
+  id: 13
+  asunto: Vengo arreglando los mensajes
+  texto: asdasd
+  leido: t
+  remitente_id: 1
+  destinatario_id: 4
+  eliminado_remitente: f
+  eliminado_destinatario: f
+  created_at: '2003-10-29 18:21:14.194433'
+  updated_at: '2012-10-29 18:21:16.050316'
+mensajes_008:
+  id: 14
+  asunto: Vengo arreglando los mensajes
+  texto: asdasd
+  leido: t
+  remitente_id: 1
+  destinatario_id: 3
+  eliminado_remitente: f
+  eliminado_destinatario: f
+  created_at: '2012-10-24 01:41:19.352713'
+  updated_at: '2012-10-24 02:04:47.738617'
+mensajes_009:
+  id: 15
+  asunto: Vengo arreglando los mensajes
+  texto: Esto viene encaminado quizas ande
+  leido: f
+  remitente_id: 1
+  destinatario_id: 2
+  eliminado_remitente: f
+  eliminado_destinatario: f
+  created_at: '2012-10-24 01:43:15.697896'
+  updated_at: '2012-10-24 01:43:15.697896'
+mensajes_010:
+  id: 16
+  asunto: asdasd
+  texto: asdsad
+  leido: f
+  remitente_id: 1
+  destinatario_id: 5
+  eliminado_remitente: f
+  eliminado_destinatario: f
+  created_at: '2012-10-24 01:47:09.446693'
+  updated_at: '2012-10-24 01:47:09.446693'
+mensajes_011:
+  id: 18
+  asunto: Prueba de mensaje
+  texto: dasda
+  leido: f
+  remitente_id: 1
+  destinatario_id: 7
+  eliminado_remitente: f
+  eliminado_destinatario: f
+  created_at: '2012-10-24 01:49:54.871434'
+  updated_at: '2012-10-24 01:49:54.871434'
+mensajes_012:
+  id: 21
+  asunto: Prueba de mensaje
+  texto: Probando el envio de un mensaje
+  leido: t
+  remitente_id: 1
+  destinatario_id: 4
+  eliminado_remitente: f
+  eliminado_destinatario: f
+  created_at: '2012-10-25 01:57:44.032274'
+  updated_at: '2012-10-26 00:46:34.036669'
+mensajes_013:
+  id: 25
+  asunto: Prueba para eliminacion
+  texto: Probando esto
+  leido: t
+  remitente_id: 4
+  destinatario_id: 1
+  eliminado_remitente: f
+  eliminado_destinatario: t
+  created_at: '2012-10-26 00:48:42.999965'
+  updated_at: '2012-10-26 01:00:49.435302'
+mensajes_014:
+  id: 26
+  asunto: ! 'Fwd: Prueba para eliminacion'
+  texto: ! "\r\n---\r\nDe: Emprendendor Prueba\r\nPara: Claudio Rodrigo Pereyra Diaz\r\nFecha:
+    2012-10-25 21:48:42 -0300\r\n\r\nProbando esto"
+  leido: t
+  remitente_id: 4
+  destinatario_id: 1
+  eliminado_remitente: f
+  eliminado_destinatario: t
+  created_at: '2012-10-26 02:52:37.117778'
+  updated_at: '2012-10-26 02:54:02.220930'
+mensajes_015:
+  id: 27
+  asunto: ! 'Fwd: Vengo arreglando los mensajes'
+  texto: ! "Te reenvio el mensaje\r\n---\r\nDe: Claudio Rodrigo Pereyra Diaz\r\nPara:
+    Representante Prueba\r\nFecha: 2012-10-23 22:41:19 -0300\r\n\r\nasdasd"
+  leido: t
+  remitente_id: 1
+  destinatario_id: 4
+  eliminado_remitente: f
+  eliminado_destinatario: f
+  created_at: '2012-10-26 02:54:28.024785'
+  updated_at: '2012-10-26 02:54:47.054026'
+mensajes_016:
+  id: 28
+  asunto: ! 'Re: Fwd: Vengo arreglando los mensajes'
+  texto: ! "Gracias\r\n---\r\nTe reenvio el mensaje\r\n---\r\nDe: Claudio Rodrigo
+    Pereyra Diaz\r\nPara: Representante Prueba\r\nFecha: 2012-10-23 22:41:19 -0300\r\n\r\nasdasd"
+  leido: f
+  remitente_id: 4
+  destinatario_id: 1
+  eliminado_remitente: f
+  eliminado_destinatario: t
+  created_at: '2012-10-26 03:09:57.771964'
+  updated_at: '2012-10-26 19:31:52.626809'
+mensajes_017:
+  id: 29
+  asunto: ! 'Re: Prueba de mensaje'
+  texto: ! "Esto es realmente la bomba, anda perfecto\r\n\r\nYa vas a ver que los
+    mensajes quedan de pelos.\r\nMe tomo unas 3 tardes conseguir que anda.\r\n\r\nPero...
+    andan\r\ncon reenvio de mesnsajes\r\nRespuestas\r\n     y hasta estilos que me
+    decis?? jaja <br>\r\n---\r\nProbando el envio de un mensaje"
+  leido: t
+  remitente_id: 4
+  destinatario_id: 1
+  eliminado_remitente: f
+  eliminado_destinatario: f
+  created_at: '2012-10-26 03:15:01.732295'
+  updated_at: '2012-10-26 19:31:41.976818'
+mensajes_018:
+  id: 30
+  asunto: ! 'Fwd: Re: Prueba de mensaje'
+  texto: ! "Te reenvio el mensaje, leelo y dame tu opcion de como queda\r\n---\r\nDe:
+    Emprendendor Prueba\r\nPara: Claudio Rodrigo Pereyra Diaz\r\nFecha: 2012-10-26
+    00:15:01 -0300\r\n\r\nEsto es realmente la bomba, anda perfecto\r\n\r\nYa vas
+    a ver que los mensajes quedan de pelos.\r\nMe tomo unas 3 tardes conseguir que
+    anda.\r\n\r\nPero... andan\r\ncon reenvio de mesnsajes\r\nRespuestas\r\n     y
+    hasta estilos que me decis?? jaja <br>\r\n---\r\nProbando el envio de un mensaje"
+  leido: f
+  remitente_id: 4
+  destinatario_id: 2
+  eliminado_remitente: f
+  eliminado_destinatario: f
+  created_at: '2012-10-26 03:15:57.271092'
+  updated_at: '2012-10-26 03:15:57.271092'
+mensajes_019:
+  id: 31
+  asunto: Probando sin leer
+  texto: ! "Probando el contador de mensajes sin leer del menu.\r\nSi es correcto
+    deberia mostrar en amarillo que tenes un mensaje sin leer\r\n\r\nSlaudos, emprendedor
+    de prueba"
+  leido: f
+  remitente_id: 4
+  destinatario_id: 1
+  eliminado_remitente: t
+  eliminado_destinatario: f
+  created_at: '2012-10-26 22:09:57.290157'
+  updated_at: '2012-10-29 14:57:27.309184'
+mensajes_020:
+  id: 32
+  asunto: pruebo
+  texto: PRuebo
+  leido: t
+  remitente_id: 4
+  destinatario_id: 1
+  eliminado_remitente: t
+  eliminado_destinatario: f
+  created_at: '2012-10-29 14:45:20.350430'
+  updated_at: '2012-10-29 21:13:07.386756'
+mensajes_021:
+  id: 33
+  asunto: Pruebo direccion
+  texto: Probando redireccion despues de enviar mensaje
+  leido: t
+  remitente_id: 4
+  destinatario_id: 1
+  eliminado_remitente: t
+  eliminado_destinatario: f
+  created_at: '2012-10-29 14:46:46.698292'
+  updated_at: '2012-10-29 21:12:59.569521'
+mensajes_022:
+  id: 34
+  asunto: ''
+  texto: ''
+  leido: f
+  remitente_id: 4
+  destinatario_id: 1
+  eliminado_remitente: t
+  eliminado_destinatario: f
+  created_at: '2012-10-29 14:48:36.055943'
+  updated_at: '2012-10-29 14:49:41.604161'
+mensajes_023:
+  id: 35
+  asunto: ''
+  texto: ''
+  leido: f
+  remitente_id: 4
+  destinatario_id: 1
+  eliminado_remitente: t
+  eliminado_destinatario: f
+  created_at: '2012-10-29 14:49:20.663428'
+  updated_at: '2012-10-29 14:49:27.380477'
+mensajes_024:
+  id: 37
+  asunto: Mensajes listos
+  texto: Probalo si queres y podes, creo que lo que tiene que ver con mensajes esta
+    cerrado. Funcionado todo y creo que bien
+  leido: f
+  remitente_id: 4
+  destinatario_id: 2
+  eliminado_remitente: f
+  eliminado_destinatario: f
+  created_at: '2012-10-29 15:09:45.794048'
+  updated_at: '2012-10-29 15:09:45.794048'
+mensajes_025:
+  id: 38
+  asunto: ! 'Re: Fwd: Vengo arreglando los mensajes'
+  texto: ! "\r\n---\r\nTe reenvio el mensaje\r\n---\r\nDe: Claudio Rodrigo Pereyra
+    Diaz\r\nPara: Representante Prueba\r\nFecha: 2012-10-23 22:41:19 -0300\r\n\r\nasdasd"
+  leido: f
+  remitente_id: 4
+  destinatario_id: 1
+  eliminado_remitente: t
+  eliminado_destinatario: f
+  created_at: '2012-10-29 15:23:29.066886'
+  updated_at: '2012-10-29 15:54:16.817297'
+mensajes_026:
+  id: 39
+  asunto: ! 'Fwd: Mensajes listos'
+  texto: ! "\r\n---\r\nDe: Emprendendor Prueba\r\nPara: Adriel Hernan Caramichos\r\nFecha:
+    29 de octubre de 2012 12:09\r\n\r\nProbalo si queres y podes, creo que lo que
+    tiene que ver con mensajes esta cerrado. Funcionado todo y creo que bien"
+  leido: f
+  remitente_id: 4
+  destinatario_id: 2
+  eliminado_remitente: f
+  eliminado_destinatario: f
+  created_at: '2012-10-29 17:52:50.655060'
+  updated_at: '2012-10-29 17:52:50.655060'
+mensajes_027:
+  id: 40
+  asunto: ! 'Fwd: Fwd: Mensajes listos'
+  texto: ! "\r\n---\r\nDe: Emprendendor Prueba\r\nPara: Adriel Hernan Caramichos\r\nFecha:
+    29 de octubre de 2012 14:52\r\n\r\n\r\n---\r\nDe: Emprendendor Prueba\r\nPara:
+    Adriel Hernan Caramichos\r\nFecha: 29 de octubre de 2012 12:09\r\n\r\nProbalo
+    si queres y podes, creo que lo que tiene que ver con mensajes esta cerrado. Funcionado
+    todo y creo que bien"
+  leido: f
+  remitente_id: 4
+  destinatario_id: 7
+  eliminado_remitente: f
+  eliminado_destinatario: f
+  created_at: '2012-10-29 18:09:52.899117'
+  updated_at: '2012-10-29 18:09:52.899117'
+mensajes_028:
+  id: 41
+  asunto: Probando mensajes
+  texto: Probando esto
+  leido: f
+  remitente_id: 3
+  destinatario_id: 2
+  eliminado_remitente: f
+  eliminado_destinatario: f
+  created_at: '2012-10-29 21:12:08.663842'
+  updated_at: '2012-10-29 21:12:08.663842'

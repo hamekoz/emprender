@@ -1,0 +1,979 @@
+---
+comentarios_001:
+  id: 1
+  texto: gggg
+  comentable_id: 1
+  comentable_type: Evento
+  aceptado: t
+  created_at: '2012-08-29 21:00:54.196031'
+  updated_at: '2012-08-29 21:00:54.196031'
+comentarios_002:
+  id: 2
+  texto: 
+  comentable_id: 
+  comentable_type: 
+  aceptado: f
+  created_at: '2012-09-27 22:05:03.192923'
+  updated_at: '2012-09-27 22:05:03.192923'
+comentarios_003:
+  id: 3
+  texto: asdad
+  comentable_id: 
+  comentable_type: 
+  aceptado: f
+  created_at: '2012-09-27 22:24:46.244249'
+  updated_at: '2012-09-27 22:24:46.244249'
+comentarios_004:
+  id: 4
+  texto: asdasd
+  comentable_id: 
+  comentable_type: 
+  aceptado: f
+  created_at: '2012-09-27 22:25:56.488475'
+  updated_at: '2012-09-27 22:25:56.488475'
+comentarios_005:
+  id: 5
+  texto: asdasd
+  comentable_id: 
+  comentable_type: 
+  aceptado: f
+  created_at: '2012-09-27 22:28:35.876023'
+  updated_at: '2012-09-27 22:28:35.876023'
+comentarios_006:
+  id: 6
+  texto: asdasd
+  comentable_id: 
+  comentable_type: 
+  aceptado: f
+  created_at: '2012-09-27 22:31:33.662410'
+  updated_at: '2012-09-27 22:31:33.662410'
+comentarios_007:
+  id: 7
+  texto: sdads
+  comentable_id: 
+  comentable_type: 
+  aceptado: f
+  created_at: '2012-09-27 22:33:57.069050'
+  updated_at: '2012-09-27 22:33:57.069050'
+comentarios_008:
+  id: 8
+  texto: ''
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-27 22:49:17.182802'
+  updated_at: '2012-09-27 22:49:17.182802'
+comentarios_009:
+  id: 9
+  texto: ''
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-27 22:52:28.527904'
+  updated_at: '2012-09-27 22:52:28.527904'
+comentarios_010:
+  id: 10
+  texto: prueba
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-27 23:00:58.883972'
+  updated_at: '2012-09-27 23:00:58.883972'
+comentarios_011:
+  id: 11
+  texto: ''
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-27 23:04:39.152925'
+  updated_at: '2012-09-27 23:04:39.152925'
+comentarios_012:
+  id: 12
+  texto: asdasd
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-27 23:07:29.682718'
+  updated_at: '2012-09-27 23:07:29.682718'
+comentarios_013:
+  id: 13
+  texto: asdasd
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-27 23:07:34.561979'
+  updated_at: '2012-09-27 23:07:34.561979'
+comentarios_014:
+  id: 14
+  texto: pepe
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 00:35:55.495131'
+  updated_at: '2012-09-28 00:35:55.495131'
+comentarios_015:
+  id: 15
+  texto: pepe
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 01:11:09.387163'
+  updated_at: '2012-09-28 01:11:09.387163'
+comentarios_016:
+  id: 16
+  texto: hola
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 01:20:20.726300'
+  updated_at: '2012-09-28 01:20:20.726300'
+comentarios_017:
+  id: 17
+  texto: hola
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 01:20:26.293900'
+  updated_at: '2012-09-28 01:20:26.293900'
+comentarios_018:
+  id: 18
+  texto: hola
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 01:20:28.632828'
+  updated_at: '2012-09-28 01:20:28.632828'
+comentarios_019:
+  id: 19
+  texto: sdasd
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 01:31:09.854916'
+  updated_at: '2012-09-28 01:31:09.854916'
+comentarios_020:
+  id: 20
+  texto: sdasd
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 01:31:20.234120'
+  updated_at: '2012-09-28 01:31:20.234120'
+comentarios_021:
+  id: 21
+  texto: sdasd
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 01:31:21.546540'
+  updated_at: '2012-09-28 01:31:21.546540'
+comentarios_022:
+  id: 22
+  texto: sdasd
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 01:31:32.178195'
+  updated_at: '2012-09-28 01:31:32.178195'
+comentarios_023:
+  id: 23
+  texto: sdasd
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 01:31:33.260389'
+  updated_at: '2012-09-28 01:31:33.260389'
+comentarios_024:
+  id: 24
+  texto: hola
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 01:33:43.528187'
+  updated_at: '2012-09-28 01:33:43.528187'
+comentarios_025:
+  id: 25
+  texto: chau
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 01:33:47.929829'
+  updated_at: '2012-09-28 01:33:47.929829'
+comentarios_026:
+  id: 26
+  texto: jeje
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 01:34:45.127303'
+  updated_at: '2012-09-28 01:34:45.127303'
+comentarios_027:
+  id: 27
+  texto: jeje
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 01:35:08.658652'
+  updated_at: '2012-09-28 01:35:08.658652'
+comentarios_028:
+  id: 28
+  texto: jeje
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 01:35:13.507176'
+  updated_at: '2012-09-28 01:35:13.507176'
+comentarios_029:
+  id: 29
+  texto: en un ratito voy
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 01:39:00.176811'
+  updated_at: '2012-09-28 01:39:00.176811'
+comentarios_030:
+  id: 30
+  texto: ad
+  comentable_id: 7
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 01:40:09.458036'
+  updated_at: '2012-09-28 01:40:09.458036'
+comentarios_031:
+  id: 31
+  texto: hola como les va?
+  comentable_id: 7
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 01:49:06.360032'
+  updated_at: '2012-09-28 01:49:06.360032'
+comentarios_032:
+  id: 32
+  texto: hola como les va?
+  comentable_id: 7
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 01:51:07.488872'
+  updated_at: '2012-09-28 01:51:07.488872'
+comentarios_033:
+  id: 33
+  texto: hola
+  comentable_id: 7
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 01:53:43.481859'
+  updated_at: '2012-09-28 01:53:43.481859'
+comentarios_034:
+  id: 34
+  texto: hola
+  comentable_id: 7
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 01:54:09.915602'
+  updated_at: '2012-09-28 01:54:09.915602'
+comentarios_035:
+  id: 35
+  texto: asdasd
+  comentable_id: 7
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 01:54:21.359669'
+  updated_at: '2012-09-28 01:54:21.359669'
+comentarios_036:
+  id: 36
+  texto: asdasd
+  comentable_id: 7
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 02:00:30.426898'
+  updated_at: '2012-09-28 02:00:30.426898'
+comentarios_037:
+  id: 37
+  texto: asdasd
+  comentable_id: 7
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 02:00:33.224493'
+  updated_at: '2012-09-28 02:00:33.224493'
+comentarios_038:
+  id: 38
+  texto: asdasd
+  comentable_id: 7
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 02:00:36.732943'
+  updated_at: '2012-09-28 02:00:36.732943'
+comentarios_039:
+  id: 39
+  texto: hola
+  comentable_id: 7
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 02:01:00.740871'
+  updated_at: '2012-09-28 02:01:00.740871'
+comentarios_040:
+  id: 40
+  texto: prueba
+  comentable_id: 7
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 02:01:43.599606'
+  updated_at: '2012-09-28 02:01:43.599606'
+comentarios_041:
+  id: 41
+  texto: prueba
+  comentable_id: 7
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 02:01:46.661479'
+  updated_at: '2012-09-28 02:01:46.661479'
+comentarios_042:
+  id: 42
+  texto: prueba
+  comentable_id: 7
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 02:02:07.674464'
+  updated_at: '2012-09-28 02:02:07.674464'
+comentarios_043:
+  id: 43
+  texto: prueba
+  comentable_id: 7
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 02:02:07.898690'
+  updated_at: '2012-09-28 02:02:07.898690'
+comentarios_044:
+  id: 44
+  texto: sdad
+  comentable_id: 7
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 02:05:17.429089'
+  updated_at: '2012-09-28 02:05:17.429089'
+comentarios_045:
+  id: 45
+  texto: sdad
+  comentable_id: 7
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 02:09:04.849844'
+  updated_at: '2012-09-28 02:09:04.849844'
+comentarios_046:
+  id: 46
+  texto: dadddd
+  comentable_id: 7
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 02:09:16.653191'
+  updated_at: '2012-09-28 02:09:16.653191'
+comentarios_047:
+  id: 47
+  texto: dadddd
+  comentable_id: 7
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 02:11:20.651096'
+  updated_at: '2012-09-28 02:11:20.651096'
+comentarios_048:
+  id: 48
+  texto: dadddd
+  comentable_id: 7
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 02:11:20.863617'
+  updated_at: '2012-09-28 02:11:20.863617'
+comentarios_049:
+  id: 49
+  texto: hola
+  comentable_id: 6
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 15:30:50.797217'
+  updated_at: '2012-09-28 15:30:50.797217'
+comentarios_050:
+  id: 50
+  texto: hola
+  comentable_id: 6
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 15:30:51.918678'
+  updated_at: '2012-09-28 15:30:51.918678'
+comentarios_051:
+  id: 51
+  texto: hola
+  comentable_id: 6
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 15:30:54.834644'
+  updated_at: '2012-09-28 15:30:54.834644'
+comentarios_052:
+  id: 52
+  texto: ta rico el capuchino?
+  comentable_id: 7
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 21:12:36.121135'
+  updated_at: '2012-09-28 21:12:36.121135'
+comentarios_053:
+  id: 53
+  texto: ta rico el capuchino?
+  comentable_id: 7
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 21:13:40.186138'
+  updated_at: '2012-09-28 21:13:40.186138'
+comentarios_054:
+  id: 54
+  texto: asdsd
+  comentable_id: 7
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 21:18:15.958204'
+  updated_at: '2012-09-28 21:18:15.958204'
+comentarios_055:
+  id: 55
+  texto: ghhgh
+  comentable_id: 7
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 21:18:42.003571'
+  updated_at: '2012-09-28 21:18:42.003571'
+comentarios_056:
+  id: 56
+  texto: ghfgh
+  comentable_id: 7
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-09-28 21:18:53.622588'
+  updated_at: '2012-09-28 21:18:53.622588'
+comentarios_057:
+  id: 57
+  texto: asdad
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-01 23:33:51.814063'
+  updated_at: '2012-10-01 23:33:51.814063'
+comentarios_058:
+  id: 58
+  texto: asdad
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-01 23:33:56.252735'
+  updated_at: '2012-10-01 23:33:56.252735'
+comentarios_059:
+  id: 59
+  texto: asdad
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-01 23:34:02.140062'
+  updated_at: '2012-10-01 23:34:02.140062'
+comentarios_060:
+  id: 60
+  texto: asdad
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-01 23:34:02.367671'
+  updated_at: '2012-10-01 23:34:02.367671'
+comentarios_061:
+  id: 61
+  texto: asdad
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-01 23:34:02.588962'
+  updated_at: '2012-10-01 23:34:02.588962'
+comentarios_062:
+  id: 62
+  texto: asdad
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-01 23:34:35.821105'
+  updated_at: '2012-10-01 23:34:35.821105'
+comentarios_063:
+  id: 63
+  texto: hola
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-01 23:37:30.415506'
+  updated_at: '2012-10-01 23:37:30.415506'
+comentarios_064:
+  id: 64
+  texto: hola
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-01 23:37:32.103107'
+  updated_at: '2012-10-01 23:37:32.103107'
+comentarios_065:
+  id: 65
+  texto: hola
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-01 23:37:34.248584'
+  updated_at: '2012-10-01 23:37:34.248584'
+comentarios_066:
+  id: 66
+  texto: hola
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-01 23:38:03.281188'
+  updated_at: '2012-10-01 23:38:03.281188'
+comentarios_067:
+  id: 67
+  texto: dasdasd
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-01 23:38:30.828937'
+  updated_at: '2012-10-01 23:38:30.828937'
+comentarios_068:
+  id: 68
+  texto: prueba
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-01 23:40:02.699940'
+  updated_at: '2012-10-01 23:40:02.699940'
+comentarios_069:
+  id: 69
+  texto: asdasdddd
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-01 23:56:44.187295'
+  updated_at: '2012-10-01 23:56:44.187295'
+comentarios_070:
+  id: 70
+  texto: asdasd
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-01 23:58:34.111429'
+  updated_at: '2012-10-01 23:58:34.111429'
+comentarios_071:
+  id: 71
+  texto: sdad
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 00:08:43.088495'
+  updated_at: '2012-10-02 00:08:43.088495'
+comentarios_072:
+  id: 72
+  texto: sdad
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 00:10:18.697644'
+  updated_at: '2012-10-02 00:10:18.697644'
+comentarios_073:
+  id: 73
+  texto: rueb
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 00:12:35.938461'
+  updated_at: '2012-10-02 00:12:35.938461'
+comentarios_074:
+  id: 74
+  texto: asdd
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 00:14:12.886731'
+  updated_at: '2012-10-02 00:14:12.886731'
+comentarios_075:
+  id: 75
+  texto: asdasd
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 00:15:04.197241'
+  updated_at: '2012-10-02 00:15:04.197241'
+comentarios_076:
+  id: 76
+  texto: asdasd
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 00:15:30.305340'
+  updated_at: '2012-10-02 00:15:30.305340'
+comentarios_077:
+  id: 77
+  texto: dasdasd
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 00:15:37.824022'
+  updated_at: '2012-10-02 00:15:37.824022'
+comentarios_078:
+  id: 78
+  texto: asdasd
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 00:19:23.159709'
+  updated_at: '2012-10-02 00:19:23.159709'
+comentarios_079:
+  id: 79
+  texto: dsadasd
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 00:19:29.458893'
+  updated_at: '2012-10-02 00:19:29.458893'
+comentarios_080:
+  id: 80
+  texto: esto no funciona asi, quiero que quede mas bonito <strong> pruebo algo de
+    html para intentar romper </strong> a ver que pasa con eso, si realmente anda
+    bien o no?
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: t
+  created_at: '2012-10-02 00:26:53.596152'
+  updated_at: '2012-10-02 01:30:20.942838'
+comentarios_081:
+  id: 81
+  texto: dasd
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: t
+  created_at: '2012-10-02 00:29:15.596288'
+  updated_at: '2012-10-02 01:30:20.770124'
+comentarios_082:
+  id: 82
+  texto: dasdasd
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 00:39:38.466710'
+  updated_at: '2012-10-02 00:39:38.466710'
+comentarios_083:
+  id: 83
+  texto: dasdasd
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: t
+  created_at: '2012-10-02 00:39:54.693310'
+  updated_at: '2012-10-02 01:30:20.584262'
+comentarios_084:
+  id: 84
+  texto: fffff
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 00:40:01.735422'
+  updated_at: '2012-10-02 00:40:01.735422'
+comentarios_085:
+  id: 85
+  texto: ''
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 00:40:19.146676'
+  updated_at: '2012-10-02 00:40:19.146676'
+comentarios_086:
+  id: 86
+  texto: dasdasd
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 00:40:45.010296'
+  updated_at: '2012-10-02 00:40:45.010296'
+comentarios_087:
+  id: 87
+  texto: ''
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 00:40:47.253710'
+  updated_at: '2012-10-02 00:40:47.253710'
+comentarios_088:
+  id: 88
+  texto: ''
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 00:40:51.346583'
+  updated_at: '2012-10-02 00:40:51.346583'
+comentarios_089:
+  id: 89
+  texto: ''
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 00:40:51.543230'
+  updated_at: '2012-10-02 00:40:51.543230'
+comentarios_090:
+  id: 90
+  texto: dasd
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 01:00:37.122160'
+  updated_at: '2012-10-02 01:00:37.122160'
+comentarios_091:
+  id: 91
+  texto: dasd
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 01:00:37.319610'
+  updated_at: '2012-10-02 01:00:37.319610'
+comentarios_092:
+  id: 92
+  texto: probando
+  comentable_id: 6
+  comentable_type: Noticia
+  aceptado: t
+  created_at: '2012-10-02 01:01:21.902069'
+  updated_at: '2012-10-02 01:30:20.320409'
+comentarios_093:
+  id: 93
+  texto: otra prueba
+  comentable_id: 6
+  comentable_type: Noticia
+  aceptado: t
+  created_at: '2012-10-02 01:01:30.440343'
+  updated_at: '2012-10-02 01:30:20.173191'
+comentarios_094:
+  id: 94
+  texto: vuelvo a comentar
+  comentable_id: 6
+  comentable_type: Noticia
+  aceptado: t
+  created_at: '2012-10-02 01:01:37.755699'
+  updated_at: '2012-10-02 01:30:20.000958'
+comentarios_095:
+  id: 95
+  texto: dasdasd
+  comentable_id: 6
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 01:05:00.112451'
+  updated_at: '2012-10-02 01:05:00.112451'
+comentarios_096:
+  id: 96
+  texto: dasdasd
+  comentable_id: 6
+  comentable_type: Noticia
+  aceptado: t
+  created_at: '2012-10-02 01:05:00.307468'
+  updated_at: '2012-10-02 01:30:19.830833'
+comentarios_097:
+  id: 97
+  texto: hla
+  comentable_id: 6
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 01:08:38.858073'
+  updated_at: '2012-10-02 01:08:38.858073'
+comentarios_098:
+  id: 98
+  texto: dasdsad
+  comentable_id: 6
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 01:09:51.568649'
+  updated_at: '2012-10-02 01:09:51.568649'
+comentarios_099:
+  id: 99
+  texto: dasdas
+  comentable_id: 6
+  comentable_type: Noticia
+  aceptado: t
+  created_at: '2012-10-02 01:11:50.862718'
+  updated_at: '2012-10-02 01:30:19.695693'
+comentarios_100:
+  id: 100
+  texto: holahola
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 01:35:55.608778'
+  updated_at: '2012-10-02 01:35:55.608778'
+comentarios_101:
+  id: 101
+  texto: pruebo un nuevo comentario
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 01:37:13.193049'
+  updated_at: '2012-10-02 01:37:13.193049'
+comentarios_102:
+  id: 102
+  texto: pruebo un nuevo comentario
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 01:37:14.873360'
+  updated_at: '2012-10-02 01:37:14.873360'
+comentarios_103:
+  id: 103
+  texto: pruebo un nuevo comentario
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 01:37:15.140449'
+  updated_at: '2012-10-02 01:37:15.140449'
+comentarios_104:
+  id: 104
+  texto: pruebo un nuevo comentario
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 01:37:15.431694'
+  updated_at: '2012-10-02 01:37:15.431694'
+comentarios_105:
+  id: 105
+  texto: pruebo un nuevo comentario
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 01:37:15.657308'
+  updated_at: '2012-10-02 01:37:15.657308'
+comentarios_106:
+  id: 106
+  texto: pruebo un nuevo comentario
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 01:37:15.887543'
+  updated_at: '2012-10-02 01:37:15.887543'
+comentarios_107:
+  id: 107
+  texto: pruebo un nuevo comentario
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 01:37:30.152110'
+  updated_at: '2012-10-02 01:37:30.152110'
+comentarios_108:
+  id: 108
+  texto: pruebo un nuevo comentario
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 01:37:56.156132'
+  updated_at: '2012-10-02 01:37:56.156132'
+comentarios_109:
+  id: 109
+  texto: hola
+  comentable_id: 3
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-02 01:38:46.534891'
+  updated_at: '2012-10-02 01:38:46.534891'
+comentarios_110:
+  id: 110
+  texto: hola comentario en evento
+  comentable_id: 2
+  comentable_type: Evento
+  aceptado: f
+  created_at: '2012-10-02 01:41:56.363220'
+  updated_at: '2012-10-02 01:41:56.363220'
+comentarios_111:
+  id: 111
+  texto: asdad
+  comentable_id: 6
+  comentable_type: Producto
+  aceptado: f
+  created_at: '2012-10-02 01:46:04.973668'
+  updated_at: '2012-10-02 01:46:04.973668'
+comentarios_112:
+  id: 112
+  texto: hola
+  comentable_id: 6
+  comentable_type: Producto
+  aceptado: f
+  created_at: '2012-10-02 01:47:35.767071'
+  updated_at: '2012-10-02 01:47:35.767071'
+comentarios_113:
+  id: 113
+  texto: dasdad
+  comentable_id: 6
+  comentable_type: Producto
+  aceptado: f
+  created_at: '2012-10-02 01:49:18.310220'
+  updated_at: '2012-10-02 01:49:18.310220'
+comentarios_114:
+  id: 114
+  texto: to
+  comentable_id: 6
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-09 02:49:04.801317'
+  updated_at: '2012-10-09 02:49:04.801317'
+comentarios_115:
+  id: 115
+  texto: v good!
+  comentable_id: 5
+  comentable_type: Servicio
+  aceptado: f
+  created_at: '2012-10-09 02:51:03.696791'
+  updated_at: '2012-10-09 02:51:03.696791'
+comentarios_116:
+  id: 116
+  texto: reunion
+  comentable_id: 9
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-09 20:48:54.188266'
+  updated_at: '2012-10-09 20:48:54.188266'
+comentarios_117:
+  id: 117
+  texto: pruebo un nuevo comentario
+  comentable_id: 1
+  comentable_type: Producto
+  aceptado: f
+  created_at: '2012-10-10 21:15:35.671897'
+  updated_at: '2012-10-10 21:15:35.671897'
+comentarios_118:
+  id: 118
+  texto: ho0hoh
+  comentable_id: 9
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-26 19:29:37.220747'
+  updated_at: '2012-10-26 19:29:37.220747'
+comentarios_119:
+  id: 119
+  texto: pepe
+  comentable_id: 9
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-29 18:28:14.384344'
+  updated_at: '2012-10-29 18:28:14.384344'
+comentarios_120:
+  id: 120
+  texto: hola
+  comentable_id: 9
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-29 18:28:51.426494'
+  updated_at: '2012-10-29 18:28:51.426494'
+comentarios_121:
+  id: 121
+  texto: asdasd
+  comentable_id: 9
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-29 18:29:05.090448'
+  updated_at: '2012-10-29 18:29:05.090448'
+comentarios_122:
+  id: 122
+  texto: dsa
+  comentable_id: 9
+  comentable_type: Noticia
+  aceptado: f
+  created_at: '2012-10-29 18:29:55.371884'
+  updated_at: '2012-10-29 18:29:55.371884'

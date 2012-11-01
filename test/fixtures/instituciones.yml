@@ -1,32 +1,30 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-Normal:
-  nombre: Camara provincial del trabajo
-  descripcion: organizacion gubernamental
-  telefono: telefonos[:normal]
-  domicilio: domicilios[:Normal]
-
-TelefonoConLetras:
- nombre: Asociación Vecinal de emprendedores
- descripcion: institucion desconocida
- telefono: telefonos[:normal]
- domicilio: domicilios[:Normal]
-
-SinNombre:
- nombre: 
- descripcion: 'institución de tipo privada'
- telefono: telefonos[:normal]
- domicilio: domicilios[:Normal]
-
-SinDomicilio:
-  nombre: CENASA
-  descripcion: institucion nacional
-  telefono: telefonos[:normal]
-  domicilio: domicilios[:Normal]
-  
-SinDescripcion:
-  nombre: Trabajar
-  descripcion: 
-  telefono: telefonos[:normal]
-  domicilio: domicilios[:normal]
-
+---
+instituciones_001:
+  id: 1
+  nombre: Equipo 151
+  descripcion: Equipo de trabajo nÃºmero 151 de Proyecto Final de la Universidad FASTA
+  telefono: 477-7777
+  domicilio: Avellaneda 3741
+  barrio_id: 8
+  created_at: '2012-08-29 23:18:46.284988'
+  updated_at: '2012-10-08 01:08:25.010387'
+instituciones_002:
+  id: 2
+  nombre: Plan Estrategico Municipal
+  descripcion: Organizacion perteneciente la municipalidad que gestiona el plan estrategico
+    de desarrollo municipal
+  telefono: 0223499999
+  domicilio: Av Luro 2020
+  barrio_id: 5
+  created_at: '2012-09-05 22:26:21.645035'
+  updated_at: '2012-10-08 01:09:37.066128'
+instituciones_003:
+  id: 3
+  nombre: Subsecretaria de Economia Social
+  descripcion: Nueva dependecia de la secretaria municipal dirigida por la subsecretaria
+    Jorgelina Porta
+  telefono: 477-9999
+  domicilio: Falucho 2389
+  barrio_id: 6
+  created_at: '2012-10-08 01:11:13.338222'
+  updated_at: '2012-10-08 01:11:13.338222'

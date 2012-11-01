@@ -1,32 +1,162 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-Normal:
-  usuario: pepemdq
-  password_cifrada: 1234
-  mail: pepe@hotmail.com
-  rol: roles[:Normal]
-
-Normal2:
-  usuario: josemdq
-  password_cifrada: °!"#$$%/)_
-  mail: @
-  rol: roles[:Normal]
-
-SinUsuario:
-  usuario:
-  password_cifrada: abcd1234
-  mail: lucasmdq@yahoo.com.ar
-  rol: roles[:Normal]
-
-SinPassword:
-  usuario: maria
-  password_cifrada:
-  mail: maria@hot
-  rol: roles[:Normal]
-
-PasswordSimple:
-  usuario: panaderiaRaul
-  password_cifrada: abc
-  mail: panaderiaraul@fibertel.com.ar
-  rol: roles[:Normal]
-  
+---
+usuarios_001:
+  id: 1
+  nombre: Claudio Rodrigo
+  apellido: Pereyra Diaz
+  sexo: Masculino
+  rol: Administrador
+  institucion_id: 1
+  created_at: '2012-08-27 22:24:05.240879'
+  updated_at: '2012-10-30 19:00:54.147261'
+  email: elsupergomez@gmail.com
+  encrypted_password: $2a$10$O4K.FoVYSKrtSV6rBHRBj.m2H7/5gRpvgM5zofcwaQzTZk6dtCLdO
+  reset_password_token: 
+  reset_password_sent_at: 
+  sign_in_count: 36
+  current_sign_in_at: '2012-10-30 19:00:54.146016'
+  last_sign_in_at: '2012-10-30 18:57:09.816488'
+  current_sign_in_ip: 127.0.0.1
+  last_sign_in_ip: 127.0.0.1
+  confirmation_token: cSpbzqiw2Qssh5LAy9mj
+  confirmed_at: '2012-08-27 22:28:12.000000'
+  confirmation_sent_at: '2012-08-27 22:24:05.248654'
+  unconfirmed_email: elsupergomez@gmail.com
+  locked_at: 
+usuarios_002:
+  id: 2
+  nombre: Adriel Hernan
+  apellido: Caramichos
+  sexo: Masculino
+  rol: Administrador
+  institucion_id: 1
+  created_at: '2012-08-27 22:28:12.812346'
+  updated_at: '2012-10-29 21:42:14.525118'
+  email: adriel22@gmail.com
+  encrypted_password: $2a$10$9IuwVye2BpfMqTqEEnpJ6u24fJftjP/IYbYXG7QH2jWYvlMbCEXDq
+  reset_password_token: 
+  reset_password_sent_at: 
+  sign_in_count: 16
+  current_sign_in_at: '2012-10-29 21:42:14.523542'
+  last_sign_in_at: '2012-10-29 01:51:08.760478'
+  current_sign_in_ip: 127.0.0.1
+  last_sign_in_ip: 127.0.0.1
+  confirmation_token: XXy7AMVzMU4uL1NiuGpw
+  confirmed_at: '2012-08-27 22:32:16.000000'
+  confirmation_sent_at: '2012-08-27 22:28:12.816265'
+  unconfirmed_email: adriel22@gmail.com
+  locked_at: 
+usuarios_003:
+  id: 3
+  nombre: Representante
+  apellido: Prueba
+  sexo: Femenino
+  rol: Representante
+  institucion_id: 1
+  created_at: '2012-08-27 22:32:16.279547'
+  updated_at: '2012-10-30 19:05:59.647093'
+  email: representante@prueba.com
+  encrypted_password: $2a$10$KFfFsMxJIW/iuXhdzC2ZouFzZ8ZUsJ6/9KaEBEFTVG3LBy1FnslRS
+  reset_password_token: 
+  reset_password_sent_at: 
+  sign_in_count: 7
+  current_sign_in_at: '2012-10-30 19:05:59.645836'
+  last_sign_in_at: '2012-10-29 19:12:36.931761'
+  current_sign_in_ip: 127.0.0.1
+  last_sign_in_ip: 127.0.0.1
+  confirmation_token: zQX8c7WsZXs3MecuE7vq
+  confirmed_at: '2012-08-27 22:36:20.000000'
+  confirmation_sent_at: '2012-08-27 22:32:16.284776'
+  unconfirmed_email: representante@prueba.com
+  locked_at: 
+usuarios_004:
+  id: 4
+  nombre: Emprendendor
+  apellido: Prueba
+  sexo: Masculino
+  rol: Emprendedor
+  institucion_id: 1
+  created_at: '2012-08-27 22:36:20.524376'
+  updated_at: '2012-10-29 21:29:43.640129'
+  email: emprendedor@prueba.com
+  encrypted_password: $2a$10$JGPR5t2YBqQtNJYuWWOrNuYc7nNkSyMoiwuUyH8U/keo9l5O15Es.
+  reset_password_token: 
+  reset_password_sent_at: 
+  sign_in_count: 46
+  current_sign_in_at: '2012-10-29 21:29:43.637153'
+  last_sign_in_at: '2012-10-29 12:41:42.179989'
+  current_sign_in_ip: 127.0.0.1
+  last_sign_in_ip: 127.0.0.1
+  confirmation_token: FwHpbmziHBA5p9tdJKa6
+  confirmed_at: '2012-08-27 22:38:22.000000'
+  confirmation_sent_at: '2012-08-27 22:36:20.524120'
+  unconfirmed_email: 
+  locked_at: 
+usuarios_005:
+  id: 5
+  nombre: Juan
+  apellido: Perez
+  sexo: Masculino
+  rol: Emprendedor
+  institucion_id: 2
+  created_at: '2012-09-05 22:28:23.211826'
+  updated_at: '2012-09-05 22:43:15.361541'
+  email: juanperez@prueba.com
+  encrypted_password: $2a$10$aFeMByRFjORN.IS6l70xH.ILRXhF57PUy9iTBfYDM26/481ULu9cC
+  reset_password_token: 
+  reset_password_sent_at: 
+  sign_in_count: 1
+  current_sign_in_at: '2012-09-05 22:43:15.360954'
+  last_sign_in_at: '2012-09-05 22:43:15.360954'
+  current_sign_in_ip: 127.0.0.1
+  last_sign_in_ip: 127.0.0.1
+  confirmation_token: aTnAPhWr8QiS6HN8gKut
+  confirmed_at: '2012-09-05 22:42:40.000000'
+  confirmation_sent_at: '2012-09-05 22:28:23.211577'
+  unconfirmed_email: 
+  locked_at: 
+usuarios_006:
+  id: 6
+  nombre: Representante de Prueba 2
+  apellido: Gonzales
+  sexo: Masculino
+  rol: Representante
+  institucion_id: 3
+  created_at: '2012-10-08 01:14:43.058728'
+  updated_at: '2012-10-08 01:14:43.058728'
+  email: representante1@prueba.com
+  encrypted_password: $2a$10$R5SbUL0GMiENhf//DAK8He8jToXiyARmDh/J5iZxAJsHBUx1UVUXy
+  reset_password_token: 
+  reset_password_sent_at: 
+  sign_in_count: 0
+  current_sign_in_at: 
+  last_sign_in_at: 
+  current_sign_in_ip: 
+  last_sign_in_ip: 
+  confirmation_token: GT5zTxihADqEfQgzhfEu
+  confirmed_at: 
+  confirmation_sent_at: '2012-10-08 01:14:43.070038'
+  unconfirmed_email: representante1@prueba.com
+  locked_at: '2012-10-08 01:14:43.065439'
+usuarios_007:
+  id: 7
+  nombre: Administrador
+  apellido: Prueba
+  sexo: Masculino
+  rol: Administrador
+  institucion_id: 1
+  created_at: '2012-10-09 22:15:57.951356'
+  updated_at: '2012-10-09 22:20:59.943763'
+  email: administrador@prueba.com
+  encrypted_password: $2a$10$ijbG9GVzHa9t3Qi1ddXNheRO6oo8oD8RGHJmCCUANTQVESd7GU.ae
+  reset_password_token: 
+  reset_password_sent_at: 
+  sign_in_count: 0
+  current_sign_in_at: 
+  last_sign_in_at: 
+  current_sign_in_ip: 
+  last_sign_in_ip: 
+  confirmation_token: zKxCojxKCyBMttG1Cz8J
+  confirmed_at: 
+  confirmation_sent_at: '2012-10-09 22:15:57.957247'
+  unconfirmed_email: administrador@prueba.com
+  locked_at: 

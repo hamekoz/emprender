@@ -1,6 +1,29 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-1112:
-  codigo: "1112"
-  nombre: "Clasificacion"
-  descripcion: "Cultivo de cereales forrajeros"
+---
+clasificaciones_001:
+  id: 1
+  codigo: '1112'
+  nombre: Clasificacion
+  descripcion: Cultivo de cereales forrajeros
+  created_at: '2012-08-27 22:38:35.914680'
+  updated_at: '2012-08-27 22:38:35.914680'
+clasificaciones_002:
+  id: 2
+  codigo: '1113'
+  nombre: Clasificacion
+  descripcion: Cultivo de oleaginosas excepto el de semillas para siembra
+  created_at: '2012-08-27 22:38:36.202570'
+  updated_at: '2012-08-27 22:38:36.202570'
+clasificaciones_003:
+  id: 3
+  codigo: '1114'
+  nombre: Clasificacion
+  descripcion: Cultivo de pastos forrajeros
+  created_at: '2012-08-27 22:38:36.342910'
+  updated_at: '2012-08-27 22:38:36.342910'
+clasificaciones_004:
+  id: 4
+  codigo: '1121'
+  nombre: Clasificacion
+  descripcion: Cultivo de papa, batata y mandioca
+  created_at: '2012-08-27 22:38:36.527853'
+  updated_at: '2012-08-27 22:38:36.527853'

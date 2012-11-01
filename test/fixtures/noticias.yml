@@ -1,50 +1,82 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-Normal:
-  titulo: feria de emprendedores
-  texto: feria de emprendedores en centro civico
-  autor: comunidad de emprendedores marplatense
-  fecha: 2011-08-15
-  publicada: false
-
-SinFecha:
-  titulo: 1 congreso nacional de emprendedores
-  texto: congreso a nivel nacional
-  autor: gobierno nacional
-  fecha: 
-  publicada: true
-
-AutorMuyExtenso:
-  titulo: 123456
-  texto: 1234
-  autor: autor con un nombre suficientemente largo como para no entrar en un tipo de cadena común lo que deberia producir error o al menos eso es lo que esperamos pues la presente cadena supera ampliamente los 255 caracteres que componen el tipo cadena de texto
-  fecha: 01-05-2010
-  publicada: false
-
-SinTexto:
-  titulo:Noticia sin texto
-  texto:
-  autor: anonimo
-  fecha: 16-11-2011
-  publicada: true
-
-SinTitulo:
-  titulo:   
-  texto: 01:33 p.m. 22/08/2011
-  autor: Mesa del Plan Estrátegico
-  fecha: 12-02-2011
-  publicada: true
-
-FechaIncorrecta:
-  titulo: Otorgación de créditos
-  texto: Primera instancia para el otorgamiento de créditos a emprendedores
-  autor: Dir. Plan estratégico
-  fecha: abcd
-  publicada: false
-
-PublicacionIncorrecta:
-  titulo: Feria provincial de emprendedores
-  texto: Feria de la provincia de buenos aires sobre emprendimientos micro
-  autor: Lic. Miguel Hernández de la Municipalidad
-  fecha: 17-06-2006
-  publicada: 1234
+---
+noticias_001:
+  id: 1
+  titulo: Bienvenidos 1
+  resumen: Bienvenido a la prueba del Padron de Emprendededores 1
+  texto: Bienvenido a la prueba del Padron de Emprendededores 1
+  autor_id: 1
+  publicada: t
+  created_at: '2012-08-27 22:38:28.176265'
+  updated_at: '2012-08-27 22:38:28.176265'
+noticias_002:
+  id: 2
+  titulo: Bienvenidos 1
+  resumen: Bienvenido a la prueba del Padron de Emprendededores 1
+  texto: Bienvenido a la prueba del Padron de Emprendededores 1
+  autor_id: 2
+  publicada: t
+  created_at: '2012-08-27 22:38:28.368548'
+  updated_at: '2012-08-27 22:38:28.368548'
+noticias_003:
+  id: 3
+  titulo: Bienvenidos 1
+  resumen: Bienvenido a la prueba del Padron de Emprendededores 1
+  texto: Bienvenido a la prueba del Padron de Emprendededores 1
+  autor_id: 3
+  publicada: t
+  created_at: '2012-08-27 22:38:28.566066'
+  updated_at: '2012-08-29 20:56:20.852652'
+noticias_004:
+  id: 4
+  titulo: Bienvenidos 2
+  resumen: Bienvenido a la prueba del Padron de Emprendededores 2
+  texto: Bienvenido a la prueba del Padron de Emprendededores 2
+  autor_id: 1
+  publicada: t
+  created_at: '2012-08-27 22:38:30.812994'
+  updated_at: '2012-08-27 22:38:30.812994'
+noticias_005:
+  id: 5
+  titulo: Bienvenidos 2
+  resumen: Bienvenido a la prueba del Padron de Emprendededores 2
+  texto: Bienvenido a la prueba del Padron de Emprendededores 2
+  autor_id: 2
+  publicada: t
+  created_at: '2012-08-27 22:38:31.003990'
+  updated_at: '2012-08-27 22:38:31.003990'
+noticias_006:
+  id: 6
+  titulo: Bienvenidos 2
+  resumen: Bienvenido a la prueba del Padron de Emprendededores 2
+  texto: Bienvenido a la prueba del Padron de Emprendededores 2
+  autor_id: 3
+  publicada: t
+  created_at: '2012-08-27 22:38:31.161216'
+  updated_at: '2012-08-29 20:56:20.751354'
+noticias_007:
+  id: 7
+  titulo: Bienvenidos 3
+  resumen: Bienvenido a la prueba del Padron de Emprendededores 3
+  texto: Bienvenido a la prueba del Padron de Emprendededores 3
+  autor_id: 1
+  publicada: t
+  created_at: '2012-08-27 22:38:33.444805'
+  updated_at: '2012-08-27 22:38:33.444805'
+noticias_008:
+  id: 8
+  titulo: Bienvenidos 3
+  resumen: Bienvenido a la prueba del Padron de Emprendededores 3
+  texto: Bienvenido a la prueba del Padron de Emprendededores 3
+  autor_id: 2
+  publicada: t
+  created_at: '2012-08-27 22:38:33.804148'
+  updated_at: '2012-08-27 22:38:33.804148'
+noticias_009:
+  id: 9
+  titulo: Bienvenidos 3
+  resumen: Bienvenido a la prueba del Padron de Emprendededores 3
+  texto: ! "<p>\r\n\tBienvenido a la prueba del Padron de Emprendededores 3</p>\r\n"
+  autor_id: 3
+  publicada: t
+  created_at: '2012-08-27 22:38:34.026571'
+  updated_at: '2012-10-08 02:51:39.483865'

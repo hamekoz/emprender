@@ -1,21 +1,49 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-Normal:
- nombre: Belgrano
- descripcion: Periferico
-
-Normal2:
- nombre: La Perla
- descripcion: Barrio céntrico
-
-SinNombre:
- nombre: cualquiera
- descripcion: barrio residencial
-
-SinDescripcion:
- nombre: nom
- descripcion: desc
-
-CaracteresRaros:
- nombre: cualquiera2
- descripcion: cuqlerui d
+---
+barrios_001:
+  id: 1
+  nombre: 9 de julio
+  descripcion: 9 de julio
+  created_at: '2012-08-27 22:38:23.001075'
+  updated_at: '2012-08-27 22:38:23.001075'
+barrios_002:
+  id: 2
+  nombre: Aeropuerto
+  descripcion: Aeropuerto
+  created_at: '2012-08-27 22:38:23.183041'
+  updated_at: '2012-08-27 22:38:23.183041'
+barrios_003:
+  id: 3
+  nombre: Aeroparque
+  descripcion: Aeroparque
+  created_at: '2012-08-27 22:38:23.488459'
+  updated_at: '2012-08-27 22:38:23.488459'
+barrios_004:
+  id: 4
+  nombre: Alfar
+  descripcion: Alfar
+  created_at: '2012-08-27 22:38:23.809524'
+  updated_at: '2012-08-27 22:38:23.809524'
+barrios_005:
+  id: 5
+  nombre: Ameghino
+  descripcion: Ameghino
+  created_at: '2012-08-27 22:38:24.061197'
+  updated_at: '2012-08-27 22:38:24.061197'
+barrios_006:
+  id: 6
+  nombre: Antartida Argentina
+  descripcion: Antartida Argentina
+  created_at: '2012-08-27 22:38:24.235371'
+  updated_at: '2012-08-27 22:38:24.235371'
+barrios_007:
+  id: 7
+  nombre: Villa Primera
+  descripcion: Villa Primera
+  created_at: '2012-08-27 22:38:24.430521'
+  updated_at: '2012-08-27 22:38:24.430521'
+barrios_008:
+  id: 8
+  nombre: Zacagnini
+  descripcion: Zacagnini
+  created_at: '2012-08-27 22:38:24.651075'
+  updated_at: '2012-08-27 22:38:24.651075'

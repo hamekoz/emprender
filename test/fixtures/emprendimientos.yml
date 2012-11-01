@@ -1,27 +1,129 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  nombre: MyText
-  marca_registrada: false
+---
+emprendimientos_001:
+  id: 1
+  emprendedor_id: 4
+  logotipo_file_name: favicon.png
+  logotipo_content_type: image/png
+  logotipo_file_size: 21240
+  logotipo_updated_at: '2012-10-08 03:01:26.618955'
+  nombre: Hamekoz
+  es_marca_registrada: f
+  marca: ''
+  rubro_id: 6
+  clasificacion_id: 4
+  tipo: Asociativo
+  descripcion: ''
+  cantidad_de_integrantes: 4
+  roles: ''
+  estado_id: 
+  fecha_de_inicio_de_actividad: 
+  web: ''
+  mail: ''
+  domicilio: ''
+  barrio_id: 
+  telefono: '1234567'
+  celular: '1111111'
+  telefono_de_mensajes: '12345678'
+  comentario: ''
+  condicion_frente_al_iva: ''
+  fecha_de_inscripcion_al_iva: 
+  situacion_frente_al_iva: 
+  inscripto_en_ingresos_brutos: f
+  fecha_de_inscripcion_ingresos_brutos: 
+  recibe_ayuda_de_programas_sociales: f
+  programas_sociales_recibidos: ''
+  tipo_de_ayuda_recibida_de_programas_sociales: ''
+  vinculado_a_sociedad_civil: f
+  tipo_de_participacion_en_sociedad_civil: 
+  recibio_ayuda_de_la_sociedad_civil: f
+  justificacion_no_haber_recibido_ayuda_de_sociedad_civil: 
+  capacitaciones_recibidas: ''
+  maquinarias_y_herramientas_utilizadas: ''
+  dispone_de_espacio_fisico: f
+  tipo_de_espacio: 
+  posible_solucion_a_falta_de_espacio: ''
+  es_en_vivienda_particular: f
+  siendo_en_vivienda_particular_el_espacio_es_suficiente: f
+  es_necesario_acondicionamiento: f
+  ocupa_lugares_destinados_a_otros_usos: f
+  espacio_y_acondicinamiento_requeridos_para_crecer: 
+  caracteristicas_y_zonas_de_clientes_actuales: ''
+  cantidad_de_clientes_actuales: 1
+  caracteristicas_y_zonas_de_futuros_clientes: ''
+  competencia_en_mismo_barrio: f
+  descripcion_de_competencia_en_mismo_barrio: ''
+  herramientas_necesarias: ''
+  maquinarias_necesarias: ''
+  movilidad_necesaria: ''
+  insumos_necesarios: ''
+  instalaciones_necesarias: ''
+  capacitaciones_necesaria: ''
+  otras_necesidades: ''
+  observaciones: ''
+  empadronado: t
+  created_at: '2012-08-27 22:38:22.467881'
+  updated_at: '2012-10-08 03:01:27.308460'
+emprendimientos_002:
+  id: 2
+  emprendedor_id: 5
+  logotipo_file_name: 
+  logotipo_content_type: 
+  logotipo_file_size: 
+  logotipo_updated_at: 
+  nombre: 
+  es_marca_registrada: f
   marca: 
-  clasificacion: 
-  estado: 
-  fecha_de_inicio: 2012-02-15
-  descripcion: MyText
-  cantidad_de_integrantes: 1
-  mail: MyText
-  web: MyText
-  domicilio: MyText
-
-two:
-  nombre: MyText
-  marca_registrada: false
-  marca: 
-  clasificacion: 
-  estado: 
-  fecha_de_inicio: 2012-02-15
-  descripcion: MyText
-  cantidad_de_integrantes: 1
-  mail: MyText
-  web: MyText
-  domicilio: MyText
+  rubro_id: 
+  clasificacion_id: 
+  tipo: 
+  descripcion: 
+  cantidad_de_integrantes: 
+  roles: 
+  estado_id: 
+  fecha_de_inicio_de_actividad: 
+  web: 
+  mail: 
+  domicilio: 
+  barrio_id: 
+  telefono: 
+  celular: 
+  telefono_de_mensajes: 
+  comentario: 
+  condicion_frente_al_iva: 
+  fecha_de_inscripcion_al_iva: 
+  situacion_frente_al_iva: 
+  inscripto_en_ingresos_brutos: f
+  fecha_de_inscripcion_ingresos_brutos: 
+  recibe_ayuda_de_programas_sociales: f
+  programas_sociales_recibidos: 
+  tipo_de_ayuda_recibida_de_programas_sociales: 
+  vinculado_a_sociedad_civil: f
+  tipo_de_participacion_en_sociedad_civil: 
+  recibio_ayuda_de_la_sociedad_civil: f
+  justificacion_no_haber_recibido_ayuda_de_sociedad_civil: 
+  capacitaciones_recibidas: 
+  maquinarias_y_herramientas_utilizadas: 
+  dispone_de_espacio_fisico: f
+  tipo_de_espacio: 
+  posible_solucion_a_falta_de_espacio: 
+  es_en_vivienda_particular: f
+  siendo_en_vivienda_particular_el_espacio_es_suficiente: f
+  es_necesario_acondicionamiento: f
+  ocupa_lugares_destinados_a_otros_usos: f
+  espacio_y_acondicinamiento_requeridos_para_crecer: 
+  caracteristicas_y_zonas_de_clientes_actuales: 
+  cantidad_de_clientes_actuales: 
+  caracteristicas_y_zonas_de_futuros_clientes: 
+  competencia_en_mismo_barrio: f
+  descripcion_de_competencia_en_mismo_barrio: 
+  herramientas_necesarias: 
+  maquinarias_necesarias: 
+  movilidad_necesaria: 
+  insumos_necesarios: 
+  instalaciones_necesarias: 
+  capacitaciones_necesaria: 
+  otras_necesidades: 
+  observaciones: 
+  empadronado: f
+  created_at: '2012-09-05 22:45:03.193437'
+  updated_at: '2012-09-05 22:45:03.193437'
