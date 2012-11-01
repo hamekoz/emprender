@@ -10,7 +10,11 @@
   attributes:
     created_at: "Creado el"
     updated_at: "Actualizado el"
+    locked_at: "Bloquedo"
     type: "Tipo"
+    sign_in_count: "Ingresos"
+    last_sign_in_at: "Ultima visita"
+    cuit_cuil: "Cuit/Cuil"
   botones:
     agregar: "Agregar"
     editar: "Editar"
@@ -66,3 +70,13 @@
         menu: "Despublicar varios"
         breadcrumb: "Despublicar varios"
         bulk_link: "Despublicar %{model_label_plural}"
+      bloquear:
+        title: "Bloquear %{model_label_plural}"
+        menu: "Bloquear varios"
+        breadcrumb: "Bloquear varios"
+        bulk_link: "Bloquear %{model_label_plural}"
+      desbloquear:
+        title: "Desbloquear %{model_label_plural}"
+        menu: "Desbloquear varios"
+        breadcrumb: "Desbloquear varios"
+        bulk_link: "Desbloquear %{model_label_plural}"

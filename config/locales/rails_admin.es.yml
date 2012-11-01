@@ -157,6 +157,22 @@ es:
         default_col_sep: ","
         col_sep: "Separador de columnas"
         col_sep_help: "Deje en blanco para el de defecto ('%{value}')" # value is default_col_sep
+    filters:
+      values:
+        is_true: "Verdadero"
+        is_false: "Falso"
+        present: "Esta Presente"
+        blank: "Esta en Blanco"
+        date_default: "Fecha ..."
+        between: "Between ... y ..."
+        today: "Hoy"
+        yesterday: "Ayer"
+        this_week: "Esta semana"
+        last_week: "La semana pasada"
+        contains: "Contiene"
+        is: "Es exactamente"
+        starts_with: "Empieza con"
+        ends_with: "Termina con"
   date:
     formats:
       long: '%d %B %Y'
