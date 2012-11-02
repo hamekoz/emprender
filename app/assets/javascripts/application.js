@@ -29,11 +29,16 @@ $('.textarea').wysihtml5({locale: "es-AR"});
 
 $(".chzn-select").chosen();
 
+$('.autor').popover({
+  trigger: 'hover',
+  placement: 'bottom'
+});
+
 $('#logo').popover({
   trigger: 'hover',
   title: 'Autores',
   html: true,
-  content: '<ul><li>Claudio Rodrigo Pereyra Diaz</li><li>Adriel Hernán Caramichos</li><li>Universidad Fasta</li></ul>',
+  content: '<p><em>Ingenieros Informáticos:</p></em><p>- Claudio Rodrigo Pereyra Diaz</p><p>- Adriel Hernán Caramichos</p>',
   placement: 'bottom',
   delay: { show: 750, hide: 100 }
 });

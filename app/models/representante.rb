@@ -4,6 +4,8 @@ class Representante < Usuario
   has_many :eventos,
            :foreign_key => :autor_id
 
+  validates_presence_of :institucion
+
   before_destroy :despublicar
 
 private

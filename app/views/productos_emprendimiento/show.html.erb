@@ -29,7 +29,8 @@
          <h1><%= @producto.nombre %></h1>
       </p>
       <%= producto.attribute :descripcion %>
-      <%= producto.attribute :precio %>
+      <%= producto.attribute :precio, 
+                             :value => number_to_currency(@producto.precio, :locale => 'es-AR') %>
       <%= producto.attribute :created_at, :format => :long, :label => "Fecha de creacion" %>
       <%= producto.attribute :updated_at, :format => :long, :label => "Ultima actualizacion" %>
     </article>

@@ -82,3 +82,8 @@
         menu: "Desbloquear varios"
         breadcrumb: "Desbloquear varios"
         bulk_link: "Desbloquear %{model_label_plural}"
+      apadrinar:
+        title: "Apadrinar %{model_label_plural}"
+        menu: "Apadrinar varios"
+        breadcrumb: "Apadrinar varios"
+        bulk_link: "Apadrinar %{model_label_plural}"

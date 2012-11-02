@@ -29,13 +29,19 @@
          <h1><%= @servicio.nombre %></h1>
       </p>
       <%= servicio.attribute :descripcion %>
-      <%= servicio.attribute :precio %>
+      <%= servicio.attribute :precio, 
+                             :value => number_to_currency(@servicio.precio, :locale => 'es-AR') %>
     </article>
   </div>
 <% end %>
 
 <div class="form-actions">
-  <% if can? :edit, @servicio %>
+  <% if can? :manage, @servicio %>
+    <%= link_to(edit_admin_servicio_path(@servicio), :class => 'btn btn-warning') do %>
+      <i class="icon-pencil"></i>
+      <span>Editar</span>
+    <% end %>
+  <% elsif can? :edit, @servicio %>
     <%= link_to(edit_mi_emprendimiento_servicio_path(@servicio), :class => 'btn btn-warning') do %>
       <i class="icon-pencil"></i>
       <span>Editar</span>

@@ -9,4 +9,9 @@ class Emprendedor < Usuario
 
   has_one :perfil
   has_one :emprendimiento
+
+  def apadrinar(institucion)
+    self.institucion = institucion if self.institucion.blank?
+    self.save
+  end
 end

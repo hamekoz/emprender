@@ -24,6 +24,11 @@ RailsAdmin.config do |config|
     show_in_app
 
     # Acciones personalizadas
+    apadrinar do
+      visible do
+        bindings[:abstract_model].model.to_s == "Emprendedor"
+      end
+    end
     publicar do
       visible do
         bindings[:abstract_model].model.to_s == "Evento" ||
@@ -590,6 +595,17 @@ RailsAdmin.config do |config|
       exclude_fields :password, :reset_password_sent_at, :current_sign_in_at, :current_sign_in_ip,
                      :last_sign_in_ip, :confirmation_token, :confirmation_sent_at, :confirmed_at,
                      :unconfirmed_email
+    end
+  end
+
+  ###  Vinculo  ###
+
+  config.model 'Vinculo' do
+    navigation_label 'Configuracion'
+    weight 1
+    field :nombre
+    field :url do
+      help 'Ej: http://www.hamekoz.com.ar'
     end
   end
 

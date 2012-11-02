@@ -29,19 +29,24 @@
          <h1><%= @producto.nombre %></h1>
       </p>
       <%= producto.attribute :descripcion %>
-      <%= producto.attribute :precio %>
+      <%= producto.attribute :precio, 
+                             :value => number_to_currency(@producto.precio, :locale => 'es-AR') %>
     </article>
   </div>
 <% end %>
 
 <div class="form-actions">
-  <% if can? :edit, @producto %>
+  <% if can? :manage, @producto %>
+    <%= link_to(edit_admin_producto_path(@producto), :class => 'btn btn-warning') do %>
+      <i class="icon-pencil"></i>
+      <span>Editar</span>
+    <% end %>
+  <% elsif can? :edit, @producto %>
     <%= link_to(edit_mi_emprendimiento_producto_path(@producto), :class => 'btn btn-warning') do %>
       <i class="icon-pencil"></i>
       <span>Editar</span>
     <% end %>
   <% end %>
-
   <button type="button" class="btn" data-toggle="collapse" data-target="#comentarios">
     <i class="icon-comment"></i>
     <span id="contador_comentarios"><%= @producto.comentarios.aceptados.count %> Comentarios</span>

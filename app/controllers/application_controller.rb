@@ -16,6 +16,9 @@ class ApplicationController < ActionController::Base
   end
   
   def acerca
+    @vinculos = Vinculo.all
+    @instituciones = Institucion.all
+
     respond_to do |format|
       format.html # index.html.erb
     end

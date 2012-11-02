@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120515003533) do
+ActiveRecord::Schema.define(:version => 20121101202511) do
 
   create_table "barrios", :force => true do |t|
     t.string   "nombre"
@@ -359,5 +359,12 @@ ActiveRecord::Schema.define(:version => 20120515003533) do
   add_index "usuarios", ["email"], :name => "index_usuarios_on_email", :unique => true
   add_index "usuarios", ["institucion_id"], :name => "index_usuarios_on_institucion_id"
   add_index "usuarios", ["reset_password_token"], :name => "index_usuarios_on_reset_password_token", :unique => true
+
+  create_table "vinculos", :force => true do |t|
+    t.string   "nombre"
+    t.string   "url"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end

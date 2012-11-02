@@ -144,6 +144,23 @@ module RailsAdmin
         end
       end
 
+      class Apadrinar < RailsAdmin::Config::Actions::Base
+        RailsAdmin::Config::Actions.register(self)
+        register_instance_option :bulkable? do
+          true
+        end
+        register_instance_option :controller do
+          Proc.new do
+            @objects = list_entries(@model_config, :destroy)
+            @objects.each do |object|
+              object.apadrinar(current_usuario.institucion)
+            end
+            flash[:success] = "#{@objects.count} #{@model_config.label_plural} apadrinados"
+            redirect_to back_or_index
+          end
+        end
+      end
+
     end
   end
 end

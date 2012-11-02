@@ -29,7 +29,8 @@
          <h1><%= @servicio.nombre %></h1>
       </p>
       <%= servicio.attribute :descripcion %>
-      <%= servicio.attribute :precio %>
+      <%= servicio.attribute :precio, 
+                             :value => number_to_currency(@servicio.precio, :locale => 'es-AR') %>
       <%= servicio.attribute :created_at, :format => :long, :label => "Fecha de creacion" %>
       <%= servicio.attribute :updated_at, :format => :long, :label => "Ultima actualizacion" %>
     </article>
