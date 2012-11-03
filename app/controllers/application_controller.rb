@@ -10,14 +10,17 @@ class ApplicationController < ActionController::Base
   end
 
   def index
+    @fotos = Portada.visibles.all
+
     respond_to do |format|
       format.html # index.html.erb
     end
   end
   
   def acerca
-    @vinculos = Vinculo.all
-    @instituciones = Institucion.all
+    @informaciones = Informacion.visibles
+    @instituciones = Institucion.visibles
+    @vinculos = Vinculo.visibles
 
     respond_to do |format|
       format.html # index.html.erb

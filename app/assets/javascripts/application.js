@@ -21,17 +21,17 @@
 //= require bootstrap-wysihtml5
 //= require bootstrap-wysihtml5/locales/es-ES
 //= require_tree .
+//= require_self
 
 $('a').tooltip();
 $('span').tooltip();
 
-$('.textarea').wysihtml5({locale: "es-AR"});
+$('.textarea').wysihtml5({ "locale": "es-AR", image: false });
 
 $(".chzn-select").chosen();
 
 $('.autor').popover({
-  trigger: 'hover',
-  placement: 'bottom'
+  trigger: 'hover'
 });
 
 $('#logo').popover({

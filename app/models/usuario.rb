@@ -23,9 +23,8 @@ class Usuario < ActiveRecord::Base
          :recoverable, :trackable, :validatable, :confirmable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :rol, :email, :password, :password_confirmation
-  attr_accessible :nombre, :apellido, :sexo
-  attr_accessible :institucion, :institucion_id
+  attr_accessible :rol, :email, :password, :password_confirmation,
+                  :nombre, :apellido, :sexo, :institucion, :institucion_id
 
   validates :nombre, :presence => true
   validates :apellido, :presence => true

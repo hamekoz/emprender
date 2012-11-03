@@ -13,6 +13,14 @@ class Evento < ActiveRecord::Base
 
   has_many :comentarios,   :as => :comentable
 
+  validates_attachment :folleto,
+                       :content_type => { :content_type => ['image/gif',
+                                                            'image/jpeg',
+                                                            'image/pjpeg',
+                                                            'image/png',
+                                                            'image/tiff'] },
+                       :size => { :in => 0..5.megabytes }
+
 
   has_attached_file :folleto,
                     :default_url => "http://placehold.it/400x600&text=imagen",

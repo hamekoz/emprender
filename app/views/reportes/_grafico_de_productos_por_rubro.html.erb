@@ -1,12 +1,18 @@
 <div id="contenedor-grafico"></div>
 
-<table class="hidden">
+<table class="table table-condensed">
+  <thead>
+    <tr class="well">
+      <th>Rubro</th>
+      <th>Cantidad</th>
+    </tr>
+  </thead>
   <tbody>
 <% @rubros.each do |rubro| %>
-    <tr class="grafico"">
+    <tr class="grafico">
       <th scope="row"><%= rubro.nombre %></th>
-        <td><%= rubro.productos.count %></td>
+      <td><%= rubro.productos.count %></td>
       </tr>
 <% end %>
-    </tbody>
+  </tbody>
 </table>

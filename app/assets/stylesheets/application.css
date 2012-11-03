@@ -9,10 +9,10 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
 .*= require jquery-ui-1.8.16.custom
- *= require bootstrap
- *= require bootstrap-responsive
  *= require chosen
  *= require bootstrap-wysihtml5
+ *= require bootstrap
+ *= require bootstrap-responsive
  *= require_self
  *= require impresion
 */
@@ -54,7 +54,7 @@ html, body {
 }
 
 #logo {
-  background: url("/assets/start-here.png") no-repeat scroll left transparent;
+  background: url("/assets/favicon.png") no-repeat scroll left transparent;
   margin-left: 0;
   padding-left: 36px;
 }
@@ -72,29 +72,6 @@ div.content, div.container-fluid {
   border-radius: 0 0 6px 6px;
   box-shadow: 0 20px 15px -15px rgba(0, 0, 0, 0.3);
 }
-
-/*#footer {*/
-/*  position: fixed;*/
-/*  bottom: 0;*/
-/*  width: 100%;*/
-/*  border: none;*/
-/*  padding-top: 10px;*/
-/*  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(black));*/
-/*  background: -webkit-linear-gradient(top, transparent, black);*/
-/*  background: -moz-linear-gradient(top, transparent, black);*/
-/*  background: -o-linear-gradient(top, transparent, black);*/
-/*  background: linear-gradient(top, transparent, black);*/
-/*  box-shadow: none;*/
-/*}*/
-
-/*#footer p {*/
-/*  text-align: center;*/
-/*  color: #BFBFBF;*/
-/*  font-size: 12px;*/
-/*  line-height: 15px;*/
-/*  margin-bottom: 5px;*/
-/*  margin-top: 0;*/
-/*}*/
 
 p {
   text-align: justify;
@@ -131,3 +108,11 @@ img {
     right: 0px;
 }
 
+[class*="autor"], .row-fluid [class*="autor"] {
+    display: inline;
+    margin: auto 3%;
+}
+
+a.dp-choose-date {
+    background: url("../images/calendar.png") no-repeat scroll 0 0 transparent;
+}

@@ -5,7 +5,7 @@ $(function() {
                      showOtherMonths: true,
                      selectOtherMonths: true,
                      showOn: "both",
-                     buttonImage: "calendar.png",
+                     buttonImage: "/assets/calendar.png",
                      dateFormat: "DD, d MM, yy"
   });
 });

@@ -32,13 +32,21 @@ RailsAdmin.config do |config|
     publicar do
       visible do
         bindings[:abstract_model].model.to_s == "Evento" ||
-        bindings[:abstract_model].model.to_s == "Noticia"
+        bindings[:abstract_model].model.to_s == "Noticia" ||
+        bindings[:abstract_model].model.to_s == "Portada" ||
+        bindings[:abstract_model].model.to_s == "Vinculo" ||
+        bindings[:abstract_model].model.to_s == "Informacion" ||
+        bindings[:abstract_model].model.to_s == "Institucion"
       end
     end
     despublicar do
       visible do
         bindings[:abstract_model].model.to_s == "Evento" ||
-        bindings[:abstract_model].model.to_s == "Noticia"
+        bindings[:abstract_model].model.to_s == "Noticia" ||
+        bindings[:abstract_model].model.to_s == "Portada" ||
+        bindings[:abstract_model].model.to_s == "Vinculo" ||
+        bindings[:abstract_model].model.to_s == "Informacion" ||
+        bindings[:abstract_model].model.to_s == "Institucion"
       end
     end
     activar do
@@ -58,7 +66,6 @@ RailsAdmin.config do |config|
         bindings[:abstract_model].model.to_s == "Producto" ||
         bindings[:abstract_model].model.to_s == "Servicio" ||
         bindings[:abstract_model].model.to_s == "Emprendimiento" ||
-        bindings[:abstract_model].model.to_s == "Perfil" ||
         bindings[:abstract_model].model.to_s == "Comentario"
       end
     end
@@ -67,7 +74,6 @@ RailsAdmin.config do |config|
         bindings[:abstract_model].model.to_s == "Producto" ||
         bindings[:abstract_model].model.to_s == "Servicio" ||
         bindings[:abstract_model].model.to_s == "Emprendimiento" ||
-        bindings[:abstract_model].model.to_s == "Perfil" ||
         bindings[:abstract_model].model.to_s == "Comentario"
       end
     end
@@ -197,6 +203,15 @@ RailsAdmin.config do |config|
 
   config.model 'Barrio' do
     navigation_label 'Configuracion'
+    list do
+      exclude_fields :emprendimientos, :eventos, :perfiles, :instituciones
+    end
+    create do
+      exclude_fields :emprendimientos, :eventos, :perfiles, :instituciones
+    end
+    edit do
+      exclude_fields :emprendimientos, :eventos, :perfiles, :instituciones
+    end
   end
 
 
@@ -267,8 +282,12 @@ RailsAdmin.config do |config|
       field :id
       field :nombre
       field :apellido
-      field :perfil
-      field :emprendimiento
+      field :perfil do
+        nested_form true
+      end
+      field :emprendimiento do
+        nested_form true
+      end
       field :institucion
       field :sexo
       field :email
@@ -281,12 +300,6 @@ RailsAdmin.config do |config|
       end
       field :created_at
       field :updated_at
-    end
-    create do
-      include_all_fields
-    end
-    edit do
-      include_all_fields
     end
     show do
       exclude_fields :reset_password_sent_at, :current_sign_in_at, :current_sign_in_ip,
@@ -303,7 +316,7 @@ RailsAdmin.config do |config|
       exclude_fields :rol, :reset_password_sent_at, :current_sign_in_at, :current_sign_in_ip,
                      :last_sign_in_ip, :confirmation_token, :confirmation_sent_at, :confirmed_at,
                      :unconfirmed_email, :last_sign_in_at, :sign_in_count, :locked_at,
-                     :productos, :servicios, :perfil, :emprendimiento
+                     :productos, :servicios
     end
     export do
       exclude_fields :password, :reset_password_sent_at, :current_sign_in_at, :current_sign_in_ip,
@@ -383,10 +396,45 @@ RailsAdmin.config do |config|
   end
 
 
+  ###  Informacion  ###
+
+  config.model 'Informacion' do
+    label_plural "Textos en Acerca"
+    list do
+      field :orden
+      field :titulo
+      field :subtitulo
+      field :visible
+      field :updated_at
+      exclude_fields :texto
+      sort_by :orden
+    end
+    create do
+      include_all_fields
+      field :texto do
+        bootstrap_wysihtml5 true
+        bootstrap_wysihtml5_config_options  "font-styles" => false,
+                                            :image => false
+      end
+    end
+    edit do
+      include_all_fields
+      field :texto do
+        bootstrap_wysihtml5 true
+        bootstrap_wysihtml5_config_options  "font-styles" => false,
+                                            :image => false
+      end
+    end
+  end
+
+
   ###  Institucion  ###
 
   config.model 'Institucion' do
     list do
+      field :id
+      field :visible
+      include_all_fields
       exclude_fields :administradores, :representantes, :emprendedores
     end
     create do
@@ -447,11 +495,43 @@ RailsAdmin.config do |config|
   end
 
 
+  ###  Portada  ###
+
+  config.model 'Portada' do
+    label "Foto de portada" 
+    label_plural "Fotos de portada"
+    include_all_fields
+    field :foto do
+      help "Requerido. Dimension optima 1000x450 px o proporcional"
+    end
+    show do
+      field :foto do
+        thumb_method :thumb
+      end
+    end
+    edit do
+      field :foto do
+        thumb_method :thumb
+      end
+    end
+    list do
+      exclude_fields :foto, :texto
+    end
+  end
+
+
   ###  Producto  ###
 
   config.model 'Producto' do
     navigation_label 'Padron'
     list do
+      field :id
+      field :emprendedor
+      field :rubro
+      field :nombre
+      field :aceptado
+      field :activo
+      include_all_fields
       exclude_fields :imagen, :imagen_1, :imagen_2, :imagen_3,
                      :imagen_4, :imagen_5, :imagen_6, :comentarios
     end
@@ -540,6 +620,13 @@ RailsAdmin.config do |config|
   config.model 'Servicio' do
     navigation_label 'Padron'
     list do
+      field :id
+      field :emprendedor
+      field :rubro
+      field :nombre
+      field :aceptado
+      field :activo
+      include_all_fields
       exclude_fields :imagen, :imagen_1, :imagen_2, :imagen_3,
                      :imagen_4, :imagen_5, :imagen_6, :comentarios
     end
@@ -601,12 +688,11 @@ RailsAdmin.config do |config|
   ###  Vinculo  ###
 
   config.model 'Vinculo' do
-    navigation_label 'Configuracion'
-    weight 1
     field :nombre
     field :url do
-      help 'Ej: http://www.hamekoz.com.ar'
+      help 'Requerido Ej: http://www.hamekoz.com.ar'
     end
+    field :visible
   end
 
 end

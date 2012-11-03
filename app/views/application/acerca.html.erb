@@ -1,46 +1,39 @@
 <div class="row">
   <div class="span6 columns offset1">
-    <h3>La Economía Social <small><strong>en el Plan Estratégico</strong></small></h3>
-    <p>La Economía Social comprende los emprendimientos de carácter individual, familiar o asociativo que se dedican a la producción y comercialización de bienes y servicios apoyados en las capacidades y recursos preexistentes.</p>
-    <p>Implican la gestión de nuevas formas de producción y generación trabajo como estrategias para trascender las condiciones de informalidad y precariedad, el fomento de la asociatividad pública-privada y la recuperación del capital social.</p>
-    <p>En el marco del Plan Estratégico Mar del Plata, se conformó una Mesa de Trabajo de Economía Social, con el fin de reunir a las distintas instituciones y organismos municipales, provinciales y nacionales involucrados en esta temática.</p>
-
-    <h3>Registro de emprendedores <small><strong>de la Economia Social</strong></small></h3>
-    <p>El Registro de Emprendedores Sociales es una base de datos que unifica y organiza toda la información de los emprendedores y de la actividad de los mismos, tanto desde los artículos que producen y comercializan como el acceso a cursos de capacitación, financiamiento y otras vías de comercialización.</p>
-
-    <h3>Objetivos</h3>
-    <ul>
-      <li><p>Promover la generación de emprendimientos productivos de escala individual, familiar y comunitaria, alentando estrategias de disminución de pobreza a partir de la generación o aumento de los ingresos familiares</p></li>
-      <li><p>Revalorizar el rol del trabajo dentro del proceso productivo, combatiendo la precariedad laboral y promoviendo una creciente vinculación de los microemprendimientos con los sectores productivos formales</p></li>
-      <li><p>Conformar un marco normativo e institucional que contemple las necesidades de los distintos tipos de emprendimientos productivos en una nueva estrategia para el desarrollo</p></li>
-      <li><p>alentar la producción y comercialización de bienes y servicios surgidos de la economía social a través de la promoción y la asistencia técnica y financiera destinada a pequeños productores individuales o colectivos</p></li>
-      <li><p>Recuperar capital social, recursos, capacidades y conocimientos existentes en personas y organizaciones sociales</p></li>
-      <li><p>Favorecer a los pequeños emprendedores con espacios y canales de comercialización de sus productos y gestionar beneficios en materia tributaria</p></li>
-      <li><p>Promover experiencias asociativas entre organizaciones públicas, privadas y de productores que permitan potenciar los emprendimientos y garantizar su sustentabilidad</p></li>
-      <li><p>Diseñar e implementar de un sistema de información de la actividad económica</p></li>
-    </ul>
+  <% @informaciones.each do |informacion| %>
+    <div id="informacion_<% informacion.orden %>">
+      <h3><%= informacion.titulo %> 
+        <small>
+          <strong> <%= informacion.subtitulo %></strong>
+        </small>
+      </h3>
+      <p><%= informacion.texto.html_safe %></p>
+    </div>
+  <% end %>
   </div>
 
   <div class="span4 columns offset1">
     <h5>Sitio creado y donado por</h5>
     <div class="row-fluid">
-      <div class="span3">
-        <img src="http://placehold.it/300" class="img-circle autor"
-             data-content="Ingeniero en Informática"
-             data-original-title="Claudio Rodrigo Pereyra Diaz"
-             rel="popover">
+      <div class="span3 autor">
+        <%= image_tag "pereyra-diaz-mono.png", :class => 'img-circle autor',
+                      :data => { :content => "Ingeniero en Informática",
+                                 'original-title' =>"Claudio Rodrigo Pereyra Diaz" },
+                      :rel => 'popover' %>
       </div>
-      <div class="span3">
-        <img src="http://placehold.it/300" class="img-circle autor"
-             data-content="Ingeniero en Informática"
-             data-original-title="Adriel Hernán Caramichos"
-             rel="popover" >
+      <div class="span3 autor">
+        <%= image_tag "caramichos-mono.png", :class => 'img-circle autor',
+                      :data => { :content => "Ingeniero en Informática",
+                                 'original-title' =>"Adriel Hernán Caramichos",
+                                 :placement => 'bottom' },
+                      :rel => 'popover' %>
       </div>
-      <div class="span3">
-        <img src="http://placehold.it/300" class="img-circle autor"
-             data-content="Facultad de Ingenieria."
-             data-original-title="Universidad Fasta"
-             rel="popover" >
+      <div class="span3 autor">
+        <%= image_tag "logo-ufasta-mono.jpg", :class => 'img-circle autor',
+                      :data => { :content => "Facultad de Ingenieria",
+                                 'original-title' =>"Universidad Fasta",
+                                 :placement => 'left' },
+                      :rel => 'popover' %>
       </div>
     </div>
     <br>

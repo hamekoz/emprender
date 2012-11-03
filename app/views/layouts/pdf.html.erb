@@ -9,6 +9,7 @@
     <meta name="author" content="Claudio Rodrigo Pereyra Diaz">
     <meta name="author" content="Adriel Hernan Caramichos">
 
+  <%= wicked_pdf_stylesheet_link_tag "bootstrap" %>
   <%= wicked_pdf_stylesheet_link_tag "pdf" %>
 
 </head>
@@ -25,7 +26,13 @@
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <%= wicked_pdf_javascript_include_tag "application" %>
+    <%= wicked_pdf_javascript_include_tag "jquery" %>
+    <%= wicked_pdf_javascript_include_tag "jquery_ujs" %>
+    <%= wicked_pdf_javascript_include_tag "jquery-ui" %>
+    <%= wicked_pdf_javascript_include_tag "raphael-min" %>
+    <%= wicked_pdf_javascript_include_tag "g.raphael-min" %>
+    <%= wicked_pdf_javascript_include_tag "g.pie-min" %>
+    <%= wicked_pdf_javascript_include_tag "reportes" %>
 
 </body>
 </html>

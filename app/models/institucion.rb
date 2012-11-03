@@ -8,4 +8,15 @@ class Institucion < ActiveRecord::Base
   has_many :representantes
   has_many :emprendedores
 
+  scope :visibles, where(:visible => true)
+
+  def publicar
+    self.visible = true
+    self.save
+  end
+
+  def despublicar
+    self.visible = false
+    self.save
+  end
 end

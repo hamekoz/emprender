@@ -1,7 +1,7 @@
 class Perfil < ActiveRecord::Base
   before_update :limpiar_valores
 
-  belongs_to :emprendedor
+  belongs_to :emprendedor, :inverse_of => :perfil
   belongs_to :barrio
 
   attr_accessible :emprendedor,
@@ -28,7 +28,10 @@ class Perfil < ActiveRecord::Base
                   :explicacion_de_ingresos
 
 #Validaciones
-  validates_presence_of :emprendedor
+  validates :emprendedor_id,
+            :uniqueness => true,
+            :on => :update,
+            :presence => true
 
   validates :dni,
             :on => :update,
@@ -61,11 +64,6 @@ class Perfil < ActiveRecord::Base
             :on => :update,
             :presence => true,
             :if => :recibe_o_recibio_algun_plan_social?
-
-  validates :explicacion_de_ingresos,
-            :on => :update,
-            :presence => true,
-            :unless => :es_unico_ingreso? || :es_unico_ingreso.nil?
 
   validates :telefono_particular,
             :telefono_celular,

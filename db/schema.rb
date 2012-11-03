@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121101202511) do
+ActiveRecord::Schema.define(:version => 20121102204119) do
 
   create_table "barrios", :force => true do |t|
     t.string   "nombre"
@@ -161,6 +161,16 @@ ActiveRecord::Schema.define(:version => 20121101202511) do
   add_index "eventos", ["barrio_id"], :name => "index_eventos_on_barrio_id"
   add_index "eventos", ["organizador_id"], :name => "index_eventos_on_organizador_id"
 
+  create_table "informaciones", :force => true do |t|
+    t.string   "titulo"
+    t.string   "subtitulo"
+    t.text     "texto"
+    t.integer  "orden"
+    t.boolean  "visible"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "instituciones", :force => true do |t|
     t.string   "nombre"
     t.text     "descripcion"
@@ -169,6 +179,7 @@ ActiveRecord::Schema.define(:version => 20121101202511) do
     t.integer  "barrio_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.boolean  "visible"
   end
 
   add_index "instituciones", ["barrio_id"], :name => "index_instituciones_on_barrio_id"
@@ -227,6 +238,18 @@ ActiveRecord::Schema.define(:version => 20121101202511) do
 
   add_index "perfiles", ["barrio_id"], :name => "index_perfiles_on_barrio_id"
   add_index "perfiles", ["emprendedor_id"], :name => "index_perfiles_on_emprendedor_id"
+
+  create_table "portadas", :force => true do |t|
+    t.string   "titulo"
+    t.text     "texto"
+    t.string   "foto_file_name"
+    t.string   "foto_content_type"
+    t.integer  "foto_file_size"
+    t.datetime "foto_updated_at"
+    t.boolean  "visible"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
 
   create_table "productos", :force => true do |t|
     t.integer  "emprendimiento_id"
@@ -365,6 +388,7 @@ ActiveRecord::Schema.define(:version => 20121101202511) do
     t.string   "url"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.boolean  "visible"
   end
 
 end

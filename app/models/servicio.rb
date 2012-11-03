@@ -16,6 +16,15 @@ class Servicio < ActiveRecord::Base
   scope :visibles, activos.merge(aceptados)
 
 #Validaciones
+  validates_attachment :imagen_1, :imagen_2, :imagen_3, :imagen_4, :imagen_5, :imagen_6,
+                       :content_type => { :content_type => ['image/gif',
+                                                            'image/jpeg',
+                                                            'image/pjpeg',
+                                                            'image/png',
+                                                            'image/tiff'] },
+                       :size => { :in => 0..5.megabytes }
+
+
   validates_presence_of :emprendimiento, :nombre, :rubro, :tipo_de_venta, :precio
 
   validates_numericality_of :precio, :greater_than => 0

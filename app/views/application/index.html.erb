@@ -1,28 +1,38 @@
 <div class="row">
-<div class="columns span8 offset2">
-<div class="carousel slide" id="myCarousel">
+<div class="columns span10 offset1">
+<div class="carousel slide img-polaroid" id="myCarousel">
   <div class="carousel-inner">
     <div class="item active">
-      <%= image_tag "bootstrap-mdo-sfmoma-01.jpg" %>
       <div class="carousel-caption">
         <h4>El Padron</h4>
         <p>Un registro de emprendedores del Partido de General Pueyrredon para poder facilitar ayuda, capacitaciones, colaboracion, informacion a los distintos emprendedores.</p>
       </div>
+      <%= image_tag "portada-fijo-1.jpg" %>
     </div>
     <div class="item">
-      <%= image_tag "bootstrap-mdo-sfmoma-02.jpg" %>
       <div class="carousel-caption">
         <h4>Catalogo de Productos</h4>
         <p>Un amplio catalogo de los productos caracteristicos de cada emprendimiento.</p>
       </div>
+      <%= image_tag "portada-fijo-2.jpg" %>
     </div>
     <div class="item">
-      <%= image_tag "bootstrap-mdo-sfmoma-03.jpg" %>
+
       <div class="carousel-caption">
         <h4>Catalogo de Servicios</h4>
         <p>Una amplia variedad de servicios ofrecidos una numerosa cantidad de emprendedores abarcando un amplio abanico de rubros.</p>
       </div>
+      <%= image_tag "portada-fijo-3.jpg" %>
     </div>
+    <% @fotos.each do |foto| %>
+    <div class="item">
+      <div class="carousel-caption">
+        <h4><%= foto.titulo %></h4>
+        <p><%= foto.texto %></p>
+      </div>
+      <%= image_tag foto.foto.url(:normal) %>
+    </div>
+    <% end %>
   </div>
   <a data-slide="prev" href="#myCarousel" class="left carousel-control">‹</a>
   <a data-slide="next" href="#myCarousel" class="right carousel-control">›</a>

@@ -1,7 +1,7 @@
 class Emprendimiento < ActiveRecord::Base
   before_update :limpiar_valores
 
-  belongs_to :emprendedor
+  belongs_to :emprendedor, :inverse_of => :emprendimiento
   belongs_to :clasificacion
   belongs_to :categoria
   belongs_to :estado
@@ -26,14 +26,21 @@ class Emprendimiento < ActiveRecord::Base
   end
 
   has_attached_file :logotipo, :default_url => "http://placehold.it/120&text=logo",
-                               :styles => { :medium => "300x300>" }
+                               :styles => { :medium => ["300x300>", :png] }
   attr_accessor :delete_logotipo
   before_validation { self.logotipo.clear if self.delete_logotipo == '1' }
 
 #Validaciones
-  validates_presence_of :emprendedor
+  validates_attachment :logotipo,
+                       :content_type => { :content_type => ['image/gif',
+                                                            'image/jpeg',
+                                                            'image/pjpeg',
+                                                            'image/png',
+                                                            'image/tiff'] },
+                       :size => { :in => 0..5.megabytes }
 
-  validates :nombre,
+  validates :emprendedor_id ,
+            :uniqueness => true,
             :on => :update,
             :presence => true
 
