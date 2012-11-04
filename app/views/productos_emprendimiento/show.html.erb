@@ -37,9 +37,11 @@
   </div>
 <% end %>
 
+<% unless @producto.aceptado %>
 <span class="label label-info">
-  <%= "Producto pendiente de aprobacion por un moderador para estar publicado" unless @producto.aceptado %>
+  Producto pendiente de aprobacion por un moderador para estar publicado
 </span>
+<% end %>
 
 <div class="form-actions">
   <% if can? :edit, @producto %>

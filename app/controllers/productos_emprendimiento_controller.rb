@@ -1,11 +1,16 @@
 class ProductosEmprendimientoController < ApplicationController
   before_filter :authenticate_usuario!, :emprendedor?
 
+  add_crumb "Inicio", :root_path
+  add_crumb "Mi Emprendimimiento", :mi_emprendimiento_path
+
   # GET /productos
   # GET /productos.json
   def index
     @q = productos.search(params[:q])
     @productos = @q.result(:distinct => true).page(params[:pagina]).per(6)
+
+    add_crumb "Mis Productos"
 
     respond_to do |format|
       format.html # index.html.erb
@@ -18,6 +23,9 @@ class ProductosEmprendimientoController < ApplicationController
   def show
     @producto = productos.find(params[:id])
 
+    add_crumb "Mis Productos", mi_emprendimiento_productos_path
+    add_crumb @producto.nombre
+
   respond_to do |format|
     format.html{render'show'}
     format.json { render json: @producto }
@@ -29,6 +37,9 @@ class ProductosEmprendimientoController < ApplicationController
   def new
     @producto = productos.new
 
+    add_crumb "Mis Productos", mi_emprendimiento_productos_path
+    add_crumb "Nuevo"
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @producto }
@@ -38,6 +49,10 @@ class ProductosEmprendimientoController < ApplicationController
   # GET /productos/1/edit
   def edit
     @producto = productos.find(params[:id])
+    
+    add_crumb "Mis Productos", mi_emprendimiento_productos_path
+    add_crumb @producto.nombre, mi_emprendimiento_producto_path(@producto)
+    add_crumb "Editar"
   end
 
   # POST /productos

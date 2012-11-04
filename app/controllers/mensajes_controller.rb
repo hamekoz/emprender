@@ -1,11 +1,16 @@
 class MensajesController < ApplicationController
   before_filter :authenticate_usuario!
 
+  add_crumb "Inicio", :root_path
+
   # GET /mensajes
   # GET /mensajes.json
   def index
     @q = current_usuario.mensajes_recibidos.recibidos.search(params[:q])
     @recibidos = @q.result(:distinct => true).page(params[:pagina]).per(10)
+
+    add_crumb "Mis Mensajes", mensajes_path
+    add_crumb "Bandeja de Entrada"
 
     respond_to do |format|
       format.html # index.html.erb
@@ -19,6 +24,9 @@ class MensajesController < ApplicationController
     @q = current_usuario.mensajes_enviados.enviados.search(params[:q])
     @enviados = @q.result(:distinct => true).page(params[:pagina]).per(10)
 
+    add_crumb "Mis Mensajes", mensajes_path
+    add_crumb "Bandeja de Salida"
+
     respond_to do |format|
       format.html # index.html.erb
     end
@@ -31,6 +39,9 @@ class MensajesController < ApplicationController
     @mensaje.leido = true if @mensaje.destinatario == current_usuario
     @mensaje.save
 
+    add_crumb "Mis Mensajes", mensajes_path
+    add_crumb "Mensaje"
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @mensaje }
@@ -41,6 +52,9 @@ class MensajesController < ApplicationController
   # GET /mensajes/new.json
   def new
     @mensaje = Mensaje.new
+
+    add_crumb "Mis Mensajes", mensajes_path
+    add_crumb "Redactar"
 
     if !params[:id].blank?
       @original = Mensaje.find(params[:id])

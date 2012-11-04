@@ -1,3 +1,9 @@
+<%
+  add_crumb "Inicio", root_path
+  add_crumb "Mi Usuario", usuario_path
+  add_crumb "Editar"
+%>
+
 <h1 class="page-header">Editando <%= resource_name.to_s.humanize %></h1>
 
 <%= simple_form_for(resource,

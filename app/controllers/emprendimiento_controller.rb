@@ -1,10 +1,14 @@
 class EmprendimientoController < ApplicationController
   before_filter :authenticate_usuario!, :emprendedor?
 
+  add_crumb "Inicio", :root_path
+
   # GET /emprendimientos/1
   # GET /emprendimientos/1.json
   def show
     @emprendimiento = current_usuario.emprendimiento
+
+    add_crumb "Mi Emprendimiento"
 
     respond_to do |format|
       format.html # show.html.erb
@@ -15,6 +19,9 @@ class EmprendimientoController < ApplicationController
   # GET /emprendimientos/1/edit
   def edit
     @emprendimiento = current_usuario.emprendimiento
+
+    add_crumb "Mi Emprendimiento", mi_emprendimiento_path
+    add_crumb "Editar"
   end
 
   # PUT /emprendimientos/1

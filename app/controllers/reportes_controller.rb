@@ -1,9 +1,13 @@
 class ReportesController < ApplicationController
   before_filter :authenticate_usuario!, :administrador_o_representante?
 
+  add_crumb "Inicio", :root_path
+
   # GET /reportes
   def index
     @rubros = Rubro.all
+
+    add_crumb "Reportes"
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,6 +18,9 @@ class ReportesController < ApplicationController
   def show
     @rubros = Rubro.all
     @reporte = params[:id]
+
+    add_crumb "Reportes", reportes_path
+    add_crumb @reporte.humanize
 
     respond_to do |format|
       format.html { render'show' }
@@ -33,10 +40,6 @@ class ReportesController < ApplicationController
                     :right => "Pagina [page] de [toPage]",
                     :line => true
                  }
-
-#               :orientation => 'Landscape',
-#               :wkhtmltopdf => '/usr/local/bin/wkhtmltopdf', # path to binary
-
        end
      end
   end

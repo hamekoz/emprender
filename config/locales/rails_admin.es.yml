@@ -7,6 +7,7 @@ es:
       next: "Siguiente"
       truncate: "…"
     misc:
+      filter_date_format: "dd/mm/yy" # a combination of 'dd', 'mm' and 'yy' with any delimiter. No other interpolation will be done!
       search: "Buscar"
       filter: "Filtrar"
       refresh: "Actualizar"
@@ -54,9 +55,9 @@ es:
       show_in_app:
         menu: "Mostrar en la app"
       new:
-        title: "Alta de %{model_label}"
+        title: "Nuevo %{model_label}"
         menu: "Agregar"
-        breadcrumb: "%{model_label}"
+        breadcrumb: "Nuevo %{model_label}"
         link: "Agregar %{model_label}"
         done: "creado"
       edit:

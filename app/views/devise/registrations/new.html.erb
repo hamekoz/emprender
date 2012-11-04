@@ -1,3 +1,8 @@
+<%
+  add_crumb "Inicio", root_path
+  add_crumb "Registrarme"
+%>
+
 <h1 class="page-header">Registrarme en el sistema</h1>
 <div class="row">
   <div class="span8 offset2">
@@ -33,6 +38,10 @@
                   :label => 'Soy un',
                   :collection => resource.rol_enum,
                   :as => :radio_buttons %>
+      <%= f.association :institucion,
+                        :hint => 'Opcional',
+                        :input_html => { :class => chosen_simple,
+                                   :data => { :placeholder => 'Elija un tipo' } } %>
     </div>
 
     <div class="form-actions">

@@ -1,11 +1,16 @@
 class ServiciosEmprendimientoController < ApplicationController
   before_filter :authenticate_usuario!, :emprendedor?
 
+  add_crumb "Inicio", :root_path
+  add_crumb "Mi Emprendiiento", :mi_emprendimiento_path
+
   # GET /servicios
   # GET /servicios.json
   def index
     @q = servicios.search(params[:q])
     @servicios = @q.result(:distinct => true).page(params[:pagina]).per(6)
+
+    add_crumb "Mis Servicios", mi_emprendimiento_servicio_path
 
     respond_to do |format|
       format.html # index.html.erb
@@ -18,6 +23,9 @@ class ServiciosEmprendimientoController < ApplicationController
   def show
     @servicio = servicios.find(params[:id])
 
+    add_crumb "Mis Servicios", mi_emprendimiento_servicio_path
+    add_crumb @servicio.nombre
+
   respond_to do |format|
     format.html{render'show'}
     format.json { render json: @servicio }
@@ -29,6 +37,9 @@ class ServiciosEmprendimientoController < ApplicationController
   def new
     @servicio = servicios.new
 
+    add_crumb "Mis Servicios", mi_emprendimiento_servicio_path
+    add_crumb "Nuevo"
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @servicio }
@@ -38,6 +49,11 @@ class ServiciosEmprendimientoController < ApplicationController
   # GET /servicios/1/edit
   def edit
     @servicio = servicios.find(params[:id])
+
+    add_crumb "Emprender", root_path
+    add_crumb "Mis Servicios", mi_emprendimiento_servicio_path
+    add_crumb @servicio, mi_emprendimiento_servicio_path(@servicio)
+    add_crumb "Editar"
   end
 
   # POST /servicios

@@ -12,6 +12,8 @@ class ApplicationController < ActionController::Base
   def index
     @fotos = Portada.visibles.all
 
+    add_crumb "Inicio"
+
     respond_to do |format|
       format.html # index.html.erb
     end
@@ -21,6 +23,9 @@ class ApplicationController < ActionController::Base
     @informaciones = Informacion.visibles
     @instituciones = Institucion.visibles
     @vinculos = Vinculo.visibles
+
+    add_crumb "Inicio", root_path
+    add_crumb "Acerca de ..."
 
     respond_to do |format|
       format.html # index.html.erb

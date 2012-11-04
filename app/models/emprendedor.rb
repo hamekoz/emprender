@@ -2,12 +2,6 @@ class Emprendedor < Usuario
   attr_accessible :perfil, :emprendimiento, :perfil_attributes, :emprendimiento_attributes
 
   after_create :inicializar
-#  after_initialize :iniciar
-
-#  def iniciar
-#    self.perfil = Perfil.new if perfil.blank?
-#    self.emprendimiento = Emprendimiento.new if emprendimiento.blank?
-#  end
 
   def inicializar
     self.perfil = Perfil.new

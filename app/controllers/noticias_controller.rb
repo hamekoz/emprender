@@ -1,10 +1,14 @@
 class NoticiasController < ApplicationController
 
+  add_crumb "Inicio", :root_path
+
   # GET /noticias
   # GET /noticias.json
   def index
     @q = Noticia.publicadas.search(params[:q])
     @noticias = @q.result(:distinct => true).publicadas.page(params[:pagina]).per(6)
+
+    add_crumb "Noticias"
 
     respond_to do |format|
       format.html
@@ -17,6 +21,9 @@ class NoticiasController < ApplicationController
   # GET /noticias/1.json
   def show
     @noticia = Noticia.find(params[:id])
+
+    add_crumb "Noticias", noticias_path
+    add_crumb @noticia.titulo
 
     respond_to do |format|
       format.html # show.html.erb

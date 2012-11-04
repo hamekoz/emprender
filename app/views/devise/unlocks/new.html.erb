@@ -1,7 +1,12 @@
+<%
+  add_crumb "Inicio", root_path
+  add_crumb "Desbloquear usuario"
+%>
+
+
 <h1 class="page-header">Reenvio de instrucciones de desbloqueo</h1>
 <div class="row">
   <div class="span10 offset3">
-
   <%= simple_form_for(resource,
                       :as => resource_name,
                       :url => unlock_path(resource_name),

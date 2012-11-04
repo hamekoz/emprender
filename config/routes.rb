@@ -1,42 +1,51 @@
 Emprender::Application.routes.draw do
 
-  
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
-
   mount Ckeditor::Engine => "/ckeditor", :as => 'editor'
-  
+
   root        :to => "application#index"
 
   match  'acerca' => "application#acerca", :as => "acerca"
-
-  devise_for :usuario do
-    get "/usuario/sign_out" => "devise/sessions#destroy", :as => :destroy_usuario_session
-  end
+  
+#  devise_for :usuario do
+#    get "/usuario/salir" => "devise/sessions#destroy", :as => :destroy_usuario_session
+#    get "/usuario/salir" => "devise/sessions#destroy", :as => :destroy_usuario_session
+#  end
 
   resource :usuario,          :only => :show
 
-  resource :perfil,           :except => [:create, :new, :destroy]
-
-  resource :mi_emprendimiento, :controller => 'emprendimiento', :except => [:create, :new, :destroy] do
-    resources :productos, :controller => "productos_emprendimiento"
-    resources :servicios, :controller => "servicios_emprendimiento"
-  end
-
   resources :noticias,        :only => [:index, :show]
   resources :eventos,         :only => [:index, :show]
-
   resources :productos,       :only => [:index, :show]
   resources :servicios,       :only => [:index, :show]
-
   resources :emprendimientos, :only => [:index, :show]
+  resources :reportes,        :only => [:index, :show]
 
-  resources :comentarios
+  resources :comentarios,     :only => [:create, :destroy]
 
-  resources :mensajes
-  get  "mensajes_enviados" => "mensajes#enviados", :as => "enviados_mensajes"
+  scope(:path_names => { :new => "nuevo", :edit => "editar", :cancel => "cancelar" }) do
 
+  devise_for :usuario, :path => "usuario",
+                       :path_names => { :sign_in => 'ingresar',
+                                        :sign_out => 'salir',
+                                        :password => 'secreto',
+                                        :confirmation => 'verificacion',
+                                        :unlock => 'desbloquear',
+                                        :registration => 'registrar',
+                                        :sign_up => 'entrar' }
 
-  resources :reportes
+    resource :perfil,           :except => [:create, :new, :destroy]
+
+    resource :mi_emprendimiento, :controller => 'emprendimiento',
+                                 :except => [:create, :new, :destroy] do
+      resources :productos, :controller => "productos_emprendimiento"
+      resources :servicios, :controller => "servicios_emprendimiento"
+    end
+
+    resources :mensajes
+    get  "mensajes_enviados" => "mensajes#enviados", :as => "enviados_mensajes"
+
+  end
 
   namespace :admin do
     resources :noticias,        :path => 'noticia'
@@ -45,61 +54,4 @@ Emprender::Application.routes.draw do
     resources :servicios,       :path => 'servicio'
     resources :emprendimientos, :path => 'emprendimiento'
   end
-
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
-
-  # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
-  # Keep in mind you can assign values other than :controller and :action
-
-  # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
-  # This route can be invoked with purchase_url(:id => product.id)
-
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Sample resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Sample resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Sample resource route with more complex sub-resources
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', :on => :collection
-  #     end
-  #   end
-
-  # Sample resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
-
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
-
-  # See how all your routes lay out with "rake routes"
-
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
 end

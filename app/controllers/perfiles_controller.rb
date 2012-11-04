@@ -1,20 +1,27 @@
 class PerfilesController < ApplicationController
   before_filter :authenticate_usuario!, :emprendedor?
 
+  add_crumb "Inicio", :root_path
+
   # GET /perfiles/1
   # GET /perfiles/1.json
   def show
-      @perfil = current_usuario.perfil
+    @perfil = current_usuario.perfil
 
-      respond_to do |format|
-        format.html # show.html.erb
-        format.json { render json: @perfil }
-      end
+    add_crumb "Mi Pefil"
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @perfil }
+    end
   end
 
   # GET /perfiles/1/edit
   def edit
     @perfil = current_usuario.perfil
+
+    add_crumb "Mi Pefil", perfil_path
+    add_crumb "Editar"
   end
 
   # PUT /perfiles/1
