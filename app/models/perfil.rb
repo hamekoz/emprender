@@ -1,4 +1,8 @@
+##
+# Perfil del Emprendedor
 class Perfil < ActiveRecord::Base
+#TODO definir attr_accessible
+
   before_update :limpiar_valores
 
   belongs_to :emprendedor, :inverse_of => :perfil
@@ -27,7 +31,6 @@ class Perfil < ActiveRecord::Base
                   :es_unico_ingreso,
                   :explicacion_de_ingresos
 
-#Validaciones
   validates :emprendedor_id,
             :uniqueness => true,
             :on => :update,
@@ -74,33 +77,41 @@ class Perfil < ActiveRecord::Base
             :numericality => true,
             :length => { :in => 7..9 }
 
-  
-#  validates :titulo, :presence => true, :unless => :nivel_de_estudio =='Primario'
-
-#Enumerados
+  ##
+  # == Enumerado
+  # Posibles valores del atributo relacion_laboral
   def relacion_laboral_enum
     ['Dependiente', 'Independiente']
   end
 
+  ##
+  # == Enumerado
+  # Posibles valores del atributo nivel_de_estudios
   def nivel_de_estudios_enum
     ['Primario', 'Secundario', 'Terciario', 'Universitario']
   end
 
-#Funciones publicas
+  ##
+  # Devuelte el progreso en el completado de datos del Perfil
   def progreso
     (atributos - atributos_incompletos) * 100 / atributos
   end
 
+  ##
+  # Verdadero si el Perfil esta completo
   def completo?
     progreso == 100
   end
 
+  ##
+  # Nombre visible del Perfil, corresponde al cuit_cuil
   def etiqueta
     cuit_cuil
   end
 
-#Funciones Privadas
   private
+    ##
+    # Calcula la cantidad de atributos del Perfil segun atributos condicionales
     def atributos
       cantidad = 16
       cantidad -= 2 if recibe_o_recibio_algun_plan_social.blank?
@@ -108,6 +119,8 @@ class Perfil < ActiveRecord::Base
       return cantidad
     end
 
+    ##
+    # Calcula la cantidad de atributos incompletos del Perfil segun atributos condicionales
     def atributos_incompletos
       cantidad = 0
       cantidad += 1 if dni.blank?
@@ -129,13 +142,12 @@ class Perfil < ActiveRecord::Base
       return cantidad
     end
 
+    ##
+    # Establece a nil los atributos que estan condicionados al valor de un
+    # atributo condicionante
     def limpiar_valores
       self.explicacion_de_ingresos = nil if es_unico_ingreso?
       self.plan_social = nil unless recibe_o_recibio_algun_plan_social?
       self.fecha_de_recepcion = nil unless recibe_o_recibio_algun_plan_social?
-    end
-
-    def titulo_estudio?
-      nivel_de_estudios :in ['Secundario', 'Terciario', 'Universitario']
     end
 end

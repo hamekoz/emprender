@@ -1,3 +1,5 @@
+##
+# Mensaje entre los Usuarios del sistema
 class Mensaje < ActiveRecord::Base
   attr_accessible :texto, :asunto, :remitente, :remitente_id, :destinatario, :destinatario_id, :leido,
   :eliminado_destinatario, :eliminado_remitente
@@ -17,6 +19,9 @@ class Mensaje < ActiveRecord::Base
   scope :recibidos_eliminados, where(:eliminado_destinatario => true).order(:created_at).reverse_order
   scope :enviados_eliminados, where(:eliminado_remitente => true).order(:created_at).reverse_order
 
+  ##
+  # Devuelte la fecha en un formato amigable de acuerdo a la distancia de tiempo
+  # entre la fecha del mensaje y la fecha actual
   def fecha
     if created_at.year != Date.today.year
       I18n.l(created_at, :format => :simple)

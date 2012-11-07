@@ -1,4 +1,10 @@
+##
+# Emprendimiento es la clase principal de Emprender
+# Contiene toda la informacion relevante a un Emprendimiento constituyendo parte
+# fundamental del Registro Unico de Emprendedores y Emprendimientoes
 class Emprendimiento < ActiveRecord::Base
+#TODO definir attr_accessor
+
   before_update :limpiar_valores
 
   belongs_to :emprendedor, :inverse_of => :emprendimiento
@@ -15,11 +21,15 @@ class Emprendimiento < ActiveRecord::Base
 
   scope :empadronados, where(:empadronado => true)
 
+  ##
+  # Marca el Emprendimiento como empadronado
   def aceptar
     self.empadronado = true
     self.save
   end
 
+  ##
+  # Marca el Emprendimiento como no empadronado
   def rechazar
     self.empadronado = false
     self.save
@@ -27,10 +37,12 @@ class Emprendimiento < ActiveRecord::Base
 
   has_attached_file :logotipo, :default_url => "http://placehold.it/120&text=logo",
                                :styles => { :medium => ["300x300>", :png] }
+  
+  # Permite marcar como eliminado el logotipo del Emprendimiento
   attr_accessor :delete_logotipo
+  
   before_validation { self.logotipo.clear if self.delete_logotipo == '1' }
 
-#Validaciones
   validates_attachment :logotipo,
                        :content_type => { :content_type => ['image/gif',
                                                             'image/jpeg',
@@ -85,38 +97,55 @@ class Emprendimiento < ActiveRecord::Base
             :numericality => true,
             :length => { :in => 7..9 }
 
-#Enumerados
+  ##
+  # == Enumerado
+  # Posibles valores del atributo tipo
   def tipo_enum
     ['Personal', 'Familiar', 'Asociativo']
   end
 
+  ##
+  # == Enumerado
+  # Posibles valores del atributo condicion_frente_al_iva
   def condicion_frente_al_iva_enum
     ['No inscripto', 'Monotributista Social', 'Monotributista', 'Responsable Inscripto']
   end
 
+  ##
+  # == Enumerado
+  # Posibles valores del atributo situacion_frente_al_iva
   def situacion_frente_al_iva_enum
     ['Al dia', 'Con deuda', 'Otra']
   end
 
+  ##
+  # == Enumerado
+  # Posibles valores del atributo tipo_de_espacio
   def tipo_de_espacio_enum
     ['Propio','Cedido','Alquilado','Otro']
   end
 
-#Funciones publicas
+  ##
+  # Calcula el porcentaje de progreso de completado de datos
   def progreso
     (atributos - atributos_incompletos) * 100 / atributos
   end
 
+  ##
+  # Verdadero si el progreso es del 100%
   def completo?
     progreso == 100
   end
 
+  ##
+  # Verdadero si el Emprendimiento esta inscripto_al_iva
   def inscripto_al_iva?
     !condicion_frente_al_iva.nil? && !condicion_frente_al_iva.blank? && condicion_frente_al_iva != 'No inscripto'
   end
 
-#Funciones Privadas
   private
+    ##
+    # Calcula la cantidad de atributos visibles en base a los atributos condicionales
     def atributos
       cantidad = 43
       cantidad -= 2 if !inscripto_al_iva?
@@ -130,6 +159,8 @@ class Emprendimiento < ActiveRecord::Base
       return cantidad
     end
 
+    ##
+    # Calcula la cantidad de atributos incompletos segun los atributos condicionales
     def atributos_incompletos
       cantidad = 0
       cantidad += 1 if nombre.blank?
@@ -187,6 +218,10 @@ class Emprendimiento < ActiveRecord::Base
       return cantidad
     end
 
+    ##
+    # Establece a nil los valores de los atributos condicionados cuando el
+    # El atributo condicionante toma el valor que hace que los condicionados no
+    # no deban rellenarse
     def limpiar_valores
       if !inscripto_al_iva?
         self.fecha_de_inscripcion_al_iva = nil

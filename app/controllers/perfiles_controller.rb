@@ -1,10 +1,16 @@
+##
+# PerfilesController es el controlador del Perfil de un Emprendedor
+# Antes de ejecutar la acciones autentica que el usuario sea un Emprendedor
 class PerfilesController < ApplicationController
   before_filter :authenticate_usuario!, :emprendedor?
 
   add_crumb "Inicio", :root_path
 
-  # GET /perfiles/1
-  # GET /perfiles/1.json
+  ##
+  # Renderiza la informacion del Perfil del Emprendedor
+  # [Metodo y Ruta]
+  # GET /usuario/perfil
+  # GET /usuario/perfil.json
   def show
     @perfil = current_usuario.perfil
 
@@ -16,7 +22,10 @@ class PerfilesController < ApplicationController
     end
   end
 
-  # GET /perfiles/1/edit
+  ##
+  # Renderiza el formulario de edicion del Perfil del Emprendedor
+  # [Metodo y Ruta]
+  # GET /usuario/perfil/editar
   def edit
     @perfil = current_usuario.perfil
 
@@ -24,8 +33,12 @@ class PerfilesController < ApplicationController
     add_crumb "Editar"
   end
 
-  # PUT /perfiles/1
-  # PUT /perfiles/1.json
+  ##
+  # Actualiza los datos del Perfil del Emprendedor
+  # Redirige al fomulario en caso de que exista algun error
+  # [Metodo y Ruta]
+  # PUT /usuario/perfil
+  # PUT /usuario/perfil.json
   def update
     @perfil = current_usuario.perfil
 

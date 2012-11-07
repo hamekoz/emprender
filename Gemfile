@@ -18,7 +18,7 @@ gem 'ransack'           #Busqueda
 gem 'chosen-rails'      #Selector por combo mejorado
 gem 'wicked_pdf'
 gem 'bootstrap-wysihtml5-rails'
-gem 'crummy'
+gem 'crummy'            #Generador de breadcum
 
 
 gem 'rails_admin', :git => 'git://github.com/elsupergomez/rails_admin.git'
@@ -35,6 +35,7 @@ group :development, :test do
   end
   gem 'sqlite3'
   gem 'webrick'
+#  gem 'brakeman'
 end
 
 # Gemas necesarias para produccion

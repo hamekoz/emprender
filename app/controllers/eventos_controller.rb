@@ -1,7 +1,12 @@
+##
+# EventosController es el controlador de la seccion Eventos
 class EventosController < ApplicationController
 
   add_crumb "Inicio", :root_path
 
+  ##
+  # Renderiza la cartelera de eventos publicados
+  # [Metodo y Ruta]
   # GET /eventos
   # GET /eventos.json
   def index
@@ -17,10 +22,13 @@ class EventosController < ApplicationController
     end
   end
 
-  # GET /eventos/1
-  # GET /eventos/1.json
+  ##
+  # Renderiza la informacion de un Evento en particular
+  # [Metodo y Ruta]
+  # GET /eventos/:id
+  # GET /eventos/:id.json
   def show
-    @evento = Evento.find(params[:id])
+    @evento = Evento.publicados.find(params[:id])
 
     add_crumb "Eventos", eventos_path
     add_crumb "#{@evento.tipo}: #{@evento.nombre}"

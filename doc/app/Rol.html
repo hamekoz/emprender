@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+<title>class Rol - Rails Application Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/models/rol.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-all">::all</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-rol_enum">#rol_enum</a>
+    
+    <li><a href="#method-i-usuarios">#usuarios</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./doc/README_FOR_APP.html">README_FOR_APP</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./RailsAdmin.html">RailsAdmin</a>
+  
+    <li><a href="./RailsAdmin/Config.html">RailsAdmin::Config</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions.html">RailsAdmin::Config::Actions</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions/Aceptar.html">RailsAdmin::Config::Actions::Aceptar</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions/Activar.html">RailsAdmin::Config::Actions::Activar</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions/Apadrinar.html">RailsAdmin::Config::Actions::Apadrinar</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions/Bloquear.html">RailsAdmin::Config::Actions::Bloquear</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions/Desactivar.html">RailsAdmin::Config::Actions::Desactivar</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions/Desbloquear.html">RailsAdmin::Config::Actions::Desbloquear</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions/Despublicar.html">RailsAdmin::Config::Actions::Despublicar</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions/Publicar.html">RailsAdmin::Config::Actions::Publicar</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions/Rechazar.html">RailsAdmin::Config::Actions::Rechazar</a>
+  
+    <li><a href="./Ckeditor.html">Ckeditor</a>
+  
+    <li><a href="./Ckeditor/Asset.html">Ckeditor::Asset</a>
+  
+    <li><a href="./Ckeditor/AttachmentFile.html">Ckeditor::AttachmentFile</a>
+  
+    <li><a href="./Ckeditor/Picture.html">Ckeditor::Picture</a>
+  
+    <li><a href="./Ability.html">Ability</a>
+  
+    <li><a href="./Administrador.html">Administrador</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./Barrio.html">Barrio</a>
+  
+    <li><a href="./Categoria.html">Categoria</a>
+  
+    <li><a href="./Clasificacion.html">Clasificacion</a>
+  
+    <li><a href="./Comentario.html">Comentario</a>
+  
+    <li><a href="./ComentariosController.html">ComentariosController</a>
+  
+    <li><a href="./Emprendedor.html">Emprendedor</a>
+  
+    <li><a href="./Emprendimiento.html">Emprendimiento</a>
+  
+    <li><a href="./EmprendimientoController.html">EmprendimientoController</a>
+  
+    <li><a href="./EmprendimientosController.html">EmprendimientosController</a>
+  
+    <li><a href="./Estado.html">Estado</a>
+  
+    <li><a href="./Evento.html">Evento</a>
+  
+    <li><a href="./EventosController.html">EventosController</a>
+  
+    <li><a href="./Informacion.html">Informacion</a>
+  
+    <li><a href="./Institucion.html">Institucion</a>
+  
+    <li><a href="./Mensaje.html">Mensaje</a>
+  
+    <li><a href="./MensajesController.html">MensajesController</a>
+  
+    <li><a href="./Noticia.html">Noticia</a>
+  
+    <li><a href="./NoticiasController.html">NoticiasController</a>
+  
+    <li><a href="./Perfil.html">Perfil</a>
+  
+    <li><a href="./PerfilesController.html">PerfilesController</a>
+  
+    <li><a href="./Portada.html">Portada</a>
+  
+    <li><a href="./Producto.html">Producto</a>
+  
+    <li><a href="./ProductosController.html">ProductosController</a>
+  
+    <li><a href="./ProductosEmprendimientoController.html">ProductosEmprendimientoController</a>
+  
+    <li><a href="./ReportesController.html">ReportesController</a>
+  
+    <li><a href="./Representante.html">Representante</a>
+  
+    <li><a href="./Rol.html">Rol</a>
+  
+    <li><a href="./Rubro.html">Rubro</a>
+  
+    <li><a href="./Servicio.html">Servicio</a>
+  
+    <li><a href="./ServiciosController.html">ServiciosController</a>
+  
+    <li><a href="./ServiciosEmprendimientoController.html">ServiciosEmprendimientoController</a>
+  
+    <li><a href="./Usuario.html">Usuario</a>
+  
+    <li><a href="./UsuariosController.html">UsuariosController</a>
+  
+    <li><a href="./Vinculo.html">Vinculo</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Rol</h1>
+
+  <div id="description" class="description">
+    
+<p><a href="Rol.html">Rol</a> corresponde a los posibles roles de los usuarios</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-nombre" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">nombre</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Nombre del <a href="Rol.html">Rol</a></p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Devuelve todos los roles</p>
+          
+
+          
+          <div class="method-source-code" id="all-source">
+            <pre><span class="ruby-comment"># File app/models/rol.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all</span>
+  [<span class="ruby-string">'Emprendedor'</span>, <span class="ruby-string">'Representante'</span>, <span class="ruby-string">'Administrador'</span> ].<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">rol</span><span class="ruby-operator">|</span> <span class="ruby-identifier">new</span>(<span class="ruby-identifier">rol</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- all-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(rol)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Inicializa un <a href="Rol.html">Rol</a></p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File app/models/rol.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">rol</span>)
+  <span class="ruby-ivar">@nombre</span> = <span class="ruby-identifier">rol</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-rol_enum" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rol_enum</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Lista de roles del sistema</p>
+          
+
+          
+          <div class="method-source-code" id="rol_enum-source">
+            <pre><span class="ruby-comment"># File app/models/rol.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rol_enum</span>
+  [<span class="ruby-string">'Emprendedor'</span>, <span class="ruby-string">'Representante'</span>, <span class="ruby-string">'Administrador'</span> ]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- rol_enum-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- rol_enum-method -->
+
+    
+      <div id="method-i-usuarios" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">usuarios</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Devuelve los usuarios correspondientes al <a href="Rol.html">Rol</a> actual</p>
+          
+
+          
+          <div class="method-source-code" id="usuarios-source">
+            <pre><span class="ruby-comment"># File app/models/rol.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">usuarios</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@nombre</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;Administrador&quot;</span>
+    <span class="ruby-constant">Administrador</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@nombre</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;Representante&quot;</span>
+    <span class="ruby-constant">Representante</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@nombre</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;Emprendedor&quot;</span>
+    <span class="ruby-constant">Emprendedor</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- usuarios-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- usuarios-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

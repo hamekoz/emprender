@@ -1,3 +1,5 @@
+##
+# Producto perteneciente a un Emprendimiento
 class Producto < ActiveRecord::Base
   attr_accessible :descripcion,
                   :imagen_1, :delete_imagen_1,
@@ -16,7 +18,6 @@ class Producto < ActiveRecord::Base
   scope :aceptados, where(:aceptado => true)
   scope :visibles, activos.merge(aceptados)
 
-#Validaciones
   validates_attachment :imagen_1, :imagen_2, :imagen_3, :imagen_4, :imagen_5, :imagen_6,
                        :content_type => { :content_type => ['image/gif',
                                                             'image/jpeg',
@@ -30,25 +31,35 @@ class Producto < ActiveRecord::Base
 
   validates_numericality_of :precio, :greater_than => 0
 
+  ##
+  # Verdadero si el Producto es visible en la Cartelera
   def visible
     activo && aceptado
   end
 
+  ##
+  # Marca el Producto como activo
   def activar
     self.activo = true
     self.save
   end
 
+  ##
+  # Marca el Producto como no activo
   def desactivar
     self.activo = false
     self.save
   end
 
+  ##
+  # Marca el Producto como aceptado
   def aceptar
     self.aceptado = true
     self.save
   end
 
+  ##
+  # Marca el Producto como no aceptado
   def rechazar
     self.aceptado = false
     self.save
@@ -78,6 +89,8 @@ class Producto < ActiveRecord::Base
                     :default_url => "http://placehold.it/160x120&text=imagen",
                     :styles => { :mini => "160x120#" }
 
+  ##
+  # Atributo para marcar como eliminada la imagen
   attr_accessor :delete_imagen_1, :delete_imagen_2, :delete_imagen_3,
                 :delete_imagen_4, :delete_imagen_5, :delete_imagen_6
 
@@ -88,12 +101,10 @@ class Producto < ActiveRecord::Base
   before_validation { self.imagen_5.clear if self.delete_imagen_5 == '1' }
   before_validation { self.imagen_6.clear if self.delete_imagen_6 == '1' }
 
+  ##
+  # == Enumerado
+  # Posibles valores del atributo tipo_de_venta
   def tipo_de_venta_enum
     ['Ferias', 'Locales Propios', 'Mayorista','Supermercados','En su casa','Distribuidores','Vendedores','Al estado', 'Internet', 'Otros']
-  end
-  
-  def activar
-    self.activo = true
-    self.save
   end
 end

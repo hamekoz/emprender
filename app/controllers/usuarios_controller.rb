@@ -1,10 +1,16 @@
+##
+# UsuariosController es el controlador de los datos del Usuario se complementa
+# con la gema Devise
 class UsuariosController < ApplicationController
   before_filter :authenticate_usuario!
 
   add_crumb "Inicio", :root_path
 
-  # GET /usuarios/1
-  # GET /usuarios/1.json
+  ##
+  # Muestra la informacion del Usuario actual
+  # [Metodo y Ruta]
+  # GET /usuario
+  # GET /usuario.json
   def show
     @usuario = current_usuario
 
@@ -15,5 +21,4 @@ class UsuariosController < ApplicationController
       format.json  { render :json => @usuario }
     end
   end
-
 end

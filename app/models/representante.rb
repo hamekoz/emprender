@@ -1,3 +1,5 @@
+##
+# Representante de una Institucion con acceso al sistema
 class Representante < Usuario
   has_many :noticias,
            :foreign_key => :autor_id
@@ -9,6 +11,9 @@ class Representante < Usuario
   before_destroy :despublicar
 
 private
+  ##
+  # Antes despublica las noticias y eventos publicadas por el Representante antes
+  # de eliminarlo del sistema
   def despublicar
     noticias.each do |noticia|
       noticia.despublicar

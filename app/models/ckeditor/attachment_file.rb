@@ -1,3 +1,6 @@
+##
+# Representa un archivo adjunto del editor de texto avanzando utilizado
+# en la redaccion de las Noticias
 class Ckeditor::AttachmentFile < Ckeditor::Asset
   has_attached_file :data,
                     :url => "/ckeditor_assets/attachments/:id/:filename",
@@ -5,8 +8,10 @@ class Ckeditor::AttachmentFile < Ckeditor::Asset
   
   validates_attachment_size :data, :less_than => 100.megabytes
   validates_attachment_presence :data
-	
-	def url_thumb
-	  @url_thumb ||= Ckeditor::Utils.filethumb(filename)
-	end
+
+  ##
+  # Devuelve la url del archivo la miniatura del archivo adjunto
+  def url_thumb
+    @url_thumb ||= Ckeditor::Utils.filethumb(filename)
+  end
 end

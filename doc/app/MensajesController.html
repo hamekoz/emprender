@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+<title>class MensajesController - Rails Application Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/controllers/mensajes_controller.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="ApplicationController.html">ApplicationController</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-create">#create</a>
+    
+    <li><a href="#method-i-destroy">#destroy</a>
+    
+    <li><a href="#method-i-enviados">#enviados</a>
+    
+    <li><a href="#method-i-index">#index</a>
+    
+    <li><a href="#method-i-new">#new</a>
+    
+    <li><a href="#method-i-show">#show</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./doc/README_FOR_APP.html">README_FOR_APP</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./RailsAdmin.html">RailsAdmin</a>
+  
+    <li><a href="./RailsAdmin/Config.html">RailsAdmin::Config</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions.html">RailsAdmin::Config::Actions</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions/Aceptar.html">RailsAdmin::Config::Actions::Aceptar</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions/Activar.html">RailsAdmin::Config::Actions::Activar</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions/Apadrinar.html">RailsAdmin::Config::Actions::Apadrinar</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions/Bloquear.html">RailsAdmin::Config::Actions::Bloquear</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions/Desactivar.html">RailsAdmin::Config::Actions::Desactivar</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions/Desbloquear.html">RailsAdmin::Config::Actions::Desbloquear</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions/Despublicar.html">RailsAdmin::Config::Actions::Despublicar</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions/Publicar.html">RailsAdmin::Config::Actions::Publicar</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions/Rechazar.html">RailsAdmin::Config::Actions::Rechazar</a>
+  
+    <li><a href="./Ckeditor.html">Ckeditor</a>
+  
+    <li><a href="./Ckeditor/Asset.html">Ckeditor::Asset</a>
+  
+    <li><a href="./Ckeditor/AttachmentFile.html">Ckeditor::AttachmentFile</a>
+  
+    <li><a href="./Ckeditor/Picture.html">Ckeditor::Picture</a>
+  
+    <li><a href="./Ability.html">Ability</a>
+  
+    <li><a href="./Administrador.html">Administrador</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./Barrio.html">Barrio</a>
+  
+    <li><a href="./Categoria.html">Categoria</a>
+  
+    <li><a href="./Clasificacion.html">Clasificacion</a>
+  
+    <li><a href="./Comentario.html">Comentario</a>
+  
+    <li><a href="./ComentariosController.html">ComentariosController</a>
+  
+    <li><a href="./Emprendedor.html">Emprendedor</a>
+  
+    <li><a href="./Emprendimiento.html">Emprendimiento</a>
+  
+    <li><a href="./EmprendimientoController.html">EmprendimientoController</a>
+  
+    <li><a href="./EmprendimientosController.html">EmprendimientosController</a>
+  
+    <li><a href="./Estado.html">Estado</a>
+  
+    <li><a href="./Evento.html">Evento</a>
+  
+    <li><a href="./EventosController.html">EventosController</a>
+  
+    <li><a href="./Informacion.html">Informacion</a>
+  
+    <li><a href="./Institucion.html">Institucion</a>
+  
+    <li><a href="./Mensaje.html">Mensaje</a>
+  
+    <li><a href="./MensajesController.html">MensajesController</a>
+  
+    <li><a href="./Noticia.html">Noticia</a>
+  
+    <li><a href="./NoticiasController.html">NoticiasController</a>
+  
+    <li><a href="./Perfil.html">Perfil</a>
+  
+    <li><a href="./PerfilesController.html">PerfilesController</a>
+  
+    <li><a href="./Portada.html">Portada</a>
+  
+    <li><a href="./Producto.html">Producto</a>
+  
+    <li><a href="./ProductosController.html">ProductosController</a>
+  
+    <li><a href="./ProductosEmprendimientoController.html">ProductosEmprendimientoController</a>
+  
+    <li><a href="./ReportesController.html">ReportesController</a>
+  
+    <li><a href="./Representante.html">Representante</a>
+  
+    <li><a href="./Rol.html">Rol</a>
+  
+    <li><a href="./Rubro.html">Rubro</a>
+  
+    <li><a href="./Servicio.html">Servicio</a>
+  
+    <li><a href="./ServiciosController.html">ServiciosController</a>
+  
+    <li><a href="./ServiciosEmprendimientoController.html">ServiciosEmprendimientoController</a>
+  
+    <li><a href="./Usuario.html">Usuario</a>
+  
+    <li><a href="./UsuariosController.html">UsuariosController</a>
+  
+    <li><a href="./Vinculo.html">Vinculo</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class MensajesController</h1>
+
+  <div id="description" class="description">
+    
+<p><a href="MensajesController.html">MensajesController</a> es el controlador
+de los mensajes del usuario. Antes de efectuar una accion, autentica al
+usuario</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-create" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Crea un nuevo mensaje enviado por el usuario actual. Marca por defecto los
+atributos eliminado_remitente y eliminado_destinatario en falso</p>
+<dl class="rdoc-list label-list"><dt>Metodo y Ruta
+<dd>
+<p>POST /mensajes POST /mensajes.json</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="create-source">
+            <pre><span class="ruby-comment"># File app/controllers/mensajes_controller.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
+  <span class="ruby-ivar">@mensaje</span> = <span class="ruby-identifier">current_usuario</span>.<span class="ruby-identifier">mensajes_enviados</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:mensaje</span>])
+  <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">eliminado_destinatario</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">eliminado_remitente</span> = <span class="ruby-keyword">false</span>
+
+  <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">save</span>
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">enviados_mensajes_path</span>, <span class="ruby-identifier">notice</span><span class="ruby-operator">:</span> <span class="ruby-string">'Mensaje enviado a '</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">destinatario</span>.<span class="ruby-identifier">nombre_completo</span> }
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">action</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;new&quot;</span> }
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- create-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- create-method -->
+
+    
+      <div id="method-i-destroy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">destroy</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Elimina un mensaje en particular La eliminacion es en principio logica Si
+el usuario actual es el remitente establece el atributo eliminado_remitente
+en verdadero Si el usuario actual es el destinatario establece el atributo
+eliminado_destinatario en verdadero Si tanto el remitente como el
+destinatario marcan el mensaje como elimiando este se elimina concretamente
+del sistema</p>
+<dl class="rdoc-list label-list"><dt>Metodo y Ruta
+<dd>
+<p>DELETE /mensajes/1 DELETE /mensajes/1.json</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="destroy-source">
+            <pre><span class="ruby-comment"># File app/controllers/mensajes_controller.rb, line 141</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy</span>
+  <span class="ruby-ivar">@mensaje</span> = <span class="ruby-constant">Mensaje</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+
+  <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">eliminado_remitente</span> = <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">remitente</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">current_usuario</span>
+  <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">eliminado_destinatario</span> = <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">destinatario</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">current_usuario</span>
+  <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">destroy</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">eliminado_remitente?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">eliminado_destinatario?</span>
+
+  <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">remitente</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">current_usuario</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">enviados_mensajes_path</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">mensajes_url</span> }
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">head</span> <span class="ruby-value">:no_content</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- destroy-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- destroy-method -->
+
+    
+      <div id="method-i-enviados" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">enviados</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renderiza la bandeja de salida de los mensajes enviados</p>
+<dl class="rdoc-list label-list"><dt>Metodo y Ruta
+<dd>
+<p>GET /mensajes GET /mensajes.json</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="enviados-source">
+            <pre><span class="ruby-comment"># File app/controllers/mensajes_controller.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">enviados</span>
+  <span class="ruby-ivar">@q</span> = <span class="ruby-identifier">current_usuario</span>.<span class="ruby-identifier">mensajes_enviados</span>.<span class="ruby-identifier">enviados</span>.<span class="ruby-identifier">search</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:q</span>])
+  <span class="ruby-ivar">@enviados</span> = <span class="ruby-ivar">@q</span>.<span class="ruby-identifier">result</span>(<span class="ruby-value">:distinct</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>).<span class="ruby-identifier">page</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:pagina</span>]).<span class="ruby-identifier">per</span>(<span class="ruby-value">10</span>)
+
+  <span class="ruby-identifier">add_crumb</span> <span class="ruby-string">&quot;Mis Mensajes&quot;</span>, <span class="ruby-identifier">mensajes_path</span>
+  <span class="ruby-identifier">add_crumb</span> <span class="ruby-string">&quot;Bandeja de Salida&quot;</span>
+
+  <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> <span class="ruby-comment"># index.html.erb</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- enviados-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- enviados-method -->
+
+    
+      <div id="method-i-index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">index</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renderiza la bandeja de entreada de los mensajes recibidos</p>
+<dl class="rdoc-list label-list"><dt>Metodo y Ruta
+<dd>
+<p>GET /mensajes GET /mensajes.json</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="index-source">
+            <pre><span class="ruby-comment"># File app/controllers/mensajes_controller.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
+  <span class="ruby-ivar">@q</span> = <span class="ruby-identifier">current_usuario</span>.<span class="ruby-identifier">mensajes_recibidos</span>.<span class="ruby-identifier">recibidos</span>.<span class="ruby-identifier">search</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:q</span>])
+  <span class="ruby-ivar">@recibidos</span> = <span class="ruby-ivar">@q</span>.<span class="ruby-identifier">result</span>(<span class="ruby-value">:distinct</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>).<span class="ruby-identifier">page</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:pagina</span>]).<span class="ruby-identifier">per</span>(<span class="ruby-value">10</span>)
+
+  <span class="ruby-identifier">add_crumb</span> <span class="ruby-string">&quot;Mis Mensajes&quot;</span>, <span class="ruby-identifier">mensajes_path</span>
+  <span class="ruby-identifier">add_crumb</span> <span class="ruby-string">&quot;Bandeja de Entrada&quot;</span>
+
+  <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> <span class="ruby-comment"># index.html.erb</span>
+    <span class="ruby-comment"># format.json { render json: @mensajes }</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- index-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- index-method -->
+
+    
+      <div id="method-i-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renderiza el formulario para enviar un nuevo mensaje. Acepta el parametro
+<em>:id</em> para identificar un mensaje base. Si existe el parametro
+<em>:id</em> toma como base del nuevo mensaje el mensaje con atributo
+<strong>id</strong> = a <em>:id</em> En caso de ser un mensaje enviado por
+el usuario genera un nuevo mensaje de reenvio En caso de ser un mensaje
+recibido, genera un mensaje de respuesta</p>
+<dl class="rdoc-list label-list"><dt>Metodo y Ruta
+<dd>
+<p>GET /mensajes/new GET /mensajes/new.json</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File app/controllers/mensajes_controller.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@mensaje</span> = <span class="ruby-constant">Mensaje</span>.<span class="ruby-identifier">new</span>
+
+  <span class="ruby-identifier">add_crumb</span> <span class="ruby-string">&quot;Mis Mensajes&quot;</span>, <span class="ruby-identifier">mensajes_path</span>
+  <span class="ruby-identifier">add_crumb</span> <span class="ruby-string">&quot;Redactar&quot;</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>].<span class="ruby-identifier">blank?</span>
+    <span class="ruby-ivar">@original</span> = <span class="ruby-constant">Mensaje</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+    <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">texto</span> = <span class="ruby-string">&quot;&lt;br&gt;---&quot;</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@original</span>.<span class="ruby-identifier">remitente</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">current_usuario</span>
+      <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">asunto</span> = <span class="ruby-node">&quot;Fwd: #{@original.asunto}&quot;</span>
+      <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">texto</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;&lt;blockquote&gt;&quot;</span>
+      <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">texto</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;\nDe: #{@original.remitente.nombre_completo}&quot;</span>
+      <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">texto</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;\nPara: #{@original.destinatario.nombre_completo}&quot;</span>
+      <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">texto</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;\nFecha: #{l(@original.created_at, :format =&gt; :long)}\n&quot;</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@original</span>.<span class="ruby-identifier">destinatario</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">current_usuario</span>
+      <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">texto</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;&lt;blockquote&gt;&quot;</span>
+      <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">asunto</span> = <span class="ruby-node">&quot;Re: #{@original.asunto}&quot;</span>
+      <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">destinatario</span> = <span class="ruby-ivar">@original</span>.<span class="ruby-identifier">remitente</span>
+    <span class="ruby-keyword">end</span>
+      <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">texto</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;\n#{@original.texto}&quot;</span>
+      <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">texto</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;&lt;/blockquote&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> <span class="ruby-comment"># new.html.erb</span>
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">json</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@producto</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-i-show" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">show</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renderiza la informacion de un mensaje en particular</p>
+<dl class="rdoc-list label-list"><dt>Metodo y Ruta
+<dd>
+<p>GET /mensajes/:id GET /mensajes/:id.json</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="show-source">
+            <pre><span class="ruby-comment"># File app/controllers/mensajes_controller.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">show</span>
+  <span class="ruby-ivar">@mensaje</span> = <span class="ruby-constant">Mensaje</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">remitente</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">current_usuario</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">destinatario</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">current_usuario</span>
+    <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">leido</span> = <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">destinatario</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">current_usuario</span>
+    <span class="ruby-ivar">@mensaje</span>.<span class="ruby-identifier">save</span>
+
+    <span class="ruby-identifier">add_crumb</span> <span class="ruby-string">&quot;Mis Mensajes&quot;</span>, <span class="ruby-identifier">mensajes_path</span>
+    <span class="ruby-identifier">add_crumb</span> <span class="ruby-string">&quot;Mensaje&quot;</span>
+
+    <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> <span class="ruby-comment"># show.html.erb</span>
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">json</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@mensaje</span> }
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">mensajes_path</span>, <span class="ruby-identifier">alert</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;No tiene permiso para ver ese mensaje. Esto se debe a que no existe, o usted no es el remitente ni el destinatario de ese mensaje.&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- show-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- show-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

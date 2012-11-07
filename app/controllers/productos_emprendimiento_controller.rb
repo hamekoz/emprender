@@ -1,11 +1,17 @@
+##
+# ProductosEmprendimientoController es el controlador de los productos de un 
+# Emprendimiento, autentica que el usuario sea un Emprendedor
 class ProductosEmprendimientoController < ApplicationController
   before_filter :authenticate_usuario!, :emprendedor?
 
   add_crumb "Inicio", :root_path
-  add_crumb "Mi Emprendimimiento", :mi_emprendimiento_path
+  add_crumb "Mi Emprendimiento", :mi_emprendimiento_path
 
-  # GET /productos
-  # GET /productos.json
+  ##
+  # Renderiza los productos del Emprendimiento del Emprendedor actual
+  # [Metodo y Ruta]
+  # GET /mi_emprendimiento/productos
+  # GET /mi_emprendimiento/productos.json
   def index
     @q = productos.search(params[:q])
     @productos = @q.result(:distinct => true).page(params[:pagina]).per(6)
@@ -18,8 +24,11 @@ class ProductosEmprendimientoController < ApplicationController
     end
   end
 
-  # GET /productos/1
-  # GET /productos/1.json
+  ## Renderiza la informacion de un producto particular del Emprendimiento del
+  # Emprendedor actual
+  # [Metodo y Ruta]
+  # GET /mi_emprendimiento/productos/:id
+  # GET /mi_emprendimiento/productos/:id.json
   def show
     @producto = productos.find(params[:id])
 
@@ -32,8 +41,11 @@ class ProductosEmprendimientoController < ApplicationController
    end
   end
 
-  # GET /productos/new
-  # GET /productos/new.json
+  ##
+  # Renderiza el formulario de creacion de un nuevo Producto
+  # [Metodo y Ruta]
+  # GET /mi_emprendimiento/productos/nuevo
+  # GET /mi_emprendimiento/productos/nuevo.json
   def new
     @producto = productos.new
 
@@ -46,7 +58,10 @@ class ProductosEmprendimientoController < ApplicationController
     end
   end
 
-  # GET /productos/1/edit
+  ##
+  # Renderiza el formulario de edicion de un Producto
+  # [Metodo y Ruta]
+  # GET /mi_emprendimiento/productos/:id/editar
   def edit
     @producto = productos.find(params[:id])
     
@@ -55,8 +70,11 @@ class ProductosEmprendimientoController < ApplicationController
     add_crumb "Editar"
   end
 
-  # POST /productos
-  # POST /productos.json
+  ##
+  # Crea un nuevo Producto del Emprendimiento del Emprendedor actual
+  # [Metodo y Ruta]
+  # POST /mi_emprendimiento/productos
+  # POST /mi_emprendimiento/productos.json
   def create
     @producto = productos.new(params[:producto])
 
@@ -74,8 +92,12 @@ class ProductosEmprendimientoController < ApplicationController
     end
   end
 
-  # PUT /productos/1
-  # PUT /productos/1.json
+  ##
+  # Actualiza los datos de un Producto existe del Emprendimiento del Emprendedor
+  # actual
+  # [Metodo y Ruta]
+  # PUT /mi_emprendimiento/productos/:id
+  # PUT /mi_emprendimiento/productos/:id.json
   def update
     @producto = current_usuario.emprendimiento.productos.find(params[:id])
 
@@ -92,8 +114,11 @@ class ProductosEmprendimientoController < ApplicationController
     end
   end
 
-  # DELETE /productos/1
-  # DELETE /productos/1.json
+  ##
+  # Elimina un Producto del Emprendimiento del Emprendedor actual
+  # [Metodo y Ruta]
+  # DELETE /mi_emprendimiento/productos/:id
+  # DELETE /mi_emprendimiento/productos/:id.json
   def destroy
     @producto = productos.find(params[:id])
     @producto.destroy
@@ -106,6 +131,8 @@ class ProductosEmprendimientoController < ApplicationController
   end
 
 private
+  ##
+  # Devuelve los productos del Emprendimiento del Emprendedor actual
   def productos
     current_usuario.emprendimiento.productos
   end

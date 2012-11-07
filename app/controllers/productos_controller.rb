@@ -1,7 +1,12 @@
+##
+# ProductosController es el controlador de la seccion Productos
 class ProductosController < ApplicationController
 
   add_crumb "Inicio", :root_path
 
+  ## Renderiza la cartelera de los productos que se encuentran visibles
+  # Visibles es que estan aceptados y activos
+  # [Metodo y Ruta]
   # GET /productos
   # GET /productos.json
   def index
@@ -16,6 +21,9 @@ class ProductosController < ApplicationController
     end
   end
 
+  ##
+  # Renderiza la informacion de un producto en particular
+  # [Metodo y Ruta]
   # GET /productos/1
   # GET /productos/1.json
   def show

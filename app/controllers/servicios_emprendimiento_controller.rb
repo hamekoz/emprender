@@ -1,11 +1,17 @@
+##
+# ServiciosEmprendimientoController es el controlador de los productos de un 
+# Emprendimiento, autentica que el usuario sea un Emprendedor
 class ServiciosEmprendimientoController < ApplicationController
   before_filter :authenticate_usuario!, :emprendedor?
 
   add_crumb "Inicio", :root_path
-  add_crumb "Mi Emprendiiento", :mi_emprendimiento_path
+  add_crumb "Mi Emprendimiento", :mi_emprendimiento_path
 
-  # GET /servicios
-  # GET /servicios.json
+  ##
+  # Renderiza los servicios del Emprendimiento del Emprendedor actual
+  # [Metodo y Ruta]
+  # GET /mi_emprendimiento/servicios
+  # GET /mi_emprendimiento/servicios.json
   def index
     @q = servicios.search(params[:q])
     @servicios = @q.result(:distinct => true).page(params[:pagina]).per(6)
@@ -18,8 +24,11 @@ class ServiciosEmprendimientoController < ApplicationController
     end
   end
 
-  # GET /servicios/1
-  # GET /servicios/1.json
+  ## Renderiza la informacion de un servicio particular del Emprendimiento del
+  # Emprendedor actual
+  # [Metodo y Ruta]
+  # GET /mi_emprendimiento/servicios/:id
+  # GET /mi_emprendimiento/servicios/:id.json
   def show
     @servicio = servicios.find(params[:id])
 
@@ -32,8 +41,11 @@ class ServiciosEmprendimientoController < ApplicationController
    end
   end
 
-  # GET /servicios/new
-  # GET /servicios/new.json
+  ##
+  # Renderiza el formulario de creacion de un nuevo Servicio
+  # [Metodo y Ruta]
+  # GET /mi_emprendimiento/servicios/nuevo
+  # GET /mi_emprendimiento/servicios/nuevo.json
   def new
     @servicio = servicios.new
 
@@ -46,7 +58,10 @@ class ServiciosEmprendimientoController < ApplicationController
     end
   end
 
-  # GET /servicios/1/edit
+  ##
+  # Renderiza el formulario de edicion de un Servicio
+  # [Metodo y Ruta]
+  # GET /mi_emprendimiento/servicios/:id/editar
   def edit
     @servicio = servicios.find(params[:id])
 
@@ -56,8 +71,11 @@ class ServiciosEmprendimientoController < ApplicationController
     add_crumb "Editar"
   end
 
-  # POST /servicios
-  # POST /servicios.json
+  ##
+  # Crea un nuevo Servicio del Emprendimiento del Emprendedor actual
+  # [Metodo y Ruta]
+  # POST /mi_emprendimiento/servicios
+  # POST /mi_emprendimiento/servicios.json
   def create
     @servicio = servicios.new(params[:servicio])
 
@@ -75,8 +93,12 @@ class ServiciosEmprendimientoController < ApplicationController
     end
   end
 
-  # PUT /servicios/1
-  # PUT /servicios/1.json
+  ##
+  # Actualiza los datos de un Servicio existe del Emprendimiento del Emprendedor
+  # actual
+  # [Metodo y Ruta]
+  # PUT /mi_emprendimiento/servicios/:id
+  # PUT /mi_emprendimiento/servicios/:id.json
   def update
     @servicio = servicios.find(params[:id])
 
@@ -93,8 +115,11 @@ class ServiciosEmprendimientoController < ApplicationController
     end
   end
 
-  # DELETE /servicios/1
-  # DELETE /servicios/1.json
+  ##
+  # Elimina un Servicio del Emprendimiento del Emprendedor actual
+  # [Metodo y Ruta]
+  # DELETE /mi_emprendimiento/servicios/:id
+  # DELETE /mi_emprendimiento/servicios/:id.json
   def destroy
     @servicio = Servicio.find(params[:id])
     @servicio.destroy
@@ -107,6 +132,8 @@ class ServiciosEmprendimientoController < ApplicationController
   end
 
 private
+  ##
+  # Devuelve los productos del Emprendimiento del Emprendedor actual
   def servicios
     current_usuario.emprendimiento.servicios
   end

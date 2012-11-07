@@ -1,0 +1,11 @@
+<% Barrio.all.each do |barrio| %>
+  <h3><%= barrio.nombre %></h3>
+    <ul>
+    <% barrio.emprendimientos.each do |emprendimiento| %>
+      <li>
+        <strong><%= emprendimiento.nombre%></strong>
+        <span><%= emprendimiento.descripcion%></span>
+      </li>
+    <% end %>
+    </ul>
+<% end %>

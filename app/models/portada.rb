@@ -1,3 +1,6 @@
+##
+# Portada se corresponde a la foto e informacion de una instancia del carusel de
+# fotos de la pagina principal
 class Portada < ActiveRecord::Base
   attr_accessible :foto, :texto, :titulo, :visible
 
@@ -17,17 +20,21 @@ class Portada < ActiveRecord::Base
                                                             'image/tiff'] },
                        :size => { :in => 0..5.megabytes }
 
-
+  ##
+  # Permite marcar como elimianada la foto
   attr_accessor :delete_foto
 
   before_validation { self.foto.clear if self.delete_foto == '1' }
 
-
+  ##
+  # Marca como publicada la Portada mostrandola en el carusel de fotos
   def publicar
     self.visible = true
     self.save
   end
 
+  ##
+  # Marca como despublicada la Portada quitandola en el carusel de fotos
   def despublicar
     self.visible = false
     self.save

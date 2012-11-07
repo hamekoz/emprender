@@ -1,8 +1,15 @@
+##
+# MensajesController es el controlador de los mensajes del usuario.
+# Antes de efectuar una accion, autentica al usuario
+
 class MensajesController < ApplicationController
   before_filter :authenticate_usuario!
 
   add_crumb "Inicio", :root_path
 
+  ##
+  # Renderiza la bandeja de entreada de los mensajes recibidos
+  # [Metodo y Ruta]
   # GET /mensajes
   # GET /mensajes.json
   def index
@@ -18,6 +25,9 @@ class MensajesController < ApplicationController
     end
   end
 
+  ##
+  # Renderiza la bandeja de salida de los mensajes enviados
+  # [Metodo y Ruta]
   # GET /mensajes
   # GET /mensajes.json
   def enviados
@@ -32,22 +42,37 @@ class MensajesController < ApplicationController
     end
   end
 
-  # GET /mensajes/1
-  # GET /mensajes/1.json
+  ##
+  # Renderiza la informacion de un mensaje en particular
+  # [Metodo y Ruta]
+  # GET /mensajes/:id
+  # GET /mensajes/:id.json
   def show
     @mensaje = Mensaje.find(params[:id])
-    @mensaje.leido = true if @mensaje.destinatario == current_usuario
-    @mensaje.save
+    if @mensaje.remitente == current_usuario || @mensaje.destinatario == current_usuario
+      @mensaje.leido = true if @mensaje.destinatario == current_usuario
+      @mensaje.save
 
-    add_crumb "Mis Mensajes", mensajes_path
-    add_crumb "Mensaje"
+      add_crumb "Mis Mensajes", mensajes_path
+      add_crumb "Mensaje"
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @mensaje }
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @mensaje }
+      end
+    else
+      redirect_to mensajes_path, alert: "No tiene permiso para ver ese mensaje. Esto se debe a que no existe, o usted no es el remitente ni el destinatario de ese mensaje."
     end
   end
 
+  # Renderiza el formulario para enviar un nuevo mensaje.
+  # Acepta el parametro _:id_ para identificar un mensaje base.
+  # Si existe el parametro _:id_ toma como base del nuevo mensaje el mensaje con
+  # atributo *id* = a _:id_
+  # En caso de ser un mensaje enviado por el usuario genera un nuevo mensaje de
+  # reenvio
+  # En caso de ser un mensaje recibido, genera un mensaje de respuesta
+  # [Metodo y Ruta]
   # GET /mensajes/new
   # GET /mensajes/new.json
   def new
@@ -80,6 +105,11 @@ class MensajesController < ApplicationController
     end
   end
 
+  ##
+  # Crea un nuevo mensaje enviado por el usuario actual.
+  # Marca por defecto los atributos eliminado_remitente y eliminado_destinatario
+  # en falso
+  # [Metodo y Ruta]
   # POST /mensajes
   # POST /mensajes.json
   def create
@@ -96,6 +126,16 @@ class MensajesController < ApplicationController
     end
   end
 
+  ##
+  # Elimina un mensaje en particular
+  # La eliminacion es en principio logica
+  # Si el usuario actual es el remitente establece el atributo
+  # eliminado_remitente en verdadero
+  # Si el usuario actual es el destinatario establece el atributo
+  # eliminado_destinatario en verdadero
+  # Si tanto el remitente como el destinatario marcan el mensaje como elimiando
+  # este se elimina concretamente del sistema
+  # [Metodo y Ruta]
   # DELETE /mensajes/1
   # DELETE /mensajes/1.json
   def destroy
@@ -111,5 +151,4 @@ class MensajesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
 end

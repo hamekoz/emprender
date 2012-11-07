@@ -1,14 +1,2 @@
 # Read about fixtures at
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  titulo: MyString
-  texto: MyText
-  foto: 
-  visible: false
-
-two:
-  titulo: MyString
-  texto: MyText
-  foto: 
-  visible: false

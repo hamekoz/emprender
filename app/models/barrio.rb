@@ -1,4 +1,8 @@
+##
+# Barrio correspondiente a un domicilio o lugar
 class Barrio < ActiveRecord::Base
+  attr_accessible :nombre, :descripcion
+
   validates :nombre,
             :presence => true,
             :uniqueness => true

@@ -1,7 +1,12 @@
+##
+# NoticiasController es el controlador de la seccion Noticias
 class NoticiasController < ApplicationController
 
   add_crumb "Inicio", :root_path
 
+  ##
+  #Renderiza la cartelera de las noticias publicadas
+  # [Metodo y Ruta]
   # GET /noticias
   # GET /noticias.json
   def index
@@ -17,6 +22,9 @@ class NoticiasController < ApplicationController
     end
   end
 
+  ##
+  # Renderiza la informacion de una noticia en particular
+  # [Metodo y Ruta]
   # GET /noticias/1
   # GET /noticias/1.json
   def show

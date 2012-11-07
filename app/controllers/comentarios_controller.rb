@@ -1,7 +1,12 @@
+##
+# ComentariosController es el controlador de comentarios
 class ComentariosController < ApplicationController
 
+  ##
+  # Crea un nuevo comentario, lo marca como no aceptado y lo renderiza
+  # en pantalla
+  # [Metodo y Ruta]
   # POST /comentarios
-  # POST /comentarios.json
   def create
     @comentario = Comentario.new(params[:comentario])
     @comentario.aceptado = false
@@ -14,20 +19,7 @@ class ComentariosController < ApplicationController
     else
       respond_to do |format|
         format.html { redirect_to :back, :alert => "Error al agregar el comentario" }
-#        format.js { render 'fail_create.js.erb' }
       end
-    end
-  end
-
-  # DELETE /comentarios/1
-  # DELETE /comentarios/1.json
-  def destroy
-    @comentario = Comentario.find(params[:id])
-    @comentario.destroy
-
-    respond_to do |format|
-      format.html { redirect_to comentarios_url }
-      format.json { head :no_content }
     end
   end
 end

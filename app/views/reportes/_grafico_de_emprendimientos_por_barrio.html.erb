@@ -1,0 +1,18 @@
+<div id="contenedor-grafico"></div>
+
+<table class="table table-condensed">
+  <thead>
+    <tr class="well">
+      <th>Barrio</th>
+      <th>Cantidad</th>
+    </tr>
+  </thead>
+  <tbody>
+<% Barrio.all.each do |barrio| %>
+    <tr class="grafico">
+      <th scope="row"><%= barrio.nombre %></th>
+      <td><%= barrio.emprendimientos.count %></td>
+      </tr>
+<% end %>
+  </tbody>
+</table>

@@ -4,10 +4,18 @@
 require 'rails_admin/config/actions'
 require 'rails_admin/config/actions/base'
 
+##
+# Modulo del Panel de Administracion
 module RailsAdmin
+  ##
+  # Modulo de Configuracion del Panel de Administracion
   module Config
+    ##
+    # Modulo de Acciones sobre varios elementos del Panel de Administracion
     module Actions
 
+      ##
+      # Accion Aceptar para marcar varios elementos como aceptados
       class Aceptar < RailsAdmin::Config::Actions::Base
         RailsAdmin::Config::Actions.register(self)
         register_instance_option :bulkable? do
@@ -25,6 +33,8 @@ module RailsAdmin
         end
       end
 
+      ##
+      # Accion Rechazar para marcar varios elementos como rechazados
       class Rechazar < RailsAdmin::Config::Actions::Base
         RailsAdmin::Config::Actions.register(self)
         register_instance_option :bulkable? do
@@ -42,6 +52,8 @@ module RailsAdmin
         end
       end
 
+      ##
+      # Accion Activar para marcar varios elementos como activados
       class Activar < RailsAdmin::Config::Actions::Base
         RailsAdmin::Config::Actions.register(self)
         register_instance_option :bulkable? do
@@ -59,6 +71,8 @@ module RailsAdmin
         end
       end
 
+      ##
+      # Accion Desactivar para marcar varios elementos como desactivados
       class Desactivar < RailsAdmin::Config::Actions::Base
         RailsAdmin::Config::Actions.register(self)
         register_instance_option :bulkable? do
@@ -76,6 +90,8 @@ module RailsAdmin
         end
       end
 
+      ##
+      # Accion Publicar para marcar varios elementos como publicados
       class Publicar < RailsAdmin::Config::Actions::Base
         RailsAdmin::Config::Actions.register(self)
         register_instance_option :bulkable? do
@@ -93,6 +109,8 @@ module RailsAdmin
         end
       end
 
+      ##
+      # Accion Despublicar para marcar varios elementos como despublicados
       class Despublicar < RailsAdmin::Config::Actions::Base
         RailsAdmin::Config::Actions.register(self)
         register_instance_option :bulkable? do
@@ -110,6 +128,8 @@ module RailsAdmin
         end
       end
 
+      ##
+      # Accion Bloquear para bloquear Usuarios
       class Bloquear < RailsAdmin::Config::Actions::Base
         RailsAdmin::Config::Actions.register(self)
         register_instance_option :bulkable? do
@@ -127,6 +147,8 @@ module RailsAdmin
         end
       end
 
+      ##
+      # Accion Desbloquear para desbloquear Usuarios
       class Desbloquear < RailsAdmin::Config::Actions::Base
         RailsAdmin::Config::Actions.register(self)
         register_instance_option :bulkable? do
@@ -144,6 +166,8 @@ module RailsAdmin
         end
       end
 
+      ##
+      # Accion Apadrinar para establacer la Institucion de varios Emprendedores
       class Apadrinar < RailsAdmin::Config::Actions::Base
         RailsAdmin::Config::Actions.register(self)
         register_instance_option :bulkable? do
