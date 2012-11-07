@@ -9,7 +9,7 @@
   </thead>
   <tbody>
   <tbody>
-<% @rubros.each do |rubro| %>
+<% Rubros.all.each do |rubro| %>
     <tr class="grafico"">
       <th scope="row"><%= rubro.nombre %></th>
         <td><%= rubro.emprendimientos.count %></td>

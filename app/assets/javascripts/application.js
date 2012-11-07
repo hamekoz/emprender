@@ -19,7 +19,7 @@
 //= require g.raphael-min
 //= require g.pie-min
 //= require bootstrap-wysihtml5
-//= require bootstrap-wysihtml5/locales/es-ES
+//= require bootstrap-wysihtml5/locales/es-AR
 //= require_tree .
 //= require_self
 

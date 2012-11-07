@@ -9,7 +9,7 @@
     <div class="thumbnail">
       <div class="caption">
         <h2><%= evento.nombre %></h2>
-        <h6>Publicado el <%= evento.updated_at %> por <%= evento.autor.nombre_completo %></h6>
+        <h6>Publicado el <%= l(evento.updated_at, :format => :long) %> por <%= evento.autor.nombre_completo %></h6>
         <hr>
         <p><%= evento.resumen %></p>
         <hr>

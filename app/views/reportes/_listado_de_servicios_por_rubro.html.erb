@@ -1,4 +1,4 @@
-<% @rubros.each do |rubro| %>
+<% Rubros.all.each do |rubro| %>
   <h3><%= rubro.nombre %></h3>
     <ul>
     <% rubro.servicios.each do |servicio| %>

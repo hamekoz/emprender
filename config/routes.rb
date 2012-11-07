@@ -6,11 +6,6 @@ Emprender::Application.routes.draw do
   root        :to => "application#index"
 
   match  'acerca' => "application#acerca", :as => "acerca"
-  
-#  devise_for :usuario do
-#    get "/usuario/salir" => "devise/sessions#destroy", :as => :destroy_usuario_session
-#    get "/usuario/salir" => "devise/sessions#destroy", :as => :destroy_usuario_session
-#  end
 
   resource :usuario,          :only => :show
 
