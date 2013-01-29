@@ -16,7 +16,7 @@ class ServiciosEmprendimientoController < ApplicationController
     @q = servicios.search(params[:q])
     @servicios = @q.result(:distinct => true).page(params[:pagina]).per(6)
 
-    add_crumb "Mis Servicios", mi_emprendimiento_servicio_path
+    add_crumb "Mis Servicios", mi_emprendimiento_servicios_path
 
     respond_to do |format|
       format.html # index.html.erb

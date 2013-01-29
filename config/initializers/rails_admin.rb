@@ -310,13 +310,12 @@ RailsAdmin.config do |config|
       exclude_fields :rol, :reset_password_sent_at, :current_sign_in_at, :current_sign_in_ip,
                      :last_sign_in_ip, :confirmation_token, :confirmation_sent_at, :confirmed_at,
                      :unconfirmed_email, :last_sign_in_at, :sign_in_count, :locked_at,
-                     :productos, :servicios, :perfil, :emprendimiento
+                     :perfil, :emprendimiento
     end
     edit do
       exclude_fields :rol, :reset_password_sent_at, :current_sign_in_at, :current_sign_in_ip,
                      :last_sign_in_ip, :confirmation_token, :confirmation_sent_at, :confirmed_at,
-                     :unconfirmed_email, :last_sign_in_at, :sign_in_count, :locked_at,
-                     :productos, :servicios
+                     :unconfirmed_email, :last_sign_in_at, :sign_in_count, :locked_at
     end
     export do
       exclude_fields :password, :reset_password_sent_at, :current_sign_in_at, :current_sign_in_ip,
@@ -526,7 +525,7 @@ RailsAdmin.config do |config|
     navigation_label 'Padron'
     list do
       field :id
-      field :emprendedor
+      field :emprendimiento
       field :rubro
       field :nombre
       field :aceptado
@@ -621,7 +620,7 @@ RailsAdmin.config do |config|
     navigation_label 'Padron'
     list do
       field :id
-      field :emprendedor
+      field :emprendimiento
       field :rubro
       field :nombre
       field :aceptado

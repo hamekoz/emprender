@@ -75,26 +75,25 @@ CKEDITOR.editorConfig = function( config )
       }
     }
   });
-  
-  /* Extra plugins */
-  // works only with en, ru, uk locales
-  config.extraPlugins = "embed,attachment";
-  
+
   /* Toolbars */
   config.toolbar = 'Easy';
-  
+
   config.toolbar_Easy =
     [
-        ['Source','-','Preview'],
+//        ['Source','-','Preview', 'Maximize'],
+        ['Preview', 'Maximize'],
         ['Cut','Copy','Paste','PasteText','PasteFromWord',],
         ['Undo','Redo','-','SelectAll','RemoveFormat'],
-        ['Styles','Format'], ['Subscript', 'Superscript', 'TextColor'], ['Maximize','-','About'], '/',
-        ['Bold','Italic','Underline','Strike'], ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'],
+        ['Styles','Format'], ['Subscript', 'Superscript', 'TextColor'],
+        '/',
+        ['Bold','Italic','Underline','Strike'],
+        ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'],
         ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
         ['Link','Unlink','Anchor'], ['Image', 'Attachment', 'Flash', 'Embed'],
         ['Table','HorizontalRule','Smiley','SpecialChar','PageBreak']
     ];
 
-config.skin = 'BootstrapCK-Skin';
+//config.skin = 'BootstrapCK-Skin';
 };
 

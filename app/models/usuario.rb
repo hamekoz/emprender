@@ -4,6 +4,19 @@ class Usuario < ActiveRecord::Base
   self.inheritance_column = :rol
   
   after_create :bloquear_usuario
+  after_create :inicializar
+
+  ##
+  # Inicializa el Perfil y el Emprendimiento de un Emprendedor luego de crearlo
+  def inicializar
+    if self.emprendedor?
+      emprendedor = Emprendedor.find(self.id)
+      emprendedor.perfil = Perfil.new if emprendedor.perfil.blank?
+      emprendedor.emprendimiento = Emprendimiento.new if emprendedor.emprendimiento.blank?
+      emprendedor.save
+    end
+  end
+
 
   ##
   # Bloquea al usuario si no es un Emprendedor luego de ser creado
