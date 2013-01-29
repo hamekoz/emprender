@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
+//= require twitter/bootstrap
 //= require jquery-ui
 //= require chosen-jquery
 //= require raphael-min
@@ -23,7 +23,7 @@
 //= require_tree .
 //= require_self
 
-$('a').tooltip();
+//$('a').tooltip();
 $('span').tooltip();
 
 $('.textarea').wysihtml5({ "locale": "es-AR", image: false });
