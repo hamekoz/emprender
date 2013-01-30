@@ -42,7 +42,7 @@ end
 
 # Gemas necesarias para produccion
 group :production do
-  gem 'pg'
+#  gem 'pg'
   gem 'wkhtmltopdf-heroku'
 #  gem 'therubyracer-heroku', :platform => :ruby
 #  gem 'thin'
