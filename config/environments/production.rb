@@ -83,4 +83,11 @@ Emprender::Application.configure do
     :enable_starttls_auto => true
   }
 
+  if Figaro.env.gestor_de_archivos == 'dropbox'
+    config.paperclip_defaults = {
+      :storage => :dropbox,
+      :dropbox_credentials => "#{Rails.root}/config/dropbox.yml",
+      :dropbox_options => {}
+    }
+  end
 end
