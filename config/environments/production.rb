@@ -65,5 +65,22 @@ Emprender::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  config.action_mailer.default_url_options = { :host => 'emprender.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => Figaro.env.dominio }
+
+  # Google Analytics id
+  if Figaro.env.google_analytics_id.present?
+    GA.tracker = Figaro.env.google_analytics_id
+  end
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => Figaro.env.mail_servidor,
+    :port                 => Figaro.env.mail_puerto,
+    :domain               => Figaro.env.mail_dominio,
+    :user_name            => Figaro.env.mail_usuario,
+    :password             => Figaro.env.mail_password,
+    :authentication       => Figaro.env.mail_autenticacion,
+    :enable_starttls_auto => true
+  }
+
 end

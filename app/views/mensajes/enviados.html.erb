@@ -12,34 +12,32 @@
     </li>
   </ul>
   <div class="tab-content">
+    <%= search_form_for(["enviados", @q], :html => { :class => 'form-search' }) do |f| %>
+      <strong>Ordenar por:</strong>
+      <%= sort_link @q, :asunto, {}, :class => 'label' %>
+      <%= sort_link @q, :created_at, "Fecha", {}, :class => 'label' %>
 
-<%= search_form_for(["enviados", @q], :html => { :class => 'form-search' }) do |f| %>
-  <strong>Ordenar por:</strong>
-  <%= sort_link @q, :asunto, {}, :class => 'label' %>
-  <%= sort_link @q, :created_at, "Fecha", {}, :class => 'label' %>
-
-  <div class="input-append pull-right">
-    <%= f.text_field :asunto_or_texto_cont,
-                     :class=> 'search-query',
-                     :placeholder => 'Asunto o Texto' %>
-    <%= link_to(mensajes_path, :type => 'button',
-                               :class => 'btn btn-comun',
-                               rel: 'tooltip', title: 'Ver todos',) do %>
-      <i class="icon-remove-sign"></i>
+      <div class="input-append pull-right">
+        <%= f.text_field :asunto_or_texto_cont,
+                         :class=> 'search-query',
+                         :placeholder => 'Asunto o Texto' %>
+        <%= link_to(mensajes_path, :type => 'button',
+                                   :class => 'btn btn-comun',
+                                   rel: 'tooltip', title: 'Ver todos',) do %>
+          <i class="icon-remove-sign"></i>
+        <% end %>
+        <%= f.button "Buscar", :class=> 'btn' %>
+      </div>
     <% end %>
-    <%= f.button "Buscar", :class=> 'btn' %>
-  </div>
-<% end %>
-<hr>
-
-    <table class="table table-hover"">
+    <hr>
+    <table class="table table-hover">
       <thead>
         <tr>
           <th>Estado</th>
           <th>Para</th>
           <th>Asunto</th>
           <th>Fecha</th>
-          <th><span class="pull-right">Acciones</span></th>
+          <th class="no-imprimir"><span class="pull-right">Acciones</span></th>
         </tr>
       </thead>
       <tbody>
@@ -49,19 +47,19 @@
           <% if mensaje.eliminado_destinatario? %>
             <span class="label label-important", rel="tooltip", title="Por el destinatario">Eliminado</span>
           <% elsif mensaje.leido? %>
-            <span class="label label-success", rel="tooltip", title="Por el destinatario"">Leido</span>
+            <span class="label label-success" rel="tooltip" title="Por el destinatario"">Leido</span>
           <% else %>
-            <span class="label label-warning", rel="tooltip", title="Por el destinatario">No leido</span>
+            <span class="label label-warning" rel="tooltip" title="Por el destinatario">No leido</span>
           <% end %>
           </td>
           <td><%= mensaje.destinatario.nombre_completo %></td>
           <td><%= mensaje.asunto %></td>
           <td>
-            <span rel="tooltip", title="<%= l(mensaje.created_at, :format => :long) %>">
+            <span rel="tooltip" title="<%= l(mensaje.created_at, :format => :long) %>">
               <%= mensaje.fecha %>
             </span>
           </td>
-          <td>
+          <td class="no-imprimir">
             <div class="pull-right">
               <%= link_to "Ver", mensaje, :class => 'label label-success' %>
               <%= link_to "Reenviar", new_mensaje_path(:id => mensaje.id) , :class => 'label label-info' %>

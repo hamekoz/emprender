@@ -1,6 +1,6 @@
 <h1 class= "page-header"><%= @noticia.titulo %></h1>
 <article>
-  <h4><%= @noticia.resumen %><h4>
+  <h4><%= @noticia.resumen %></h4>
   <hr>
   <div>
     <%= @noticia.texto.html_safe %>
@@ -32,6 +32,11 @@
     <i class="icon-arrow-left"></i>
     <span>Volver</span>
   <% end %>
+
+  <span class="pull-right">
+    <%= social_share_button_tag(@noticia.titulo) %>
+  </span>
+
 </div>
 
 <%= render 'comentarios/comentarios', :comentable => @noticia %>

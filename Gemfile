@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'rails'
-gem 'rails-i18n'
+gem 'rails', '3.2.13'             #Framework
+gem 'rails-i18n'                  #Localizacion del framework
 
 gem 'json'
+gem 'jquery-rails'
 gem 'show_for'                    #Vistas simplificadas
 gem 'simple_form'                 #Formularios
 gem 'enum'                        #Enumerador
@@ -21,12 +22,11 @@ gem 'wicked_pdf'                  #Exportacion a PDF
 gem 'twitter-bootstrap-rails'     #Framework CSS y JS
 gem 'bootstrap-wysihtml5-rails'   #Editor de texto enrriquecido simple
 gem 'crummy'                      #Generador de breadcum
-#gem 'google-analytics-rails'     #Analisis de visitas
-
-gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
-
-gem 'jquery-rails'
-gem 'yaml_db'                     #Gestor de datos
+gem 'google-analytics-rails'      #Analisis de visitas
+gem 'social-share-button'         #Botones de socializacioin
+gem 'figaro'                      #Adminitracion de variable de entorno
+gem 'rails_admin'                 #Administracion del sitio
+gem 'sqlite3'
 
 # Gemas usadas solo en desarrollo
 group :development, :test do
@@ -35,18 +35,22 @@ group :development, :test do
     gem 'minitest-rails'
     gem 'bigdecimal'
   end
-  gem 'sqlite3'
   gem 'webrick'
-#  gem 'brakeman'
+  gem 'yaml_db'                   #Gestor de datos
 end
 
 # Gemas necesarias para produccion
 group :production do
-#  gem 'pg'
   gem 'activerecord-postgresql-adapter'
-  gem 'wkhtmltopdf-heroku'
-#  gem 'therubyracer-heroku', :platform => :ruby
-#  gem 'thin'
+
+  group :local do
+    gem 'passenger'                   #Web server para apache y nginx
+  end
+
+  group :heroku do
+    gem 'wkhtmltopdf-heroku'
+    gem 'thin'
+  end
 end
 
 # Gems used only for assets and not required
@@ -57,22 +61,6 @@ group :assets do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
-#  gem 'twitter-bootstrap-rails', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'

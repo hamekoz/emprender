@@ -19,7 +19,10 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
   pool: 5
-  timeout: 5000
+  host:     <%= Figaro.env.db_servidor %>
+  database: <%= Figaro.env.db_nombre %>
+  username: <%= Figaro.env.db_usuario %>
+  password: <%= Figaro.env.db_password %>

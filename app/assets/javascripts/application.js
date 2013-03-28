@@ -12,8 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
 //= require jquery-ui
+//= require social-share-button
+//= require twitter/bootstrap
 //= require chosen-jquery
 //= require raphael-min
 //= require g.raphael-min
@@ -23,7 +24,6 @@
 //= require_tree .
 //= require_self
 
-//$('a').tooltip();
 $('span').tooltip();
 
 $('.textarea').wysihtml5({ "locale": "es-AR", image: false });

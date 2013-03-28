@@ -13,7 +13,7 @@
   </ul>
   <div class="tab-content">
     <%= render 'busqueda' %>
-    <table class="table table-hover"">
+    <table class="table table-hover">
       <thead>
         <tr>
           <th>Estado</th>
@@ -36,7 +36,7 @@
           <td><%= mensaje.remitente.nombre_completo %></td>
           <td><%= mensaje.asunto %></td>
           <td>
-            <span rel="tooltip", title="<%= l(mensaje.created_at, :format => :long) %>">
+            <span rel="tooltip" title="<%= l(mensaje.created_at, :format => :long) %>">
               <%= mensaje.fecha %>
             </span>
           </td>

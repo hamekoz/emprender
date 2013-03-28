@@ -54,6 +54,11 @@
     <i class="icon-arrow-left"></i>
     <span>Volver</span>
   <% end %>
+
+  <span class="pull-right">
+    <%= social_share_button_tag(@evento.nombre) %>
+  </span>
+
 </div>
 
 <%= render 'comentarios/comentarios', :comentable => @evento %>

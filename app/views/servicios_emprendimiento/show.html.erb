@@ -35,11 +35,14 @@
       <%= servicio.attribute :updated_at, :format => :long, :label => "Ultima actualizacion" %>
     </article>
   </div>
+</div>
 <% end %>
 
+<% unless @servicio.aceptado %>
 <span class="label label-info">
-  <%= "Producto pendiente de aprobacion por un moderador para estar publicado" unless @servicio.aceptado %>
+  Servicio pendiente de aprobacion por un moderador para estar publicado
 </span>
+<% end %>
 
 <div class="form-actions">
   <% if can? :edit, @servicio %>

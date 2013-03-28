@@ -25,7 +25,7 @@
   <div class="span6">
     <article>
       <p>
-       <h4><%= @servicio.rubro.blank? ? "Sin rubro" : @servicio.rubro.nombre %></font></h4>
+       <h4><%= @servicio.rubro.blank? ? "Sin rubro" : @servicio.rubro.nombre %></h4>
          <h1><%= @servicio.nombre %></h1>
       </p>
       <%= servicio.attribute :descripcion %>
@@ -33,6 +33,7 @@
                              :value => number_to_currency(@servicio.precio, :locale => 'es-AR') %>
     </article>
   </div>
+</div>
 <% end %>
 
 <div class="form-actions">
@@ -57,6 +58,11 @@
     <i class="icon-arrow-left"></i>
     <span>Volver</span>
   <% end %>
+
+  <span class="pull-right">
+    <%= social_share_button_tag(@servicio.nombre) %>
+  </span>
+
 </div>
 
 <%= render 'comentarios/comentarios', :comentable => @servicio %>
