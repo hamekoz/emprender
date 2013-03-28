@@ -13,6 +13,8 @@ gem 'devise'                      #Gestion de usuarios y sesiones
 gem 'devise-i18n'                 #Traduccion de devise
 gem 'kaminari'                    #Paginador
 gem 'paperclip'                   #Gestor de adjuntos
+gem 'paperclip-dropbox'           #Plugin para Dropbox
+gem 'aws-sdk'                     #Plugin para Amason S3
 gem 'ckeditor'                    #Editor de texto enrriquecido
 gem 'ckeditor_rails'
 gem 'date_validator'              #Validador de fechas
@@ -26,7 +28,6 @@ gem 'google-analytics-rails'      #Analisis de visitas
 gem 'social-share-button'         #Botones de socializacioin
 gem 'figaro'                      #Adminitracion de variable de entorno
 gem 'rails_admin'                 #Administracion del sitio
-gem 'sqlite3'
 
 # Gemas usadas solo en desarrollo
 group :development, :test do
@@ -37,10 +38,12 @@ group :development, :test do
   end
   gem 'webrick'
   gem 'yaml_db'                   #Gestor de datos
+  gem 'sqlite3'
 end
 
 # Gemas necesarias para produccion
 group :production do
+  gem 'pg'
   gem 'activerecord-postgresql-adapter'
 
   group :local do
