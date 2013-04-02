@@ -3,8 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'             #Framework
 gem 'rails-i18n'                  #Localizacion del framework
 
-gem 'json'
-gem 'jquery-rails'
+gem 'jquery-rails'                #jquery para rails
 gem 'show_for'                    #Vistas simplificadas
 gem 'simple_form'                 #Formularios
 gem 'enum'                        #Enumerador
@@ -13,8 +12,6 @@ gem 'devise'                      #Gestion de usuarios y sesiones
 gem 'devise-i18n'                 #Traduccion de devise
 gem 'kaminari'                    #Paginador
 gem 'paperclip'                   #Gestor de adjuntos
-gem 'paperclip-dropbox'           #Plugin para Dropbox
-gem 'aws-sdk'                     #Plugin para Amason S3
 gem 'ckeditor'                    #Editor de texto enrriquecido
 gem 'ckeditor_rails'
 gem 'date_validator'              #Validador de fechas
@@ -28,6 +25,7 @@ gem 'google-analytics-rails'      #Analisis de visitas
 gem 'social-share-button'         #Botones de socializacioin
 gem 'figaro'                      #Adminitracion de variable de entorno
 gem 'rails_admin'                 #Administracion del sitio
+gem 'graphael-rails'               #Libreria de graficos
 
 # Gemas usadas solo en desarrollo
 group :development, :test do
@@ -43,14 +41,15 @@ end
 
 # Gemas necesarias para produccion
 group :production do
-  gem 'pg'
-  gem 'activerecord-postgresql-adapter'
-
   group :local do
     gem 'passenger'                   #Web server para apache y nginx
   end
 
   group :heroku do
+    gem 'pg'                          #Postgresql
+    gem 'activerecord-postgresql-adapter'
+    gem 'paperclip-dropbox'           #Plugin para Dropbox
+    gem 'aws-sdk'                     #Plugin para Amason S3
     gem 'wkhtmltopdf-heroku'
     gem 'thin'
   end

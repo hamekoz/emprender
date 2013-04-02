@@ -16,9 +16,9 @@
 //= require social-share-button
 //= require twitter/bootstrap
 //= require chosen-jquery
-//= require raphael-min
-//= require g.raphael-min
-//= require g.pie-min
+//= require raphael/raphael
+//= require g.raphael/g.raphael
+//= require g.raphael/g.pie
 //= require bootstrap-wysihtml5
 //= require bootstrap-wysihtml5/locales/es-AR
 //= require_tree .

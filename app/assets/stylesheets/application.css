@@ -106,6 +106,7 @@ a.dp-choose-date {
 @media (min-width: 1200px) {
   body {
     padding-top: 40px;
+    padding-bottom: 40px;
   }
   div.content {
     margin: 0 -20px;
@@ -117,6 +118,7 @@ a.dp-choose-date {
 @media (min-width: 768px) and (max-width: 979px) {
   body {
     padding-top: 40px;
+    padding-bottom: 40px;
   }
   div.content {
     margin: 0 -20px;
