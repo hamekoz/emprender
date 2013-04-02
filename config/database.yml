@@ -19,10 +19,24 @@ test:
   timeout: 5000
 
 production:
-  adapter: postgresql
-  encoding: unicode
+<% if Figaro.env["EMPRENDER_DB"].present? %>
+  adapter: <%= Figaro.env["EMPRENDER_DB"] %>
+  database: <%= Figaro.env["EMPRENDER_DB_DABABASE"] %>
+  username: <%= Figaro.env["EMPRENDER_DB_USUARIO"] %>
+  password: <%= Figaro.env["EMPRENDER_DB_PASSWORD"] %>
   pool: 5
-  host:     <%= Figaro.env.db_servidor %>
-  database: <%= Figaro.env.db_nombre %>
-  username: <%= Figaro.env.db_usuario %>
-  password: <%= Figaro.env.db_password %>
+  <% if Figaro.env["EMPRENDER_DB"] == "mysql2" %>
+  encoding: utf8
+  socket: /tmp/mysql.sock
+  <% end %>
+  <% if Figaro.env["EMPRENDER_DB"] == "postgresql" %>
+  encoding: unicode
+  <% end %>
+<% else %>
+  adapter: sqlite3
+  database: db/production.sqlite3
+  pool: 5
+  timeout: 5000
+<% end %>
+
+

@@ -9,7 +9,7 @@ Emprender::Application.configure do
   config.action_controller.perform_caching = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
-  config.serve_static_assets = false
+  config.serve_static_assets = true
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
@@ -65,29 +65,33 @@ Emprender::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  config.action_mailer.default_url_options = { :host => Figaro.env.dominio }
-
   # Google Analytics id
-  if Figaro.env.google_analytics_id.present?
-    GA.tracker = Figaro.env.google_analytics_id
+  if Figaro.env["EMPRENDER_GOOGLE_ANALYTICS_ID"].present?
+    GA.tracker = Figaro.env["EMPRENDER_GOOGLE_ANALYTICS_ID"]
   end
 
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :address              => Figaro.env.mail_servidor,
-    :port                 => Figaro.env.mail_puerto,
-    :domain               => Figaro.env.mail_dominio,
-    :user_name            => Figaro.env.mail_usuario,
-    :password             => Figaro.env.mail_password,
-    :authentication       => Figaro.env.mail_autenticacion,
-    :enable_starttls_auto => true
-  }
+  config.action_mailer.default_url_options = { :host => Figaro.env.emprender_dominio }
 
-  if Figaro.env.gestor_de_archivos == 'dropbox'
+  if Figaro.env["EMPRENDER_MAIL_METODO"] == "smtp"
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      :address              => Figaro.env.emprender_mail_servidor,
+      :port                 => Figaro.env.emprender_mail_puerto,
+      :domain               => Figaro.env.emprender_mail_dominio,
+      :user_name            => Figaro.env.emprender_mail_usuario,
+      :password             => Figaro.env.emprender_mail_password,
+      :authentication       => :plain,
+      :enable_starttls_auto => true
+    }
+  else
+    config.action_mailer.delivery_method = :sendmail
+  end
+
+  if Figaro.env["EMPRENDER_FILES"] == 'dropbox'
     config.paperclip_defaults = {
       :storage => :dropbox,
       :dropbox_credentials => "#{Rails.root}/config/dropbox.yml",
-      :dropbox_options => {}
+      :dropbox_options => {:download => Figaro.env["EMPRENDER_FILES_DROPBOX_ACCESS_TYPE"] == "dropbox"}
     }
   end
 end

@@ -22,8 +22,6 @@ GEM
       activesupport (= 3.2.13)
       arel (~> 3.0.2)
       tzinfo (~> 0.3.29)
-    activerecord-postgresql-adapter (0.0.1)
-      pg
     activeresource (3.2.13)
       activemodel (= 3.2.13)
       activesupport (= 3.2.13)
@@ -32,10 +30,6 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
       bigdecimal
-    aws-sdk (1.8.5)
-      json (~> 1.4)
-      nokogiri (>= 1.4.4)
-      uuidtools (~> 2.1)
     bcrypt-ruby (3.0.1)
     bigdecimal (1.1.0)
     bootstrap-sass (2.3.1.0)
@@ -65,10 +59,9 @@ GEM
       execjs
     coffee-script-source (1.6.2)
     crummy (1.7.0)
-    daemon_controller (1.1.2)
     daemons (1.1.9)
-    date_validator (0.6.3)
-      activemodel (~> 3.0)
+    date_validator (0.6.4)
+      activemodel (>= 3)
     devise (2.2.3)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -82,18 +75,25 @@ GEM
     eventmachine (1.0.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    fastthread (1.0.7)
     figaro (0.6.3)
       bundler (~> 1.0)
       rails (>= 3, < 5)
     font-awesome-sass-rails (3.0.2.2)
       railties (>= 3.1.1)
       sass-rails (>= 3.1.1)
+    git (1.2.5)
     google-analytics-rails (0.0.4)
+    graphael-rails (0.1.4)
+      jeweler
     haml (4.0.1)
       tilt
     hike (1.2.1)
     i18n (0.6.1)
+    jeweler (1.8.4)
+      bundler (~> 1.0)
+      git (>= 1.2.5)
+      rake
+      rdoc
     journey (1.0.4)
     jquery-rails (2.2.1)
       railties (>= 3.0, < 5.0)
@@ -116,6 +116,7 @@ GEM
       minitest (~> 4.7)
       rails (>= 3.0)
     multi_json (1.7.2)
+    mysql2 (0.3.11)
     nested_form (0.3.1)
     nokogiri (1.5.9)
     orm_adapter (0.4.0)
@@ -128,11 +129,6 @@ GEM
     paperclip-dropbox (1.1.2)
       dropbox-sdk (~> 1.3)
       paperclip (~> 3.1)
-    passenger (3.0.19)
-      daemon_controller (>= 1.0.0)
-      fastthread (>= 1.0.1)
-      rack
-      rake (>= 0.8.1)
     pg (0.15.0)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
@@ -227,7 +223,6 @@ GEM
     uglifier (1.3.0)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
-    uuidtools (2.1.3)
     warden (1.2.1)
       rack (>= 1.0)
     webrick (1.3.1)
@@ -240,8 +235,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord-postgresql-adapter
-  aws-sdk
   bigdecimal
   bootstrap-wysihtml5-rails
   cancan
@@ -256,14 +249,14 @@ DEPENDENCIES
   enum
   figaro
   google-analytics-rails
+  graphael-rails
   jquery-rails
-  json
   kaminari
   minitest
   minitest-rails
+  mysql2
   paperclip
   paperclip-dropbox
-  passenger
   pg
   rails (= 3.2.13)
   rails-i18n

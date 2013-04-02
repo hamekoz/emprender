@@ -7,10 +7,4 @@ module ApplicationHelper
   def chosen_simple
     'chzn-select chzn-container chzn-container-single'
   end
-  
-  ##
-  # Ruta absoluta donde esta alojado el sitio
-  def ruta_absoluta
-    Figaro.env.url
-  end
 end
