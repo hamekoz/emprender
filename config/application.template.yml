@@ -1,0 +1,61 @@
+### Variables de configuracion de entorno de Emprender
+
+### Dominio del sitio (requerido)
+### ej: localhost:3000
+EMPRENDER_DOMINIO: "localhost"
+
+###=============================================================================
+### Seguimiento de visitas
+###=============================================================================
+
+### Google Analytics (opcional)
+#EMPRENDER_GOOGLE_ANALYTICS_ID: ""
+
+###=============================================================================
+### Envio de corro electronico
+###=============================================================================
+### Metodo de envio de correo electronico (opcional)
+### Valores admitidos
+###   sendmail (por defecto)
+###   smtp (recomendado)
+#EMPRENDER_MAIL_METODO: "smtp"
+
+### Configuracion SMTP (obligatorios si EMPRENDER_MAIL_METODO: "smtp")
+#EMPRENDER_MAIL_SERVIDOR: "smtp.gmail.com"
+#EMPRENDER_MAIL_PUERTO: "587"
+#EMPRENDER_MAIL_DOMINIO: "emprender.herokuapps.com"
+#EMPRENDER_MAIL_USUARIO: "emprender@hamekoz.com.ar"
+#EMPRENDER_MAIL_PASSWORD: "proyectofinalemprender"
+
+###=============================================================================
+### Base de datos
+###=============================================================================
+
+### Motor de base de datos (opcional) por defecto se usa sqlite3
+### Valores admitidos
+###   mysql2
+###   postgresql
+#EMPRENDER_DB: ""
+
+### Configuracion DB (obligatorios si se establece EMPRENDER_DB)
+#EMPRENDER_DB_DABABASE: ""
+#EMPRENDER_DB_USUARIO: ""
+#EMPRENDER_DB_PASSWORD: ""
+
+###=============================================================================
+### Almacenamiento de archivos
+###=============================================================================
+
+### Metodo de almacenamiento de archivos (opcional)
+### Valores admitidos
+###   local   (por defecto)
+###   dropbox (requerido para heroku)
+#EMPRENDER_FILES: "dropbox"
+
+### Credenciales Dropbox (obligatorios si EMPRENDER_FILES: "dropbox")
+#EMPRENDER_FILES_DROPBOX_APP_KEY: ""
+#EMPRENDER_FILES_DROPBOX_APP_SECRET: ""
+#EMPRENDER_FILES_DROPBOX_ACCESS_TOKEN: ""
+#EMPRENDER_FILES_DROPBOX_ACCESS_TOKEN_SECRET: ""
+#EMPRENDER_FILES_DROPBOX_USER_ID: ""
+#EMPRENDER_FILES_DROPBOX_ACCESS_TYPE: "dropbox"
