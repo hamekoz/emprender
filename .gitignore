@@ -38,3 +38,5 @@ pickle-email-*.html
 # Ignore Emprender
 .project
 /public/ckeditor_assets/*
+db.sh
+db/seeds-completo.rb
