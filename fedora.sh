@@ -1,4 +1,4 @@
-yum install mod_passenger mysql-server mysql-devel postgresql-devel ruby-devel rubygems rubygem-bundler
+yum install -y git make gcc gpp mod_passenger mysql-server mysql-devel ruby-devel rubygems rubygem-bundler rubygem-bcrypt-ruby
 cd /var/www/html
 git clone git://github.com/Hamekoz/emprender.git
 cd emprender
