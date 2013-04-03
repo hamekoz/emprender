@@ -29,8 +29,6 @@ gem 'rails_admin'                 #Administracion del sitio
 gem 'graphael-rails'              #Libreria de graficos
 gem 'yaml_db'                     #Gestor de datos
 
-gem 'sqlite3'
-
 # Gemas usadas solo en desarrollo
 group :development, :test do
   platforms :ruby_19 do
@@ -39,13 +37,14 @@ group :development, :test do
     gem 'bigdecimal'
   end
   gem 'webrick'
+  gem 'sqlite3'
 end
 
 # Gemas necesarias para produccion
 group :production do
-  gem 'pg'
-  gem 'mysql2'
+  gem 'mysql2', :group => :local
   group :heroku do
+    gem 'pg'
     gem 'thin'
     gem 'wkhtmltopdf-heroku'
   end

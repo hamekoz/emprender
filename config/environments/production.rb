@@ -72,7 +72,7 @@ Emprender::Application.configure do
 
   config.action_mailer.default_url_options = { :host => Figaro.env.emprender_dominio }
 
-  if Figaro.env["EMPRENDER_MAIL_METODO"] == "smtp"
+  if Figaro.env["EMPRENDER_MAIL_SMTP"] == "true"
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
       :address              => Figaro.env.emprender_mail_servidor,
@@ -87,7 +87,7 @@ Emprender::Application.configure do
     config.action_mailer.delivery_method = :sendmail
   end
 
-  if Figaro.env["EMPRENDER_FILES"] == 'dropbox'
+  if Figaro.env["EMPRENDER_DROPBOX"] == "true"
     config.paperclip_defaults = {
       :storage => :dropbox,
       :dropbox_credentials => "#{Rails.root}/config/dropbox.yml",
