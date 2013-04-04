@@ -70,7 +70,7 @@ Emprender::Application.configure do
     GA.tracker = Figaro.env["EMPRENDER_GOOGLE_ANALYTICS_ID"]
   end
 
-  config.action_mailer.default_url_options = { :host => Figaro.env["EMPRENDER_DOMINIO"] }
+  config.action_mailer.default_url_options = { :host => ENV["EMPRENDER_DOMINIO"] }
 
   if Figaro.env["EMPRENDER_MAIL_SMTP"] == "enable"
     config.action_mailer.delivery_method = :smtp

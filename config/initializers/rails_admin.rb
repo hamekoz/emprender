@@ -81,16 +81,12 @@ RailsAdmin.config do |config|
     end
     bloquear do
       visible do
-        bindings[:abstract_model].model.to_s == "Usuario" ||
-        bindings[:abstract_model].model.to_s == "Administrador" ||
         bindings[:abstract_model].model.to_s == "Representante" ||
         bindings[:abstract_model].model.to_s == "Emprendedor"
       end
     end
     desbloquear do
       visible do
-        bindings[:abstract_model].model.to_s == "Usuario" ||
-        bindings[:abstract_model].model.to_s == "Administrador" ||
         bindings[:abstract_model].model.to_s == "Representante" ||
         bindings[:abstract_model].model.to_s == "Emprendedor"
       end
