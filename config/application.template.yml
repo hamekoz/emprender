@@ -15,7 +15,7 @@ EMPRENDER_DOMINIO: "localhost"
 ###=============================================================================
 ### Opcional para implementacion local
 ### Obligato para implementacion heroku
-#EMPRENDER_MAIL_SMTP: true
+#EMPRENDER_MAIL_SMTP: "enable"
 #EMPRENDER_MAIL_SERVIDOR: ""
 #EMPRENDER_MAIL_PUERTO: ""
 #EMPRENDER_MAIL_DOMINIO: ""
@@ -37,7 +37,7 @@ EMPRENDER_DOMINIO: "localhost"
 ###=============================================================================
 ### Opcional para implementacion local
 ### Obligato para implementacion heroku
-#EMPRENDER_DROPBOX: true
+#EMPRENDER_DROPBOX: "enable"
 #EMPRENDER_DROPBOX_APP_KEY: ""
 #EMPRENDER_DROPBOX_APP_SECRET: ""
 #EMPRENDER_DROPBOX_ACCESS_TOKEN: ""
