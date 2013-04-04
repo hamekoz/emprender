@@ -87,7 +87,7 @@ Emprender::Application.configure do
     config.action_mailer.delivery_method = :sendmail
   end
 
-  config.action_mailer.default_url_options = { :host => "emprender.herokuapp.com" }
+  config.action_mailer.default_url_options = { :host => ENV["EMPRENDER_DOMINIO"] }
 
   if Figaro.env["EMPRENDER_DROPBOX"] == "enable"
     config.paperclip_defaults = {
