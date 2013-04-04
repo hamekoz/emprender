@@ -13,8 +13,7 @@
     </li>
   </ul>
   <div class="tab-content">
-    <%= simple_form_for(@mensaje ,
-                        :html => { :class => 'form-horizontal' }) do |mensaje|%>
+    <%= simple_form_for(@mensaje , :html => { :class => 'form-horizontal' }) do |mensaje| %>
       <div class="form-inputs well">
         <%= mensaje.association :destinatario,
                                 :as => :grouped_select,
