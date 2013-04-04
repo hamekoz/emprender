@@ -5,6 +5,8 @@ require Rails.root.join('lib', 'rails_admin_acciones_emprender.rb')
 
 RailsAdmin.config do |config|
 
+  I18n.default_locale = :es
+
   ################  Especifico Emprender  ################
 
   config.actions do
