@@ -70,9 +70,9 @@ Emprender::Application.configure do
     GA.tracker = Figaro.env["EMPRENDER_GOOGLE_ANALYTICS_ID"]
   end
 
-  config.action_mailer.default_url_options = { :host => Figaro.env.emprender_dominio }
+  config.action_mailer.default_url_options = { :host => Figaro.env["EMPRENDER_DOMINIO"] }
 
-  if Figaro.env["EMPRENDER_MAIL_SMTP"] == "true"
+  if Figaro.env["EMPRENDER_MAIL_SMTP"] == "enable"
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
       :address              => Figaro.env.emprender_mail_servidor,
@@ -87,7 +87,7 @@ Emprender::Application.configure do
     config.action_mailer.delivery_method = :sendmail
   end
 
-  if Figaro.env["EMPRENDER_DROPBOX"] == "true"
+  if Figaro.env["EMPRENDER_DROPBOX"] == "enable"
     config.paperclip_defaults = {
       :storage => :dropbox,
       :dropbox_credentials => "#{Rails.root}/config/dropbox.yml",
