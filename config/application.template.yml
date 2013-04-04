@@ -4,6 +4,7 @@
 ### Dominio (requerido)
 ###=============================================================================
 EMPRENDER_DOMINIO: "localhost"
+EMPRENDER_MAIL: "emprender@hamekoz.com.ar"
 
 ###=============================================================================
 ### Google Analytics (opcional)
