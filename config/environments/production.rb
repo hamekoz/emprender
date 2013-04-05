@@ -75,11 +75,11 @@ Emprender::Application.configure do
   if ENV["EMPRENDER_MAIL_SMTP"] == "enable"
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
-      :address              => Figaro.env.emprender_mail_servidor,
-      :port                 => Figaro.env.emprender_mail_puerto,
-      :domain               => Figaro.env.emprender_mail_dominio,
-      :user_name            => Figaro.env.emprender_mail_usuario,
-      :password             => Figaro.env.emprender_mail_password,
+      :address              => ENV["EMPRENDER_MAIL_SERVIDOR"],
+      :port                 => ENV["EMPRENDER_MAIL_PUERTO"],
+      :domain               => ENV["EMPRENDER_MAIL_DOMINIO"],
+      :user_name            => ENV["EMPRENDER_MAIL_USUARIO"],
+      :password             => ENV["EMPRENDER_MAIL_PASSWORD"],
       :authentication       => :plain,
       :enable_starttls_auto => true
     }

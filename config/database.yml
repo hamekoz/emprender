@@ -20,10 +20,10 @@ test:
 
 production:
   adapter: mysql2
-  database: <%= Figaro.env["EMPRENDER_DB_DABABASE"] %>
-  username: <%= Figaro.env["EMPRENDER_DB_USUARIO"] %>
-  password: <%= Figaro.env["EMPRENDER_DB_PASSWORD"] %>
+  database: <%= ENV["EMPRENDER_DB_DABABASE"] %>
+  username: <%= ENV["EMPRENDER_DB_USUARIO"] %>
+  password: <%= ENV["EMPRENDER_DB_PASSWORD"] %>
   pool: 5
   encoding: utf8
-  socket: <%= Figaro.env["EMPRENDER_DB_SOCKET"] %>
+  socket: <%= ENV["EMPRENDER_DB_SOCKET"] %>
 
