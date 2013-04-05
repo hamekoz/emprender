@@ -386,6 +386,11 @@ RailsAdmin.config do |config|
     end
     create do
       exclude_fields :autor, :comentarios
+      field :autor_id, :hidden do
+        default_value do
+          bindings[:view]._current_user.id
+        end
+      end
     end
     edit do
       exclude_fields :autor, :comentarios
@@ -470,6 +475,11 @@ RailsAdmin.config do |config|
     end
     create do
       exclude_fields :autor, :comentarios
+      field :autor_id, :hidden do
+        default_value do
+          bindings[:view]._current_user.id
+        end
+      end
     end
     edit do
       exclude_fields :autor, :comentarios
