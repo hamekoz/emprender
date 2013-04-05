@@ -18,7 +18,7 @@
 
     <%= stylesheet_link_tag "application", :media => "all" %>
 
-    <%= analytics_init if Rails.env.production? && Figaro.env["EMPRENDER_GOOGLE_ANALYTICS_ID"].present? %>
+    <%= analytics_init if Rails.env.production? && ENV["EMPRENDER_GOOGLE_ANALYTICS_ID"].present? %>
 
     <%= auto_discovery_link_tag :atom, noticias_path(:atom), :title => "Noticias" %>
     <%= auto_discovery_link_tag :atom, eventos_path(:atom) , :title => "Eventos" %>

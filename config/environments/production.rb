@@ -66,13 +66,13 @@ Emprender::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   # Google Analytics id
-  if Figaro.env["EMPRENDER_GOOGLE_ANALYTICS_ID"].present?
+  if ENV["EMPRENDER_GOOGLE_ANALYTICS_ID"].present?
     GA.tracker = Figaro.env["EMPRENDER_GOOGLE_ANALYTICS_ID"]
   end
 
-#  config.action_mailer.default_url_options = { :host => ENV["EMPRENDER_DOMINIO"] }
+  config.action_mailer.default_url_options = { :host => ENV["EMPRENDER_DOMINIO"] }
 
-  if Figaro.env["EMPRENDER_MAIL_SMTP"] == "enable"
+  if ENV["EMPRENDER_MAIL_SMTP"] == "enable"
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
       :address              => Figaro.env.emprender_mail_servidor,
@@ -87,13 +87,11 @@ Emprender::Application.configure do
     config.action_mailer.delivery_method = :sendmail
   end
 
-  config.action_mailer.default_url_options = { :host => ENV["EMPRENDER_DOMINIO"] }
-
-  if Figaro.env["EMPRENDER_DROPBOX"] == "enable"
+  if ENV["EMPRENDER_DROPBOX"] == "enable"
     config.paperclip_defaults = {
       :storage => :dropbox,
       :dropbox_credentials => "#{Rails.root}/config/dropbox.yml",
-      :dropbox_options => {:download => Figaro.env["EMPRENDER_DROPBOX_ACCESS_TYPE"] == "dropbox"}
+      :dropbox_options => {:download => ENV["EMPRENDER_DROPBOX_ACCESS_TYPE"] == "dropbox"}
     }
   end
 end
