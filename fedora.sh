@@ -1,4 +1,4 @@
-yum install -y git make gcc gpp mod_passenger mysql-server mysql-devel ruby-devel rubygems rubygem-bundler rubygem-bcrypt-ruby
+yum install -y git make gcc gcc-c++ gpp mod_passenger mysql-server mysql-devel ruby-devel rubygems rubygem-bundler rubygem-bcrypt-ruby libxml2-devel libxslt libxslt-devel
 cd /var/www/html
 git clone git://github.com/Hamekoz/emprender.git
 cd emprender

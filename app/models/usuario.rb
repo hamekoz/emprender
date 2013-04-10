@@ -3,7 +3,7 @@
 class Usuario < ActiveRecord::Base
   self.inheritance_column = :rol
   
-  after_create :bloquear_usuario
+#  after_create :bloquear_usuario
   after_create :inicializar
 
   ##
@@ -13,17 +13,27 @@ class Usuario < ActiveRecord::Base
       emprendedor = Emprendedor.find(self.id)
       emprendedor.perfil = Perfil.new if emprendedor.perfil.blank?
       emprendedor.emprendimiento = Emprendimiento.new if emprendedor.emprendimiento.blank?
+      emprendedor.aceptado = true
       emprendedor.save
     end
   end
 
+  def active_for_authentication?
+    super && aceptado?
+  end
+
+  def inactive_message
+    confirmed? && !aceptado? ? :inactive : super
+  end
 
   ##
   # Bloquea al usuario si no es un Emprendedor luego de ser creado
   # Debe ser desbloqueado por un Administrador que verifique la cuenta
-  def bloquear_usuario
-    lock_access! unless emprendedor?
-  end
+#  def bloquear_usuario
+#    lock_access! unless emprendedor?
+#    self.aprobado = emprendedor?
+#    self.save
+#  end
 
   ##
   # Bloquea el Usuario para que NO pueda utilizar el sistema
@@ -39,13 +49,27 @@ class Usuario < ActiveRecord::Base
     self.save
   end
 
+  ##
+  # Marca el Usuario como aceptado
+  def aceptar
+    self.aceptado = true
+    self.save
+  end
+
+  ##
+  # Marca el Usuario como no aceptado
+  def rechazar
+    self.aceptado = false
+    self.save
+  end
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :lockable, :rememberable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :lockable,
          :recoverable, :trackable, :validatable, :confirmable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :rol, :email, :password, :password_confirmation,
+  attr_accessible :rol, :email, :password, :password_confirmation, :aprobado,
                   :nombre, :apellido, :sexo, :institucion, :institucion_id
 
   validates :nombre, :presence => true

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121102204119) do
+ActiveRecord::Schema.define(:version => 20130405144200) do
 
   create_table "barrios", :force => true do |t|
     t.string   "nombre"
@@ -300,7 +300,7 @@ ActiveRecord::Schema.define(:version => 20121102204119) do
     t.integer  "item"
     t.string   "table"
     t.integer  "month",      :limit => 2
-    t.integer  "year",       :limit => 5
+    t.integer  "year",       :limit => 8
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
   end
@@ -360,10 +360,10 @@ ActiveRecord::Schema.define(:version => 20121102204119) do
     t.string   "sexo"
     t.string   "rol"
     t.integer  "institucion_id"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+    t.string   "email",                  :default => "",    :null => false
+    t.string   "encrypted_password",     :default => "",    :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.integer  "sign_in_count",          :default => 0
@@ -376,8 +376,10 @@ ActiveRecord::Schema.define(:version => 20121102204119) do
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
     t.datetime "locked_at"
+    t.boolean  "aceptado",               :default => false, :null => false
   end
 
+  add_index "usuarios", ["aceptado"], :name => "index_usuarios_on_aceptado"
   add_index "usuarios", ["confirmation_token"], :name => "index_usuarios_on_confirmation_token", :unique => true
   add_index "usuarios", ["email"], :name => "index_usuarios_on_email", :unique => true
   add_index "usuarios", ["institucion_id"], :name => "index_usuarios_on_institucion_id"
