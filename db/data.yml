@@ -454,6 +454,7 @@ usuarios:
   - confirmation_sent_at
   - unconfirmed_email
   - locked_at
+  - aceptado
   records: 
   - - 1
     - Claudio Rodrigo
@@ -477,6 +478,7 @@ usuarios:
     - '2012-08-27 22:24:05.248654'
     - elsupergomez@gmail.com
     - 
+    - true
   - - 2
     - Adriel Hernan
     - Caramichos
@@ -499,6 +501,7 @@ usuarios:
     - '2012-08-27 22:28:12.816265'
     - adriel22@gmail.com
     - 
+    - true
   - - 3
     - Administrador
     - Principal
@@ -521,6 +524,7 @@ usuarios:
     - '2012-11-05 23:59:22.289960'
     - admin.emprender@hamekoz.com.ar
     - 
+    - true
 
 ---
 rubros:
