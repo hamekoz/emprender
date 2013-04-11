@@ -32,7 +32,7 @@ class ServiciosEmprendimientoController < ApplicationController
   def show
     @servicio = servicios.find(params[:id])
 
-    add_crumb "Mis Servicios", mi_emprendimiento_servicio_path
+    add_crumb "Mis Servicios", mi_emprendimiento_servicios_path
     add_crumb @servicio.nombre
 
   respond_to do |format|
@@ -49,7 +49,7 @@ class ServiciosEmprendimientoController < ApplicationController
   def new
     @servicio = servicios.new
 
-    add_crumb "Mis Servicios", mi_emprendimiento_servicio_path
+    add_crumb "Mis Servicios", mi_emprendimiento_servicios_path
     add_crumb "Nuevo"
 
     respond_to do |format|
@@ -66,7 +66,7 @@ class ServiciosEmprendimientoController < ApplicationController
     @servicio = servicios.find(params[:id])
 
     add_crumb "Emprender", root_path
-    add_crumb "Mis Servicios", mi_emprendimiento_servicio_path
+    add_crumb "Mis Servicios", mi_emprendimiento_servicios_path
     add_crumb @servicio, mi_emprendimiento_servicio_path(@servicio)
     add_crumb "Editar"
   end

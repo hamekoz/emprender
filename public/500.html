@@ -1,25 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang=es>
+<meta charset=utf-8>
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
+  <title>Lo sentimos pero algo salió mal (500)</title>
+  <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
   <style type="text/css">
-    body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
-    div.dialog {
-      width: 25em;
-      padding: 0 4em;
-      margin: 4em auto 0 auto;
-      border: 1px solid #ccc;
-      border-right-color: #999;
-      border-bottom-color: #999;
+    body { background-color: #E5D6E9;}
+    .alert, .alert h4 { color: #9a62ab;
     }
-    h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
   </style>
 </head>
 
 <body>
-  <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <h1>We're sorry, but something went wrong.</h1>
+  <div class="container">
+    <!-- This file lives in public/500.html -->
+    <div class="alert alert-block text-center">
+      <img alt="Emprender" src="/favicon.png"/>
+          <h1>Lo sentimos pero algo salió mal.</h1>
+      <p class="lead">Por favor intente nuevamente.</p>
+      <hr>
+      <a class="btn btn-large" href="#" onclick="history.back();return false;">Volver</a>
+    </div>
   </div>
 </body>
 </html>
