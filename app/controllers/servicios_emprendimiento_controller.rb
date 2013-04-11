@@ -67,7 +67,7 @@ class ServiciosEmprendimientoController < ApplicationController
 
     add_crumb "Emprender", root_path
     add_crumb "Mis Servicios", mi_emprendimiento_servicios_path
-    add_crumb @servicio, mi_emprendimiento_servicio_path(@servicio)
+    add_crumb @servicio.nombre, mi_emprendimiento_servicio_path(@servicio)
     add_crumb "Editar"
   end
 
