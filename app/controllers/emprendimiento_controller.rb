@@ -43,8 +43,7 @@ class EmprendimientoController < ApplicationController
     respond_to do |format|
       if @emprendimiento.update_attributes(params[:emprendimiento])
         format.html { redirect_to mi_emprendimiento_path,
-                                  notice: t('notice.update',
-                                            :model => 'Emprendimiento') }
+                                  notice: t('notice.update', :model => 'Emprendimiento') }
       else
         format.html { render action: "edit" }
       end
