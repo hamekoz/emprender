@@ -5,4 +5,4 @@ Municipalidad de General Pueyrredón.</p>
 
 <p>Usted puede confirmar su cuenta con el siguiente enlace:</p>
 
-<p><%= link_to confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
+<p><%= link_to confirmation_url(@resource, :confirmation_token => @resource.confirmation_token), confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
