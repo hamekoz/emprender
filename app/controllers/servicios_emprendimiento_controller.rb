@@ -1,5 +1,5 @@
 ##
-# ServiciosEmprendimientoController es el controlador de los productos de un 
+# ServiciosEmprendimientoController es el controlador de los servicios de un 
 # Emprendimiento, autentica que el usuario sea un Emprendedor
 class ServiciosEmprendimientoController < ApplicationController
   before_filter :authenticate_usuario!, :emprendedor?
@@ -81,9 +81,9 @@ class ServiciosEmprendimientoController < ApplicationController
 
     respond_to do |format|
       if @servicio.save
-        format.html { redirect_to mi_emprendimiento_producto_path(@servicio),
+        format.html { redirect_to mi_emprendimiento_servicio_path(@servicio),
                         notice: t('notice.create', :model => 'Servicio') }
-        format.json { render json: mi_emprendimiento_producto_path(@servicio),
+        format.json { render json: mi_emprendimiento_servicio_path(@servicio),
                         status: :created, location: @servicio }
       else
         format.html { render action: "new" }
@@ -133,7 +133,7 @@ class ServiciosEmprendimientoController < ApplicationController
 
 private
   ##
-  # Devuelve los productos del Emprendimiento del Emprendedor actual
+  # Devuelve los servicios del Emprendimiento del Emprendedor actual
   def servicios
     current_usuario.emprendimiento.servicios
   end
