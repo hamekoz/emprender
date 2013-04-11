@@ -136,6 +136,11 @@ a.dp-choose-date {
   img {
     max-width: 40%;
   }
+
+  .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    max-width: 100%;
+  }
+
 }
  
 /* Landscape phones and down */
@@ -147,5 +152,9 @@ a.dp-choose-date {
 
   img {
     max-width: 30%;
+  }
+
+  .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    max-width: 100%;
   }
 }
