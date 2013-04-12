@@ -1,24 +1,25 @@
 <%
   add_crumb "Inicio", root_path
-  add_crumb "Desbloquear usuario"
+  add_crumb "Desbloquear mi usuario"
 %>
 
-
-<h1 class="page-header">Reenvio de instrucciones de desbloqueo</h1>
+<h1 class="page-header">¿Su usuario esta bloqueado?</h1>
 <div class="row">
-  <div class="span10 offset3">
+  <div class="span8 offset2">
+
+  <p class="alert alert-info">Si se ha bloqueado su usuario por reinterados intentos de ingreso fallido, podemos eviarle a su correo las instrucciones para poder desbloquearlo</p>
   <%= simple_form_for(resource,
                       :as => resource_name,
                       :url => unlock_path(resource_name),
-                      :html => { :method => :post }) do |f| %>
+                      :html => { :method => :post,:class => 'form-horizontal' }) do |f| %>
     <%= f.error_notification %>
 
     <div class="inputs well">
       <%= f.input :email, :required => true %>
     </div>
 
-    <div class="actions">
-      <%= f.button :submit, "Volver a enviar instrucciones de desbloqueo", :class => 'btn primary' %>
+    <div class="form-actions">
+      <%= f.button :submit, "Enviar instrucciones de desbloqueo", :class => 'btn btn-primary' %>
     </div>
   <% end %>
 

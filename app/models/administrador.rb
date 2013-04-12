@@ -7,6 +7,8 @@ class Administrador < Usuario
            :foreign_key => :autor_id
 
   before_destroy :despublicar
+  
+  attr_accessible :aceptado
 
 private
   ##

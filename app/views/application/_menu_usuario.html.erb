@@ -70,6 +70,12 @@
       <% end %>
     </li>
 <% end %>
+    <li>
+      <%= link_to("/manuales/Manual%20de%20#{current_usuario.rol}.pdf") do %>
+        <i class="icon-question-sign"></i>
+        <span>Manual de ayuda</span>
+      <% end %>
+    </li>
     <li class="divider"></li>
     <li>
       <%= link_to(destroy_usuario_session_path, :method => 'delete') do %>

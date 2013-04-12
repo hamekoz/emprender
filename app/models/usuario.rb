@@ -27,22 +27,6 @@ class Usuario < ActiveRecord::Base
   end
 
   ##
-  # Bloquea al usuario si no es un Emprendedor luego de ser creado
-  # Debe ser desbloqueado por un Administrador que verifique la cuenta
-#  def bloquear_usuario
-#    lock_access! unless emprendedor?
-#    self.aprobado = emprendedor?
-#    self.save
-#  end
-
-  ##
-  # Bloquea el Usuario para que NO pueda utilizar el sistema
-  def bloquear
-    self.unlock_access!
-    self.save
-  end
-
-  ##
   # Desbloquea el Usuario para que pueda utilizar el sistema
   def desbloquear
     self.lock_access!
@@ -69,7 +53,7 @@ class Usuario < ActiveRecord::Base
          :recoverable, :trackable, :validatable, :confirmable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :rol, :email, :password, :password_confirmation, :aprobado,
+  attr_accessible :rol, :email, :password, :password_confirmation,
                   :nombre, :apellido, :sexo, :institucion, :institucion_id
 
   validates :nombre, :presence => true

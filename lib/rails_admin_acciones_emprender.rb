@@ -129,25 +129,6 @@ module RailsAdmin
       end
 
       ##
-      # Accion Bloquear para bloquear Usuarios
-      class Bloquear < RailsAdmin::Config::Actions::Base
-        RailsAdmin::Config::Actions.register(self)
-        register_instance_option :bulkable? do
-          true
-        end
-        register_instance_option :controller do
-          Proc.new do
-            @objects = list_entries(@model_config, :destroy)
-            @objects.each do |object|
-              object.bloquear
-            end
-            flash[:success] = "#{@objects.count} #{@model_config.label_plural} bloqueados"
-            redirect_to back_or_index
-          end
-        end
-      end
-
-      ##
       # Accion Desbloquear para desbloquear Usuarios
       class Desbloquear < RailsAdmin::Config::Actions::Base
         RailsAdmin::Config::Actions.register(self)

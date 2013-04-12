@@ -10,6 +10,8 @@ class Representante < Usuario
 
   before_destroy :despublicar
 
+  attr_accessible :aceptado
+
 private
   ##
   # Antes despublica las noticias y eventos publicadas por el Representante antes

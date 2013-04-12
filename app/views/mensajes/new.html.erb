@@ -19,6 +19,7 @@
                                 :as => :grouped_select,
                                 :collection => Rol.all,
                                 :group_method => :usuarios,
+                                :group_label_method => :nombre,
                                 :label_method => :nombre_completo,
                                 :input_html => { :class => chosen_simple + ' span6',
                                                  :data => { :placeholder => 'Elija un destinatario' } } %>

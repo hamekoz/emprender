@@ -68,7 +68,9 @@ RailsAdmin.config do |config|
         bindings[:abstract_model].model.to_s == "Producto" ||
         bindings[:abstract_model].model.to_s == "Servicio" ||
         bindings[:abstract_model].model.to_s == "Emprendimiento" ||
-        bindings[:abstract_model].model.to_s == "Comentario"
+        bindings[:abstract_model].model.to_s == "Comentario" ||
+        bindings[:abstract_model].model.to_s == "Administrador" ||
+        bindings[:abstract_model].model.to_s == "Representante"
       end
     end
     rechazar do
@@ -76,17 +78,14 @@ RailsAdmin.config do |config|
         bindings[:abstract_model].model.to_s == "Producto" ||
         bindings[:abstract_model].model.to_s == "Servicio" ||
         bindings[:abstract_model].model.to_s == "Emprendimiento" ||
-        bindings[:abstract_model].model.to_s == "Comentario"
-      end
-    end
-    bloquear do
-      visible do
-        bindings[:abstract_model].model.to_s == "Representante" ||
-        bindings[:abstract_model].model.to_s == "Emprendedor"
+        bindings[:abstract_model].model.to_s == "Comentario" ||
+        bindings[:abstract_model].model.to_s == "Administrador" ||
+        bindings[:abstract_model].model.to_s == "Representante"
       end
     end
     desbloquear do
       visible do
+        bindings[:abstract_model].model.to_s == "Administrador" ||
         bindings[:abstract_model].model.to_s == "Representante" ||
         bindings[:abstract_model].model.to_s == "Emprendedor"
       end
@@ -151,6 +150,7 @@ RailsAdmin.config do |config|
   config.model 'Administrador' do
     list do
       field :id
+      field :aceptado
       field :nombre
       field :apellido
       field :institucion
@@ -559,6 +559,7 @@ RailsAdmin.config do |config|
   config.model 'Representante' do
     list do
       field :id
+      field :aceptado
       field :nombre
       field :apellido
       field :institucion
@@ -654,6 +655,7 @@ RailsAdmin.config do |config|
   config.model 'Usuario' do
     list do
       field :id
+      field :aceptado
       field :rol
       field :nombre
       field :apellido

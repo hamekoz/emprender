@@ -13,6 +13,8 @@ class Ability
       can :manage, :all
       cannot :history, :all
       cannot :show_in_app, Perfil
+      cannot :manage, Usuario
+      can [:read, :export, :create], Usuario
     elsif usuario && usuario.representante?
       can :access, :rails_admin
       can :dashboard

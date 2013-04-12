@@ -11,7 +11,7 @@
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
   <li>
   <%= link_to(new_registration_path(resource_name)) do %>
-    <span class="badge badge-error">No tengo usuario</span>
+    <span class="badge badge-important">No tengo usuario</span>
   <% end %>
   </li>
 <% end -%>
@@ -36,7 +36,11 @@
 
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
   <li>
-  <%= link_to "¿No recibio las instrucciones de desbloqueo?", new_unlock_path(resource_name) %><br />
+  <%= link_to(new_unlock_path(resource_name)) do %>
+    <!--<i class="icon-ok icon-white"></i>-->
+    <span class="badge badge-inverse">Desbloquear mi usuario</span>
+  <% end %>
+
   </li>
 <% end -%>
 

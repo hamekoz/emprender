@@ -35,7 +35,34 @@ Emprender::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  config.action_mailer.delivery_method       = :sendmail
-  config.action_mailer.perform_deliveries    = false
-  config.action_mailer.default_url_options   = { :host => 'localhost:3000' }
+  # Google Analytics id
+  if ENV["EMPRENDER_GOOGLE_ANALYTICS_ID"].present?
+    GA.tracker = ENV["EMPRENDER_GOOGLE_ANALYTICS_ID"]
+  end
+
+  config.action_mailer.default_url_options = { :host => ENV["EMPRENDER_DOMINIO"] }
+
+  if ENV["EMPRENDER_MAIL_SMTP"] == "enable"
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      :address              => ENV["EMPRENDER_MAIL_SERVIDOR"],
+      :port                 => ENV["EMPRENDER_MAIL_PUERTO"],
+      :domain               => ENV["EMPRENDER_MAIL_DOMINIO"],
+      :user_name            => ENV["EMPRENDER_MAIL_USUARIO"],
+      :password             => ENV["EMPRENDER_MAIL_PASSWORD"],
+      :authentication       => :plain,
+      :enable_starttls_auto => true
+    }
+  else
+    config.action_mailer.delivery_method = :sendmail
+  end
+
+  if ENV["EMPRENDER_DROPBOX"] == "enable"
+    config.paperclip_defaults = {
+      :storage => :dropbox,
+      :dropbox_credentials => "#{Rails.root}/config/dropbox.yml",
+      :dropbox_options => { :download => ENV["EMPRENDER_DROPBOX_ACCESS_TYPE"] == "dropbox",
+                            :unique_filename => true }
+    }
+  end
 end
