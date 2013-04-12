@@ -46,3 +46,7 @@ div.content, div.container-fluid {
   border-radius: 0;
   box-shadow: none;
 }
+
+html, body {
+  background-color: #FFFFFF;
+}
