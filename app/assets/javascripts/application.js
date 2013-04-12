@@ -24,8 +24,6 @@
 //= require_tree .
 //= require_self
 
-$('span').tooltip();
-
 $('.textarea').wysihtml5({ "locale": "es-AR", image: false });
 
 $(".chzn-select").chosen();
