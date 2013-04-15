@@ -38,6 +38,7 @@ group :development, :test do
   end
   gem 'webrick'
   gem 'sqlite3'
+  gem 'taps'
 end
 
 # Gemas necesarias para produccion
