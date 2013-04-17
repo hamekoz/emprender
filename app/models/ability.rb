@@ -15,6 +15,7 @@ class Ability
       cannot :show_in_app, Perfil
       cannot :manage, Usuario
       can [:read, :export, :create], Usuario
+      can :manage, [Administrador, Representante, Emprendedor]
     elsif usuario && usuario.representante?
       can :access, :rails_admin
       can :dashboard
