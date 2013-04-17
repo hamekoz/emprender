@@ -11,11 +11,11 @@ class Ability
       can :access, :rails_admin
       can :dashboard
       can :manage, :all
+      cannot :manage, Usuario
+      can :manage, [Administrador, Representante, Emprendedor]
+      can [:read, :export, :create], Usuario
       cannot :history, :all
       cannot :show_in_app, Perfil
-      cannot :manage, Usuario
-      can [:read, :export, :create], Usuario
-      can :manage, [Administrador, Representante, Emprendedor]
     elsif usuario && usuario.representante?
       can :access, :rails_admin
       can :dashboard
