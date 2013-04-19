@@ -149,7 +149,7 @@ RailsAdmin.config do |config|
 
   config.model 'Administrador' do
     list do
-      field :id
+#      field :id
       field :aceptado
       field :nombre
       field :apellido
@@ -202,7 +202,7 @@ RailsAdmin.config do |config|
   config.model 'Barrio' do
     navigation_label 'Configuracion'
     list do
-      exclude_fields :emprendimientos, :eventos, :perfiles, :instituciones
+      exclude_fields :emprendimientos, :eventos, :perfiles, :instituciones, :id
     end
     create do
       exclude_fields :emprendimientos, :eventos, :perfiles, :instituciones
@@ -218,7 +218,7 @@ RailsAdmin.config do |config|
   config.model 'Categoria' do
     navigation_label 'Configuracion'
     list do
-      exclude_fields :emprendimientos
+      exclude_fields :emprendimientos, :id
     end
     create do
       exclude_fields :emprendimientos
@@ -255,7 +255,7 @@ RailsAdmin.config do |config|
   config.model 'Clasificacion' do
     navigation_label 'Configuracion'
     list do
-      exclude_fields :emprendimientos
+      exclude_fields :emprendimientos, :id
     end
     create do
       exclude_fields :emprendimientos
@@ -277,7 +277,7 @@ RailsAdmin.config do |config|
 
   config.model 'Emprendedor' do
     list do
-      field :id
+#      field :id
       field :nombre
       field :apellido
       field :perfil do
@@ -328,7 +328,7 @@ RailsAdmin.config do |config|
   config.model 'Emprendimiento' do
     navigation_label 'Padron'
     list do
-      include_fields :id, :emprendedor, :nombre, :empadronado, :rubro, :marca, :es_marca_registrada,
+      include_fields :emprendedor, :nombre, :empadronado, :rubro, :marca, :es_marca_registrada,
                      :clasificacion, :categoria, :tipo, :estado, :barrio, :fecha_de_inicio_de_actividad,
                      :condicion_frente_al_iva, :situacion_frente_al_iva, :inscripto_en_ingresos_brutos,
                      :cantidad_de_integrantes, :cantidad_de_clientes_actuales,
@@ -352,7 +352,7 @@ RailsAdmin.config do |config|
   config.model 'Estado' do
     navigation_label 'Configuracion'
     list do
-      exclude_fields :emprendimientos
+      exclude_fields :emprendimientos, :id
     end
     create do
       exclude_fields :emprendimientos
@@ -369,7 +369,7 @@ RailsAdmin.config do |config|
     navigation_label 'Portal'
     weight -1
     list do
-      field :id
+#      field :id
       field :tipo
       field :nombre
       field :lugar
@@ -434,10 +434,10 @@ RailsAdmin.config do |config|
 
   config.model 'Institucion' do
     list do
-      field :id
+#      field :id
       field :visible
       include_all_fields
-      exclude_fields :administradores, :representantes, :emprendedores
+      exclude_fields :administradores, :representantes, :emprendedores, :id
     end
     create do
       exclude_fields :administradores, :representantes, :emprendedores
@@ -468,7 +468,7 @@ RailsAdmin.config do |config|
       end
     end
     list do
-      exclude_fields :texto
+      exclude_fields :texto, :id
     end
     list do
       exclude_fields :comentarios
@@ -495,7 +495,7 @@ RailsAdmin.config do |config|
     label_plural "Pefiles de Emprendedores"
     weight -2
     list do
-      include_fields :id, :emprendedor, :dni, :cuit_cuil,
+      include_fields :emprendedor, :dni, :cuit_cuil,
                      :nivel_de_estudios, :estudios_completos, :barrio,
                      :created_at, :updated_at
     end
@@ -522,7 +522,7 @@ RailsAdmin.config do |config|
       end
     end
     list do
-      exclude_fields :foto, :texto
+      exclude_fields :foto, :texto, :id
     end
   end
 
@@ -532,7 +532,7 @@ RailsAdmin.config do |config|
   config.model 'Producto' do
     navigation_label 'Padron'
     list do
-      field :id
+#      field :id
       field :emprendimiento
       field :rubro
       field :nombre
@@ -558,7 +558,7 @@ RailsAdmin.config do |config|
 
   config.model 'Representante' do
     list do
-      field :id
+#      field :id
       field :aceptado
       field :nombre
       field :apellido
@@ -612,7 +612,7 @@ RailsAdmin.config do |config|
     navigation_label 'Configuracion'
     weight 1
     list do
-      exclude_fields :emprendimientos, :productos, :servicios
+      exclude_fields :emprendimientos, :productos, :servicios, :id
     end
     create do
       exclude_fields :emprendimientos, :productos, :servicios
@@ -628,7 +628,7 @@ RailsAdmin.config do |config|
   config.model 'Servicio' do
     navigation_label 'Padron'
     list do
-      field :id
+#      field :id
       field :emprendimiento
       field :rubro
       field :nombre
@@ -654,7 +654,7 @@ RailsAdmin.config do |config|
 
   config.model 'Usuario' do
     list do
-      field :id
+#      field :id
       field :aceptado
       field :rol
       field :nombre
