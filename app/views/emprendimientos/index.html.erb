@@ -7,7 +7,7 @@
   <% @emprendimientos.each do |emprendimiento| %>
   <li class="span4">
     <div class="thumbnail">
-    <img alt="" src="http://placehold.it/300x180">
+    <%= image_tag emprendimiento.logotipo.url %>
     <div class="caption">
       <h5><%= emprendimiento.nombre %></h5>
       <p><%= emprendimiento.descripcion %></p>

@@ -7,7 +7,7 @@
   <% @servicios.each do |servicio| %>
   <li class="span4">
     <div class="thumbnail">
-      <%= image_tag servicio.logotipo.url %>
+      <%= image_tag servicio.imagen_1.url(:normal) %>
     <div class="caption">
       <h5><%= servicio.nombre %></h5>
       <p><%= servicio.descripcion %></p>
