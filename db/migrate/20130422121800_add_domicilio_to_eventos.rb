@@ -1,9 +1,5 @@
-class AddDomiciloToEventos < ActiveRecord::Migration
-  def self.up
+class AddDomicilioToEventos < ActiveRecord::Migration
+  def change
     add_column :eventos, :domicilio, :string
-  end
-
-  def self.down
-    remove_column :eventos, :domicilio
   end
 end
