@@ -373,6 +373,7 @@ RailsAdmin.config do |config|
       field :tipo
       field :nombre
       field :lugar
+      field :domicilio
       field :publicado
       field :organizador
       field :descripcion

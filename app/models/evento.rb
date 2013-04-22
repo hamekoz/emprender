@@ -2,12 +2,12 @@
 # Evento permite crear y publicar eventos que se organicen para promover la
 # economia social
 class Evento < ActiveRecord::Base
-  attr_accessible :nombre, :descripcion, :lugar, :barrio,
+  attr_accessible :nombre, :descripcion, :lugar, :domicilio, :barrio,
                   :organizador, :barrio_id, :organizador_id, :tipo_id, :tipo,
                   :fecha_y_hora_de_inicio, :fecha_y_hora_de_finalizacion,
                   :autor_id, :autor, :folleto,:delete_folleto, :publicado
 
-  validates_presence_of :nombre, :tipo, :lugar, :barrio, :fecha_y_hora_de_inicio,
+  validates_presence_of :nombre, :tipo, :domicilio, :barrio, :fecha_y_hora_de_inicio,
                         :fecha_y_hora_de_finalizacion, :autor, :organizador
 
   belongs_to :barrio
@@ -36,14 +36,14 @@ class Evento < ActiveRecord::Base
   ##
   # Devuelve una cadena resumiendo la informacion del evento
   def resumen
-   "#{tipo}. Organiza: #{organizador.nombre} el #{fecha_y_hora_de_inicio} hasta #{fecha_y_hora_de_finalizacion} a realizarse en #{lugar} barrio #{barrio.nombre}"
+   "#{tipo}. Organiza: #{organizador.nombre} el #{fecha_y_hora_de_inicio} hasta #{fecha_y_hora_de_finalizacion} a realizarse en #{lugar} #{domicilio} barrio #{barrio.nombre}"
   end
 
   ##
   # Devuelve la ruta al mapa en google maps correspondiente al evento, buscando
   # en la ciudad de Mar del Plata de acuerdo al lugar indicado
   def mapa
-    "http://maps.google.com/maps/api/staticmap?center=#{lugar},Mar%20del%20Plata,Buenos%20Aires&size=512x512&maptype=roadmap&sensor=false&markers=#{lugar},%20Mar%20del%20Plata,%20Buenos%20Aires"
+    "http://maps.google.com/maps/api/staticmap?center=#{domicilio},Mar%20del%20Plata,Buenos%20Aires&size=512x512&maptype=roadmap&sensor=false&markers=#{domicilio},%20Mar%20del%20Plata,%20Buenos%20Aires"
   end
 
   ##

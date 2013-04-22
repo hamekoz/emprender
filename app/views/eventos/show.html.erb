@@ -8,10 +8,10 @@
     <%= evento.attribute :tipo %>
     <%= evento.association :organizador, :using => :nombre %>
     <%= evento.attribute :lugar %>
+    <%= evento.attribute :domicilio %>
     <%= evento.association :barrio, :using => :nombre %>
     <%= evento.attribute :fecha_y_hora_de_inicio, :format => :long %>
     <%= evento.attribute :fecha_y_hora_de_finalizacion, :format => :long %>
-    <%= evento.attribute :descripcion %>
   </div>
   <div class="span4">
     <div class="thumbnail ">
@@ -27,6 +27,7 @@
       <%= link_to image_tag(@evento.mapa), @evento.mapa %>
     </a>
   </div>
+  <%= evento.attribute :descripcion %>
 </div>
 </article>
 <% end %>
