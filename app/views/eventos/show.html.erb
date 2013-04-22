@@ -25,9 +25,11 @@
   <div class="span4">
     <div class="thumbnail ">
       <%= link_to image_tag(@evento.mapa), @evento.mapa %>
-    </a>
+    </div>
   </div>
-  <%= evento.attribute :descripcion %>
+  <div class="span12">
+    <%= evento.attribute :descripcion %>
+  </div>
 </div>
 </article>
 <% end %>

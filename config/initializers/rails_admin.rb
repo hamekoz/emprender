@@ -386,6 +386,11 @@ RailsAdmin.config do |config|
       exclude_fields :comentarios
     end
     create do
+      field :tipo
+      field :nombre
+      field :lugar
+      field :domicilio
+      include_all_fields
       exclude_fields :autor, :comentarios
       field :autor_id, :hidden do
         default_value do
@@ -394,10 +399,21 @@ RailsAdmin.config do |config|
       end
     end
     edit do
+      field :tipo
+      field :nombre
+      field :lugar
+      field :domicilio
+      include_all_fields
       exclude_fields :autor, :comentarios
     end
+    show do
+      field :tipo
+      field :nombre
+      field :lugar
+      field :domicilio
+      include_all_fields
+    end
   end
-
 
   ###  Informacion  ###
 
