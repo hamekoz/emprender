@@ -270,6 +270,12 @@ RailsAdmin.config do |config|
 
   config.model 'Comentario' do
     navigation_label 'Portal'
+    list do
+      include_all_fields
+      field :comentable_type do
+        label "Sobre"
+      end
+    end
   end
 
 
@@ -368,6 +374,14 @@ RailsAdmin.config do |config|
   config.model 'Evento' do
     navigation_label 'Portal'
     weight -1
+    include_all_fields
+    field :descripcion do
+      ckeditor true
+      ckeditor_config_js '/javascripts/ckeditor/config.js'
+      pretty_value do
+        value.html_safe
+      end
+    end
     list do
 #      field :id
       field :tipo
@@ -556,14 +570,14 @@ RailsAdmin.config do |config|
       field :aceptado
       field :activo
       include_all_fields
-      exclude_fields :imagen, :imagen_1, :imagen_2, :imagen_3,
+      exclude_fields :imagen, :imagen_1, :imagen_2, :imagen_3, :id,
                      :imagen_4, :imagen_5, :imagen_6, :comentarios
     end
     create do
-      exclude_fields :comentarios
+      exclude_fields :comentarios, :aceptado
     end
     edit do
-      exclude_fields :comentarios
+      exclude_fields :comentarios, :aceptado
     end
     export do
       exclude_fields :imagen, :imagen_1, :imagen_2, :imagen_3, :imagen_4, :imagen_5, :imagen_6
@@ -656,10 +670,10 @@ RailsAdmin.config do |config|
                      :imagen_4, :imagen_5, :imagen_6, :comentarios
     end
     create do
-      exclude_fields :comentarios
+      exclude_fields :comentarios, :aceptado
     end
     edit do
-      exclude_fields :comentarios
+      exclude_fields :comentarios, :aceptado
     end
     export do
       exclude_fields :imagen, :imagen_1, :imagen_2, :imagen_3, :imagen_4, :imagen_5, :imagen_6

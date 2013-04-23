@@ -7,7 +7,7 @@ class Evento < ActiveRecord::Base
                   :fecha_y_hora_de_inicio, :fecha_y_hora_de_finalizacion,
                   :autor_id, :autor, :folleto,:delete_folleto, :publicado
 
-  validates_presence_of :nombre, :tipo, :domicilio, :barrio, :fecha_y_hora_de_inicio,
+  validates_presence_of :nombre, :tipo, :domicilio, :fecha_y_hora_de_inicio,
                         :fecha_y_hora_de_finalizacion, :autor, :organizador
 
   belongs_to :barrio

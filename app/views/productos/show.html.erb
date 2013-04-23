@@ -29,6 +29,7 @@
       <%= producto.attribute :descripcion %>
       <%= producto.attribute :precio, 
                              :value => number_to_currency(@producto.precio, :locale => 'es-AR') %>
+      <%= producto.association :emprendimiento %>
     </article>
   </div>
 </div>
@@ -46,6 +47,12 @@
       <span>Editar</span>
     <% end %>
   <% end %>
+
+  <%= link_to @producto.emprendimiento, :class => 'btn btn-primary' do %>
+    <i class="icon-road"></i>
+    <span>Ver Emprendimiento</span>
+  <% end %>
+
   <button type="button" class="btn" data-toggle="collapse" data-target="#comentarios">
     <i class="icon-comment"></i>
     <span id="contador_comentarios"><%= @producto.comentarios.aceptados.count %> Comentarios</span>

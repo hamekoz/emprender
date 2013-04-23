@@ -32,6 +32,14 @@ class Emprendimiento < ActiveRecord::Base
   # Marca el Emprendimiento como no empadronado
   def rechazar
     self.empadronado = false
+    productos.each do |producto|
+      producto.aceptado = false
+      producto.save
+    end
+    servicios.each do |servicio|
+      servicio.aceptado = false
+      servicio.save
+    end
     self.save
   end
 

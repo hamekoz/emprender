@@ -48,7 +48,7 @@
     <h4>Vinculos de interes</h4>
     <ul>
     <% @vinculos.each do |vinculo| %>
-      <li><%= link_to "#{vinculo.nombre}", "#{vinculo.url}" %></li>
+      <li><%= link_to "#{vinculo.nombre}", "#{vinculo.url}", target: "_blank" %></li>
     <% end %>
     </ul>
   </div>

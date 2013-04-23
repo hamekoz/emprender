@@ -28,7 +28,6 @@ class Producto < ActiveRecord::Base
 
 
   validates_presence_of :emprendimiento, :nombre, :rubro, :tipo_de_venta, :precio
-
   validates_numericality_of :precio, :greater_than => 0
 
   ##
@@ -54,7 +53,7 @@ class Producto < ActiveRecord::Base
   ##
   # Marca el Producto como aceptado
   def aceptar
-    self.aceptado = true
+    self.aceptado = emprendimiento.empadronado
     self.save
   end
 

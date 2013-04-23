@@ -28,7 +28,7 @@ class NoticiasController < ApplicationController
   # GET /noticias/1
   # GET /noticias/1.json
   def show
-    @noticia = Noticia.find(params[:id])
+    @noticia = Noticia.publicadas.find(params[:id])
 
     add_crumb "Noticias", noticias_path
     add_crumb @noticia.titulo

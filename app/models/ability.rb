@@ -14,8 +14,7 @@ class Ability
       cannot :manage, Usuario
       can :manage, [Administrador, Representante, Emprendedor]
       can [:read, :export, :create], Usuario
-      cannot :history, :all
-      cannot :show_in_app, Perfil
+      cannot [:history, :show_in_app], :all
     elsif usuario && usuario.representante?
       can :access, :rails_admin
       can :dashboard
@@ -30,7 +29,7 @@ class Ability
       can [:edit], Emprendedor, :institucion_id => usuario.institucion_id
       can :edit, Institucion, :id => usuario.institucion_id
 
-      cannot :history, :all
+      cannot [:history, :show_in_app], :all
       cannot :destroy, Emprendedor
     elsif usuario && usuario.emprendedor?
       can [:read, :edit], Perfil, :id => usuario.perfil.id

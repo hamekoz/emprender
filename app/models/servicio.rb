@@ -53,7 +53,7 @@ class Servicio < ActiveRecord::Base
   ##
   # Marca el Servicio como aceptado
   def aceptar
-    self.aceptado = true
+    self.aceptado = emprendimiento.empadronado
     self.save
   end
 
