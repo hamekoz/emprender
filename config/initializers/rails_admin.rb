@@ -666,7 +666,7 @@ RailsAdmin.config do |config|
       field :aceptado
       field :activo
       include_all_fields
-      exclude_fields :imagen, :imagen_1, :imagen_2, :imagen_3,
+      exclude_fields :imagen, :imagen_1, :imagen_2, :imagen_3, :id,
                      :imagen_4, :imagen_5, :imagen_6, :comentarios
     end
     create do

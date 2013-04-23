@@ -1,3 +1,7 @@
+/*
+Fuciones para dibujar los grafico de torta
+*/
+
 $(function () {
   var values = [],
       labels = [];
