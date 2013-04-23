@@ -1,5 +1,5 @@
 /*
-Fuciones para dibujar los grafico de torta
+ * Fuciones para dibujar los grafico de torta
 */
 
 $(function () {
