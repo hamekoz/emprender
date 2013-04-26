@@ -4,4 +4,4 @@
 
 <h1 class= "page-header"><%= @reporte.humanize %></h1>
 
-<%= render :partial => "reportes/#{@reporte}.html.erb" %>
+<%= render :partial => "reportes/#{@reporte}", :handlers => [:erb], :formats => [:html] %>

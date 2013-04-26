@@ -35,14 +35,16 @@ class ReportesController < ApplicationController
       format.html { render 'show' }
       format.pdf do
         render :pdf => @reporte.humanize,
-               :layout => 'pdf.html.erb',
+               :layout => 'pdf.html',
+               :disable_javascript             => false,
+               :disposition                    => 'attachment',
+#               :show_as_html                   => params[:debug].present?,
                :header => {
                          :center             => @reporte.humanize,
                          :left               => 'Informe',
                          :right              => 'Emprender',
                          :line               => true
                 },
-
                :footer => {
                     :left => l(DateTime.now, :format => :long),
                     :right => "Pagina [page] de [toPage]",

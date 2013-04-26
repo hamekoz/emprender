@@ -9,7 +9,6 @@
     <meta name="author" content="Claudio Rodrigo Pereyra Diaz">
     <meta name="author" content="Adriel Hernan Caramichos">
 
-  <%= wicked_pdf_stylesheet_link_tag "application" %>
   <%= wicked_pdf_stylesheet_link_tag "pdf" %>
 
 </head>
@@ -17,7 +16,6 @@
     <div id="main" role="main" class="container">
       <div class="content">
 
-<!-- %= debug params %-->
         <%= yield %>
 
       </div><!--/content-->
@@ -26,7 +24,7 @@
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <%= wicked_pdf_javascript_include_tag "application" %>
+    <%= wicked_pdf_javascript_include_tag "pdf" %>
 
 </body>
 </html>
