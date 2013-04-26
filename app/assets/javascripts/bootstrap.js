@@ -1,3 +1,7 @@
+/*
+ * Fuciones generales de Emprender
+ */
+
 $("a[rel=popover]").popover();
 $(".tooltip").tooltip();
 $("a[rel=tooltip]").tooltip();

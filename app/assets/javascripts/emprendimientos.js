@@ -1,3 +1,7 @@
+/*
+ * Fuciones del emprendimiento
+ */
+
 $(function() {
   $('.datepicker').datepicker({
                      changeMonth: true,

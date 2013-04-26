@@ -16,12 +16,12 @@
 //= require social-share-button
 //= require twitter/bootstrap
 //= require chosen-jquery
-//= require raphael/raphael
-//= require g.raphael/g.raphael
-//= require g.raphael/g.pie
-//= require reportes
 //= require bootstrap-wysihtml5
 //= require bootstrap-wysihtml5/locales/es-AR
 //= require bootstrap
 //= require emprendimientos
 //= require perfil
+//= require raphael/raphael
+//= require g.raphael/g.raphael
+//= require g.raphael/g.pie
+//= require reportes

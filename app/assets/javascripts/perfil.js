@@ -1,3 +1,7 @@
+/*
+ * Fuciones del perfil de emprendedor
+ */
+
 $('#perfil_recibe_o_recibio_algun_plan_social_false').click( function() {
   $('.plan_social').addClass('hidden').hide().fadeOut();
 });
