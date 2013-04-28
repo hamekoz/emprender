@@ -1,9 +1,10 @@
 <%= search_form_for(@q, :html => { :class => 'form-search' }) do |f| %>
   <strong>Ordenar por:</strong>
+  <br class="visible-phone">
   <%= sort_link @q, :nombre, {}, :class => 'label' %>
   <%= sort_link @q, :descripcion, {}, :class => 'label' %>
   <%= sort_link @q, :precio, {}, :class => 'label' %>
-
+  <br class="visible-phone">
   <strong>Filtro:</strong>
   <%= f.select :rubro_id_eq, 
                 Rubro.all.map{ |r| [r.nombre, r.id] }, 
@@ -11,7 +12,7 @@
                 { :onchange => "submit()", :class => chosen_simple,
                                            :data => { :placeholder => 'Elija un rubro' } } %>
 
-  <div class="input-append pull-right">
+  <div class="busqueda input-append pull-right">
     <%= f.text_field :nombre_or_descripcion_cont,
                      :class=> 'search-query',
                      :placeholder => 'Nombre o Descripcion' %>

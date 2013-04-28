@@ -1,9 +1,10 @@
 <%= search_form_for(@q, :html => { :class => 'form-search' }) do |f| %>
   <strong>Ordenar por:</strong>
+  <br class="visible-phone">
   <%= sort_link @q, :nombre, {}, :class => 'label' %>
   <%= sort_link @q, :marca, {}, :class => 'label' %>
   <%= sort_link @q, :descripcion, {}, :class => 'label' %>
-
+  <br class="visible-phone">
   <strong>Filtro:</strong>
   <%= f.select :rubro_id_eq, 
                 Rubro.all.map{ |r| [r.nombre, r.id] }, 

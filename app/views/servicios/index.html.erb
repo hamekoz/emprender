@@ -9,8 +9,10 @@
     <div class="thumbnail">
       <%= image_tag servicio.imagen_1.url(:normal) %>
     <div class="caption">
-      <h5><%= servicio.nombre %></h5>
-      <p><%= servicio.descripcion %></p>
+      <h5><%= servicio.nombre.truncate(50, :separator => ' ', :omission => ' (...)') %></h5>
+      <p class="descripcion">
+        <%= servicio.descripcion.truncate(200, :separator => ' ', :omission => ' (...)') %>
+      </p>
       <p>
         <%= link_to servicio_path(servicio), :class => "btn btn-primary" do %>
             <i class="icon-eye-open"></i>

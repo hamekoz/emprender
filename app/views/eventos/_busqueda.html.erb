@@ -1,11 +1,12 @@
 <%= search_form_for(@q, :html => { :class => 'form-search' }) do |f| %>
   <strong>Ordenar por:</strong>
+  <br class="visible-phone">
   <%= sort_link @q, :tipo, {}, :class => 'label' %>
   <%= sort_link @q, :nombre, {}, :class => 'label' %>
   <%= sort_link @q, :descripcion, {}, :class => 'label' %>
   <%= sort_link @q, :lugar, {}, :class => 'label' %>
-
-  <div class="input-append pull-right">
+  <br class="visible-phone">
+  <div class="busqueda input-append pull-right">
     <%= f.text_field :tipo_or_nombre_or_descripcion_or_lugar_cont,
                      :class=> 'search-query span3',
                      :placeholder => 'Tipo, Nombre, Descripcion o Lugar' %>

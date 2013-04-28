@@ -7,10 +7,12 @@
   <% @emprendimientos.each do |emprendimiento| %>
   <li class="span4">
     <div class="thumbnail">
-    <%= image_tag emprendimiento.logotipo.url %>
+    <%= image_tag emprendimiento.logotipo.url(:normal) %>
     <div class="caption">
-      <h5><%= emprendimiento.nombre %></h5>
-      <p><%= emprendimiento.descripcion %></p>
+      <h5><%= emprendimiento.nombre.truncate(50, :separator => ' ', :omission => ' (...)') %></h5>
+      <p class="descripcion">
+        <%= emprendimiento.descripcion.truncate(200, :separator => ' ', :omission => ' (...)') %>
+      </p>
         <hr>
         <p>
           <%= link_to(emprendimiento_path(emprendimiento), :class => "btn btn-primary") do %>

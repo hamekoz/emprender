@@ -100,6 +100,15 @@ a.dp-choose-date {
     background: url("../images/calendar.png") no-repeat scroll 0 0 transparent;
 }
 
+div.thumbnail div.caption p.descripcion {
+  min-height:100px;
+}
+
+div.social {
+  float: right;
+}
+
+
 /* Espcificaciones de pantalla */
 
 /* Large desktop */
@@ -122,15 +131,20 @@ a.dp-choose-date {
   }
   div.content {
     margin: 0 -20px;
-    padding: 20px;
   }
+  div.thumbnail div.caption p.descripcion {
+  min-height:140px;
+}
 }
  
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
-  footer {
-    margin-left: -20px;
-    margin-right: -20px;
+  div.content {
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-top: -20px;
+    margin-bottom: 30px;
+    padding: 10px;
   }
 
   img {
@@ -145,9 +159,10 @@ a.dp-choose-date {
  
 /* Landscape phones and down */
 @media (max-width: 480px) {
-  footer {
-    margin-left: -20px;
-    margin-right: -20px;
+
+  [class*="autor"], .row-fluid [class*="autor"] {
+    display: inline;
+    margin: auto 0%;
   }
 
   img {
@@ -156,5 +171,26 @@ a.dp-choose-date {
 
   .carousel-inner > .item > img, .carousel-inner > .item > a > img {
     max-width: 100%;
+  }
+  
+  .chzn-container[id*='q_'] {
+    top: 0px;
+    margin: 5px;
+  }
+  
+  .busqueda, div.social-share-button {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .form-search .input-append .search-query {
+    max-width: 120px;
+  }
+  h1 {
+    font-size: 31.5px;
+  }
+  .btn {
+    margin-bottom: 5px;
   }
 }

@@ -11,8 +11,10 @@
     <div class="thumbnail">
       <%= image_tag producto.imagen_1.url(:normal) %>
     <div class="caption">
-      <h5><%= producto.nombre %></h5>
-      <p><%= producto.descripcion %></p>
+      <h5><%= producto.nombre.truncate(50, :separator => ' ', :omission => ' (...)') %></h5>
+      <p class="descripcion">
+        <%= producto.descripcion.truncate(200, :separator => ' ', :omission => ' (...)') %>
+      </p>
       <p>
         <%= link_to mi_emprendimiento_producto_path(producto), :class => "btn btn-primary" do %>
             <i class="icon-eye-open"></i>
