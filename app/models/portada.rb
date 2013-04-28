@@ -9,7 +9,7 @@ class Portada < ActiveRecord::Base
   scope :visibles, where(:visible => true)
 
   has_attached_file :foto,
-                    :default_url => "http://placehold.it/1000x450&text=foto",
+                    :default_url => "1000x450-portada.gif",
                     :styles => {:normal => ["1000x450\!", :png], :thumb => ["400x180>", :png] }
 
   validates_attachment :foto, :presence => true,

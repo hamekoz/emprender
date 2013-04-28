@@ -70,22 +70,22 @@ class Producto < ActiveRecord::Base
   has_many :comentarios, :as => :comentable
 
   has_attached_file :imagen_1,
-                    :default_url => "http://placehold.it/360x268&text=imagen",
+                    :default_url => "360x268-imagen.gif",
                     :styles => { :mini => "160x120#", :normal => "360x268#" }
   has_attached_file :imagen_2,
-                    :default_url => "http://placehold.it/160x120&text=imagen",
+                    :default_url => "160x120-imagen.gif",
                     :styles => { :mini => "160x120#" }
   has_attached_file :imagen_3,
-                    :default_url => "http://placehold.it/160x120&text=imagen",
+                    :default_url => "160x120-imagen.gif",
                     :styles => { :mini => "160x120#" }
   has_attached_file :imagen_4,
-                    :default_url => "http://placehold.it/160x120&text=imagen",
+                    :default_url => "160x120-imagen.gif",
                     :styles => { :mini => "160x120#" }
   has_attached_file :imagen_5,
-                    :default_url => "http://placehold.it/160x120&text=imagen",
+                    :default_url => "160x120-imagen.gif",
                     :styles => { :mini => "160x120#" }
   has_attached_file :imagen_6,
-                    :default_url => "http://placehold.it/160x120&text=imagen",
+                    :default_url => "160x120-imagen.gif",
                     :styles => { :mini => "160x120#" }
 
   ##

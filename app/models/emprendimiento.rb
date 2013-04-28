@@ -3,7 +3,6 @@
 # Contiene toda la informacion relevante a un Emprendimiento constituyendo parte
 # fundamental del Registro Unico de Emprendedores y Emprendimientoes
 class Emprendimiento < ActiveRecord::Base
-#TODO definir attr_accessor
 
   before_update :limpiar_valores
 
@@ -43,8 +42,8 @@ class Emprendimiento < ActiveRecord::Base
     self.save
   end
 
-  has_attached_file :logotipo, :default_url => "http://placehold.it/120&text=logo",
-                               :styles => { :medium => ["300x300>", :png] }
+  has_attached_file :logotipo, :default_url => "360x268-logo.gif",
+                               :styles => { :medium => ["300x300>", :png], :normal => "360x268#" }
   
   # Permite marcar como eliminado el logotipo del Emprendimiento
   attr_accessor :delete_logotipo

@@ -26,7 +26,7 @@ class Evento < ActiveRecord::Base
 
 
   has_attached_file :folleto,
-                    :default_url => "http://placehold.it/400x600&text=imagen",
+                    :default_url => "400x600-folleto.gif",
                     :styles => { :mini => "175x250#", :normal => "400x600#" }
 
   # Permite marcar como elimiando el folleto del Evento
