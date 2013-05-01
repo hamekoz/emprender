@@ -7,7 +7,7 @@ class Evento < ActiveRecord::Base
                   :fecha_y_hora_de_inicio, :fecha_y_hora_de_finalizacion,
                   :autor_id, :autor, :folleto,:delete_folleto, :publicado
 
-  validates_presence_of :nombre, :tipo, :domicilio, :fecha_y_hora_de_inicio,
+  validates_presence_of :nombre, :tipo, :lugar, :domicilio, :fecha_y_hora_de_inicio,
                         :fecha_y_hora_de_finalizacion, :autor, :organizador
 
   belongs_to :barrio
@@ -24,6 +24,8 @@ class Evento < ActiveRecord::Base
                                                             'image/tiff'] },
                        :size => { :in => 0..5.megabytes }
 
+  validates :fecha_y_hora_de_finalizacion,
+            :date => { :after => :fecha_y_hora_de_inicio }
 
   has_attached_file :folleto,
                     :default_url => "400x600-folleto.gif",
@@ -34,9 +36,21 @@ class Evento < ActiveRecord::Base
   before_validation { self.folleto.clear if self.delete_folleto == '1' }
 
   ##
+  # Devuelte la fecha en un formato amigable
+  def fecha_y_hora_de_inicio_formateada
+    I18n.l(fecha_y_hora_de_inicio, :format => :long)
+  end
+
+  ##
+  # Devuelte la fecha en un formato amigable
+  def fecha_y_hora_de_finalizacion_formateada
+    I18n.l(fecha_y_hora_de_finalizacion, :format => :long)
+  end
+
+  ##
   # Devuelve una cadena resumiendo la informacion del evento
   def resumen
-   "#{tipo}. Organiza: #{organizador.nombre} el #{fecha_y_hora_de_inicio} hasta #{fecha_y_hora_de_finalizacion} a realizarse en #{lugar} #{domicilio} barrio #{barrio.nombre}"
+   "#{tipo}. Organiza: #{organizador.nombre} el #{fecha_y_hora_de_inicio_formateada} hs hasta #{fecha_y_hora_de_finalizacion_formateada} hs a realizarse en #{lugar} #{domicilio}"
   end
 
   ##

@@ -15,8 +15,15 @@
     <%= f.full_error :reset_password_token %>
 
     <div class="inputs">
-      <%= f.input :password, :label => "Nueva password", :required => true %>
-      <%= f.input :password_confirmation, :label => "Confirme su nueva password", :required => true %>
+      <%= f.input :password,
+                  :label => "Nueva password",
+                  :placeholder => 'su contraseña',
+                  :hint => 'Entre 6 y 20 caracteres',
+                  :required => true %>
+      <%= f.input :password_confirmation,
+                  :label => "Confirme su nueva password",
+                  :placeholder => 'repita su contraseña',
+                  :required => true %>
     </div>
 
     <div class="actions">

@@ -75,7 +75,7 @@ class Perfil < ActiveRecord::Base
             :allow_blank => true,
             :uniqueness => true,
             :numericality => true,
-            :length => { :in => 7..9 }
+            :length => { :in => 7..11 }
 
   ##
   # == Enumerado

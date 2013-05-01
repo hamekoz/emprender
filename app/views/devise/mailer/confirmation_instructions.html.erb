@@ -1,4 +1,4 @@
-<p>Bienvenido <%= @resource.email %>!</p>
+<p>¡Bienvenido <%= @resource.nombre_completo %>!</p>
 
 <p>Ha sido registrado en el Padrón de Emprededores y Emprendimientos de la
 Municipalidad de General Pueyrredón.</p>
@@ -6,3 +6,5 @@ Municipalidad de General Pueyrredón.</p>
 <p>Usted puede confirmar su cuenta con el siguiente enlace:</p>
 
 <p><%= link_to confirmation_url(@resource, :confirmation_token => @resource.confirmation_token), confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
+
+Nos alegra contar con su presencia.

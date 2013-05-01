@@ -31,7 +31,9 @@
       <%= servicio.attribute :descripcion %>
       <%= servicio.attribute :precio, 
                              :value => number_to_currency(@servicio.precio, :locale => 'es-AR') %>
-      <%= servicio.association :emprendimiento %>
+      <%= servicio.association :emprendimiento do
+        link_to @servicio.emprendimiento.nombre, @servicio.emprendimiento
+      end %>
     </article>
   </div>
 </div>
@@ -48,11 +50,6 @@
       <i class="icon-pencil"></i>
       <span>Editar</span>
     <% end %>
-  <% end %>
-
-  <%= link_to @servicio.emprendimiento, :class => 'btn btn-primary' do %>
-    <i class="icon-road"></i>
-    <span>Ver Emprendimiento</span>
   <% end %>
 
   <button type="button" class="btn" data-toggle="collapse" data-target="#comentarios">

@@ -187,12 +187,12 @@ RailsAdmin.config do |config|
       exclude_fields :rol, :reset_password_sent_at, :current_sign_in_at, :current_sign_in_ip,
                      :last_sign_in_ip, :confirmation_token, :confirmation_sent_at, :confirmed_at,
                      :unconfirmed_email, :last_sign_in_at, :sign_in_count, :locked_at,
-                     :noticias, :eventos
+                     :noticias, :eventos, :email, :password, :password_confirmation
     end
     export do
       exclude_fields :password, :reset_password_sent_at, :current_sign_in_at, :current_sign_in_ip,
                      :last_sign_in_ip, :confirmation_token, :confirmation_sent_at, :confirmed_at,
-                     :unconfirmed_email
+                     :unconfirmed_email, :password, :password_confirmation
     end
   end
 
@@ -319,7 +319,8 @@ RailsAdmin.config do |config|
     edit do
       exclude_fields :rol, :reset_password_sent_at, :current_sign_in_at, :current_sign_in_ip,
                      :last_sign_in_ip, :confirmation_token, :confirmation_sent_at, :confirmed_at,
-                     :unconfirmed_email, :last_sign_in_at, :sign_in_count, :locked_at
+                     :unconfirmed_email, :last_sign_in_at, :sign_in_count, :locked_at,
+                     :email, :password, :password_confirmation
     end
     export do
       exclude_fields :password, :reset_password_sent_at, :current_sign_in_at, :current_sign_in_ip,
@@ -384,11 +385,11 @@ RailsAdmin.config do |config|
     end
     list do
 #      field :id
+      field :publicado
       field :tipo
       field :nombre
       field :lugar
       field :domicilio
-      field :publicado
       field :organizador
       field :descripcion
       field :fecha_y_hora_de_inicio
@@ -627,7 +628,7 @@ RailsAdmin.config do |config|
       exclude_fields :rol, :reset_password_sent_at, :current_sign_in_at, :current_sign_in_ip,
                      :last_sign_in_ip, :confirmation_token, :confirmation_sent_at, :confirmed_at,
                      :unconfirmed_email, :last_sign_in_at, :sign_in_count, :locked_at,
-                     :noticias, :eventos
+                     :noticias, :eventos, :email, :password, :password_confirmation
     end
     export do
       exclude_fields :password, :reset_password_sent_at, :current_sign_in_at, :current_sign_in_ip,
@@ -716,7 +717,8 @@ RailsAdmin.config do |config|
     edit do
       exclude_fields :rol, :reset_password_sent_at, :current_sign_in_at, :current_sign_in_ip,
                      :last_sign_in_ip, :confirmation_token, :confirmation_sent_at, :confirmed_at,
-                     :unconfirmed_email, :last_sign_in_at, :sign_in_count, :locked_at
+                     :unconfirmed_email, :last_sign_in_at, :sign_in_count, :locked_at, :email,
+                     :password, :password_confirmation
     end
     export do
       exclude_fields :password, :reset_password_sent_at, :current_sign_in_at, :current_sign_in_ip,
