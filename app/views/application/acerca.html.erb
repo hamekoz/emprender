@@ -13,6 +13,23 @@
   </div>
 
   <div class="span4 columns offset1">
+    <h3>Instituciones</h3>
+    <dl>
+      <% @instituciones.each do |institucion| %>
+        <dt><%= institucion.nombre %></dt>
+          <dd><%= institucion.descripcion %></dd>
+      <% end %>
+      <br>
+      <%= link_to 'Más información de instituciones...', instituciones_path %>
+    </dl>
+
+    <h4>Vínculos de interes</h4>
+    <ul>
+    <% @vinculos.each do |vinculo| %>
+      <li><%= link_to "#{vinculo.nombre}", "#{vinculo.url}", target: "_blank" %></li>
+    <% end %>
+    </ul>
+    <br>
     <h5>Sitio creado y donado por</h5>
     <div class="row-fluid">
       <div class="span3 autor">
@@ -25,31 +42,16 @@
         <%= image_tag "caramichos-mono.png", :class => 'img-circle autor',
                       :data => { :content => "Ingeniero en Informática",
                                  'original-title' =>"Adriel Hernán Caramichos",
-                                 :placement => 'bottom' },
+                                 :placement => 'top' },
                       :rel => 'popover' %>
       </div>
       <div class="span3 autor">
         <%= image_tag "logo-ufasta-mono.jpg", :class => 'img-circle autor',
-                      :data => { :content => "Facultad de Ingenieria",
+                      :data => { :content => "Facultad de Ingeniería",
                                  'original-title' =>"Universidad Fasta",
                                  :placement => 'left' },
                       :rel => 'popover' %>
       </div>
     </div>
-    <br>
-    <h3>Instituciones</h3>
-    <dl>
-      <% @instituciones.each do |institucion| %>
-        <dt><%= institucion.nombre %></dt>
-          <dd><%= institucion.descripcion %></dd>
-      <% end %>
-    </dl>
-    <br>
-    <h4>Vinculos de interes</h4>
-    <ul>
-    <% @vinculos.each do |vinculo| %>
-      <li><%= link_to "#{vinculo.nombre}", "#{vinculo.url}", target: "_blank" %></li>
-    <% end %>
-    </ul>
   </div>
 </div>

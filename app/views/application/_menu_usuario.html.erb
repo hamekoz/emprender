@@ -19,9 +19,11 @@
       <%= link_to(mensajes_path) do %>
         <i class="icon-envelope"></i>
         <span>Mensajes</span>
-        <span class="badge badge-warning">
-          <%= current_usuario.mensajes_recibidos.recibidos.sin_leer.count %>
-        </span>
+        <% if current_usuario.mensajes_recibidos.recibidos.sin_leer.count > 0 %>
+          <span class="badge badge-warning">
+            <%= current_usuario.mensajes_recibidos.recibidos.sin_leer.count %>
+          </span>
+        <% end %>
       <% end %>
     </li>
     <li class="nav-header"><%= current_usuario.rol %></li>

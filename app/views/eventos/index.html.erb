@@ -1,7 +1,7 @@
 <h1 class= "page-header">Cartelera de Eventos</h1>
 <%= render 'busqueda' %>
 <% if @eventos.count == 0 %>
-  <h3 class="centrado">No hay eventos que coincidan con su busqueda</h3>
+  <h3 class="centrado">No hay eventos que coincidan con su búsqueda</h3>
 <% end %>
 <ul class="thumbnails">
 <% @eventos.each do |evento| %>

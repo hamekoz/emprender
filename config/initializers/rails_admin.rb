@@ -375,7 +375,6 @@ RailsAdmin.config do |config|
   config.model 'Evento' do
     navigation_label 'Portal'
     weight -1
-    include_all_fields
     field :descripcion do
       ckeditor true
       ckeditor_config_js '/javascripts/ckeditor/config.js'

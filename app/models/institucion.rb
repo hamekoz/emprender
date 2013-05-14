@@ -1,7 +1,8 @@
 ##
 # Institucion colaboradora en la promocion de la economia social
 class Institucion < ActiveRecord::Base
-  attr_accessible :nombre, :descripcion, :barrio, :barrio_id, :domicilio, :telefono, :visible
+  attr_accessible :nombre, :descripcion, :barrio, :barrio_id,
+                  :domicilio, :telefono, :visible, :web, :mail
 
   validates :nombre, :presence=>true
   validates :descripcion, :presence=>true

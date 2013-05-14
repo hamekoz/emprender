@@ -1,24 +1,61 @@
-<h2 class= "breadcrumb">Instituciones</h2>
-<table id="3columnas" class="zebra-striped">
-  <thead>
-    <tr>
-      <th class="blue">Nombre</th>
-      <th class="blue">Descripcion</th>
-      <th><%= boton_agregar new_institucion_path %></th>
-    </tr>
-  </thead>
+<h1 class= "page-header">Instituciones</h1>
+<%= render 'busqueda' %>
+<% if @instituciones.count == 0 %>
+  <h3 class="centrado">No hay instituciones que coincidan con su búsqueda</h3>
+<% end %>
+<ul class="thumbnails">
+<% @instituciones.each do |institucion| %>
+  <li class="span12">
+    <div class="thumbnail">
+      <div class="caption">
+        <address>
+          <h4><%= institucion.nombre %></h4>
+          <hr>
+          <dl class="dl-horizontal">
+            <dt>Descripción</dt>
+              <dd><%= institucion.descripcion.blank? ? "-" : institucion.descripcion %></dd>
+            <dt>Sitio web</dt>
+              <dd><%= institucion.web.blank? ? "-" : link_to(institucion.web, institucion.web, target: "_blank") %></dd>
+            <dt>Mail</dt>
+              <dd><%= institucion.mail.blank? ? "-" : mail_to(institucion.mail) %></dd>
+            <dt>Teléfonos</dt>
+              <dd><%= institucion.telefono.blank? ? "-" : institucion.telefono %></dd>
+            <dt>Domicilio</dt>
+              <dd><%= institucion.domicilio.blank? ? "-" : institucion.domicilio %></dd>
+          </dl>
+        </address>
+        <p>
+          <% if can? :read, institucion %>
+            <hr>
+            <%= link_to(admin_institucion_path(institucion), :class => 'btn btn-info') do %>
+              <i class="icon-info-sign"></i>
+              <span>Mostrar</span>
+            <% end %>
+          <% end %>
+          <% if can? :manage, institucion %>
+            <%= link_to(edit_admin_institucion_path(institucion), :class => 'btn btn-warning') do %>
+              <i class="icon-pencil"></i>
+              <span>Editar</span>
+            <% end %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </li>
+<% end %>
+</ul>
 
-  <tbody>
-  <% @instituciones.each do |institucion| %>
-    <tr>
-      <td><%= institucion.nombre %></td>
-      <td><%= institucion.descripcion %></td>
-      <td class="acciones">
-        <%= boton_mostrar institucion %>
-        <%= boton_editar edit_institucion_path(institucion) %>
-        <%= boton_eliminar institucion %>
-      </td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+<%= paginate @instituciones %>
+
+<% if can? :manage, Institucion %>
+  <div class="form-actions">
+      <%= link_to(admin_instituciones_path, :class => 'btn btn-inverse') do %>
+        <i class="icon-list-alt icon-white"></i>
+        <span>Administrar</span>
+      <% end %>
+      <%= link_to(new_admin_institucion_path, :class => 'btn btn-success') do %>
+        <i class="icon-plus"></i>
+        <span>Nueva</span>
+      <% end %>
+  </div>
+<% end %>

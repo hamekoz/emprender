@@ -16,6 +16,8 @@ Emprender::Application.routes.draw do
   resources :emprendimientos, :only => [:index, :show]
   resources :reportes,        :only => [:index, :show]
 
+  resources :instituciones,         :only => :index
+
   resources :comentarios,     :only => [:create, :destroy]
 
   scope(:path_names => { :new => "nuevo", :edit => "editar", :cancel => "cancelar" }) do
@@ -48,5 +50,6 @@ Emprender::Application.routes.draw do
     resources :productos,       :path => 'producto'
     resources :servicios,       :path => 'servicio'
     resources :emprendimientos, :path => 'emprendimiento'
+    resources :instituciones,   :path => 'institucion'
   end
 end

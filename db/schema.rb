@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130422121800) do
+ActiveRecord::Schema.define(:version => 20130510141000) do
 
   create_table "barrios", :force => true do |t|
     t.string    "nombre"
@@ -173,14 +173,16 @@ ActiveRecord::Schema.define(:version => 20130422121800) do
   end
 
   create_table "instituciones", :force => true do |t|
-    t.string    "nombre"
-    t.text      "descripcion"
-    t.string    "telefono"
-    t.string    "domicilio"
-    t.integer   "barrio_id"
-    t.timestamp "created_at",  :null => false
-    t.timestamp "updated_at",  :null => false
-    t.boolean   "visible"
+    t.string   "nombre"
+    t.text     "descripcion"
+    t.string   "telefono"
+    t.string   "domicilio"
+    t.integer  "barrio_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.boolean  "visible"
+    t.string   "web"
+    t.string   "mail"
   end
 
   add_index "instituciones", ["barrio_id"], :name => "index_instituciones_on_barrio_id"

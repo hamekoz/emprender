@@ -5,7 +5,7 @@ es:
       simple: '%d/%m/%Y %H:%M'
 
   unauthorized:
-    default: "No esta autorizado para acceder a esa pagina."
+    default: "No esta autorizado para acceder a esa página."
 
   attributes:
     created_at: "Creado el"
@@ -13,7 +13,7 @@ es:
     locked_at: "Bloquedo"
     type: "Tipo"
     sign_in_count: "Ingresos"
-    last_sign_in_at: "Ultima visita"
+    last_sign_in_at: "Última visita"
     cuit_cuil: "Cuit/Cuil"
     password: "Contraseña"
     password_confirmation: "Confirmar contraseña"
@@ -28,7 +28,7 @@ es:
   titulo:
     editando: "Editando"
 
-  confirmar: "¿Esta seguro?"
+  confirmar: "¿Está seguro?"
 
   errores:
     guardar: 

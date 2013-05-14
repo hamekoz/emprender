@@ -1,7 +1,7 @@
 <h1 class= "page-header">Mis Servicios</h1>
 <%= render 'busqueda' %>
 <% if @servicios.count == 0 %>
-  <h3 class="centrado">No hay servicios que coincidan con su busqueda</h3>
+  <h3 class="centrado">No hay servicios que coincidan con su búsqueda</h3>
 <% end %>
 <ul class="thumbnails">
   <% @servicios.each do |servicio| %>

@@ -1,0 +1,20 @@
+<%= search_form_for(@q, :html => { :class => 'form-search' }) do |f| %>
+  <strong>Ordenar por:</strong>
+  <br class="visible-phone">
+  <%= sort_link @q, :nombre, {}, :class => 'label' %>
+  <%= sort_link @q, :descripcion, {}, :class => 'label' %>
+
+  <br class="visible-phone">
+  <div class="busqueda input-append pull-right">
+    <%= f.text_field :nombre_or_descripcion_cont,
+                     :class=> 'search-query',
+                     :placeholder => 'Nombre o descripción' %>
+    <%= link_to(noticias_path, :type => 'button',
+                               :class => 'btn btn-comun',
+                               rel: 'tooltip', title: 'Ver todos',) do %>
+      <i class="icon-remove-sign"></i>
+    <% end %>
+    <%= f.button "Buscar", :class=> 'btn' %>
+  </div>
+<% end %>
+<hr>
