@@ -24,6 +24,8 @@ bundle exec rake db:setup RAILS_ENV="production"
 
 bundle exec rake assets:precompile
 
+bundle exec rake emprender:backup_whenever
+
 mv /etc/httpd/conf.d/welcome.conf /etc/httpd/conf.d/welcome.conf.ori
 echo "" > /etc/httpd/conf.d/welcome.conf
 
