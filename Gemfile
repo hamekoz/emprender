@@ -13,7 +13,7 @@ gem 'devise'                      #Gestion de usuarios y sesiones
 gem 'devise-i18n'                 #Traduccion de devise
 gem 'kaminari'                    #Paginador
 gem 'paperclip'                   #Gestor de adjuntos
-gem 'paperclip-dropbox'           #Plugin para Dropbox
+gem 'paperclip-dropbox','1.1.3'           #Plugin para Dropbox
 gem 'ckeditor'                    #Editor de texto enrriquecido
 gem 'ckeditor_rails'              #Editor de texto enrriquecido para rails
 gem 'date_validator'              #Validador de fechas
@@ -34,11 +34,11 @@ gem 'whenever', :require => false
 
 # Gemas usadas solo en desarrollo
 group :development, :test do
-#  platforms :ruby_19 do
-#    gem 'minitest'
-#    gem 'minitest-rails'
-#    gem 'bigdecimal'
-#  end
+  platforms :ruby_19 do
+    gem 'minitest'
+    gem 'minitest-rails'
+    gem 'bigdecimal'
+  end
   gem 'webrick'
   gem 'sqlite3'
   gem 'taps'

@@ -7,6 +7,5 @@ Paperclip.interpolates('adjunto') do |attachment, style|
 end
 
 Paperclip::Attachment.default_options.update({
-#  :path => ":class/:attachment/:hash/:style.:extension"
   :url => ":clase_:id_:adjunto_:style.:extension"
 })
