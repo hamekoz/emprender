@@ -1,11 +1,17 @@
-yum install -y git make gcc gcc-c++ gpp mod_passenger mysql-server mysql-devel ruby-devel rubygems rubygem-bundler rubygem-bcrypt-ruby libxml2-devel libxslt libxslt-devel
+yum install -y git make gcc gcc-c++ gpp mod_passenger mysql-server mysql-devel postgresql-devel ruby-devel rubygems rubygem-bundler rubygem-bcrypt-ruby libxml2-devel libxslt libxslt-devel
 cd /var/www/html
 git clone git://github.com/Hamekoz/emprender.git
 cd emprender
-cp config/application.template.yml config/application.yml
+bundle exec rake emprender:config
 
 read -p "Ingrese el dominio del servidor: " hostname
 sed -i -e 's!EMPRENDER_DOMINIO: "localhost"!EMPRENDER_DOMINIO: "'$hostname'"!' config/application.yml 1>/dev/null
+
+read -p "¿Desea revisar el archivo de configuración? (s/n): " respuesta
+case "$respuesta" in 
+  s ) vi config/application.yml;;
+  * ) ;;
+esac
 
 systemctl enable mysqld.service
 systemctl start mysqld.service
@@ -29,12 +35,6 @@ chgrp apache /var/www/html/emprender -R
 
 systemctl enable httpd.service
 systemctl start httpd.service
-
-read -p "¿Desea revisar el archivo de configuración? (s/n): " respuesta
-case "$respuesta" in 
-  s ) vi config/application.yml;;
-  * ) ;;
-esac
 
 echo "Felicitaciones Emprender se encuentra instalado en su servidor!!"
 echo "Se creo un usuario administrador por defecto con las siguientes credenciales:"

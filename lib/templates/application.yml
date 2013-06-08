@@ -45,3 +45,9 @@ EMPRENDER_MAIL: "emprender@hamekoz.com.ar"
 #EMPRENDER_DROPBOX_ACCESS_TOKEN_SECRET: ""
 #EMPRENDER_DROPBOX_USER_ID: ""
 #EMPRENDER_DROPBOX_ACCESS_TYPE: "dropbox"
+
+###=============================================================================
+### Backup
+###=============================================================================
+#EMPRENDER_BACKUP_MAIL: ""
+#EMPRENDER_BACKUP_DESTINO_LOCAL: ""

@@ -28,14 +28,16 @@ gem 'figaro'                      #Adminitracion de variable de entorno
 gem 'rails_admin'                 #Administracion del sitio
 gem 'graphael-rails'              #Libreria de graficos
 gem 'yaml_db'                     #Gestor de datos
+gem 'backup', :require => false
+gem 'whenever', :require => false
 
 # Gemas usadas solo en desarrollo
 group :development, :test do
-  platforms :ruby_19 do
-    gem 'minitest'
-    gem 'minitest-rails'
-    gem 'bigdecimal'
-  end
+#  platforms :ruby_19 do
+#    gem 'minitest'
+#    gem 'minitest-rails'
+#    gem 'bigdecimal'
+#  end
   gem 'webrick'
   gem 'sqlite3'
   gem 'taps'

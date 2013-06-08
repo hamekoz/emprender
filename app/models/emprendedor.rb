@@ -1,7 +1,8 @@
 ##
 # Emprendedor corresponde a los usuarios con rol Emprendedor
 class Emprendedor < Usuario
-  attr_accessible :perfil, :emprendimiento, :perfil_attributes, :emprendimiento_attributes
+  attr_accessible :perfil, :emprendimiento, :perfil_attributes, :emprendimiento_attributes,
+                  :institucion, :institucion_id
 
   after_create :inicializar
 
@@ -22,7 +23,7 @@ class Emprendedor < Usuario
   # Establece la Institucion del Emprendedor con la misma Institucion del
   # Representante o Administrador que quiera apadrinar al Emprendedor
   def apadrinar(institucion)
-    self.institucion = institucion if self.institucion.blank?
+    self.institucion = self.institucion.blank? ? institucion : self.institucion
     self.save
   end
 end
