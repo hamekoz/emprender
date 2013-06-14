@@ -13,7 +13,7 @@ gem 'devise'                      #Gestion de usuarios y sesiones
 gem 'devise-i18n'                 #Traduccion de devise
 gem 'kaminari'                    #Paginador
 gem 'paperclip'                   #Gestor de adjuntos
-gem 'paperclip-dropbox','1.1.3'           #Plugin para Dropbox
+gem 'paperclip-dropbox','1.1.3'   #Plugin para Dropbox
 gem 'ckeditor'                    #Editor de texto enrriquecido
 gem 'ckeditor_rails'              #Editor de texto enrriquecido para rails
 gem 'date_validator'              #Validador de fechas
@@ -29,7 +29,7 @@ gem 'figaro'                      #Adminitracion de variable de entorno
 gem 'rails_admin'                 #Administracion del sitio
 gem 'graphael-rails'              #Libreria de graficos
 gem 'yaml_db'                     #Gestor de datos
-gem 'backup', :require => false
+gem 'backup',   :require => false
 gem 'whenever', :require => false
 
 # Gemas usadas solo en desarrollo
@@ -42,17 +42,18 @@ group :development, :test do
   gem 'webrick'
   gem 'sqlite3'
   gem 'taps'
-  gem 'therubyracer', :platforms => :ruby
 end
 
 # Gemas necesarias para produccion
 group :production do
-  gem 'mysql2', :group => :local
-  group :heroku do
-    gem 'pg'
-    gem 'thin'
-    gem 'wkhtmltopdf-heroku'
-  end
+  gem 'mysql2'
+end
+
+# Gemas necesarias para Heroku
+group :heroku do
+  gem 'pg'
+  gem 'thin'
+  gem 'wkhtmltopdf-heroku'
 end
 
 # Gems used only for assets and not required
@@ -61,4 +62,5 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
+  gem 'therubyracer', :platforms => :ruby
 end
