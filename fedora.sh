@@ -2,11 +2,10 @@ yum install -y git make gcc gcc-c++ gpp mod_passenger mysql-server mysql-devel r
 
 bundle install --deployment --without development test heroku
 
-bundle exec rake db:setup RAILS_ENV="production"
-
-bundle exec rake assets:precompile
-
 bundle exec rake emprender:config
+
+systemctl enable mysqld.service
+systemctl start mysqld.service
 
 read -p "Ingrese el dominio del servidor: " hostname
 sed -i -e 's!EMPRENDER_DOMINIO: "localhost"!EMPRENDER_DOMINIO: "'$hostname'"!' config/application.yml 1>/dev/null
@@ -18,10 +17,17 @@ case "$respuesta" in
   * ) ;;
 esac
 
-bundle exec rake emprender:backup_whenever
+read -p "¿Desea revisar la configuración de respaldos? (s/n): " respuesta
+case "$respuesta" in 
+  s ) vi config/backup.rb;;
+  * ) ;;
+esac
 
-systemctl enable mysqld.service
-systemctl start mysqld.service
+bundle exec rake db:setup RAILS_ENV="production"
+
+bundle exec rake assets:precompile
+
+bundle exec rake emprender:backup_whenever
 
 mv /etc/httpd/conf.d/welcome.conf /etc/httpd/conf.d/welcome.conf.ori
 echo "" > /etc/httpd/conf.d/welcome.conf
@@ -32,6 +38,7 @@ sed -i -e 's!ServerName localhost!ServerName '$hostname'!' /etc/httpd/conf.d/emp
 chown apache /var/www/html/emprender -R
 chgrp apache /var/www/html/emprender -R
 
+firewall-cmd --permanent --add-service=http
 systemctl enable httpd.service
 systemctl start httpd.service
 
