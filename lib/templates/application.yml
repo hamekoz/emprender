@@ -9,29 +9,29 @@ EMPRENDER_MAIL: "emprender@hamekoz.com.ar"
 ###=============================================================================
 ### Google Analytics (opcional)
 ###=============================================================================
-#EMPRENDER_GOOGLE_ANALYTICS_ID: ""
+EMPRENDER_GOOGLE_ANALYTICS_ID: ""
 
 ###=============================================================================
 ### Envio de corro electronico
 ###=============================================================================
 ### Opcional para implementacion local
 ### Obligato para implementacion heroku
-#EMPRENDER_MAIL_SMTP: "enable"
-#EMPRENDER_MAIL_SERVIDOR: ""
-#EMPRENDER_MAIL_PUERTO: ""
-#EMPRENDER_MAIL_DOMINIO: ""
-#EMPRENDER_MAIL_USUARIO: ""
-#EMPRENDER_MAIL_PASSWORD: ""
+EMPRENDER_MAIL_SMTP: "enable"
+EMPRENDER_MAIL_SERVIDOR: "smtp.google.com"
+EMPRENDER_MAIL_PUERTO: "578"
+EMPRENDER_MAIL_DOMINIO: "hamekoz.com.ar"
+EMPRENDER_MAIL_USUARIO: "emprender@hamekoz.com.ar"
+EMPRENDER_MAIL_PASSWORD: ""
 
 ###=============================================================================
 ### Base de datos
 ###=============================================================================
 ### Obligatorio para implementacion local
 ### No requerido para implementacion heroku
-#EMPRENDER_DB_DABABASE: "emprender"
-#EMPRENDER_DB_USUARIO: "root"
-#EMPRENDER_DB_PASSWORD: ""
-#EMPRENDER_DB_SOCKET: "/var/lib/mysql/mysql.sock"
+EMPRENDER_DB_DABABASE: "emprender"
+EMPRENDER_DB_USUARIO: "root"
+EMPRENDER_DB_PASSWORD: ""
+EMPRENDER_DB_SOCKET: "/var/lib/mysql/mysql.sock"
 
 ###=============================================================================
 ### Dropbox
@@ -49,5 +49,5 @@ EMPRENDER_MAIL: "emprender@hamekoz.com.ar"
 ###=============================================================================
 ### Backup
 ###=============================================================================
-#EMPRENDER_BACKUP_MAIL: ""
+EMPRENDER_BACKUP_MAIL: "emprender@hamekoz.com.ar"
 #EMPRENDER_BACKUP_DESTINO_LOCAL: ""

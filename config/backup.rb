@@ -70,7 +70,9 @@ Backup::Model.new(:emprender_backup, 'Respaldo de Emprender') do
   ##
   # MySQL [Database]
   #
-  if ENV['RAILS_ENV'] == 'production'
+  puts "Variable de entorno"
+  puts RAILS_ENV
+  if RAILS_ENV == 'production'
     database MySQL do |db|
       db.name               = ENV["EMPRENDER_DB_DABABASE"]
       db.username           = ENV["EMPRENDER_DB_USUARIO"]
