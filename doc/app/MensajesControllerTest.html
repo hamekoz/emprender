@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class MensajesControllerTest - Documentación de Emprender</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>test/controllers/mensajes_controller_test.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">MiniTest::Rails::Controller
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-test_create">#test_create</a>
+    
+    <li><a href="#method-i-test_destroy">#test_destroy</a>
+    
+    <li><a href="#method-i-test_edit">#test_edit</a>
+    
+    <li><a href="#method-i-test_index">#test_index</a>
+    
+    <li><a href="#method-i-test_new">#test_new</a>
+    
+    <li><a href="#method-i-test_show">#test_show</a>
+    
+    <li><a href="#method-i-test_update">#test_update</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+    <li class="file"><a href="./Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="./public/robots_txt.html">robots</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./RailsAdmin.html">RailsAdmin</a>
+  
+    <li><a href="./RailsAdmin/Config.html">RailsAdmin::Config</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions.html">RailsAdmin::Config::Actions</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions/Aceptar.html">RailsAdmin::Config::Actions::Aceptar</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions/Activar.html">RailsAdmin::Config::Actions::Activar</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions/Apadrinar.html">RailsAdmin::Config::Actions::Apadrinar</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions/Desactivar.html">RailsAdmin::Config::Actions::Desactivar</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions/Desbloquear.html">RailsAdmin::Config::Actions::Desbloquear</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions/Despublicar.html">RailsAdmin::Config::Actions::Despublicar</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions/Publicar.html">RailsAdmin::Config::Actions::Publicar</a>
+  
+    <li><a href="./RailsAdmin/Config/Actions/Rechazar.html">RailsAdmin::Config::Actions::Rechazar</a>
+  
+    <li><a href="./Ckeditor.html">Ckeditor</a>
+  
+    <li><a href="./Ckeditor/Asset.html">Ckeditor::Asset</a>
+  
+    <li><a href="./Ckeditor/AttachmentFile.html">Ckeditor::AttachmentFile</a>
+  
+    <li><a href="./Ckeditor/Picture.html">Ckeditor::Picture</a>
+  
+    <li><a href="./ActiveSupport.html">ActiveSupport</a>
+  
+    <li><a href="./ActiveSupport/TestCase.html">ActiveSupport::TestCase</a>
+  
+    <li><a href="./Emprender.html">Emprender</a>
+  
+    <li><a href="./Emprender/Application.html">Emprender::Application</a>
+  
+    <li><a href="./Ability.html">Ability</a>
+  
+    <li><a href="./ActividadTest.html">ActividadTest</a>
+  
+    <li><a href="./AddAceptadoToUsuarios.html">AddAceptadoToUsuarios</a>
+  
+    <li><a href="./AddContactoToInstituciones.html">AddContactoToInstituciones</a>
+  
+    <li><a href="./AddDeviseToUsuarios.html">AddDeviseToUsuarios</a>
+  
+    <li><a href="./AddDomicilioToEventos.html">AddDomicilioToEventos</a>
+  
+    <li><a href="./AddVisibleToInstituciones.html">AddVisibleToInstituciones</a>
+  
+    <li><a href="./AddVisibleToVinculos.html">AddVisibleToVinculos</a>
+  
+    <li><a href="./Administrador.html">Administrador</a>
+  
+    <li><a href="./AdministradorTest.html">AdministradorTest</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./Barrio.html">Barrio</a>
+  
+    <li><a href="./BarrioTest.html">BarrioTest</a>
+  
+    <li><a href="./BrowsingTest.html">BrowsingTest</a>
+  
+    <li><a href="./Categoria.html">Categoria</a>
+  
+    <li><a href="./CategoriaTest.html">CategoriaTest</a>
+  
+    <li><a href="./Clasificacion.html">Clasificacion</a>
+  
+    <li><a href="./ClasificacionTest.html">ClasificacionTest</a>
+  
+    <li><a href="./Comentario.html">Comentario</a>
+  
+    <li><a href="./ComentarioControllerTest.html">ComentarioControllerTest</a>
+  
+    <li><a href="./ComentarioHelperTest.html">ComentarioHelperTest</a>
+  
+    <li><a href="./ComentarioTest.html">ComentarioTest</a>
+  
+    <li><a href="./ComentariosController.html">ComentariosController</a>
+  
+    <li><a href="./ComentariosControllerTest.html">ComentariosControllerTest</a>
+  
+    <li><a href="./ComentariosHelperTest.html">ComentariosHelperTest</a>
+  
+    <li><a href="./ContactoTest.html">ContactoTest</a>
+  
+    <li><a href="./CreateBarrios.html">CreateBarrios</a>
+  
+    <li><a href="./CreateCategorias.html">CreateCategorias</a>
+  
+    <li><a href="./CreateCkeditorAssets.html">CreateCkeditorAssets</a>
+  
+    <li><a href="./CreateClasificaciones.html">CreateClasificaciones</a>
+  
+    <li><a href="./CreateComentarios.html">CreateComentarios</a>
+  
+    <li><a href="./CreateEmprendimientos.html">CreateEmprendimientos</a>
+  
+    <li><a href="./CreateEstados.html">CreateEstados</a>
+  
+    <li><a href="./CreateEventos.html">CreateEventos</a>
+  
+    <li><a href="./CreateInformaciones.html">CreateInformaciones</a>
+  
+    <li><a href="./CreateInstituciones.html">CreateInstituciones</a>
+  
+    <li><a href="./CreateMensajes.html">CreateMensajes</a>
+  
+    <li><a href="./CreateNoticias.html">CreateNoticias</a>
+  
+    <li><a href="./CreatePerfiles.html">CreatePerfiles</a>
+  
+    <li><a href="./CreatePortadas.html">CreatePortadas</a>
+  
+    <li><a href="./CreateProductos.html">CreateProductos</a>
+  
+    <li><a href="./CreateRailsAdminHistoriesTable.html">CreateRailsAdminHistoriesTable</a>
+  
+    <li><a href="./CreateRubros.html">CreateRubros</a>
+  
+    <li><a href="./CreateServicios.html">CreateServicios</a>
+  
+    <li><a href="./CreateUsuarios.html">CreateUsuarios</a>
+  
+    <li><a href="./CreateVinculos.html">CreateVinculos</a>
+  
+    <li><a href="./Emprendedor.html">Emprendedor</a>
+  
+    <li><a href="./EmprendedorTest.html">EmprendedorTest</a>
+  
+    <li><a href="./EmprendedoresControllerTest.html">EmprendedoresControllerTest</a>
+  
+    <li><a href="./EmprendedoresHelperTest.html">EmprendedoresHelperTest</a>
+  
+    <li><a href="./Emprendimiento.html">Emprendimiento</a>
+  
+    <li><a href="./EmprendimientoController.html">EmprendimientoController</a>
+  
+    <li><a href="./EmprendimientoTest.html">EmprendimientoTest</a>
+  
+    <li><a href="./EmprendimientosController.html">EmprendimientosController</a>
+  
+    <li><a href="./EmprendimientosControllerTest.html">EmprendimientosControllerTest</a>
+  
+    <li><a href="./EmprendimientosHelperTest.html">EmprendimientosHelperTest</a>
+  
+    <li><a href="./Estado.html">Estado</a>
+  
+    <li><a href="./EstadoTest.html">EstadoTest</a>
+  
+    <li><a href="./EstudioTest.html">EstudioTest</a>
+  
+    <li><a href="./Evento.html">Evento</a>
+  
+    <li><a href="./EventoTest.html">EventoTest</a>
+  
+    <li><a href="./EventosController.html">EventosController</a>
+  
+    <li><a href="./EventosControllerTest.html">EventosControllerTest</a>
+  
+    <li><a href="./Informacion.html">Informacion</a>
+  
+    <li><a href="./InformacionTest.html">InformacionTest</a>
+  
+    <li><a href="./Institucion.html">Institucion</a>
+  
+    <li><a href="./InstitucionTest.html">InstitucionTest</a>
+  
+    <li><a href="./InstitucionesController.html">InstitucionesController</a>
+  
+    <li><a href="./InstitucionesControllerTest.html">InstitucionesControllerTest</a>
+  
+    <li><a href="./Mensaje.html">Mensaje</a>
+  
+    <li><a href="./MensajeControllerTest.html">MensajeControllerTest</a>
+  
+    <li><a href="./MensajeTest.html">MensajeTest</a>
+  
+    <li><a href="./MensajesController.html">MensajesController</a>
+  
+    <li><a href="./MensajesControllerTest.html">MensajesControllerTest</a>
+  
+    <li><a href="./MensajesHelperTest.html">MensajesHelperTest</a>
+  
+    <li><a href="./MensajesesHelperTest.html">MensajesesHelperTest</a>
+  
+    <li><a href="./Noticia.html">Noticia</a>
+  
+    <li><a href="./NoticiaTest.html">NoticiaTest</a>
+  
+    <li><a href="./NoticiasController.html">NoticiasController</a>
+  
+    <li><a href="./NoticiasControllerTest.html">NoticiasControllerTest</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./Perfil.html">Perfil</a>
+  
+    <li><a href="./PerfilControllerTest.html">PerfilControllerTest</a>
+  
+    <li><a href="./PerfilTest.html">PerfilTest</a>
+  
+    <li><a href="./PerfilesController.html">PerfilesController</a>
+  
+    <li><a href="./PerfilesHelperTest.html">PerfilesHelperTest</a>
+  
+    <li><a href="./PersonaTest.html">PersonaTest</a>
+  
+    <li><a href="./Portada.html">Portada</a>
+  
+    <li><a href="./PortadaTest.html">PortadaTest</a>
+  
+    <li><a href="./Producto.html">Producto</a>
+  
+    <li><a href="./ProductoControllerTest.html">ProductoControllerTest</a>
+  
+    <li><a href="./ProductoTest.html">ProductoTest</a>
+  
+    <li><a href="./ProductosController.html">ProductosController</a>
+  
+    <li><a href="./ProductosControllerTest.html">ProductosControllerTest</a>
+  
+    <li><a href="./ProductosEmprendimientoController.html">ProductosEmprendimientoController</a>
+  
+    <li><a href="./ProductosHelperTest.html">ProductosHelperTest</a>
+  
+    <li><a href="./ProductosesHelperTest.html">ProductosesHelperTest</a>
+  
+    <li><a href="./ReportesController.html">ReportesController</a>
+  
+    <li><a href="./ReportesControllerTest.html">ReportesControllerTest</a>
+  
+    <li><a href="./ReportesHelperTest.html">ReportesHelperTest</a>
+  
+    <li><a href="./Representante.html">Representante</a>
+  
+    <li><a href="./RepresentanteTest.html">RepresentanteTest</a>
+  
+    <li><a href="./Rol.html">Rol</a>
+  
+    <li><a href="./Rubro.html">Rubro</a>
+  
+    <li><a href="./RubroTest.html">RubroTest</a>
+  
+    <li><a href="./Servicio.html">Servicio</a>
+  
+    <li><a href="./ServicioTest.html">ServicioTest</a>
+  
+    <li><a href="./ServiciosController.html">ServiciosController</a>
+  
+    <li><a href="./ServiciosEmprendimientoController.html">ServiciosEmprendimientoController</a>
+  
+    <li><a href="./Usuario.html">Usuario</a>
+  
+    <li><a href="./UsuarioTest.html">UsuarioTest</a>
+  
+    <li><a href="./UsuariosController.html">UsuariosController</a>
+  
+    <li><a href="./UsuariosControllerTest.html">UsuariosControllerTest</a>
+  
+    <li><a href="./Vinculo.html">Vinculo</a>
+  
+    <li><a href="./WickedPdfHelper.html">WickedPdfHelper</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class MensajesControllerTest</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-test_create" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_create</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_create-source">
+            <pre><span class="ruby-comment"># File test/controllers/mensajes_controller_test.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_create</span>
+  <span class="ruby-identifier">assert_difference</span>(<span class="ruby-string">'Mensajes.count'</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">post</span> <span class="ruby-value">:create</span>, <span class="ruby-identifier">mensajes</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@mensajes</span>.<span class="ruby-identifier">attributes</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_redirected_to</span> <span class="ruby-identifier">mensajes_path</span>(<span class="ruby-identifier">assigns</span>(<span class="ruby-value">:mensajes</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- test_create-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- test_create-method -->
+
+    
+      <div id="method-i-test_destroy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_destroy</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_destroy-source">
+            <pre><span class="ruby-comment"># File test/controllers/mensajes_controller_test.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_destroy</span>
+  <span class="ruby-identifier">assert_difference</span>(<span class="ruby-string">'Mensajes.count'</span>, <span class="ruby-value">-1</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">delete</span> <span class="ruby-value">:destroy</span>, <span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@mensajes</span>.<span class="ruby-identifier">to_param</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_redirected_to</span> <span class="ruby-identifier">mensajeses_path</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- test_destroy-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- test_destroy-method -->
+
+    
+      <div id="method-i-test_edit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_edit</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_edit-source">
+            <pre><span class="ruby-comment"># File test/controllers/mensajes_controller_test.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_edit</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:edit</span>, <span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@mensajes</span>.<span class="ruby-identifier">to_param</span>
+  <span class="ruby-identifier">assert_response</span> <span class="ruby-value">:success</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- test_edit-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- test_edit-method -->
+
+    
+      <div id="method-i-test_index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_index</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_index-source">
+            <pre><span class="ruby-comment"># File test/controllers/mensajes_controller_test.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_index</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:index</span>
+  <span class="ruby-identifier">assert_response</span> <span class="ruby-value">:success</span>
+  <span class="ruby-identifier">assert_not_nil</span> <span class="ruby-identifier">assigns</span>(<span class="ruby-value">:mensajeses</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- test_index-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- test_index-method -->
+
+    
+      <div id="method-i-test_new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_new-source">
+            <pre><span class="ruby-comment"># File test/controllers/mensajes_controller_test.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_new</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:new</span>
+  <span class="ruby-identifier">assert_response</span> <span class="ruby-value">:success</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- test_new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- test_new-method -->
+
+    
+      <div id="method-i-test_show" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_show</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_show-source">
+            <pre><span class="ruby-comment"># File test/controllers/mensajes_controller_test.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_show</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:show</span>, <span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@mensajes</span>.<span class="ruby-identifier">to_param</span>
+  <span class="ruby-identifier">assert_response</span> <span class="ruby-value">:success</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- test_show-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- test_show-method -->
+
+    
+      <div id="method-i-test_update" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_update</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_update-source">
+            <pre><span class="ruby-comment"># File test/controllers/mensajes_controller_test.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_update</span>
+  <span class="ruby-identifier">put</span> <span class="ruby-value">:update</span>, <span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@mensajes</span>.<span class="ruby-identifier">to_param</span>, <span class="ruby-identifier">mensajes</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@mensajes</span>.<span class="ruby-identifier">attributes</span>
+  <span class="ruby-identifier">assert_redirected_to</span> <span class="ruby-identifier">mensajes_path</span>(<span class="ruby-identifier">assigns</span>(<span class="ruby-value">:mensajes</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- test_update-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- test_update-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
