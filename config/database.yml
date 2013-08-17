@@ -27,3 +27,9 @@ production:
   encoding: utf8
   socket: <%= ENV["EMPRENDER_DB_SOCKET"] %>
 
+demo:
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
+
