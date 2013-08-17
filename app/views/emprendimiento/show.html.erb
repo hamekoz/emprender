@@ -1,10 +1,19 @@
 <%= show_for @emprendimiento do |emprendimiento| %>
+
+  <% if !@emprendimiento.empadronado? %>
+    <p class="text-info">
+    <span class="label label-info">Nota:</span>
+    Su emprendimiento aun no ha sido aprobado por un administrador para ser visibles de forma pública.
+    </p>
+  <% end %>
+
+
 <h1 class= "page-header">Mi Emprendimiento</h1>
 <div class="row">
 <div class="span4">
   <%= emprendimiento.attribute :nombre %>
   <%= emprendimiento.attribute :logotipo do %>
-  <%= link_to image_tag(@emprendimiento.logotipo.url), @emprendimiento.logotipo.url, :class => "thumbnail" %>  
+  <%= link_to image_tag(@emprendimiento.logotipo.url), @emprendimiento.logotipo.path, :class => "thumbnail" %>
   <% end %>
   <%= emprendimiento.association :estado, :using => :nombre %>
   <%= emprendimiento.attribute :es_marca_registrada %>

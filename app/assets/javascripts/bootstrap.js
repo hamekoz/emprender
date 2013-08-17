@@ -21,5 +21,5 @@ $('#logo').popover({
   html: true,
   content: '<p><em>Ingenieros Informáticos:</p></em><p>- Claudio Rodrigo Pereyra Diaz</p><p>- Adriel Hernán Caramichos</p>',
   placement: 'bottom',
-  delay: { show: 750, hide: 100 }
+  delay: { show: 1200, hide: 100 }
 });

@@ -2,6 +2,13 @@
                     :html => { :class => 'form-horizontal' }) do |producto| %>
   <%= producto.error_notification %>
 
+  <% if !@producto.aceptado? %>
+    <p class="text-info">
+    <span class="label label-info">Nota:</span>
+    Su producto deberán ser aprobado por un administrador antes de ser visibles de forma pública.
+    </p>
+  <% end %>
+
   <div class="form-inputs well">
     <%= producto.input :nombre,
                        :placeholder => 'Ej: Galletitas caseras',

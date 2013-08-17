@@ -18,13 +18,13 @@
       <% if @evento.folleto.url.blank? %>
         <img src="http://placehold.it/300x500&text=folleto" alt="">
       <% else %>
-        <%= link_to image_tag(@evento.folleto.url), @evento.folleto.url %>
+        <%= link_to image_tag(@evento.folleto.url), @evento.folleto.path %>
       <% end %>
     </div>
   </div>
   <div class="span4">
     <div class="thumbnail ">
-      <%= link_to image_tag(@evento.mapa), @evento.mapa %>
+      <%= link_to image_tag(@evento.mapa), @evento.mapa, :id => 'mapa' %>
     </div>
   </div>
   <div class="span12">

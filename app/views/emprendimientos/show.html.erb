@@ -3,7 +3,7 @@
 <div class="row">
 <div class="span6">
   <%= emprendimiento.attribute :logotipo do %>
-  <%= link_to image_tag(@emprendimiento.logotipo.url), @emprendimiento.logotipo.url, :class => "thumbnail" %>  
+  <%= link_to image_tag(@emprendimiento.logotipo.url), @emprendimiento.logotipo.path, :class => "thumbnail" %>
   <% end %>
   <%= emprendimiento.association :estado, :using => :nombre %>
   <%= emprendimiento.attribute :marca if @emprendimiento.es_marca_registrada %>

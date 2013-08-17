@@ -1,24 +1,32 @@
 <%= show_for @producto do |producto| %>
+
+  <% if !@producto.aceptado? %>
+    <p class="text-info">
+    <span class="label label-info">Nota:</span>
+    Su producto aun no ha sido aprobado por un administrador para ser visibles de forma pública.
+    </p>
+  <% end %>
+
 <div class="row">
   <div class="span6">
     <ul class="thumbnails">
       <li class="span4">
-        <%= link_to image_tag(@producto.imagen_1.url(:normal)), @producto.imagen_1.url, :class => "thumbnail" %>
+        <%= link_to image_tag(@producto.imagen_1.url(:normal)), @producto.imagen_1.path, :class => "thumbnail" %>
       </li>
       <li class="span2">
-        <%= link_to image_tag(@producto.imagen_2.url(:mini)), @producto.imagen_2.url, :class => "thumbnail" %>
+        <%= link_to image_tag(@producto.imagen_2.url(:mini)), @producto.imagen_2.path, :class => "thumbnail" %>
       </li>
       <li class="span2">
-        <%= link_to image_tag(@producto.imagen_3.url(:mini)), @producto.imagen_3.url, :class => "thumbnail" %>
+        <%= link_to image_tag(@producto.imagen_3.url(:mini)), @producto.imagen_3.path, :class => "thumbnail" %>
       </li>
       <li class="span2">
-        <%= link_to image_tag(@producto.imagen_4.url(:mini)), @producto.imagen_4.url, :class => "thumbnail" %>
+        <%= link_to image_tag(@producto.imagen_4.url(:mini)), @producto.imagen_4.path, :class => "thumbnail" %>
       </li>
       <li class="span2">
-        <%= link_to image_tag(@producto.imagen_5.url(:mini)), @producto.imagen_5.url, :class => "thumbnail" %>
+        <%= link_to image_tag(@producto.imagen_5.url(:mini)), @producto.imagen_5.path, :class => "thumbnail" %>
       </li>
       <li class="span2">
-        <%= link_to image_tag(@producto.imagen_6.url(:mini)), @producto.imagen_6.url, :class => "thumbnail" %>
+        <%= link_to image_tag(@producto.imagen_6.url(:mini)), @producto.imagen_6.path, :class => "thumbnail" %>
       </li>
     </ul>
   </div>
