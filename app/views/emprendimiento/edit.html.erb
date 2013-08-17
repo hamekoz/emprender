@@ -3,7 +3,7 @@
 <%= simple_form_for(@emprendimiento, :url => mi_emprendimiento_path, :html => { :class => 'form-horizontal' }) do |emprendimiento| %>
   <%= emprendimiento.error_notification %>
 
-  <% if !emprendimiento.empadronado? %>
+  <% if !@emprendimiento.empadronado? %>
     <p class="text-info">
     <span class="label label-info">Nota:</span>
     Su emprendimiento deberán ser aprobado por un administrador antes de ser visibles de forma pública.
