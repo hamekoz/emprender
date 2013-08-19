@@ -95,6 +95,53 @@ Rubro.create :nombre => "Textil: varios"
 Rubro.create :nombre => "Salud y belleza"
 Rubro.create :nombre => "Servicios"
 
+Clasificacion.create :codigo => "1112", :nombre => "Cultivo de cereales forrajeros"
+Clasificacion.create :codigo => "1113", :nombre => "Cultivo de oleaginosas excepto el de semillas para siembra"
+Clasificacion.create :codigo => "1114", :nombre => "Cultivo de pastos forrajeros"
+Clasificacion.create :codigo => "1121", :nombre => "Cultivo de papa, batata y mandioca"
+Clasificacion.create :codigo => "1122", :nombre => "Cultivo de bulbos, brotes, raices y hortalizas de fruto"
+Clasificacion.create :codigo => "1123", :nombre => "Cultivo de hortalizas de hoja y de otras hortalizas frescas"
+Clasificacion.create :codigo => "1124", :nombre => "Cultivo de legumbres"
+Clasificacion.create :codigo => "1125", :nombre => "Cultivo de flores y plantas ornamentales"
+Clasificacion.create :codigo => "1131", :nombre => "Cultivo de frutas de pepita"
+Clasificacion.create :codigo => "1132", :nombre => "Cultivo de frutas de carozo"
+Clasificacion.create :codigo => "1133", :nombre => "Cultivo de frutas citricas"
+Clasificacion.create :codigo => "1134", :nombre => "Cultivo de nueces y frutas secas"
+Clasificacion.create :codigo => "1139", :nombre => "Cultivo de frutas n.c.p."
+Clasificacion.create :codigo => "1141", :nombre => "Cultivo de plantas para la obtencion de fibras"
+Clasificacion.create :codigo => "1142", :nombre => "Cultivo de plantas sacariferas"
+Clasificacion.create :codigo => "1143", :nombre => "Cultivo de vid para vinificar"
+Clasificacion.create :codigo => "1144", :nombre => "Cultivo de plantas para preparar bebidas"
+Clasificacion.create :codigo => "1145", :nombre => "Cultivo de tabaco"
+Clasificacion.create :codigo => "1146", :nombre => "Cultivo de especias y de plantas aromaticas y medicinales"
+Clasificacion.create :codigo => "1149", :nombre => "Cultivos industriales n.c.p."
+Clasificacion.create :codigo => "1151", :nombre => "Produccion de semillas"
+Clasificacion.create :codigo => "1152", :nombre => "Produccion de otras formas de propagacion de cultivos agricolas"
+Clasificacion.create :codigo => "1211", :nombre => "Cria de ganado bovino -excepto en cabanas y para la produccion de leche-"
+Clasificacion.create :codigo => "1212", :nombre => "Cria de ganado ovino -excepto en cabanas y para la produccion de lana-"
+Clasificacion.create :codigo => "1213", :nombre => "Cria de ganado porcino -excepto en cabanas-"
+Clasificacion.create :codigo => "1214", :nombre => "Cria de ganado equino -excepto en haras-"
+Clasificacion.create :codigo => "1215", :nombre => "Cria de ganado caprino -excepto en cabanas y para la produccion de leche-"
+Clasificacion.create :codigo => "1216", :nombre => "Cria de ganado en cabanas y haras"
+Clasificacion.create :codigo => "1217", :nombre => "Produccion de leche"
+Clasificacion.create :codigo => "1218", :nombre => "Produccion de lana y pelos de ganado"
+Clasificacion.create :codigo => "1219", :nombre => "Cria de ganado n.c.p."
+Clasificacion.create :codigo => "1221", :nombre => "Cria de aves de corral"
+Clasificacion.create :codigo => "1222", :nombre => "Produccion de huevos"
+Clasificacion.create :codigo => "1223", :nombre => "Apicultura"
+Clasificacion.create :codigo => "1224", :nombre => "Cria de animales peliferos, piliferos y plumiferos"
+Clasificacion.create :codigo => "1229", :nombre => "Cria de animales y obtencion de productos de origen animal, n.c.p."
+Clasificacion.create :codigo => "1411", :nombre => "Servicios de maquinaria agricola, excepto los de cosecha mecanica"
+Clasificacion.create :codigo => "1412", :nombre => "Servicios de cosecha mecanica"
+Clasificacion.create :codigo => "1413", :nombre => "Servicios de contratistas de mano de obra agricola"
+Clasificacion.create :codigo => "1419", :nombre => "Servicios agricolas n.c.p"
+Clasificacion.create :codigo => "1421", :nombre => "Inseminacion artificial y servicios n.c.p. para mejorar la reproduccion de los animales y el rendimiento de sus productos"
+Clasificacion.create :codigo => "1422", :nombre => "Servicios de contratistas de mano de obra pecuaria"
+Clasificacion.create :codigo => "1429", :nombre => "Servicios pecuarios n.c.p."
+Clasificacion.create :codigo => "1501", :nombre => "Caza y captura de animales vivos y repoblacion de animales de caza"
+Clasificacion.create :codigo => "1502", :nombre => "Servicios para la caza"
+Clasificacion.create :codigo => "2011", :nombre => "Plantacion de bosques"
+
 Estado.create :nombre => "Activo",
               :descripcion => "Emprendimiento en actividad"
 Estado.create :nombre => "Inactivo",
@@ -106,7 +153,8 @@ usuario = Administrador.new :email => "emprender@hamekoz.com.ar",
   :password               => "admin123456",
   :password_confirmation  => "admin123456",
   :nombre                 => "Administrador",
-  :apellido               => "Emprender"
+  :apellido               => "Emprender",
+  :aceptado               => true
 usuario.confirmed_at = DateTime.now
 usuario.skip_confirmation!
 usuario.save
