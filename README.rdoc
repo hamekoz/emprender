@@ -2,3 +2,7 @@
 
 Desarrollo del Proyecto Final de carrera de Ingeniera en Informática
 Un portal de empadronamiento y socializacion de emprendemientos y emprendedores
+
+== Licencia
+
+GPLv3
