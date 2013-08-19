@@ -7,4 +7,12 @@ module ApplicationHelper
   def chosen_simple
     'chzn-select chzn-container chzn-container-single'
   end
+
+  def img_path(imagen)
+    if ENV["EMPRENDER_DROPBOX"] == "enable"
+      imagen.url
+    else
+      imagen.path
+    end
+  end
 end

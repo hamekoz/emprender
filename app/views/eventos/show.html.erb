@@ -18,7 +18,7 @@
       <% if @evento.folleto.url.blank? %>
         <img src="http://placehold.it/300x500&text=folleto" alt="">
       <% else %>
-        <%= link_to image_tag(@evento.folleto.url), @evento.folleto.path %>
+        <%= link_to image_tag(@evento.folleto.url), img_path(@evento.folleto) %>
       <% end %>
     </div>
   </div>

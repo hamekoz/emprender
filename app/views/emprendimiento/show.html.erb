@@ -13,7 +13,7 @@
 <div class="span4">
   <%= emprendimiento.attribute :nombre %>
   <%= emprendimiento.attribute :logotipo do %>
-  <%= link_to image_tag(@emprendimiento.logotipo.url), @emprendimiento.logotipo.path, :class => "thumbnail" %>
+  <%= link_to image_tag(@emprendimiento.logotipo.url), img_path(@emprendimiento.logotipo), :class => "thumbnail" %>
   <% end %>
   <%= emprendimiento.association :estado, :using => :nombre %>
   <%= emprendimiento.attribute :es_marca_registrada %>

@@ -12,7 +12,7 @@ class EmprendimientosController < ApplicationController
   # GET /emprendimientos.json
   def index
     @q = Emprendimiento.empadronados.search(params[:q])
-    @emprendimientos = @q.result(:distinct => true).empadronados.page(params[:pagina]).per(10)
+    @emprendimientos = @q.result(:distinct => true).empadronados.page(params[:pagina]).per(6)
 
     add_crumb "Emprendimientos"
 
