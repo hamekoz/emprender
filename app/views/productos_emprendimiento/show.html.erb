@@ -1,12 +1,5 @@
 <%= show_for @producto do |producto| %>
 
-  <% if !@producto.aceptado? %>
-    <p class="text-info">
-    <span class="label label-info">Nota:</span>
-    Su producto aun no ha sido aprobado por un administrador para ser visibles de forma pública.
-    </p>
-  <% end %>
-
 <div class="row">
   <div class="span6">
     <ul class="thumbnails">

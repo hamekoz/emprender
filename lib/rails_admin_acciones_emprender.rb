@@ -23,7 +23,7 @@ module RailsAdmin
         end
         register_instance_option :controller do
           Proc.new do
-            @objects = list_entries(@model_config, :destroy)
+            @objects = list_entries(@model_config, :edit)
             @objects.each do |object|
               object.aceptar
             end
@@ -42,7 +42,7 @@ module RailsAdmin
         end
         register_instance_option :controller do
           Proc.new do
-            @objects = list_entries(@model_config, :destroy)
+            @objects = list_entries(@model_config, :edit)
             @objects.each do |object|
               object.rechazar
             end
@@ -61,7 +61,7 @@ module RailsAdmin
         end
         register_instance_option :controller do
           Proc.new do
-            @objects = list_entries(@model_config, :destroy)
+            @objects = list_entries(@model_config, :edit)
             @objects.each do |object|
               object.activar
             end
@@ -80,7 +80,7 @@ module RailsAdmin
         end
         register_instance_option :controller do
           Proc.new do
-            @objects = list_entries(@model_config, :destroy)
+            @objects = list_entries(@model_config, :edit)
             @objects.each do |object|
               object.desactivar
             end
@@ -99,7 +99,7 @@ module RailsAdmin
         end
         register_instance_option :controller do
           Proc.new do
-            @objects = list_entries(@model_config, :destroy)
+            @objects = list_entries(@model_config, :edit)
             @objects.each do |object|
               object.publicar
             end
@@ -118,7 +118,7 @@ module RailsAdmin
         end
         register_instance_option :controller do
           Proc.new do
-            @objects = list_entries(@model_config, :destroy)
+            @objects = list_entries(@model_config, :edit)
             @objects.each do |object|
               object.despublicar
             end
@@ -137,7 +137,7 @@ module RailsAdmin
         end
         register_instance_option :controller do
           Proc.new do
-            @objects = list_entries(@model_config, :destroy)
+            @objects = list_entries(@model_config, :edit)
             @objects.each do |object|
               object.desbloquear
             end
@@ -156,7 +156,7 @@ module RailsAdmin
         end
         register_instance_option :controller do
           Proc.new do
-            @objects = list_entries(@model_config, :destroy)
+            @objects = list_entries(@model_config, :edit)
             @objects.each do |object|
               object.apadrinar(current_usuario.institucion)
             end

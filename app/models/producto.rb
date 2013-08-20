@@ -16,7 +16,7 @@ class Producto < ActiveRecord::Base
 
   scope :activos, where(:activo => true)
   scope :aceptados, where(:aceptado => true)
-  scope :visibles, activos.merge(aceptados)
+  scope :visibles, activos.merge(aceptados).order(:updated_at).reverse_order
 
   validates_attachment :imagen_1, :imagen_2, :imagen_3, :imagen_4, :imagen_5, :imagen_6,
                        :content_type => { :content_type => ['image/gif',
