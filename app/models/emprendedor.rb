@@ -1,8 +1,8 @@
 ##
 # Emprendedor corresponde a los usuarios con rol Emprendedor
 class Emprendedor < Usuario
-  attr_accessible :perfil, :emprendimiento, :perfil_attributes, :emprendimiento_attributes,
-                  :institucion, :institucion_id
+  # attr_accessible :perfil, :emprendimiento, :perfil_attributes, :emprendimiento_attributes,
+  #                 :institucion, :institucion_id
 
   after_create :inicializar
 

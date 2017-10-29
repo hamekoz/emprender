@@ -2,7 +2,7 @@
 # ServiciosEmprendimientoController es el controlador de los servicios de un 
 # Emprendimiento, autentica que el usuario sea un Emprendedor
 class ServiciosEmprendimientoController < ApplicationController
-  before_filter :authenticate_usuario!, :emprendedor?
+  before_action :authenticate_usuario!, :emprendedor?
 
   add_crumb "Inicio", :root_path
   add_crumb "Mi Emprendimiento", :mi_emprendimiento_path

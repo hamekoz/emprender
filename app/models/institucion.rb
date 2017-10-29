@@ -1,8 +1,8 @@
 ##
 # Institucion colaboradora en la promocion de la economia social
 class Institucion < ActiveRecord::Base
-  attr_accessible :nombre, :descripcion, :barrio, :barrio_id,
-                  :domicilio, :telefono, :visible, :web, :mail
+  # attr_accessible :nombre, :descripcion, :barrio, :barrio_id,
+  #                 :domicilio, :telefono, :visible, :web, :mail
 
   validates :nombre, :presence=>true
   validates :descripcion, :presence=>true
@@ -13,7 +13,7 @@ class Institucion < ActiveRecord::Base
   has_many :representantes
   has_many :emprendedores
 
-  scope :visibles, where(:visible => true)
+  scope :visibles, -> { where(visible: true) }
 
   ##
   # Marca como publicada la Institucion para que se muestre en la pagina Acerca

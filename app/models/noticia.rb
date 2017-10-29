@@ -1,7 +1,7 @@
 ##
 # Noticia sobre la economia social
 class Noticia < ActiveRecord::Base
-  attr_accessible :titulo, :resumen, :texto, :autor, :autor_id, :publicada
+  # attr_accessible :titulo, :resumen, :texto, :autor, :autor_id, :publicada
 
   validates_presence_of :titulo, :resumen, :texto, :autor
 
@@ -9,7 +9,7 @@ class Noticia < ActiveRecord::Base
 
   has_many :comentarios, :as => :comentable
 
-  scope :publicadas, where(:publicada => true).order(:updated_at).reverse_order
+  scope :publicadas, -> { where(publicada: true).order(:updated_at).reverse_order }
 
   ##
   # Marca la Noticia como publicada para verse en la cartelera

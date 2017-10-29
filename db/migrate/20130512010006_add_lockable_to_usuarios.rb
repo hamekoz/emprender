@@ -1,4 +1,4 @@
-class AddLockableToUsuarios < ActiveRecord::Migration
+class AddLockableToUsuarios < ActiveRecord::Migration[4.2]
   def self.up
     change_table(:usuarios) do |t|
 

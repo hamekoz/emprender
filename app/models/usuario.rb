@@ -53,8 +53,8 @@ class Usuario < ActiveRecord::Base
          :recoverable, :trackable, :validatable, :confirmable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :rol, :email, :password, :password_confirmation,
-                  :nombre, :apellido, :sexo, :institucion, :institucion_id
+  #attr_accessible :rol, :email, :password, :password_confirmation,
+  #                :nombre, :apellido, :sexo, :institucion, :institucion_id
 
   validates :nombre, :presence => true
   validates :apellido, :presence => true
@@ -109,5 +109,5 @@ class Usuario < ActiveRecord::Base
     rol == 'Emprendedor'
   end
 
-  default_scope order(:nombre, :apellido)
+  default_scope { order(:nombre, :apellido) }
 end

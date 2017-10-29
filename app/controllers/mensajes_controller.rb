@@ -3,7 +3,7 @@
 # Antes de efectuar una accion, autentica al usuario
 
 class MensajesController < ApplicationController
-  before_filter :authenticate_usuario!
+  before_action :authenticate_usuario!
 
   add_crumb "Inicio", :root_path
 

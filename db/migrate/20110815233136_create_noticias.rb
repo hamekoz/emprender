@@ -1,4 +1,4 @@
-class CreateNoticias < ActiveRecord::Migration
+class CreateNoticias < ActiveRecord::Migration[4.2]
   def change
     create_table :noticias do |t|
       t.string      :titulo

@@ -2,7 +2,7 @@
 # UsuariosController es el controlador de los datos del Usuario se complementa
 # con la gema Devise
 class UsuariosController < ApplicationController
-  before_filter :authenticate_usuario!
+  before_action :authenticate_usuario!
 
   add_crumb "Inicio", :root_path
 

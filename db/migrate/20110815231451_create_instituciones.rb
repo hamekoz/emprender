@@ -1,4 +1,4 @@
-class CreateInstituciones < ActiveRecord::Migration
+class CreateInstituciones < ActiveRecord::Migration[4.2]
   def change
     create_table :instituciones do |t|
       t.string      :nombre

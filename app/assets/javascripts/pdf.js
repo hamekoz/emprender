@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.ui.all
-//= require raphael/raphael
-//= require g.raphael/g.raphael
-//= require g.raphael/g.pie
+// require jquery.ui.all
+// require raphael/raphael
+// require g.raphael/g.raphael
+// require g.raphael/g.pie
 //= require reportes

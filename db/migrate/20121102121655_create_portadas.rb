@@ -1,4 +1,4 @@
-class CreatePortadas < ActiveRecord::Migration
+class CreatePortadas < ActiveRecord::Migration[4.2]
   def change
     create_table :portadas do |t|
       t.string :titulo

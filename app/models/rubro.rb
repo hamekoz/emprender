@@ -1,7 +1,7 @@
 ##
 # Rubro de Emprendimiento, Producto y Servicio
 class Rubro < ActiveRecord::Base
-  attr_accessible :nombre, :descripcion
+  # attr_accessible :nombre, :descripcion
 
   validates :nombre, :presence => true, :uniqueness => true
   

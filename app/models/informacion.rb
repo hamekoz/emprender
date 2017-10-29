@@ -1,12 +1,12 @@
 ##
 # Define una entrada de la Informacion correspondiente a la pagina Acerca
 class Informacion < ActiveRecord::Base
-  attr_accessible :orden, :subtitulo, :texto, :titulo, :visible
+  # attr_accessible :orden, :subtitulo, :texto, :titulo, :visible
 
   validates_presence_of :orden, :titulo, :texto
   validates_uniqueness_of :orden
 
-  scope :visibles, where(:visible => true).order(:orden)
+  scope :visibles, -> { where(visible: true).order(:orden) }
 
   ##
   # Marca como publicada la Informacion

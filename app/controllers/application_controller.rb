@@ -3,7 +3,7 @@
 # Provee metodos generales a todos los controladores y renderiza la pagina
 # inicial y la de informacion acerca de Emprender
 class ApplicationController < ActionController::Base
-  protect_from_forgery
+  protect_from_forgery with: :exception
 
   ##
   # Define la habilidad del usuario actual definidas en Ability

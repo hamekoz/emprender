@@ -2,11 +2,11 @@
 # Portada se corresponde a la foto e informacion de una instancia del carusel de
 # fotos de la pagina principal
 class Portada < ActiveRecord::Base
-  attr_accessible :foto, :texto, :titulo, :visible
+  # attr_accessible :foto, :texto, :titulo, :visible
 
   validates_presence_of :foto, :texto, :titulo
 
-  scope :visibles, where(:visible => true)
+  scope :visibles, -> { where(visible: true) }
 
   has_attached_file :foto,
                     :default_url => "1000x450-portada.gif",

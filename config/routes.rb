@@ -1,11 +1,11 @@
-Emprender::Application.routes.draw do
-
+Rails.application.routes.draw do
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
-  mount Ckeditor::Engine => "/ckeditor", :as => 'editor'
+  #mount Ckeditor::Engine => "/ckeditor", :as => 'editor'
 
   root        :to => "application#index"
 
-  match  'acerca' => "application#acerca", :as => "acerca"
+  get  'acerca' => "application#acerca", :as => "acerca"
 
   resource :usuario,          :only => :show
 

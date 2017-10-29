@@ -18,7 +18,7 @@ class Emprendimiento < ActiveRecord::Base
 
   has_many :comentarios, :as => :comentable
 
-  scope :empadronados, where(:empadronado => true).order(:updated_at).reverse_order
+  scope :empadronados, -> { where(empadronado: true).order(:updated_at).reverse_order }
 
   ##
   # Marca el Emprendimiento como empadronado

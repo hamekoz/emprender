@@ -1,4 +1,4 @@
-class CreateEmprendimientos < ActiveRecord::Migration
+class CreateEmprendimientos < ActiveRecord::Migration[4.2]
   def change
     create_table :emprendimientos do |t|
       t.references  :emprendedor

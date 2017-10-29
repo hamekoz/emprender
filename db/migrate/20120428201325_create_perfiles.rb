@@ -1,4 +1,4 @@
-class CreatePerfiles < ActiveRecord::Migration
+class CreatePerfiles < ActiveRecord::Migration[4.2]
   def change
     create_table :perfiles do |t|
       t.references  :emprendedor

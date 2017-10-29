@@ -10,7 +10,7 @@ class Representante < Usuario
 
   before_destroy :despublicar
 
-  attr_accessible :aceptado
+  # attr_accessible :aceptado
 
 private
   ##

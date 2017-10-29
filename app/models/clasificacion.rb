@@ -2,7 +2,7 @@
 # Clasificacion de emprendimientos
 # Se utiliza para clasificar un emprendimiento segun su CIIU
 class Clasificacion < ActiveRecord::Base
-  attr_accessible :nombre, :descripcion, :codigo
+  # attr_accessible :nombre, :descripcion, :codigo
 
   has_many :emprendimientos
 

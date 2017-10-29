@@ -1,22 +1,22 @@
 ##
 # Producto perteneciente a un Emprendimiento
 class Producto < ActiveRecord::Base
-  attr_accessible :descripcion,
-                  :imagen_1, :delete_imagen_1,
-                  :imagen_2, :delete_imagen_2,
-                  :imagen_3, :delete_imagen_3,
-                  :imagen_4, :delete_imagen_4,
-                  :imagen_5, :delete_imagen_5,
-                  :imagen_6, :delete_imagen_6,
-                  :nombre, :activo, :aceptado,
-                  :rubro_id, :rubro,
-                  :tipo_de_venta, :precio,
-                  :produccion_mensual, :produccion_anual, :produccion_maxima,
-                  :emprendimiento_id, :emprendimiento
+  # attr_accessible :descripcion,
+  #                 :imagen_1, :delete_imagen_1,
+  #                 :imagen_2, :delete_imagen_2,
+  #                 :imagen_3, :delete_imagen_3,
+  #                 :imagen_4, :delete_imagen_4,
+  #                 :imagen_5, :delete_imagen_5,
+  #                 :imagen_6, :delete_imagen_6,
+  #                 :nombre, :activo, :aceptado,
+  #                 :rubro_id, :rubro,
+  #                 :tipo_de_venta, :precio,
+  #                 :produccion_mensual, :produccion_anual, :produccion_maxima,
+  #                 :emprendimiento_id, :emprendimiento
 
-  scope :activos, where(:activo => true)
-  scope :aceptados, where(:aceptado => true)
-  scope :visibles, activos.merge(aceptados).order(:updated_at).reverse_order
+  scope :activos, -> { where(activo: true) }
+  scope :aceptados, -> { where(aceptado: true) }
+  scope :visibles, -> { activos.merge(aceptados).order(:updated_at).reverse_order }
 
   validates_attachment :imagen_1, :imagen_2, :imagen_3, :imagen_4, :imagen_5, :imagen_6,
                        :content_type => { :content_type => ['image/gif',

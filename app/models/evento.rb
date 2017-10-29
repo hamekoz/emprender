@@ -2,10 +2,10 @@
 # Evento permite crear y publicar eventos que se organicen para promover la
 # economia social
 class Evento < ActiveRecord::Base
-  attr_accessible :nombre, :descripcion, :lugar, :domicilio, :barrio,
-                  :organizador, :barrio_id, :organizador_id, :tipo_id, :tipo,
-                  :fecha_y_hora_de_inicio, :fecha_y_hora_de_finalizacion,
-                  :autor_id, :autor, :folleto,:delete_folleto, :publicado
+  # attr_accessible :nombre, :descripcion, :lugar, :domicilio, :barrio,
+  #                 :organizador, :barrio_id, :organizador_id, :tipo_id, :tipo,
+  #                 :fecha_y_hora_de_inicio, :fecha_y_hora_de_finalizacion,
+  #                 :autor_id, :autor, :folleto,:delete_folleto, :publicado
 
   validates_presence_of :nombre, :tipo, :lugar, :domicilio, :fecha_y_hora_de_inicio,
                         :fecha_y_hora_de_finalizacion, :autor, :organizador
@@ -67,7 +67,7 @@ class Evento < ActiveRecord::Base
     ['Capacitacion', 'Feria', 'Reunion']
   end
   
-  scope :publicados, where(:publicado => true).order(:updated_at).reverse_order
+  scope :publicados, -> { where(publicado: true).order(:updated_at).reverse_order }
 
   ##
   # Marca el Evento como publicado

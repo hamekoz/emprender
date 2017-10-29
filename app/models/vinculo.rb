@@ -2,7 +2,7 @@
 # Representa un elance a otro sitio o archivo de interes que se puede agregar
 # en la pagina Acerca
 class Vinculo < ActiveRecord::Base
-  attr_accessible :nombre, :url, :visible
+#  attr_accessible :nombre, :url, :visible
 
   validates_presence_of :nombre, :url
 
@@ -10,7 +10,7 @@ class Vinculo < ActiveRecord::Base
             :uniqueness => true,
             :format => { :with => /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix }
 
-  scope :visibles, where(:visible => true)
+  scope :visibles, -> { where(visible: true) }
 
   ##
   # Marca el vinculo como publicado para ser mostrado en la pagina Acerca

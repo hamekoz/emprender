@@ -2,7 +2,7 @@
 # ReportesController es el controlador de los Reportes.
 # Autentica que el usuario sea un Administrador o Representante
 class ReportesController < ApplicationController
-  before_filter :authenticate_usuario!, :administrador_o_representante?
+  before_action :authenticate_usuario!, :administrador_o_representante?
 
   add_crumb "Inicio", :root_path
 

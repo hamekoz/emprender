@@ -2,16 +2,16 @@
 # Comentario es la entidad para realizar un comentario sobre otra entidad
 # que acepte comentarios
 class Comentario < ActiveRecord::Base
-  attr_accessible :comentable, :comentable_id, :comentable_type,
-                  :texto, :aceptado
+  # attr_accessible :comentable, :comentable_id, :comentable_type,
+  #                 :texto, :aceptado
 
   belongs_to :comentable, :polymorphic => true
 
   validates_presence_of :texto, :comentable
   validates_associated :comentable
 
-  scope :aceptados, where(:aceptado => true).order(:created_at)
-  scope :pendientes, where(:aceptado => false).order(:created_at)
+  scope :aceptados, -> { where(aceptado: true).order(:created_at) }
+  scope :pendientes, -> { where(aceptado: false).order(:created_at) }
 
   ##
   # Marca el comentario como aceptado por un Administrador

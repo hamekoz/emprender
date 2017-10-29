@@ -1,8 +1,8 @@
 ##
 # Mensaje entre los Usuarios del sistema
 class Mensaje < ActiveRecord::Base
-  attr_accessible :texto, :asunto, :remitente, :remitente_id, :destinatario, :destinatario_id, :leido,
-  :eliminado_destinatario, :eliminado_remitente
+  # attr_accessible :texto, :asunto, :remitente, :remitente_id, :destinatario, :destinatario_id, :leido,
+  # :eliminado_destinatario, :eliminado_remitente
 
   validates :destinatario, :presence => true
   validates :asunto,       :presence => true
@@ -11,13 +11,13 @@ class Mensaje < ActiveRecord::Base
   belongs_to :remitente,    :class_name => 'Usuario'
   belongs_to :destinatario, :class_name => 'Usuario'
 
-  scope :recibidos, where(:eliminado_destinatario => false).order(:created_at).reverse_order
-  scope :enviados, where(:eliminado_remitente => false).order(:created_at).reverse_order
+  scope :recibidos, -> { where(eliminado_destinatario: false).order(:created_at).reverse_order }
+  scope :enviados, -> { where(eliminado_remitente: false).order(:created_at).reverse_order }
 
-  scope :sin_leer, where(:leido => false)
+  scope :sin_leer, -> { where(leido: false) }
 
-  scope :recibidos_eliminados, where(:eliminado_destinatario => true).order(:created_at).reverse_order
-  scope :enviados_eliminados, where(:eliminado_remitente => true).order(:created_at).reverse_order
+  scope :recibidos_eliminados, -> { where(eliminado_destinatario: true).order(:created_at).reverse_order }
+  scope :enviados_eliminados, -> { where(eliminado_remitente: true).order(:created_at).reverse_order }
 
   ##
   # Devuelte la fecha en un formato amigable de acuerdo a la distancia de tiempo

@@ -1,4 +1,4 @@
-class CreateVinculos < ActiveRecord::Migration
+class CreateVinculos < ActiveRecord::Migration[4.2]
   def change
     create_table :vinculos do |t|
       t.string :nombre

@@ -2,7 +2,7 @@
 # PerfilesController es el controlador del Perfil de un Emprendedor
 # Antes de ejecutar la acciones autentica que el usuario sea un Emprendedor
 class PerfilesController < ApplicationController
-  before_filter :authenticate_usuario!, :emprendedor?
+  before_action :authenticate_usuario!, :emprendedor?
 
   add_crumb "Inicio", :root_path
 

@@ -3,7 +3,7 @@
 # un Usuario con rol Emprendedor, antes de realizar las acciones verifica que
 # exista un usuario autenticado y que su rol se de Emprendedor
 class EmprendimientoController < ApplicationController
-  before_filter :authenticate_usuario!, :emprendedor?
+  before_action :authenticate_usuario!, :emprendedor?
 
   add_crumb "Inicio", :root_path
 
