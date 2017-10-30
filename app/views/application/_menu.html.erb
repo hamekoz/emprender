@@ -1,70 +1,69 @@
 <header>
-<div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-      <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <%= link_to "Emprender", root_path, :id => "logo", :class => "brand" %>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="container">
+  <%= link_to "Emprender", root_path, :id => "logo", :class => "navbar-brand" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-      <div class="container nav-collapse">
-        <ul class="nav">
-          <li class="<%= 'active' if current_page?(acerca_path) %>">
-            <%= link_to(acerca_path) do %>
-              <i class="icon-info-sign"></i>
-              <span>Acerca</span>
-            <% end %>
-          </li>
-          <li class="<%= 'active' if params[:controller] == 'noticias' %>">
-            <%= link_to(noticias_path) do %>
-              <i class="icon-book"></i>
-              <span>Noticias</span>
-            <% end %>
-          </li>
-          <li class="<%= 'active' if params[:controller] == 'eventos' %>">
-            <%= link_to(eventos_path) do %>
-              <i class="icon-time"></i>
-              <span>Eventos</span>
-            <% end %>
-          </li>
-          <li class="<%= 'active' if params[:controller] == 'productos' ||
-                                     params[:controller] == 'productos_emprendimiento' %>">
-            <%= link_to(productos_path) do %>
-              <i class="icon-gift"></i>
-              <span>Productos</span>
-            <% end %>
-          </li>
-          <li class="<%= 'active' if params[:controller] == 'servicios' ||
-                                     params[:controller] == 'servicios_emprendimiento' %>">
-            <%= link_to(servicios_path) do %>
-              <i class="icon-screenshot"></i>
-              <span>Servicios</span>
-            <% end %>
-          </li>
-          <li class="<%= 'active' if params[:controller] == 'emprendimiento' ||
-                                     params[:controller] == 'emprendimientos' %>">
-            <%= link_to(emprendimientos_path) do %>
-              <i class="icon-road"></i>
-              <span>Emprendimientos</span>
-            <% end %>
-          </li>
-      </ul>
-      <ul class="nav pull-right">
-        <% if usuario_signed_in? %>
-          <%= render 'menu_usuario' %>
-        <% else %>
-        <li>
-          <%= link_to(new_usuario_session_path) do %>
-            <!--<i class="icon-ok icon-white"></i>-->
-            <span class="badge badge-success">Ingresar</span>
-          <% end %>
-        </li>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item <%= 'active' if current_page?(acerca_path) %>">
+        <%= link_to(acerca_path, class: "nav-link") do %>
+          <i class="icon-info-sign"></i>
+          <span>Acerca</span>
         <% end %>
-      </ul>
-      </div><!--/.nav-collapse -->
-    </div>
+      </li>
+      <li class="nav-item <%= 'active' if params[:controller] == 'noticias' %>">
+        <%= link_to(noticias_path, class: "nav-link") do %>
+          <i class="icon-book"></i>
+          <span>Noticias</span>
+        <% end %>
+      </li>
+      <li class="nav-item <%= 'active' if params[:controller] == 'eventos' %>">
+        <%= link_to(eventos_path, class: "nav-link") do %>
+          <i class="icon-time"></i>
+          <span>Eventos</span>
+        <% end %>
+      </li>
+      <li class="nav-item <%= 'active' if params[:controller] == 'productos' ||
+                                  params[:controller] == 'productos_emprendimiento' %>">
+        <%= link_to(productos_path, class: "nav-link") do %>
+          <i class="icon-gift"></i>
+          <span>Productos</span>
+        <% end %>
+      </li>
+      <li class="nav-item <%= 'active' if params[:controller] == 'servicios' ||
+                                  params[:controller] == 'servicios_emprendimiento' %>">
+        <%= link_to(servicios_path, class: "nav-link") do %>
+          <i class="icon-screenshot"></i>
+          <span>Servicios</span>
+        <% end %>
+      </li>
+      <li class="nav-item <%= 'active' if params[:controller] == 'emprendimiento' ||
+                                  params[:controller] == 'emprendimientos' %>">
+        <%= link_to(emprendimientos_path, class: "nav-link") do %>
+          <i class="icon-road"></i>
+          <span>Emprendimientos</span>
+        <% end %>
+      </li>
+    </ul>
+    <ul class="nav pull-right">
+      <% if usuario_signed_in? %>
+        <%= render 'menu_usuario' %>
+      <% else %>
+      <li>
+        <%= link_to(new_usuario_session_path, class: "nav-link") do %>
+          <!--<i class="icon-ok icon-white"></i>-->
+          <span class="badge badge-success">Ingresar</span>
+        <% end %>
+      </li>
+      <% end %>
+    </ul>
   </div>
-</div>
+  </div>
+</nav>
 </header>
