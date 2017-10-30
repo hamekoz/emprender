@@ -4,8 +4,8 @@
 class ServiciosEmprendimientoController < ApplicationController
   before_action :authenticate_usuario!, :emprendedor?
 
-  add_crumb "Inicio", :root_path
-  add_crumb "Mi Emprendimiento", :mi_emprendimiento_path
+  #add_crumb "Inicio", :root_path
+  #add_crumb "Mi Emprendimiento", :mi_emprendimiento_path
 
   ##
   # Renderiza los servicios del Emprendimiento del Emprendedor actual

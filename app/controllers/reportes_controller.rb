@@ -4,7 +4,7 @@
 class ReportesController < ApplicationController
   before_action :authenticate_usuario!, :administrador_o_representante?
 
-  add_crumb "Inicio", :root_path
+  #add_crumb "Inicio", :root_path
 
   ##
   # Renderiza la vista rapida de informacion de reportes

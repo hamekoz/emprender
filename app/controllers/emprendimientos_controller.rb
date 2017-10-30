@@ -2,7 +2,7 @@
 # EmprendimientosController es el controlador de la seccion Emprendimientos
 class EmprendimientosController < ApplicationController
 
-  add_crumb "Inicio", :root_path
+#  add_crumb "Inicio", :root_path
 
   ##
   # Lista todos los emprendimientos marcados como empadronados, acepta parametro

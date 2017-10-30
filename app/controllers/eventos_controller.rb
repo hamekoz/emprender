@@ -2,7 +2,7 @@
 # EventosController es el controlador de la seccion Eventos
 class EventosController < ApplicationController
 
-  add_crumb "Inicio", :root_path
+  #add_crumb "Inicio", :root_path
 
   ##
   # Renderiza la cartelera de eventos publicados

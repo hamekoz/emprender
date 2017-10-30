@@ -2,7 +2,7 @@
 # NoticiasController es el controlador de la seccion Noticias
 class NoticiasController < ApplicationController
 
-  add_crumb "Inicio", :root_path
+  #add_crumb "Inicio", :root_path
 
   ##
   #Renderiza la cartelera de las noticias publicadas

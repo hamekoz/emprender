@@ -4,7 +4,7 @@
 class UsuariosController < ApplicationController
   before_action :authenticate_usuario!
 
-  add_crumb "Inicio", :root_path
+  #add_crumb "Inicio", :root_path
 
   ##
   # Muestra la informacion del Usuario actual
@@ -14,7 +14,7 @@ class UsuariosController < ApplicationController
   def show
     @usuario = current_usuario
 
-    add_crumb "Mi Usuario"
+    #add_crumb "Mi Usuario"
 
     respond_to do |format|
       format.html # show.html.erb

@@ -5,7 +5,7 @@
 class EmprendimientoController < ApplicationController
   before_action :authenticate_usuario!, :emprendedor?
 
-  add_crumb "Inicio", :root_path
+  #add_crumb "Inicio", :root_path
 
   ##
   # Renderiza la informacion del Emprendimiento el Emprendedor actual

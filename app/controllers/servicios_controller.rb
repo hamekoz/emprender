@@ -2,7 +2,7 @@
 # ServiciosController es el controlador de la seccion Servicio
 class ServiciosController < ApplicationController
 
-  add_crumb "Inicio", :root_path
+  #add_crumb "Inicio", :root_path
 
   ## Renderiza la cartelera de los servicios que se encuentran visibles
   # Visibles es que estan aceptados y activos

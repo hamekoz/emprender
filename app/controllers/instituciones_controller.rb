@@ -2,7 +2,7 @@
 # InstitucionesController es el controlador de la seccion Instituciones
 class InstitucionesController < ApplicationController
 
-  add_crumb "Inicio", :root_path
+  #add_crumb "Inicio", :root_path
 
   ##
   #Renderiza la cartelera de las instituciones publicadas

@@ -5,7 +5,7 @@
 class MensajesController < ApplicationController
   before_action :authenticate_usuario!
 
-  add_crumb "Inicio", :root_path
+  #add_crumb "Inicio", :root_path
 
   ##
   # Renderiza la bandeja de entreada de los mensajes recibidos
