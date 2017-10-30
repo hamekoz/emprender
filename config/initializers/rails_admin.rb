@@ -375,8 +375,7 @@ RailsAdmin.config do |config|
   config.model 'Evento' do
     navigation_label 'Portal'
     weight -1
-    field :descripcion do
-      ckeditor true
+    field :descripcion, :ck_editor do
       ckeditor_config_js '/javascripts/ckeditor/config.js'
       pretty_value do
         value.html_safe
@@ -444,16 +443,14 @@ RailsAdmin.config do |config|
     end
     create do
       include_all_fields
-      field :texto do
-        bootstrap_wysihtml5 true
+      field :texto, :wysihtml5 do
         bootstrap_wysihtml5_config_options  "font-styles" => false,
                                             :image => false
       end
     end
     edit do
       include_all_fields
-      field :texto do
-        bootstrap_wysihtml5 true
+      field :texto, :wysihtml5 do
         bootstrap_wysihtml5_config_options  "font-styles" => false,
                                             :image => false
       end
@@ -491,8 +488,7 @@ RailsAdmin.config do |config|
     navigation_label 'Portal'
     weight -1
     include_all_fields
-    field :texto do
-      ckeditor true
+    field :texto, :ck_editor do
       ckeditor_config_js '/javascripts/ckeditor/config.js'
       pretty_value do
         value.html_safe
