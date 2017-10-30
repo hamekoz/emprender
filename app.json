@@ -1,0 +1,66 @@
+{
+  "name": "emprender",
+  "scripts": {
+  },
+  "env": {
+    "EMPRENDER_DOMINIO": {
+      "required": true
+    },
+    "EMPRENDER_DROPBOX": {
+      "required": true
+    },
+    "EMPRENDER_DROPBOX_ACCESS_TOKEN": {
+      "required": true
+    },
+    "EMPRENDER_DROPBOX_ACCESS_TOKEN_SECRET": {
+      "required": true
+    },
+    "EMPRENDER_DROPBOX_ACCESS_TYPE": {
+      "required": true
+    },
+    "EMPRENDER_DROPBOX_APP_KEY": {
+      "required": true
+    },
+    "EMPRENDER_DROPBOX_APP_SECRET": {
+      "required": true
+    },
+    "EMPRENDER_DROPBOX_USER_ID": {
+      "required": true
+    },
+    "EMPRENDER_GOOGLE_ANALYTICS_ID": {
+      "required": true
+    },
+    "EMPRENDER_MAIL": {
+      "required": true
+    },
+    "EMPRENDER_MAIL_DOMINIO": {
+      "required": true
+    },
+    "EMPRENDER_MAIL_PASSWORD": {
+      "required": true
+    },
+    "EMPRENDER_MAIL_PUERTO": {
+      "required": true
+    },
+    "EMPRENDER_MAIL_SERVIDOR": {
+      "required": true
+    },
+    "EMPRENDER_MAIL_SMTP": {
+      "required": true
+    },
+    "EMPRENDER_MAIL_USUARIO": {
+      "required": true
+    },
+    "HEROKU_POSTGRESQL_COBALT_URL": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+
+  ]
+}
