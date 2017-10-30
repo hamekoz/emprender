@@ -47,9 +47,9 @@ class Perfil < ActiveRecord::Base
             :on => :update,
             :allow_blank => true,
             :uniqueness => true,
-            :length => { :maximum => 13 },
-            :format => { :with => /^\d{2}\-\d{8}\-\d{1}$/,
-                         :message => "el formato debe ser ??-????????-?" }
+            :length => { :maximum => 13 }
+#            :format => { :with => /^\d{2}\-\d{8}\-\d{1}$/,
+#                         :message => "el formato debe ser ??-????????-?" }
 
   validates :cantidad_de_horas_semanales,
             :on => :update,

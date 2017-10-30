@@ -72,8 +72,8 @@ class Emprendimiento < ActiveRecord::Base
   validates :mail,
             :on => :update,
             :allow_blank => true,
-            :uniqueness => true,
-            :format => { :with => /^[^@][\w.-]+@[\w.-]+[.][a-z]{2,4}$/i }
+            :uniqueness => true
+#            :format => { :with => /^[^@][\w.-]+@[\w.-]+[.][a-z]{2,4}$/i }
 
   validates :cantidad_de_integrantes,
             :on => :update,
