@@ -1,21 +1,21 @@
 <%= search_form_for(@q, :html => { :class => 'form-search' }) do |f| %>
   <strong>Ordenar por:</strong>
   <br class="visible-phone">
-  <%= sort_link @q, :titulo, {}, :class => 'label' %>
-  <%= sort_link @q, :resumen, {}, :class => 'label' %>
-  <%= sort_link @q, :updated_at, "Fecha de Publicación", {}, :class => 'label' %>
+  <%= sort_link @q, :titulo, {}, class: 'badge badge-secondary' %>
+  <%= sort_link @q, :resumen, {}, class: 'badge badge-secondary' %>
+  <%= sort_link @q, :updated_at, "Fecha de Publicación", {}, class: 'badge badge-secondary' %>
 
   <br class="visible-phone">
-  <div class="busqueda input-append pull-right">
+  <div class="busqueda form-row align-items-right float-right">
     <%= f.text_field :titulo_or_resumen_or_texto_cont,
                      :class=> 'search-query',
                      :placeholder => 'Titulo, Resumen o Texto' %>
-    <%= link_to(noticias_path, :type => 'button',
-                               :class => 'btn btn-comun',
+    <%= link_to(noticias_path, type: 'button',
+                               class: 'btn btn-comun input-group-addon',
                                rel: 'tooltip', title: 'Ver todos',) do %>
       <i class="icon-remove-sign"></i>
     <% end %>
-    <%= f.button "Buscar", :class=> 'btn' %>
+    <%= f.button "Buscar", class: 'btn' %>
   </div>
 <% end %>
 <hr>

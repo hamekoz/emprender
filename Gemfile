@@ -46,7 +46,7 @@ gem 'date_validator'              #Validador de fechas
 gem 'ransack'                     #Busqueda
 gem 'chosen-rails'                #Selector por combo mejorado
 gem 'wicked_pdf'                  #Exportacion a PDF
-gem 'bootstrap', '~> 4.0.0.beta'  #Framework CSS y JS
+gem 'bootstrap', '~> 4.0.0.beta2.1'  #Framework CSS y JS
 gem 'bootstrap-wysihtml5-rails'   #Editor de texto enrriquecido simple
 gem 'crummy'                      #Generador de breadcum
 gem 'google-analytics-rails'      #Analisis de visitas
@@ -72,7 +72,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  gem 'taps'
+#  gem 'taps'
   gem 'rails-erd'
 end
 
