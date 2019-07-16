@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'             #Framework
+gem 'rails', '3.2.17'             #Framework
 gem 'rails-i18n'                  #Localizacion del framework
 
 gem 'jquery-rails'                #jquery para rails
