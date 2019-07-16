@@ -255,7 +255,9 @@ GEM
     wicked_pdf (0.9.6)
       rails
     wkhtmltopdf-heroku (1.0.0)
-    yaml_db (0.2.3)
+    yaml_db (0.7.0)
+      rails (>= 3.0)
+      rake (>= 0.8.7)
 
 PLATFORMS
   ruby
